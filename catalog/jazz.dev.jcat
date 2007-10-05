@@ -736,7 +736,7 @@
     {Lisp-Entry "blues.interpreter.And" () 37 9 ("jazz")
       {Lisp-Entry "And" () 40 7 ("Syntax")}}})
 "Application"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "application" "Application.fusion"} {Time 128360666680000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "application" "Application.fusion"} {Time 128360913260000000L}
     {Lisp-Entry "jazz.application.Application" () 37 9 ("jazz")
       {Lisp-Entry "Application" () 66 7 ("Exit-Listener" "Save-Environment-Listener" "Event-Consumer" "History-Provider" "Context-Provider" "Process")
         {Lisp-Entry "toplevel" () 69 8 ()}
@@ -907,8 +907,8 @@
         {Lisp-Entry "set-status-message" () 1131 18 ("->string" "else" "Locales" "is?" "cond" "set-title" "Undisplayed-Message" "set!" "not" "if" "get-message-view" "message" "let" "msg")}
         {Lisp-Entry "get-message-view" () 1141 18 ("message" "find-component" "status-bar" "when")}
         {Lisp-Entry "show-undisplayed-message" () 1146 18 ("set!" "set-status-message" "Undisplayed-Message" "when")}
-        {Lisp-Entry "process-messages" () 1157 11 ("DispatchMessage" "TranslateMessage" "accelerators-handle" "TranslateAccelerator" "=" "when" "0" "NULL" "GetMessage" "while" "get-toplevel" "get-hwnd" "hwnd" "MSG-make" "msg" "let")}
-        {Lisp-Entry "process-one-message" () 1167 11 ("DispatchMessage" "TranslateMessage" "accelerators-handle" "TranslateAccelerator" "=" "0" "GetMessage" "when" "get-hwnd" "hwnd" "let" "MSG-make" "msg" "with" "get-toplevel" "window")}
+        {Lisp-Entry "process-messages" () 1157 11 ("DispatchMessage" "TranslateMessage" "accelerators-handle" "TranslateAccelerator" "=" "when" "0" "NULL" "GetMessage" "while" "get-toplevel" "get-handle" "hwnd" "MSG-make" "msg" "let")}
+        {Lisp-Entry "process-one-message" () 1167 11 ("DispatchMessage" "TranslateMessage" "accelerators-handle" "TranslateAccelerator" "=" "0" "GetMessage" "when" "get-handle" "hwnd" "let" "MSG-make" "msg" "with" "get-toplevel" "window")}
         {Lisp-Entry "class-actions" () 1181 11 ("nextmethod" "application" "find-actions" "cons")}
         {Lisp-Entry "process-alias" () 1191 11 ("nextmethod" "else" "get-banner-icons-cache" ":banner-icons" "get-invite-icons-cache" ":invite-icons" "get-large-icons-cache" ":large-icons" "get-small-icons-cache" ":small-icons" "get-icons-cache" ":icons" "get-user" ":user" "get-focus" ":focus" "focus-guest" ":focus-guest" "current-guest" ":guest" "current-document" ":document" "current-frame" ":frame" "get-root" ":wallpaper" "get-stage" ":stage" "get-toplevel" ":toplevel" "self" ":application" "case" "name")}
         {Lisp-Entry "text-menu" () 1216 26 ("new-text-context-menu" "text")}
@@ -1077,9 +1077,9 @@
         {Lisp-Entry "on-cascade" () 2610 26 ("on-cascade" "unimplemented" "get-windows" "frames" "get-stage" "stage" "let*" "evt")}
         {Lisp-Entry "on-tile-horizontally" () 2616 26 ("increase!" "Dimension" "set-size" "Point" "new" "set-position" "frame" "for-each" "restore" "dynamic" "function" "with-locked-update" "0" "t" "quotient" "h" "get-height" "height" "get-width" "width" "length" "count" "get-windows" "frames" "get-stage" "stage" "let*" "evt")}
         {Lisp-Entry "on-tile-vertically" () 2634 26 ("increase!" "Dimension" "set-size" "Point" "new" "set-position" "frame" "for-each" "restore" "dynamic" "function" "with-locked-update" "0" "l" "quotient" "w" "get-height" "height" "get-width" "width" "length" "count" "get-windows" "frames" "get-stage" "stage" "let*" "evt")}
-        {Lisp-Entry "on-minimize-all" () 2652 26 ("SW_MINIMIZE" "show-window" "window" "dynamic" "function" "for-each" "get-windows" "windows" "get-stage" "stage" "let*" "evt")}
-        {Lisp-Entry "on-restore-all" () 2661 26 ("SW_RESTORE" "show-window" "window" "dynamic" "function" "for-each" "get-windows" "windows" "get-stage" "stage" "let*" "evt")}
-        {Lisp-Entry "on-select-window" () 2670 26 ("acquire-focus" "bring-to-front" "SW_RESTORE" "show-window" "Palette" "is?" "unless" ":window" "get-property" "window" "let" "evt")}}}})
+        {Lisp-Entry "on-minimize-all" () 2653 26 ("SW_MINIMIZE" "show-window" "window" "dynamic" "function" "for-each" "get-windows" "windows" "get-stage" "stage" "let*" "evt")}
+        {Lisp-Entry "on-restore-all" () 2663 26 ("SW_RESTORE" "show-window" "window" "dynamic" "function" "for-each" "get-windows" "windows" "get-stage" "stage" "let*" "evt")}
+        {Lisp-Entry "on-select-window" () 2673 26 ("acquire-focus" "bring-to-front" "SW_RESTORE" "show-window" "Palette" "is?" "unless" ":window" "get-property" "window" "let" "evt")}}}})
 "Application-Actions"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "application" "Application-Actions.fusion"} {Time 128355726600000000L}
     {Lisp-Entry "jazz.application.Application-Actions" () 37 9 ("jazz")
@@ -1654,10 +1654,10 @@
         {Lisp-Entry "remove-level-change-listener" () 188 18 ("remove-listener" "level-change-listeners" "set!" "listener")}
         {Lisp-Entry "call-on-level-change" () 192 11 ("invoke" "listener" "dynamic" "function" "for-each" "self" ":level-change" "Break-Event" "new" "evt" "let" "level-change-listeners" "when")}}}})
 "BrowseFolder-Dialog"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "dialog" "BrowseFolder-Dialog.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "dialog" "BrowseFolder-Dialog.fusion"} {Time 128360914360000000L}
     {Lisp-Entry "jazz.ui.dialog.BrowseFolder-Dialog" () 37 9 ("jazz")
       {Lisp-Entry "BrowseFolder-Dialog" () 46 7 ("Dialog")
-        {Lisp-Entry "get-modal" () 50 16 ("tokenise" "Directory" "anchorize" "adjust-string" "String" "coerce" "string" "SHGetPathFromIDList" "MAX_PATH" "size:" "Ansi-String" "path" "throw-cancel" "not" "SHBrowseForFolder" "items" "either" "lpszTitle" "get-browse-callback" "lpfn" "pidlRoot" "NULL" "get-hwnd" "if" "get-toplevel" "toplevel" "hwndOwner" "set" "BROWSEINFO" "new" "r" "parse" "set-current-directory" "get-current-directory" "set!" "when" "preserved" "let" "close-all-popups" "anchors" "anchors:" "directory" "directory:" "title" "title:")}}}})
+        {Lisp-Entry "get-modal" () 50 16 ("tokenise" "Directory" "anchorize" "adjust-string" "String" "coerce" "string" "SHGetPathFromIDList" "MAX_PATH" "size:" "Ansi-String" "path" "throw-cancel" "not" "SHBrowseForFolder" "items" "either" "lpszTitle" "get-browse-callback" "lpfn" "pidlRoot" "NULL" "get-handle" "if" "get-toplevel" "toplevel" "hwndOwner" "set" "BROWSEINFO" "new" "r" "parse" "set-current-directory" "get-current-directory" "set!" "when" "preserved" "let" "close-all-popups" "anchors" "anchors:" "directory" "directory:" "title" "title:")}}}})
 "Build-Options"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jedi" "lib" "jedi" "tools" "Build-Options.fusion"} {Time 128355726660000000L}
     {Lisp-Entry "jedi.tools.Build-Options" () 37 9 ("jazz")
@@ -1789,12 +1789,12 @@
         {Lisp-Entry "syntax-automata" () 164 11 ("compute-syntax-automata" "set!" "Syntax-Automata" "unless")}
         {Lisp-Entry "colorize-entries" () 170 11 ()}}}})
 "Cairo-Client-Surface"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "graphic" "Cairo-Client-Surface.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "graphic" "Cairo-Client-Surface.fusion"} {Time 128360915100000000L}
     {Lisp-Entry "jazz.ui.graphic.Cairo-Client-Surface" () 38 9 ("jazz")
       {Lisp-Entry "Cairo-Client-Surface" () 48 7 ("Cairo-Win32-Surface")
         {Lisp-Entry "window" () 51 8 ()}
-        {Lisp-Entry "initialize" () 54 11 ("get-hwnd" "GetDC" "nextmethod" "window" "set!" "wnd")}
-        {Lisp-Entry "destroy-hdc" () 60 11 ("hdc" "window" "get-hwnd" "ReleaseDC")}}}})
+        {Lisp-Entry "initialize" () 54 11 ("get-handle" "GetDC" "nextmethod" "window" "set!" "wnd")}
+        {Lisp-Entry "destroy-hdc" () 60 11 ("hdc" "window" "get-handle" "ReleaseDC")}}}})
 "Cairo-Image-Surface"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "platform" "cairo" "Cairo-Image-Surface.fusion"} {Time 128355726620000000L}
     {Lisp-Entry "jazz.platform.cairo.Cairo-Image-Surface" () 0 9 ("jazz")
@@ -2580,16 +2580,16 @@
         {Lisp-Entry "child-remove" () 196 11 ("remove-row" "dynamic" "function" "with-update-locked" "when" "component-row" "row" "let" "client" "get-parent" "neq?" "Group" "is?" "or" "unless" "child")}
         {Lisp-Entry "property-change" () 205 11 ("invalidate-cell" "set-title" "present-property" "title" "get-cell-data" "data" "Cell" "new" "cell" "let*" "get-user-data" "eq?" "rank" "row" "dynamic" "function" "for-each-visible-row" "when" "position" "return:" "car" "key:" "details" "field-name" "find" "col" "let" "client" "get-parent" "neq?" "Group" "is?" "or" "unless" "value" "property" "component")}}}})
 "ChooseColor-Dialog"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "dialog" "ChooseColor-Dialog.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "dialog" "ChooseColor-Dialog.fusion"} {Time 128360914440000000L}
     {Lisp-Entry "jazz.ui.dialog.ChooseColor-Dialog" () 37 9 ("jazz")
       {Lisp-Entry "ChooseColor-Dialog" () 47 7 ("Dialog")
         {Lisp-Entry "custom-colors" () 51 19 ("int" "new-array")}
-        {Lisp-Entry "get-modal" () 56 16 ("error" "throw-cancel" "0" "=" "CommDlgExtendedError" "code" "get" ":colorref" "ChooseColor" "if" "CC_FULLOPEN" "CC_RGBINIT" "CC_ANYCOLOR" "bit-or" "Flags" "custom-colors" "lpCustColors" "Black" "name:" "Color" "either" "ref" "rgbResult" "get-toplevel" "get-hwnd" "hwndOwner" "size-of" "lStructSize" "set" "CHOOSECOLOR" "new" "r" "let" "close-all-popups" "initial-color" "initial-color:")}}}})
+        {Lisp-Entry "get-modal" () 56 16 ("error" "throw-cancel" "0" "=" "CommDlgExtendedError" "code" "get" ":colorref" "ChooseColor" "if" "CC_FULLOPEN" "CC_RGBINIT" "CC_ANYCOLOR" "bit-or" "Flags" "custom-colors" "lpCustColors" "Black" "name:" "Color" "either" "ref" "rgbResult" "get-toplevel" "get-handle" "hwndOwner" "size-of" "lStructSize" "set" "CHOOSECOLOR" "new" "r" "let" "close-all-popups" "initial-color" "initial-color:")}}}})
 "ChooseFont-Dialog"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "dialog" "ChooseFont-Dialog.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "dialog" "ChooseFont-Dialog.fusion"} {Time 128360914480000000L}
     {Lisp-Entry "jazz.ui.dialog.ChooseFont-Dialog" () 37 9 ("jazz")
       {Lisp-Entry "ChooseFont-Dialog" () 47 7 ("Dialog")
-        {Lisp-Entry "get-modal" () 51 16 ("error" "throw-cancel" "=" "CommDlgExtendedError" "code" ":logfont" "Font" "ChooseFont" "0" "CF_INITTOLOGFONTSTRUCT" "CF_NOSCRIPTSEL" "CF_EFFECTS" "CF_SCREENFONTS" "bit-or" "Flags" "ref" "rgbColors" "lpLogFont" "get-toplevel" "get-hwnd" "hwndOwner" "size-of" "lStructSize" "set" "LOGFONT" "get-logfont" "if" "logfont" "CHOOSEFONT" "new" "r" "let" "close-all-popups" "Black" "name:" "Color" "initial-color" "initial-color:" "initial-font" "initial-font:")}}}})
+        {Lisp-Entry "get-modal" () 51 16 ("error" "throw-cancel" "=" "CommDlgExtendedError" "code" ":logfont" "Font" "ChooseFont" "0" "CF_INITTOLOGFONTSTRUCT" "CF_NOSCRIPTSEL" "CF_EFFECTS" "CF_SCREENFONTS" "bit-or" "Flags" "ref" "rgbColors" "lpLogFont" "get-toplevel" "get-handle" "hwndOwner" "size-of" "lStructSize" "set" "LOGFONT" "get-logfont" "if" "logfont" "CHOOSEFONT" "new" "r" "let" "close-all-popups" "Black" "name:" "Color" "initial-color" "initial-color:" "initial-font" "initial-font:")}}}})
 "Chooser"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "view" "Chooser.fusion"} {Time 128355726640000000L}
     {Lisp-Entry "jazz.ui.view.Chooser" () 37 9 ("jazz")
@@ -2690,12 +2690,12 @@
         {Lisp-Entry "present" () 53 11 ("else" "join" "List" "is?" "null?" "nullable?" "and" "cond" "value")}
         {Lisp-Entry "get-edited-value" () 64 11 ("split" "=" "empty-string?" "or" "nullable?" "and" "if" "editor" "get-string-content" "string" "let")}}}})
 "Client-DC"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "graphic" "Client-DC.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "graphic" "Client-DC.fusion"} {Time 128360915140000000L}
     {Lisp-Entry "jazz.ui.graphic.Client-DC" () 37 9 ("jazz")
       {Lisp-Entry "Client-DC" () 45 7 ("DC")
         {Lisp-Entry "window" () 48 8 ()}
-        {Lisp-Entry "initialize" () 51 11 ("get-hwnd" "GetDC" "hdc" "window" "set!" "NULL" "nextmethod" "wnd")}
-        {Lisp-Entry "destroy-hdc" () 58 11 ("hdc" "window" "get-hwnd" "ReleaseDC")}}}})
+        {Lisp-Entry "initialize" () 51 11 ("get-handle" "GetDC" "hdc" "window" "set!" "NULL" "nextmethod" "wnd")}
+        {Lisp-Entry "destroy-hdc" () 58 11 ("hdc" "window" "get-handle" "ReleaseDC")}}}})
 "Closure"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "scheme" "interpreter" "Closure.fusion"} {Time 128355726660000000L}
     {Lisp-Entry "blues.interpreter.Closure" () 37 9 ("jazz")
@@ -5689,7 +5689,7 @@
         {Lisp-Entry "debug-repository?" () 51 12 ("generate" "accessors" "false")}
         {Lisp-Entry "get-row-instance" () 63 11 ("nextmethod" "else" "Boolean-Row" "new" "debug-repository?" "optimized?" "field-name" "case" "property")}}}})
 "Debuggee"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "debugger" "debuggee" "Debuggee.fusion"} {Time 128355726600000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "debugger" "debuggee" "Debuggee.fusion"} {Time 128360913360000000L}
     {Lisp-Entry "jazz.debugger.debuggee.Debuggee" () 37 9 ("jazz")
       {Lisp-Entry "Debuggee" () 46 7 ("Object")}
       {Lisp-Entry "Debuggee" () 52 7 ("Object")
@@ -5700,7 +5700,7 @@
         {Lisp-Entry "detach-from-controller" () 76 25 ("process" "detach-from-controller")}
         {Lisp-Entry "exit" () 81 25 ("process" "exit-process" "thread" "function" "execute:" "self" "context:" "name:" "Thread" "new")}
         {Lisp-Entry "get-process-server" () 95 25 ("process" "get-local-process-server")}
-        {Lisp-Entry "get-toplevel-hwnd" () 99 25 ("get-toplevel" "get-hwnd")}
+        {Lisp-Entry "get-toplevel-hwnd" () 99 25 ("get-toplevel" "get-handle")}
         {Lisp-Entry "get-process-threads" () 108 25 ("get-threads" "new-thread" "map")}
         {Lisp-Entry "get-main-thread" () 112 25 ("primary-thread" "new-thread")}
         {Lisp-Entry "new-thread" () 116 11 ("self" "Debuggee-Local-Proxy" "Debuggee-Thread" "Debuggee-Thread-Local-Proxy" "new" "thread")}
@@ -5932,7 +5932,7 @@
         {Lisp-Entry "present" () 53 26 ()}
         {Lisp-Entry "get-threads" () 62 26 ()}}}})
 "Debugger-Server"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "debugger" "server" "Debugger-Server.fusion"} {Time 128355726600000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "debugger" "server" "Debugger-Server.fusion"} {Time 128360913580000000L}
     {Lisp-Entry "jazz.debugger.server.Debugger-Server" () 37 9 ("jazz")
       {Lisp-Entry "Debugger-Server" () 46 7 ("Object")
         {Lisp-Entry "debuggees" () 49 8 ()}
@@ -5940,7 +5940,7 @@
         {Lisp-Entry "get-debuggees" () 58 25 ("debuggees" "validate-debuggees" "when" "false" "validate?" "validate?:")}
         {Lisp-Entry "get-selected-debuggee" () 64 25 ("selected-debuggee")}
         {Lisp-Entry "set-selected-debuggee" () 68 25 ("selected-debuggee" "set!" "debuggee")}
-        {Lisp-Entry "get-toplevel-hwnd" () 78 25 ("get-toplevel" "get-hwnd")}
+        {Lisp-Entry "get-toplevel-hwnd" () 78 25 ("get-toplevel" "get-handle")}
         {Lisp-Entry "attach-debuggee" () 87 25 ("select-debuggee" "selected-debuggee" "null?" "when" "list" "append!" "set!" "debuggees" "member?" "unless" "debuggee")}
         {Lisp-Entry "detach-debuggee" () 95 25 ("car" "select-debuggee" "selected-debuggee" "=" "test:" "remove!" "set!" "debuggees" "member?" "when" "debuggee")}
         {Lisp-Entry "select-debuggee" () 108 25 ("null?" "if" "format" "user-message" "present-debuggee" "presented" "set-icon" "debugger" "locate-component" "item" "let" "function" "post-primary" "get-status-bar" "status" "get-icon" "essay" "icon" "get-application" "appl" "let*" "set!" "selected-debuggee" "/=" "when" "debuggee")}
@@ -6455,7 +6455,7 @@
         {Lisp-Entry "child-remove" () 228 11 ("remove-row" "dynamic" "function" "with-update-locked" "when" "component-row" "row" "let" "client" "get-parent" "neq?" "Group" "is?" "or" "unless" "child")}
         {Lisp-Entry "property-change" () 237 11 ("invalidate-cell" "set-title" "present-property" "title" "get-cell-data" "data" "Cell" "new" "cell" "let*" "get-user-data" "eq?" "rank" "row" "dynamic" "function" "for-each-visible-row" "when" "position" "return:" "car" "key:" "details" "field-name" "find" "col" "let" "client" "get-parent" "neq?" "Group" "is?" "or" "unless" "value" "property" "component")}}}})
 "Dialog"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "dialog" "Dialog.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "dialog" "Dialog.fusion"} {Time 128360914900000000L}
     {Lisp-Entry "jazz.ui.dialog.Dialog" () 37 9 ("jazz")
       {Lisp-Entry "Dialog" () 50 7 ("Overlapped")
         {Lisp-Entry "get-modal" () 54 31 ("self" "new" "apply" "process-modal" "rest")}
@@ -6468,29 +6468,28 @@
         {Lisp-Entry "modal-action" () 66 8 ()}
         {Lisp-Entry "initialize" () 70 16 ("destroy-mandatory" "register-class" "nextmethod")}
         {Lisp-Entry "window-class" () 77 16 ()}
-        {Lisp-Entry "window-parent" () 81 11 ("nextmethod" "parent" "not" "if")}
-        {Lisp-Entry "default-parent" () 87 11 ("get-application" "get-toplevel")}
-        {Lisp-Entry "child-style?" () 91 11 ("false" "rest")}
-        {Lisp-Entry "window-style" () 95 11 ("WS_SYSMENU" "closable?:" "0" "WS_THICKFRAME" "true" "not-found:" "sizable?:" "getf" "if" "WS_DLGFRAME" "WS_CAPTION" "WS_OVERLAPPED" "WS_BORDER" "WS_POPUP" "nextmethod" "bit-or" "rest")}
-        {Lisp-Entry "window-ex-style" () 106 11 ("WS_EX_DLGMODALFRAME" "nextmethod" "bit-or" "rest")}
-        {Lisp-Entry "get-sizable?" () 116 11 ("sizable?")}
-        {Lisp-Entry "set-sizable?" () 120 11 ("sizable?" "set!" "value")}
-        {Lisp-Entry "get-closable?" () 124 11 ("closable?")}
-        {Lisp-Entry "set-closable?" () 128 11 ("closable?" "set!" "value")}
-        {Lisp-Entry "processing-modal?" () 132 18 ("modal-done?" "not")}
-        {Lisp-Entry "on-close" () 141 11 ("unprocessed" "enable-window" "when" "get-toplevel" "toplevel" "let" "processed" "closable?" "not" "if" "evt")}
-        {Lisp-Entry "destroy" () 152 11 ("nextmethod" "modal-done?" "modal-result" "true" "modal-closed?" "set!")}
-        {Lisp-Entry "class-actions" () 164 11 ("nextmethod" "dialog" "find-actions" "cons")}
-        {Lisp-Entry "on-ok" () 174 18 ("get-modal-result" "end-modal" "validate-dialog" "evt")}
-        {Lisp-Entry "on-cancel" () 179 18 ("cancel-modal" "evt")}
-        {Lisp-Entry "validate-dialog" () 188 26 ()}
-        {Lisp-Entry "get-modal-result" () 192 26 ()}
-        {Lisp-Entry "process-modal" () 196 18 ("modal-action" "close" "true" "enable-window" "modal-result" "else" "signal" "modal-signal" "throw-cancel" "modal-closed?" "cond" "0" "sleep" "process-one-message" "Cancel-Signal" "catch" "not" "while" "show" "update-windowing-actions" "self" "false" "modal-done?" "set!" "begin" "unwind-protect" "disable-window" "when" "*current-modal*" "preserved" "current-modal-dialog" "either" "overlapped" "get-toplevel" "toplevel" "get-application" "application" "let*" "prog1" "release-captured-view" "close-popups")}
-        {Lisp-Entry "wake-process-modal" () 231 11 ("dynamic" "function" "post-primary" "get-toplevel" "when")}
-        {Lisp-Entry "end-modal" () 243 18 ("wake-process-modal" "true" "modal-done?" "modal-result" "false" "modal-closed?" "set!" "result")}
-        {Lisp-Entry "signal-modal" () 250 18 ("wake-process-modal" "true" "modal-done?" "modal-signal" "set!" "signal")}
-        {Lisp-Entry "cancel-modal" () 256 18 ("Cancel-Signal" "new" "signal-modal")}
-        {Lisp-Entry "close-modal" () 260 18 ("wake-process-modal" "true" "modal-done?" "modal-action" "modal-result" "false" "modal-closed?" "set!" "action")}}}})
+        {Lisp-Entry "default-parent" () 81 11 ("get-application" "get-toplevel")}
+        {Lisp-Entry "child-style?" () 85 11 ("false" "rest")}
+        {Lisp-Entry "window-style" () 90 11 ("WS_SYSMENU" "closable?:" "0" "WS_THICKFRAME" "true" "not-found:" "sizable?:" "getf" "if" "WS_DLGFRAME" "WS_CAPTION" "WS_OVERLAPPED" "WS_BORDER" "WS_POPUP" "nextmethod" "bit-or" "rest")}
+        {Lisp-Entry "window-ex-style" () 102 11 ("WS_EX_DLGMODALFRAME" "nextmethod" "bit-or" "rest")}
+        {Lisp-Entry "get-sizable?" () 112 11 ("sizable?")}
+        {Lisp-Entry "set-sizable?" () 116 11 ("sizable?" "set!" "value")}
+        {Lisp-Entry "get-closable?" () 120 11 ("closable?")}
+        {Lisp-Entry "set-closable?" () 124 11 ("closable?" "set!" "value")}
+        {Lisp-Entry "processing-modal?" () 128 18 ("modal-done?" "not")}
+        {Lisp-Entry "on-close" () 137 11 ("unprocessed" "enable-window" "when" "get-toplevel" "toplevel" "let" "processed" "closable?" "not" "if" "evt")}
+        {Lisp-Entry "destroy" () 148 11 ("nextmethod" "modal-done?" "modal-result" "true" "modal-closed?" "set!")}
+        {Lisp-Entry "class-actions" () 160 11 ("nextmethod" "dialog" "find-actions" "cons")}
+        {Lisp-Entry "on-ok" () 170 18 ("get-modal-result" "end-modal" "validate-dialog" "evt")}
+        {Lisp-Entry "on-cancel" () 175 18 ("cancel-modal" "evt")}
+        {Lisp-Entry "validate-dialog" () 184 26 ()}
+        {Lisp-Entry "get-modal-result" () 188 26 ()}
+        {Lisp-Entry "process-modal" () 192 18 ("modal-action" "close" "true" "enable-window" "modal-result" "else" "signal" "modal-signal" "throw-cancel" "modal-closed?" "cond" "0" "sleep" "process-one-message" "Cancel-Signal" "catch" "not" "while" "show" "update-windowing-actions" "self" "false" "modal-done?" "set!" "begin" "unwind-protect" "disable-window" "when" "*current-modal*" "preserved" "current-modal-dialog" "either" "overlapped" "get-toplevel" "toplevel" "get-application" "application" "let*" "prog1" "release-captured-view" "close-popups")}
+        {Lisp-Entry "wake-process-modal" () 227 11 ("dynamic" "function" "post-primary" "get-toplevel" "when")}
+        {Lisp-Entry "end-modal" () 239 18 ("wake-process-modal" "true" "modal-done?" "modal-result" "false" "modal-closed?" "set!" "result")}
+        {Lisp-Entry "signal-modal" () 246 18 ("wake-process-modal" "true" "modal-done?" "modal-signal" "set!" "signal")}
+        {Lisp-Entry "cancel-modal" () 252 18 ("Cancel-Signal" "new" "signal-modal")}
+        {Lisp-Entry "close-modal" () 256 18 ("wake-process-modal" "true" "modal-done?" "modal-action" "modal-result" "false" "modal-closed?" "set!" "action")}}}})
 "Dialog-Actions"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "dialog" "Dialog-Actions.fusion"} {Time 128355726640000000L}
     {Lisp-Entry "jazz.ui.dialog.Dialog-Actions" () 37 9 ("jazz")
@@ -6525,7 +6524,7 @@
         {Lisp-Entry "close-editor" () 79 11 ("remove-every-son" "nextmethod")}
         {Lisp-Entry "in-edition?" () 85 11 ("get-sons" "nextmethod" "or")}}}})
 "Direct-Draw"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "library" "directx" "Direct-Draw.fusion"} {Time 128355726620000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "library" "directx" "Direct-Draw.fusion"} {Time 128360913760000000L}
     {Lisp-Entry "jazz.library.directx.Direct-Draw" () 37 9 ("jazz")
       {Lisp-Entry "Direct-Draw" () 44 7 ("DxVBLib" "COM" "WinDef" "Utilities" "Object")}}})
 "Direct-Draw-Surface"
@@ -8894,26 +8893,26 @@
       {Lisp-Entry "Formatter" () 44 7 ("Object")
         {Lisp-Entry "format-directive" () 47 26 ("directive" "output" "formatting")}}}})
 "Frame"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "Frame.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "Frame.fusion"} {Time 128360916760000000L}
     {Lisp-Entry "jazz.ui.window.Frame" () 37 9 ("jazz")
       {Lisp-Entry "Frame" () 50 7 ("View-Player")
         {Lisp-Entry "site" () 53 8 ()}
-        {Lisp-Entry "window-style" () 61 11 ("WS_CLIPSIBLINGS" "WS_CLIPCHILDREN" "WS_SYSMENU" "WS_CHILD" "bit-or" "rest")}
-        {Lisp-Entry "default-parent" () 65 11 ("get-stage")}
-        {Lisp-Entry "conclude" () 69 11 ("destroy-mandatory" "bring-to-front" "nextmethod" "rest")}
-        {Lisp-Entry "on-close" () 80 11 ("unprocessed" "confirm-close" "close-popups" "evt")}
-        {Lisp-Entry "on-mouse-activate" () 86 11 ("nextmethod" "bring-to-front")}
-        {Lisp-Entry "mouse-down" () 91 11 ("nextmethod" "bring-to-front" "v" "h")}
-        {Lisp-Entry "activate-frame" () 101 11 ("get-application" "update-windowing-actions" "process-activation" "set!" "hwnd" "BringWindowToTop" "Active-Frame" "self" "neq?" "or" "when" "false" "force?" "force?:")}
-        {Lisp-Entry "deactivate-frame" () 109 11 ("process-deactivation" "set!" "Active-Frame" "self" "eq?" "when")}
-        {Lisp-Entry "destroy" () 120 11 ("get-application" "update-windowing-actions" "acquire-focus" "activate-frame" "deactivate-frame" "nextmethod" "parent" "second-window" "essay" "new-active" "Active-Frame" "self" "eq?" "was-active?" "let*" "remove-surrogate" "get-surrogate" "when")}
-        {Lisp-Entry "show" () 134 11 ("true" "force?:" "activate-front" "nextmethod")}
-        {Lisp-Entry "bring-to-front" () 139 11 ("activate-front" "get-visible?" "when" "nextmethod")}
-        {Lisp-Entry "send-to-back" () 145 11 ("activate-front" "nextmethod")}
-        {Lisp-Entry "process-activation" () 155 11 ("frame-activate" "post-primary" "thread" "execute:" "context:" "Thread" "new" "client-activate" "view" "dynamic" "function" "for-each-docked" "get-locked-activations?" "unless" "get-window-title" "get-toplevel" "set-caption" "get-maximized?" "when" "get-stage" "stage" "let" "self" "parent" "send-child-to-front" "close-popups")}
-        {Lisp-Entry "process-deactivation" () 177 11 ("stage-activate" "get-windows" "null?" "when" "get-stage" "stage" "let" "frame-deactivate")}
-        {Lisp-Entry "frame-activate" () 184 26 ()}
-        {Lisp-Entry "frame-deactivate" () 188 26 ()}}}})
+        {Lisp-Entry "window-style" () 62 11 ("WS_CLIPSIBLINGS" "WS_CLIPCHILDREN" "WS_SYSMENU" "WS_CHILD" "bit-or" "rest")}
+        {Lisp-Entry "default-parent" () 66 11 ("get-stage")}
+        {Lisp-Entry "conclude" () 70 11 ("destroy-mandatory" "bring-to-front" "nextmethod" "rest")}
+        {Lisp-Entry "on-close" () 81 11 ("unprocessed" "confirm-close" "close-popups" "evt")}
+        {Lisp-Entry "on-mouse-activate" () 87 11 ("nextmethod" "bring-to-front")}
+        {Lisp-Entry "mouse-down" () 92 11 ("nextmethod" "bring-to-front" "v" "h")}
+        {Lisp-Entry "activate-frame" () 102 11 ("get-application" "update-windowing-actions" "process-activation" "set!" "handle" "bring-window-to-top" "Active-Frame" "self" "neq?" "or" "when" "false" "force?" "force?:")}
+        {Lisp-Entry "deactivate-frame" () 110 11 ("process-deactivation" "set!" "Active-Frame" "self" "eq?" "when")}
+        {Lisp-Entry "destroy" () 121 11 ("get-application" "update-windowing-actions" "acquire-focus" "activate-frame" "deactivate-frame" "nextmethod" "parent" "second-window" "essay" "new-active" "Active-Frame" "self" "eq?" "was-active?" "let*" "remove-surrogate" "get-surrogate" "when")}
+        {Lisp-Entry "show" () 135 11 ("true" "force?:" "activate-front" "nextmethod")}
+        {Lisp-Entry "bring-to-front" () 140 11 ("activate-front" "get-visible?" "when" "nextmethod")}
+        {Lisp-Entry "send-to-back" () 146 11 ("activate-front" "nextmethod")}
+        {Lisp-Entry "process-activation" () 156 11 ("frame-activate" "post-primary" "thread" "execute:" "context:" "Thread" "new" "client-activate" "view" "dynamic" "function" "for-each-docked" "get-locked-activations?" "unless" "get-window-title" "get-toplevel" "set-caption" "get-maximized?" "when" "get-stage" "stage" "let" "self" "parent" "send-child-to-front" "close-popups")}
+        {Lisp-Entry "process-deactivation" () 178 11 ("stage-activate" "get-windows" "null?" "when" "get-stage" "stage" "let" "frame-deactivate")}
+        {Lisp-Entry "frame-activate" () 185 26 ()}
+        {Lisp-Entry "frame-deactivate" () 189 26 ()}}}})
 "Frame-Button"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "view" "Frame-Button.fusion"} {Time 128355726640000000L}
     {Lisp-Entry "jazz.ui.view.Frame-Button" () 37 9 ("jazz")
@@ -8938,7 +8937,7 @@
       {Lisp-Entry "Frame-Preferences" () 47 7 ("Bitmap-Resource" "icon:" "Figure-Preferences")
         {Lisp-Entry "find-client" () 59 11 ("get-name" "autoload" "get-stage" "find-host")}}}})
 "Frame-Root"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "view" "Frame-Root.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "view" "Frame-Root.fusion"} {Time 128360915480000000L}
     {Lisp-Entry "jazz.ui.view.Frame-Root" () 37 9 ("jazz")
       {Lisp-Entry "Frame-Root" () 50 7 ("on-close" "close" "on-maximize" "maximize" "on-minimize" "form:" "Event-Handler" "action-handler:" "tooltip-text:" "tooltip?:" "type:" "minimize" "name:" "Caption-Root")
         {Lisp-Entry "dragging?" () 53 8 ("false")}
@@ -8949,7 +8948,7 @@
         {Lisp-Entry "get-preserved-position" () 72 18 ("preserved-position")}
         {Lisp-Entry "get-preserved-size" () 76 18 ("preserved-size")}
         {Lisp-Entry "size-change" () 85 11 ("4" "Rect" "insets:" "invalidate-border" "invalidate-caption" "nextmethod" "size")}
-        {Lisp-Entry "on-minimize" () 91 29 ("SW_MINIMIZE" "player" "show-window" "evt")}
+        {Lisp-Entry "on-minimize" () 91 29 ("player" "minimize" "evt")}
         {Lisp-Entry "on-maximize" () 95 29 ("get-stage" "maximize" "evt")}
         {Lisp-Entry "on-close" () 99 29 ("close-player" "evt")}
         {Lisp-Entry "close-player" () 103 11 ("0" "WM_CLOSE" "player" "send-message" "validate-focus")}
@@ -13025,7 +13024,7 @@
         {Lisp-Entry "window-class" () 55 16 ()}
         {Lisp-Entry "initialize" () 60 16 ("Icon-Resource" "icon:" "register-toplevel" "nextmethod")}}}})
 "Jedi-User"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jedi" "lib" "jedi" "application" "Jedi-User.fusion"} {Time 128360669980000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jedi" "lib" "jedi" "application" "Jedi-User.fusion"} {Time 128360923260000000L}
     {Lisp-Entry "jedi.application.Jedi-User" () 37 9 ("jazz")
       {Lisp-Entry "Jedi-User" () 49 7 ("IDE-User")
         {Lisp-Entry "init" () 52 11 ("nextmethod")}
@@ -13218,7 +13217,7 @@
         {Lisp-Entry "test1" () 1791 11 ("debug" "=>" "2" "cond")}
         {Lisp-Entry "test" () 1796 11 ("+" "ID" "lalr-parser" "debug")}
         {Lisp-Entry "test" () 1801 11 ("identity" "CPS" "test")}
-        {Lisp-Entry "test-directx" () 1811 11 ("DDBLTFAST_WAIT" "Top" "Left" "get" "BltFast" "NULL" "MapWindowPoints" "GetClientRect" "RECT" "fr" "0" "Rect" "rect->RECT" "rect" "offscreen" "3" "lHeight" "lWidth" "DDSCAPS_OFFSCREENPLAIN" "DDSD_HEIGHT" "DDSD_WIDTH" "bit-or" "DirectDrawSurface7" "primary" "2" "record-address" "CreateSurface" "DDSCAPS_PRIMARYSURFACE" "lCaps" "ddsCaps" "DDSD_CAPS" "lFlags" "size-of" "lSize" "set" "DDSURFACEDESC2" "ddsd" "DDSCL_NORMAL" "get-hwnd" "SetCooperativeLevel" "DirectDraw7" "cobind" "dd" "1" "assert-hr" "DirectDrawCreate" "ptr" "hr" "receive" "DxVBLib" "DirectX7" "cocreate" "dx" "Point" "position:" "Dimension" "size:" "title:" "Frame" "new" "frame" "let")}
+        {Lisp-Entry "test-directx" () 1811 11 ("DDBLTFAST_WAIT" "Top" "Left" "get" "BltFast" "NULL" "MapWindowPoints" "GetClientRect" "RECT" "fr" "0" "Rect" "rect->RECT" "rect" "offscreen" "3" "lHeight" "lWidth" "DDSCAPS_OFFSCREENPLAIN" "DDSD_HEIGHT" "DDSD_WIDTH" "bit-or" "DirectDrawSurface7" "primary" "2" "record-address" "CreateSurface" "DDSCAPS_PRIMARYSURFACE" "lCaps" "ddsCaps" "DDSD_CAPS" "lFlags" "size-of" "lSize" "set" "DDSURFACEDESC2" "ddsd" "DDSCL_NORMAL" "get-handle" "SetCooperativeLevel" "DirectDraw7" "cobind" "dd" "1" "assert-hr" "DirectDrawCreate" "ptr" "hr" "receive" "DxVBLib" "DirectX7" "cocreate" "dx" "Point" "position:" "Dimension" "size:" "title:" "Frame" "new" "frame" "let")}
         {Lisp-Entry "assert-hr" () 1840 11 ("DxVBLib" "CONST_DDRAWERR" "value->name" "error" "->string" "set-clipboard" "succeeded?" "unless" "n" "hr")}
         {Lisp-Entry "test-analyser" () 1852 11 ("message-box" "set-%" "Jedi" "find-references" "resources" "references" "receive" "true" ":include-path?" "Reference-Analyser" "new" "analyser" "let")}
         {Lisp-Entry "report-times" () 1864 11 ("get-application" "fresh-prompt" "SweepPhase" "EmptyUnvisited" "MarkSystemStack" "MarkRootsFinal" "MarkRootsInitial" "EndMarkPhase" "MarkPhase" "GcSome" ":console" "format" "average" "maximum" "bind" "name" "info" "dynamic" "function" "for-each" "gc-times" "times" "let")}
@@ -14467,13 +14466,13 @@
     {Lisp-Entry "jazz.ui.window.Menu-Transient" () 37 9 ("jazz")
       {Lisp-Entry "Menu-Transient" () 45 7 ("Transient")}}})
 "Menubar"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "menu" "Menubar.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "menu" "Menubar.fusion"} {Time 128360915300000000L}
     {Lisp-Entry "jazz.ui.menu.Menubar" () 37 9 ("jazz")
       {Lisp-Entry "Menubar" () 50 7 ("on-close" "close" "on-restore" "restore" "on-minimize" "form:" "Event-Handler" "action-handler:" "tooltip-text:" "tooltip?:" "type:" "minimize" "name:" "visible?:" "Dimension" "size:" "Menu")
         {Lisp-Entry "showing?" () 53 8 ("false")}
         {Lisp-Entry "host-activate" () 68 11 ("self" "set-menubar" "get-application" "appl" "let")}
         {Lisp-Entry "host-deactivate" () 73 11 ("set-menubar" "get-application" "appl" "let")}
-        {Lisp-Entry "on-minimize" () 83 11 ("get-stage" "restore" "SW_MINIMIZE" "show-window" "current-frame" "frame" "let" "evt")}
+        {Lisp-Entry "on-minimize" () 83 11 ("get-stage" "restore" "minimize" "current-frame" "frame" "let" "evt")}
         {Lisp-Entry "on-restore" () 89 11 ("get-stage" "restore" "evt")}
         {Lisp-Entry "on-close" () 93 11 ("0" "WM_CLOSE" "send-message" "current-frame" "frame" "let" "validate-focus" "evt")}
         {Lisp-Entry "maximize" () 104 18 ("show-buttons")}
@@ -14559,14 +14558,14 @@
         {Lisp-Entry "initialize" () 494 11 ("client" "spy-window" "set!" "nextmethod" "clt" "wnd")}
         {Lisp-Entry "dispatch-message" () 500 11 ("incoming-result" "when" "decrease!" "dispatch-message" "result" "increase!" "client" "level" "spy-window" "incoming-message" "row" "let" "lparam" "wparam" "msg")}}}})
 "Message-Window"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "Message-Window.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "Message-Window.fusion"} {Time 128360916800000000L}
     {Lisp-Entry "jazz.ui.window.Message-Window" () 37 9 ("jazz")
       {Lisp-Entry "Message-Window" () 46 7 ("visible?:" "Window")
         {Lisp-Entry "default-parent" () 58 11 ()}
         {Lisp-Entry "window-parent" () 62 11 ()}
-        {Lisp-Entry "window-style" () 66 11 ("0" "rest")}
-        {Lisp-Entry "window-ex-style" () 70 11 ("0" "rest")}
-        {Lisp-Entry "dispatch-message" () 79 11 ("nextmethod" "else" "object-address" "JZ_RECEIVE" "0" "address-object-unsafe" "JZ_SEND" "receive-post" "JZ_POST" "ecase" "lparam" "wparam" "msg")}}}})
+        {Lisp-Entry "window-style" () 67 11 ("0" "rest")}
+        {Lisp-Entry "window-ex-style" () 72 11 ("0" "rest")}
+        {Lisp-Entry "dispatch-message" () 82 11 ("nextmethod" "else" "object-address" "JZ_RECEIVE" "0" "address-object-unsafe" "JZ_SEND" "receive-post" "JZ_POST" "ecase" "lparam" "wparam" "msg")}}}})
 "Method-Declaration"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "dialect" "walker" "declaration" "Method-Declaration.fusion"} {Time 128355726600000000L}
     {Lisp-Entry "jazz.language.declaration.Method-Declaration" () 37 9 ("jazz")
@@ -15217,11 +15216,11 @@
         {Lisp-Entry "test-part2" () 226 9 ("error?" "begin" "call-bah2" "Z" "Y" "call-bah" "yiyi" "yuyu" "equal?" "4" "tata" "tutu" "toto" "7" "6" "5" "bar" "foo" "=" "rpt" "validate" "X2" "X" "new" "X1" "set!")}
         {Lisp-Entry "test-part3" () 258 9 ("4" "3" "1" "J" "public" "Object" "extends" "class" "v" "virtual" "protected" "+" "apply" "rest" "f" "method" "aa" "5" "initialize" "meta" "slot" "6" "9" "mak" "bar" "2" "I" "new" "foo" "list" "=" "rpt" "validate" "7" "mm" "set!")}}}})
 "OpenFile-Dialog"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "dialog" "OpenFile-Dialog.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "dialog" "OpenFile-Dialog.fusion"} {Time 128360915020000000L}
     {Lisp-Entry "jazz.ui.dialog.OpenFile-Dialog" () 37 9 ("jazz")
       {Lisp-Entry "OpenFile-Dialog" () 49 7 ("Dialog")
         {Lisp-Entry "tokenise-choose-file-string" () 52 11 ("1" "+" "WCHAR-subarray" "WCHAR-string" "cons" "if" "WCHAR-array-ref" "eq?" "end-of-string?" "true" "start-of-string?" "0" "offset" "loop" "let" "buffer")}
-        {Lisp-Entry "get-modal" () 64 11 ("error" "throw-cancel" "CommDlgExtendedError" "code" "append" "map" "dirlist" "filenames" "dir" "bind" "list" "1" "length" "=" "tokenise-choose-file-string" "tokens" "tokenise" "File" "new" "WCHAR-string" "filename" "begin" "GetOpenFileName" "anchors" "anchors:" "debug" "pathname" "dynamic" "function" "anchorize" "OPENFILENAME-lpfnHook-set!" "OPENFILENAME-lCustData-set!" "OPENFILENAME-lpstrDefExt-set!" "OFN_ENABLESIZING" "OFN_FILEMUSTEXIST" "OFN_ENABLEHOOK" "OFN_HIDEREADONLY" "OFN_ALLOWMULTISELECT" "OFN_EXPLORER" "bit-or" "OPENFILENAME-Flags-set!" "either" "OPENFILENAME-lpstrTitle-set!" "parse" "directory" "OPENFILENAME-lpstrInitialDir-set!" "OPENFILENAME-nMaxFile-set!" "OPENFILENAME-lpstrFile-set!" "OPENFILENAME-lpstrFilter-set!" "get-hwnd" "get-toplevel" "toplevel" "OPENFILENAME-hwndOwner-set!" "OPENFILENAME-sizeof" "OPENFILENAME-lStructSize-set!" "get-dialog-proc" "fake-dialog-proc" "get-current-directory" "fake-current-directory" "NULL" "extensions" "extensions-filter" "fake-extensions-filter" "WCHAR-copy" "0" "WCHAR-array-set!" "initial-filename" "not" "WCHAR-array-make" "buffer" "OPENFILENAME-make" "r" "with" "*" "MAX_PATH" "+" "multiple-selection?" "if" "size" "let" "close-all-popups" "title" "title:")}}}})
+        {Lisp-Entry "get-modal" () 64 11 ("error" "throw-cancel" "CommDlgExtendedError" "code" "append" "map" "dirlist" "filenames" "dir" "bind" "list" "1" "length" "=" "tokenise-choose-file-string" "tokens" "tokenise" "File" "new" "WCHAR-string" "filename" "begin" "GetOpenFileName" "anchors" "anchors:" "debug" "pathname" "dynamic" "function" "anchorize" "OPENFILENAME-lpfnHook-set!" "OPENFILENAME-lCustData-set!" "OPENFILENAME-lpstrDefExt-set!" "OFN_ENABLESIZING" "OFN_FILEMUSTEXIST" "OFN_ENABLEHOOK" "OFN_HIDEREADONLY" "OFN_ALLOWMULTISELECT" "OFN_EXPLORER" "bit-or" "OPENFILENAME-Flags-set!" "either" "OPENFILENAME-lpstrTitle-set!" "parse" "directory" "OPENFILENAME-lpstrInitialDir-set!" "OPENFILENAME-nMaxFile-set!" "OPENFILENAME-lpstrFile-set!" "OPENFILENAME-lpstrFilter-set!" "get-handle" "get-toplevel" "toplevel" "OPENFILENAME-hwndOwner-set!" "OPENFILENAME-sizeof" "OPENFILENAME-lStructSize-set!" "get-dialog-proc" "fake-dialog-proc" "get-current-directory" "fake-current-directory" "NULL" "extensions" "extensions-filter" "fake-extensions-filter" "WCHAR-copy" "0" "WCHAR-array-set!" "initial-filename" "not" "WCHAR-array-make" "buffer" "OPENFILENAME-make" "r" "with" "*" "MAX_PATH" "+" "multiple-selection?" "if" "size" "let" "close-all-popups" "title" "title:")}}}})
 "Oracle-Data-Source"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "access" "providers" "inventory" "oracle" "Oracle-Data-Source.fusion"} {Time 128355726600000000L}
     {Lisp-Entry "jazz.access.providers.inventory.oracle.Oracle-Data-Source" () 37 9 ("jazz")
@@ -15242,13 +15241,13 @@
         {Lisp-Entry "get-datatype" () 57 11 ("Oracle-Datatype")}
         {Lisp-Entry "present" () 66 11 ()}}}})
 "Orphanage-Window"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "Orphanage-Window.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "Orphanage-Window.fusion"} {Time 128360916840000000L}
     {Lisp-Entry "jazz.ui.window.Orphanage-Window" () 37 9 ("jazz")
       {Lisp-Entry "Orphanage-Window" () 48 7 ("visible?:" "Window" "Window-Class")
         {Lisp-Entry "default-parent" () 60 11 ()}
         {Lisp-Entry "window-parent" () 64 11 ("NULL")}
-        {Lisp-Entry "window-style" () 68 11 ("0" "rest")}
-        {Lisp-Entry "window-ex-style" () 72 11 ("0" "rest")}}}})
+        {Lisp-Entry "window-style" () 69 11 ("0" "rest")}
+        {Lisp-Entry "window-ex-style" () 74 11 ("0" "rest")}}}})
 "Outline-Row"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "outline" "Outline-Row.fusion"} {Time 128355726640000000L}
     {Lisp-Entry "jazz.ui.outline.Outline-Row" () 37 9 ("jazz")
@@ -15693,10 +15692,10 @@
         {Lisp-Entry "wrap-header/footer" () 127 18 ("get-footer" "get-header" "wrap-content" "context")}
         {Lisp-Entry "get-drawing-background" () 137 11 ("blue:" "green:" "red:" "Color" "nextmethod" ":printing?" "getf" "if" "context")}}}})
 "Page-Setup-Dialog"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "print" "Page-Setup-Dialog.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "print" "Page-Setup-Dialog.fusion"} {Time 128360915360000000L}
     {Lisp-Entry "jazz.ui.print.Page-Setup-Dialog" () 37 9 ("jazz")
       {Lisp-Entry "Page-Setup-Dialog" () 46 7 ("Dialog")
-        {Lisp-Entry "get-modal" () 50 16 ("error" "throw-cancel" "=" "CommDlgExtendedError" "code" "GlobalUnlock" "rtMinMargin" "RECT->rect" "ptPaperSize" "POINT->dimension" "values" "prog1" "coerce" "GlobalLock" "pointer" "get" "handle" "let*" "PageSetupDlg" "bottom" "right" "top" "left" "rtMargin" "when" "PSD_DISABLEPRINTER" "0" "PSD_MARGINS" "if" "PSD_INTHOUSANDTHSOFINCHES" "Flags" "record-address" "hDevMode" "get-application" "get-toplevel" "get-hwnd" "hwndOwner" "lStructSize" "DM_DEFAULTSOURCE" "DM_PAPERSIZE" "DM_ORIENTATION" "bit-or" "dmFields" "dmDefaultSource" "dmPaperSize" "dmOrientation" "size-of" "dmSize" "set" "DEVMODE" "devmode" "PAGESETUPDLG" "new" "rec" "let" "close-all-popups" "paper-source" "paper-source:" "paper-size" "paper-size:" "orientation" "orientation:" "margins" "margins:")}}}})
+        {Lisp-Entry "get-modal" () 50 16 ("error" "throw-cancel" "=" "CommDlgExtendedError" "code" "GlobalUnlock" "rtMinMargin" "RECT->rect" "ptPaperSize" "POINT->dimension" "values" "prog1" "coerce" "GlobalLock" "pointer" "get" "handle" "let*" "PageSetupDlg" "bottom" "right" "top" "left" "rtMargin" "when" "PSD_DISABLEPRINTER" "0" "PSD_MARGINS" "if" "PSD_INTHOUSANDTHSOFINCHES" "Flags" "record-address" "hDevMode" "get-application" "get-toplevel" "get-handle" "hwndOwner" "lStructSize" "DM_DEFAULTSOURCE" "DM_PAPERSIZE" "DM_ORIENTATION" "bit-or" "dmFields" "dmDefaultSource" "dmPaperSize" "dmOrientation" "size-of" "dmSize" "set" "DEVMODE" "devmode" "PAGESETUPDLG" "new" "rec" "let" "close-all-popups" "paper-source" "paper-source:" "paper-size" "paper-size:" "orientation" "orientation:" "margins" "margins:")}}}})
 "Page-Status"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "print" "Page-Status.fusion"} {Time 128355726640000000L}
     {Lisp-Entry "jazz.ui.print.Page-Status" () 37 9 ("jazz")
@@ -15745,16 +15744,16 @@
         {Lisp-Entry "get-dc" () 55 18 ("dc")}
         {Lisp-Entry "get-hdc" () 59 18 ("dc" "get-hdc")}}}})
 "Palette"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "Palette.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "Palette.fusion"} {Time 128360916860000000L}
     {Lisp-Entry "jazz.ui.window.Palette" () 37 9 ("jazz")
       {Lisp-Entry "Palette" () 47 7 ("Overlapped")
         {Lisp-Entry "initialize" () 56 16 ("register-class" "nextmethod")}
         {Lisp-Entry "window-class" () 62 16 ()}
         {Lisp-Entry "default-parent" () 66 11 ("get-toplevel")}
-        {Lisp-Entry "window-style" () 70 11 ("WS_CLIPCHILDREN" "WS_POPUP" "bit-or" "rest")}
-        {Lisp-Entry "window-ex-style" () 74 11 ("WS_EX_TOOLWINDOW" "rest")}
-        {Lisp-Entry "on-activate-palette" () 83 11 ("self" "parent" "send-child-to-front")}
-        {Lisp-Entry "on-deactivate-palette" () 87 11 ()}}}})
+        {Lisp-Entry "window-style" () 71 11 ("WS_CLIPCHILDREN" "WS_POPUP" "bit-or" "rest")}
+        {Lisp-Entry "window-ex-style" () 76 11 ("WS_EX_TOOLWINDOW" "rest")}
+        {Lisp-Entry "on-activate-palette" () 85 11 ("self" "parent" "send-child-to-front")}
+        {Lisp-Entry "on-deactivate-palette" () 89 11 ()}}}})
 "Palette-Preferences"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "preferences" "Palette-Preferences.fusion"} {Time 128355726640000000L}
     {Lisp-Entry "jazz.ui.preferences.Palette-Preferences" () 37 9 ("jazz")
@@ -16149,7 +16148,7 @@
         {Lisp-Entry "close-editor" () 79 11 ("remove-every-son" "nextmethod")}
         {Lisp-Entry "in-edition?" () 85 11 ("get-sons" "nextmethod" "or")}}}})
 "Popup"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "Popup.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "Popup.fusion"} {Time 128360916880000000L}
     {Lisp-Entry "jazz.ui.window.Popup" () 37 9 ("jazz")
       {Lisp-Entry "Popup-Class" () 48 7 ("View-Player-Class")
         {Lisp-Entry "initialize" () 51 11 ("register-class" "nextmethod")}
@@ -16158,16 +16157,16 @@
         {Lisp-Entry "initiator" () 63 8 ()}
         {Lisp-Entry "default-parent" () 71 11 ("get-toplevel")}
         {Lisp-Entry "window-parent" () 75 11 ("NULL")}
-        {Lisp-Entry "window-style" () 79 11 ("WS_CLIPCHILDREN" "WS_POPUP" "bit-or" "rest")}
-        {Lisp-Entry "window-ex-style" () 83 11 ("WS_EX_TOOLWINDOW" "bit-or" "rest")}
-        {Lisp-Entry "conclude" () 87 11 ("destroy-mandatory" "nextmethod" "rest")}
-        {Lisp-Entry "show" () 92 11 ("show-noactivate" "true" "set-visible-flag")}
-        {Lisp-Entry "destroy" () 102 11 ("nextmethod" "self" "popup-destroy" "initiator" "when")}
-        {Lisp-Entry "get-initiator" () 113 18 ("initiator")}
-        {Lisp-Entry "set-initiator" () 117 18 ("initiator" "set!" "value")}
-        {Lisp-Entry "dispatch-message" () 127 11 ("nextmethod" "MA_NOACTIVATE" "WM_MOUSEACTIVATE" "eq?" "if" "lparam" "wparam" "msg")}
-        {Lisp-Entry "popup-key-press" () 138 26 ("true" "popup-escape-press" "=" "when" "char")}
-        {Lisp-Entry "popup-escape-press" () 144 26 ("self" "close-popup" "char")}}}})
+        {Lisp-Entry "window-style" () 80 11 ("WS_CLIPCHILDREN" "WS_POPUP" "bit-or" "rest")}
+        {Lisp-Entry "window-ex-style" () 85 11 ("WS_EX_TOOLWINDOW" "bit-or" "rest")}
+        {Lisp-Entry "conclude" () 89 11 ("destroy-mandatory" "nextmethod" "rest")}
+        {Lisp-Entry "show" () 94 11 ("show-noactivate" "true" "set-visible-flag")}
+        {Lisp-Entry "destroy" () 104 11 ("nextmethod" "self" "popup-destroy" "initiator" "when")}
+        {Lisp-Entry "get-initiator" () 115 18 ("initiator")}
+        {Lisp-Entry "set-initiator" () 119 18 ("initiator" "set!" "value")}
+        {Lisp-Entry "dispatch-message" () 129 11 ("nextmethod" "MA_NOACTIVATE" "WM_MOUSEACTIVATE" "eq?" "if" "lparam" "wparam" "msg")}
+        {Lisp-Entry "popup-key-press" () 140 26 ("true" "popup-escape-press" "=" "when" "char")}
+        {Lisp-Entry "popup-escape-press" () 146 26 ("self" "close-popup" "char")}}}})
 "Portfolio"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "image" "Portfolio.fusion"} {Time 128355726640000000L}
     {Lisp-Entry "jazz.ui.image.Portfolio" () 37 9 ("jazz")
@@ -16436,10 +16435,10 @@
       {Lisp-Entry "Primitive-Doc" () 45 7 ("Definition-Doc")
         {Lisp-Entry "get-class-image" () 54 16 ("Bitmap-Resource")}}}})
 "Print-Dialog"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "print" "Print-Dialog.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "print" "Print-Dialog.fusion"} {Time 128360915420000000L}
     {Lisp-Entry "jazz.ui.print.Print-Dialog" () 37 9 ("jazz")
       {Lisp-Entry "Print-Dialog" () 46 7 ("WinShell" "WinDlg" "WinGDI" "WinUser" "WinKernel" "WinDef" "System" "Utilities" "Dialog")
-        {Lisp-Entry "get-modal" () 50 16 ("error" "throw-cancel" "=" "CommDlgExtendedError" "code" "dmOrientation" "nCopies" "PD_PAGENUMS" "PD_SELECTION" "PD_PRINTTOFILE" "mask-bit-set?" "hDC" "values" "DEVMODE" "coerce" "devmode" "GlobalLock" "pointer" "hDevMode" "handle" "get" "flags" "let*" "PrintDlg" "if" "nMaxPage" "1" "nMinPage" "nToPage" "0" "nFromPage" "PD_USEDEVMODECOPIESANDCOLLATE" "PD_NOSELECTION" "PD_HIDEPRINTTOFILE" "PD_RETURNDC" "bit-or" "Flags" "get-application" "get-toplevel" "get-hwnd" "hwndOwner" "size-of" "lStructSize" "set" "PRINTDLG" "new" "rec" "let" "close-all-popups" "rest")}}}})
+        {Lisp-Entry "get-modal" () 50 16 ("error" "throw-cancel" "=" "CommDlgExtendedError" "code" "dmOrientation" "nCopies" "PD_PAGENUMS" "PD_SELECTION" "PD_PRINTTOFILE" "mask-bit-set?" "hDC" "values" "DEVMODE" "coerce" "devmode" "GlobalLock" "pointer" "hDevMode" "handle" "get" "flags" "let*" "PrintDlg" "if" "nMaxPage" "1" "nMinPage" "nToPage" "0" "nFromPage" "PD_USEDEVMODECOPIESANDCOLLATE" "PD_NOSELECTION" "PD_HIDEPRINTTOFILE" "PD_RETURNDC" "bit-or" "Flags" "get-application" "get-toplevel" "get-handle" "hwndOwner" "size-of" "lStructSize" "set" "PRINTDLG" "new" "rec" "let" "close-all-popups" "rest")}}}})
 "Print-Event"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "event" "Print-Event.fusion"} {Time 128355726640000000L}
     {Lisp-Entry "jazz.ui.event.Print-Event" () 37 9 ("jazz")
@@ -17367,7 +17366,7 @@
         {Lisp-Entry "call-pulse" () 47 35 ()}
         {Lisp-Entry "pulse" () 48 35 ()}}}})
 "Pulse"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "library" "utility" "Pulse.fusion"} {Time 128355726620000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "library" "utility" "Pulse.fusion"} {Time 128360913800000000L}
     {Lisp-Entry "jazz.library.utility.Pulse" () 37 9 ("jazz")
       {Lisp-Entry "Pulse" () 44 7 ("Pulsable" "Component")
         {Lisp-Entry "owner" () 47 12 ("generate" "accessors")}
@@ -17375,8 +17374,8 @@
         {Lisp-Entry "pulse-handler" () 49 12 ("generate" "accessors")}
         {Lisp-Entry "window" () 52 8 ()}
         {Lisp-Entry "identifier" () 53 8 ()}
-        {Lisp-Entry "start" () 61 18 ("NULL" "period" "self" "object-address" "get-hwnd" "SetTimer" "owner" "get-player" "window" "set!" "identifier" "null?" "when")}
-        {Lisp-Entry "stop" () 68 18 ("set!" "window" "get-hwnd" "KillTimer" "identifier" "when")}
+        {Lisp-Entry "start" () 61 18 ("NULL" "period" "self" "object-address" "get-handle" "SetTimer" "owner" "get-player" "window" "set!" "identifier" "null?" "when")}
+        {Lisp-Entry "stop" () 68 18 ("set!" "window" "get-handle" "KillTimer" "identifier" "when")}
         {Lisp-Entry "call-pulse" () 81 11 ("pulse" ":mouse-down" "Event" "new" "self" "invoke" "pulse-handler" "if")}
         {Lisp-Entry "pulse" () 87 11 ()}}}})
 "Push-Button"
@@ -19277,10 +19276,10 @@
       {Lisp-Entry "Save-Environment-Listener" () 46 11 ("Listener")
         {Lisp-Entry "save-environment" () 49 35 ()}}}})
 "SaveFile-Dialog"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "dialog" "SaveFile-Dialog.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "dialog" "SaveFile-Dialog.fusion"} {Time 128360915060000000L}
     {Lisp-Entry "jazz.ui.dialog.SaveFile-Dialog" () 37 9 ("jazz")
       {Lisp-Entry "SaveFile-Dialog" () 46 7 ("Dialog")
-        {Lisp-Entry "get-modal" () 50 16 ("error" "throw-cancel" "=" "CommDlgExtendedError" "code" "tokenise" "File" "anchorize" "adjust-string" "begin" "GetSaveFileName" "get-dialog-proc" "lpfnHook" "lCustData" "either" "lpstrDefExt" "OFN_OVERWRITEPROMPT" "OFN_ENABLESIZING" "OFN_FILEMUSTEXIST" "OFN_ENABLEHOOK" "OFN_EXPLORER" "bit-or" "Flags" "get-current-directory" "parse" "lpstrInitialDir" "nMaxFile" "lpstrFile" "extensions-filter" "lpstrFilter" "NULL" "get-hwnd" "get-toplevel" "toplevel" "hwndOwner" "size-of" "lStructSize" "set" "copy-into!" "0" "set-element!" "null?" "if" "MAX_PATH" "make-string" "filename" "OPENFILENAME" "new" "r" "let" "create-directories" "when" "close-all-popups" "anchors" "anchors:" "extensions" "extensions:" "default-extension" "default-extension:" "initial-filename" "initial-filename:" "directory" "directory:")}}}})
+        {Lisp-Entry "get-modal" () 50 16 ("error" "throw-cancel" "=" "CommDlgExtendedError" "code" "tokenise" "File" "anchorize" "adjust-string" "begin" "GetSaveFileName" "get-dialog-proc" "lpfnHook" "lCustData" "either" "lpstrDefExt" "OFN_OVERWRITEPROMPT" "OFN_ENABLESIZING" "OFN_FILEMUSTEXIST" "OFN_ENABLEHOOK" "OFN_EXPLORER" "bit-or" "Flags" "get-current-directory" "parse" "lpstrInitialDir" "nMaxFile" "lpstrFile" "extensions-filter" "lpstrFilter" "NULL" "get-handle" "get-toplevel" "toplevel" "hwndOwner" "size-of" "lStructSize" "set" "copy-into!" "0" "set-element!" "null?" "if" "MAX_PATH" "make-string" "filename" "OPENFILENAME" "new" "r" "let" "create-directories" "when" "close-all-popups" "anchors" "anchors:" "extensions" "extensions:" "default-extension" "default-extension:" "initial-filename" "initial-filename:" "directory" "directory:")}}}})
 "Scaled-View"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jedi" "lib" "jedi" "showcase" "Scaled-View.fusion"} {Time 128355726660000000L}
     {Lisp-Entry "jedi.showcase.Scaled-View" () 37 9 ("jazz")
@@ -20425,7 +20424,7 @@
         {Lisp-Entry "get-class-image" () 271 16 ("Bitmap-Resource")}
         {Lisp-Entry "property-presentation" () 276 16 ("nextmethod" "else" "after-handler" "insets" "division" "mode" "orientation" "state" "separator" "field-name" "case" "property")}}}})
 "Splitter-Window"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "Splitter-Window.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "Splitter-Window.fusion"} {Time 128360917080000000L}
     {Lisp-Entry "jazz.ui.window.Splitter-Window" () 37 9 ("jazz")
       {Lisp-Entry "Splitter-Window" () 49 7 ("View-Player" "View-Player-Class")
         {Lisp-Entry "separator" () 52 12 ("generate" "accessors" "resize")}
@@ -20450,7 +20449,7 @@
         {Lisp-Entry "zoom" () 164 18 ("layout-window" "children" "eq?" "set-visible?" "child" "dynamic" "function" "for-each" "zoom" "state" "set!" "target")}
         {Lisp-Entry "unzoom" () 172 18 ("layout-window" "children" "true" "set-visible?" "child" "dynamic" "function" "for-each" "split" "state" "set!")}
         {Lisp-Entry "get-zoomed" () 180 18 ("children" "get-visible?" "child" "dynamic" "function" "find-if" "zoom" "state" "eq?" "when")}
-        {Lisp-Entry "cursor-update" () 192 11 (":horizontal-splitter" "vert" ":vertical-splitter" "horz" "orientation" "case" "in-rect?" "when" "mouse-position" "pos" "let" "else" "unprocessed" "get-mouse-down?" "bar-bounds" "not" "HTCLIENT" "/=" "or" ":arrow" "set-cursor" "resize" "separator" "neq?" "cond" "hit")}
+        {Lisp-Entry "cursor-update" () 192 11 (":horizontal-splitter" "vert" ":vertical-splitter" "horz" "orientation" "case" "in-rect?" "when" "mouse-position" "pos" "let" "else" "unprocessed" "get-mouse-down?" "bar-bounds" "not" "or" ":arrow" "set-cursor" "resize" "separator" "neq?" "cond" "hit")}
         {Lisp-Entry "absolute->relative" () 210 11 ("percentage" "get-height" "vert" "get-width" "horz" "orientation" "case" "size" "let" "division")}
         {Lisp-Entry "relative->absolute" () 217 11 ("-" "set!" "positive?" "if" "abs" "percent" "round" "pct" "get-height" "vert" "get-width" "horz" "orientation" "case" "size" "let*" "division")}
         {Lisp-Entry "mouse-down" () 233 11 ("acquire-capture" "relative->absolute" "division" "relative" "mode" "=" "vert" "horz" "orientation" "case" "previous" "true" "dragging?" "set!" "Point" "new" "in-rect?" "bar-bounds" "resize" "separator" "eq?" "and" "when" "v" "h")}
@@ -22397,7 +22396,7 @@
         {Lisp-Entry "install" () 54 11 ("Variable" "monospace?:" "Code" "Dark-Blue" "Hyperlink" "Reference" "Purple" "Comment" "Dark-Red" "Color" "color:" "Title" "italic?:" "point-size:" "font-name:" "Font" "font:" "Text-Style" "add-style" "Heading2" "Heading1" "Default" "base:" "Heading0" "name:" "Format" "add-format" "nextmethod" "rest")}
         {Lisp-Entry "get-context-menu" () 72 11 ("new-text-context-menu")}}}})
 "Toplevel"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "Toplevel.fusion"} {Time 128355726660000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "Toplevel.fusion"} {Time 128360917400000000L}
     {Lisp-Entry "jazz.ui.window.Toplevel" () 37 9 ("jazz")
       {Lisp-Entry "Toplevel" () 50 7 ("visible?:" "Overlapped")
         {Lisp-Entry "fullscreen?" () 53 12 ("set-fullscreen?" "get-fullscreen?" "false")}
@@ -22408,49 +22407,49 @@
         {Lisp-Entry "workspace-splitter" () 60 8 ()}
         {Lisp-Entry "site" () 61 8 ()}
         {Lisp-Entry "register-toplevel" () 74 26 ("RegisterClass" "window-class" "lpszClassName" "lpszMenuName" "hbrBackground" "NULL" "hCursor" "height:" "width:" "Image" "load-image" "hIcon" "hInstance" "cbWndExtra" "0" "cbClsExtra" "get-window-proc" "lpfnWndProc" "class-style" "style" "set" "WNDCLASS" "new" "wc" "current-instance" "instance" "let" "icon" "icon:")}
-        {Lisp-Entry "window-style" () 90 11 ("WS_SYSMENU" "WS_MINIMIZEBOX" "WS_OVERLAPPED" "WS_POPUP" "WS_CLIPCHILDREN" "WS_CLIPSIBLINGS" "bit-or" "rest")}
-        {Lisp-Entry "window-ex-style" () 99 11 ("WS_EX_APPWINDOW" "rest")}
-        {Lisp-Entry "default-parent" () 103 11 ()}
-        {Lisp-Entry "window-parent" () 107 11 ("NULL")}
-        {Lisp-Entry "install" () 111 11 ("nextmethod" "setup-workspace-splitter" "rest")}
-        {Lisp-Entry "size-change" () 121 11 ("width" "-" "Dimension" "set-size" "+" "Point" "new" "set-position" "height" "4" "0" "root" "get-maximized?" "if" "border" "let" "workspace-splitter" "when" "nextmethod" "size")}
-        {Lisp-Entry "on-activate" () 130 11 ("nextmethod" "toplevel-deactivate" "WA_INACTIVE" "=" "when" "kind")}
-        {Lisp-Entry "setup-workspace-splitter" () 141 11 ("new-workspace-splitter" "workspace-splitter" "set!")}
-        {Lisp-Entry "new-workspace-splitter" () 145 29 ("zoom" "state:" "self" "parent:" "Workspace-Splitter" "new")}
-        {Lisp-Entry "stage-window" () 154 26 ("get-stage" "workspace-splitter" "when")}
-        {Lisp-Entry "stage-border-class" () 159 26 ("Stage-Border")}
-        {Lisp-Entry "stage-class" () 163 26 ("Stage")}
-        {Lisp-Entry "new-root" () 172 11 ("Toplevel-Root" "new")}
-        {Lisp-Entry "get-workspace-splitter" () 181 18 ("workspace-splitter")}
-        {Lisp-Entry "focus-gain" () 193 11 ("processed" "reactivate-focus")}
-        {Lisp-Entry "on-close" () 203 11 ("processed" "exit-process" "get-process" "stop-loop" "evt")}
-        {Lisp-Entry "on-activate-app" () 212 11 ("processed" "activate" "root" "restore-minimized" "deactivate" "0" "=" "if" "get-application" "appl" "let" "Cancel-Signal" "catch" "status")}
-        {Lisp-Entry "show" () 222 11 ("update-window" "workspace-installed" "show-undisplayed-message" "SW_SHOWNORMAL" "show-window" "child" "apply-preferences" "get-active" "active" "when" "false" "error?:" "workspaces" "get-preferences" "pref" "get-application" "appl" "let" "true" "set-visible-flag")}
-        {Lisp-Entry "setting-change" () 240 11 ("update-bounds" "fullscreen?" "unless" "SPI_SETWORKAREA" "ecase" "wparam")}
-        {Lisp-Entry "get-fullscreen?" () 252 18 ("fullscreen?")}
-        {Lisp-Entry "set-fullscreen?" () 256 18 ("update-bounds" "set!" "fullscreen?" "/=" "when" "value")}
-        {Lisp-Entry "update-bounds" () 262 18 ("8" "+" "4" "else" "-" "new" "rect-position" "rect-size" "get-work-area" "rect" "set-size" "0" "Point" "set-position" "when" "get-size" "size" "get-desktop" "desktop" "let*" "caption?" "not" "fullscreen?" "or" "cond" "caption-height" "root" "get-maximized?" "maximized?" "get-workspace-splitter" "splitter" "let" "dynamic" "function" "with-locked-update")}
-        {Lisp-Entry "get-caption-base" () 298 18 ("caption-base")}
-        {Lisp-Entry "set-caption-base" () 302 18 ("invalidate-title" "caption-base" "set!" "value")}
-        {Lisp-Entry "get-caption?" () 312 18 ("caption?")}
-        {Lisp-Entry "set-caption?" () 316 18 ("update-bounds" "set!" "caption?" "/=" "when" "value")}
-        {Lisp-Entry "get-caption" () 322 18 ("caption")}
-        {Lisp-Entry "set-caption" () 326 18 ("invalidate-title" "caption" "set!" "value")}
-        {Lisp-Entry "refresh-caption" () 331 18 ("invalidate-title" "get-window-title" "if" "caption" "set!" "current-frame" "frame" "let")}
-        {Lisp-Entry "invalidate-title" () 342 11 ("invalidate-caption" "root" "set-title" "effective-title" "title" "let")}
-        {Lisp-Entry "effective-title" () 349 29 ("localize" "format" "caption-base" "maximized?" "caption" "not" "or" "if")}
-        {Lisp-Entry "maximize" () 360 18 ("invalidate-title" "true" "maximized?" "set!")}
-        {Lisp-Entry "restore" () 365 18 ("invalidate-title" "false" "maximized?" "set!")}
-        {Lisp-Entry "get-palettes" () 375 18 ("children" "get-visible?" "Palette" "is?" "and" "window" "dynamic" "function" "collect-if")}
-        {Lisp-Entry "insert-menus" () 387 18 ("menu-widths" "menu")}
-        {Lisp-Entry "set-status-text" () 391 18 ("user-message" "text")}}}})
+        {Lisp-Entry "window-style" () 91 11 ("WS_SYSMENU" "WS_MINIMIZEBOX" "WS_OVERLAPPED" "WS_POPUP" "WS_CLIPCHILDREN" "WS_CLIPSIBLINGS" "bit-or" "rest")}
+        {Lisp-Entry "window-ex-style" () 101 11 ("WS_EX_APPWINDOW" "rest")}
+        {Lisp-Entry "default-parent" () 105 11 ()}
+        {Lisp-Entry "window-parent" () 109 11 ("NULL")}
+        {Lisp-Entry "install" () 113 11 ("nextmethod" "setup-workspace-splitter" "rest")}
+        {Lisp-Entry "size-change" () 123 11 ("width" "-" "Dimension" "set-size" "+" "Point" "new" "set-position" "height" "4" "0" "root" "get-maximized?" "if" "border" "let" "workspace-splitter" "when" "nextmethod" "size")}
+        {Lisp-Entry "on-activate" () 132 11 ("nextmethod" "toplevel-deactivate" "WA_INACTIVE" "=" "when" "kind")}
+        {Lisp-Entry "setup-workspace-splitter" () 143 11 ("new-workspace-splitter" "workspace-splitter" "set!")}
+        {Lisp-Entry "new-workspace-splitter" () 147 29 ("zoom" "state:" "self" "parent:" "Workspace-Splitter" "new")}
+        {Lisp-Entry "stage-window" () 156 26 ("get-stage" "workspace-splitter" "when")}
+        {Lisp-Entry "stage-border-class" () 161 26 ("Stage-Border")}
+        {Lisp-Entry "stage-class" () 165 26 ("Stage")}
+        {Lisp-Entry "new-root" () 174 11 ("Toplevel-Root" "new")}
+        {Lisp-Entry "get-workspace-splitter" () 183 18 ("workspace-splitter")}
+        {Lisp-Entry "focus-gain" () 195 11 ("processed" "reactivate-focus")}
+        {Lisp-Entry "on-close" () 205 11 ("processed" "exit-process" "get-process" "stop-loop" "evt")}
+        {Lisp-Entry "on-activate-app" () 214 11 ("processed" "activate" "root" "restore-minimized" "deactivate" "0" "=" "if" "get-application" "appl" "let" "Cancel-Signal" "catch" "status")}
+        {Lisp-Entry "show" () 224 11 ("update-window" "workspace-installed" "show-undisplayed-message" "nextmethod" "child" "apply-preferences" "get-active" "active" "when" "false" "error?:" "workspaces" "get-preferences" "pref" "get-application" "appl" "let" "true" "set-visible-flag")}
+        {Lisp-Entry "setting-change" () 242 11 ("update-bounds" "fullscreen?" "unless" "SPI_SETWORKAREA" "ecase" "wparam")}
+        {Lisp-Entry "get-fullscreen?" () 254 18 ("fullscreen?")}
+        {Lisp-Entry "set-fullscreen?" () 258 18 ("update-bounds" "set!" "fullscreen?" "/=" "when" "value")}
+        {Lisp-Entry "update-bounds" () 264 18 ("8" "+" "4" "else" "-" "new" "rect-position" "rect-size" "get-work-area" "rect" "set-size" "0" "Point" "set-position" "when" "get-size" "size" "get-desktop" "desktop" "let*" "caption?" "not" "fullscreen?" "or" "cond" "caption-height" "root" "get-maximized?" "maximized?" "get-workspace-splitter" "splitter" "let" "dynamic" "function" "with-locked-update")}
+        {Lisp-Entry "get-caption-base" () 300 18 ("caption-base")}
+        {Lisp-Entry "set-caption-base" () 304 18 ("invalidate-title" "caption-base" "set!" "value")}
+        {Lisp-Entry "get-caption?" () 314 18 ("caption?")}
+        {Lisp-Entry "set-caption?" () 318 18 ("update-bounds" "set!" "caption?" "/=" "when" "value")}
+        {Lisp-Entry "get-caption" () 324 18 ("caption")}
+        {Lisp-Entry "set-caption" () 328 18 ("invalidate-title" "caption" "set!" "value")}
+        {Lisp-Entry "refresh-caption" () 333 18 ("invalidate-title" "get-window-title" "if" "caption" "set!" "current-frame" "frame" "let")}
+        {Lisp-Entry "invalidate-title" () 344 11 ("invalidate-caption" "root" "set-title" "effective-title" "title" "let")}
+        {Lisp-Entry "effective-title" () 351 29 ("localize" "format" "caption-base" "maximized?" "caption" "not" "or" "if")}
+        {Lisp-Entry "maximize" () 362 18 ("invalidate-title" "true" "maximized?" "set!")}
+        {Lisp-Entry "restore" () 367 18 ("invalidate-title" "false" "maximized?" "set!")}
+        {Lisp-Entry "get-palettes" () 377 18 ("children" "get-visible?" "Palette" "is?" "and" "window" "dynamic" "function" "collect-if")}
+        {Lisp-Entry "insert-menus" () 389 18 ("menu-widths" "menu")}
+        {Lisp-Entry "set-status-text" () 393 18 ("user-message" "text")}}}})
 "Toplevel-Loop"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "library" "loop" "Toplevel-Loop.fusion"} {Time 128355726620000000L}
     {Lisp-Entry "jazz.library.loop.Toplevel-Loop" () 37 9 ("jazz")
       {Lisp-Entry "Toplevel-Loop" () 44 7 ("Break-Loop")
         {Lisp-Entry "toplevel-loop" () 47 18 ("get-process" "call-start-loop" "Stop-Signal" "Cancel-Signal" "Toplevel-Signal" "true" "while" "get-status" "exit" "signal" "Exit-Signal" "catch")}}}})
 "Toplevel-Root"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "view" "Toplevel-Root.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "view" "Toplevel-Root.fusion"} {Time 128360915500000000L}
     {Lisp-Entry "jazz.ui.view.Toplevel-Root" () 37 9 ("jazz")
       {Lisp-Entry "Toplevel-Root" () 51 7 ("on-restore" "form:" "Event-Handler" "action-handler:" "tooltip-text:" "tooltip?:" "type:" "restore" "name:" "Frame-Root")
         {Lisp-Entry "minimized?" () 54 8 ("false")}
@@ -22464,7 +22463,7 @@
         {Lisp-Entry "close-rect" () 110 11 ("+" "0" "-" "Rect" "new" "right" "top")}
         {Lisp-Entry "maximize" () 119 11 ("player" "update-bounds" "nextmethod" "dynamic" "function" "with-locked-update")}
         {Lisp-Entry "toggle-minimized" () 131 18 ("minimize" "restore-minimized" "minimized?" "if")}
-        {Lisp-Entry "minimize" () 137 18 ("true" "set!" "SW_MINIMIZE" "player" "show-window" "minimized?" "unless")}
+        {Lisp-Entry "minimize" () 137 18 ("true" "set!" "player" "minimize" "minimized?" "unless")}
         {Lisp-Entry "restore-minimized" () 143 18 ("false" "set!" "0" "Point" "player" "set-position" "minimized?" "when")}
         {Lisp-Entry "restore" () 154 11 ("player" "update-bounds" "nextmethod" "dynamic" "function" "with-locked-update")}
         {Lisp-Entry "layout-buttons" () 166 11 ("maximize-rect" "restore" "locate" "set-rect" "-" "right" "get-bounds" "bounds" "top" "buttons-border" "border" "let*" "nextmethod")}
@@ -22487,13 +22486,13 @@
       {Lisp-Entry "Toplevel-Signal" () 44 7 ("Signal")
         {Lisp-Entry "forwardable?" () 47 11 ("true")}}}})
 "Transient"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "Transient.fusion"} {Time 128355726660000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "Transient.fusion"} {Time 128360917440000000L}
     {Lisp-Entry "jazz.ui.window.Transient" () 37 9 ("jazz")
       {Lisp-Entry "Transient-Class" () 46 7 ("Popup-Class")
         {Lisp-Entry "window-class" () 49 11 ()}
         {Lisp-Entry "class-style" () 53 11 ("CS_SAVEBITS" "CS_DBLCLKS" "CS_OWNDC" "bit-or")}}
       {Lisp-Entry "Transient" () 57 7 ("Popup" "Transient-Class")
-        {Lisp-Entry "window-ex-style" () 60 11 ("WS_EX_TOPMOST" "WS_EX_TOOLWINDOW" "bit-or" "rest")}}}})
+        {Lisp-Entry "window-ex-style" () 61 11 ("WS_EX_TOPMOST" "WS_EX_TOOLWINDOW" "bit-or" "rest")}}}})
 "Tree-Actions"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "tree" "Tree-Actions.fusion"} {Time 128355726640000000L}
     {Lisp-Entry "jazz.ui.tree.Tree-Actions" () 38 9 ("jazz")
@@ -23919,7 +23918,7 @@
         {Lisp-Entry "layout" () 73 11 ("increase!" "set-size" "Point" "set-position" "view" "dynamic" "function" "for-each-view" "0" "v" "Dimension" "new" "child-size" "/" "floor" "height" "width" "get-size" "size" "length" "let*" "children" "when")}
         {Lisp-Entry "draw" () 93 11 ("Dark-Red" "name:" "Color" "get-bounds" "fill-rect" "lv" "lh" "update" "context" "dc")}}}})
 "View"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "view" "View.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "view" "View.fusion"} {Time 128360916460000000L}
     {Lisp-Entry "jazz.ui.view.View" () 38 9 ("jazz")
       {Lisp-Entry "View-Class" () 60 7 ("Drawing-Class")
         {Lisp-Entry "palette-class" () 69 34 ("Host-Palette" "palette-class" "unimplemented")}
@@ -24182,8 +24181,8 @@
         {Lisp-Entry "call-selection-handler" () 1667 18 ("user-origin?:" "force?:" ":selection-change" "Selection-Event" "new" "self" "invoke" "selection-handler" "when" "user-origin?" "force?" "selection" "old")}
         {Lisp-Entry "get-modified?" () 1678 26 ("modified?")}
         {Lisp-Entry "set-modified?" () 1682 26 ("set!" "modified?" "/=" "when" "state")}
-        {Lisp-Entry "register-pulse" () 1691 18 ("NULL" "self" "object->serial-number" "get-hwnd" "SetTimer" "get-player" "player" "let" "period")}
-        {Lisp-Entry "unregister-pulse" () 1696 18 ("get-hwnd" "KillTimer" "get-player" "player" "let" "identifier")}
+        {Lisp-Entry "register-pulse" () 1691 18 ("NULL" "self" "object->serial-number" "get-handle" "SetTimer" "get-player" "player" "let" "period")}
+        {Lisp-Entry "unregister-pulse" () 1696 18 ("get-handle" "KillTimer" "get-player" "player" "let" "identifier")}
         {Lisp-Entry "call-pulse" () 1701 11 ("pulse")}
         {Lisp-Entry "pulse" () 1705 11 ()}
         {Lisp-Entry "position-change" () 1714 26 ("position")}
@@ -24325,10 +24324,10 @@
         {Lisp-Entry "get-drag-source" () 2590 26 ("get-drag-image" "image:" "position:" "self" "view:" "Drag-Source" "new" "get-drag-position" "pos" "let")}
         {Lisp-Entry "get-drag-position" () 2595 26 ("mouse-down-point")}
         {Lisp-Entry "get-drag-image" () 2599 26 ("pos")}
-        {Lisp-Entry "drag-start" () 2603 11 ("process-drag-feedback" "hide-drag-image" "get-desktop" "get-hwnd" "ImageList_DragEnter" "to-desktop" "global" "v" "h" "get-image" "get-handle" "ImageList_BeginDrag" "get-image-name" "image-name" "get-portfolio" "portfolio" "image" "let*" "acquire-capture" "acquire-focus" ":no" "set-cursor" "source" "view" "let" "Current-Drag-Drop" "set!" "drag-drop" "hotspot" "pos")}
+        {Lisp-Entry "drag-start" () 2603 11 ("process-drag-feedback" "hide-drag-image" "get-desktop" "ImageList_DragEnter" "to-desktop" "global" "v" "h" "get-image" "get-handle" "ImageList_BeginDrag" "get-image-name" "image-name" "get-portfolio" "portfolio" "image" "let*" "acquire-capture" "acquire-focus" ":no" "set-cursor" "source" "view" "let" "Current-Drag-Drop" "set!" "drag-drop" "hotspot" "pos")}
         {Lisp-Entry "drag-follow" () 2620 11 ("process-drag-feedback" "v" "h" "ImageList_DragMove" "to-desktop" "global" "source" "view" "drag-drop" "let*" "Current-Drag-Drop" "when" "pos")}
         {Lisp-Entry "drag-drop" () 2629 11 ("drop" "target" "when" "drag-end" "pos" "drag-drop")}
-        {Lisp-Entry "drag-end" () 2635 11 ("set!" "source" "view" "release-capture" "get-desktop" "get-hwnd" "ImageList_DragLeave" "ImageList_EndDrag" "unhighlight-current" "hide-drag-image" "drag-drop" "let" "Current-Drag-Drop" "when")}
+        {Lisp-Entry "drag-end" () 2635 11 ("set!" "source" "view" "release-capture" "get-desktop" "get-handle" "ImageList_DragLeave" "ImageList_EndDrag" "unhighlight-current" "hide-drag-image" "drag-drop" "let" "Current-Drag-Drop" "when")}
         {Lisp-Entry "process-drag-feedback" () 2646 11 ("show-drag-image" "highlight-current" "unhighlight-current" "hide-drag-image" ":no" ":move" "if" "set-cursor" "neq?" "call-current-drop" "target" "to-view" "local" "when" "set!" "find-view" "get-desktop" "desktop" "view" "current" "Current-Drag-Drop" "drag-drop" "let*" "global")}
         {Lisp-Entry "hide-drag-image" () 2666 11 ("false" "ImageList_DragShowNolock")}
         {Lisp-Entry "show-drag-image" () 2670 11 ("true" "ImageList_DragShowNolock")}
@@ -24440,7 +24439,7 @@
         {Lisp-Entry "invalidate-rect" () 3268 18 ("true" "invalidate-rect" "self" "acquire" "acquired" "with" "get-root" "root" "when" "get-player" "player" "let" "rect")}
         {Lisp-Entry "invalidate-region" () 3277 18 ("true" "invalidate-region" "v" "h" "offset!" "get-lie" "-" "delta" "get-root" "root" "let*" "when" "get-player" "player" "let" "region")}
         {Lisp-Entry "redraw-view" () 3286 18 ("get-bounds" "bounds" "else" "v" "h" "offset!" "get-lie" "-" "delta" "redraw-window" "self" "acquire" "acquired" "with" "cond" "get-root" "root" "when" "get-player" "player" "let" "region" "region:" "rect" "rect:")}
-        {Lisp-Entry "redraw-view-only" () 3304 18 ("DeleteObject" "InvalidateRgn" "NULL" "ValidateRect" "false" "GetUpdateRgn" "0" "CreateRectRgn" "hrgn" "with" "get-hwnd" "hwnd" "when" "get-player" "player" "let" "redraw-view" "region" "region:" "rect" "rect:")}
+        {Lisp-Entry "redraw-view-only" () 3304 18 ("DeleteObject" "InvalidateRgn" "NULL" "ValidateRect" "false" "GetUpdateRgn" "0" "CreateRectRgn" "hrgn" "with" "get-handle" "hwnd" "when" "get-player" "player" "let" "redraw-view" "region" "region:" "rect" "rect:")}
         {Lisp-Entry "update-view" () 3319 18 ("update-window" "set-effect" "when" "get-player" "player" "let" "effect" "effect:")}
         {Lisp-Entry "invalidate-border" () 3331 18 ("invalidate-region" "border-region" "region" "with-closed" "get-finished?" "when" "1" "Rect" "insets" "insets:")}
         {Lisp-Entry "redraw-border" () 3337 18 ("region:" "redraw-view" "border-region" "region" "with-closed" "1" "Rect" "insets" "insets:")}
@@ -24480,13 +24479,13 @@
         {Lisp-Entry "check-class?" () 72 11 ("class" "autoload" "is?" "view")}
         {Lisp-Entry "check-data?" () 76 11 ("data" "get-name" "equal?" "Component" "is?" "and" "get-user-data" "user-data" "let" "view")}}}})
 "View-DC"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "graphic" "View-DC.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "graphic" "View-DC.fusion"} {Time 128360915160000000L}
     {Lisp-Entry "jazz.ui.graphic.View-DC" () 37 9 ("jazz")
       {Lisp-Entry "View-DC" () 45 7 ("Object")}
       {Lisp-Entry "View-DC" () 51 7 ("DC")
         {Lisp-Entry "view" () 54 8 ()}
-        {Lisp-Entry "initialize" () 57 11 ("get-size" "h/v/size->rect" "set-clipper" "h" "-" "SetWindowOrgEx" "get-client-rect" "setup-clipper" "get-hwnd" "GetDC" "hdc" "get-lie" "lie" "get-player" "player" "let" "view" "set!" "NULL" "nextmethod" "v")}
-        {Lisp-Entry "destroy-dc" () 68 11 ("get-hwnd" "ReleaseDC" "view" "get-player" "get-client-rect" "set-clipper" "NULL" "0" "hdc" "SetWindowOrgEx")}}}})
+        {Lisp-Entry "initialize" () 57 11 ("get-size" "h/v/size->rect" "set-clipper" "h" "-" "SetWindowOrgEx" "get-client-rect" "setup-clipper" "get-handle" "GetDC" "hdc" "get-lie" "lie" "get-player" "player" "let" "view" "set!" "NULL" "nextmethod" "v")}
+        {Lisp-Entry "destroy-dc" () 68 11 ("get-handle" "ReleaseDC" "view" "get-player" "get-client-rect" "set-clipper" "NULL" "0" "hdc" "SetWindowOrgEx")}}}})
 "View-Debugger"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "debuggee" "View-Debugger.fusion"} {Time 128355726600000000L}
     {Lisp-Entry "jazz.debuggee.View-Debugger" () 37 9 ("jazz")
@@ -24586,7 +24585,7 @@
       {Lisp-Entry "View-Host" () 40 11 ()
         {Lisp-Entry "get-guest" () 43 35 ()}}}})
 "View-Player"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "View-Player.fusion"} {Time 128355726660000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "View-Player.fusion"} {Time 128360917520000000L}
     {Lisp-Entry "jazz.ui.window.View-Player" () 37 9 ("jazz")
       {Lisp-Entry "View-Player-Class" () 50 7 ("Window-Class")}
       {Lisp-Entry "View-Player" () 53 7 ("Window" "View-Player-Class")
@@ -24618,7 +24617,7 @@
         {Lisp-Entry "set-in-error?" () 211 18 ("invalidate-window" "in-error?" "set!" "flag")}
         {Lisp-Entry "Error-Color" () 216 14 ("Dark-Red" "name:" "Color")}
         {Lisp-Entry "paint-in-error" () 220 11 ("Error-Color" "fill-rect" "bounds" "dc")}
-        {Lisp-Entry "paint" () 229 11 ("processed" "EndPaint" "close" "false" "root" "paint" "true" "set!" "paint-in-error" "in-error?" "if" "setup-clipper" "begin" "unwind-protect" "cairo_win32_surface_create" "Cairo-Win32-Surface" "dc" "get-client-rect" "clipper" "0" "Point" "new" "origin" "hwnd" "BeginPaint" "hdc" "let" "PAINTSTRUCT-make" "ps" "with" "get-update-region" "region" "with-closed")}
+        {Lisp-Entry "paint" () 229 11 ("processed" "EndPaint" "close" "false" "root" "paint" "true" "set!" "paint-in-error" "in-error?" "if" "setup-clipper" "begin" "unwind-protect" "cairo_win32_surface_create" "Cairo-Win32-Surface" "dc" "get-client-rect" "clipper" "0" "Point" "new" "origin" "handle" "BeginPaint" "hdc" "let" "PAINTSTRUCT-make" "ps" "with" "get-update-region" "region" "with-closed")}
         {Lisp-Entry "receive-files" () 254 11 ("processed" "root" "dispatch-receive-files" "in-error?" "unless" "files" "pos")}
         {Lisp-Entry "mouse-hover" () 265 11 ("processed" "root" "dispatch-mouse-hover" "in-error?" "unless" "v" "h")}
         {Lisp-Entry "mouse-wheel" () 271 11 ("processed" "root" "dispatch-mouse-wheel" "in-error?" "unless" "delta")}
@@ -26518,211 +26517,198 @@
       {Lisp-Entry "process-hwnd-message" () 866 12 ()}
       {Lisp-Entry "call-process-hwnd-message" () 871 15 ("lParam" "wParam" "uMsg" "hWnd" "process-hwnd-message" "LRESULT" "LPARAM" "WPARAM" "UINT" "HWND")}}})
 "Window"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "Window.fusion"} {Time 128355726660000000L}
-    {Lisp-Entry "jazz.ui.window.Window" () 38 9 ("register-window-class" "jazz")
-      {Lisp-Entry "CLASS_ATOM" () 51 12 ()}
-      {Lisp-Entry "window-class" () 55 13 ()}
-      {Lisp-Entry "class-style" () 59 13 ("CS_DBLCLKS" "CS_OWNDC" "bit-or")}
-      {Lisp-Entry "class-background" () 63 13 ("COLOR_BTNFACE" "GetSysColorBrush")}
-      {Lisp-Entry "Orphanage" () 72 12 ()}
-      {Lisp-Entry "get-orphanage" () 76 20 ("Orphanage-Window" "new" "set!" "Orphanage" "unless")}
-      {Lisp-Entry "register-window-class" () 82 13 ("RegisterClass" "CLASS_ATOM" "set!" "class" "WNDCLASS-lpszClassName-set!" "WNDCLASS-lpszMenuName-set!" "WNDCLASS-hbrBackground-set!" "WNDCLASS-hCursor-set!" "NULL" "WNDCLASS-hIcon-set!" "WNDCLASS-hInstance-set!" "WNDCLASS-cbWndExtra-set!" "0" "WNDCLASS-cbClsExtra-set!" "call-process-hwnd-message" "WNDCLASS-lpfnWndProc-set!" "class-style" "WNDCLASS-style-set!" "WNDCLASS-make" "wc" "class-background" "background" "current-instance" "instance" "let")}
-      {Lisp-Entry "Window-Class" () 103 7 ("Figure-Class")
-        {Lisp-Entry "registered?" () 106 14 ("false")}
-        {Lisp-Entry "initialize" () 110 11 ("true" "set!" "register-class" "registered?" "unless" "nextmethod")}
-        {Lisp-Entry "window-class" () 118 29 ()}
-        {Lisp-Entry "class-style" () 123 29 ("CS_DBLCLKS" "CS_OWNDC" "bit-or")}
-        {Lisp-Entry "class-background" () 128 29 ("COLOR_BTNFACE")}
-        {Lisp-Entry "register-class" () 132 18 ("RegisterClass" "CLASS_ATOM" "set!" "WNDCLASS-lpszClassName-set!" "WNDCLASS-lpszMenuName-set!" "WNDCLASS-hbrBackground-set!" "WNDCLASS-hCursor-set!" "NULL" "WNDCLASS-hIcon-set!" "WNDCLASS-hInstance-set!" "WNDCLASS-cbWndExtra-set!" "0" "WNDCLASS-cbClsExtra-set!" "call-process-hwnd-message" "WNDCLASS-lpfnWndProc-set!" "class-style" "WNDCLASS-style-set!" "make-WNDCLASS" "wc" "class-background" "background" "current-instance" "instance" "let" "icon" "icon:" "window-class" "class" "class:")}}
-      {Lisp-Entry "Window" () 151 7 ("Message-Consumer" "Figure" "Window-Class")
-        {Lisp-Entry "title" () 154 12 ("set-title" "get-title")}
-        {Lisp-Entry "surface-class" () 155 12 ("generate" "accessors")}
-        {Lisp-Entry "hwnd" () 158 8 ()}
-        {Lisp-Entry "previous-size" () 159 8 ()}
-        {Lisp-Entry "subclassed-proc" () 160 8 ()}
-        {Lisp-Entry "message-consumer" () 161 8 ()}
-        {Lisp-Entry "hwnd-class" () 169 8 ()}
-        {Lisp-Entry "initialize" () 172 11 ("nextmethod" "apply" "self" "message-consumer" "hwnd-class" "set!" "error" "primary-thread?" "not" "if" "others" "window-class" "bind-keywords" "rest")}
-        {Lisp-Entry "initially-visible?" () 181 11 ("false")}
-        {Lisp-Entry "child-style?" () 185 29 ("true" "rest")}
-        {Lisp-Entry "window-style" () 189 29 ("WS_CLIPSIBLINGS" "WS_CLIPCHILDREN" "0" "WS_CHILD" "child-style?" "if" "bit-or" "rest")}
-        {Lisp-Entry "window-ex-style" () 195 29 ("0" "rest")}
-        {Lisp-Entry "window-parent" () 199 29 ("get-hwnd" "NULL" "parent" "not" "if")}
-        {Lisp-Entry "create-hwnd" () 205 29 ("current-instance" "window-parent" "0" "window-style" "NULL" "window-class" "hwnd-class" "either" "CLASS_ATOM" "window-ex-style" "CreateWindowEx" "rest")}
-        {Lisp-Entry "setup-hwnd" () 218 11 ("set-hwnd" "self" "set-window" "hwnd")}
-        {Lisp-Entry "prepare-hwnd" () 223 11 ("true" "DragAcceptFiles" "setup-hwnd" "GetLastError" "window-parent" "parent:" "window-ex-style" ":ex-style" "window-style" "style:" "window-class" "class:" "list" "error" "not" "if" "create-hwnd" "let" "self" "set-in-creation" "others" "hwnd" "bind-keywords" "rest")}
-        {Lisp-Entry "default-parent" () 235 11 ("get-orphanage")}
-        {Lisp-Entry "prepare" () 239 11 ("prepare-hwnd" "nextmethod" "rest")}
-        {Lisp-Entry "conclude" () 244 11 ("get-size" "size-change" "nextmethod" "rest")}
-        {Lisp-Entry "open?" () 249 18 ("hwnd" "boolean")}
-        {Lisp-Entry "show" () 253 11 ("SW_SHOWNORMAL" "show-window" "nextmethod")}
-        {Lisp-Entry "hide" () 258 11 ("SW_HIDE" "show-window" "hwnd" "when" "nextmethod")}
-        {Lisp-Entry "close" () 264 11 ("hwnd" "DestroyWindow")}
-        {Lisp-Entry "print" () 268 11 ("empty-string?" "title" "or" "get-size" "size" "get-position" "position" "let" "format" "hwnd" "not" "if" "dynamic" "function" "self" "print-unreadable" "readably" "printer")}
-        {Lisp-Entry "add-child" () 285 11 ("cons" "children" "set!" "child")}
-        {Lisp-Entry "add-form" () 289 11 ("add-child" "child-form" "parent-form")}
-        {Lisp-Entry "call-dispatch-message" () 298 18 ("message-consumer" "dispatch-message" "lparam" "wparam" "msg")}
-        {Lisp-Entry "get-message-consumer" () 302 18 ("message-consumer")}
-        {Lisp-Entry "set-message-consumer" () 306 18 ("message-consumer" "set!" "consumer")}
-        {Lisp-Entry "dispatch-message" () 310 11 ("0" "hwnd" "DefWindowProc" "unprocessed" "process-window-message" "eq?" "if" "lparam" "wparam" "msg")}
-        {Lisp-Entry "process-window-message" () 321 11 ("unprocessed" "else" "on-timer" "WM_TIMER" "setting-change" "WM_SETTINGCHANGE" "drop-files" "WM_DROPFILES" "call-focus-lose" "WM_KILLFOCUS" "call-focus-gain" "WM_SETFOCUS" "call-lost-capture" "WM_CAPTURECHANGED" "on-nc-destroy" "WM_NCDESTROY" "window-destroy" "WM_DESTROY" "on-close" "WM_CLOSE" "on-activate-app" "WM_ACTIVATEAPP" "on-activate" "WM_ACTIVATE" "on-mouse-activate" "WM_MOUSEACTIVATE" "call-size-change" "WM_SIZE" "call-position-change" "WM_MOVE" "bit-and" "on-system-command" "WM_SYSCOMMAND" "on-command" "WM_COMMAND" "call-key-press" "WM_CHAR" "call-key-up" "WM_KEYUP" "call-key-down" "WM_KEYDOWN" "system-key-up" "WM_SYSKEYUP" "system-key-down" "WM_SYSKEYDOWN" "call-context-menu" "WM_CONTEXTMENU" "right-mouse-up" "WM_RBUTTONUP" "right-mouse-down" "WM_RBUTTONDOWN" "middle-mouse-up" "WM_MBUTTONUP" "middle-mouse-down" "WM_MBUTTONDOWN" "double-click" "WM_LBUTTONDBLCLK" "mouse-up" "WM_LBUTTONUP" "mouse-down" "WM_LBUTTONDOWN" "mouse-wheel" "WM_MOUSEWHEEL" "mouse-hover" "WM_MOUSEHOVER" "hiword" "mouse-move" "WM_MOUSEMOVE" "loword" "cursor-update" "WM_SETCURSOR" "paint" "WM_PAINT" "erase-background" "WM_ERASEBKGND" "ecase" "lparam" "wparam" "msg")}
-        {Lisp-Entry "erase-background" () 366 29 ("unprocessed" "processed" "class-background" "not" "if" "hdc")}
-        {Lisp-Entry "paint" () 372 29 ("paint-window")}
-        {Lisp-Entry "paint-window" () 376 21 ("processed" "EndPaint" "close" "draw" "cairo_win32_surface_create" "Cairo-Win32-Surface" "new" "dc" "hwnd" "BeginPaint" "hdc" "let" "PAINTSTRUCT-make" "ps" "with")}
-        {Lisp-Entry "*colors*" () 387 14 ("Dark-Purple" "Dark-Blue" "Dark-Green" "Dark-Yellow" "Dark-Orange" "Dark-Red" "name:" "Color")}
-        {Lisp-Entry "*nb-colors*" () 395 14 ("*colors*" "length")}
-        {Lisp-Entry "*current-color*" () 398 14 ("0")}
-        {Lisp-Entry "draw-placeholder" () 402 11 ("*nb-colors*" "1" "+" "modulo" "set!" "*current-color*" "*colors*" "element" "get-bounds" "fill-rect" "paint" "White" "name:" "Color" "set-color" "dc")}
-        {Lisp-Entry "draw" () 409 29 ("ps" "dc")}
-        {Lisp-Entry "mouse-hover" () 418 29 ("unprocessed" "v" "h")}
-        {Lisp-Entry "mouse-wheel" () 422 29 ("unprocessed" "delta")}
-        {Lisp-Entry "mouse-down" () 426 29 ("unprocessed" "v" "h")}
-        {Lisp-Entry "mouse-move" () 430 29 ("unprocessed" "v" "h")}
-        {Lisp-Entry "mouse-up" () 434 29 ("unprocessed" "v" "h")}
-        {Lisp-Entry "double-click" () 438 29 ("mouse-down" "v" "h")}
-        {Lisp-Entry "middle-mouse-down" () 442 29 ("unprocessed" "v" "h")}
-        {Lisp-Entry "middle-mouse-up" () 446 29 ("unprocessed" "v" "h")}
-        {Lisp-Entry "right-mouse-down" () 450 29 ("unprocessed" "v" "h")}
-        {Lisp-Entry "right-mouse-up" () 454 29 ("unprocessed" "v" "h")}
-        {Lisp-Entry "call-context-menu" () 458 11 ("context-menu" "Point" "new" "get-desktop" "acquire" "pos" "let" "v" "h")}
-        {Lisp-Entry "context-menu" () 463 29 ("unprocessed" "v" "h")}
-        {Lisp-Entry "call-lost-capture" () 472 11 ("unprocessed" "hwnd")}
-        {Lisp-Entry "on-lost-capture" () 476 26 ("unprocessed" "evt")}
-        {Lisp-Entry "acquire-capture" () 480 18 ("hwnd" "SetCapture")}
-        {Lisp-Entry "release-capture" () 484 18 ("ReleaseCapture")}
-        {Lisp-Entry "cursor-update" () 493 29 ("unprocessed" "processed" "HTCLIENT" "=" "if" "hit")}
-        {Lisp-Entry "system-key-down" () 504 11 ("processed" "view-update-cursor" "unprocessed" "VK_MENU" "/=" "if" "wparam")}
-        {Lisp-Entry "system-key-up" () 511 11 ("processed" "view-update-cursor" "unprocessed" "VK_MENU" "/=" "if" "wparam")}
-        {Lisp-Entry "modifier-changed" () 518 11 ("view-update-cursor" "memq?" "when" "wparam")}
-        {Lisp-Entry "call-key-down" () 523 11 ("integer->char" "key-down" "modifier-changed" "wparam")}
-        {Lisp-Entry "call-key-up" () 528 11 ("integer->char" "key-up" "modifier-changed" "wparam")}
-        {Lisp-Entry "call-key-press" () 533 11 ("integer->char" "key-press" "wparam")}
-        {Lisp-Entry "key-down" () 537 26 ("unprocessed" "char")}
-        {Lisp-Entry "key-up" () 541 26 ("unprocessed" "char")}
-        {Lisp-Entry "key-press" () 545 26 ("unprocessed" "char")}
-        {Lisp-Entry "call-position-change" () 554 18 ("Point" "new" "position-change" "v" "h")}
-        {Lisp-Entry "position-change" () 558 29 ("unprocessed" "position")}
-        {Lisp-Entry "call-size-change" () 562 18 ("previous-size" "set!" "size-change" "Dimension" "new" "size" "let" "get-installed?" "0" "/=" "or" "when" "height" "width" "type")}
-        {Lisp-Entry "size-change" () 572 29 ("unprocessed" "size")}
-        {Lisp-Entry "on-command" () 576 29 ("process-action" "get-window" "object" "processed" "self" "invoke" "get-application" "dispatch-shortcut" "Shortcut" "is?" "unprocessed" "not" "loword" "get-id-cookie" "action-item/shortcut" "let" "0" "=" "if" "wparam" "lparam")}
-        {Lisp-Entry "on-system-command" () 592 29 ("unprocessed" "type")}
-        {Lisp-Entry "on-mouse-activate" () 596 29 ("unprocessed")}
-        {Lisp-Entry "on-activate" () 601 29 ("unprocessed" "on-activate-palette" "on-deactivate-palette" "WA_INACTIVE" "=" "if" "kind")}
-        {Lisp-Entry "on-activate-palette" () 608 29 ()}
-        {Lisp-Entry "on-deactivate-palette" () 612 29 ()}
-        {Lisp-Entry "on-activate-app" () 618 29 ("unprocessed" "status")}
-        {Lisp-Entry "on-close" () 622 29 ("unprocessed" "evt")}
-        {Lisp-Entry "window-destroy" () 626 11 ("unprocessed" "destroy-component")}
-        {Lisp-Entry "on-nc-destroy" () 631 11 ("unprocessed" "NULL" "set-hwnd" "hwnd" "set-window" "evt")}
-        {Lisp-Entry "call-focus-gain" () 637 11 ("focus-gain")}
-        {Lisp-Entry "call-focus-lose" () 641 29 ("get-window" "focus-lose" "wparam")}
-        {Lisp-Entry "focus-gain" () 645 29 ("unprocessed")}
-        {Lisp-Entry "focus-lose" () 649 29 ("unprocessed" "receiving")}
-        {Lisp-Entry "drop-files" () 658 11 ("get-toplevel-hwnd" "SetForegroundWindow" "receive-files" "POINT->point" "pos" "DragFinish" "DragQueryPoint" "POINT-make" "pt" "received-files" "files" "let" "drop-files" "unimplemented" "wparam")}
-        {Lisp-Entry "received-files" () 670 11 ("naturals" "anchorize" "tokenise" "File" "Directory" "if" "new" "pathname" "FILE_ATTRIBUTE_DIRECTORY" "mask-bit-set?" "directory?" "GetFileAttributes" "attributes" "adjust-string" "WCHAR-string" "WCHAR-array-set!" "WCHAR-array-make" "filename" "MAX_PATH" "size" "let*" "n" "dynamic" "function" "map" "0" "NULL" "DragQueryFile" "count" "let" "received-files" "unimplemented" "wparam")}
-        {Lisp-Entry "receive-files" () 688 29 ("files" "pos")}
-        {Lisp-Entry "setting-change" () 697 29 ("wparam")}
-        {Lisp-Entry "on-timer" () 706 11 ("call-pulse" "serial-number->object" "object" "let" "serial-number")}
-        {Lisp-Entry "get-style" () 716 11 ("GWL_STYLE" "hwnd" "GetWindowLong")}
-        {Lisp-Entry "set-style" () 720 11 ("GWL_STYLE" "hwnd" "SetWindowLong" "style")}
-        {Lisp-Entry "get-ex-style" () 724 11 ("GWL_EXSTYLE" "hwnd" "GetWindowLong")}
-        {Lisp-Entry "set-ex-style" () 728 11 ("GWL_EXSTYLE" "hwnd" "SetWindowLong" "style")}
-        {Lisp-Entry "child-window?" () 732 11 ("WS_CHILD" "get-style" "mask-bit-set?")}
-        {Lisp-Entry "get-layered?" () 741 18 ("WS_EX_LAYERED" "get-ex-style" "mask-bit-set?")}
-        {Lisp-Entry "set-layered?" () 745 18 ("WS_EX_LAYERED" "GetWindowLong" "mask-bit-set" "GWL_EXSTYLE" "hwnd" "SetWindowLong" "flag")}
-        {Lisp-Entry "set-alpha-blending" () 749 18 ("RDW_INVALIDATE" "RDW_ERASE" "bit-or" "NULL" "RedrawWindow" "LWA_ALPHA" "0" "hwnd" "SetLayeredWindowAttributes" "true" "set-layered?" "n")}
-        {Lisp-Entry "fade-in" () 755 18 ("false" "set-layered?" "set!" "/" "-" "ceil" "+" "" "while" "start" "clock" "now" "clocks/second" "*" "delay" "max" "let*" "update-window" "true" "set-visible?" "0" "set-alpha-blending" "fade-speed" "fade-speed:")}
-        {Lisp-Entry "fade-out" () 770 18 ("=" "unless" "set!" "set-alpha-blending" "by" "from" "n" "for" "loop" "alpha" "let" "5" "step" "step:" "0" "to" "to:")}
-        {Lisp-Entry "find-host" () 785 18 ("children" "find-if" "get-guest" "View-Host" "is?" "and" "window" "dynamic" "function" "proc" "with" "guest-type")}
-        {Lisp-Entry "find-guest" () 793 18 ("get-guest" "when" "find-host" "host" "let" "guest-type")}
-        {Lisp-Entry "collect-guest" () 799 18 ("children" "get-guest" "guest" "let" "View-Host" "is?" "when" "window" "dynamic" "function" "collect" "guest-type")}
-        {Lisp-Entry "track-mouse-event" () 813 18 ("TrackMouseEvent" "TRACKMOUSEEVENT-dwHoverTime-set!" "hwnd" "TRACKMOUSEEVENT-hwndTrack-set!" "TRACKMOUSEEVENT-dwFlags-set!" "size-of-TRACKMOUSEEVENT" "TRACKMOUSEEVENT-cbSize-set!" "TRACKMOUSEEVENT-make" "rec" "with" "HOVER_DEFAULT" "time" "time:" "flags")}
-        {Lisp-Entry "send-message" () 827 18 ("hwnd" "SendMessage" "lparam" "wparam" "msg")}
-        {Lisp-Entry "post-message" () 831 18 ("hwnd" "PostMessage" "lparam" "wparam" "msg")}
-        {Lisp-Entry "get-hwnd" () 835 18 ("hwnd")}
-        {Lisp-Entry "set-hwnd" () 839 18 ("hwnd" "set!" "hw")}
-        {Lisp-Entry "set-parent" () 843 18 ("NULL" "get-hwnd" "if" "hwnd" "SetParent" "nextmethod" "parent")}
-        {Lisp-Entry "get-frame" () 848 11 ("get-frame" "parent" "when" "Frame" "self" "is?" "if")}
-        {Lisp-Entry "get-overlapped" () 855 18 ("parent" "get-overlapped" "Overlapped" "self" "is?" "if")}
-        {Lisp-Entry "get-window-owner" () 861 18 ("GW_OWNER" "hwnd" "GetWindow" "get-window")}
-        {Lisp-Entry "get-root-owner" () 865 18 ("true" "set!" "if" "owner" "not" "while" "false" "done?" "when" "get-window-owner" "root" "let")}
-        {Lisp-Entry "get-top-window" () 877 18 ("hwnd" "GetTopWindow" "get-window")}
-        {Lisp-Entry "get-title" () 881 26 ("title")}
-        {Lisp-Entry "set-title" () 885 26 ("localize" "set-window-title" "title" "set!" "value")}
-        {Lisp-Entry "get-window-title" () 890 18 ("hwnd" "get-hwnd-title")}
-        {Lisp-Entry "set-window-title" () 894 18 ("hwnd" "SetWindowText" "title")}
-        {Lisp-Entry "acquire" () 898 18 ("error" "else" "RECT->rect" "2" "RECT->POINTS" "rect->RECT" "Rect" "POINT->point" "1" "hwnd" "get-hwnd" "MapWindowPoints" "point->POINT" "acquired" "with" "Point" "typecase" "shape" "window")}
-        {Lisp-Entry "get-position" () 912 11 ("RECT-top-ref" "RECT-left-ref" "Point" "new" "2" "RECT->POINTS" "get-hwnd" "NULL" "MapWindowPoints" "child-window?" "parent" "and" "when" "hwnd" "GetWindowRect" "RECT-make" "rect" "with")}
-        {Lisp-Entry "get-window-position" () 920 18 ("POINT-y-ref" "POINT-x-ref" "Point" "new" "1" "NULL" "hwnd" "MapWindowPoints" "0" "new-point" "pos" "with")}
-        {Lisp-Entry "set-position" () 926 11 ("SWP_NOACTIVATE" "SWP_NOZORDER" "SWP_NOSIZE" "bit-or" "0" "v" "h" "NULL" "hwnd" "SetWindowPos" "pos")}
-        {Lisp-Entry "move-window" () 930 18 ("v" "h" "+" "Point" "new" "set-position" "get-position" "pos" "let" "dv" "dh")}
-        {Lisp-Entry "get-size" () 935 11 ("RECT-bottom-ref" "RECT-right-ref" "Dimension" "new" "hwnd" "GetClientRect" "RECT-make" "rect" "with")}
-        {Lisp-Entry "set-size" () 941 11 ("get-window-size" "+" "set-window-size" "get-size" "-" "delta" "let" "size")}
-        {Lisp-Entry "size-window" () 946 18 ("height" "width" "+" "Dimension" "new" "set-size" "get-size" "size" "let" "dheight" "dwidth")}
-        {Lisp-Entry "get-window-size" () 951 18 ("RECT-top-ref" "RECT-bottom-ref" "RECT-left-ref" "RECT-right-ref" "-" "Dimension" "new" "hwnd" "GetWindowRect" "RECT-make" "rect" "let")}
-        {Lisp-Entry "set-window-size" () 958 18 ("SWP_NOACTIVATE" "SWP_NOZORDER" "SWP_NOMOVE" "SWP_NOCOPYBITS" "bit-or" "height" "width" "0" "NULL" "hwnd" "SetWindowPos" "size")}
-        {Lisp-Entry "set-bounds" () 962 18 ("SWP_NOACTIVATE" "SWP_NOZORDER" "bit-or" "rect-height" "rect-width" "top" "left" "NULL" "hwnd" "SetWindowPos" "rect")}
-        {Lisp-Entry "grow-bounds" () 966 18 ("set-position" "set-window-size" "Dimension" "get-window-size" "size" "Point" "new" "get-position" "+" "pos" "let" "dheight" "dwidth" "dv" "dh")}
-        {Lisp-Entry "get-width" () 974 18 ("width" "get-size" "size" "let")}
-        {Lisp-Entry "get-height" () 980 18 ("height" "get-size" "size" "let")}
-        {Lisp-Entry "get-rect" () 985 18 ("RECT-bottom-ref" "RECT-right-ref" "RECT-top-ref" "RECT-left-ref" "Rect" "new" "2" "RECT->POINTS" "get-hwnd" "NULL" "MapWindowPoints" "parent" "when" "hwnd" "GetWindowRect" "RECT-make" "rect" "with")}
-        {Lisp-Entry "get-bounds" () 993 18 ("RECT-bottom-ref" "RECT-right-ref" "RECT-top-ref" "RECT-left-ref" "Rect" "new" "2" "RECT->POINTS" "NULL" "MapWindowPoints" "hwnd" "GetWindowRect" "RECT-make" "rect" "with")}
-        {Lisp-Entry "ensure-displayed" () 1000 18 ("set-position" "set-size" "8" "padding:" "fit-within" "new-size" "new-position" "receive" "get-rect" "rect" "get-desktop" "get-size" "parent" "not" "if" "outer" "let")}
-        {Lisp-Entry "mouse-position" () 1008 18 ("POINT-y-ref" "POINT-x-ref" "Point" "new" "get-desktop" "acquire" "GetCursorPos" "POINT-make" "point" "with")}
-        {Lisp-Entry "mouse-window" () 1014 18 ("mouse-position" "find-window")}
-        {Lisp-Entry "mouse-in-window?" () 1018 18 ("mouse-position" "point-in-window?")}
-        {Lisp-Entry "point-in-window?" () 1022 18 ("height" "v" "width" "0" "h" "in-interval?" "and" "get-window-size" "size" "let" "point")}
-        {Lisp-Entry "find-window" () 1028 18 ("WindowFromPoint" "get-window" "v" "POINT-y-set!" "h" "POINT-x-set!" "POINT-make" "pt" "with" "point")}
-        {Lisp-Entry "find-child-window" () 1035 18 ("acquire" "find-child-window" "self" "eq?" "not" "or" "if" "CWP_SKIPTRANSPARENT" "CWP_SKIPDISABLED" "CWP_SKIPINVISIBLE" "bit-or" "hwnd" "ChildWindowFromPointEx" "get-window" "window" "let" "v" "POINT-y-set!" "h" "POINT-x-set!" "POINT-make" "pt" "with" "point")}
-        {Lisp-Entry "flash-window" () 1045 18 ("false" "sleep" "true" "hwnd" "FlashWindow" "3" "repeat" "loop" "flash-window" "unimplemented")}
-        {Lisp-Entry "move" () 1055 18 ("true" "hwnd" "MoveWindow" "cy" "cx" "y" "x")}
-        {Lisp-Entry "acquire-focus" () 1059 18 ("self" "set-window-focus")}
-        {Lisp-Entry "get-enabled?" () 1063 18 ("hwnd" "IsWindowEnabled")}
-        {Lisp-Entry "enable-window" () 1067 18 ("true" "hwnd" "EnableWindow")}
-        {Lisp-Entry "disable-window" () 1071 18 ("false" "hwnd" "EnableWindow")}
-        {Lisp-Entry "get-client-rect" () 1075 18 ("RECT->rect" "hwnd" "GetClientRect" "RECT-make" "rect" "with")}
-        {Lisp-Entry "scroll-window" () 1081 18 ("NULL" "hwnd" "ScrollWindowEx" "rect->RECT" "with" "SW_INVALIDATE" "0" "SW_ERASE" "if" "bit-or" "flags" "let" "true" "erase?" "erase?:" "clip-rect" "clip-rect:" "rect" "dv" "dh")}
-        {Lisp-Entry "invalidate-rect" () 1088 18 ("InvalidateRect" "rect->RECT" "with" "hwnd" "when" "false" "erase?" "rect")}
-        {Lisp-Entry "invalidate-region" () 1094 18 ("get-handle" "InvalidateRgn" "hwnd" "when" "false" "erase?" "region")}
-        {Lisp-Entry "invalidate-window" () 1099 18 ("NULL" "InvalidateRect" "hwnd" "when" "false" "erase?")}
-        {Lisp-Entry "redraw-window" () 1104 18 ("get-handle" "RedrawWindow" "rect->RECT" "NULL" "not" "if" "with" "RDW_ALLCHILDREN" "RDW_INVALIDATE" "RDW_UPDATENOW" "RDW_ERASENOW" "bit-or" "flags" "let" "hwnd" "when" "region" "region:" "rect" "rect:")}
-        {Lisp-Entry "invalidate-border" () 1113 18 ("invalidate-region" "border-region" "region" "with-closed" "1" "Rect" "insets" "insets:")}
-        {Lisp-Entry "redraw-border" () 1118 18 ("region:" "redraw-window" "border-region" "region" "with-closed" "1" "Rect" "insets" "insets:")}
-        {Lisp-Entry "border-region" () 1123 18 ("get-client-rect" "frame-region" "1" "Rect" "insets" "insets:")}
-        {Lisp-Entry "get-update-rect" () 1127 18 ("RECT->rect" "false" "hwnd" "GetUpdateRect" "RECT-make" "rect" "with")}
-        {Lisp-Entry "get-update-region" () 1133 18 ("false" "get-handle" "hwnd" "GetUpdateRgn" "Region" "new" "region" "let")}
-        {Lisp-Entry "get-class-background" () 1139 18 ("GCL_HBRBACKGROUND" "hwnd" "GetClassLong")}
-        {Lisp-Entry "show-window" () 1143 18 ("hwnd" "ShowWindow" "SW_SHOW" "state")}
-        {Lisp-Entry "update-window" () 1147 18 ("hwnd" "UpdateWindow")}
-        {Lisp-Entry "show-noactivate" () 1151 18 ("SWP_NOSIZE" "SWP_NOMOVE" "SWP_NOACTIVATE" "SWP_SHOWWINDOW" "bit-or" "0" "HWND_TOP" "hwnd" "SetWindowPos")}
-        {Lisp-Entry "hide-noactivate" () 1155 18 ("SWP_NOSIZE" "SWP_NOMOVE" "SWP_NOACTIVATE" "SWP_HIDEWINDOW" "bit-or" "0" "hwnd" "SetWindowPos")}
-        {Lisp-Entry "first-window" () 1164 18 ("first" "null?" "if" "get-windows" "windows" "let")}
-        {Lisp-Entry "second-window" () 1171 18 ("second" "2" "length" ">=" "if" "get-windows" "windows" "let")}
-        {Lisp-Entry "last-window" () 1178 18 ("get-windows" "last")}
-        {Lisp-Entry "get-windows" () 1182 18 ("get-children" "collect-if" "get-visible?" "or" "Window" "is?" "and" "child" "dynamic" "function" "proc" "with" "false" "include-invisibles?" "include-invisibles?:")}
-        {Lisp-Entry "front-window?" () 1190 18 ("parent" "first-window" "self" "eq?")}
-        {Lisp-Entry "bring-to-front" () 1199 11 ("hwnd" "BringWindowToTop" "nextmethod")}
-        {Lisp-Entry "send-to-back" () 1204 11 ("SWP_NOSIZE" "SWP_NOMOVE" "bit-or" "0" "HWND_BOTTOM" "hwnd" "SetWindowPos" "nextmethod")}
-        {Lisp-Entry "get-location" () 1214 11 ("location")}
-        {Lisp-Entry "set-location" () 1218 11 ("location" "set!" "loc")}
-        {Lisp-Entry "layout-window" () 1222 18 ("layout")}
-        {Lisp-Entry "layout" () 1226 26 ()}
-        {Lisp-Entry "mouse-view" () 1235 18 ("mouse-position" "find-view")}
-        {Lisp-Entry "find-view" () 1239 18 ("self" "acquire" "find-drawing" "get-root" "root" "View-Player" "is?" "when" "find-window" "window" "let" "pos")}
-        {Lisp-Entry "to-view" () 1246 18 ("get-root" "self" "acquire" "acquired" "get-player" "player" "let*" "view" "shape")}
-        {Lisp-Entry "debug-window" () 1257 26 ("self" "Development" "set-%" "debug-window" "unimplemented" "pos")}
-        {Lisp-Entry "describe-window" () 1263 26 ("WINEXSTYLE" "get-ex-style" "WINSTYLE" "bits->symbolic" "get-client-rect" "get-bounds" "get-size" "get-position" "WS_CLIPSIBLINGS" "WS_CLIPCHILDREN" "get-style" "mask-bit-set?" "get-class-background" "get-name" "self" "class-of" ":console" "format" "describe-window" "unimplemented" "pos")}}}})
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "Window.fusion"} {Time 128360922180000000L}
+    {Lisp-Entry "jazz.ui.window.Window" () 38 9 ("jazz")
+      {Lisp-Entry "Orphanage" () 56 12 ()}
+      {Lisp-Entry "get-orphanage" () 60 20 ("Orphanage-Window" "new" "set!" "Orphanage" "unless")}
+      {Lisp-Entry "Window-Class" () 66 7 ("Figure-Class")
+        {Lisp-Entry "registered?" () 69 14 ("false")}
+        {Lisp-Entry "initialize" () 73 11 ("true" "set!" "register-class" "registered?" "unless" "nextmethod")}
+        {Lisp-Entry "window-class" () 81 29 ()}
+        {Lisp-Entry "class-style" () 86 29 ("CS_DBLCLKS" "CS_OWNDC" "bit-or")}
+        {Lisp-Entry "class-background" () 91 29 ("COLOR_BTNFACE")}
+        {Lisp-Entry "register-class" () 95 18 ("RegisterClass" "CLASS_ATOM" "set!" "WNDCLASS-lpszClassName-set!" "WNDCLASS-lpszMenuName-set!" "WNDCLASS-hbrBackground-set!" "WNDCLASS-hCursor-set!" "NULL" "WNDCLASS-hIcon-set!" "WNDCLASS-hInstance-set!" "WNDCLASS-cbWndExtra-set!" "0" "WNDCLASS-cbClsExtra-set!" "call-process-handle-message" "WNDCLASS-lpfnWndProc-set!" "class-style" "WNDCLASS-style-set!" "make-WNDCLASS" "wc" "class-background" "background" "current-instance" "instance" "let" "icon" "icon:" "window-class" "class" "class:")}}
+      {Lisp-Entry "Window" () 114 7 ("Message-Consumer" "Figure" "Window-Class")
+        {Lisp-Entry "title" () 117 12 ("set-title" "get-title")}
+        {Lisp-Entry "surface-class" () 118 12 ("generate" "accessors")}
+        {Lisp-Entry "handle" () 121 8 ()}
+        {Lisp-Entry "previous-size" () 122 8 ()}
+        {Lisp-Entry "subclassed-proc" () 123 8 ()}
+        {Lisp-Entry "message-consumer" () 124 8 ()}
+        {Lisp-Entry "handle-class" () 132 8 ()}
+        {Lisp-Entry "initialize" () 135 11 ("nextmethod" "apply" "self" "message-consumer" "handle-class" "set!" "error" "primary-thread?" "not" "if" "others" "window-class" "bind-keywords" "rest")}
+        {Lisp-Entry "initially-visible?" () 144 11 ("false")}
+        {Lisp-Entry "setup-handle" () 148 11 ("set-handle" "self" "set-window" "handle")}
+        {Lisp-Entry "default-parent" () 153 11 ("get-orphanage")}
+        {Lisp-Entry "prepare" () 157 11 ("parent" "self" "prepare-handle" "setup-handle" "nextmethod" "rest")}
+        {Lisp-Entry "conclude" () 162 11 ("get-size" "size-change" "nextmethod" "rest")}
+        {Lisp-Entry "open?" () 167 18 ("handle" "boolean")}
+        {Lisp-Entry "show" () 171 11 ("handle" "show-window" "nextmethod")}
+        {Lisp-Entry "hide" () 176 11 ("hide-window" "handle" "when" "nextmethod")}
+        {Lisp-Entry "minimize" () 182 18 ("handle" "minimize-window")}
+        {Lisp-Entry "close" () 186 11 ("handle" "destroy-window")}
+        {Lisp-Entry "print" () 190 11 ("empty-string?" "title" "or" "get-size" "size" "get-position" "position" "let" "format" "handle" "not" "if" "dynamic" "function" "self" "print-unreadable" "readably" "printer")}
+        {Lisp-Entry "add-child" () 207 11 ("cons" "children" "set!" "child")}
+        {Lisp-Entry "add-form" () 211 11 ("add-child" "child-form" "parent-form")}
+        {Lisp-Entry "call-dispatch-message" () 220 18 ("message-consumer" "dispatch-message" "lparam" "wparam" "msg")}
+        {Lisp-Entry "get-message-consumer" () 224 18 ("message-consumer")}
+        {Lisp-Entry "set-message-consumer" () 228 18 ("message-consumer" "set!" "consumer")}
+        {Lisp-Entry "erase-background" () 237 29 ("unprocessed" "processed" "class-background" "not" "if" "hdc")}
+        {Lisp-Entry "paint" () 243 29 ("paint-window")}
+        {Lisp-Entry "paint-window" () 247 21 ("processed" "EndPaint" "close" "draw" "cairo_win32_surface_create" "Cairo-Win32-Surface" "new" "dc" "handle" "BeginPaint" "hdc" "let" "PAINTSTRUCT-make" "ps" "with")}
+        {Lisp-Entry "*colors*" () 258 14 ("Dark-Purple" "Dark-Blue" "Dark-Green" "Dark-Yellow" "Dark-Orange" "Dark-Red" "name:" "Color")}
+        {Lisp-Entry "*nb-colors*" () 266 14 ("*colors*" "length")}
+        {Lisp-Entry "*current-color*" () 269 14 ("0")}
+        {Lisp-Entry "draw-placeholder" () 273 11 ("*nb-colors*" "1" "+" "modulo" "set!" "*current-color*" "*colors*" "element" "get-bounds" "fill-rect" "paint" "White" "name:" "Color" "set-color" "dc")}
+        {Lisp-Entry "draw" () 280 29 ("ps" "dc")}
+        {Lisp-Entry "mouse-hover" () 289 29 ("unprocessed" "v" "h")}
+        {Lisp-Entry "mouse-wheel" () 293 29 ("unprocessed" "delta")}
+        {Lisp-Entry "mouse-down" () 297 29 ("unprocessed" "v" "h")}
+        {Lisp-Entry "mouse-move" () 301 29 ("unprocessed" "v" "h")}
+        {Lisp-Entry "mouse-up" () 305 29 ("unprocessed" "v" "h")}
+        {Lisp-Entry "double-click" () 309 29 ("mouse-down" "v" "h")}
+        {Lisp-Entry "middle-mouse-down" () 313 29 ("unprocessed" "v" "h")}
+        {Lisp-Entry "middle-mouse-up" () 317 29 ("unprocessed" "v" "h")}
+        {Lisp-Entry "right-mouse-down" () 321 29 ("unprocessed" "v" "h")}
+        {Lisp-Entry "right-mouse-up" () 325 29 ("unprocessed" "v" "h")}
+        {Lisp-Entry "call-context-menu" () 330 11 ("context-menu" "Point" "new" "get-desktop" "acquire" "pos" "let" "v" "h")}
+        {Lisp-Entry "context-menu" () 335 29 ("unprocessed" "v" "h")}
+        {Lisp-Entry "call-lost-capture" () 344 11 ("unprocessed" "handle")}
+        {Lisp-Entry "on-lost-capture" () 348 26 ("unprocessed" "evt")}
+        {Lisp-Entry "acquire-capture" () 352 18 ("handle" "set-capture")}
+        {Lisp-Entry "release-capture" () 356 18 ("unset-capture")}
+        {Lisp-Entry "cursor-update" () 365 29 ("unprocessed" "processed" "if" "hit")}
+        {Lisp-Entry "system-key-down" () 376 11 ("processed" "view-update-cursor" "unprocessed" "VK_MENU" "/=" "if" "wparam")}
+        {Lisp-Entry "system-key-up" () 383 11 ("processed" "view-update-cursor" "unprocessed" "VK_MENU" "/=" "if" "wparam")}
+        {Lisp-Entry "modifier-changed" () 390 11 ("view-update-cursor" "memq?" "when" "wparam")}
+        {Lisp-Entry "call-key-down" () 395 11 ("integer->char" "key-down" "modifier-changed" "wparam")}
+        {Lisp-Entry "call-key-up" () 400 11 ("integer->char" "key-up" "modifier-changed" "wparam")}
+        {Lisp-Entry "call-key-press" () 405 11 ("integer->char" "key-press" "wparam")}
+        {Lisp-Entry "key-down" () 409 26 ("unprocessed" "char")}
+        {Lisp-Entry "key-up" () 413 26 ("unprocessed" "char")}
+        {Lisp-Entry "key-press" () 417 26 ("unprocessed" "char")}
+        {Lisp-Entry "call-position-change" () 426 18 ("Point" "new" "position-change" "v" "h")}
+        {Lisp-Entry "position-change" () 430 29 ("unprocessed" "position")}
+        {Lisp-Entry "call-size-change" () 434 18 ("previous-size" "set!" "size-change" "Dimension" "new" "size" "let" "get-installed?" "0" "/=" "or" "when" "height" "width" "type")}
+        {Lisp-Entry "size-change" () 444 29 ("unprocessed" "size")}
+        {Lisp-Entry "on-command" () 448 29 ("process-action" "get-window" "object" "processed" "self" "invoke" "get-application" "dispatch-shortcut" "Shortcut" "is?" "unprocessed" "not" "loword" "get-id-cookie" "action-item/shortcut" "let" "0" "=" "if" "wparam" "lparam")}
+        {Lisp-Entry "on-system-command" () 464 29 ("unprocessed" "type")}
+        {Lisp-Entry "on-mouse-activate" () 468 29 ("unprocessed")}
+        {Lisp-Entry "on-activate" () 473 29 ("unprocessed" "on-activate-palette" "on-deactivate-palette" "WA_INACTIVE" "=" "if" "kind")}
+        {Lisp-Entry "on-activate-palette" () 480 29 ()}
+        {Lisp-Entry "on-deactivate-palette" () 484 29 ()}
+        {Lisp-Entry "on-activate-app" () 490 29 ("unprocessed" "status")}
+        {Lisp-Entry "on-close" () 494 29 ("unprocessed" "evt")}
+        {Lisp-Entry "window-destroy" () 498 11 ("unprocessed" "destroy-component")}
+        {Lisp-Entry "on-nc-destroy" () 503 11 ("unprocessed" "NULL" "set-handle" "handle" "set-window" "evt")}
+        {Lisp-Entry "call-focus-gain" () 509 11 ("focus-gain")}
+        {Lisp-Entry "call-focus-lose" () 513 29 ("get-window" "focus-lose" "wparam")}
+        {Lisp-Entry "focus-gain" () 517 29 ("unprocessed")}
+        {Lisp-Entry "focus-lose" () 521 29 ("unprocessed" "receiving")}
+        {Lisp-Entry "drop-files" () 530 11 ("get-toplevel-handle" "SetForegroundWindow" "receive-files" "POINT->point" "pos" "DragFinish" "DragQueryPoint" "POINT-make" "pt" "received-files" "files" "let" "drop-files" "unimplemented" "wparam")}
+        {Lisp-Entry "received-files" () 542 11 ("naturals" "anchorize" "tokenise" "File" "Directory" "if" "new" "pathname" "FILE_ATTRIBUTE_DIRECTORY" "mask-bit-set?" "directory?" "GetFileAttributes" "attributes" "adjust-string" "WCHAR-string" "WCHAR-array-set!" "WCHAR-array-make" "filename" "MAX_PATH" "size" "let*" "n" "dynamic" "function" "map" "0" "NULL" "DragQueryFile" "count" "let" "received-files" "unimplemented" "wparam")}
+        {Lisp-Entry "receive-files" () 560 29 ("files" "pos")}
+        {Lisp-Entry "setting-change" () 569 29 ("wparam")}
+        {Lisp-Entry "on-timer" () 578 11 ("call-pulse" "serial-number->object" "object" "let" "serial-number")}
+        {Lisp-Entry "get-style" () 588 11 ("GWL_STYLE" "handle" "GetWindowLong")}
+        {Lisp-Entry "set-style" () 592 11 ("GWL_STYLE" "handle" "SetWindowLong" "style")}
+        {Lisp-Entry "get-ex-style" () 596 11 ("GWL_EXSTYLE" "handle" "GetWindowLong")}
+        {Lisp-Entry "set-ex-style" () 600 11 ("GWL_EXSTYLE" "handle" "SetWindowLong" "style")}
+        {Lisp-Entry "child-window?" () 604 11 ("WS_CHILD" "get-style" "mask-bit-set?")}
+        {Lisp-Entry "get-layered?" () 613 18 ("WS_EX_LAYERED" "get-ex-style" "mask-bit-set?")}
+        {Lisp-Entry "set-layered?" () 617 18 ("WS_EX_LAYERED" "GetWindowLong" "mask-bit-set" "GWL_EXSTYLE" "handle" "SetWindowLong" "flag")}
+        {Lisp-Entry "set-alpha-blending" () 621 18 ("RDW_INVALIDATE" "RDW_ERASE" "bit-or" "NULL" "RedrawWindow" "LWA_ALPHA" "0" "handle" "SetLayeredWindowAttributes" "true" "set-layered?" "n")}
+        {Lisp-Entry "fade-in" () 627 18 ("false" "set-layered?" "set!" "/" "-" "ceil" "+" "" "while" "start" "clock" "now" "clocks/second" "*" "delay" "max" "let*" "update-window" "true" "set-visible?" "0" "set-alpha-blending" "fade-speed" "fade-speed:")}
+        {Lisp-Entry "fade-out" () 642 18 ("=" "unless" "set!" "set-alpha-blending" "by" "from" "n" "for" "loop" "alpha" "let" "5" "step" "step:" "0" "to" "to:")}
+        {Lisp-Entry "find-host" () 657 18 ("children" "find-if" "get-guest" "View-Host" "is?" "and" "window" "dynamic" "function" "proc" "with" "guest-type")}
+        {Lisp-Entry "find-guest" () 665 18 ("get-guest" "when" "find-host" "host" "let" "guest-type")}
+        {Lisp-Entry "collect-guest" () 671 18 ("children" "get-guest" "guest" "let" "View-Host" "is?" "when" "window" "dynamic" "function" "collect" "guest-type")}
+        {Lisp-Entry "track-mouse-event" () 685 18 ("TrackMouseEvent" "TRACKMOUSEEVENT-dwHoverTime-set!" "handle" "TRACKMOUSEEVENT-hwndTrack-set!" "TRACKMOUSEEVENT-dwFlags-set!" "size-of-TRACKMOUSEEVENT" "TRACKMOUSEEVENT-cbSize-set!" "TRACKMOUSEEVENT-make" "rec" "with" "HOVER_DEFAULT" "time" "time:" "flags")}
+        {Lisp-Entry "send-message" () 699 18 ("handle" "SendMessage" "lparam" "wparam" "msg")}
+        {Lisp-Entry "post-message" () 703 18 ("handle" "PostMessage" "lparam" "wparam" "msg")}
+        {Lisp-Entry "get-handle" () 707 18 ("handle")}
+        {Lisp-Entry "set-handle" () 711 18 ("handle" "set!" "hw")}
+        {Lisp-Entry "set-parent" () 715 18 ("NULL" "get-handle" "if" "handle" "SetParent" "nextmethod" "parent")}
+        {Lisp-Entry "get-frame" () 720 11 ("get-frame" "parent" "when" "Frame" "self" "is?" "if")}
+        {Lisp-Entry "get-overlapped" () 727 18 ("parent" "get-overlapped" "Overlapped" "self" "is?" "if")}
+        {Lisp-Entry "get-window-owner" () 733 18 ("GW_OWNER" "handle" "GetWindow" "get-window")}
+        {Lisp-Entry "get-root-owner" () 737 18 ("true" "set!" "if" "owner" "not" "while" "false" "done?" "when" "get-window-owner" "root" "let")}
+        {Lisp-Entry "get-top-window" () 749 18 ("handle" "GetTopWindow" "get-window")}
+        {Lisp-Entry "get-title" () 753 26 ("title")}
+        {Lisp-Entry "set-title" () 757 26 ("localize" "set-window-title" "title" "set!" "value")}
+        {Lisp-Entry "get-window-title" () 762 18 ("handle" "get-hwnd-title")}
+        {Lisp-Entry "set-window-title" () 766 18 ("handle" "SetWindowText" "title")}
+        {Lisp-Entry "acquire" () 770 18 ("error" "else" "RECT->rect" "2" "RECT->POINTS" "rect->RECT" "Rect" "POINT->point" "1" "handle" "get-handle" "MapWindowPoints" "point->POINT" "acquired" "with" "Point" "typecase" "shape" "window")}
+        {Lisp-Entry "get-position" () 784 11 ("RECT-top-ref" "RECT-left-ref" "Point" "new" "2" "RECT->POINTS" "get-handle" "NULL" "MapWindowPoints" "child-window?" "parent" "and" "when" "handle" "GetWindowRect" "RECT-make" "rect" "with")}
+        {Lisp-Entry "get-window-position" () 792 18 ("POINT-y-ref" "POINT-x-ref" "Point" "new" "1" "NULL" "handle" "MapWindowPoints" "0" "new-point" "pos" "with")}
+        {Lisp-Entry "set-position" () 798 11 ("SWP_NOACTIVATE" "SWP_NOZORDER" "SWP_NOSIZE" "bit-or" "0" "v" "h" "NULL" "handle" "SetWindowPos" "pos")}
+        {Lisp-Entry "move-window" () 802 18 ("v" "h" "+" "Point" "new" "set-position" "get-position" "pos" "let" "dv" "dh")}
+        {Lisp-Entry "get-size" () 807 11 ("RECT-bottom-ref" "RECT-right-ref" "Dimension" "new" "handle" "GetClientRect" "RECT-make" "rect" "with")}
+        {Lisp-Entry "set-size" () 813 11 ("get-window-size" "+" "set-window-size" "get-size" "-" "delta" "let" "size")}
+        {Lisp-Entry "size-window" () 818 18 ("height" "width" "+" "Dimension" "new" "set-size" "get-size" "size" "let" "dheight" "dwidth")}
+        {Lisp-Entry "get-window-size" () 823 18 ("RECT-top-ref" "RECT-bottom-ref" "RECT-left-ref" "RECT-right-ref" "-" "Dimension" "new" "handle" "GetWindowRect" "RECT-make" "rect" "let")}
+        {Lisp-Entry "set-window-size" () 830 18 ("SWP_NOACTIVATE" "SWP_NOZORDER" "SWP_NOMOVE" "SWP_NOCOPYBITS" "bit-or" "height" "width" "0" "NULL" "handle" "SetWindowPos" "size")}
+        {Lisp-Entry "set-bounds" () 834 18 ("SWP_NOACTIVATE" "SWP_NOZORDER" "bit-or" "rect-height" "rect-width" "top" "left" "NULL" "handle" "SetWindowPos" "rect")}
+        {Lisp-Entry "grow-bounds" () 838 18 ("set-position" "set-window-size" "Dimension" "get-window-size" "size" "Point" "new" "get-position" "+" "pos" "let" "dheight" "dwidth" "dv" "dh")}
+        {Lisp-Entry "get-width" () 846 18 ("width" "get-size" "size" "let")}
+        {Lisp-Entry "get-height" () 852 18 ("height" "get-size" "size" "let")}
+        {Lisp-Entry "get-rect" () 857 18 ("RECT-bottom-ref" "RECT-right-ref" "RECT-top-ref" "RECT-left-ref" "Rect" "new" "2" "RECT->POINTS" "get-handle" "NULL" "MapWindowPoints" "parent" "when" "handle" "GetWindowRect" "RECT-make" "rect" "with")}
+        {Lisp-Entry "get-bounds" () 865 18 ("RECT-bottom-ref" "RECT-right-ref" "RECT-top-ref" "RECT-left-ref" "Rect" "new" "2" "RECT->POINTS" "NULL" "MapWindowPoints" "handle" "GetWindowRect" "RECT-make" "rect" "with")}
+        {Lisp-Entry "ensure-displayed" () 872 18 ("set-position" "set-size" "8" "padding:" "fit-within" "new-size" "new-position" "receive" "get-rect" "rect" "get-desktop" "get-size" "parent" "not" "if" "outer" "let")}
+        {Lisp-Entry "mouse-position" () 880 18 ("POINT-y-ref" "POINT-x-ref" "Point" "new" "get-desktop" "acquire" "GetCursorPos" "POINT-make" "point" "with")}
+        {Lisp-Entry "mouse-window" () 886 18 ("mouse-position" "find-window")}
+        {Lisp-Entry "mouse-in-window?" () 890 18 ("mouse-position" "point-in-window?")}
+        {Lisp-Entry "point-in-window?" () 894 18 ("height" "v" "width" "0" "h" "in-interval?" "and" "get-window-size" "size" "let" "point")}
+        {Lisp-Entry "find-window" () 900 18 ("WindowFromPoint" "get-window" "v" "POINT-y-set!" "h" "POINT-x-set!" "POINT-make" "pt" "with" "point")}
+        {Lisp-Entry "find-child-window" () 907 18 ("acquire" "find-child-window" "self" "eq?" "not" "or" "if" "CWP_SKIPTRANSPARENT" "CWP_SKIPDISABLED" "CWP_SKIPINVISIBLE" "bit-or" "handle" "ChildWindowFromPointEx" "get-window" "window" "let" "v" "POINT-y-set!" "h" "POINT-x-set!" "POINT-make" "pt" "with" "point")}
+        {Lisp-Entry "flash-window" () 917 18 ("false" "sleep" "true" "handle" "FlashWindow" "3" "repeat" "loop" "flash-window" "unimplemented")}
+        {Lisp-Entry "move" () 927 18 ("true" "handle" "MoveWindow" "cy" "cx" "y" "x")}
+        {Lisp-Entry "acquire-focus" () 931 18 ("self" "set-window-focus")}
+        {Lisp-Entry "get-enabled?" () 935 18 ("handle" "IsWindowEnabled")}
+        {Lisp-Entry "enable-window" () 939 18 ("true" "handle" "EnableWindow")}
+        {Lisp-Entry "disable-window" () 943 18 ("false" "handle" "EnableWindow")}
+        {Lisp-Entry "get-client-rect" () 947 18 ("RECT->rect" "handle" "GetClientRect" "RECT-make" "rect" "with")}
+        {Lisp-Entry "scroll-window" () 953 18 ("NULL" "handle" "ScrollWindowEx" "rect->RECT" "with" "SW_INVALIDATE" "0" "SW_ERASE" "if" "bit-or" "flags" "let" "true" "erase?" "erase?:" "clip-rect" "clip-rect:" "rect" "dv" "dh")}
+        {Lisp-Entry "invalidate-rect" () 960 18 ("InvalidateRect" "rect->RECT" "with" "handle" "when" "false" "erase?" "rect")}
+        {Lisp-Entry "invalidate-region" () 966 18 ("get-handle" "InvalidateRgn" "handle" "when" "false" "erase?" "region")}
+        {Lisp-Entry "invalidate-window" () 971 18 ("NULL" "InvalidateRect" "handle" "when" "false" "erase?")}
+        {Lisp-Entry "redraw-window" () 976 18 ("get-handle" "RedrawWindow" "rect->RECT" "NULL" "not" "if" "with" "RDW_ALLCHILDREN" "RDW_INVALIDATE" "RDW_UPDATENOW" "RDW_ERASENOW" "bit-or" "flags" "let" "handle" "when" "region" "region:" "rect" "rect:")}
+        {Lisp-Entry "invalidate-border" () 985 18 ("invalidate-region" "border-region" "region" "with-closed" "1" "Rect" "insets" "insets:")}
+        {Lisp-Entry "redraw-border" () 990 18 ("region:" "redraw-window" "border-region" "region" "with-closed" "1" "Rect" "insets" "insets:")}
+        {Lisp-Entry "border-region" () 995 18 ("get-client-rect" "frame-region" "1" "Rect" "insets" "insets:")}
+        {Lisp-Entry "get-update-rect" () 999 18 ("RECT->rect" "false" "handle" "GetUpdateRect" "RECT-make" "rect" "with")}
+        {Lisp-Entry "get-update-region" () 1005 18 ("false" "get-handle" "handle" "GetUpdateRgn" "Region" "new" "region" "let")}
+        {Lisp-Entry "get-class-background" () 1011 18 ("GCL_HBRBACKGROUND" "handle" "GetClassLong")}
+        {Lisp-Entry "update-window" () 1015 18 ("handle" "UpdateWindow")}
+        {Lisp-Entry "show-noactivate" () 1019 18 ("SWP_NOSIZE" "SWP_NOMOVE" "SWP_NOACTIVATE" "SWP_SHOWWINDOW" "bit-or" "0" "HWND_TOP" "handle" "SetWindowPos")}
+        {Lisp-Entry "hide-noactivate" () 1023 18 ("SWP_NOSIZE" "SWP_NOMOVE" "SWP_NOACTIVATE" "SWP_HIDEWINDOW" "bit-or" "0" "handle" "SetWindowPos")}
+        {Lisp-Entry "first-window" () 1032 18 ("first" "null?" "if" "get-windows" "windows" "let")}
+        {Lisp-Entry "second-window" () 1039 18 ("second" "2" "length" ">=" "if" "get-windows" "windows" "let")}
+        {Lisp-Entry "last-window" () 1046 18 ("get-windows" "last")}
+        {Lisp-Entry "get-windows" () 1050 18 ("get-children" "collect-if" "get-visible?" "or" "Window" "is?" "and" "child" "dynamic" "function" "proc" "with" "false" "include-invisibles?" "include-invisibles?:")}
+        {Lisp-Entry "front-window?" () 1058 18 ("parent" "first-window" "self" "eq?")}
+        {Lisp-Entry "bring-to-front" () 1067 11 ("handle" "BringWindowToTop" "nextmethod")}
+        {Lisp-Entry "send-to-back" () 1072 11 ("SWP_NOSIZE" "SWP_NOMOVE" "bit-or" "0" "HWND_BOTTOM" "handle" "SetWindowPos" "nextmethod")}
+        {Lisp-Entry "get-location" () 1082 11 ("location")}
+        {Lisp-Entry "set-location" () 1086 11 ("location" "set!" "loc")}
+        {Lisp-Entry "layout-window" () 1090 18 ("layout")}
+        {Lisp-Entry "layout" () 1094 26 ()}
+        {Lisp-Entry "mouse-view" () 1103 18 ("mouse-position" "find-view")}
+        {Lisp-Entry "find-view" () 1107 18 ("self" "acquire" "find-drawing" "get-root" "root" "View-Player" "is?" "when" "find-window" "window" "let" "pos")}
+        {Lisp-Entry "to-view" () 1114 18 ("get-root" "self" "acquire" "acquired" "get-player" "player" "let*" "view" "shape")}
+        {Lisp-Entry "debug-window" () 1125 26 ("self" "Development" "set-%" "debug-window" "unimplemented" "pos")}
+        {Lisp-Entry "describe-window" () 1131 26 ("WINEXSTYLE" "get-ex-style" "WINSTYLE" "bits->symbolic" "get-client-rect" "get-bounds" "get-size" "get-position" "WS_CLIPSIBLINGS" "WS_CLIPCHILDREN" "get-style" "mask-bit-set?" "get-class-background" "get-name" "self" "class-of" ":console" "format" "describe-window" "unimplemented" "pos")}}}})
 "Window-Advanced-Menu"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "menu" "Window-Advanced-Menu.fusion"} {Time 128355726640000000L}
     {Lisp-Entry "jazz.ui.menu.Window-Advanced-Menu" () 37 9 ("jazz")
       {Lisp-Entry "Window-Advanced-Menu" () 46 7 ("application" "Action" "action:" "Bitmap-Resource" "icon:" "cascade-separator" "before:" "title:" "toggle-window" "name:" "Window-Menu")}}})
 "Window-DC"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "graphic" "Window-DC.fusion"} {Time 128355726640000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "graphic" "Window-DC.fusion"} {Time 128360915200000000L}
     {Lisp-Entry "jazz.ui.graphic.Window-DC" () 37 9 ("jazz")
       {Lisp-Entry "Window-DC" () 45 7 ("DC")
         {Lisp-Entry "window" () 48 8 ()}
-        {Lisp-Entry "initialize" () 51 11 ("destroy-mandatory" "get-hwnd" "GetWindowDC" "hdc" "window" "set!" "NULL" "nextmethod" "wnd")}
-        {Lisp-Entry "destroy" () 58 11 ("nextmethod" "hdc" "window" "get-hwnd" "ReleaseDC")}}}})
+        {Lisp-Entry "initialize" () 51 11 ("destroy-mandatory" "get-handle" "GetWindowDC" "hdc" "window" "set!" "NULL" "nextmethod" "wnd")}
+        {Lisp-Entry "destroy" () 58 11 ("nextmethod" "hdc" "window" "get-handle" "ReleaseDC")}}}})
 "Window-Menu"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "menu" "Window-Menu.fusion"} {Time 128355726640000000L}
     {Lisp-Entry "jazz.ui.menu.Window-Menu" () 37 9 ("jazz")
@@ -26906,7 +26892,7 @@
       {Lisp-Entry "Workbench-Editor" () 46 7 ("Descendants-Editor")
         {Lisp-Entry "form-model" () 49 11 ("nextmethod" "else" "Workbench-Tree" "tree" "get-name" "case" "form")}}}})
 "Workbench-Manager"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "builder" "workbench" "Workbench-Manager.fusion"} {Time 128360671600000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "builder" "workbench" "Workbench-Manager.fusion"} {Time 128360899000000000L}
     {Lisp-Entry "jazz.builder.workbench.Workbench-Manager" () 37 9 ("jazz")
       {Lisp-Entry "active-project" () 53 12 ()}
       {Lisp-Entry "get-active-project" () 57 20 ("active-project")}
@@ -26967,7 +26953,7 @@
         {Lisp-Entry "import-directory" () 460 11 ("parse" "user-message" "descendants" "designer" "process-refresh" "false" "import-pathname" "component" "let" "list" "validate-pathnames" "yes" "question" "type:" "format" "message-box" "eq?" "or" "when" "MaxFiles-Warning" ":max-count" "import-filter?" "file" ":filter" "count-files" "count" "directory:" "BrowseFolder-Dialog" "get-modal" "dynamic" "function" "with-import-directory" "directory" "ascendant-product" "product" "selected-object" "parent" "let*" "default-directory?")}
         {Lisp-Entry "import-files" () 475 11 ("import-pathnames" "directory:" "true" "multiple-selection?:" "OpenFile-Dialog" "get-modal" "directory" "dynamic" "function" "with-import-directory" "files" "ascendant-product" "product" "selected-object" "parent" "let*" "default-directory?")}
         {Lisp-Entry "import-pathnames" () 484 21 ("format-plural" "format-cardinality" "user-message" "length" "count" "let" "get-name" "key:" "" "sort" "false" "import-pathname" "pathname" "dynamic" "function" "for-each" "validate-pathnames" "when" "parent" "pathnames" "product")}
-        {Lisp-Entry "import-pathname" () 495 11 ("import-file" "import-filter?" "when" "File" "false" "recursive?:" ":sort?" "directories?:" "files?:" "import-pathname" "dynamic" "function" "iterate-directory" "set-name" "descendant?:" "not" "design-events?:" "designer" "add-child" "name:" "Product-Group" "new" "subgroup" "true" "install-product" "determine-product-file?" "exists?" "and" "if" "format" "new-file" "product-file" "Directory" "typecase" "get-name" "name" "let" "descendant?" "parent" "pathname" "product")}
+        {Lisp-Entry "import-pathname" () 495 11 ("import-file" "import-filter?" "when" "File" "false" "recursive?:" "sort?:" "directories?:" "files?:" "import-pathname" "dynamic" "function" "iterate-directory" "set-name" "descendant?:" "not" "design-events?:" "designer" "add-child" "name:" "Product-Group" "new" "subgroup" "true" "install-product" "determine-product-file?" "exists?" "and" "if" "format" "new-file" "product-file" "Directory" "typecase" "get-name" "name" "let" "descendant?" "parent" "pathname" "product")}
         {Lisp-Entry "import-file" () 520 11 ("add-entry" "set-name" "when" "source" "set-property" "descendant?:" "not" "design-events?:" "designer" "add-child" "get-workbench" "workbench" ":source" "name:" "new" "product-file" "get-base" "string->symbol" "Jazz-File" "eq?" "if" "name" "get-extension" "extension-model" "model" "let*" "descendant?" "parent" "file")}
         {Lisp-Entry "determine-product-file?" () 533 11 ("Product" "autoload" "subtype?" "in-manifest?" "extends" "name" "type" "package" "receive" "extract-jazz-file-category" "info" "ci=" "when" "get-extension" "ext" "let" "determine-product-file?" "unimplemented" "file")}
         {Lisp-Entry "default-import-directory" () 545 11 ("anchorize" "exists?" "not" "or" "if" "get-name" "list" "get-list" "append" "new" "dir" "when" "parent-dir" "else" "get-directory" "Product-Group" "get-parent" "class-of" "type-name" "get-manifest-source" "source" "let" "Product" "Root" "Directory" "Workbench" "typecase" "dynamic" "function" "default" "letrec" "default-import-directory" "unimplemented" "true" "must-exist?" "must-exist?:" "object")}
@@ -26975,7 +26961,7 @@
         {Lisp-Entry "extension-model" () 579 11 ("Product-File" "else" "Sound-File" "Icon-File" "Cursor-File" "Bitmap-File" "Cpp-File" "Java-File" "Jazz-File" "ci=" "test:" "member?" "cond" "ext")}
         {Lisp-Entry "ascendant-product" () 590 21 ("get-parent" "ascendant-product" "Product" "is?" "if" "component")}
         {Lisp-Entry "synchronize-content" () 601 11 ("content:" "confirmation" "type:" "Synchronize-Box" "class:" "reverse" "bind" "info" "for-each" "children:" "add-row" "Bitmap-Resource" "image:" "join" "title:" "Tree-Node" "c0" "add" "locate" "tree" "Dimension" "size:" "Synchronize-Border" "border" "message-box" "null?" "get-output" "out-of-synch" "true" ":case-insensitive?" ":right-key" ":left-key" "key:" "ci<" "sort" "directory?" "when" ":same" ":right" "list" "put" ":left" "case" "cons" "right" "left" "key" "what" "merge-ordered" "get-content" "content" "get-children" "Project-Dependencies" "is-not?" "child" "collect-if" "children" "path" "fold" "letrec" "pathname" "pathname-name" "class-of" "type-name" "get-manifest-source" "get-name" "Product-Group" "is?" "component" "dynamic" "function" "component-name" "List-Factory" "new" "fact" "let" "error" "exists?" "not" "if" "false" ":must-exist?" "default-import-directory" "directory" "ascendant-product" "product" "selected-object" "object" "let*" "synchronize-content" "unimplemented")}
-        {Lisp-Entry "validate-pathnames" () 659 11 ("for-each" "get-entry" "jazz-file" "get-base" "string->symbol" "name" "let*" "Jazz-File" "eq?" "get-extension" "extension-model" "model" "let" "import-filter?" "when" "File" "false" "recursive?:" ":sort?" "directories?:" "true" "files?:" "iterate-directory" "Directory" "typecase" "pathname" "iterate" "get-workbench" "workbench" "letrec" "report" "dynamic" "function" "validate" "pathnames" "product")}
+        {Lisp-Entry "validate-pathnames" () 659 11 ("for-each" "get-entry" "jazz-file" "get-base" "string->symbol" "name" "let*" "Jazz-File" "eq?" "get-extension" "extension-model" "model" "let" "import-filter?" "when" "File" "false" "recursive?:" "sort?:" "directories?:" "true" "files?:" "iterate-directory" "Directory" "typecase" "pathname" "iterate" "get-workbench" "workbench" "letrec" "report" "dynamic" "function" "validate" "pathnames" "product")}
         {Lisp-Entry "validate" () 683 11 ("false" "message-box" "when" "0" "subseq" "get-presentation" "get-name" ":hyperlink" ":bulleted" "list" "highlight-component" "close-modal-dialog" "action" "get-product" "product" "map" "text" "format-is/are" "format-plural" "format" "header" ">" "too-many?" "max-displayed" "length" "count" "let*" "true" "null?" "if" "get-output" "put" "jazz-file" "dynamic" "function" "List-Factory" "new" "already-defined" "get-workbench" "workbench" "let" "iterate")}
         {Lisp-Entry "activate-selection" () 727 18 ("selected-object" "activate-object")}
         {Lisp-Entry "activate-object" () 731 11 ("activate-project" "bell" "Project" "is-not?" "if" "object")}
@@ -28135,7 +28121,7 @@
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "core" "generic" "_generic.scm"} {Time 128355726580000000L}
     {Lisp-Entry "core.generic" () 37 8 ()}})
 "_git"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "git" "_git.fusion"} {Time 128355726600000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "git" "_git.fusion"} {Time 128360902400000000L}
     {Lisp-Entry "jazz.git" () 37 9 ("jazz")
       {Lisp-Entry "*repository*" () 43 12 ()}
       {Lisp-Entry "git-repository" () 47 20 ("*repository*")}
@@ -28177,7 +28163,7 @@
         {Lisp-Entry "git-diff" () 304 18 ()}
         {Lisp-Entry "git-merge" () 308 18 ()}
         {Lisp-Entry "git-show" () 312 18 ("list" "git" "current-output-port" "output" "object")}
-        {Lisp-Entry "prepare-merge" () 316 18 (":sort?" "recursive?:" "directories?:" "files?:" "move-pathname" "iterate" "both" "b" "eq?" "or" "increase!" "read-line" "do" "-" "repeat" "loop" "result-count" "result-line" "target-count" "target-line" "delta" "1" "target-rank" "merged-output" "File-Reader" "target-input" "get-base" "base" "new-brother" "merged-file" "target-file" "apply-diff" "else" "write-line" "line" "what" "bind" "info" "for-each" "car" "fifth" "lines" "delete-file" "cond" "right-file" "setup-right" "copy-file" "left-file" "format" "debug" "not" "if" "directory" "working-file" "setup-left" "git-show" "File-Printer" "new" "printer" "with-closed" "create-directories" "user-message" "exists?" "unless" "cons" "new-file" "base-file" "setup-base" "define" "split" "name-path" "either" "name" "deltas" "right-index" "right-name" "base-index" "base-name" "parse-patch-file" "ci=" "when" "get-extension" "ext" "let" "file" "lambda" "iterate-directory" "merge-dir")}
+        {Lisp-Entry "prepare-merge" () 316 18 ("sort?:" "recursive?:" "directories?:" "files?:" "move-pathname" "iterate" "both" "b" "eq?" "or" "increase!" "read-line" "do" "-" "repeat" "loop" "result-count" "result-line" "target-count" "target-line" "delta" "1" "target-rank" "merged-output" "File-Reader" "target-input" "get-base" "base" "new-brother" "merged-file" "target-file" "apply-diff" "else" "write-line" "line" "what" "bind" "info" "for-each" "car" "fifth" "lines" "delete-file" "cond" "right-file" "setup-right" "copy-file" "left-file" "format" "debug" "not" "if" "directory" "working-file" "setup-left" "git-show" "File-Printer" "new" "printer" "with-closed" "create-directories" "user-message" "exists?" "unless" "cons" "new-file" "base-file" "setup-base" "define" "split" "name-path" "either" "name" "deltas" "right-index" "right-name" "base-index" "base-name" "parse-patch-file" "ci=" "when" "get-extension" "ext" "let" "file" "lambda" "iterate-directory" "merge-dir")}
         {Lisp-Entry "complete-merge" () 414 18 ("merge-dir")}
         {Lisp-Entry "git-pull" () 423 18 ()}
         {Lisp-Entry "git-push" () 427 18 ()}}
@@ -29350,7 +29336,7 @@
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "test" "performance" "_performance.scm"} {Time 128355726660000000L}
     {Lisp-Entry "test.performance" () 0 8 ()}})
 "_platform"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "platform" "_platform.fusion"} {Time 128355726620000000L}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "platform" "_platform.fusion"} {Time 128360914180000000L}
     {Lisp-Entry "jazz.platform" () 37 9 ("initialize-aliases" "jazz")
       {Lisp-Entry "bell" () 45 20 ("MB_ICONEXCLAMATION" "MessageBeep")}
       {Lisp-Entry "clock" () 55 12 ("system-clock")}
@@ -29399,7 +29385,7 @@
       {Lisp-Entry "get-windows-version" () 397 20 ("0" "OSVERSIONINFOEX-dwMinorVersion-ref" "OSVERSIONINFOEX-dwMajorVersion-ref" "Version" "new" "version-info" "info" "let" "set!" "Windows-Version" "unless")}
       {Lisp-Entry "validate-version" () 408 20 ("format" "if" "error" "" "and" "mandatory-version" "mandatory" "get-process" "process" "let*" "present" "register-crash-info" "when" "validate-version" "unimplemented" "cleanup" "cleanup:" "register" "register:" "version" "context" "what" "title")}
       {Lisp-Entry "get-window-focus" () 427 20 ("get-window" "when" "GetFocus" "focus" "let")}
-      {Lisp-Entry "set-window-focus" () 433 20 ("NULL" "get-hwnd" "if" "SetFocus" "window")}
+      {Lisp-Entry "set-window-focus" () 433 20 ("NULL" "get-handle" "if" "SetFocus" "window")}
       {Lisp-Entry "format-system-message" () 446 20 ("NULL" "0" "FORMAT_MESSAGE_FROM_SYSTEM" "FormatMessage" "/=" "when" "1" "-" "make-string" "msg" "size" "let*" "format-system-message" "unimplemented" "id")}
       {Lisp-Entry "Shift-Bit" () 463 12 ("1")}
       {Lisp-Entry "Control-Bit" () 466 12 ("2")}
@@ -29703,21 +29689,22 @@
   {Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "core" "base" "syntax" "_syntax.scm"} {Time 128355726580000000L}
     {Lisp-Entry "core.base.syntax" () 37 8 ()}})
 "_test"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "test" "_test.fusion"} {Time 128360749840000000L}
-    {Lisp-Entry "test" () 37 9 ("3" "Subseq" "5" "subseq!" "y" "4" "subseq" "x" "s" "let*" "1" "element" "c" "axis-add" "length" "Axis" "hello" "yyy" "=" "get-output" "9" "7" "String-Printer" "write" "display" "les" "format" "File-Printer" "read-lines" "read-delimited" "read-char" "File-Reader" "r" "with-closed" "exists?" "parse" "Native" "File" "t" "new-file" "f" "test" "Directory" "d" "get-visible?" "B" "b" "property-getter" "2" "property-setter" "category-field" "p" "A" "new" "a" "position" "return:" "true" "reversed?:" "find" "debug" "backward" "direction:" "explore" "e" "let" "jazz")
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "test" "_test.fusion"} {Time 128360897880000000L}
+    {Lisp-Entry "test" () 37 9 ("3" "Subseq" "5" "subseq!" "y" "4" "subseq" "x" "s" "let*" "1" "element" "c" "axis-add" "length" "Axis" "hello" "yyy" "=" "get-output" "9" "7" "String-Printer" "write" "display" "les" "format" "File-Printer" "read-lines" "read-delimited" "read-char" "File-Reader" "r" "with-closed" "exists?" "parse" "File" "t" "new-file" "f" "test" "d" "get-visible?" "B" "b" "property-getter" "2" "property-setter" "category-field" "p" "A" "new" "a" "position" "return:" "true" "reversed?:" "find" "debug" "backward" "direction:" "explore" "e" "let" "Native" "Directory" "prepare-merge" "*jazz-repository*" "git-repository-set!" "jazz")
       {Lisp-Entry "in-text?" () 56 13 ("0" ">=" "and" "col" "row" "let" "pos")}
       {Lisp-Entry "TE" () 63 7 ("Object")
         {Lisp-Entry "limit" () 66 8 ()}
         {Lisp-Entry "paragraph-string" () 69 11 ("n")}
         {Lisp-Entry "paragraph-length" () 73 11 ("paragraph-string" "length" "n")}
         {Lisp-Entry "in-text?" () 77 11 ("paragraph-length" "=" "limit" "" "or" "0" ">=" "and" "col" "row" "let" "pos")}}
-      {Lisp-Entry "A" () 323 7 ("Object")
-        {Lisp-Entry "a" () 325 12 ("set-aaa")}
-        {Lisp-Entry "set-aaa" () 327 11 ("+" "a" "set!" "v")}
-        {Lisp-Entry "foo" () 330 11 ("2" "set!" "a")}}
-      {Lisp-Entry "test" () 347 13 ("debug" "do" "5" "c:" "3" "b:" "2" "a:" "in-properties" "value" "property" "for" "loop")}
-      {Lisp-Entry "A" () 358 7 ("visible?:" "Component")}
-      {Lisp-Entry "B" () 364 7 ("visible?:" "Component")}}}
+      {Lisp-Entry "*jazz-repository*" () 88 12 ("Root" "Directory" "Git-Repository" "new")}
+      {Lisp-Entry "A" () 322 7 ("Object")
+        {Lisp-Entry "a" () 324 12 ("set-aaa")}
+        {Lisp-Entry "set-aaa" () 326 11 ("+" "a" "set!" "v")}
+        {Lisp-Entry "foo" () 329 11 ("2" "set!" "a")}}
+      {Lisp-Entry "test" () 346 13 ("debug" "do" "5" "c:" "3" "b:" "2" "a:" "in-properties" "value" "property" "for" "loop")}
+      {Lisp-Entry "A" () 357 7 ("visible?:" "Component")}
+      {Lisp-Entry "B" () 363 7 ("visible?:" "Component")}}}
   {Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "test" "_test.fusion"} {Time 128355726640000000L}
     {Lisp-Entry "jazz.test" () 0 9 ("jazz")}}
   {Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "core" "test" "_test.scm"} {Time 128355726580000000L}
@@ -29840,10 +29827,8 @@
       {Lisp-Entry "append!" () 40 8 ("append")}
       {Lisp-Entry "f" () 44 9 ("newline" "5" "" "list" "write" "2" "x" "let")}}})
 "_window"
- ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "_window.fusion"} {Time 128355726660000000L}
-    {Lisp-Entry "jazz.ui.window" () 37 9 ("call-dispatch-message" "DefWindowProc" "if" "set-in-creation" "set-window" "set-hwnd" "get-in-creation" "not" "and" "when" "get-window" "window" "let" "lparam" "wparam" "msg" "hwnd" "function" "process-hwnd-message" "set!" "jazz")
-      {Lisp-Entry "processed" () 45 19 ("processed")}
-      {Lisp-Entry "unprocessed" () 46 19 ("unprocessed")}
+ ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "ui" "window" "_window.fusion"} {Time 128360922760000000L}
+    {Lisp-Entry "jazz.ui.window" () 37 9 ("call-dispatch-message" "DefWindowProc" "if" "set-in-creation" "set-window" "set-handle" "get-in-creation" "not" "and" "when" "get-window" "window" "let" "lparam" "wparam" "msg" "hwnd" "function" "process-hwnd-message" "set!" "jazz")
       {Lisp-Entry "desktop" () 54 12 ()}
       {Lisp-Entry "Desktop-DC" () 57 12 ()}
       {Lisp-Entry "desktop-dc" () 60 20 ("Cairo-Memory-Surface" "new" "set!" "Desktop-DC" "unless")}
@@ -29852,27 +29837,24 @@
       {Lisp-Entry "get-class-name" () 88 20 ("adjust-string" "0" "GetClassName" "=" "if" "make-string" "name" "size" "let*" "get-class-name" "unimplemented" "hwnd")}
       {Lisp-Entry "select-foreground-hwnd" () 104 20 ("SetForegroundWindow" "hwnd")}
       {Lisp-Entry "get-hwnd-title" () 108 20 ("1" "+" "GetWindowText" "str" "ret" "receive" "make-string" "string" "GetWindowTextLength" "size" "let*" "hwnd")}
-      {Lisp-Entry "in-creation" () 121 12 ()}
-      {Lisp-Entry "set-in-creation" () 124 13 ("in-creation" "set!" "in")}
-      {Lisp-Entry "get-in-creation" () 128 13 ("in-creation")}
-      {Lisp-Entry "Inhibit-View-Cursor?" () 150 12 ("false")}
-      {Lisp-Entry "inhibit-view-cursor" () 154 20 ("Inhibit-View-Cursor?" "set!" "flag")}
-      {Lisp-Entry "view-update-cursor" () 158 13 ("update-cursor" "Inhibit-View-Cursor?" "unless")}
-      {Lisp-Entry "locked-update?" () 169 12 ("false")}
-      {Lisp-Entry "locked-rect" () 173 12 ()}
-      {Lisp-Entry "with-locked-update" () 177 20 ("update-window" "false" "NULL" "when" "true" "set!" "get-hwnd" "LockWindowUpdate" "begin" "unwind-protect" "get-toplevel" "toplevel" "let" "locked-update?" "if" "proc")}
-      {Lisp-Entry "with-locked-update" () 193 20 ("RDW_ALLCHILDREN" "RDW_UPDATENOW" "RDW_ERASE" "RDW_INVALIDATE" "bit-or" "flags:" "rect:" "redraw-window" "false" "get-rect" "rect" "when" "true" "0" "Rect" "new" "locked-rect" "set!" "begin" "unwind-protect" "get-toplevel" "toplevel" "let" "locked-update?" "if" "proc")}
-      {Lisp-Entry "Escape-Handler" () 215 12 ()}
-      {Lisp-Entry "get-escape-handler" () 219 20 ("Escape-Handler")}
-      {Lisp-Entry "set-escape-handler" () 223 20 ("Escape-Handler" "set!" "handler")}
-      {Lisp-Entry "Active-Frame" () 232 12 ()}
-      {Lisp-Entry "get-front-frame" () 236 13 ("get-window" "GW_HWNDNEXT" "set!" "IsWindowVisible" "not" "and" "while" "GW_CHILD" "get-hwnd" "GetWindow" "hwnd" "when" "get-stage" "stage" "let")}
-      {Lisp-Entry "activate-front" () 246 13 ("activate-frame" "deactivate-frame" "/=" "or" "when" "Active-Frame" "active" "get-front-frame" "front" "let" "false" "force?" "force?:")}
-      {Lisp-Entry "reactivate-active" () 256 20 ("true" "force?:" "activate-frame" "when" "get-front-frame" "front" "let")}
-      {Lisp-Entry "Passing-Through?" () 267 19 ("false")}
-      {Lisp-Entry "popups" () 271 12 ()}
-      {Lisp-Entry "close-all-popups" () 275 20 ("popups" "close-popup" "for-each")}
-      {Lisp-Entry "close-popup" () 279 20 ("remove!" "popups" "set!" "close" "popup")}}})
+      {Lisp-Entry "Inhibit-View-Cursor?" () 138 12 ("false")}
+      {Lisp-Entry "inhibit-view-cursor" () 142 20 ("Inhibit-View-Cursor?" "set!" "flag")}
+      {Lisp-Entry "view-update-cursor" () 146 13 ("update-cursor" "Inhibit-View-Cursor?" "unless")}
+      {Lisp-Entry "locked-update?" () 157 12 ("false")}
+      {Lisp-Entry "locked-rect" () 161 12 ()}
+      {Lisp-Entry "with-locked-update" () 165 20 ("update-window" "false" "NULL" "when" "true" "set!" "get-handle" "LockWindowUpdate" "begin" "unwind-protect" "get-toplevel" "toplevel" "let" "locked-update?" "if" "proc")}
+      {Lisp-Entry "with-locked-update" () 181 20 ("RDW_ALLCHILDREN" "RDW_UPDATENOW" "RDW_ERASE" "RDW_INVALIDATE" "bit-or" "flags:" "rect:" "redraw-window" "false" "get-rect" "rect" "when" "true" "0" "Rect" "new" "locked-rect" "set!" "begin" "unwind-protect" "get-toplevel" "toplevel" "let" "locked-update?" "if" "proc")}
+      {Lisp-Entry "Escape-Handler" () 203 12 ()}
+      {Lisp-Entry "get-escape-handler" () 207 20 ("Escape-Handler")}
+      {Lisp-Entry "set-escape-handler" () 211 20 ("Escape-Handler" "set!" "handler")}
+      {Lisp-Entry "Active-Frame" () 220 12 ()}
+      {Lisp-Entry "get-front-frame" () 224 13 ("get-window" "GW_HWNDNEXT" "set!" "IsWindowVisible" "not" "and" "while" "GW_CHILD" "get-handle" "GetWindow" "hwnd" "when" "get-stage" "stage" "let")}
+      {Lisp-Entry "activate-front" () 234 13 ("activate-frame" "deactivate-frame" "/=" "or" "when" "Active-Frame" "active" "get-front-frame" "front" "let" "false" "force?" "force?:")}
+      {Lisp-Entry "reactivate-active" () 244 20 ("true" "force?:" "activate-frame" "when" "get-front-frame" "front" "let")}
+      {Lisp-Entry "Passing-Through?" () 255 19 ("false")}
+      {Lisp-Entry "popups" () 259 12 ()}
+      {Lisp-Entry "close-all-popups" () 263 20 ("popups" "close-popup" "for-each")}
+      {Lisp-Entry "close-popup" () 267 20 ("remove!" "popups" "set!" "close" "popup")}}})
 "_windows"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "platform" "windows" "_windows.fusion"} {Time 128355726620000000L}
     {Lisp-Entry "jazz.platform.windows" () 37 9 ("jazz")}})
@@ -30214,7 +30196,7 @@
     {Lisp-Entry "jazz.dialect.syntax.bind-optionals" () 38 9 ("scheme")
       {Lisp-Entry "bind-optionals" () 61 15 ("error" "cdr" "set!" "begin" "variable" "binding" "lambda" "map" "generate-symbol" "scan" "cadar" "car" "not-null?" "caar" "let" "length" "1" "=" "if" "body" "rest" "bindings")}}})
 "boot"
- ({Lisp-File-Entry {File dev "jazz" "kernel" "boot.scm"} {Time 128360886960000000L}
+ ({Lisp-File-Entry {File dev "jazz" "kernel" "boot.scm"} {Time 128360905500000000L}
     {Lisp-Entry "jazz.safety-level" () 45 8 ("debug" "make-parameter")}
     {Lisp-Entry "jazz.safe?" () 49 9 ("safe" "jazz.safety-level" "memq")}
     {Lisp-Entry "jazz.debug?" () 53 9 ("debug" "safe" "jazz.safety-level" "memq")}
@@ -31620,7 +31602,7 @@
         {Lisp-Entry "executeQuery" () 47 55 ()}
         {Lisp-Entry "executeUpdate" () 48 55 ()}}}})
 "jazz.dev"
- ({Lisp-File-Entry {File dev "jazz" "catalog" "jazz.dev.jazz"} {Time 128360892460000000L}
+ ({Lisp-File-Entry {File dev "jazz" "catalog" "jazz.dev.jazz"} {Time 128360896080000000L}
     {Lisp-Entry "jazz.dev" () 0 7 ("dev" "File" "source:" "name:" "include-extensions:" "Language" "Product")}})
 "kernel"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "scheme" "dialect" "kernel.scm"} {Time 128355726660000000L}
@@ -33295,6 +33277,34 @@
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "test" "window.fusion"} {Time 128355726660000000L}
     {Lisp-Entry "test.window" () 0 9 ("boot-environment" "Application" "new" "a" "let" "jazz")
       {Lisp-Entry "process-messages" () 6 13 ("if" "DispatchMessage" "TranslateMessage" "0" "GetMessage" "flag" "iterate" "MSG-make" "msg" "let" "window")}}})
+"windows"
+ ({Lisp-File-Entry {File oj "lib" "jazz" "ui" "window" "windows.fusion"} {Time 128360910440000000L}
+    {Lisp-Entry "jazz.ui.window.windows" () 38 9 ("register-window-class" "jazz")
+      {Lisp-Entry "processed" () 45 19 ("processed")}
+      {Lisp-Entry "unprocessed" () 46 19 ("unprocessed")}
+      {Lisp-Entry "in-creation" () 50 12 ()}
+      {Lisp-Entry "set-in-creation" () 53 13 ("in-creation" "set!" "in")}
+      {Lisp-Entry "get-in-creation" () 57 13 ("in-creation")}
+      {Lisp-Entry "CLASS_ATOM" () 61 12 ()}
+      {Lisp-Entry "window-class" () 65 13 ()}
+      {Lisp-Entry "class-style" () 69 13 ("CS_DBLCLKS" "CS_OWNDC" "bit-or")}
+      {Lisp-Entry "class-background" () 73 13 ("COLOR_BTNFACE" "GetSysColorBrush")}
+      {Lisp-Entry "register-window-class" () 77 13 ("RegisterClass" "CLASS_ATOM" "set!" "class" "WNDCLASS-lpszClassName-set!" "WNDCLASS-lpszMenuName-set!" "WNDCLASS-hbrBackground-set!" "WNDCLASS-hCursor-set!" "NULL" "WNDCLASS-hIcon-set!" "WNDCLASS-hInstance-set!" "WNDCLASS-cbWndExtra-set!" "0" "WNDCLASS-cbClsExtra-set!" "call-process-hwnd-message" "WNDCLASS-lpfnWndProc-set!" "class-style" "WNDCLASS-style-set!" "WNDCLASS-make" "wc" "class-background" "background" "current-instance" "instance" "let")}
+      {Lisp-Entry "child-style?" () 98 13 ("true" "rest")}
+      {Lisp-Entry "window-style" () 102 13 ("else" "WS_MINIMIZEBOX" "Toplevel" "State-Toplevel" "Popup" "Palette" "Orphanage-Window" "Message-Window" "Frame" "WS_SYSMENU" ":closable?" "WS_THICKFRAME" "true" ":not-found" ":sizable?" "getf" "WS_DLGFRAME" "WS_CAPTION" "WS_OVERLAPPED" "WS_BORDER" "WS_POPUP" "WS_CLIPSIBLINGS" "WS_CLIPCHILDREN" "0" "WS_CHILD" "child-style?" "if" "bit-or" "Dialog" "typecase" "rest" "window")}
+      {Lisp-Entry "window-ex-style" () 138 13 ("0" "else" "WS_EX_TOPMOST" "bit-or" "Transient" "WS_EX_APPWINDOW" "Toplevel" "Popup" "WS_EX_TOOLWINDOW" "Palette" "WS_EX_DLGMODALFRAME" "Dialog" "typecase" "rest" "window")}
+      {Lisp-Entry "window-parent" () 148 13 ("get-handle" "NULL" "not" "if" "parent" "window")}
+      {Lisp-Entry "create-handle" () 154 13 ("current-instance" "window-parent" "0" "window-style" "NULL" "window-class" "hwnd-class" "either" "CLASS_ATOM" "window-ex-style" "CreateWindowEx" "else" "GetDesktopWindow" "Desktop" "typecase" "rest" "parent" "window")}
+      {Lisp-Entry "prepare-handle" () 170 13 ("true" "DragAcceptFiles" "GetLastError" "window-parent" "parent:" "window-ex-style" ":ex-style" "window-style" ":style" "window-class" ":class" "list" "error" "not" "if" "create-handle" "let" "set-in-creation" "others" "hwnd" "bind-keywords" "rest" "parent" "window")}
+      {Lisp-Entry "bring-window-to-top" () 182 13 ("BringWindowToTop" "hwnd")}
+      {Lisp-Entry "show-window" () 186 13 ("SW_SHOWNORMAL" "ShowWindow" "handle")}
+      {Lisp-Entry "hide-window" () 190 13 ("SW_HIDE" "ShowWindow" "handle")}
+      {Lisp-Entry "minimize-window" () 194 13 ("SW_MINIMIZE" "ShowWindow" "handle")}
+      {Lisp-Entry "destroy-window" () 198 13 ("DestroyWindow" "handle")}
+      {Lisp-Entry "dispatch-message" () 202 13 ("0" "get-handle" "DefWindowProc" "unprocessed" "process-window-message" "eq?" "if" "lparam" "wparam" "msg" "window")}
+      {Lisp-Entry "process-window-message" () 213 13 ("unprocessed" "else" "on-timer" "WM_TIMER" "setting-change" "WM_SETTINGCHANGE" "drop-files" "WM_DROPFILES" "call-focus-lose" "WM_KILLFOCUS" "call-focus-gain" "WM_SETFOCUS" "call-lost-capture" "WM_CAPTURECHANGED" "on-nc-destroy" "WM_NCDESTROY" "window-destroy" "WM_DESTROY" "on-close" "WM_CLOSE" "on-activate-app" "WM_ACTIVATEAPP" "on-activate" "WM_ACTIVATE" "on-mouse-activate" "WM_MOUSEACTIVATE" "call-size-change" "WM_SIZE" "call-position-change" "WM_MOVE" "bit-and" "on-system-command" "WM_SYSCOMMAND" "on-command" "WM_COMMAND" "call-key-press" "WM_CHAR" "call-key-up" "WM_KEYUP" "call-key-down" "WM_KEYDOWN" "system-key-up" "WM_SYSKEYUP" "system-key-down" "WM_SYSKEYDOWN" "call-context-menu" "WM_CONTEXTMENU" "right-mouse-up" "WM_RBUTTONUP" "right-mouse-down" "WM_RBUTTONDOWN" "middle-mouse-up" "WM_MBUTTONUP" "middle-mouse-down" "WM_MBUTTONDOWN" "double-click" "WM_LBUTTONDBLCLK" "mouse-up" "WM_LBUTTONUP" "mouse-down" "WM_LBUTTONDOWN" "mouse-wheel" "WM_MOUSEWHEEL" "mouse-hover" "WM_MOUSEHOVER" "hiword" "mouse-move" "WM_MOUSEMOVE" "HTCLIENT" "loword" "=" "cursor-update" "WM_SETCURSOR" "paint" "WM_PAINT" "erase-background" "WM_ERASEBKGND" "ecase" "lparam" "wparam" "msg" "window")}
+      {Lisp-Entry "set-capture" () 253 13 ("SetCapture" "handle")}
+      {Lisp-Entry "unset-capture" () 257 13 ("ReleaseCapture")}}})
 "with"
  ({Lisp-File-Entry {File dev "jazz" "packages" "org.jazz" "lib" "jazz" "dialect" "syntax" "with.scm"} {Time 128355726600000000L}
     {Lisp-Entry "jazz.dialect.syntax.with" () 37 9 ("scheme")

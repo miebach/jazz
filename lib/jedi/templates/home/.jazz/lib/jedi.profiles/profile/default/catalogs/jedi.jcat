@@ -1,0 +1,549 @@
+"Alignment-Editor"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "designer" "Alignment-Editor.jazz"} 1226584790
+    {Lisp-Entry "jedi.designer.Alignment-Editor" #f 37 9 37 39 ("jazz")
+      {Lisp-Entry "Alignment-Editor" #f 50 7 50 23 ("on-resize-both" "resize-both" "on-resize-height" "resize-height" "on-resize-width" "resize-width" "on-space-vertically" "space-vertically" "on-space-horizontally" "space-horizontally" "on-center-vertically" "center-vertically" "on-center-horizontally" "center-horizontally" "on-align-bottom" "align-bottom" "on-align-top" "align-top" "on-align-right" "align-right" "on-align-left" ":form" "Event-Handler" "action-handler:" "Bitmap-Resource" "image-name:" "tooltip-text:" "align-left" "name:" "View")
+        {Lisp-Entry "client" #f 53 12 53 18 ("set-client" "get-client")}
+        {Lisp-Entry "flow-layout" #f 56 8 56 19 ()}
+        {Lisp-Entry "external-name" #f 77 16 77 29 ("alignment-editor" "'alignment-editor" "rest")}
+        {Lisp-Entry "host-title" #f 86 16 86 26 ()}
+        {Lisp-Entry "client-activate" #f 90 11 90 26 ("get-client" "set-client" "View-Editor" "is?" "when" "current-document" "guest" "let")}
+        {Lisp-Entry "finish" #f 101 11 101 17 ("layout-view" "0" "5" "4" "Rect" "insets:" "Flow-Layout" "new" "flow-layout" "set!" "nextmethod" "initargs")}
+        {Lisp-Entry "layout" #f 107 11 107 17 ("get-height" "get-width" "children" "flow-layout" "layout")}
+        {Lisp-Entry "on-align-left" #f 111 11 111 24 ("align-left" "bell" "View-Editor" "is-not?" "if" "current-document" "editor" "let" "evt")}
+        {Lisp-Entry "on-align-top" #f 118 11 118 23 ("align-top" "bell" "View-Editor" "is-not?" "if" "current-document" "editor" "let" "evt")}
+        {Lisp-Entry "on-align-right" #f 125 11 125 25 ("align-right" "bell" "View-Editor" "is-not?" "if" "current-document" "editor" "let" "evt")}
+        {Lisp-Entry "on-align-bottom" #f 132 11 132 26 ("align-bottom" "bell" "View-Editor" "is-not?" "if" "current-document" "editor" "let" "evt")}
+        {Lisp-Entry "on-center-horizontally" #f 139 11 139 33 ("center-horizontally" "bell" "View-Editor" "is-not?" "if" "current-document" "editor" "let" "evt")}
+        {Lisp-Entry "on-center-vertically" #f 146 11 146 31 ("center-vertically" "bell" "View-Editor" "is-not?" "if" "current-document" "editor" "let" "evt")}
+        {Lisp-Entry "on-space-horizontally" #f 153 11 153 32 ("space-horizontally" "bell" "View-Editor" "is-not?" "if" "current-document" "editor" "let" "evt")}
+        {Lisp-Entry "on-space-vertically" #f 160 11 160 30 ("space-vertically" "bell" "View-Editor" "is-not?" "if" "current-document" "editor" "let" "evt")}
+        {Lisp-Entry "on-resize-width" #f 167 11 167 26 ("resize-width" "bell" "View-Editor" "is-not?" "if" "current-document" "editor" "let" "evt")}
+        {Lisp-Entry "on-resize-height" #f 174 11 174 27 ("resize-height" "bell" "View-Editor" "is-not?" "if" "current-document" "editor" "let" "evt")}
+        {Lisp-Entry "on-resize-both" #f 181 11 181 25 ("resize-both" "bell" "View-Editor" "is-not?" "if" "current-document" "editor" "let" "evt")}
+        {Lisp-Entry "get-client" #f 193 18 193 28 ("client")}
+        {Lisp-Entry "set-client" #f 197 18 197 28 ("client" "set!" "clt")}}}})
+"Code-Generator"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "generator" "Code-Generator.jazz"} 1226584790
+    {Lisp-Entry "jedi.generator.Code-Generator" #f 37 9 37 38 ("jazz")
+      {Lisp-Entry "Code-Generator" #f 44 7 44 21 ("Object")
+        {Lisp-Entry "emit-section-header" #f 52 11 52 30 ("format" "printer" "section-name")}
+        {Lisp-Entry "emit-parameters" #f 60 11 60 26 ("cdr" "car" "else" "variable-symbol" "format" "variable?" "cond" "iterate" "let" "printer" "parameters")}}}})
+"Completion-Popup"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "text" "Completion-Popup.jazz"} 1226584790
+    {Lisp-Entry "jedi.text.Completion-Popup" #f 37 9 37 35 ("jazz")
+      {Lisp-Entry "Completion-Popup" #f 47 7 47 23 ("Popup")}
+      {Lisp-Entry "Completion-Popup" #f 53 7 53 23 ("190" "90" "5" "Point" "position:" "tree" "name:" "200" "100" "Dimension" "size:" "Popup")
+        {Lisp-Entry "owner-text" #f 56 12 56 22 ("set-owner-text" "get-owner-text")}
+        {Lisp-Entry "get-owner-text" #f 64 18 64 32 ("owner-text")}
+        {Lisp-Entry "set-owner-text" #f 68 18 68 32 ("owner-text" "set!" "text")}
+        {Lisp-Entry "focus-lose" #f 72 11 72 21 ("close" "owner-text" "neq?" "when" "nextmethod" "receiving")}}}})
+"Designer-Manager"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "designer" "Designer-Manager.jazz"} 1226584790
+    {Lisp-Entry "jedi.designer.Designer-Manager" #f 37 9 37 39 ("jazz")
+      {Lisp-Entry "Designer-Manager" #f 50 7 50 23 ("rect" "mode-rect" "edit" "mode-edit" "0" "2" "select" "mode:" "on-mode" ":form" "Event-Handler" "action-handler:" "tooltip-text:" "tooltip?:" "selected?:" ":icons" "portfolio:" "Bitmap-Resource" "image-name:" "22" "Dimension" "size:" "mode-select" "name:" "View")
+        {Lisp-Entry "client" #f 53 12 53 18 ("set-client" "get-client")}
+        {Lisp-Entry "flow-layout" #f 56 8 56 19 ()}
+        {Lisp-Entry "external-name" #f 68 16 68 29 ("designer-manager" "'designer-manager" "rest")}
+        {Lisp-Entry "host-icon" #f 77 16 77 25 ("Bitmap-Resource")}
+        {Lisp-Entry "host-title" #f 81 16 81 26 ()}
+        {Lisp-Entry "client-activate" #f 85 11 85 26 ("get-client" "set-client" "View-Editor" "is?" "when" "current-document" "guest" "let")}
+        {Lisp-Entry "finish" #f 96 11 96 17 ("layout-view" "0" "5" "4" "Rect" "insets:" "Flow-Layout" "new" "flow-layout" "set!" "nextmethod" "initargs")}
+        {Lisp-Entry "layout" #f 102 11 102 17 ("get-height" "get-width" "children" "flow-layout" "layout")}
+        {Lisp-Entry "on-editor" #f 106 11 106 20 ("designer:" "get-property" "set-designer" ":designer-change" "get-kind" "case" "evt")}
+        {Lisp-Entry "on-mode" #f 116 11 116 18 ("set-mode" "current-document" "editor" "mode:" "get-property" "mode" "let" "evt")}
+        {Lisp-Entry "get-client" #f 127 18 127 28 ("client")}
+        {Lisp-Entry "set-client" #f 131 18 131 28 ("set!" "client" "neq?" "when" "clt")}
+        {Lisp-Entry "set-designer" #f 141 11 141 23 ("class-of" "type-name" "format" "get-reference" "reference" "let" "set-title" "not" "if" "designer")}}}})
+"Horizontal-View"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "test" "Horizontal-View.jazz"} 1226584790
+    {Lisp-Entry "jedi.test.Horizontal-View" #f 37 9 37 34 ("jazz")
+      {Lisp-Entry "Horizontal-View" #f 45 7 45 22 ("View")}
+      {Lisp-Entry "Horizontal-View" #f 51 7 51 22 ("View")
+        {Lisp-Entry "install" #f 54 11 54 18 ("3" "0" "naturals" "->string" "title:" "Label-View" "self" "parent:" "Vertical-View" "new" "Horizontal-View" "parent" "get-parent" "is-not?" "2" "=" "and" "if" "n" "function" "for-each" "nextmethod" "rest")}
+        {Lisp-Entry "layout" #f 68 11 68 17 ("increase!" "set-size" "Point" "set-position" "view" "function" "for-each-view" "0" "h" "Dimension" "new" "child-size" "get-height" "height" "get-width" "quotient" "width" "get-size" "size" "length" "let*" "children" "when")}
+        {Lisp-Entry "draw" #f 88 11 88 15 ("Dark-Red" "name:" "Color" "get-bounds" "fill-rect" "lv" "lh" "context" "surface")}}}})
+"Jedi"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "application" "Jedi.jazz"} 1226584790
+    {Lisp-Entry "jedi.application.Jedi" #f 37 9 37 30 ("jazz")
+      {Lisp-Entry "Jedi" #f 62 7 62 11 ("IDE")
+        {Lisp-Entry "documentation-cataloguer" #f 65 8 65 32 ()}
+        {Lisp-Entry "external-name" #f 68 16 68 29 ("jedi" "'jedi" "rest")}
+        {Lisp-Entry "process-name" #f 72 11 72 23 ()}
+        {Lisp-Entry "process-owner" #f 76 11 76 24 ()}
+        {Lisp-Entry "process-copyright" #f 80 11 80 28 ()}
+        {Lisp-Entry "process-icon" #f 84 11 84 23 ()}
+        {Lisp-Entry "process-version" #f 88 11 88 26 ("1" "alpha" "0" "2" "Version")}
+        {Lisp-Entry "process-email" #f 92 11 92 24 ()}
+        {Lisp-Entry "new-toplevel" #f 96 11 96 23 ("Jedi-Toplevel" "new")}
+        {Lisp-Entry "prepare-aliases" #f 100 11 100 26 ("User" "Profiles" "'Profiles" "register-alias" "nextmethod")}
+        {Lisp-Entry "start-process" #f 105 11 105 24 ("jazz" "'jazz" "set-catalog-context" "nextmethod")}
+        {Lisp-Entry "finalize-process" #f 110 11 110 27 ("on-workspace" "'on-workspace" "method-name:" "self" "target:" "Event-Handler" "workspace" "'workspace" "add-application-listener" "JDBC-Provider" "SQLServer-Provider" "Access-Provider" "new" "register-provider" "Provider" "'Provider" "in-manifest?" "when" "nextmethod")}
+        {Lisp-Entry "persist-preferences?" #f 125 11 125 31 ()}
+        {Lisp-Entry "default-preferences" #f 129 11 129 30 ("Jedi-Preferences" "new")}
+        {Lisp-Entry "default-bindings" #f 133 11 133 27 ("Jedi-Bindings" "new")}
+        {Lisp-Entry "get-search-manager" #f 142 11 142 29 ("search" "'search" "169" "857" "Dimension" "host-size:" "220" "150" "Point" "host-position:" "host-visible?:" "host-title:" "Jedi-Search" "new-palette" "function" "singleton-palette")}
+        {Lisp-Entry "mandatory-version" #f 158 11 158 28 ("nextmethod" "else" "4" "access-database" "6" "3" "dao" "0" "8" "Version" "sqlserver" "case" "what")}
+        {Lisp-Entry "base-frame-class" #f 171 11 171 27 ("Text-View")}
+        {Lisp-Entry "default-frame-class" #f 175 11 175 30 ("Jazz-Text-View")}
+        {Lisp-Entry "known-extension-frame-class" #f 179 11 179 38 ("nextmethod" "else" "Jazz-Text-View" "Jazz-Extensions" "CommonLisp-Text-View" "'CommonLisp-Text-View" "jazz.language.commonlisp" "'jazz.language.commonlisp" "CommonLisp-Extensions" "Scheme-Text-View" "'Scheme-Text-View" "jazz.language.scheme" "'jazz.language.scheme" "Scheme-Extensions" "Java-Text-View" "'Java-Text-View" "jazz.language.java" "'jazz.language.java" "Diff-Text-View" "'Diff-Text-View" "jazz.language.diff" "'jazz.language.diff" "module-autoload" "Jazz-Plain-Text-View" "ci=?" "test:" "member?" "cond" "ext")}
+        {Lisp-Entry "edit-file" #f 195 11 195 20 ("nextmethod" "else" "browse-java-jarfile" "browse-java-classfile" "edit-snapshot" "edit-stack" "ci=?" "cond" "get-extension" "ext" "let" "file")}
+        {Lisp-Entry "edit-category" #f 204 11 204 24 ("edit" "1" "list" "Jazz-Code-Location" "new" "location" "let" "name")}
+        {Lisp-Entry "get-text-class" #f 214 11 214 25 ("Jazz-Text-View")}
+        {Lisp-Entry "edit-stack" #f 224 11 224 21 ("debugger" "'debugger" "select-workspace" "get-processes-view" "open-snapshot" "file")}
+        {Lisp-Entry "edit-snapshot" #f 235 11 235 24 ("debugger" "'debugger" "select-workspace" "get-processes-view" "open-snapshot" "file")}
+        {Lisp-Entry "browse-java-classfile" #f 246 11 246 32 ("browse-classfile" "get-guest" "manager" "Java-Manager" "new-frame" "host" "let*" "file")}
+        {Lisp-Entry "browse-java-jarfile" #f 253 11 253 30 ("browse-jarfile" "get-guest" "manager" "Java-Manager" "new-frame" "host" "let*" "file")}
+        {Lisp-Entry "get-depot-classes" #f 265 11 265 28 ("VSS-Depot" "list")}
+        {Lisp-Entry "persist-usernames?" #f 275 11 275 29 ()}
+        {Lisp-Entry "persist-passwords?" #f 279 11 279 29 ()}
+        {Lisp-Entry "get-context-text" #f 288 11 288 27 ()}
+        {Lisp-Entry "reload-opened-windows" #f 299 11 299 32 ()}
+        {Lisp-Entry "reload-component" #f 304 11 304 27 ("nextmethod" "else" "Jazz-Text-View" "jazz-text" "Jedi-Search" "new-frame" "" "apply" "search" "case" "properties" "class")}
+        {Lisp-Entry "run-product" #f 316 18 316 29 ("wait" "run-arguments" "either" "debug?:" "launch" "wait?" "wait?:" "show-console?" "show-console?:" "command-arguments" "command-arguments:" "command-action" "command-action:" "profile" "profile:" "configuration" "configuration:" "product")}
+        {Lisp-Entry "debug-product" #f 333 18 333 31 ("wait" "debug-arguments" "either" "debug?:" "launch" "wait?" "wait?:" "show-console?" "show-console?:" "command-arguments" "command-arguments:" "command-action" "command-action:" "profile" "profile:" "configuration" "configuration:" "product")}
+        {Lisp-Entry "find-runtime" #f 349 18 349 30 ("list" "find-install-directory" "new-file" "configuration")}
+        {Lisp-Entry "actual-runtime" #f 353 18 353 32 ("kernel-interpret?" "interpret?:" "kernel-include-source?" "include-source?:" "kernel-optimize?" "optimize?:" "kernel-safety" "safety:" "kernel-windowing" "windowing:" "kernel-platform" "platform:" "kernel-system" "system:" "kernel-title" "title:" "kernel-name" "either" "name:" "Build-Configuration" "new" "find-runtime" "interpret?" "include-source?" "optimize?" "safety" "windowing" "platform" "system" "title" "name")}
+        {Lisp-Entry "launch-runtime" #f 367 18 367 32 ("show-console:" "stderr-redirection:" "stdout-redirection:" "stdin-redirection:" "get-parent" "directory:" "parse" "path:" "open-process" "debug" "find-runtime" "actual-runtime" "not" "executable" "append" "if" "arguments-arg" "list" "runtime-arg" "let*" "wait?" "wait?:" "show-console?" "show-console?:" "arguments" "arguments:" "configuration" "configuration:")}
+        {Lisp-Entry "system-name" #f 390 15 390 26 ("gambit" "case" "system")}
+        {Lisp-Entry "platform-name" #f 395 15 395 28 ("unix" "windows" "mac" "case" "platform")}
+        {Lisp-Entry "windowing-name" #f 402 15 402 29 ("x11" "carbon" "case" "not" "if" "windowing")}
+        {Lisp-Entry "safety-name" #f 410 15 410 26 ("release" "debug" "core" "case" "safety")}
+        {Lisp-Entry "find-install-directory" #f 417 15 417 37 ("else" "symbol->string" "cond" "get-title" "title" "get-name" "name" "Jazz" "'Jazz" "list" "Directory" "new" "get-install" "require-active-configuration" "either" "let" "get-safety" "safety-name" "get-windowing" "windowing-name" "get-platform" "platform-name" "get-system" "system-name" "string-append" "default-name" "define" "configuration")}
+        {Lisp-Entry "log-exception" #f 441 11 441 24 ("Bitmap-Resource" "image:" "get-message" "log-line" "log-info" "Error" "is?" "if" "clear-results" "get-output-log" "output" "let" "exception")}
+        {Lisp-Entry "select-output-log" #f 450 11 450 28 ("Output-Log" "select-palette" "select-first" "select-results" "get-output-log" "output" "let")}
+        {Lisp-Entry "initial-console-context" #f 462 11 462 34 ("get-context" "not" "if" "error?:" "console" "tools" "get-preferences" "pref" "let")}
+        {Lisp-Entry "get-documentation-cataloguer" #f 474 11 474 39 ("new-documentation-cataloguer" "set!" "get-preferences" "get-documented?" "when" "documentation-cataloguer" "unless")}
+        {Lisp-Entry "new-documentation-cataloguer" #f 481 11 481 39 ("add-catalog" "Doc-Catalog" "catalog" "get-name" "name" "read-from-file" "instantiate" "doc" "let*" "when" "get-documentation" "file" "project" "function" "for-each-project" "get-workbench" "workbench" "Cataloguer" "new" "cataloguer" "let")}
+        {Lisp-Entry "reload-documentation" #f 495 18 495 38 ("get-documentation-cataloguer" "documentation-cataloguer" "set!")}
+        {Lisp-Entry "class-actions" #f 505 11 505 24 ("debugger" "'debugger" "nextmethod" "jedi" "'jedi" "find-actions" "cons")}
+        {Lisp-Entry "update-product-actions" #f 519 18 519 40 ("debug-product" "run-product" "test-product" "view-product-log" "build-product" "compile-file" "edit-product" "jedi" "Action" "set-action-enabled?" "parse" "find-pathname-module" "module-name" "find-source" "get-workbench" "workbench" "get-controller" "get-moniker" "moniker" "Document" "is?" "and" "when" "current-document" "guest" "project-file" "get-active-product" "product" "let")}
+        {Lisp-Entry "update-windowing-actions" #f 549 11 549 35 ("update-menubar-buttons" "update-window-actions" "update-product-actions" "update-search-actions" "update-history-actions")}
+        {Lisp-Entry "navigable-results" #f 562 11 562 28 ("Violations-Manager" "Output-Log" "Search-Results" "singleton-docked" "get-guest" "list")}
+        {Lisp-Entry "on-event-spy" #f 576 11 576 23 ("Event-Spy" "new-palette" "evt")}
+        {Lisp-Entry "on-registry-viewer" #f 581 11 581 29 ("Registry-Viewer" "new-frame" "evt")}
+        {Lisp-Entry "on-type-viewer" #f 586 11 586 25 ("Type-Viewer" "new-frame" "evt")}
+        {Lisp-Entry "on-java-manager" #f 591 11 591 26 ("Java-Manager" "new-frame" "evt")}
+        {Lisp-Entry "on-showcase" #f 596 11 596 22 ("Showcase" "new-frame" "evt")}
+        {Lisp-Entry "on-profiler-manager" #f 601 11 601 30 ("Profiler-Manager" "show-palette" "evt")}
+        {Lisp-Entry "on-documentation-editor" #f 606 11 606 34 ("get-client" "client:" "Doc-Editor" "new-frame" "get-catalogs" "car" "catalog" "get-documentation-cataloguer" "cataloguer" "let*" "evt")}
+        {Lisp-Entry "on-run-smoker" #f 613 11 613 24 ("Smoker-Builder" "new" "build/run" "evt")}
+        {Lisp-Entry "on-toolbox" #f 618 11 618 21 ("focus?:" "designer" "'designer" "workspace:" "Toolbox-Manager" "select-palette" "evt")}
+        {Lisp-Entry "on-descendants" #f 623 11 623 25 ("focus?:" "designer" "'designer" "workspace:" "Descendants-Editor" "select-palette" "evt")}
+        {Lisp-Entry "on-branches" #f 628 11 628 22 ("focus?:" "designer" "'designer" "workspace:" "Branches-Editor" "select-palette" "evt")}
+        {Lisp-Entry "on-spy-events" #f 633 18 633 31 ("Event-Spy" "show-palette" "evt")}
+        {Lisp-Entry "record-event?" #f 638 11 638 24 ("event")}
+        {Lisp-Entry "on-readme" #f 647 18 647 27 ("Jazz" "File" "edit-document" "evt")}}}})
+"Jedi-Actions"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "preference" "Jedi-Actions.jazz"} 1226584790
+    {Lisp-Entry "jedi.preference.Jedi-Actions" #f 37 9 37 37 ("jazz")
+      {Lisp-Entry "Jedi-Actions" #f 48 7 48 19 ("on-about" "about" "on-readme" "readme" "sql" "select-sql" "groupware" "select-groupware" "debugger" "select-debugger" "text" "select-text" "home" "workspace:" "on-select-workspace" "select-home" "play-recording-5" "play-recording-4" "play-recording-3" "play-recording-2" "play-recording-1" "play-recording-0" "on-play-recording" "play-recording" "on-set-active-recording" "set-active-recording" "on-output-recording" "output-recording" "on-register-recording" "register-recording" "on-present-recording" "present-recording" "on-resume-recording" "resume-recording" "on-stop-recording" "stop-recording" "on-start-recording" ":recorder" "start-recording" "on-capture-host" "capture-host" "on-capture-document" "capture-document" "unzoom-document" "zoom-out-document" "document" "zoom-in-document" "on-unzoom" "unzoom-mouse-view" "on-zoom-out" "zoom-out-mouse-view" "mouse-view" "what:" "on-zoom-in" "zoom-in-mouse-view" "on-update-catalogs" "update-catalogs" "on-catalogs-manager" "catalogs-manager" "on-compare-files" "compare-files" "on-compare-directories" "compare-directories" "on-variables" "variables" "on-detail" "detail" "on-frames" "frames" "on-threads" "threads" "on-processes" "processes" "on-profiler-manager" "profiler-manager" "on-resources-monitor" "resources-monitor" "on-logs-viewer" "logs-viewer" "on-class-browser" "class-browser" "0" "test-0" "9" "test-9" "8" "test-8" "7" "test-7" "6" "test-6" "5" "test-5" "4" "test-4" "3" "test-3" "2" "test-2" "1" "no:" "on-test-no" "test-1" "on-test-shift" "test-shift" "on-test" "test" "on-clear-terminal" "clear-terminal" "Backspace" "on-show-terminal" "show-terminal" "on-spy-events" "spy-events" "on-spy-messages" "spy-messages" "on-explore-views" "explore-views" "F8" "on-debug-views" "debug-views" "Tab" "on-next-debuggee" "next-debuggee" "on-call-run-to" "call-run-to" "on-call-step-out" "call-step-out" "on-call-step-into" "call-step-into" "on-call-step-over" "call-step-over" "on-run-to-result" "run-to-result" "on-run-to-cursor" "run-to-cursor" "on-step-outside-function" "step-outside-function" "on-step-out" "step-out" "on-step-into-function" "step-into-function" "F11" "on-step-into" "step-into" "F10" "on-step-over" "step-over" "on-continue" "continue" "on-break" "break" "enabled?:" "F9" "on-restart" ":debugger" "restart" "on-debug-product" "debug-product" "on-run-product" "run-product" "F5" "on-test-product" "test-product" "on-view-product-log" "view-product-log" "on-clean-product" "clean-product" "on-build-product" "build-product" "on-compile-file" "compile-file" "on-edit-product" "edit-product" "F7" "on-select-product" "select-product" "on-showcase" "view-showcase" "on-documentation-editor" "view-documentation-editor" "on-hierarchy" "view-hierarchy" "on-chapters" "view-chapters" "on-sql-console" "view-sql-console" "on-sql-inventory" "view-sql-inventory" "on-sql-connections" "view-sql-connections" "on-java-manager" "view-java-manager" "on-java-reference-finder" "view-java-reference-finder" "on-preferences" "view-preferences" ":shift" "on-view-bindings" "view-bindings" "on-bindings-manager" "bindings-manager" "on-branches" "view-branches" "on-descendants" "view-descendants" "on-toolbox" "view-toolbox" "on-type-viewer" "view-type-viewer" "on-registry-viewer" "view-registry-viewer" "on-web-servers" "view-web-servers" "on-activities" "view-activities" "on-user-log" "view-user-log" "on-output-log" "view-output-log" "on-profile-results" "view-profile-results" "on-search-results" "view-search-results" "Return" "on-properties" "view-properties" "on-debugger" "view-debugger" "Space" "on-console" "view-console" "on-contacts" "view-contacts" "on-favorites" "view-favorites" "on-depots" "view-depots" ":alt" ":control" "Shortcut" "shortcut:" "on-workbench" "view-workbench" "on-exit-without-save" "exit-without-save" "on-save-workspace" "save-workspace" "on-open-jazz-text" "open-jazz-text" "on-open-text" ":application" "Event-Handler" "action-handler:" "open-text" "name:" "Actions")}}})
+"Jedi-Bindings"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "preference" "Jedi-Bindings.jazz"} 1226584790
+    {Lisp-Entry "jedi.preference.Jedi-Bindings" #f 37 9 37 38 ("jazz")
+      {Lisp-Entry "Jedi-Bindings" #f 50 7 50 20 ("redo" "save" "current-frame" "previous-frame" "F6" "next-frame" "exit" "print-preview" "print-layout" "print" "F4" "close" "new" "windows" "mac" "extend-forward-compound-aux" "extend-backward-compound-aux" "paste" "copy" "cut" "undo-aux" "undo" "emacs" "insert-next-aux" "insert-previous-aux" "edit-references-aux" "edit-definitions-aux" "find-backward" "find-forward" "goto-line" "center-caret" "next-aux" "prior-aux" "document-end-aux" "document-home-aux" "extend-end-aux" "end-aux" "extend-home-aux" "home-aux" "kill-line" "delete-word-aux" "delete-char-aux" "downward-compound-aux" "upward-compound-aux" "extend-downward-aux" "move-downward-aux" "extend-upward-aux" "move-upward-aux" "forward-compound-aux" "extend-forward-word-aux" "move-forward-word-aux" "extend-forward-char-aux" "move-forward-char-aux" "backward-compound-aux" "extend-backward-word-aux" "move-backward-word-aux" "extend-backward-char-aux" "move-backward-char-aux" "select-all" "view-bindings" "bindings-manager" ":control" "find" ":shift" "pop-clipboard-stack" ":alt" "Shortcut" "shortcut:" "paste-from-stack" "jazz" "preview-pane" "view-editor" "search-results-tree" "search-manager" "compare-trees" "class-browser" "manager" "workbench-manager" "workbench-tree" "web-servers" "entities-tree" "components-tree" "components-viewer" "tree-embedded-search-text" "scheme-text" "formatted-text" "composite-text" "compare-text" "combo-text" "console-text" "command-search" "command-execute" "jazz-text" "lisp-text" "code-text" "jedi" "name:" "IDE-Bindings")}}})
+"Jedi-Menubar"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "application" "Jedi-Menubar.jazz"} 1226584790
+    {Lisp-Entry "jedi.application.Jedi-Menubar" #f 37 9 37 38 ("jazz")
+      {Lisp-Entry "Jedi-Menubar" #f 47 7 47 19 ("Menubar")
+        {Lisp-Entry "host-icon" #f 55 16 55 25 ("Bitmap-Resource")}
+        {Lisp-Entry "host-title" #f 59 16 59 26 ()}
+        {Lisp-Entry "install" #f 68 11 68 18 ("select" "content" "child" "layout-menu" "Help-Menu" "help" "'help" "Window-Advanced-Menu" "window" "'window" "Workspace-Menu" "workspace" "'workspace" "Tools-Menu" "tools" "'tools" "Recorder-Menu" "recorder" "'recorder" "Debug-Menu" "debug" "'debug" "Product-Menu" "product" "'product" "Search-Menu" "search" "'search" "View-Menu" "view" "'view" "Edit-Menu" "edit" "'edit" "IDE-File-Menu" "list" "children:" "file" "'file" "name:" "self" "parent:" "Label-Item" "new" "function" "with-update-locked" "nextmethod" "rest")}}
+      {Lisp-Entry "View-Menu" #f 91 7 91 16 ("view-showcase" "showcase" "view-documentation-editor" "documentation-editor" "view-sql-console" "sql-console" "view-sql-inventory" "sql-inventory" "view-sql-connections" "sql-connections" "view-java-manager" "java-manager" "variables" "detail" "frames" "threads" "processes" "view-hierarchy" "hierarchy" "view-chapters" "chapters" "view-branches" "branches" "view-descendants" "descendants" "view-toolbox" "toolbox" "view-type-viewer" "type-viewer" "view-registry-viewer" "registry-viewer" "view-web-servers" "web-servers" "view-activities" "activities" "view-user-log" "user-log" "view-output-log" "output-log" "view-profile-results" "profile-results" "view-search-results" "search-results" "view-properties" "properties" "view-console" "console" "view-contacts" "contacts" "view-favorites" "favorites" "view-depots" "repositories" "view-workbench" "jedi" "Action" "action:" "Bitmap-Resource" "icon:" "workbench" "name:" "title:" "Menu")}
+      {Lisp-Entry "Product-Menu" #f 160 7 160 19 ("debug-product" "debug" "run-product" "run" "test-product" "test" "view-product-log" "view-log" "clean-product" "clean" "build-product" "build" "compile-file" "compile" "select-product" "jedi" "Action" "action:" "Bitmap-Resource" "icon:" "select" "name:" "title:" "Menu")}
+      {Lisp-Entry "Debug-Menu" #f 185 7 185 17 ("test-shift" "test" "clear-terminal" "show-terminal" "explore-views" "continue" "break" "jedi" "Action" "action:" "tooltip-text:" "tooltip?:" "Bitmap-Resource" "icon:" "restart" "name:" "title:" "Menu")}
+      {Lisp-Entry "Tools-Menu" #f 208 7 208 17 ("capture-host" "capture-document" "compare-files" "compare-directories" "update-catalogs" "catalogs-manager" "view-preferences" "preferences" "view-bindings" "bindings-manager" "jedi" "Action" "action:" "Bitmap-Resource" "icon:" "class-browser" "name:" "title:" "Menu")}
+      {Lisp-Entry "Help-Menu" #f 235 7 235 16 ("about" "readme" "jedi" "Action" "action:" "Bitmap-Resource" "icon:" "title:" "Menu")}}})
+"Jedi-Preferences"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "preference" "Jedi-Preferences.jazz"} 1226584790
+    {Lisp-Entry "jedi.preference.Jedi-Preferences" #f 37 9 37 41 ("jazz")
+      {Lisp-Entry "Jedi-Preferences" #f 66 7 66 23 ("wallpaper" "depots" "catalogs" "debug" "build" "image" "image-view" "associations:" "Jedi-Status" ":status" "Jedi-Toolbar" ":toolbar" "Jedi-Menubar" ":menubar" "toolbar-classes:" "home" "sql" "user-extensions:" "user-label:" "jazz-files" "active-domain:" "text" "active:" "search-manager" "preferences-manager" "console" "compare-directories" "xml-text" "sql-text" "scheme-text" "python-text" "properties-text" "prop-text" "plain-text" "lua-text" "jazz-text" "javascript-text" "java-text" "html-text" "diff-text" "css-text" "csharp-text" "console-text" "c-text" "commonlisp-text" "name:" "Doc-Catalog" "Indexed-Catalog" "indexed" "catalog-types:" "Category-Moniker" "category" "Document-Moniker" "doc" "Depot-Moniker" "item" "Zipped" "zip" "URL" "url" "Directory-Group" "group" "Directory" "dir" "File" "file" "protocols:" "documented?:" "maximized" "toplevel-state:" "title:" "IDE-Preferences")}}})
+"Jedi-Product"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "project" "Jedi-Product.jazz"} 1226584790
+    {Lisp-Entry "jedi.project.Jedi-Product" #f 37 9 37 34 ("Jedi-Product" "register-autoclass" "jazz")
+      {Lisp-Entry "Jedi-Product" #f 49 7 49 19 ("jedi" "product:" "title:" "Jazz-Product")}}})
+"Jedi-Profile"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "profile" "Jedi-Profile.jazz"} 1227043164
+    {Lisp-Entry "jedi.profile.Jedi-Profile" #f 37 9 37 34 ("jazz")
+      {Lisp-Entry "Jedi-Profile" #f 61 7 61 19 ("IDE-Profile")
+        {Lisp-Entry "apropos" #f 64 11 64 18 ("get-output" "ci<?" "sort" "put" "search" "when" "name" "function" "iterate-table" "List-Factory" "new" "fact" "get-definitions-index" "definitions" "get-application" "get-cataloguer" "find-catalog" "catalog" "let" "catalog-name" "target")}
+        {Lisp-Entry "recent-files" #f 75 11 75 23 ("select-results" "add-results" "text" "'text" "set-mode" "format-plural" "user-message" "length" "count" "queue-list" "files" "ignored-directories:" "list" "enqueue" "get-modification-time" "time>?" "ci=?" "test:" "get-extension" "member?" "not" "and" "when" "file" "function" "iterate-directory" "make-directory-feedback" "directory-feedback" "ignored-extensions" "ignored-directories" "3600" "0" "time-duration" "make-time" "either" "current-time" "subtract-duration" "from" "new-queue" "queue" "get-application" "get-search-results" "results" "let" "elapse" "Jazz" "Directory" "directory" "bind-keywords" "rest")}
+        {Lisp-Entry "search-licenseless-files" #f 98 11 98 35 ("select-results" "add-results" "text" "'text" "set-mode" "format-plural" "user-message" "length" "count" "queue-list" "files" "enqueue" "equal?" "eof-object?" "not" "and" "read-line" "line" "port" "jazz-readtable" "readtable:" "cr-lf" "'cr-lf" "eol-encoding:" "parse" "path:" "list" "call-with-input-file" "ci=?" "test:" "member?" "when" "get-extension" "ext" "file" "function" "Jazz" "Directory" "iterate-directory" "make-directory-feedback" "directory-feedback" "new-queue" "queue" "get-application" "get-search-results" "results" "let")}
+        {Lisp-Entry "search-trailing-whitespace" #f 121 11 121 37 ("select-results" "add-results" "text" "'text" "set-mode" "format-plural" "user-message" "count" "queue-list" "files" "ignored-directories:" "length" "naturals" "continuation-return" "+" "list" "enqueue" "set!" "whitespace?" "if" "element" "c" "do" "0" "downto" "1" "cardinality" "-" "from" "n" "for" "loop" "trailing-whitespace" "done" "continuation-capture" "rank" "line" "for-each" "char-encoding-errors:" "load-lines" "lines" "ci=?" "test:" "get-extension" "member?" "not" "when" "file" "function" "iterate-directory" "make-directory-feedback" "directory-feedback" "ignored-extensions" "ignored-directories" "new-queue" "queue" "get-application" "get-search-results" "results" "let" "Jazz" "Directory" "directory" "bind-keywords" "rest")}
+        {Lisp-Entry "inspect-binary" #f 155 11 155 25 ("read-u8" "read-all" "debug" "port" "function" "parse" "call-with-input-file" "file")}
+        {Lisp-Entry "load-catalog" #f 166 11 166 23 ("thread" "function" "execute:" "self" "context:" "name:" "Thread" "new" "load-catalog-synchronized" "name")}
+        {Lisp-Entry "load-catalog-synchronized" #f 177 24 177 49 ("set-active?" "when" "error?:" "get-catalog" "catalog" "get-cataloguer" "cataloguer" "get-application" "appl" "let*" "name")}
+        {Lisp-Entry "console-command" #f 190 11 190 26 ("nextmethod" "else" "exit" ":exit" "edit" ":edit" "compile" ":compile" "expand-scheme" ":expand-scheme" "expand" ":expand" "car" "edit-documentation" ":doc" "case" "arguments" "command")}
+        {Lisp-Entry "edit-documentation" #f 204 11 204 29 ("edit-documentation" "get-application" "appl" "let" "name")}
+        {Lisp-Entry "expand" #f 209 11 209 17 ("else" "macro?" "apply" "syntax-macro?" "cond" "definition-value" "macro" "let" "debug" "begin" "null?" "if" "Interactive-Object" "essay" "Java" "Language" "either" "definition" "class-of" "category-field" "object" "function" "try" "let*" "arguments" "name" "bind" "unimplemented" "form")}
+        {Lisp-Entry "expand-scheme" #f 226 11 226 24 ("macro?" "apply" "debug" "syntax-macro?" "cond" "Kernel" "either" "definition-value" "macro" "class-of" "category-field" "package" "function" "try" "let*" "arguments" "name" "bind" "unimplemented" "form")}
+        {Lisp-Entry "compile" #f 237 11 237 18 ("compile-classes" "unimplemented" "classes")}
+        {Lisp-Entry "edit" #f 243 11 243 15 ("Jazz-Code-Location" "new" "edit" "location")}
+        {Lisp-Entry "JazzWebsite-Site" #f 252 14 252 30 ("Jazz" "File")}
+        {Lisp-Entry "JazzWebsite-Content" #f 255 14 255 33 ("Jazz" "Directory")}
+        {Lisp-Entry "test0" #f 259 11 259 16 ("regenerate-jazzwebsite" "save" "Jazz-Text-View" "get-guest" "guest" "Host-View" "is?" "and" "when" "current-frame" "frame" "let")}
+        {Lisp-Entry "regenerate-jazzwebsite" #f 268 11 268 33 ("generate-jazzwebsite" "get-application" "reload-documentation")}
+        {Lisp-Entry "generate-jazzwebsite" #f 273 11 273 31 ("render-jazzwebsite-page" "path" "'path" "get-property" "user-message" "page" "function" "for-each" "get-children" "pages" "JazzWebsite-Transformation" "new" "transform-jml" "JazzWebsite-Site" "load-jml" "site" "let*")}
+        {Lisp-Entry "render-jazzwebsite-page" #f 284 11 284 34 ("render" "printer" "function" "platform-eol-encoding" "eol-encoding:" "ISO-8859-1" "'ISO-8859-1" "char-encoding:" "parse" "path:" "list" "call-with-output-file" "first-child" "html" "XHTML-Renderer" "renderer" "JML-Preferences" "new" "preferences" "path" "'path" "get-property" "format" "new-file" "file" "JazzWebsite-Content" "content" "let*" "page")}
+        {Lisp-Entry "export-latest-news" #f 296 11 296 29 ("user-message" "get-output-string" "set-clipboard-text" "increase!" "display" "make-string" "=" "and" "str" "set!" "when" "old-right" "old-left" "thunk" "left" "format" "equal?" "if" "'href" "href" "2" "subnode" "first-child" "with-margins" "upcase" "paragraph" "'title" "get-property" "title" "print" ">" "break" ">=" "cond" "cardinality" "+" "right" "word" "function" "split" "remove-empty-strings" "words" "text" "for-each" "render-children" "error" "render-anchor" "a" "render-cite" "cite" "render-span" "span" "render-node" "render-break" "br" "render-bold" "b" "render-paragraph" "p" "render-division" "division" "case" "get-tag" "tag" "else" "get-text" "render-text" "JML-Text" "typecase" "node" "render" "define" "column" "70" "right-margin" "0" "left-margin" "open-output-string" "output" "let" "first" "latest" "'news" "find-name" "get-children" "second" "news" "JazzWebsite-Site" "load-jml" "site" "let*")}
+        {Lisp-Entry "utf8" #f 411 11 411 15 ("get-content" "increase!" "List" "coerce" "map" "debug" "128" "char->integer" ">=" "char" "some?" "when" "line" "function" "for-each" "1" "count" "let" "text")}
+        {Lisp-Entry "test" #f 428 11 428 15 ("new-mandelbrot")}
+        {Lisp-Entry "new-mandelbrot" #f 433 11 433 25 ("home" "'home" "host-workspace:" "800" "Dimension" "host-size:" "50" "Point" "host-position:" "host-title:" "Mandelbrot" "new-frame")}
+        {Lisp-Entry "gambit" #f 442 11 442 17 ("visible?:" "500" "900" "Dimension" "size:" "wait?:" "capture-error?:" "capture-output?:" "capture-input?:" "jazz" "Directory" "directory:" "create-process" "if" "format" "command" ":exit" "case" "exception" "let*" "unimplemented" ":repl" "exception-handler" "exception-handler:" "102400" "maximum-heapsize" "maximum-heapsize:" "expr" "expr:")}
+        {Lisp-Entry "image-convert" #f 455 15 455 28 ("error" "0" "/=" "when" "format" "shell-command" "status" "let" "cmd")}
+        {Lisp-Entry "image-composite" #f 461 15 461 30 ("error" "0" "/=" "when" "format" "shell-command" "status" "let" "cmd")}
+        {Lisp-Entry "extract-bitmaps" #f 472 11 472 26 ("format-plural" "length" "count" "new-file" "copy-file" "cons" "set!" "equal?" "test:" "member?" "get-base" "ends-with?" "or" "unless" "user-message" "sha-1" "'sha-1" "parse" "digest-file" "digest" "get-name" "name" "file" "function" "iterate-directory" "digests" "create-directories" "dst" "Jazz" "Directory" "src" "let")}
+        {Lisp-Entry "generate-disabled" #f 495 11 495 28 ("delete-file" "exists?" "when" "new-brother" "image-convert" "begin" "unwind-protect" "parse" "current-directory" "parameterize" "disabled" "format" "grayscale" "get-extension" "extension" "get-base" "base" "get-name" "name" "get-parent" "directory" "let" "image")}
+        {Lisp-Entry "generate-all-disabled" #f 512 11 512 32 ("generate-disabled" "get-name" "user-message" "ci=?" "test:" "get-extension" "member?" "when" "file" "function" "iterate-directory" "extensions" "directory")}
+        {Lisp-Entry "delete-all-disabled" #f 521 11 521 30 ("delete-file" "get-name" "user-message" "get-base" "ends-with?" "ci=?" "test:" "get-extension" "member?" "and" "when" "file" "function" "iterate-directory" "extensions" "directory")}
+        {Lisp-Entry "Template-AList" #f 537 14 537 28 ("source" "package" "title")}
+        {Lisp-Entry "test8" #f 544 11 544 16 ("user-message" "Template-AList" "expand" "output" "function" "parse" "call-with-output-file" "Builder-Module" "File" "template" "Template-Expander" "new" "expander" "let")}
+        {Lisp-Entry "test" #f 559 11 559 15 ("test-taskbar")}
+        {Lisp-Entry "test-shift" #f 564 11 564 21 ("test-remove-taskbar")}
+        {Lisp-Entry "test-taskbar" #f 569 11 569 23 ("NIM_ADD" "Shell_NotifyIcon" "hIcon" "'hIcon" "JZ_TASKICON" "uCallbackMessage" "'uCallbackMessage" "NIF_ICON" "NIF_MESSAGE" "bitwise-ior" "uFlags" "'uFlags" "10" "uID" "'uID" "get-toplevel-hwnd" "hWnd" "'hWnd" "size-of" "cbSize" "'cbSize" "set" "height:" "16" "width:" "Icon-Resource" "'icon" "Image" "load-image" "icon" "NOTIFYICONDATA" "new" "record" "let")}
+        {Lisp-Entry "test-remove-taskbar" #f 582 11 582 30 ("NIM_DELETE" "Shell_NotifyIcon" "10" "uID" "'uID" "get-toplevel-hwnd" "hWnd" "'hWnd" "size-of" "cbSize" "'cbSize" "set" "NOTIFYICONDATA" "new" "record" "let")}
+        {Lisp-Entry "test" #f 596 11 596 15 ("tie" "debug" "1" "x" "let")}
+        {Lisp-Entry "test1" #f 607 11 607 16 (":console" "format")}
+        {Lisp-Entry "test2" #f 612 11 612 16 ("10" ":console" "format")}
+        {Lisp-Entry "test" #f 622 11 622 15 ("'<init>" "org.apache.bcel.classfile.JavaClass" "category-field" "definition-value" "debug")}
+        {Lisp-Entry "test" #f 627 11 627 15 ("X" "new" "foo" "debug")}
+        {Lisp-Entry "test-shift" #f 632 11 632 21 ("X" "new" "get-foo" "debug")}
+        {Lisp-Entry "test1" #f 637 11 637 16 ("Window" "type-name" "map" "debug" "find-generics" "generics" "signature" "function" "test" "let" "B" "A" "Y" "X" "list" "insert-node" "get-dag-root" "dag-root" "Dispatcher" "new" "dispatcher" "let*")}
+        {Lisp-Entry "test2" #f 658 11 658 16 ("Integer" "Object" "type-name" "map" "debug" "find-generics" "generics" "signature" "function" "test" "let" "Point" "Rect" "list" "insert-node" "get-dag-root" "dag-root" "Dispatcher" "new" "dispatcher" "let*")}
+        {Lisp-Entry "test2" #f 674 11 674 16 ("Integer" "type-name" "map" "debug" "find-generics" "generics" "signature" "function" "test" "let" "list" "insert-node" "get-dag-root" "dag-root" "Dispatcher" "new" "dispatcher" "let*")}
+        {Lisp-Entry "ed" #f 695 14 695 16 ()}
+        {Lisp-Entry "xa" #f 699 14 699 16 ()}
+        {Lisp-Entry "xb" #f 703 14 703 16 ()}
+        {Lisp-Entry "x1" #f 707 14 707 16 ()}
+        {Lisp-Entry "x2" #f 711 14 711 16 ()}
+        {Lisp-Entry "setup-exemplar" #f 716 11 716 25 ("user-message" "20" "x2" "10" "x1" "5" "base:" "b" "'b" "xb" "3" ":c" "2" ":b" "1" ":a" "a" "'a" "name:" ":domain" "X" "xa" "Exemplar-Domain" "new" "ed" "set!")}
+        {Lisp-Entry "test-exemplar" #f 726 11 726 24 ("user-message" "x2" "x1" "xb" "xa" "init")}
+        {Lisp-Entry "test9" #f 739 11 739 16 ("internal-tabulate" "bell" "Jazz-Text-View" "is-not?" "if" "get-focus" "text" "let")}
+        {Lisp-Entry "internal-tabulate" #f 746 11 746 28 ("tabulate-columns" "set-range" "collect-maxes" "maxes" "range:" "Jazz-Explorer" "explorer" "Range$Cell$" "new" "range" "get-start" "pos" "let*" "text")}
+        {Lisp-Entry "collect-maxes" #f 755 11 755 24 ("exit-composite" "get-output" "put" "get-start" "get-end" "get-col" "-" "size" "forward-expr" "List-Factory" "new" "let" "enter-composite" "while" "max" "map" "null?" "if" "set!" "sizes" "function" "update-maxes" "maxes" "let*" "explorer")}
+        {Lisp-Entry "tabulate-columns" #f 772 11 772 27 ("exit-composite" "cdr" "set!" "make-string" "list" "Range$Cell$" "new" "replace-text" "end" "0" ">" "when" "diff" "get-start" "get-end" "get-col" "-" "size" "car" "max" "let*" "forward-expr" "enter-composite" "while" "function" "with-atomic-undo" "get-undoer" "undoer" "let" "maxes" "explorer" "text")}
+        {Lisp-Entry "text-macro" #f 796 11 796 21 ("toggle-bulleted" "get-format" "get-bulleted?" "unless" "get-paragraph" "paragraph" "let" "naturals" "one" "'one" "keep:" "paragraph-length" "remove-spaces" "row" "for-each" "list" "2" "+" "0" "Range$Cell$" "replace" "function" "with-locked-update" "bell" "/=" "if" "Cell" "new" "get-char" "char" "get-column" "col" "get-end" "end" "get-start" "get-row" "start" "let*" "text")}
+        {Lisp-Entry "test" #f 818 11 818 15 ("test-for-each-page")}
+        {Lisp-Entry "test-for-each-page" #f 823 11 823 29 ("-" "debug" "get-top" "b" "get-row" "get-bottom" "t" "let" "bottom" "top" "page" "function" "360" "1" "get-limit" "+" "0" "%" "for-each-page")}
+        {Lisp-Entry "test-message-box" #f 832 11 832 27 ("sound:" "1" "Light-Red" "'Light-Red" "highlight:" "Bitmap-Resource" "image:" "yo" "'yo" "debug" "close-modal-dialog" "function" ":hyperlink" "2" "indent:" ":bulleted" "list" "message-box")}
+        {Lisp-Entry "hide-paragraphs" #f 842 11 842 26 ("hide" "paragraph" "row" "function" "for-each-selected-paragraph" "get-focus" "text" "let")}
+        {Lisp-Entry "test2" #f 855 11 855 16 ("join-lines" "message-box" ":arguments" "Java-Classpath" "classpath:" "execute" "output" "Java-Runtime" "new" "java" "let*")}
+        {Lisp-Entry "test3" #f 862 11 862 16 ("3" "5" "4" "test" "2" "cj" "debug" "8" "obj2" "org.jazzscheme.test.Test" "new" "obj1" "let")}
+        {Lisp-Entry "test" #f 875 11 875 15 ("foo" "debug" "thread" "function" "execute:" "self" "context:" "Thread" "new")}
+        {Lisp-Entry "test" #f 884 11 884 15 ("1" "car" "thread" "function" "execute:" "self" "context:" "Thread" "new")}
+        {Lisp-Entry "test-shift" #f 892 11 892 21 ("done" "'done" "error?:" "10" "timeout:" "wait-for" "thread-done" "'thread-done" "debug" "set-event" "1" "car" "5" "sleep" "thread" "function" "execute:" "self" "context:" "Thread" "Impulse" "new" "impulse" "let")}
+        {Lisp-Entry "test1" #f 906 11 906 16 ("error?:" "3000" "timeout:" "list" "wait-for" "debug" "2" "t2" "1" "sleep" "thread" "function" "execute:" "self" "context:" "Thread" "new" "t1" "let")}
+        {Lisp-Entry "test-context" #f 924 11 924 23 ("title:" "self" "context:" "threaded?:" "a" "'a" "car" "10" "0" "naturals" "foo" "with-continue" "n" "for-each" "to-fix" "with-restart" "reporter" "with-progress" "function" "with-execution-context")}
+        {Lisp-Entry "to-fix" #f 945 11 945 17 ("symbol->string" "debug")}
+        {Lisp-Entry "foo" #f 950 11 950 14 ("details:" "title:" "goo" "function" "with-execution-node" "n")}
+        {Lisp-Entry "goo" #f 959 11 959 14 ("details:" "title:" "hoo" "function" "with-execution-node" "n")}
+        {Lisp-Entry "hoo" #f 968 11 968 14 ("title:" "car" "function" "with-execution-node" "n")}
+        {Lisp-Entry "test-parameters" #f 981 11 981 26 ("main" "'main" ".5" "sleep" "3" "get-parameter" "'thread" "debug" "thread" "function" "execute:" "self" "context:" "Thread" "new" "2" "test" "'test" "set-parameter")}
+        {Lisp-Entry "test" #f 999 11 999 15 ("log-entry" "function" "Install" "File" "file:" "test" "'test" "name:" "Log" "new" "with-log")}
+        {Lisp-Entry "test-shift" #f 1007 11 1007 21 ("2" "foo")}
+        {Lisp-Entry "foo" #f 1012 11 1012 14 ("bar" "format" "message:" "name:" "log-entry" "x")}
+        {Lisp-Entry "bar" #f 1018 11 1018 14 ("Stack-Snapshot" "new" "data:" "message:" "name:" "log-entry" "+" "y" "let" "x")}
+        {Lisp-Entry "test" #f 1024 11 1024 15 ("+" "node" "with-profile" "5" ":c" "3" ":b" "2" ":a" "list" "log-properties" "log-entry" "function" "Install" "File" "file:" "test" "'test" "name:" "Log" "new" "with-log")}
+        {Lisp-Entry "test3" #f 1042 11 1042 16 ("test-resources" "gc")}
+        {Lisp-Entry "test-resources" #f 1048 11 1048 25 ("test-user-name" "test-thread" "test-synchronizer" "test-stack" "test-socket" "test-registry-key" "test-region" "test-reader" "test-pseudo-handle" "test-portfolio" "test-picture" "test-pen" "test-image" "test-file-reader" "test-file-printer" "test-dc" "test-bitmap" "function" "Install" "File" "file:" "name:" "Log" "new" "with-log")}
+        {Lisp-Entry "test-bitmap" #f 1071 11 1071 22 ("name:" "height:" "16" "width:" "desktop-dc" ":dc" "Bitmap" "new" "node" "function" "with-profile")}
+        {Lisp-Entry "test-image" #f 1079 11 1079 21 ("name:" "Cursor-Resource" "cursor" "'cursor" "height:" "16" "width:" "Icon-Resource" "icon" "'icon" "Bitmap-Resource" "bitmap" "'bitmap" "Image" "load-image" "node" "function" "with-profile")}
+        {Lisp-Entry "test-pen" #f 1089 11 1089 19 ("name:" "blue:" "green:" "142" "red:" "Color" "color:" "Pen" "new" "node" "function" "with-profile")}
+        {Lisp-Entry "test-picture" #f 1097 11 1097 23 ("name:" "Picture" "new" "node" "function" "with-profile")}
+        {Lisp-Entry "test-portfolio" #f 1105 11 1105 25 ("name:" "Portfolio" "new" "node" "function" "with-profile")}
+        {Lisp-Entry "test-pseudo-handle" #f 1113 11 1113 29 ("name:" "GetCurrentProcess" "node" "function" "with-profile")}
+        {Lisp-Entry "test-region" #f 1121 11 1121 22 ("name:" "100" "0" "Rect" "rect:" "Region" "new" "node" "function" "with-profile")}
+        {Lisp-Entry "test-registry-key" #f 1129 11 1129 28 ("name:" "subkey" "key" "with-closed" "open-key" "HKEY_CURRENT_USER" "key2" "HKEY_CLASSES_ROOT" "key:" "Registry-Key" "new" "key1" "let" "node" "function" "with-profile")}
+        {Lisp-Entry "test-socket" #f 1147 11 1147 22 ("name:" "Socket" "new" "node" "function" "with-profile")}
+        {Lisp-Entry "test-stack" #f 1155 11 1155 21 ("new-log-node" "node:" "5000" "1" "-" "after" "'after" "0" "=" "if" "n" "proc" "letrec" "before" "'before" "name:" "log-profile" "node" "function" "with-node")}
+        {Lisp-Entry "test-synchronizer" #f 1169 11 1169 28 ("name:" "Semaphore" "Mutex" "Impulse" "new" "node" "function" "with-profile")}
+        {Lisp-Entry "test-thread" #f 1179 11 1179 22 ("name:" ".5" "sleep" "thread" "execute:" "self" "context:" "Thread" "new" "node" "function" "with-profile")}
+        {Lisp-Entry "test-user-name" #f 1190 11 1190 25 ("name:" "get-system-user-name" "node" "function" "with-profile")}
+        {Lisp-Entry "test9" #f 1198 11 1198 16 ("gc-clear-undestroyed")}
+        {Lisp-Entry "test1" #f 1208 11 1208 16 ("255" "blend")}
+        {Lisp-Entry "test2" #f 1213 11 1213 16 ("100" "blend")}
+        {Lisp-Entry "test3" #f 1218 11 1218 16 ("30" "blend")}
+        {Lisp-Entry "blend" #f 1223 11 1223 16 ("get-player" "set-alpha-blending" "pos" "view" "function" "click:" "pick-figure" "x")}
+        {Lisp-Entry "reprint-toplevel-form" #f 1235 11 1235 32 ("insert-string" "set-selection" "function" "with-update-locked" "0" "saved-form" "output" "form:" "Designer" "new" "designer" "bell" "Form" "is-not?" "if" "read-string-element" "jml->form" "form" "get-string" "string" "get-end" "toplevel-expr" "range" "get-focus" "text" "let*" "align-name?" "align-name?:" "space-properties?" "space-properties?:")}
+        {Lisp-Entry "reprint-current-form" #f 1250 11 1250 31 ("insert-string" "set-selection" "function" "with-update-locked" "length" "1" "+" "saved-form" "output" "form:" "Designer" "new" "designer" "bell" "Form" "is-not?" "if" "read-string-element" "second" "jml->form" "form" "get-string" "string" "get-end" "definition-range" "range" "get-selection" "current-classes" "classes" "get-focus" "text" "let*" "align-name?" "align-name?:" "space-properties?" "space-properties?:")}
+        {Lisp-Entry "reprint-selected-form" #f 1266 11 1266 32 ("insert-string" "set-selection" "function" "with-update-locked" "0" "saved-form" "output" "form:" "Designer" "new" "designer" "bell" "Form" "is-not?" "if" "read-string-element" "jml->form" "form" "get-string" "string" "get-selection" "range" "get-focus" "text" "let*" "align-name?" "align-name?:" "space-properties?" "space-properties?:")}
+        {Lisp-Entry "clear-activities" #f 1286 11 1286 27 ("unregister-activity" "reporter" "function" "for-each" "get-reporters" "reporters" "get-activity-manager" "manager" "let*")}
+        {Lisp-Entry "Foo" #f 1300 9 1300 12 ("Object")
+          {Lisp-Entry "holder" #f 1303 16 1303 22 ()}
+          {Lisp-Entry "bar" #f 1307 13 1307 16 ("7" "5" "if" "message-box" "break" "v" "let" "p" "+" "y" "flag" "n" "function" "proc" "self" "z" "2" "x" "let*" "holder" "set!")}
+          {Lisp-Entry "baz" #f 1324 13 1324 16 ("car" "2" "x" "let")}}
+        {Lisp-Entry "test" #f 1330 11 1330 15 ("Foo" "new" "bar")}
+        {Lisp-Entry "test-shift" #f 1335 11 1335 21 ("Foo" "new" "baz")}
+        {Lisp-Entry "test-location" #f 1340 11 1340 24 ("list" "3" "z" "break" "y" "2" "x" "let")}
+        {Lisp-Entry "test-location-aux" #f 1348 11 1348 28 ("30" "20" "10" "foo" "X" "Y" "Z" "new" "z" "let")}
+        {Lisp-Entry "X" #f 1354 9 1354 10 ("Object")
+          {Lisp-Entry "Y" #f 1357 11 1357 12 ("Object")
+            {Lisp-Entry "Z" #f 1360 13 1360 14 ("Object")
+              {Lisp-Entry "foo" #f 1363 17 1363 20 ("0" "naturals" "car" "y" "map" "x" "function" "for-each" "list")}
+              {Lisp-Entry "bar" #f 1371 17 1371 20 ("1" "car")}}}}
+        {Lisp-Entry "xml-viewer" #f 1381 11 1381 21 ("set-visible?" "bring-to-front" "set-document" "get-guest" "viewer" "host-visible?:" "XML-Viewer" "new-frame" "frame" "let*" "load" "File" "file" "XML-Document" "new" "document" "let")}
+        {Lisp-Entry "test" #f 1393 11 1393 15 ("parse-text" "debug" "text:" "XML-Parser" "new" "parser" "text" "let*")}
+        {Lisp-Entry "test1" #f 1400 11 1400 16 ("parse-text" "debug" "text:" "XML-Parser" "new" "parser" "text" "let*" "name:" "log-entry")}
+        {Lisp-Entry "test2" #f 1408 11 1408 16 ("length" "parse-text" "debug" "text:" "XML-Parser" "parser" "read-content-string" "File-Reader" "new" "reader" "with-closed" "text" "Jazz" "File" "file" "let*")}
+        {Lisp-Entry "My-Transfo" #f 1422 9 1422 19 ("XML-Transformer")
+          {Lisp-Entry "machin" #f 1425 20 1425 26 ("cdr" "p" ">>xml" "n" "function" "for-each" "xml>>" "<-xml" "title" "mode" "f" "a" "xsl-rules" "y" "x" "node")}
+          {Lisp-Entry "chouette" #f 1436 20 1436 28 ("children" "machin" "apply-transformation" "xml>>" "xsl-rules" "b" "a" "node")}}
+        {Lisp-Entry "test" #f 1444 11 1444 15 ("2" "1" "a" "machin" "XML-Formatter" "handler:" "My-Transfo" "new" "transfo" "let")}
+        {Lisp-Entry "test1" #f 1450 11 1450 16 ("node" "children" "<-xml" "p" ">>xml" "n" "function" "for-each" "xml>>" "f" "a" "list" "y" "x" "expand-xsl-ruleset" ":console" "format")}
+        {Lisp-Entry "test0" #f 1466 11 1466 16 ("text" "end-element" "add-attribute" "begin-element" "2" "indentation:" ":pretty" "XML-Formatter" "new" "f" "let")}
+        {Lisp-Entry "test1" #f 1479 11 1479 16 ("b" "align" "h1" "body" "process-sxml" "converter" ":pretty" "XML-Formatter" "new" "processor" "let")}
+        {Lisp-Entry "test0" #f 1492 11 1492 16 ("1" "car")}
+        {Lisp-Entry "setup-compiler" #f 1497 11 1497 25 ("Mutation-Annotator" "Type-Annotator" "new" "add-user-pass" "Compiler" "initialize-user-passes")}
+        {Lisp-Entry "test1" #f 1509 11 1509 16 ("debug" "=>" "2" "cond")}
+        {Lisp-Entry "test" #f 1514 11 1514 15 ("+" "ID" "lalr-parser" "debug")}
+        {Lisp-Entry "test" #f 1519 11 1519 15 ("identity" "CPS" "test")}
+        {Lisp-Entry "speedup" #f 1528 11 1528 18 ("-" "percentage" "new" "old")}
+        {Lisp-Entry "activity-no" #f 1533 14 1533 25 ("0")}
+        {Lisp-Entry "test-activities" #f 1538 11 1538 26 (":unregister?" ".5" "set-done" "unless" "1" "delta-pos" "user-message" "sleep" "cancel-requested?" "not" "<" "and" "while" "Range" "set-range" "increase!" "0" "n" "activity-no" "no" "2" "zero?" "keep?" "1000." "500" "/" ".3" "wait" "50" "random" "5" "+" "max" "let" "activity" "function" "execute:" "self" "context:" "Activity" "new")}
+        {Lisp-Entry "test-styles" #f 1562 11 1562 22 ("Bitmap-Resource" "bitmap" "'bitmap" "Image" "load-image" "IMAGE_BITMAP" "BM_SETIMAGE" "pb" "'pb" "send-message" "'stage" "Showcase" "get-stage" "find-guest" "locate" "stage" "let")}
+        {Lisp-Entry "collect-extensions" #f 1572 11 1572 29 ("string<?" "sort" "downcase" "cons" "set!" "ci=?" "test:" "member?" "not" "and" "when" "get-extension" "ext" "file" "function" "iterate-directory" "extensions" "let" "dir")}
+        {Lisp-Entry "test-ast" #f 1588 11 1588 19 ("get-application" "fresh-prompt" "describe" "when" "Java-AST" "parse-java" "ast" "Jazz" "File" "file" "let" "describe?")}
+        {Lisp-Entry "test-java" #f 1598 11 1598 20 ("java-definitions" "Java-AST" "parse-java" "ast" "Jazz" "File" "file" "let")}
+        {Lisp-Entry "report-aliases" #f 1609 11 1609 25 ("get-application" "fresh-prompt" "car" "key:" "<" "sort" ":console" "format" "value" "key" "bind" "info" "function" "for-each" "newline" "table-keys/values" "aliases" "get-aliases" "table" "let*")}}}})
+"Jedi-Project"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "Jedi-Project.jazz"} 1226584790
+    {Lisp-Entry "Jedi-Project" #f 37 9 37 21 ("Jedi-Project" "register-autoclass" "jazz")
+      {Lisp-Entry "Jedi-Project" #f 47 7 47 19 ("Jedi-Project" "product" "autoload" "_jedi" "Completion-Popup" "Vertical-View" "Horizontal-View" "Smoker" "Smoker-Suite" "Smoker-Builder" "Tree-Showcase" "Tree-Showcase-Actions" "Threads-Showcase" "Text-Showcase" "Showcase" "Scaled-View" "Outline-Showcase" "Jedi-Search" "Jedi-Product" "Jedi-Profile" "Jedi-Preferences" "Jedi-Bindings" "Jedi-Actions" "Code-Generator" "Menu-Editor" "Manager-View" "Manager-Actions" "Designer-Manager" "Alignment-Editor" "Jedi" "Jedi-Toplevel" "Jedi-Toolbar" "Jedi-Status" "source:" "Jedi-Menubar" "name:" "Directory" "directory:" "jedi.project.Jedi-Product" "tag-module:" "Jazz" "File" "documentation:" "include-extensions:" ":jazz" "catalog-extensions:" "catalog?:" "title:" "Project")}}})
+"Jedi-Search"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "search" "Jedi-Search.jazz"} 1226584790
+    {Lisp-Entry "jedi.search.Jedi-Search" #f 37 9 37 32 ("jazz")
+      {Lisp-Entry "Jedi-Search" #f 46 7 46 18 ("projects-search" "projects" "directories-search" "directories" "text-search" "fill" "layout-type:" "content" "title:" "text" "tab" "name:" "Search-Manager")}}})
+"Jedi-Status"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "application" "Jedi-Status.jazz"} 1226584790
+    {Lisp-Entry "jedi.application.Jedi-Status" #f 37 9 37 37 ("jazz")
+      {Lisp-Entry "Jedi-Status" #f 49 7 49 18 ("90" "mode" "look" "100" "locales" "250" "visible?:" "activities" "on-context-menu" "context-menu-handler:" "on-mouse-down" ":form" "Event-Handler" "mouse-down-handler:" "Bitmap-Resource" "icon:" "tail" "150" "title:" "workspace" "center" "location:" "20" "782" "Dimension" "size:" "message" "name:" "IDE-Status")
+        {Lisp-Entry "host-icon" #f 70 16 70 25 ("Bitmap-Resource")}
+        {Lisp-Entry "host-title" #f 74 16 74 26 ()}
+        {Lisp-Entry "on-context-menu" #f 83 11 83 26 ("nextmethod" "else" "Look-Menu" "look" "Locales-Menu" "locales" "Activities-Menu" "new" "track-popup-menu" "activities" "self" "popup-workspaces-menu" "workspace" "case" "get-position" "acquire" "pos" "get-name" "name" "get-sender" "sender" "let*" "evt")}
+        {Lisp-Entry "on-mouse-down" #f 98 11 98 24 ("nextmethod" "else" "Look-Menu" "look" "Locales-Menu" "new" "track-popup-menu" "locales" "get-activity-manager" "toggle-visible?" "activities" "self" "popup-workspaces-menu" "workspace" "case" "get-position" "acquire" "pos" "get-name" "name" "get-sender" "sender" "let*" "evt")}}}})
+"Jedi-Toolbar"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "application" "Jedi-Toolbar.jazz"} 1226584790
+    {Lisp-Entry "jedi.application.Jedi-Toolbar" #f 37 9 37 38 ("jazz")
+      {Lisp-Entry "Jedi-Toolbar" #f 47 7 47 19 ("sql" "groupware" "debugger" "text" "workspace:" "on-select-workspace" "tooltip?:" "selected?:" ":icons" "portfolio:" "workspace" "group:" "22" "home" "16" "command-shell" "entry" "style:" "edge" "border-type:" "19" "Point" "position:" "tail" "location:" "21" "250" "on-forward-menu" "forward-history" "forward" "1" "on-backward-menu" "pick" "body" "backward-history" "backward" "on-compare-files" "compare-files" "jedi" "compare-directories" ":preserve-domain?" "on-find" ":application" "action-handler:" "find" "redo" "undo" "on-clipboard-menu" ":form" "Event-Handler" "context-menu-handler:" "paste" "copy" "view" "cut" "0" "4" "Dimension" "size:" "print-preview" "print-layout" "print" "guest" "save" "open" "application" "Action" "action:" "Bitmap-Resource" "image-name:" "tooltip-text:" "new" "name:" "IDE-Toolbar")
+        {Lisp-Entry "host-icon" #f 102 16 102 25 ("Bitmap-Resource")}
+        {Lisp-Entry "host-title" #f 106 16 106 26 ()}}}})
+"Jedi-Toplevel"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "application" "Jedi-Toplevel.jazz"} 1226584790
+    {Lisp-Entry "jedi.application.Jedi-Toplevel" #f 37 9 37 39 ("jazz")
+      {Lisp-Entry "Jedi-Toplevel" #f 48 7 48 20 ("768" "1024" "Dimension" "size:" "100" "Point" "position:" "caption-base:" "IDE-Toplevel")}}})
+"Manager-Actions"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "designer" "Manager-Actions.jazz"} 1226584790
+    {Lisp-Entry "jedi.designer.Manager-Actions" #f 37 9 37 38 ("jazz")
+      {Lisp-Entry "Manager-Actions" #f 47 7 47 22 ("Actions")}}})
+"Manager-View"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "designer" "Manager-View.jazz"} 1226584790
+    {Lisp-Entry "jedi.designer.Manager-View" #f 37 9 37 35 ("Center-View" "register-autoclass" "jazz")
+      {Lisp-Entry "Manager-View" #f 49 7 49 19 ("card" "card-border" "416" "card-contour" "366" "230" "right" "descendant" "on-tab-press" "tab-press-handler:" "descendants" "233" "133" "descendants-border" "on-splitter-move" "move-handler:" "horz" "orientation:" "3" "left" "183" "width:" "branch" "branches" "header" "fill" "content" "flat?:" "vscroll?:" "hscroll?:" "document" "scroller" "entry" "style:" "edge" "border-type:" "130" "229" "1" "Point" "position:" "branches-border" "367" "center" "on-edit-form" "edit-form" "end-undo-group" "on-redo" "redo" "on-undo" "undo" "16" "end-open-group" "on-save" "save" "on-open" "open" "on-new" ":form" "Event-Handler" "action-handler:" ":icons" "portfolio:" "Bitmap-Resource" "image-name:" "tooltip-text:" "tooltip?:" "22" "new" "6" "0" "Rect" "layout-insets:" "flow" "north" "location:" "33" "300" "toolbar" "name:" "border" "layout-type:" "400" "650" "Dimension" "size:" "Editor-View")
+        {Lisp-Entry "host-icon" #f 90 16 90 25 ("Bitmap-Resource")}
+        {Lisp-Entry "host-position" #f 94 16 94 29 ("80" "100" "Point")}
+        {Lisp-Entry "host-size" #f 98 16 98 25 ("400" "650" "Dimension")}
+        {Lisp-Entry "host-workspaces" #f 102 11 102 26 ("home")}
+        {Lisp-Entry "new-controller" #f 112 11 112 25 ("self" "Manager-View-Controller" "new")}
+        {Lisp-Entry "Manager-View-Controller" #f 117 9 117 32 ("Editor-View-Controller")
+          {Lisp-Entry "name-status" #f 120 13 120 24 ("document" "editor-title")}}
+        {Lisp-Entry "install" #f 129 11 129 18 ("card" "'card" "descendants" "'descendants" "self" "branches" "'branches" "locate" "set-editor" "nextmethod" "rest")}
+        {Lisp-Entry "guest-actions" #f 141 11 141 24 ("nextmethod" "manager" "'manager" "find-actions" "cons")}
+        {Lisp-Entry "size-change" #f 151 11 151 22 ("get-height" "get-width" "Dimension" "new" "set-size" "when" "'toolbar" "locate-component" "toolbar" "let" "nextmethod" "size")}
+        {Lisp-Entry "resize-center" #f 158 29 158 42 ("card-contour" "'card-contour" "right" "'right" "0" "descendants-border" "'descendants-border" "locate" "size-figure" "dv" "dh")}
+        {Lisp-Entry "on-splitter-move" #f 164 18 164 34 ("update-view" "card-contour" "'card-contour" "'left" "right" "-" "descendants-border" "'descendants-border" "move-figure" "0" "branches-border" "'branches-border" "locate" "size-figure" "left" "get-name" "case" "delta:" "get-property" "delta" "get-sender" "sender" "let" "evt")}
+        {Lisp-Entry "on-new" #f 181 11 181 17 ("new-form" "evt")}
+        {Lisp-Entry "on-open" #f 185 11 185 18 ("open-form" "evt")}
+        {Lisp-Entry "on-edit-form" #f 189 11 189 23 ("edit-form" "evt")}
+        {Lisp-Entry "on-tab-press" #f 193 11 193 23 ("get-row" "auto-select" "when" "get-single-selection" "rank" "acquire-focus" "card" "'card" "locate" "get-tree" "tree" "let" "evt")}
+        {Lisp-Entry "install-current-designer" #f 206 11 206 35 ("editor-title" "set-title" "nextmethod" "form" "component")}}
+      {Lisp-Entry "Center-View" #f 216 7 216 18 ("View")
+        {Lisp-Entry "resize" #f 219 11 219 17 ("creator" "resize-center" "nextmethod" "dv" "dh")}}}})
+"Menu-Editor"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "designer" "Menu-Editor.jazz"} 1226584790
+    {Lisp-Entry "jedi.designer.Menu-Editor" #f 37 9 37 34 ("jazz")
+      {Lisp-Entry "Menu-Editor" #f 45 7 45 18 ("View-Editor")
+        {Lisp-Entry "host-title" #f 53 16 53 26 ()}
+        {Lisp-Entry "host-position" #f 57 16 57 29 ("117" "237" "Point")}
+        {Lisp-Entry "host-size" #f 61 16 61 25 ("472" "708" "Dimension")}}}})
+"Outline-Showcase"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "showcase" "Outline-Showcase.jazz"} 1226584790
+    {Lisp-Entry "jedi.showcase.Outline-Showcase" #f 37 9 37 39 ("jazz")
+      {Lisp-Entry "Outline-Showcase" #f 47 7 47 23 ("View")}
+      {Lisp-Entry "Outline-Showcase" #f 53 7 53 23 ("center" "justification:" "80" "50" "width:" ":icons" "portfolio:" "row" "selection-mode:" "info" "419" "518" "info-border" "415" "selection" "335" "visible-height" "16" "170" "315" "visible-count" "on-update-information" "260" "update-information" "on-remove-row" "190" "remove-rows" "on-add-row" "add-row" "on-collapse-row" "100" "collapse-row" "on-expand-row" "24" "160" "70" "expand-row" "on-setting" ":form" "Event-Handler" "action-handler:" "checked?:" "18" "120" "10" "340" "title:" "row-spacing" "0" "row-spacing:" "outline" "fill" "layout-type:" "content" "vscroll?:" "edge" "border-type:" "457" "319" "6" "3" "Point" "position:" "outline-border" "name:" "466" "940" "Dimension" "size:" "View")
+        {Lisp-Entry "host-title" #f 90 16 90 26 ()}
+        {Lisp-Entry "host-position" #f 94 16 94 29 ("60" "39" "Point")}
+        {Lisp-Entry "host-size" #f 98 16 98 25 ("466" "940" "Dimension")}
+        {Lisp-Entry "install" #f 107 11 107 18 ("update-information" "setup-outline" "nextmethod" "rest")}
+        {Lisp-Entry "setup-outline" #f 118 11 118 24 ("10" "0" "naturals" "5" "=" "when" "n" "function" "for-each" "node" "add-row" "'outline" "locate" "outline" "let")}
+        {Lisp-Entry "add-row" #f 134 11 134 18 ("random-color" "background:" "random-height" "row-height:" "father:" "Color-Row" "class:" "self" "context:" "add-row" "father" "outline")}
+        {Lisp-Entry "random-height" #f 138 11 138 24 ("60" "random" "10" "+")}
+        {Lisp-Entry "random-color" #f 142 11 142 23 ("Dark-Purple" "Dark-Blue" "Dark-Green" "Dark-Orange" "Dark-Red" "name:" "Color" "random-element")}
+        {Lisp-Entry "resize" #f 156 11 156 17 ("info-border" "'info-border" "0" "outline-border" "'outline-border" "locate" "size-figure" "nextmethod" "dv" "dh")}
+        {Lisp-Entry "on-setting" #f 162 11 162 21 ("0" "1" "get-checked?" "if" "set-row-spacing" "row-spacing" "get-name" "case" "'outline" "locate" "outline" "get-sender" "sender" "let" "evt")}
+        {Lisp-Entry "on-expand-row" #f 169 11 169 24 ("update-information" "get-row" "expand" "when" "get-selection" "row" "'outline" "locate" "outline" "let*" "evt")}
+        {Lisp-Entry "on-collapse-row" #f 177 11 177 26 ("update-information" "get-row" "collapse" "when" "get-selection" "row" "'outline" "locate" "outline" "let*" "evt")}
+        {Lisp-Entry "Mark" #f 185 14 185 18 ()}
+        {Lisp-Entry "on-add-row" #f 189 11 189 21 ("update-information" "random-color" "background:" "random-height" "row-height:" "collapsed" "'collapsed" "state:" "father:" "add-row" "get-row" "essay" "Mark" "if" "row" "get-shift?" "use-mark?" "get-selection" "sel" "'outline" "locate" "outline" "let*" "evt")}
+        {Lisp-Entry "on-remove-row" #f 198 11 198 24 ("update-information" "remove-row" "get-row" "essay" "Mark" "if" "row" "get-shift?" "use-mark?" "get-selection" "sel" "'outline" "locate" "outline" "let*" "evt")}
+        {Lisp-Entry "on-update-information" #f 207 11 207 32 ("update-information" "evt")}
+        {Lisp-Entry "update-information" #f 216 11 216 29 ("display-outline" "update-fields")}
+        {Lisp-Entry "update-fields" #f 221 11 221 24 ("get-selection" "selection" "'selection" "get-visible-height" "visible-height" "'visible-height" "get-visible-count" "format" "visible-count" "'visible-count" "set-title" "'outline" "locate" "outline" "let")}
+        {Lisp-Entry "display-outline" #f 229 11 229 26 ("get-root-row" "remove-every-row" "with-update-locked" "subrow" "get-sons" "iterate" "display-row" "children:" "expanded" "'expanded" "state:" "father:" "add-row" "subdest" "let" "dest" "row" "function" "proc" "'info" "info" "'outline" "locate" "outline" "letrec")}
+        {Lisp-Entry "display-row" #f 246 11 246 22 ("list" "get-next" "c5" "get-previous" "c4" "c3" "get-state" "c2" "get-level" "Tree-Label" "c1" "get-image" "image:" "get-title" "title:" "get-background" "color:" "Tree-Node" "new" "c0" "Dark-Blue" "Dark-Red" "name:" "Color" "if" "color" "get-visible?" "visible?" "row-rank" "essay" "function" "rank" "get-children" "car" "node" "let*" "row" "outline")}
+        {Lisp-Entry "row-rank" #f 260 11 260 19 ("error" "get-root-row" "get-sons" "iterate" "increase!" "continuation-return" "eq?" "if" "subrow" "proc" "-1" "rank" "letrec" "return" "function" "continuation-capture" "row" "outline")}
+        {Lisp-Entry "Color-Row" #f 279 9 279 18 ("Outline-Row")
+          {Lisp-Entry "background" #f 282 14 282 24 ("generate")}
+          {Lisp-Entry "draw-background" #f 285 13 285 28 ("fill-rect" "get-bounds" "bounds" "let" "background" "when" "context" "surface")}}}}})
+"Scaled-View"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "showcase" "Scaled-View.jazz"} 1226584790
+    {Lisp-Entry "jedi.showcase.Scaled-View" #f 37 9 37 34 ("jazz")
+      {Lisp-Entry "Scaled-View" #f 45 7 45 18 ("View")}
+      {Lisp-Entry "Scaled-View" #f 51 7 51 18 ("View")
+        {Lisp-Entry "client" #f 54 12 54 18 ("set-client" "get-client")}
+        {Lisp-Entry "print" #f 57 11 57 16 ("size" "position" "background" "format" "function" "self" "print-unreadable" "readably" "printer")}
+        {Lisp-Entry "get-client" #f 68 18 68 28 ("client")}
+        {Lisp-Entry "set-client" #f 72 18 72 28 ("client" "set!" "value")}
+        {Lisp-Entry "draw-background" #f 81 11 81 26 ("context" "surface")}
+        {Lisp-Entry "draw" #f 85 11 85 15 ("get-v" "get-h" "draw-text" "get-size" "12" "Dimension" "new" "center" "get-text-width" "width" "name" "->string" "string" "let*" "Caption" "name:" "Font" "set-font" "fill-rect" "get-bounds" "bounds" "let" "background" "when" "lv" "lh" "context" "surface")}
+        {Lisp-Entry "Info" #f 101 26 101 30 ()}
+        {Lisp-Entry "register-info" #f 105 18 105 31 ("get-name" "background" "essay" "list" "cons" "Info" "set!" "when" "new-sc?" "new-sc" "clp" "vor" "wor")}
+        {Lisp-Entry "mouse-down" #f 115 11 115 21 ("background" "debug" "pos")}}}})
+"Showcase"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "showcase" "Showcase.jazz"} 1226584790
+    {Lisp-Entry "jedi.showcase.Showcase" #f 37 9 37 31 ("Scaling-Showcase" "Draw-Showcase" "DC-Showcase" "Region-Showcase" "register-autoclass" "jazz")
+      {Lisp-Entry "Showcase" #f 48 7 48 15 ("threads" "threads-sheet" "text-sheet" "tree-sheet" "outline-sheet" "330" "b" "Purple" "210" "320" "500" "p" "190" "vc" "160" "vb" "va" "v2" "v1" "2" "branch:" "on-set-active-branch" "s2" "Dark-Gray" "branches-sheet" "Red" "250" "wiped" "on-wipe" ":form" "Event-Handler" "action-handler:" "24" "400" "85" "effects-sheet" "east" "west" "south" "north" "4" "layout-padding:" "border" "layout-border" "420" "40" "relative" "mode:" "vert" "second" "first" "division:" "horz" "orientation:" "split" "state:" "layout-split" "280" "Dark-Green" "center" "Dark-Blue" "5" "Dark-Red" "head" "location:" "flow" "layout" "solid" "layout-flow" "auto-size?:" "layout-sheet" "555" "870" "ss" "scaling-sheet" "558" "884" "0" "ds" "drawing-sheet" "47" "176" "152" "128" "71" "139" "236" "selected?:" "217" "259" "218" "153" "212" "180" "288" "8" "214" "185" "21" "165" "17" "239" "147" "124" "condensed?:" "101" "content:" "choices:" "19" "148" "78" "260" "22" "92" "170" "b9" "b8" "130" "b7" "110" "b6" "90" "b5" "70" "b4" "b3" "30" "b2" "image-name:" "16" "b1" "50" "width:" "row" "selection-mode:" ":icons" "portfolio:" "tv" "fill" "layout-type:" "313" "150" "tree-border" "Blue" "660" "dcs" "Green" "Color" "background:" "140" "200" "rs" "jt" "vscroll?:" "hscroll?:" "edge" "border-type:" "221" "350" "269" "text-border" "100" "300" "10" "440" "t" "Bitmap-Resource" "icon:" "32" "20" "i" "content" "title:" "views-sheet" "588" "888" "6" "Point" "position:" "tab" "name:" "600" "900" "Dimension" "size:" "View")
+        {Lisp-Entry "install" #f 185 11 185 18 ("install-views" "nextmethod" "rest")}
+        {Lisp-Entry "host-icon" #f 195 16 195 25 ("Bitmap-Resource")}
+        {Lisp-Entry "host-title" #f 199 16 199 26 ()}
+        {Lisp-Entry "host-position" #f 203 16 203 29 ("30" "50" "Point")}
+        {Lisp-Entry "host-size" #f 207 16 207 25 ("650" "900" "Dimension")}
+        {Lisp-Entry "host-workspaces" #f 211 11 211 26 ("home")}
+        {Lisp-Entry "resize" #f 220 11 220 17 ("tab" "'tab" "locate" "size-figure" "nextmethod" "dv" "dh")}
+        {Lisp-Entry "on-set-active-branch" #f 225 11 225 31 ("set-active-branch" "2" "view" "branch:" "get-property" "child" "branch" "get-sender" "sender" "let*" "evt")}
+        {Lisp-Entry "get-stage" #f 237 11 237 20 ("locate" "get-content" "name")}
+        {Lisp-Entry "install-views" #f 246 11 246 24 ("install-tree-view" "install-text")}
+        {Lisp-Entry "install-text" #f 251 11 251 23 ("jt" "'jt" "locate" "get-controller" "set-moniker" "exists?" "when" "Jedi-Product" "File" "file" "let")}
+        {Lisp-Entry "install-tree-view" #f 258 11 258 28 ("25" "0" "naturals" "5" "=" "when" "father:" "cell" "format" "title" "let*" "n" "function" "for-each" "node" "Tree-Label" "Bitmap-Resource" "image:" "title:" "Tree-Node" "new" "list" "children:" "add-row" "tv" "'tv" "locate" "tree" "let")}
+        {Lisp-Entry "on-wipe" #f 281 11 281 18 ("Blue" "Red" "name:" "Color" "get-background" "eq?" "if" "set-background" "0.005" "delay:" "right" "'right" "direction:" "Wipe-Effect" "new" "get-root" "set-effect" "wiped" "'wiped" "locate" "canvas" "let" "evt")}}
+      {Lisp-Entry "Region-Showcase" #f 292 7 292 22 ("View")
+        {Lisp-Entry "draw" #f 296 11 296 15 ("8" "160" "Bitmap-Resource" "get-application" "get-icons-cache" "draw-image" "Red" "Color" "fill-region" "or" "'or" "combine!" "120" "180" "70" "30" "sec" "100" "145" "50" "Rect" "rect:" "frs" "Region" "new" "rgn" "with-closed" "10" "draw-text" "Caption" "name:" "Font" "set-font" ":transparent" "set-bk-mode" "lv" "lh" "context" "surface")}}
+      {Lisp-Entry "DC-Showcase" #f 317 7 317 18 ("View")
+        {Lisp-Entry "draw" #f 321 11 321 15 ("10" "Point" "destination:" "bit-blit" "Green" "name:" "Color" "0" "Rect" "fill-rect" "size:" "Memory-Surface" "new" "memory-dc" "with-closed" "32" "Dimension" "size" "let" "lv" "lh" "context" "surface")}}
+      {Lisp-Entry "Draw-Showcase" #f 336 7 336 20 ("View")
+        {Lisp-Entry "draw" #f 340 11 340 15 ("250" "draw-text" "frame-rect" "Dark" "Medium" "340" "Light" "320" "White" "360" "400" "300" "200" "Black" "set-text-color" "Green" "name:" "Color" "214" "118" "0" "fill-rect" "30" "650" "10" "450" "Rect" "new" "draw-gradient" "lv" "lh" "context" "surface")}
+        {Lisp-Entry "draw-gradient" #f 352 11 352 24 ("Blue" "1" "Red" "name:" "Color" "0" "list" "gradient-fill" "rect" "surface")}}
+      {Lisp-Entry "Scaling-Showcase" #f 364 7 364 23 ("View")}}})
+"Smoker"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "smoker" "Smoker.jazz"} 1226584790
+    {Lisp-Entry "jedi.smoker.Smoker" #f 37 9 37 27 ("jazz")
+      {Lisp-Entry "Smoker" #f 44 7 44 13 ("Jedi")
+        {Lisp-Entry "conclude-process" #f 47 11 47 27 ("smoke" "Smoker-Suite" "new" "suite" "let")}}}})
+"Smoker-Builder"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "smoker" "Smoker-Builder.jazz"} 1226584790
+    {Lisp-Entry "jedi.smoker.Smoker-Builder" #f 37 9 37 35 ("jazz")
+      {Lisp-Entry "Smoker-Builder" #f 44 7 44 21 ("Object")}
+      {Lisp-Entry "Smoker-Builder" #f 50 7 50 21 ("Object")
+        {Lisp-Entry "Smoker-Product" #f 53 14 53 28 ()}
+        {Lisp-Entry "build/run" #f 57 18 57 27 ("set-done" "run" "step-it" "cancel-requested?" "unless" "build" "wait-for" "user-message" "2" "0" "Range" "set-range" "Smoker-Product" "Launcher-Product" "find-product" "product" "let" "activity" "function" "execute:" "self" "context:" "name:" "Activity" "new")}
+        {Lisp-Entry "build" #f 78 11 78 16 ("keep-reporter?:" "threaded?:" "build" "product")}
+        {Lisp-Entry "run" #f 82 11 82 14 ("wait?:" "create-process" "format" "command" "outputed-file" "parse" "pathname" "let*" "product")}}}})
+"Smoker-Suite"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "smoker" "Smoker-Suite.jazz"} 1226584790
+    {Lisp-Entry "jedi.smoker.Smoker-Suite" #f 37 9 37 33 ("jazz")
+      {Lisp-Entry "Smoker-Suite" #f 44 7 44 19 ("Object")}
+      {Lisp-Entry "Smoker-Suite" #f 50 7 50 19 ("Object")
+        {Lisp-Entry "smoke" #f 53 18 53 23 ("run-builds" "run-searches" "run-showcase" "run-validations")}
+        {Lisp-Entry "run-validations" #f 75 11 75 26 ("10" "set-done" "step-it" "2" "sleep" "report-success?:" "validate" "Validation-Suite" "suite" "let" "user-message" "1" "0" "Range" "set-range" "while" "activity" "function" "execute:" "self" "context:" "name:" "Activity" "new")}
+        {Lisp-Entry "run-showcase" #f 98 11 98 23 ("5" "0" "naturals" "add-threaded-icon" "n" "function" "for-each" "'threads" "threads" "let" "threads-sheet" "'threads-sheet" "set-selection-name" "'tab" "locate" "tab" "get-guest" "showcase" "Showcase" "new-frame" "frame" "let*")}
+        {Lisp-Entry "run-searches" #f 114 11 114 23 ("on-search" "set!" "1" "sleep" "wait-for" "when" "while" "running" "let" "thread" "function" "execute:" "self" "context:" "name:" "Thread" "new" "unimplemented" "set-search-targets" "end-edition" "set-visible?" "targets" "'targets" "locate" "tree" "get-search" "view" "get-guest" "manager" "get-search-manager" "frame" "get-application" "appl" "let*")}
+        {Lisp-Entry "run-builds" #f 144 11 144 21 ("7000" "Puzzle-Product" "5000" "1000" "Yoda-Product" "8000" "0" "Launcher-Product" "run-product-builds")}
+        {Lisp-Entry "run-product-builds" #f 150 11 150 29 ("keep-reporter?:" "threaded?:" "build" "set!" "find-product" "product" "wait-for" "when" "while" "running" "let" "sleep" "thread" "function" "execute:" "self" "context:" "format" "name:" "Thread" "new" "unimplemented" "wait-beetween" "0" "wait-before" "product-title" "product-class" "title")}}}})
+"Text-Showcase"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "showcase" "Text-Showcase.jazz"} 1226584790
+    {Lisp-Entry "jedi.showcase.Text-Showcase" #f 37 9 37 36 ("jazz")
+      {Lisp-Entry "Text-Showcase" #f 45 7 45 20 ("View")}}})
+"Threads-Showcase"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "showcase" "Threads-Showcase.jazz"} 1226584790
+    {Lisp-Entry "jedi.showcase.Threads-Showcase" #f 37 9 37 39 ("jazz")
+      {Lisp-Entry "Threads-Showcase" #f 48 7 48 23 ("View")}
+      {Lisp-Entry "Threads-Showcase" #f 54 7 54 23 ("Bitmap-Resource" "icons:" "height:" "width:" "portfolio" "470" "776" "32" "2" "area" "on-resume-threads" "224" "resume-threads" "on-suspend-threads" "114" "suspend-threads" "on-add-threads" ":form" "Event-Handler" "action-handler:" "22" "100" "Dimension" "size:" "4" "Point" "position:" "title:" "add-threads" "name:" "View")
+        {Lisp-Entry "threads" #f 57 8 57 15 ()}
+        {Lisp-Entry "slowdown" #f 58 8 58 16 ()}
+        {Lisp-Entry "start" #f 59 8 59 13 ()}
+        {Lisp-Entry "count" #f 60 8 60 13 ("0")}
+        {Lisp-Entry "done?" #f 61 8 61 13 ()}
+        {Lisp-Entry "destroy-component" #f 73 11 73 28 ("nextmethod" "stop-showcase")}
+        {Lisp-Entry "start-showcase" #f 78 11 78 25 ("add-threads" "done?" "0" "count" "current-time" "time->seconds" "start" "set!")}
+        {Lisp-Entry "stop-showcase" #f 85 11 85 24 ("threads" "alive?" "running?" "and" "thread" "some?" "function" "wait-while" "done?" "set!")}
+        {Lisp-Entry "add-icon" #f 96 11 96 19 ("32" "Dimension" "size:" "get-height" "42" "get-width" "-" "random" "Point" "position:" "parent:" "portfolio" "'portfolio" "portfolio:" "0" "image-name:" "Showcase-Icon" "new" "get-size" "size" "'area" "locate" "area" "let*" "n")}
+        {Lisp-Entry "add-threaded-icon" #f 107 18 107 35 ("10" "5" "Language" "category-compiled?" "if" "length" "*" "cons" "threads" "set!" "animate-icon" "slowdown" "sleep" "done?" "not" "while" "function" "execute:" "self" "context:" "information:" "name:" "Thread" "new" "thread" "add-icon" "icon" "let*" "n")}
+        {Lisp-Entry "on-add-threads" #f 122 11 122 25 ("add-threads" "evt")}
+        {Lisp-Entry "on-suspend-threads" #f 126 11 126 29 ("threads" "suspend" "thread" "function" "for-each" "evt")}
+        {Lisp-Entry "on-resume-threads" #f 132 11 132 28 ("threads" "resume" "thread" "function" "for-each" "evt")}
+        {Lisp-Entry "add-threads" #f 138 11 138 22 ("5" "0" "naturals" "add-threaded-icon" "n" "function" "for-each")}
+        {Lisp-Entry "report-timing" #f 144 11 144 24 ("start" "current-time" "time->seconds" "-" "/" "user-message" "0" "100" "modulo" "=" "when" "count" "increase!")}
+        {Lisp-Entry "print" #f 150 11 150 16 ("object->serial" "format" "function" "self" "print-unreadable" "readably" "printer")}
+        {Lisp-Entry "Showcase-Icon" #f 162 9 162 22 ("Image-View")
+          {Lisp-Entry "direction-h" #f 165 10 165 21 ()}
+          {Lisp-Entry "direction-v" #f 166 10 166 21 ()}
+          {Lisp-Entry "prepare" #f 169 13 169 20 ("direction-v" "5" "11" "random" "-" "direction-h" "set!" "nextmethod" "rest")}
+          {Lisp-Entry "animate-icon" #f 175 20 175 32 ("rebound-icon" "move-icon")}
+          {Lisp-Entry "move-icon" #f 180 13 180 22 ("direction-v" "get-v" "direction-h" "get-h" "+" "Point" "new" "set-position" "get-position" "pos" "let")}
+          {Lisp-Entry "rebound-icon" #f 185 13 185 25 ("direction-v" "get-height" "get-bottom" "get-top" "-" "direction-h" "set!" "get-width" "get-right" ">" "0" "get-left" "<" "or" "when" "parent" "get-size" "area" "get-rect" "rect" "let")}}}}})
+"Tree-Showcase"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "showcase" "Tree-Showcase.jazz"} 1226584790
+    {Lisp-Entry "jedi.showcase.Tree-Showcase" #f 37 9 37 36 ("jazz")
+      {Lisp-Entry "Tree-Showcase" #f 47 7 47 20 ("View")}
+      {Lisp-Entry "Tree-Showcase" #f 53 7 53 20 ("center" "justification:" "80" "tree-info" "419" "518" "tree-info-border" "415" "selection" "395" "first-displayed-offset" "375" "first-displayed-rank" "355" "first-displayed" "335" "visible-height" "16" "170" "315" "visible-count" "on-update-information" "275" "update-information" "on-show-hide" "235" "show/hide" "on-remove-rows" "205" "remove-rows" "on-add-row" "24" "160" "175" "add-row" "display-images?" "110" "toplevel-controls?" "50" "row-spacing" "30" "column-spacing" "on-setting" ":form" "Event-Handler" "action-handler:" "checked?:" "20" "120" "10" "340" "header?" "100" "85" "130" "width:" "title:" ":icons" "portfolio:" "row" "selection-mode:" "multiple-selection?:" "row-spacing:" "0" "column-spacing:" "filled-column:" "tree" "fill" "layout-type:" "content" "vscroll?:" "edge" "border-type:" "457" "319" "6" "3" "Point" "position:" "tree-border" "name:" "466" "940" "Dimension" "size:" "View")
+        {Lisp-Entry "host-title" #f 102 16 102 26 ()}
+        {Lisp-Entry "host-position" #f 106 16 106 29 ("60" "39" "Point")}
+        {Lisp-Entry "host-size" #f 110 16 110 25 ("466" "940" "Dimension")}
+        {Lisp-Entry "install" #f 119 11 119 18 ("update-information" "setup-tree" "nextmethod" "rest")}
+        {Lisp-Entry "setup-tree" #f 130 11 130 21 ("10" "0" "naturals" "3" "/=" "visible?:" "5" "=" "when" "cell" "format" "title" "let*" "n" "function" "for-each" "node" "Bitmap-Resource" "add-row" "'tree" "locate" "tree" "let")}
+        {Lisp-Entry "add-row" #f 150 11 150 18 ("Tree-Label" "image:" "title:" "Tree-Node" "new" "list" "children:" "random-height" "row-height:" "father:" "add-row" "visible?" "visible?:" "right" "middle" "image" "title" "father" "tree")}
+        {Lisp-Entry "random-height" #f 154 11 154 24 ("60" "random" "10" "+")}
+        {Lisp-Entry "guest-actions" #f 163 11 163 24 ("nextmethod" "tree-showcase" "'tree-showcase" "find-actions" "cons")}
+        {Lisp-Entry "resize" #f 173 11 173 17 ("tree-info-border" "'tree-info-border" "0" "tree-border" "'tree-border" "locate" "size-figure" "nextmethod" "dv" "dh")}
+        {Lisp-Entry "on-setting" #f 179 11 179 21 ("set-display-images?" "display-images?" "get-node-column" "set-toplevel-controls?" "toplevel-controls?" "set-row-spacing" "row-spacing" "0" "1" "if" "set-column-spacing" "column-spacing" "get-checked?" "set-header?" "header?" "get-name" "case" "'tree" "locate" "tree" "get-sender" "sender" "let" "evt")}
+        {Lisp-Entry "Unique-Id" #f 190 14 190 23 ("0")}
+        {Lisp-Entry "Last-Added-Row" #f 193 14 193 28 ()}
+        {Lisp-Entry "on-add-row" #f 197 11 197 21 ("update-information" "and" "Tree-Label" "Bitmap-Resource" "image:" "title:" "Tree-Node" "new" "children:" "random-height" "row-height:" "collapsed" "'collapsed" "state:" "father:" "add-row" "Last-Added-Row" "set!" "increase!" "Unique-Id" "format" "title" "let" "row" "for-each" "get-shift?" "use-last-added?" "get-row" "n" "function" "map" "list" "null?" "if" "rows" "get-selection" "sel" "'tree" "locate" "tree" "let*" "evt")}
+        {Lisp-Entry "on-remove-rows" #f 210 11 210 25 ("update-information" "remove-row" "row" "for-each" "get-row" "n" "function" "map" "rows" "get-selection" "sel" "'tree" "locate" "tree" "let*" "evt")}
+        {Lisp-Entry "on-show-hide" #f 220 11 220 23 ("update-information" "not" "set-visible?" "get-visible-flag" "visible?" "get-user-data" "target" "row" "for-each" "get-row" "n" "function" "map" "rows" "get-selection" "sel" "tree-info" "'tree-info" "locate" "tree" "let*" "evt")}
+        {Lisp-Entry "on-update-information" #f 232 11 232 32 ("update-information" "evt")}
+        {Lisp-Entry "update-information" #f 241 11 241 29 ("display-tree" "update-fields")}
+        {Lisp-Entry "update-fields" #f 246 11 246 24 ("get-selection" "selection" "'selection" "'first-displayed-offset" "'first-displayed-rank" "get-children" "car" "get-title" "essay" "row" "'first-displayed" "'visible-height" "format" "'visible-count" "set-title" "internal-fields" "first-displayed-offset" "first-displayed-rank" "first-displayed" "visible-height" "visible-count" "receive" "'tree" "locate" "tree" "let")}
+        {Lisp-Entry "display-tree" #f 257 11 257 23 ("get-root-row" "remove-every-row" "with-update-locked" "subrow" "get-sons" "iterate" "user-data:" "display-row" "children:" "expanded" "'expanded" "state:" "father:" "add-row" "subdest" "let" "dest" "row" "function" "proc" "tree-info" "'tree-info" "info" "'tree" "locate" "tree" "letrec")}
+        {Lisp-Entry "display-row" #f 274 11 274 22 ("list" "get-visible-flag" "c6" "c5" "c4" "color:" "c3" "c2" "Tree-Label" "c1" "get-image" "image:" "get-title" "title:" "Tree-Node" "new" "c0" "Dark-Blue" "Dark-Red" "name:" "Color" "if" "color" "get-visible?" "visible?" "row-rank" "essay" "function" "rank" "get-children" "car" "node" "let*" "internal-fields" "next" "previous" "state" "level" "receive" "row" "tree")}
+        {Lisp-Entry "row-rank" #f 290 11 290 19 ("error" "get-root-row" "get-sons" "iterate" "increase!" "continuation-return" "eq?" "if" "subrow" "proc" "-1" "rank" "letrec" "return" "function" "continuation-capture" "row" "tree")}
+        {Lisp-Entry "Node-Column" #f 309 9 309 20 ("Tree-Node-Column")
+          {Lisp-Entry "draw-cell" #f 312 13 312 22 ("0" "draw-title" "Dark-Red" "Red" "name:" "Color" "if" "fill-rect" "selected?:" "getf" "selected?" "text-rect" "rect" "let" "nextmethod" "height" "width" "cell" "row" "context" "surface")}}
+        {Lisp-Entry "Middle-Column" #f 325 9 325 22 ("Tree-Column")
+          {Lisp-Entry "draw-cell" #f 328 13 328 22 ("Dark-Blue" "Blue" "name:" "Color" "if" "fill-rect" "selected?:" "getf" "selected?" "0" "Rect" "new" "rect" "let" "height" "width" "cell" "row" "context" "surface")}}
+        {Lisp-Entry "Right-Column" #f 339 9 339 21 ("Tree-Column")
+          {Lisp-Entry "draw-cell" #f 342 13 342 22 ("Dark-Green" "Green" "name:" "Color" "if" "fill-rect" "selected?:" "getf" "selected?" "0" "Rect" "new" "rect" "let" "height" "width" "cell" "row" "context" "surface")}}}}})
+"Tree-Showcase-Actions"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "showcase" "Tree-Showcase-Actions.jazz"} 1226584790
+    {Lisp-Entry "jedi.showcase.Tree-Showcase-Actions" #f 37 9 37 44 ("jazz")
+      {Lisp-Entry "Tree-Showcase-Actions" #f 47 7 47 28 ("F5" "Shortcut" "shortcut:" "on-update-information" ":document" "Event-Handler" "action-handler:" "update-information" "name:" "Actions")}}})
+"Vertical-View"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "test" "Vertical-View.jazz"} 1226584790
+    {Lisp-Entry "jedi.test.Vertical-View" #f 37 9 37 32 ("jazz")
+      {Lisp-Entry "Vertical-View" #f 46 7 46 20 ("View")}
+      {Lisp-Entry "Vertical-View" #f 52 7 52 20 ("View")
+        {Lisp-Entry "Toto" #f 55 9 55 13 ("100" "Dimension" "size:" "0" "Point" "position:" "text" "content" "name:" "vscroll?:" "hscroll?:" "edge" "border-type:" "Border-View")}
+        {Lisp-Entry "install" #f 65 11 65 18 ("3" "0" "naturals" "->string" "title:" "Label-View" "else" "Horizontal-View" "2" "toto" "'toto" "name:" "self" "parent:" "Toto" "new" "1" "case" "n" "function" "for-each" "nextmethod" "rest")}
+        {Lisp-Entry "layout" #f 80 11 80 17 ("increase!" "set-size" "Point" "set-position" "view" "function" "for-each-view" "0" "v" "Dimension" "new" "child-size" "get-height" "quotient" "height" "get-width" "width" "get-size" "size" "length" "let*" "children" "when")}
+        {Lisp-Entry "draw" #f 100 11 100 15 ("Dark-Red" "name:" "Color" "get-bounds" "fill-rect" "lv" "lh" "context" "surface")}}}})
+"_jedi"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "_jedi.jazz"} 1226584790
+    {Lisp-Entry "jedi" #f 37 9 37 13 ("jazz")}})
+"autoload"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "autoload.jazz"} 1226584790
+    {Lisp-Entry "jedi.autoload" #f 37 9 37 22 ("jazz")}})
+"product"
+ ({Lisp-File-Entry {File Jazz "lib" "jedi" "src" "jedi" "product.jazz"} 1226584790
+    {Lisp-Entry "jedi.product" #f 37 9 37 21 ("build" "build:" "update" "update:" "run" "run:" "icon:" "title:" "jedi" "'jedi" "register-product" "else" "jazz.ui.window.platform.x11" "x11" "jazz.ui.window.platform.windows" "Jedi-Critical-Platform-Modules" "definition" "windows" "cond-expand" "jazz")
+      {Lisp-Entry "run" #f 45 13 45 16 ("boot-environment" "Jedi" "'Jedi" "jedi" "'jedi" "module-autoload" "new" "appl" "let")}
+      {Lisp-Entry "Jedi-Critical-Modules" #f 55 12 55 33 ("jazz.groupware.compare.Tree-Comparer" "jazz.groupware.compare.Text-Comparer" "jazz.groupware.compare.Directory-Comparer" "jazz.groupware.compare.Compare-Trees" "jazz.groupware.compare.Compare-Texts" "jazz.groupware.compare.Compare-Text-View" "jazz.groupware.compare.Compare-Directories" "jazz.jrm" "jazz.jml.model.JML-Text" "jazz.jml.model.JML-Element" "jazz.jml.model.JML-Node" "jazz.jml.parser.JML-Parser" "jazz.jml" "jazz.debugger" "jazz.debuggee" "jedi.application.Jedi" "jazz.ide.IDE" "jazz.ui.workspace.Workspace-Preferences" "jazz.ui.workspace" "jazz.system.application.Application" "jazz.system.process.Process" "jazz.ui.tree.Tree-Row" "jazz.ui.tree.Tree-Column" "jazz.ui.tree.Tree-View" "jazz.language.jazz.parser.Jazz-Parser" "jazz.language.scheme.parser.Scheme-Parser" "jazz.language.lisp.parser.Lisp-Parser" "jazz.language.lisp.catalog.Lisp-File-Entry" "jazz.language.lisp.catalog.Lisp-Entry" "jazz.catalog.parser.File-Parser" "jazz.catalog.entry.File-Entry" "jazz.catalog.entry.Indexed-Entry" "jazz.catalog.entry.Catalog-Entry" "jazz.catalog.catalog.Indexed-Catalog" "jazz.catalog.catalog.Filing-Catalog" "jazz.catalog.catalog.Catalog" "jazz.language.lisp.text.Lisp-Text-View" "jazz.language.jazz.text.Jazz-Text-View" "jazz.ui.text.Text-Colorizer" "jazz.ui.text.Code-Text-View" "jazz.ui.text.Text-View" "jazz.ui.outline.Outline-View" "jazz.ui.outline.Outline-Row" "jazz.ui.text.Text-Style" "jazz.ui.text.Style" "jazz.ui.text.Run" "jazz.ui.text.Line" "jazz.ui.text.Paragraph" "jazz.ui.text.Format" "jazz.library.exemplar" "jazz.library.node" "jazz.ui.graphic.Font-Metrics" "jazz.ui.graphic.font.Font" "jazz.language.scheme.text.Scheme-Explorer" "jazz.language.lisp.text.Lisp-Explorer" "jazz.language.jazz.text.Jazz-Explorer" "jazz.ui.text.Code-Explorer" "jazz.ui.text.Text-Explorer" "jazz.platform" "jazz.ui.image.Portfolio" "jazz.ui.image.Image" "jazz.ui.graphic.Surface" "jazz.ui.graphic.Pen" "jazz.ui.graphic.Color" "jazz.ui.offscreen" "jazz.ui.window.Toplevel" "jazz.ui.window.View-Player" "jazz.ui.window.Window" "jazz.ui.window" "jazz.ui.view.Stage" "jazz.ui.view.Stage-Border" "jazz.ui.view.Splitter-View" "jazz.ui.view.Tool-Button" "jazz.ui.view.Image-Tool" "jazz.ui.view.Container" "jazz.ui.view.Layout-View" "jazz.ui.view.Scrollbar" "jazz.ui.view.View" "jazz.ui.view.Drawing" "jazz.ui.view" "jazz.ui.hosting.Toolbar-Host" "jazz.ui.hosting.Frame-Host" "jazz.ui.hosting.Docked-Host" "jazz.ui.hosting.Caption-Host" "jazz.ui.hosting.Host-View" "jazz.ui.layout.Figure" "jazz.ui.dialog" "jazz.library.component.Form" "jazz.library.component.Branch" "jazz.library.component.Component" "time.implementation" "jazz.utilities" "jazz.literals" "jazz.io")}
+      {Lisp-Entry "update" #f 187 13 187 19 ("jedi.product" "'jedi.product" "jedi" "'jedi" "build-module" "Jedi-Critical-Platform-Modules" "Jedi-Critical-Modules" "compile-module" "for-each" "jazz.literals" "'jazz.literals" "load-module")}
+      {Lisp-Entry "build" #f 200 13 200 18 ("100000" "minimum-heap:" "jedi" "'jedi" "build-executable" "update")}}})

@@ -1,13 +1,9 @@
-"Kernel-Project"
- ({Lisp-File-Entry {File Jazz "lib" "kernel" "src" "Kernel-Project.jazz"} 1226503506
-    {Lisp-Entry "Kernel-Project" #f 37 9 37 23 ("Kernel-Project" "register-autoclass" "jazz")
-      {Lisp-Entry "Kernel-Project" #f 47 7 47 21 ("Kernel-Project" "name:" "source:" "Directory" "directory:" "Jazz" "File" "documentation:" "include-extensions:" ":jazz" "catalog-extensions:" "catalog?:" "title:" "Project")}}})
 "boot"
  ({Lisp-File-Entry {File Jazz "kernel" "boot.scm"} 1224628013
     {Lisp-Entry "jazz.Kernel" #f 37 8 37 19 ("list")}
     {Lisp-Entry "jazz.load-kernel" #f 52 8 52 24 ("set!" "jazz.Kernel" "jazz.source" "string-append" "load" "path" "for-each" "begin" "not" "if" "lambda" "loaded?" "let")}})
 "build"
- ({Lisp-File-Entry {File Jazz "kernel" "build.scm"} 1227441783
+ ({Lisp-File-Entry {File Jazz "kernel" "build.scm"} 1227739323
     {Lisp-Entry "jazz.setup-versions" #f 42 9 42 28 ("jazz.validate-gambit-version" "jazz.source-versions-file" "set!")}
     {Lisp-Entry "jazz.validate-gambit-version" #f 47 9 47 37 ("wrong-version" "jazz.format" "stamp" "jazz.get-gambit-stamp" "gambit-stamp" "jazz.get-gambit-version" "gambit-version" "let" "system-stamp" "system-version" "jazz.gambit-uptodate?" "not" "if")
       {Lisp-Entry "wrong-version" #f 48 11 48 24 ("1" "exit" "newline" "display" "message")}}
@@ -234,7 +230,7 @@
  ({Lisp-File-Entry {File Jazz "kernel" "runtime" "install.scm"} 1227128961
     {Lisp-Entry "platform-executable-path" #f 49 8 49 32 ()}})
 "kernel"
- ({Lisp-File-Entry {File Jazz "kernel" "runtime" "kernel.scm"} 1227128961
+ ({Lisp-File-Entry {File Jazz "kernel" "runtime" "kernel.scm"} 1228442592
     {Lisp-Entry "jazz.display" #f 45 22 45 34 ("display")}
     {Lisp-Entry "jazz.write" #f 46 22 46 32 ("write")}
     {Lisp-Entry "jazz.format" #f 54 9 54 20 ("else" "get-output-string" "jazz.format-to" "open-output-string" "output" "let" ":string" "case" "arguments" "fmt-string" "port" "lambda" "jazz.parse-format" "rest")}
@@ -573,7 +569,7 @@
     {Lisp-Entry "jazz.profile" #f 127 21 127 33 ()}
     {Lisp-Entry "jazz.run-loop?" #f 132 21 132 35 ()}})
 "syntax"
- ({Lisp-File-Entry {File Jazz "kernel" "syntax" "syntax.scm"} 1227094574
+ ({Lisp-File-Entry {File Jazz "kernel" "syntax" "syntax.scm"} 1228442592
     {Lisp-Entry "jazz.compile-options" #f 45 8 45 28 ("debug-source" "'debug-source" "cons" "jazz.kernel-include-source?" "if" "debug-environments" "debug-location" "base-options" "let")}
     {Lisp-Entry "jazz.generate-symbol" #f 57 8 57 28 ("%%string->symbol" "1" "%%fx+" "set!" "%%number->string" "%%string-append" "name" "%%car" "%%null?" "if" "prefix" "rest" "lambda" "0" "unique" "let")}
     {Lisp-Entry "jazz.define-setting" #f 71 20 71 39 ("set!" ",name" ",expr" ",global" "define" "begin" "symbol->string" "jazz.generate-symbol" "global" "%%car" "%%null?" "if" "expr" "let" "rest" "name")}

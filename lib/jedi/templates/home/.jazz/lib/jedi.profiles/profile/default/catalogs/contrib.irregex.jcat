@@ -1,0 +1,187 @@
+"_irregex"
+ ({Lisp-File-Entry {File Jazz "lib" "contrib.irregex" "src" "irregex" "_irregex.jazz"} 1226331928
+    {Lisp-Entry "irregex" #f 37 9 37 16 ("jazz")
+      {Lisp-Entry "irregex" #f 43 8 43 15 ()}
+      {Lisp-Entry "string->irregex" #f 44 8 44 23 ()}
+      {Lisp-Entry "sre->irregex" #f 45 8 45 20 ()}
+      {Lisp-Entry "irregex?" #f 46 8 46 16 ()}
+      {Lisp-Entry "irregex-search" #f 47 8 47 22 ()}
+      {Lisp-Entry "irregex-match" #f 48 8 48 21 ()}
+      {Lisp-Entry "irregex-match-data?" #f 49 8 49 27 ()}
+      {Lisp-Entry "irregex-match-substring" #f 50 8 50 31 ()}
+      {Lisp-Entry "irregex-match-start-index" #f 51 8 51 33 ()}
+      {Lisp-Entry "irregex-match-end-index" #f 52 8 52 31 ()}
+      {Lisp-Entry "irregex-match-subchunk" #f 53 8 53 30 ()}
+      {Lisp-Entry "irregex-replace" #f 54 8 54 23 ()}
+      {Lisp-Entry "irregex-replace/all" #f 55 8 55 27 ()}
+      {Lisp-Entry "irregex-fold" #f 56 8 56 20 ()}}})
+"irregex"
+ ({Lisp-File-Entry {File Jazz "lib" "contrib.irregex" "irregex" "irregex.scm"} 1226331928
+    {Lisp-Entry "irregex-tag" #f 49 8 49 19 ("'*irregex-tag*")}
+    {Lisp-Entry "make-irregex" #f 51 9 51 21 ("names" "lengths" "submatches" "irregex-tag" "vector" "flags" "nfa" "dfa/extract" "dfa/search" "dfa")}
+    {Lisp-Entry "irregex?" #f 56 9 56 17 ("0" "vector-ref" "irregex-tag" "eq?" "vector-length" "9" "=" "vector?" "and" "obj")}
+    {Lisp-Entry "irregex-dfa" #f 61 9 61 20 ("1" "vector-ref" "x")}
+    {Lisp-Entry "irregex-dfa/search" #f 62 9 62 27 ("2" "vector-ref" "x")}
+    {Lisp-Entry "irregex-dfa/extract" #f 63 9 63 28 ("3" "vector-ref" "x")}
+    {Lisp-Entry "irregex-nfa" #f 64 9 64 20 ("4" "vector-ref" "x")}
+    {Lisp-Entry "irregex-flags" #f 65 9 65 22 ("5" "vector-ref" "x")}
+    {Lisp-Entry "irregex-num-submatches" #f 66 9 66 31 ("6" "vector-ref" "x")}
+    {Lisp-Entry "irregex-lengths" #f 67 9 67 24 ("7" "vector-ref" "x")}
+    {Lisp-Entry "irregex-names" #f 68 9 68 22 ("8" "vector-ref" "x")}
+    {Lisp-Entry "irregex-new-matches" #f 70 9 70 28 ("irregex-names" "irregex-num-submatches" "make-irregex-match" "irx")}
+    {Lisp-Entry "irregex-reset-matches!" #f 73 9 73 31 ("vector-set!" "3" "<=" "1" "vector-length" "-" "i" "do" "m")}
+    {Lisp-Entry "irregex-match-tag" #f 78 8 78 25 ("'*irregex-match-tag*")}
+    {Lisp-Entry "irregex-match-data?" #f 80 9 80 28 ("0" "vector-ref" "irregex-match-tag" "eq?" "11" "vector-length" ">=" "vector?" "and" "obj")}
+    {Lisp-Entry "make-irregex-match" #f 85 9 85 27 ("irregex-match-tag" "0" "vector-set!" "3" "2" "4" "*" "+" "make-vector" "res" "let" "names" "count")}
+    {Lisp-Entry "irregex-match-num-submatches" #f 91 9 91 37 ("2" "4" "3" "vector-length" "quotient" "-" "m")}
+    {Lisp-Entry "irregex-match-chunker" #f 94 9 94 30 ("1" "vector-ref" "m")}
+    {Lisp-Entry "irregex-match-names" #f 96 9 96 28 ("2" "vector-ref" "m")}
+    {Lisp-Entry "irregex-match-chunker-set!" #f 98 9 98 35 ("1" "vector-set!" "str" "m")}
+    {Lisp-Entry "irregex-match-start-source" #f 101 9 101 35 ("4" "*" "3" "+" "vector-ref" "n" "m")}
+    {Lisp-Entry "irregex-match-start-index" #f 103 9 103 34 ("*" "4" "+" "vector-ref" "n" "m")}
+    {Lisp-Entry "irregex-match-end-source" #f 105 9 105 33 ("4" "*" "5" "+" "vector-ref" "n" "m")}
+    {Lisp-Entry "irregex-match-end-index" #f 107 9 107 32 ("4" "*" "6" "+" "vector-ref" "n" "m")}
+    {Lisp-Entry "irregex-match-start-source-set!" #f 110 9 110 40 ("4" "*" "3" "+" "vector-set!" "start" "n" "m")}
+    {Lisp-Entry "irregex-match-start-index-set!" #f 112 9 112 39 ("*" "4" "+" "vector-set!" "start" "n" "m")}
+    {Lisp-Entry "irregex-match-end-source-set!" #f 114 9 114 38 ("4" "*" "5" "+" "vector-set!" "end" "n" "m")}
+    {Lisp-Entry "irregex-match-end-index-set!" #f 116 9 116 37 ("4" "*" "6" "+" "vector-set!" "end" "n" "m")}
+    {Lisp-Entry "irregex-match-index" #f 119 9 119 28 ("0" "error" "else" "cdr" "=>" "irregex-match-names" "assq" "car" "number?" "cond" "pair?" "if" "opt" "m")}
+    {Lisp-Entry "irregex-match-valid-index?" #f 126 9 126 35 ("vector-ref" "vector-length" "4" "*" "3" "+" "<" "and" "n" "m")}
+    {Lisp-Entry "irregex-match-substring" #f 130 9 130 32 ("irregex-match-end-index" "irregex-match-end-source" "irregex-match-start-index" "irregex-match-start-source" "chunker-get-substring" "irregex-match-valid-index?" "and" "irregex-match-index" "n" "irregex-match-chunker" "cnk" "let*" "opt" "m")}
+    {Lisp-Entry "irregex-match-subchunk" #f 140 9 140 31 ("irregex-match-end-index" "irregex-match-end-source" "irregex-match-start-index" "irregex-match-start-source" "irregex-match-valid-index?" "and" "error" "not" "if" "chunker-get-subchunk" "get-subchunk" "irregex-match-index" "n" "irregex-match-chunker" "cnk" "let*" "opt" "m")}
+    {Lisp-Entry "make-irregex-chunker" #f 155 9 155 29 ("vector" "get-subchunk" "cons" "string-cat-reverse" "list" "res" "loop" "let" "substring" "eq?" "end" "cnk2" "start" "cnk1" "get-substr" "string-length" "get-end" "cdr" "if" "0" "cnk" "lambda" "car" "pair?" "and" "or" "get-start" "let*" "o" "get-str" "get-next")}
+    {Lisp-Entry "chunker-get-next" #f 185 9 185 25 ("0" "vector-ref" "cnk")}
+    {Lisp-Entry "chunker-get-str" #f 186 9 186 24 ("1" "vector-ref" "cnk")}
+    {Lisp-Entry "chunker-get-start" #f 187 9 187 26 ("2" "vector-ref" "cnk")}
+    {Lisp-Entry "chunker-get-end" #f 188 9 188 24 ("3" "vector-ref" "cnk")}
+    {Lisp-Entry "chunker-get-substring" #f 189 9 189 30 ("4" "vector-ref" "cnk")}
+    {Lisp-Entry "chunker-get-subchunk" #f 190 9 190 29 ("5" "vector-ref" "cnk")}
+    {Lisp-Entry "chunker-prev-chunk" #f 192 9 192 27 ("and" "next" "lp" "chunker-get-next" "get-next" "let" "eq?" "if" "end" "start" "cnk")}
+    {Lisp-Entry "chunker-prev-char" #f 202 9 202 26 ("1" "chunker-get-end" "-" "chunker-get-str" "string-ref" "and" "chunker-prev-chunk" "prev" "let" "end" "start" "cnk")}
+    {Lisp-Entry "chunker-next-char" #f 208 9 208 26 ("chunker-get-start" "chunker-get-str" "string-ref" "and" "chunker-get-next" "next" "let" "src" "cnk")}
+    {Lisp-Entry "chunk-before?" #f 214 9 214 22 ("chunk-before?" "if" "chunker-get-next" "next" "let" "eq?" "not" "and" "b" "a" "cnk")}
+    {Lisp-Entry "*all-chars*" #f 226 8 226 19 ()}
+    {Lisp-Entry "*allow-utf8-mode?*" #f 234 8 234 26 ()}
+    {Lisp-Entry "string-scan-char" #f 238 9 238 25 ("1" "+" "else" "string-ref" "eqv?" "=" "cond" "0" "car" "pair?" "if" "i" "scan" "string-length" "end" "let" "o" "c" "str")}
+    {Lisp-Entry "string-scan-char-escape" #f 245 9 245 32 ("1" "else" "2" "+" "string-ref" "eqv?" "=" "cond" "0" "car" "pair?" "if" "i" "scan" "string-length" "end" "let" "o" "c" "str")}
+    {Lisp-Entry "string-scan-pred" #f 253 9 253 25 ("1" "+" "else" "string-ref" "=" "cond" "0" "car" "pair?" "if" "i" "scan" "string-length" "end" "let" "o" "pred" "str")}
+    {Lisp-Entry "string-split-char" #f 260 9 260 26 ("else" "1" "+" "string-ref" "eqv?" "reverse" ">=" "cond" "substring" "cons" "collect" "define" "res" "from" "0" "i" "lp" "string-length" "end" "let" "c" "str")}
+    {Lisp-Entry "char-alphanumeric?" #f 268 9 268 27 ("char-numeric?" "char-alphabetic?" "or" "c")}
+    {Lisp-Entry "%substring=?" #f 271 9 271 21 ("else" "1" "+" "string-ref" "char=?" ">=" "cond" "0" "i" "lp" "let" "len" "start2" "start1" "b" "a")}
+    {Lisp-Entry "%%string-copy!" #f 282 9 282 23 ("string-ref" "string-set!" ">=" "j" "1" "+" "i" "do" "fend" "fstart" "from" "tstart" "to")}
+    {Lisp-Entry "string-cat-reverse" #f 288 9 288 27 ("0" "string-length" "+" "a" "s" "lambda" "fold" "string-cat-reverse/aux" "string-list")}
+    {Lisp-Entry "string-cat-reverse/aux" #f 293 9 293 31 ("cdr" "0" "%%string-copy!" "-" "string-length" "slen" "car" "s" "let*" "pair?" "if" "ls" "i" "lp" "make-string" "res" "let" "string-list" "len")}
+    {Lisp-Entry "zero-to" #f 308 9 308 16 ("cons" "zero?" "res" "1" "-" "i" "lp" "let" "0" "<=" "if" "n")}
+    {Lisp-Entry "take-up-to" #f 316 9 316 19 ("reverse" "car" "cons" "cdr" "eq?" "not" "pair?" "and" "if" "res" "ls" "lp" "let" "to" "from")}
+    {Lisp-Entry "find" #f 324 9 324 13 ("else" "car" "=>" "find-tail" "cond" "ls" "pred")}
+    {Lisp-Entry "find-tail" #f 328 9 328 18 ("cdr" "else" "car" "null?" "cond" "lp" "let" "ls" "pred")}
+    {Lisp-Entry "last" #f 334 9 334 13 ("car" "cdr" "lp" "let" "error" "pair?" "not" "if" "ls")}
+    {Lisp-Entry "any" #f 342 9 342 12 ("or" "null?" "if" "cdr" "tail" "car" "head" "lp" "let" "pair?" "and" "ls" "pred")}
+    {Lisp-Entry "every" #f 349 9 349 14 ("and" "if" "cdr" "tail" "car" "head" "lp" "let" "null?" "or" "ls" "pred")}
+    {Lisp-Entry "fold" #f 356 9 356 13 ("car" "cdr" "null?" "if" "res" "lp" "let" "ls" "knil" "kons")}
+    {Lisp-Entry "filter" #f 362 9 362 15 ("cons" "car" "cdr" "reverse" "null?" "if" "res" "lp" "let" "ls" "pred")}
+    {Lisp-Entry "remove" #f 368 9 368 15 ("cons" "car" "cdr" "reverse" "null?" "if" "res" "lp" "let" "ls" "pred")}
+    {Lisp-Entry "bit-shr" #f 377 9 377 16 ("2" "expt" "quotient" "i" "n")}
+    {Lisp-Entry "bit-shl" #f 380 9 380 16 ("2" "expt" "*" "i" "n")}
+    {Lisp-Entry "bit-not" #f 383 9 383 16 ("#xFFFF" "-" "n")}
+    {Lisp-Entry "bit-ior" #f 385 9 385 16 ("quotient" "bit-ior" "2" "*" "0" "1" "odd?" "or" "if" "+" "else" "zero?" "cond" "b" "a")}
+    {Lisp-Entry "bit-and" #f 393 9 393 16 ("quotient" "bit-and" "2" "*" "1" "odd?" "and" "if" "+" "else" "0" "zero?" "cond" "b" "a")}
+    {Lisp-Entry "flag-set?" #f 401 9 401 18 ("bit-and" "=" "i" "flags")}
+    {Lisp-Entry "flag-join" #f 403 9 403 18 ("bit-ior" "if" "b" "a")}
+    {Lisp-Entry "flag-clear" #f 405 9 405 19 ("bit-not" "bit-and" "b" "a")}
+    {Lisp-Entry "~none" #f 408 8 408 13 ("0")}
+    {Lisp-Entry "~searcher?" #f 409 8 409 18 ("1")}
+    {Lisp-Entry "~consumer?" #f 410 8 410 18 ("2")}
+    {Lisp-Entry "~save?" #f 415 8 415 14 ("1")}
+    {Lisp-Entry "~case-insensitive?" #f 416 8 416 26 ("2")}
+    {Lisp-Entry "~multi-line?" #f 417 8 417 20 ("4")}
+    {Lisp-Entry "~single-line?" #f 418 8 418 21 ("8")}
+    {Lisp-Entry "~ignore-space?" #f 419 8 419 22 ("16")}
+    {Lisp-Entry "~utf8?" #f 420 8 420 14 ("32")}
+    {Lisp-Entry "symbol-list->flags" #f 422 9 422 27 ("else" "~utf8?" "*allow-utf8-mode?*" "utf8" "u" "~ignore-space?" "ignore-space" "x" "~single-line?" "single-line" "s" "~multi-line?" "multi-line" "m" "~case-insensitive?" "case-insensitive" "ci" "i" "car" "case" "flag-join" "cdr" "pair?" "not" "if" "~none" "res" "lp" "let" "ls")}
+    {Lisp-Entry "string->sre" #f 437 9 437 20 ("'eos" "eol" "'eol" "'bos" "bol" "'bol" "sym" "posix-escape-sequences" "assv" "cell" "string-scan-pred" ",backref" "'backref" "backref-ci" "'backref-ci" "backref" "char-mirror" "terminal" "memv" "string-parse-hex-escape" "reset" "newline" "eos" "bos" "nwb" "eow" "bow" "alphanumeric" "space" "" "numeric" ",m" ",@tail" "m" "string-split-char" "s2" "tail" "string-parse-cset" "sre" "lambda" "apply" "cdar" "caar" "*allow-utf8-mode?*" "~ignore-space?" "~multi-line?" "'w/noutf8" "'w/utf8" "after" "before" "new-res" "join" "invert?" "lp2" "old-flags" ",s" "s" ",n" "string->number" "n" "char-numeric?" "4" "flag-clear" "3" "string-scan-char" "2" "flag-join" "eqv?" "sre-empty?" "sre-repeater?" "string" "string->symbol" "op" ",x" "**" "??" "?" "**?" "*?" "*" "x" "nonl" "'nonl" "any" "'any" "~single-line?" "+" "case" "error" ">=" "save" "'or" ",res" ",@prefix" "cddadr" "cadadr" "seq" "'seq" "epsilon" "'epsilon" "not" "'if" "eq?" "submatch" "'submatch" "~save?" "sre-alternate" "null?" "shift" "term" "cdr" "cddr" "reverse" "cadr" "submatch-named" "'submatch-named" "list" "car" "prefix" "w/noutf8" "w/utf8" "neg-look-behind" "look-behind" "neg-look-ahead" "look-ahead" "atomic" "last" "memq" "pair?" "func" "ls" "collect/terms" "string-ref" "utf8-string-ref" "c" "else" "<" "cond" "-" "utf8-backup-to-initial-char" "1" ">" "j" "~utf8?" "utf8?" "let*" "collect/single" "substring" "cons" "=" "collect" "string->list" "map" "sre-sequence" "cased-string" "char-altcase" ",ch" "or" "char-alphabetic?" "~case-insensitive?" "flag-set?" "and" "if" "ch" "cased-char" "define" "st" "res" "from" "0" "i" "lp" "symbol-list->flags" "flags" "string-length" "end" "let" "o" "str")}
+    {Lisp-Entry "posix-escape-sequences" #f 850 8 850 30 ()}
+    {Lisp-Entry "char-altcase" #f 859 9 859 21 ("char-upcase" "char-downcase" "char-upper-case?" "if" "c")}
+    {Lisp-Entry "char-mirror" #f 862 9 862 20 ("else" "case" "c")}
+    {Lisp-Entry "string-parse-hex-escape" #f 865 9 865 32 ("2" "else" "integer->char" "list" "16" "string->number" "n" "substring" "s" "let*" "not" "if" "1" "+" "string-scan-char-escape" "j" "let" "string-ref" "eqv?" "error" ">=" "cond" "end" "i" "str")}
+    {Lisp-Entry "string-parse-cset" #f 887 9 887 26 ("~multi-line?" "=>" "posix-escape-sequences" "assv" "string-parse-hex-escape" "ch" "apply" "string" "string->sre" "char?" "cset-complement" "substring" "string->symbol" "sre->cset" "cset" "not" "string-scan-char" "j" "2" "i2" "inv?" "cdr" "char<?" "utf8-string-ref" "#xFF" "char->integer" "#x80" "<=" "utf8-start-char->length" "len" "c2" "car" "c1" "else" "=" "or" "cond" "alist->plist" "/" "'/" "reverse" "x" "cset-case-insensitive" "list->string" "pair?" "append" "sre-alternate" "" "'" "res" "lambda" "list" "remove" "high-char?" "filter" "hi-chars" "~case-insensitive?" "ci?" "cons" "1" "+" "null?" "case" "c" "let" "error" ">=" "if" "ranges" "chars" "i" "go" "define" "~utf8?" "flag-set?" "utf8?" "string-ref" "eqv?" "<" "and" "invert?" "string-length" "end" "let*" "flags" "start" "str")}
+    {Lisp-Entry "high-char?" #f 1013 9 1013 19 ("char->integer" "#x80" "<=" "c")}
+    {Lisp-Entry "utf8-start-char->length" #f 1017 8 1017 31 ("char->integer" "vector-ref" "c" "lambda" "0" "6" "5" "4" "3" "2" "1" "#" "'#" "table" "let")}
+    {Lisp-Entry "utf8-string-ref" #f 1038 9 1038 24 ("error" "else" "18" "#b00000111" "4" "12" "#b00001111" "3" "#b00111111" "6" "#b00011111" "byte" "bit-and" "bit-shl" "+" "integer->char" "2" "string-ref" "1" "case" "len" "i" "str")
+      {Lisp-Entry "byte" #f 1039 11 1039 15 ("str" "string-ref" "char->integer" "n")}}
+    {Lisp-Entry "utf8-backup-to-initial-char" #f 1061 9 1061 36 ("1" "-" "#xC0" ">=" "#x80" "<" "or" "string-ref" "char->integer" "c" "0" "=" "if" "lp" "let" "i" "str")}
+    {Lisp-Entry "utf8-lowest-digit-of-length" #f 1070 9 1070 36 ("error" "else" "#xF0" "4" "#xE0" "3" "#xC0" "2" "0" "1" "case" "len")}
+    {Lisp-Entry "utf8-highest-digit-of-length" #f 1075 9 1075 37 ("error" "else" "#xF7" "4" "#xEF" "3" "#xDF" "2" "#x7F" "1" "case" "len")}
+    {Lisp-Entry "char->utf8-list" #f 1080 9 1080 24 ("error" "else" "18" "#b11110000" "#x1FFFFF" "12" "#b11100000" "#xFFFF" "#b111111" "bit-and" "#b10000000" "6" "bit-shr" "#b11000000" "bit-ior" "#x7FF" "list" "#x7F" "<=" "cond" "char->integer" "i" "let" "c")}
+    {Lisp-Entry "unicode-range->utf8-pattern" #f 1098 9 1098 36 ("unicode-range-middle" "else" "unicode-range-up-from" "1" "+" "cdr" "integer->char" "sre-sequence" "car" "null?" "cond" "lp" "unicode-range-up-to" "unicode-range-climb-digits" "list" "sre-alternate" "length" "=" "not" "if" "hi-ls" "char->utf8-list" "lo-ls" "let" "hi" "lo")}
+    {Lisp-Entry "unicode-range-helper" #f 1120 9 1120 29 ("#xFF" "#x80" "/" "_" "lambda" "integer->char" "map" "sre-sequence" "car" "cons" "cdr" "unicode-range-helper" "null?" "if" "res" "prefix" "ls" "one")}
+    {Lisp-Entry "unicode-range-up-from" #f 1136 9 1136 30 ("last" "map" "append" "reverse" "cdr" "#xFF" "1" "+" "/" "c" "lambda" "unicode-range-helper" "sre-alternate" "car" "integer->char" "list" "sre-sequence" "lo-ls")}
+    {Lisp-Entry "unicode-range-up-to" #f 1152 9 1152 28 ("last" "map" "append" "reverse" "cdr" "1" "-" "#x80" "/" "c" "lambda" "unicode-range-helper" "sre-alternate" "car" "integer->char" "list" "sre-sequence" "hi-ls")}
+    {Lisp-Entry "unicode-range-climb-digits" #f 1168 9 1168 35 ("utf8-start-char->length" "-" "zero-to" "utf8-highest-digit-of-length" "1" "+" "utf8-lowest-digit-of-length" "i" "cdr" "#x80" "_" "lambda" "map" "#xFF" "#x7F" "<=" "if" "car" "integer->char" "/" "cons" "sre-sequence" "list" "append" "sre-alternate" "length" "lo-len" "let" "hi-ls" "lo-ls")}
+    {Lisp-Entry "unicode-range-middle" #f 1200 9 1200 29 ("cdr" "#xFF" "#x80" "_" "lambda" "map" ",hi" ",lo" "/" "char=?" "if" "cons" "sre-sequence" "-" "hi" "1" "car" "+" "integer->char" "lo" "let" "hi-ls" "lo-ls")}
+    {Lisp-Entry "cset->utf8-pattern" #f 1208 9 1208 27 ("unicode-range->utf8-pattern" "cdar" "caar" "or" "else" "cdr" "high-char?" "car" "char?" "/" "'/" "cons" "list" "if" "reverse" "append" "sre-alternate" "null?" "cond" "lo-cset" "alts" "ls" "lp" "let" "cset")}
+    {Lisp-Entry "sre-adjust-utf8" #f 1227 9 1227 24 ("char->utf8-list" "integer->char" "char?" "and" "utf8-nonl" "'utf8-nonl" "utf8-any" "'utf8-any" "'*" "else" "nonl" "*" "cset->utf8-pattern" "'w/case" "list" "high-char?" "or" "x" "any" "sre->cset" "cset" "not" "if" "-" "&" "" "/" "w/nocase" "s" "lambda" "map" "cons" "w/case" "w/noutf8" "cdr" "sre-sequence" "w/utf8" "car" "case" "pair?" "cond" "rec" "define" "~case-insensitive?" "ci?" "~utf8?" "flag-set?" "utf8?" "adjust" "let" "flags" "sre")}
+    {Lisp-Entry "irregex" #f 1274 9 1274 16 ("sre->irregex" "else" "string->irregex" "apply" "string?" "irregex?" "cond" "o" "x")}
+    {Lisp-Entry "string->irregex" #f 1280 9 1280 24 ("string->sre" "sre->irregex" "apply" "o" "str")}
+    {Lisp-Entry "sre->irregex" #f 1283 9 1283 21 ("sre->procedure" "f" "let" "make-irregex" "~consumer?" "sre-consumer?" "~searcher?" "~none" "flag-join" "flags" "sre-length-ranges" "lens" "sre-names" "names" "sre-match-extractor" "extractor" "sre-count-submatches" "submatches" "and" "dfa" "length" "nfa->dfa" "nfa" "lambda" "=>" ",sre-dfa" "any" "*" "seq" "sre->nfa" "backtrack" "'backtrack" "dfa/search" "10" "else" "50" "fast" "'fast" "1" "small" "'small" "memq" "cond" "dfa-limit" "sre-remove-initial-bos" "sre-dfa" "sre-searcher?" "searcher?" "sre-adjust-utf8" "*allow-utf8-mode?*" "if" "symbol-list->flags" "pat-flags" "let*" "o" "sre")}
+    {Lisp-Entry "sre-empty?" #f 1319 9 1319 19 ("commit" "eow" "bow" "eol" "bol" "eos" "bos" "epsilon" "memq" "else" "every" "atomic" "+" "submatch" "seq" ":" "cdr" "sre-empty?" "any" "zero?" "cadr" "number?" "not" "or" "**" "neg-look-behind" "neg-look-ahead" "look-behind" "look-ahead" "?" "*" "car" "case" "pair?" "if" "sre")}
+    {Lisp-Entry "sre-any?" #f 1329 9 1329 17 ("else" "every" "cadr" "sre-any?" "cddr" "null?" "cdr" "submatch" ":" "seq" "car" "case" "pair?" "and" "any" "'any" "eq?" "or" "sre")}
+    {Lisp-Entry "sre-repeater?" #f 1338 9 1338 22 ("cadr" "sre-repeater?" "cddr" "null?" "cdr" ":" "seq" "submatch" "+" "*" "car" "memq" "or" "pair?" "and" "sre")}
+    {Lisp-Entry "sre-searcher?" #f 1346 9 1346 22 ("bos" "'bos" "eq?" "else" "every" "or" "cadr" "sre-searcher?" "and" "submatch" ":" "seq" "cdr" "sre-sequence" "sre-any?" "+" "*" "car" "case" "pair?" "if" "sre")}
+    {Lisp-Entry "sre-consumer?" #f 1355 9 1355 22 ("eos" "'eos" "eq?" "else" "every" "or" "last" "sre-consumer?" "and" "submatch" ":" "seq" "cdr" "sre-sequence" "sre-any?" "+" "*" "car" "case" "pair?" "if" "sre")}
+    {Lisp-Entry "sre-has-submatchs?" #f 1364 9 1364 27 ("cdr" "sre-has-submatchs?" "any" "car" "submatch" "'submatch" "eq?" "or" "pair?" "and" "sre")}
+    {Lisp-Entry "sre-count-submatches" #f 1369 9 1369 29 ("cdr" "else" "caddr" "cadr" "dsm" "1" "submatch-named" "car" "case" "+" "fold" "pair?" "if" "0" "sum" "count" "let" "sre")}
+    {Lisp-Entry "sre-length-ranges" #f 1380 9 1380 26 ("procedure?" "commit" "nwb" "eow" "bow" "eol" "bol" "eos" "bos" "nonl" "any" "string-length" "char?" "apply" "cell" "sre-named-definitions" "neg-look-behind" "look-behind" "neg-look-ahead" "look-ahead" "memq" ">=?" ">=" "=?" "=" "??" "?" ">" "**?" "**" "*?" "*" "vector-ref" "vector-length" "<" "integer?" "not" "error" "=>" "assq" "backref-ci" "backref" "submatch" "'submatch" "eq?" "submatch-named" "sre-sequence" "dsm" "hi4" "lo4" "cadddr" "cdddr" "caddr" "epsilon" "'epsilon" "symbol?" "number?" "cadr" "n2" "n1" "else" "cddr" "max" "min" "or" "hi3" "lo3" "lambda" "null?" "hi2" "lo2" "cdr" "ls" "lp2" "atomic" "w/nocase" "w/case" ":" "seq" "-" "&" "" "/" "case" "string?" "cond" "and" "i" "grow" "define" "cons" "return" "hi" "lo" "n" "lp" "0" "vector-set!" "sre-count-submatches" "+" "make-vector" "sublens" "1" "sre-names" "car" "pair?" "if" "names" "let" "o" "sre")}
+    {Lisp-Entry "sre-sequence" #f 1523 9 1523 21 ("seq" "'seq" "cons" "else" "car" "cdr" "epsilon" "'epsilon" "null?" "cond" "ls")}
+    {Lisp-Entry "sre-alternate" #f 1530 9 1530 22 ("or" "'or" "cons" "else" "car" "cdr" "epsilon" "'epsilon" "null?" "cond" "ls")}
+    {Lisp-Entry "sre-strip-submatches" #f 1537 9 1537 29 ("map" "else" "cdddr" "dsm" "cdr" "sre-sequence" "sre-strip-submatches" "submatch" "car" "case" "pair?" "not" "if" "sre")}
+    {Lisp-Entry "sre-flatten-ranges" #f 1547 9 1547 27 ("cons" "else" "cdr" "string->list" "append" "car" "string?" "reverse" "null?" "cond" "res" "lp" "let" "ls")}
+    {Lisp-Entry "sre-names" #f 1557 9 1557 18 ("else" "**?" "**" ">=" "=" "sre-sequence-names" "neg-look-behind" "neg-look-ahead" "look-behind" "look-ahead" "atomic" "w/nocase" "w/case" "??" "*?" "?" "*" "or" ":" "seq" "cdddr" "dsm" "cadr" "cons" "cddr" "1" "+" "cdr" "sre-sequence" "sre-names" "submatch" "car" "case" "pair?" "not" "if" "names" "n" "sre")}
+    {Lisp-Entry "sre-sequence-names" #f 1579 9 1579 27 ("sre-names" "car" "sre-count-submatches" "+" "cdr" "sre-sequence-names" "null?" "if" "names" "n" "ls")}
+    {Lisp-Entry "sre-remove-initial-bos" #f 1586 9 1586 31 ("map" "sre-alternate" "or" "sre-remove-initial-bos" "else" "cddr" "cons" "cadr" "bos" "'bos" "eq?" "cdr" "not" "+" "*" "submatch" ":" "seq" "car" "case" "pair?" "cond" "sre")}
+    {Lisp-Entry "irregex-basic-string-chunker" #f 1609 8 1609 36 ("substring" "j" "src2" "i" "src1" "caddr" "cadr" "car" "x" "lambda" "make-irregex-chunker")}
+    {Lisp-Entry "irregex-search" #f 1617 9 1617 23 ("list" "irregex-basic-string-chunker" "irregex-search/chunked" "string-length" "cadr" "cdr" "and" "end" "0" "car" "pair?" "if" "start" "let" "o" "str" "x")}
+    {Lisp-Entry "irregex-search/chunked" #f 1624 9 1624 31 ("irregex-search/matches" "irregex-match-chunker-set!" "irregex-new-matches" "matches" "irregex" "irx" "let*" "src" "cnk" "x")}
+    {Lisp-Entry "irregex-search/matches" #f 1632 9 1632 31 ("<" "src2" "lp" "lambda" "if" "chunker-get-str" "str" "irregex-nfa" "matcher" "1" "+" "and" "next" ">=" "i" "lp2" "end" "lp1" "chunker-get-next" "get-next" "chunker-get-end" "get-end" "get-start" "dfa" "irregex-dfa/search" "dfa-match/shortest" "else" "irregex-match-end-index" "irregex-match-end-source" "irregex-dfa/extract" "irregex-match-start-index-set!" "irregex-match-start-source-set!" "0" "dfa-match/longest" "chunker-get-start" "start" "let" "~searcher?" "irregex-flags" "flag-set?" "irregex-dfa" "cond" "matches" "src" "cnk" "irx")}
+    {Lisp-Entry "irregex-match" #f 1703 9 1703 22 ("list" "irregex-basic-string-chunker" "irregex-match/chunked" "string-length" "cadr" "cdr" "and" "end" "0" "car" "pair?" "if" "start" "let" "o" "str" "irx")}
+    {Lisp-Entry "irregex-match/chunked" #f 1710 9 1710 30 ("chunker-get-next" "not" "lambda" "m" "end" "i" "chunker-get-str" "str" "irregex-nfa" "matcher" "else" "irregex-dfa/extract" "irregex-match-start-index-set!" "irregex-match-start-source-set!" "begin" "irregex-match-end-index" "irregex-match-end-source" "chunker-get-end" "=" "0" "chunker-get-start" "dfa-match/longest" "and" "irregex-dfa" "cond" "irregex-match-chunker-set!" "irregex-new-matches" "matches" "irregex" "let*" "src" "cnk" "irx")}
+    {Lisp-Entry "dfa-init-state" #f 1746 9 1746 23 ("0" "vector-ref" "dfa")}
+    {Lisp-Entry "dfa-next-state" #f 1748 9 1748 23 ("cdr" "vector-ref" "node" "dfa")}
+    {Lisp-Entry "dfa-final-state?" #f 1750 9 1750 25 ("car" "state" "dfa")}
+    {Lisp-Entry "dfa-match/shortest" #f 1754 9 1754 27 ("else" "dfa-next-state" "1" "+" "cdr" "cdar" "caar" "char<=?" "pair?" "car" "eqv?" "if" "x" "lambda" "find" "next" "string-ref" "ch" "let*" "<" "irregex-match-end-index-set!" "irregex-match-end-source-set!" "dfa-final-state?" "cond" "i" "lp2" "end" "str" "and" "dfa-init-state" "state" "lp1" "chunker-get-next" "get-next" "chunker-get-end" "get-end" "chunker-get-start" "get-start" "chunker-get-str" "get-str" "let" "index" "matches" "src" "cnk" "dfa")}
+    {Lisp-Entry "dfa-match/longest" #f 1786 9 1786 26 ("1" "+" "dfa-next-state" "cdr" "cdar" "caar" "char<=?" "pair?" "car" "eqv?" "x" "lambda" "find" "cell" "string-ref" "ch" "let*" "else" "irregex-match-end-source" "not" "next" ">=" "i" "lp2" "eq?" "if" "str" "res-index" "and" "res-src" "state" "lp1" "irregex-match-end-index-set!" "irregex-match-end-source-set!" "cond" "dfa-init-state" "dfa-final-state?" "start-is-final?" "chunker-get-next" "get-next" "chunker-get-end" "get-end" "chunker-get-start" "get-start" "chunker-get-str" "get-str" "let" "index" "matches" "end" "end-src" "start" "src" "cnk" "dfa")}
+    {Lisp-Entry "sre-named-definitions" #f 1854 8 1854 29 ()}
+    {Lisp-Entry "sre->nfa" #f 1960 9 1960 17 ("error" "apply" "=>" "sre-sequence" "submatch-named" "'*" "begin" "new" "*" "set-cdr!" "?" ",@b" "take-up-to" "cadar" "a" "cddar" "b" "or" "'/" "length" "sre->cset" "ranges" "" "&" "-" "/" "~utf8?" "flag-join" "flag-clear" "memq" "let*" "w/noutf8" "w/utf8" "w/nocase" "w/case" "cdar" ":" "seq" "case" "else" "sre-alternate" "procedure?" "sre-named-definitions" "assq" "cell" "symbol?" "eqv?" "not" "~case-insensitive?" "flag-set?" "char-altcase" "alt" "char?" "epsilon" "'epsilon" "eq?" "cdr" "string->list" "append" "string?" "cond" "null?" "x" "lambda" "map" "cons" "and" "trans" "extend-state" "caar" "+" "max" "state" "new-state-number" "define" "0" "next" "~none" "car" "pair?" "if" "flags" "1" "n" "list" "ls" "lp" "let" "o" "sre")}
+    {Lisp-Entry "nfa->dfa" #f 2157 9 2157 17 (",@res" ",@trans" ",accept?" ",states" "map" "append" "1" "+" "<" "not" "or" "memv" "accept?" "nfa-state-transitions" "trans" "states" "let*" "else" "cdr" "assoc" "reverse" "dfa-renumber" "null?" "cond" "res" "0" "i" "caar" "nfa-closure" "list" "ls" "lp" "car" "pair?" "and" "max-states" "let" "o" "nfa")}
+    {Lisp-Entry "dfa-renumber" #f 2178 9 2178 21 ("cddr" "x" "cadr" "node" "lambda" "list->vector" "assoc" "cdr" "state" "renumber" "define" "length" "zero-to" "car" "cons" "map" "states" "let" "dfa")}
+    {Lisp-Entry "nfa-state-transitions" #f 2193 9 2193 30 ("nfa-join-transitions!" "else" "caar" "epsilon" "'epsilon" "eq?" "assv" "node" "cdr" "nfa-closure" "car" "cons" "x" "lambda" "map" "if" "null?" "cond" "res" "ls" "trans" "lp" "let" "states" "nfa")}
+    {Lisp-Entry "nfa-join-transitions!" #f 2209 9 2209 30 ("intersect-char-ranges" "let*" "set-car!" "old-states" "right2" "right1" "same" "left2" "left1" "or" "join" "hi" "lo" "else" "split-char-range" "if" "append" "right" "left" "lambda" "apply" "cdaar" "caaar" "char<=?" "pair?" "and" "cdar" "insert-sorted" "set-cdr!" "caar" "eqv?" "cdr" "list" "cons" "null?" "res" "ls" "lp" "ch" "let" "car" "char?" "cond" "new" "existing")
+      {Lisp-Entry "join" #f 2210 11 2210 15 ("cons" "nfa-join-transitions!" "not" "if" "state" "elt" "ls")}}
+    {Lisp-Entry "char-range" #f 2273 9 2273 19 ("cons" "eqv?" "if" "c2" "c1")}
+    {Lisp-Entry "split-char-range" #f 2277 9 2277 25 ("+" "cdr" "1" "char->integer" "-" "integer->char" "char-range" "car" "eqv?" "not" "and" "list" "ch" "range")}
+    {Lisp-Entry "intersect-char-ranges" #f 2286 9 2286 30 ("+" "1" "char->integer" "-" "integer->char" "char-range" "char<?" "and" "list" "b-hi" "b-lo" "cdr" "a-hi" "a-lo" "let" "intersect-char-ranges" "reverse" "car" "char>?" "if" "b" "a")}
+    {Lisp-Entry "nfa-closure" #f 2305 9 2305 20 ("insert-sorted" "assv" "epsilon" "'epsilon" "eq?" "trans" "lambda" "filter" "map" "append" "else" "cdr" "car" "memv" "null?" "cond" "res" "ls" "lp" "let" "states" "nfa")}
+    {Lisp-Entry "insert-sorted" #f 2321 9 2321 22 ("cdr" "insert-sorted" "else" "=" "if" "car" "<=" "cons" "null?" "cond" "ls" "n")}
+    {Lisp-Entry "sre-match-extractor" #f 2339 9 2339 28 ("error" "end-index-offset" "end-src-offset" "start-index-offset" "3" "start-src-offset" "match-one" "submatch" "?" "'*" "begin" "src" "match-all" "cdr" "match-once" "letrec" "match-rest" "match-first" "sre-alternate" "rest" "-" "chunk-before?" ">" "or" "right-src" "eqv?" "vector-ref" "and" "else" "vector-set!" "chunker-get-end" "chunker-prev-chunk" "prev" "<" "k" "lp2" "chunker-get-start" "eq?" "limit" "best-index" "best-src" "j2" "end2" "lp1" "sre-count-submatches" "match-right" "cadr" "match-left" "cddr" "sre-sequence" "right" "seq" "car" "case" "pair?" "dfa-match/longest" "sre->nfa" "nfa->dfa" "dfa" "matches" "j" "end" "i" "start" "cnk" "lambda" "if" "sre-has-submatchs?" "not" "cond" "submatch-deps?" "n" "lp" "let" "6" "tmp-end-index-offset" "4" "*" "5" "tmp-end-src-offset" "1" "+" "tmp" "let*" "num-submatches" "sre")}
+    {Lisp-Entry "sre->procedure" #f 2469 9 2469 23 ("string->list" "char=?" "char-ci=?" "char?" "sre-named-definitions" "cell" "epsilon" "c2" "c1" "nwb" "chunker-next-char" "eol" "chunker-prev-char" "ch" "char-alphanumeric?" "bol" "bos" "string-ref" "eqv?" "nonl" "end2" "i2" "str2" "<" "submatch-named" "irregex-match-start-index" "irregex-match-start-source" "irregex-match-end-index" "old-index" "old-source" "submatch" "dsm" "chunker-get-end" "chunker-get-str" "chunker-get-next" "substring" "<=" "irregex-match-substring" "s" "string=?" "string-ci=?" "'backref-ci" "compare" "backref-ci" "backref" "test" "irregex-match-end-source" "fail2" "=>" "names" "assq" "index" "symbol?" "cadddr" "pass" "test-submatches" "j" "once" "atomic" "'look-behind" "src2" "string-length" "len" "chunker-get-substring" "prev" "eos" "append" "any" "cons" "neg-look-behind" "look-behind" "neg-look-ahead" "check" "look-ahead" "string->sre" "posix-string" "alphanumeric" "word+" "eow" "bow" "word" "map" "zero?" ",*" "zero-to" ",sre" ",?" "x" "fold" "sre-strip-submatches" "x-sre" "cdddr" "'*?" "'??" "'?" "'**" "eq?" "to" "from" "not" ">" "caddr" "number?" "and" "**?" ">=" "**" "=" "'*" "list" "*?" "letrec" "error" "sre-empty?" "*" "??" "body" "?" ":" "seq" "w/noutf8" "~utf8?" "w/utf8" "flag-join" "w/nocase" "flag-clear" "sre-sequence" "w/case" "sre-count-submatches" "+" "cddr" "sre-alternate" "rest" "first" "let*" "else" "cadr" "cdr" "length" "or" "/" "&" "-" "" "case" "~case-insensitive?" "flag-set?" "sre->cset" "sre-cset->procedure" "string?" "cond" "rec" "define" "irregex-match-end-index-set!" "irregex-match-end-source-set!" "chunker-get-start" "irregex-match-start-index-set!" "0" "irregex-match-start-source-set!" "fail" "matches" "end" "i" "str" "src" "init" "cnk" "lambda" "next" "~none" "car" "pair?" "if" "flags" "1" "n" "lp" "let" "o" "sre")
+      {Lisp-Entry "names" #f 2470 10 2470 15 ("1" "sre" "sre-names" "cadr" "cdr" "o" "pair?" "and" "if")}}
+    {Lisp-Entry "sre-cset->procedure" #f 2950 9 2950 28 ("chunker-get-end" "end2" "chunker-get-start" "i2" "chunker-get-str" "str2" "chunker-get-next" "src2" "let" "1" "+" "string-ref" "cset-contains?" "<" "if" "fail" "matches" "end" "i" "str" "src" "init" "cnk" "lambda" "next" "cset")}
+    {Lisp-Entry "plist->alist" #f 2966 9 2966 21 ("cadr" "car" "cons" "cddr" "reverse" "null?" "if" "res" "lp" "let" "ls")}
+    {Lisp-Entry "alist->plist" #f 2972 9 2972 21 ("caar" "cdar" "cons" "cdr" "reverse" "null?" "if" "res" "lp" "let" "ls")}
+    {Lisp-Entry "sre->cset" #f 2978 9 2978 18 ("sre-named-definitions" "assq" "cell" "string" "list" "char?" "error" "else" "w/nocase" "sre-alternate" "w/case" "or" "cdr" "sre-flatten-ranges" "plist->alist" "/" "cset-difference" "res" "x" "lambda" "-" "cset-intersection" "&" "cddr" "map" "cadr" "cset-union" "fold" "cset-complement" "" "case" "string->list" "cset-case-insensitive" "string?" "if" "cond" "rec" "define" "car" "pair?" "and" "ci?" "lp" "let" "o" "sre")}
+    {Lisp-Entry "cset-contains?" #f 3030 9 3030 23 ("cdr" "car" "char<=?" "pair?" "and" "eqv?" "or" "x" "lambda" "find" "ch" "cset")}
+    {Lisp-Entry "cset-range" #f 3036 9 3036 19 ("cons" "char?" "if" "x")}
+    {Lisp-Entry "char-ranges-overlap?" #f 3039 9 3039 29 ("eqv?" "char-ranges-overlap?" "cdr" "car" "char<=?" "and" "or" "pair?" "if" "b" "a")}
+    {Lisp-Entry "char-ranges-union" #f 3049 9 3049 26 ("cdr" "char>=?" "car" "char<=?" "if" "cons" "b" "a")}
+    {Lisp-Entry "cset-union" #f 3053 9 3053 19 ("cons" "else" "cset-range" "char-ranges-union" "list" "cdr" "take-up-to" "append" "cset-union" "ls" "=>" "car" "char-ranges-overlap?" "x" "lambda" "find-tail" "null?" "cond" "b" "a")}
+    {Lisp-Entry "cset-difference" #f 3064 9 3064 24 ("else" "cset-range" "intersect-char-ranges" "list" "cset-union" "cons" "if" "take-up-to" "append" "let*" "right2" "right1" "same" "left2" "left1" "apply" "ls" "=>" "char-ranges-overlap?" "x" "lambda" "find-tail" "cdr" "cset-difference" "car" "not" "null?" "cond" "b" "a")}
+    {Lisp-Entry "cset-intersection" #f 3081 9 3081 26 ("else" "cset-range" "intersect-char-ranges" "list" "cset-union" "cons" "if" "cdr" "take-up-to" "append" "let*" "right2" "right1" "same" "left2" "left1" "apply" "ls" "=>" "car" "char-ranges-overlap?" "x" "lambda" "find-tail" "null?" "cond" "res" "intersect" "let" "b" "a")}
+    {Lisp-Entry "cset-complement" #f 3098 9 3098 24 ("*all-chars*" "sre->cset" "cset-difference" "a")}
+    {Lisp-Entry "cset-case-insensitive" #f 3101 9 3101 30 ("else" "list" "cset-union" "cdar" "caar" "pair?" "cset-contains?" "if" "cdr" "cons" "char-altcase" "c2" "char-alphabetic?" "car" "char?" "and" "reverse" "null?" "cond" "res" "ls" "lp" "let" "a")}
+    {Lisp-Entry "irregex-fold" #f 3120 9 3120 21 ("irregex-reset-matches!" "irregex-match-end-index" "not" "list" "irregex-search/matches" "m" ">=" "lp" "let" "irregex-basic-string-chunker" "irregex-match-chunker-set!" "string-length" "caddr" "cddr" "end" "0" "cadr" "cdr" "if" "start" "acc" "i" "lambda" "car" "pair?" "and" "or" "finish" "irregex-new-matches" "matches" "irregex" "let*" "o" "str" "knil" "kons" "irx")}
+    {Lisp-Entry "irregex-replace" #f 3144 9 3144 24 ("irregex-match-start-index" "list" "irregex-apply-match" "append" "string-length" "0" "irregex-match-end-index" "substring" "cons" "string-cat-reverse" "and" "irregex-search" "m" "let" "o" "str" "irx")}
+    {Lisp-Entry "irregex-replace/all" #f 3154 9 3154 28 ("string-cat-reverse" "string-length" "end" "substring" "cons" ">=" "if" "irregex-apply-match" "append" "0" "irregex-match-start-index" "m-start" "let" "acc" "m" "i" "lambda" "irregex-fold" "o" "str" "irx")}
+    {Lisp-Entry "irregex-apply-match" #f 3171 9 3171 28 ("error" "x" "lambda" "=>" "irregex-match-names" "assq" "else" "string-length" "irregex-match-end-index" "str" "post" "irregex-match-start-index" "0" "irregex-match-start-source" "substring" "pre" "case" "symbol?" "procedure?" "irregex-match-substring" "or" "cons" "cdr" "car" "integer?" "cond" "null?" "if" "res" "lp" "let" "ls" "m")}})
+"load"
+ ({Lisp-File-Entry {File Jazz "lib" "contrib.irregex" "src" "irregex" "load.jazz"} 1227191353
+    {Lisp-Entry "irregex.load" #f 37 8 37 20 ("jazz.kernel-source" "string-append" "load")}})

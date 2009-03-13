@@ -1,0 +1,506 @@
+"Compare-Databases"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Compare-Databases.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Compare-Databases" #f 37 9 37 49 ("jazz")
+      {Lisp-Entry "Compare-Databases" #f 46 7 46 24 ("title:" "trees" "name:" "Compare-Forms")
+        {Lisp-Entry "external-name" #f 54 16 54 29 ("compare-databases" "'compare-databases" "rest")}
+        {Lisp-Entry "host-title" #f 63 16 63 26 ()}}}})
+"Compare-Diff"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Compare-Diff.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Compare-Diff" #f 38 9 38 44 ("jazz")
+      {Lisp-Entry "Compare-Diff" #f 46 7 46 19 ("Object")
+        {Lisp-Entry "green" #f 49 18 49 23 ("generate")}
+        {Lisp-Entry "blue" #f 50 18 50 22 ("generate")}
+        {Lisp-Entry "initialize" #f 53 11 53 21 ("blue" "green" "set!" "nextmethod" "b" "g")}
+        {Lisp-Entry "get-start" #f 59 21 59 30 ("blue" "get-start" "green" "if")}
+        {Lisp-Entry "get-end" #f 63 21 63 28 ("green" "get-end" "blue" "if")}
+        {Lisp-Entry "print" #f 67 11 67 16 ("blue" "green" "format" "function" "self" "print-unreadable" "readably" "printer")}}}})
+"Compare-Directories"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Compare-Directories.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Compare-Directories" #f 38 9 38 51 ("jazz")
+      {Lisp-Entry "Compare-Directories" #f 52 7 52 26 ("right-value" "left-value" "blue" "blue-border" "dir" "protocol:" "green" "green-border" "content" "title:" "trees" "name:" "Compare-Trees")
+        {Lisp-Entry "scanned-date" #f 55 8 55 20 ()}
+        {Lisp-Entry "external-name" #f 70 16 70 29 ("compare-directories" "'compare-directories" "rest")}
+        {Lisp-Entry "host-icon" #f 79 16 79 25 ("Bitmap-Resource")}
+        {Lisp-Entry "host-title" #f 83 16 83 26 ()}
+        {Lisp-Entry "host-position" #f 87 16 87 29 ("110" "120" "Point")}
+        {Lisp-Entry "host-size" #f 91 16 91 25 ("500" "795" "Dimension")}
+        {Lisp-Entry "host-workspaces" #f 95 11 95 26 ("groupware")}
+        {Lisp-Entry "on-scan-date" #f 104 11 104 23 ("get-date" "date-universal->local" "set-base-date" "scanned-date" "when" "evt")}
+        {Lisp-Entry "new-comparer" #f 114 11 114 23 ("Directory-Comparer" "new")}
+        {Lisp-Entry "get-merge-date" #f 118 11 118 25 ("get-time" "when" "get-base-date" "date" "let" "mode")}
+        {Lisp-Entry "scan-feedback" #f 125 11 125 24 ("trim-left" "user-message" "right" "left")}
+        {Lisp-Entry "present-root" #f 134 11 134 23 ("format" "string=?" "if" "r" "l" "let" "else" "present-item" "not" "cond" "right" "left")}
+        {Lisp-Entry "present-item" #f 147 11 147 23 ("get-name" "item")}
+        {Lisp-Entry "present-value" #f 151 11 151 24 ("date-universal->local" "time-utc->date" "present-date" "not" "if" "date" "kind")}
+        {Lisp-Entry "backup-action" #f 157 11 157 24 ("copy-right" "'copy-right" ">" "date-local->universal" "base-date" "let" "if" "right-date" "right" "left-date" "left" "local-date")}
+        {Lisp-Entry "merge-action" #f 166 11 166 23 ("get-name" "format" "debug-string" ":not-equal" "Depot-Moniker" "is?" ":equal" ":less" "memq?" "merge" "'merge" ":greater" "eq?" "r" "compare" "l" "else" "copy-right" "'copy-right" "copy-left" "'copy-left" ">" "if" "not" "and" "cond" "date-local->universal" "base-date" "let" "when" "right-date" "right" "left-date" "left" "local-date")}
+        {Lisp-Entry "Not-Ignored-Leaves" #f 199 14 199 32 ()}
+        {Lisp-Entry "overwrite-read-only?" #f 203 29 203 49 ()}
+        {Lisp-Entry "add-item" #f 207 11 207 19 ("nextmethod" "else" "get-list" "user-message" "dir" "feedback:" "add-path?" "path" "function" "copy?:" "copy-directory" "Directory" "is?" "and" "cond" "dst" "src")}
+        {Lisp-Entry "add-path?" #f 215 29 215 38 ("get-extension" "Not-Ignored-Leaves" "ignored-extensions" "null?" "is-not?" "or" "member?" "not" "and" "else" "ignored-leaves" "File" "ignored-nodes" "Directory" "typecase" "ignored" "get-name" "name" "let" "path")}
+        {Lisp-Entry "copy-item" #f 228 11 228 20 ("user-message" "error" "overwrite-read-only?" "overwrite-read-only?:" "copy-file" "File" "is?" "and" "if" "dst" "src")}
+        {Lisp-Entry "delete-item" #f 235 11 235 22 ("delete-item" "'delete-item" "unimplemented" "else" "get-list" "user-message" "dir" "function" "feedback:" "delete-directory" "Directory" "overwrite-read-only?" "overwrite-read-only?:" "delete-file" "File" "typecase" "item")}
+        {Lisp-Entry "add-project" #f 246 11 246 22 ("get-base" "add-project" "dir" "dst")}
+        {Lisp-Entry "on-compare" #f 255 11 255 21 ("compare-trees" "scanned-date" "set!" "function" ":wait" "with-cursor" "evt")}
+        {Lisp-Entry "compare-leaves" #f 261 11 261 25 ("compare-files" "else" "format" "message-box" "compare-forms" "member?" "cond" "get-extension" "ext" "let" "user-data" "right" "left")}
+        {Lisp-Entry "compare-files" #f 268 11 268 24 ("text" "'text" "locate" "acquire-focus" "set-visible?" "bring-to-front" "message-box" "close" "begin" "not" "if" "compare-monikers" "has-differences?" "get-guest" "comparer" "host-visible?:" "Compare-Files" "new-frame" "frame" "let*" "function" ":wait" "with-cursor" "user-data" "right" "left")}
+        {Lisp-Entry "compare-monikers" #f 283 29 283 45 ("compare-directory-cookie:" "self" "compare-directory:" "compare-monikers" "user-data" "right" "left" "comparer")}
+        {Lisp-Entry "compare-forms" #f 287 11 287 24 ("set-visible?" "bring-to-front" "get-guest" "compare-trees" "right-moniker:" "left-moniker:" "host-visible?:" "Compare-Forms" "new-frame" "frame" "let" "function" ":wait" "with-cursor" "user-data" "right" "left")}
+        {Lisp-Entry "add-to-favorites" #f 302 11 302 27 ("Favorite-Compare-Directories" "Favorites-Manager" "singleton-palette" "get-guest" "add-to-favorites" "ignored-extensions" "ignored-extensions:" "ignored-leaves" "ignored-leaves:" "ignored-nodes" "ignored-nodes:" "right:" "left:" "mode:" "list" "initargs" "get-right-moniker" "right" "get-left-moniker" "left" "get-mode" "mode" "title" "let*")}
+        {Lisp-Entry "make-item" #f 316 11 316 20 ("get-project?" "error" "else" "Directory" "join" "Depot-Moniker" "is?" "if" "new" "File" "typecase" "get-name" "get-list" "append" "list" "let" "father" "root" "item")}
+        {Lisp-Entry "tree-base" #f 343 11 343 20 ("get-list" "length" "tree")}
+        {Lisp-Entry "trim-left" #f 347 11 347 20 ("left-base" "get-list" "tail" "item")}
+        {Lisp-Entry "trim-right" #f 351 11 351 21 ("right-base" "get-list" "tail" "item")}
+        {Lisp-Entry "get-compare-menu" #f 360 11 360 27 ("Compare-Directories-Menu" "new")}}
+      {Lisp-Entry "Compare-Directories-Menu" #f 364 7 364 31 ("on-scan-date" ":document" "Event-Handler" "action-handler:" "reset-actions" "before:" "title:" "scanned-date" "name:" "Compare-Menu")}}})
+"Compare-Directories-Preferences"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "preference" "Compare-Directories-Preferences.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.preference.Compare-Directories-Preferences" #f 37 9 37 66 ("jazz")
+      {Lisp-Entry "Compare-Directories-Preferences" #f 46 7 46 38 ("Bitmap-Resource" "icon:" "title:" "Compare-Trees-Preferences")
+        {Lisp-Entry "get-addable-classes" #f 53 11 53 30 ("Favorite-Compare-Directories" "list")}
+        {Lisp-Entry "get-addable-details" #f 63 11 63 30 ("check-algorithm" "ignored-extensions" "ignored-leaves" "ignored-nodes" "right" "250" "left" "100" "mode" "150" "name-info")}}}})
+"Compare-Entry"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Compare-Entry.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Compare-Entry" #f 37 9 37 45 ("jazz")
+      {Lisp-Entry "Compare-Entry" #f 45 7 45 20 ("Object")
+        {Lisp-Entry "parent" #f 48 18 48 24 ("generate")}
+        {Lisp-Entry "kind" #f 49 18 49 22 ("generate")}
+        {Lisp-Entry "left" #f 50 18 50 22 ("generate")}
+        {Lisp-Entry "left-value" #f 51 18 51 28 ("generate")}
+        {Lisp-Entry "right" #f 52 18 52 23 ("generate")}
+        {Lisp-Entry "right-value" #f 53 18 53 29 ("generate")}
+        {Lisp-Entry "action" #f 54 18 54 24 ("generate")}
+        {Lisp-Entry "children" #f 55 18 55 26 ("generate")}
+        {Lisp-Entry "initialize" #f 58 11 58 21 ("children~self" "action~self" "right-value~self" "right~self" "left-value~self" "left~self" "kind~self" "parent~self" "set!" "nextmethod" "right-value" "right" "left-value" "left" "kind" "parent")}
+        {Lisp-Entry "print" #f 70 11 70 16 ("action" "right" "left" "format" "function" "self" "print-unreadable" "readably" "printer")}}}})
+"Compare-Files"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Compare-Files.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Compare-Files" #f 38 9 38 45 ("jazz")
+      {Lisp-Entry "Compare-Files" #f 48 7 48 20 ("Compare-Texts")
+        {Lisp-Entry "external-name" #f 51 16 51 29 ("compare-files" "'compare-files" "rest")}
+        {Lisp-Entry "install-configuration" #f 60 18 60 39 ("get-blue" "get-green" "install-monikers" "config")}
+        {Lisp-Entry "add-to-favorites" #f 70 11 70 27 ("Favorite-Compare-Files" "Favorites-Manager" "singleton-palette" "get-guest" "add-to-favorites" "blue:" "green:" "list" "initargs" "'blue" "blue" "'green" "locate" "get-moniker" "green" "title" "let*")}}}})
+"Compare-Forms"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Compare-Forms.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Compare-Forms" #f 37 9 37 45 ("jazz")
+      {Lisp-Entry "Compare-Forms" #f 46 7 46 20 ("green" "green-border" "file" "protocol:" "blue" "blue-border" "title:" "trees" "name:" "Compare-Trees")
+        {Lisp-Entry "host-icon" #f 63 16 63 25 ("Bitmap-Resource")}
+        {Lisp-Entry "host-title" #f 67 16 67 26 ()}
+        {Lisp-Entry "form-present" #f 76 11 76 23 ("get-presentation" "get-name" "form")}
+        {Lisp-Entry "form-image" #f 82 11 82 21 ("get-model" "get-class-image" "Bitmap-Resource" "form")}
+        {Lisp-Entry "new-comparer" #f 93 11 93 23 ("Form-Comparer" "new")}
+        {Lisp-Entry "scan-feedback" #f 97 11 97 24 ("form-present" "user-message" "right" "left")}
+        {Lisp-Entry "moniker->tree" #f 101 11 101 24 ("load-form" "moniker")}
+        {Lisp-Entry "present-root" #f 110 11 110 23 ("format" "=" "if" "r" "present-item" "l" "let" "right" "left")}
+        {Lisp-Entry "present-item" #f 118 11 118 23 ("car" "form-present" "Form" "is?" "if" "item")}
+        {Lisp-Entry "present-value" #f 124 11 124 24 ("->string" "leaf" "node" "case" "value" "kind")}
+        {Lisp-Entry "entry-image" #f 130 11 130 22 ("Bitmap-Resource" "leaf" "form-image" "node" "get-kind" "case" "ref" "entry")}}}})
+"Compare-Forms-Preferences"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "preference" "Compare-Forms-Preferences.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.preference.Compare-Forms-Preferences" #f 37 9 37 60 ("jazz")
+      {Lisp-Entry "Compare-Forms-Preferences" #f 46 7 46 32 ("Bitmap-Resource" "icon:" "title:" "Compare-Trees-Preferences")}}})
+"Compare-Item"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Compare-Item.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Compare-Item" #f 37 9 37 44 ("jazz")
+      {Lisp-Entry "Compare-Item" #f 45 7 45 19 ("Object")
+        {Lisp-Entry "moniker" #f 48 18 48 25 ("generate")}
+        {Lisp-Entry "name" #f 49 18 49 22 ("generate")}
+        {Lisp-Entry "getter" #f 50 26 50 32 ("generate")}
+        {Lisp-Entry "initialize" #f 53 11 53 21 ("value~self" "name~self" "moniker~self" "set!" "nextmethod" "value" "name" "moniker")}
+        {Lisp-Entry "print" #f 60 11 60 16 ("value" "name" "moniker" "format" "function" "self" "print-unreadable" "readably" "printer")}}}})
+"Compare-Line"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Compare-Line.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Compare-Line" #f 38 9 38 44 ("jazz")
+      {Lisp-Entry "Compare-Line" #f 47 7 47 19 ("Object")
+        {Lisp-Entry "moniker" #f 50 18 50 25 ("generate")}
+        {Lisp-Entry "string" #f 51 18 51 24 ("generate")}
+        {Lisp-Entry "rank" #f 52 18 52 22 ("generate")}
+        {Lisp-Entry "initialize" #f 55 11 55 21 ("rank" "string" "moniker" "set!" "nextmethod" "r" "s" "m")}
+        {Lisp-Entry "print" #f 62 11 62 16 ("string" "rank" "moniker" "get-base" "format" "function" "self" "print-unreadable" "readably" "printer")}}}})
+"Compare-Node"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Compare-Node.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Compare-Node" #f 38 9 38 44 ("jazz")
+      {Lisp-Entry "Compare-Node" #f 46 7 46 19 ("Object")
+        {Lisp-Entry "lines" #f 49 18 49 23 ("generate")}
+        {Lisp-Entry "children" #f 50 18 50 26 ("generate")}
+        {Lisp-Entry "key" #f 51 18 51 21 ("generate")}
+        {Lisp-Entry "initialize" #f 54 11 54 21 ("key" "lines" "set!" "nextmethod" "k" "l")}
+        {Lisp-Entry "set-lines" #f 60 21 60 30 ("lines" "set!" "l")}
+        {Lisp-Entry "print" #f 64 11 64 16 ("children" "lines" "length" "key" "string" "format" "function" "self" "print-unreadable" "readably" "printer")}
+        {Lisp-Entry "add-line" #f 73 21 73 29 ("cons" "lines" "set!" "line")}
+        {Lisp-Entry "add-child" #f 77 21 77 30 ("cons" "children" "set!" "node")}
+        {Lisp-Entry "get-moniker-line" #f 81 11 81 27 ("eq?" "test:" "get-moniker" "line" "function" "key:" "lines" "find-in" "moniker")}
+        {Lisp-Entry "extract-diff" #f 85 21 85 33 ("get-moniker-line" "list" "moniker2" "moniker1")}}}})
+"Compare-Run"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Compare-Run.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Compare-Run" #f 38 9 38 43 ("jazz")
+      {Lisp-Entry "Compare-Run" #f 47 7 47 18 ("Object")
+        {Lisp-Entry "color" #f 50 18 50 23 ("generate")}
+        {Lisp-Entry "start" #f 51 18 51 23 ("generate")}
+        {Lisp-Entry "end" #f 52 18 52 21 ("generate")}
+        {Lisp-Entry "initialize" #f 55 11 55 21 ("end" "start" "color" "set!" "nextmethod" "e" "s" "c")}
+        {Lisp-Entry "get-range" #f 62 21 62 30 ("1" "+" "paragraph-length" "get-limit" "end" "=" "if" "0" "start" "Cell" "Range$Cell$" "new" "text")}
+        {Lisp-Entry "get-height" #f 66 21 66 31 ("get-start" "get-end" "get-row" "-" "get-range" "range" "let" "text")}
+        {Lisp-Entry "print" #f 71 11 71 16 ("end" "start" "color" "format" "function" "self" "print-unreadable" "readably" "printer")}}}})
+"Compare-Text-Actions"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Compare-Text-Actions.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Compare-Text-Actions" #f 37 9 37 52 ("jazz")
+      {Lisp-Entry "Compare-Text-Actions" #f 47 7 47 27 ("F12" "on-keep-both" "keep-both" "on-keep-blue-file" "keep-blue-file" "keep-blue" "F11" "on-keep-blue" "keep-blue&next-diff" "on-keep-green-file" "keep-green-file" "keep-green" "F10" "next?:" "on-keep-green" "keep-green&next-diff" "on-compare-previous" "compare-previous" "on-compare-next" "compare-next" ":shift" "on-previous-diff" "previous-diff" "F9" "on-next-diff" ":focus-guest" "next-diff" "on-edit-references" "edit-references" "on-edit-definitions" ":focus" "edit-definitions" "on-save-to-both" "save-to-both" "on-save-to-blue" "save-to-blue" "on-save-to-green" "save-to-green" "on-save-as" "save-as" ":control" "Shortcut" "shortcut:" "on-save" "save" "on-open-blue" "open-blue" "on-open-green" ":document" "Event-Handler" "action-handler:" "open-green" "name:" "Actions")}}})
+"Compare-Text-View"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Compare-Text-View.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Compare-Text-View" #f 37 9 37 49 ("jazz")
+      {Lisp-Entry "Compare-Text-View" #f 51 7 51 24 ("Code" "Font" "font:" "Default" "name:" "Text-Style" "default-style:" "IDE-Text-View")
+        {Lisp-Entry "focus-actions" #f 63 11 63 24 ("nextmethod" "compare-text" "'compare-text" "find-actions" "cons")}
+        {Lisp-Entry "context-menu" #f 73 11 73 23 ("get-context-menu" "track-popup-menu" "move-caret:" "context-menu-click" "always" "'always" "else" "never" "'never" "outside-selection" "'outside-selection" "not" "and" "cond" "move-caret" "let" "modifiers-down" "alt?" "control?" "shift?" "receive" "pos")}
+        {Lisp-Entry "edition-workspace" #f 84 11 84 28 ("groupware" "'groupware")}
+        {Lisp-Entry "colorize-syntax" #f 93 11 93 26 ("rest")}
+        {Lisp-Entry "recolorize-text" #f 97 11 97 26 ("end-row" "start")}
+        {Lisp-Entry "mouse-down" #f 106 11 106 21 ("get-start" "get-row" "line-color" "user-message" "nextmethod" "pos")}
+        {Lisp-Entry "line-color" #f 111 11 111 21 ("else" "blue" "'blue" "Blue-Color" "green" "'green" "Green-Color" "eq?" "cond" "get-color" "color" "let" "Text-Style" "is?" "get-style" "style" "first" "run" "get-guest" "guest" "get-frame" "frame" "length" "1" "=" "get-runs" "runs" "get-paragraph" "paragraph" "let*" "get-limit" "<=" "0" ">=" "and" "when" "row")}
+        {Lisp-Entry "get-run" #f 127 11 127 18 ("Compare-Run" "new" "increase!" "+" "decrease!" "1" "-" "eq?" "while" "get-guest" "guest" "get-frame" "frame" "get-limit" "limit" "end" "start" "let*" "when" "line-color" "color" "let" "row")}
+        {Lisp-Entry "get-diff" #f 142 11 142 19 ("get-start" "-" "blue" "1" "get-end" "+" "Compare-Diff" "new" "green" "get-color" "case" "when" "get-run" "run" "get-guest" "guest" "get-frame" "frame" "let*" "row")}
+        {Lisp-Entry "select-diff" #f 152 21 152 32 ("bell" "set-selection" "if" "get-end" "next-line-or-end-of-text" "0" "get-start" "Cell" "Range$Cell$" "new" "essay" "new-selection" "let" "default-selection" "diff")}
+        {Lisp-Entry "goto-next-diff" #f 162 21 162 35 ("get-row" "next-diff" "nu=?" "if" "select-diff" "get-end" "move-forward" "set-caret" "selection" "old-selection" "let")}
+        {Lisp-Entry "goto-previous-diff" #f 168 21 168 39 ("get-row" "previous-diff" "nu=?" "if" "select-diff" "get-start" "move-backward" "set-caret" "selection" "old-selection" "let")}
+        {Lisp-Entry "goto-first-diff" #f 174 21 174 36 ("selection" "text-beginning" "get-row" "next-diff" "select-diff")}
+        {Lisp-Entry "goto-last-diff" #f 178 21 178 35 ("selection" "text-ending" "get-row" "previous-diff" "select-diff")}
+        {Lisp-Entry "next-diff" #f 182 11 182 20 ("increase!" "line-color" "not" "<" "and" "while" "get-length" "len" "get-diff" "diff" "let" "row")}
+        {Lisp-Entry "previous-diff" #f 190 11 190 24 ("decrease!" "line-color" "not" "0" ">=" "and" "while" "get-diff" "diff" "let" "row")}
+        {Lisp-Entry "previous-end-of-line" #f 197 21 197 41 ("paragraph-length" "1" "-" "Cell" "new" "0" "=" "if" "row")}
+        {Lisp-Entry "next-line-or-end-of-text" #f 203 21 203 45 ("0" "1" "+" "paragraph-length" "Cell" "new" "get-limit" "=" "if" "row")}
+        {Lisp-Entry "keep-green" #f 209 21 209 31 ("Range$Cell$" "new" "set-selection" "range" "let" "previous-end-of-line" "set-caret" "1" "get-end" "+" "naturals" "uncolorize-row" "n" "function" "for-each" "get-green" "self" "get-range" "replace-text" "get-blue" "when" "bell" "not" "if" "get-row" "get-diff" "diff" "get-start" "pos" "let*")}
+        {Lisp-Entry "keep-blue" #f 226 21 226 30 ("previous-end-of-line" "-" "Cell" "Range$Cell$" "new" "set-selection" "get-height" "0" "row-count" "range" "let" "set-caret" "self" "get-range" "replace-text" "get-green" "1" "get-end" "+" "naturals" "uncolorize-row" "n" "function" "for-each" "get-blue" "when" "bell" "not" "if" "get-row" "get-diff" "diff" "get-start" "pos" "let*")}
+        {Lisp-Entry "keep-both" #f 245 21 245 30 ("1" "get-end" "+" "naturals" "uncolorize-row" "n" "function" "for-each" "bell" "not" "if" "get-row" "get-diff" "diff" "get-start" "pos" "let*")}
+        {Lisp-Entry "get-context-menu" #f 255 11 255 27 ("Compare-Text-Menu" "new")}}
+      {Lisp-Entry "Compare-Text-Menu" #f 264 7 264 24 ("edit-references" "code-text" "edit-definitions" "save-to-both" "save-to-blue" "save-to-green" "save-as" "Bitmap-Resource" "icon:" "save" "open-blue" "compare-text" "Action" "action:" "title:" "open-green" "name:" "Context-Menu")}}})
+"Compare-Texts"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Compare-Texts.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Compare-Texts" #f 38 9 38 45 ("jazz")
+      {Lisp-Entry "Compare-Texts" #f 52 7 52 20 ("12" "left-padding:" "text" "content" "vscroll?:" "hscroll?:" "462" "791" "35" "on-compare" "770" "compare" "blue" "493" "blue-border" "32" "460" "blue-label" "on-return-press" "return-press-handler:" "file" "protocol:" "green" "entry" "style:" "edge" "border-type:" "19" "250" "9" "190" "green-border" "Label" "Font" "font:" "16" "37" "11" "150" "title:" "green-label" "on-keep-both" "104" "keep-both" "on-keep-blue" "82" "keep-blue" "on-keep-green" "60" "keep-green" "on-previous-diff" "24" "previous-diff" "on-next-diff" ":form" "Event-Handler" "action-handler:" ":icons" "portfolio:" "Bitmap-Resource" "image-name:" "tooltip-text:" "tooltip?:" "22" "7" "2" "Point" "position:" "next-diff" "name:" "499" "795" "Dimension" "size:" "View")
+        {Lisp-Entry "green" #f 55 8 55 13 ()}
+        {Lisp-Entry "blue" #f 56 8 56 12 ()}
+        {Lisp-Entry "compare-directory" #f 57 8 57 25 ()}
+        {Lisp-Entry "compare-directory-cookie" #f 58 8 58 32 ()}
+        {Lisp-Entry "host-icon" #f 86 16 86 25 ("Bitmap-Resource")}
+        {Lisp-Entry "host-title" #f 90 16 90 26 ()}
+        {Lisp-Entry "host-position" #f 94 16 94 29 ("80" "90" "Point")}
+        {Lisp-Entry "host-size" #f 98 16 98 25 ("500" "795" "Dimension")}
+        {Lisp-Entry "host-workspaces" #f 102 11 102 26 ("groupware")}
+        {Lisp-Entry "resize" #f 111 11 111 17 ("blue-border" "'blue-border" "blue-label" "'blue-label" "green-border" "'green-border" "2" "get-width" "resize-parts" "second-dh" "first-dh" "bind" "3" "text" "'text" "child" "size-figure" "0" "compare" "'compare" "locate" "move-figure" "nextmethod" "dv" "dh")}
+        {Lisp-Entry "on-compare" #f 122 11 122 21 ("text" "'text" "locate" "acquire-focus" "require-blue" "require-green" "compare-monikers" "function" ":wait" "with-cursor" "evt")}
+        {Lisp-Entry "on-return-press" #f 129 11 129 26 ("on-compare" "evt")}
+        {Lisp-Entry "on-next-diff" #f 133 11 133 23 ("acquire-focus" "text" "'text" "locate" "goto-next-diff" "evt")}
+        {Lisp-Entry "on-previous-diff" #f 138 11 138 27 ("acquire-focus" "text" "'text" "locate" "goto-previous-diff" "evt")}
+        {Lisp-Entry "on-compare-next" #f 143 11 143 26 ("compare-next" "evt")}
+        {Lisp-Entry "on-compare-previous" #f 147 11 147 30 ("compare-previous" "evt")}
+        {Lisp-Entry "on-keep-green-file" #f 151 11 151 29 ("keep-green-file" "evt")}
+        {Lisp-Entry "on-keep-blue-file" #f 155 11 155 28 ("keep-blue-file" "evt")}
+        {Lisp-Entry "on-keep-green" #f 159 11 159 24 ("goto-next-diff" "next?:" "get-property" "when" "text" "'text" "locate" "keep-green" "evt")}
+        {Lisp-Entry "on-keep-blue" #f 165 11 165 23 ("goto-next-diff" "next?:" "get-property" "when" "text" "'text" "locate" "keep-blue" "evt")}
+        {Lisp-Entry "on-keep-both" #f 171 11 171 23 ("text" "'text" "locate" "keep-both" "evt")}
+        {Lisp-Entry "compare-next" #f 180 29 180 41 ("compare-next" "bell" "Compare-Trees" "is-not?" "if" "current-guest" "guest" "let" "get-host" "close")}
+        {Lisp-Entry "compare-previous" #f 188 29 188 45 ("compare-previous" "bell" "Compare-Trees" "is-not?" "if" "current-guest" "guest" "let" "get-host" "close")}
+        {Lisp-Entry "keep-green-file" #f 196 29 196 44 ("merge-leaves" "goto-next-comparable" "not" "copy-right" "bell" "Compare-Trees" "is-not?" "if" "current-guest" "guest" "let" "get-host" "close")}
+        {Lisp-Entry "keep-blue-file" #f 207 29 207 43 ("merge-leaves" "goto-next-comparable" "not" "copy-left" "bell" "Compare-Trees" "is-not?" "if" "current-guest" "guest" "let" "get-host" "close")}
+        {Lisp-Entry "get-tab-stops" #f 223 11 223 24 ("blue" "'blue" "green" "'green" "locate" "get-text" "list")}
+        {Lisp-Entry "compare-monikers" #f 234 18 234 34 ("goto-first-diff" "when" "layout-scrollee" "colorize-output" "has-differences?" "compare-monikers" "output" "clear-all" "install-monikers" "'text" "locate" "text" "new-comparer" "compare" "let" "set-title" "string=?" "if" "self" "class-of" "host-title" "format" "title" "blue" "get-name" "green" "get-host" "host" "let*" "compare-directory-cookie~self" "compare-directory~self" "set!" "compare-directory-cookie" "compare-directory-cookie:" "compare-directory" "compare-directory:" "blue-moniker" "green-moniker")}
+        {Lisp-Entry "new-comparer" #f 254 29 254 41 ("Text-Comparer" "new")}
+        {Lisp-Entry "require-green" #f 258 11 258 24 ("error" "get-green" "either")}
+        {Lisp-Entry "require-blue" #f 263 11 263 23 ("error" "get-blue" "either")}
+        {Lisp-Entry "get-green" #f 268 11 268 20 ("get-moniker" "get-read-only?" "if" "green" "'green" "locate" "browser" "let")}
+        {Lisp-Entry "get-blue" #f 275 11 275 19 ("get-moniker" "get-read-only?" "if" "blue" "'blue" "locate" "browser" "let")}
+        {Lisp-Entry "install-monikers" #f 282 29 282 45 ("set!" "blue" "'blue" "green" "'green" "locate" "set-moniker" "blue-moniker" "green-moniker")}
+        {Lisp-Entry "colorize-output" #f 289 11 289 26 ("paragraphs:" "styles:" "formats:" "Formatted-Text" "set-formatted-content" "get-string" "set!" "/=" "when" "0" "else" "2" "1" "case" "style" "let" "color" "line" "rank2" "rank1" "bind" "info" "function" "map" "paragraphs" "has-differences?" "styles" "Blue-Color" "blue" "Green-Color" "color:" "green" "font:" "base:" "Text-Style" "new" "intern-style" "plain" "Code" "name:" "Font" "font" "Default" "'Default" "get-format" "list" "formats" "let*" "text" "output")}
+        {Lisp-Entry "on-open-green" #f 313 11 313 24 ("green" "open-item" "evt")}
+        {Lisp-Entry "on-open-blue" #f 317 11 317 23 ("blue" "open-item" "evt")}
+        {Lisp-Entry "open-item" #f 321 11 321 20 ("get-source" "groupware" "'groupware" "workspace:" "edit-document" "Moniker" "is?" "if" "get-application" "appl" "let" "item")}
+        {Lisp-Entry "on-save-to-green" #f 333 11 333 27 ("save-to-green" "evt")}
+        {Lisp-Entry "on-save-to-blue" #f 337 11 337 26 ("save-to-blue" "evt")}
+        {Lisp-Entry "on-save-to-both" #f 341 11 341 26 ("save-to-both" "evt")}
+        {Lisp-Entry "save" #f 345 11 345 15 ("get-host" "close" "compare-directory-cookie" "merge-done" "compare-directory" "when" "save-to-both")}
+        {Lisp-Entry "save-as" #f 352 11 352 18 ("text" "'text" "locate" "save-as")}
+        {Lisp-Entry "save-to-green" #f 356 11 356 24 ("green" "save-to")}
+        {Lisp-Entry "save-to-blue" #f 360 11 360 23 ("blue" "save-to")}
+        {Lisp-Entry "save-to-both" #f 364 11 364 23 ("get-modification-time" "set-modification-time" "File" "is?" "and" "when" "blue" "green" "save-to")}
+        {Lisp-Entry "save-to" #f 372 11 372 18 ("get-content" "save-lines" "'text" "locate" "text" "let" "ensure-read/write" "item")}}}})
+"Compare-Trees"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Compare-Trees.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Compare-Trees" #f 38 9 38 45 ("Configure-Menu" "Right-Column" "Action-Column" "Left-Column" "register-autoclass" "jazz")
+      {Lisp-Entry "Compare-Trees" #f 53 7 53 20 ("75" "center" "justification:" "right-value" "200" "left-value" "235" "width:" "row" "selection-mode:" "on-context-menu" "context-menu-handler:" "on-double-click" "double-click-handler:" "multiple-selection?:" "name" "filled-column:" "results" "document" "outline" "363" "891" "90" "results-border" "on-transfer" "869" "transfer" "on-no-action" "789" "no-action" "on-copy-left" "767" "copy-left" "on-merge-leaves" "745" "merge-leaves" "on-copy-right" ":icons" "portfolio:" "Bitmap-Resource" "image-name:" "tooltip-text:" "tooltip?:" "22" "57" "723" "copy-right" "default?:" "on-compare" "action-handler:" "24" "80" "810" "compare" "45" "whitespace" "25" "82" "timestamp" "78" "4" "603" "check-algorithm" "blue" "blue-border" "34" "blue-label" "green" "320" "7" "46" "green-border" "37" "9" "6" "green-label" "375" "222" "trees" "on-return-press" ":form" "Event-Handler" "return-press-handler:" "top-padding:" "2" "left-padding:" "accepts-returns?:" "Label" "Font" "font:" "base-date" "fill" "layout-type:" "content" "vscroll?:" "hscroll?:" "entry" "edge" "border-type:" "19" "111" "32" "81" "selected?:" "35" "merge" "16" "60" "15" "13" "backup" "styled" "style:" "76" "210" "5" "Point" "position:" "title:" "mode" "name:" "455" "895" "Dimension" "size:" "Tool-View")
+        {Lisp-Entry "mode" #f 56 12 56 16 ("set-mode" "get-mode")}
+        {Lisp-Entry "base-date" #f 57 12 57 21 ("set-base-date" "get-base-date")}
+        {Lisp-Entry "left-moniker" #f 58 12 58 24 ("set-left-moniker" "get-left-moniker" ":uninitialized")}
+        {Lisp-Entry "right-moniker" #f 59 12 59 25 ("set-right-moniker" "get-right-moniker" ":uninitialized")}
+        {Lisp-Entry "left-content" #f 60 12 60 24 ("set-left-content" "get-left-content")}
+        {Lisp-Entry "right-content" #f 61 12 61 25 ("set-right-content" "get-right-content")}
+        {Lisp-Entry "ignored-nodes" #f 62 12 62 25 ("set-ignored-nodes" "get-ignored-nodes")}
+        {Lisp-Entry "ignored-leaves" #f 63 12 63 26 ("set-ignored-leaves" "get-ignored-leaves")}
+        {Lisp-Entry "ignored-extensions" #f 64 12 64 30 ("set-ignored-extensions" "get-ignored-extensions")}
+        {Lisp-Entry "check-algorithm" #f 65 12 65 27 ("set-check-algorithm" "get-check-algorithm")}
+        {Lisp-Entry "left-root" #f 68 8 68 17 ()}
+        {Lisp-Entry "left-base" #f 69 8 69 17 ()}
+        {Lisp-Entry "right-root" #f 70 8 70 18 ()}
+        {Lisp-Entry "right-base" #f 71 8 71 18 ()}
+        {Lisp-Entry "root-entry" #f 72 8 72 18 ()}
+        {Lisp-Entry "installed-configuration" #f 73 8 73 31 ()}
+        {Lisp-Entry "$Left-Value-Column" #f 124 12 124 30 ("1")}
+        {Lisp-Entry "$Right-Value-Column" #f 125 12 125 31 ("2")}
+        {Lisp-Entry "$Left-Column" #f 126 12 126 24 ("3")}
+        {Lisp-Entry "$Action-Column" #f 127 12 127 26 ("4")}
+        {Lisp-Entry "$Right-Column" #f 128 12 128 25 ("5")}
+        {Lisp-Entry "install" #f 136 11 136 18 ("load-session" "nextmethod" "rest")}
+        {Lisp-Entry "host-workspaces" #f 146 11 146 26 ("groupware")}
+        {Lisp-Entry "focus-default" #f 150 11 150 24 ("results" "'results" "locate" "acquire-focus")}
+        {Lisp-Entry "get-left-content" #f 159 18 159 34 ("left-content")}
+        {Lisp-Entry "set-left-content" #f 163 18 163 34 ("left-content" "set!" "content")}
+        {Lisp-Entry "get-right-content" #f 167 18 167 35 ("right-content")}
+        {Lisp-Entry "set-right-content" #f 171 18 171 35 ("right-content" "set!" "content")}
+        {Lisp-Entry "get-ignored-nodes" #f 175 18 175 35 ("ignored-nodes")}
+        {Lisp-Entry "set-ignored-nodes" #f 179 18 179 35 ("ignored-nodes" "set!" "ignored")}
+        {Lisp-Entry "get-ignored-leaves" #f 183 18 183 36 ("ignored-leaves")}
+        {Lisp-Entry "set-ignored-leaves" #f 187 18 187 36 ("ignored-leaves" "set!" "ignored")}
+        {Lisp-Entry "get-ignored-extensions" #f 191 18 191 40 ("ignored-extensions")}
+        {Lisp-Entry "set-ignored-extensions" #f 195 18 195 40 ("ignored-extensions" "set!" "ignored")}
+        {Lisp-Entry "guest-actions" #f 204 11 204 24 ("nextmethod" "compare-trees" "'compare-trees" "find-actions" "cons")}
+        {Lisp-Entry "host-activate" #f 215 11 215 24 ("results" "'results" "locate" "acquire-focus" "get-finished?" "when" "nextmethod")}
+        {Lisp-Entry "resize" #f 221 11 221 17 ("results" "'results" "invalidate-header" "results-border" "'results-border" "transfer" "'transfer" "build-updater" "'build-updater" "no-action" "'no-action" "copy-left" "'copy-left" "merge-leaves" "'merge-leaves" "copy-right" "'copy-right" "compare" "'compare" "blue-border" "'blue-border" "green-border" "'green-border" "check-algorithm" "'check-algorithm" "move-figure" "0" "trees" "'trees" "locate" "size-figure" "nextmethod" "dv" "dh")}
+        {Lisp-Entry "on-copy-right" #f 239 11 239 24 ("bell" "goto-next-comparable" "unless" "next?:" "get-property" "when" "copy-right" "evt")}
+        {Lisp-Entry "copy-right" #f 246 21 246 31 ("get-selection" "invalidate-cell" "$Action-Column" "Cell" "new" "cell" "copy-right" "'copy-right" "set-action" "get-right" "get-left" "node" "'node" "get-kind" "eq?" "and" "unless" "get-row" "get-user-data" "entry" "n" "for-each" "function" "with-update-locked" "results" "'results" "locate" "tree" "let")}
+        {Lisp-Entry "on-copy-left" #f 259 11 259 23 ("bell" "goto-next-comparable" "unless" "next?:" "get-property" "when" "copy-left" "evt")}
+        {Lisp-Entry "copy-left" #f 266 21 266 30 ("get-selection" "invalidate-cell" "copy-left" "'copy-left" "set-action" "$Action-Column" "Cell" "new" "cell" "get-right" "get-left" "node" "'node" "get-kind" "eq?" "and" "unless" "get-row" "get-user-data" "entry" "n" "for-each" "function" "with-update-locked" "results" "'results" "locate" "tree" "let")}
+        {Lisp-Entry "on-merge-leaves" #f 279 11 279 26 ("merge-leaves" "evt")}
+        {Lisp-Entry "merge-leaves" #f 283 21 283 33 ("compare-leaves" "get-right" "get-left" "leaf" "'leaf" "get-kind" "eq?" "and" "car" "get-row" "get-user-data" "entry" "let" "bell" "1" "length" ">" "if" "not-null?" "when" "get-selection" "selection" "results" "'results" "locate" "tree" "let*")}
+        {Lisp-Entry "on-no-action" #f 294 11 294 23 ("get-selection" "invalidate-cell" "$Action-Column" "Cell" "new" "cell" "set-action" "get-right" "get-left" "node" "'node" "get-kind" "eq?" "and" "unless" "get-row" "get-user-data" "entry" "n" "for-each" "function" "with-update-locked" "results" "'results" "locate" "tree" "let" "evt")}
+        {Lisp-Entry "on-compare-next" #f 307 11 307 26 ("compare-next" "evt")}
+        {Lisp-Entry "on-compare-previous" #f 311 11 311 30 ("compare-previous" "evt")}
+        {Lisp-Entry "compare-next" #f 315 21 315 33 ("merge-leaves" "bell" "goto-next-comparable" "not" "if")}
+        {Lisp-Entry "compare-previous" #f 321 21 321 37 ("merge-leaves" "bell" "goto-previous-comparable" "not" "if")}
+        {Lisp-Entry "on-build-updater" #f 328 11 328 27 ("updater-built" "build-updater" "choose-updater" "file" "let" "evt")}
+        {Lisp-Entry "choose-updater" #f 334 29 334 43 ("choose-new-file")}
+        {Lisp-Entry "on-transfer" #f 338 11 338 22 ("transfer" "evt")}
+        {Lisp-Entry "transfer" #f 342 29 342 37 ("increase!" "decrease!" "remove-row" "$Action-Column" "set-action" "$Right-Column" "invalidate-cell" "$Left-Column" "Cell" "new" "cell" "begin" "'copy-left" "not" "'copy-right" "or" "node" "'node" "get-kind" "eq?" "and" "set-left" "left-root" "new-left" "add-item" "set-right" "right-root" "make-item" "new-right" "let" "delete-item" "copy-item" "if" "case" "copy-left" "copy-right" "memq?" "when" "get-action" "action" "get-right" "right" "get-left" "left" "get-father" "entry-father" "get-user-data" "entry" "get-row" "row" "<" "while" "function" "with-update-locked" "0" "n" "get-visible-count" "count" "results" "'results" "locate" "tree" "let*" "evt")}
+        {Lisp-Entry "on-double-click" #f 394 11 394 26 ("on-merge-leaves" "results" "get-name" "case" "get-sender" "sender" "let" "evt")}
+        {Lisp-Entry "on-return-press" #f 401 11 401 26 ("on-compare" "else" "on-merge-leaves" "results" "get-name" "case" "get-sender" "sender" "let" "evt")}
+        {Lisp-Entry "on-compare" #f 410 29 410 39 ("compare-trees" "function" ":wait" "with-cursor" "evt")}
+        {Lisp-Entry "on-context-menu" #f 416 11 416 26 ("get-compare-menu" "track-popup-menu" "function" "with-context-click" "acquire" "acquired" "get-position" "pos" "get-sender" "sender" "let*" "evt")}
+        {Lisp-Entry "on-next-comparable" #f 425 11 425 29 ("bell" "goto-next-comparable" "unless" "evt")}
+        {Lisp-Entry "on-previous-comparable" #f 430 11 430 33 ("bell" "goto-previous-comparable" "unless" "evt")}
+        {Lisp-Entry "on-next-uncomparable" #f 435 11 435 31 ("bell" "goto-next-uncomparable" "unless" "evt")}
+        {Lisp-Entry "on-previous-uncomparable" #f 440 11 440 35 ("bell" "goto-previous-uncomparable" "unless" "evt")}
+        {Lisp-Entry "get-tab-stops" #f 450 11 450 24 ("blue" "'blue" "text" "'text" "green" "'green" "base-date" "'base-date" "locate" "list")}
+        {Lisp-Entry "load-session" #f 462 11 462 23 ("get-base-dates" "Base-Dates" "set!" "compare-directories" "tools" "get-preferences" "pref" "let")}
+        {Lisp-Entry "save-guest" #f 467 11 467 21 ("Base-Dates" "base-dates:" "get-right-moniker" "right-moniker:" "get-left-moniker" "left-moniker:" "get-base-date" "base-date:" "get-mode" "mode:" "add-guest-preferences" "session" "designer")}
+        {Lisp-Entry "Base-Dates" #f 481 14 481 24 ()}
+        {Lisp-Entry "on-configure" #f 485 18 485 30 ("configuration:" "get-property" "install-configuration" "evt")}
+        {Lisp-Entry "on-register-base-date" #f 489 18 489 39 ("set-base-date" "set-cdr!" "cons" "set!" "Base-Dates" "assq" "pair" "universal-date" "present" "date" "let" "merge" "'merge" "/=" "mode" "name" "bind" "error" "installed-configuration" "not" "if" "unimplemented" "evt")}
+        {Lisp-Entry "on-reset-actions" #f 505 18 505 34 ("reset-actions" "evt")}
+        {Lisp-Entry "configure" #f 509 18 509 27 ("compare-directories" "tools" "get-preferences" "child" "install-configuration" "name")}
+        {Lisp-Entry "install-configuration" #f 513 18 513 39 ("results" "'results" "locate" "remove-every-row" "get-check-algorithm" "set-check-algorithm" "get-ignored-extensions" "set-ignored-extensions" "get-ignored-leaves" "set-ignored-leaves" "get-ignored-nodes" "set-ignored-nodes" "get-right" "set-right-moniker" "get-left" "set-left-moniker" "get-name" "find-base-date" "merge" "'merge" "eq?" "essay" "set-base-date" "get-mode" "set-mode" "installed-configuration" "set!" "config")}
+        {Lisp-Entry "find-base-date" #f 526 11 526 25 ("Base-Dates" "assq-value" "name")}
+        {Lisp-Entry "on-open-green" #f 530 11 530 24 ("groupware" "'groupware" "workspace:" "edit-document" "get-application" "appl" "bell" "get-left" "not" "node" "'node" "get-kind" "eq?" "or" "if" "get-row" "get-user-data" "entry" "let" "when" "get-single-selection" "selection" "results" "'results" "locate" "tree" "let*" "evt")}
+        {Lisp-Entry "on-open-blue" #f 541 11 541 23 ("groupware" "'groupware" "workspace:" "edit-document" "get-application" "appl" "bell" "get-right" "not" "node" "'node" "get-kind" "eq?" "or" "if" "get-row" "get-user-data" "entry" "let" "when" "get-single-selection" "selection" "results" "'results" "locate" "tree" "let*" "evt")}
+        {Lisp-Entry "get-mode" #f 557 11 557 19 ("mode" "'mode" "locate" "get-content" "get-selected-element")}
+        {Lisp-Entry "set-mode" #f 561 11 561 19 ("'mode" "locate" "get-content" "set-selected-element" "mode")}
+        {Lisp-Entry "get-check-algorithm" #f 565 11 565 30 ("check-algorithm" "'check-algorithm" "locate" "get-content" "get-selected-element")}
+        {Lisp-Entry "set-check-algorithm" #f 569 11 569 30 ("timestamp" "'timestamp" "either" "check-algorithm" "'check-algorithm" "locate" "get-content" "set-selected-element" "algorithm")}
+        {Lisp-Entry "get-base-date" #f 573 11 573 24 ("Date" "parse-string" "empty-string?" "if" "base-date" "'base-date" "locate" "get-string-content" "text" "let")}
+        {Lisp-Entry "set-base-date" #f 582 11 582 24 ("base-date" "'base-date" "locate" "set-string-content" "else" "present" "Date" "is?" "not" "cond" "text" "let" "date")}
+        {Lisp-Entry "get-left-moniker" #f 588 29 588 45 ("get-moniker" "set!" "left-moniker" "get-read-only?" "if" "green" "'green" "locate" "browser" "let")}
+        {Lisp-Entry "set-left-moniker" #f 596 29 596 45 ("green" "'green" "locate" "set-moniker" "left-moniker" "set!" "moniker")}
+        {Lisp-Entry "get-right-moniker" #f 601 29 601 46 ("get-moniker" "set!" "right-moniker" "get-read-only?" "if" "blue" "'blue" "locate" "browser" "let")}
+        {Lisp-Entry "set-right-moniker" #f 609 29 609 46 ("blue" "'blue" "locate" "set-moniker" "right-moniker" "set!" "moniker")}
+        {Lisp-Entry "select-all" #f 614 11 614 21 ("user-origin?:" "results" "'results" "locate" "select-all" "rest")}
+        {Lisp-Entry "require-left-moniker" #f 623 11 623 31 ("error" "get-left-moniker" "either")}
+        {Lisp-Entry "require-right-moniker" #f 628 11 628 32 ("error" "get-right-moniker" "either")}
+        {Lisp-Entry "new-comparer" #f 633 29 633 41 ("Tree-Comparer" "new")}
+        {Lisp-Entry "get-trees" #f 637 29 637 38 ("require-right-moniker" "require-left-moniker" "moniker->tree" "values")}
+        {Lisp-Entry "moniker->tree" #f 642 29 642 42 ("moniker")}
+        {Lisp-Entry "compare-trees" #f 646 18 646 31 ("essay" "user-message" "display-results" "scan-feedback" "right" "left" "function" "feedback:" "get-check-algorithm" "check-algorithm:" "ignored-extensions" "ignored-extensions:" "ignored-leaves" "ignored-leaves:" "ignored-nodes" "ignored-nodes:" "right-content" "right-content:" "left-content" "left-content:" "compare-nodes" "scanned-values" "has-differences?" "entry" "new-comparer" "comparer" "let" "right-base" "tree-base" "left-base" "right-root" "left-root" "set!" "get-trees" "right-tree" "left-tree" "receive")}
+        {Lisp-Entry "scan-feedback" #f 667 29 667 42 ("user-message" "right" "left")}
+        {Lisp-Entry "display-results" #f 676 11 676 26 ("set-selection" "0" "display-entry" "remove-every-row" "function" "with-update-locked" "root-entry" "set!" "results" "'results" "locate" "tree" "get-merge-date" "date" "get-mode" "mode" "let*" "entry")}
+        {Lisp-Entry "display-entry" #f 688 11 688 24 ("get-children" "1" "+" "display-entry" "child" "function" "for-each" "ensure-expanded" "setup-action" "not" "when" "user-data:" "list" "children:" "expanded" "'expanded" "collapsed" "'collapsed" "state:" "father:" "add-row" "row" "c5" "c4" "c3" "get-right-value" "c2" "get-left-value" "present-value" "Tree-Label" "c1" "image:" "title:" "Tree-Node" "new" "c0" "entry-image" "image" "present-item" "present-root" "2" "<" "if" "name" "node" "'node" "eq?" "and" "lvl?" "either" "ref" "get-action" "action" "get-right" "right" "get-left" "left" "get-kind" "kind" "let*" "level" "entry" "father" "tree" "date" "mode")}
+        {Lisp-Entry "setup-action" #f 712 11 712 23 ("setup-merge" "merge" "setup-backup" "backup" "case" "entry" "base-date" "mode")}
+        {Lisp-Entry "setup-backup" #f 718 11 718 23 ("backup-action" "set-action" "get-right-value" "right-value" "get-right" "right" "get-left-value" "left-value" "get-left" "left" "let" "entry" "base-date")}
+        {Lisp-Entry "setup-merge" #f 726 11 726 22 ("merge-action" "set-action" "get-right-value" "right-value" "get-right" "right" "get-left-value" "left-value" "get-left" "left" "let" "leaf" "'leaf" "get-kind" "eq?" "when" "entry" "base-date")}
+        {Lisp-Entry "reset-actions" #f 735 11 735 24 ("invalidate-view" "get-selection" "get-row" "n" "for-each" "setup-action" "Compare-Entry" "is?" "when" "get-user-data" "entry" "let" "row" "function" "proc" "self" "comparer" "results" "'results" "locate" "tree" "get-merge-date" "base-date" "get-mode" "mode" "let*")}
+        {Lisp-Entry "backup-action" #f 751 29 751 42 ("copy-right" "'copy-right" "right-value" "right" "left-value" "left" "base-date")}
+        {Lisp-Entry "merge-action" #f 755 29 755 41 ("right-value" "right" "left-value" "left" "base-date")}
+        {Lisp-Entry "get-merge-date" #f 759 29 759 43 ("get-time" "get-base-date" "date" "let" "merge" "'merge" "eq?" "when" "mode")}
+        {Lisp-Entry "add-item" #f 771 29 771 37 ("copy-item" "dst" "src")}
+        {Lisp-Entry "copy-item" #f 775 29 775 38 ("error" "dst" "src")}
+        {Lisp-Entry "delete-item" #f 779 29 779 40 ("error" "item")}
+        {Lisp-Entry "compare-leaves" #f 783 29 783 43 ("user-data" "right" "left")}
+        {Lisp-Entry "merge-done" #f 787 18 787 28 ("goto-next-comparable" "remove-row" "get-row" "row" "let" "when" "user-data-index" "n" "results" "'results" "locate" "tree" "let*" "user-data")}
+        {Lisp-Entry "goto-next-comparable" #f 796 21 796 41 ("comparable?" "goto-next" "rank")}
+        {Lisp-Entry "goto-previous-comparable" #f 800 21 800 45 ("comparable?" "goto-previous" "rank")}
+        {Lisp-Entry "goto-next-uncomparable" #f 804 21 804 43 ("uncomparable?" "goto-next" "rank")}
+        {Lisp-Entry "goto-previous-uncomparable" #f 808 21 808 47 ("uncomparable?" "goto-previous" "rank")}
+        {Lisp-Entry "goto-next" #f 812 21 812 30 ("list" "set-selection" "when" "find-next" "next" "1" "max" "apply" "+" "0" "null?" "if" "either" "get-selection" "selection" "results" "'results" "locate" "tree" "let*" "rank" "predicate")}
+        {Lisp-Entry "goto-previous" #f 822 21 822 34 ("list" "set-selection" "when" "find-previous" "previous" "min" "apply" "1" "get-visible-count" "-" "null?" "if" "either" "get-selection" "selection" "results" "'results" "locate" "tree" "let*" "rank" "predicate")}
+        {Lisp-Entry "find-next" #f 833 11 833 20 ("finally" "return" "when" "get-user-data" "entry" "get-row" "row" "with" "get-visible-count" "below" "from" "n" "for" "loop" "predicate" "rank" "tree")}
+        {Lisp-Entry "find-next" #f 842 11 842 20 ("continuation-return" "when" "get-user-data" "entry" "get-row" "row" "let*" "do" "get-visible-count" "below" "from" "n" "for" "loop" "return" "function" "continuation-capture" "predicate" "rank" "tree")}
+        {Lisp-Entry "find-previous" #f 853 11 853 24 ("continuation-return" "when" "get-user-data" "entry" "get-row" "row" "let*" "do" "0" "downto" "from" "n" "for" "loop" "return" "function" "continuation-capture" "predicate" "rank" "tree")}
+        {Lisp-Entry "comparable?" #f 864 11 864 22 ("get-right" "get-left" "leaf" "'leaf" "get-kind" "eq?" "and" "entry")}
+        {Lisp-Entry "uncomparable?" #f 868 11 868 24 ("get-right" "get-left" "xor" "entry")}
+        {Lisp-Entry "make-item" #f 877 29 877 38 ("father" "root" "item")}
+        {Lisp-Entry "tree-base" #f 881 29 881 38 ("tree")}
+        {Lisp-Entry "trim-left" #f 885 29 885 38 ("item")}
+        {Lisp-Entry "trim-right" #f 889 29 889 39 ("item")}
+        {Lisp-Entry "present-root" #f 893 29 893 41 ("either" "present-item" "right" "left")}
+        {Lisp-Entry "present-item" #f 897 29 897 41 ("item")}
+        {Lisp-Entry "present-value" #f 901 29 901 42 ("value" "kind")}
+        {Lisp-Entry "entry-image" #f 905 29 905 40 ("leaf" "Bitmap-Resource" "node" "get-kind" "case" "ref" "entry")}
+        {Lisp-Entry "action-image" #f 911 29 911 41 ("copy-left" "merge" "else" "Bitmap-Resource" "not" "cond" "copy-right" "case" "right" "left" "action")}
+        {Lisp-Entry "get-compare-menu" #f 925 29 925 45 ("Compare-Menu" "new")}}
+      {Lisp-Entry "Item-Column" #f 934 7 934 18 ("Tree-Column")
+        {Lisp-Entry "draw-cell" #f 937 11 937 20 ("0" "2" "16" "-" "quotient" "get-application" "get-icons-cache" "draw-image" "present-image" "image" "present?" "not" "when" "get-right" "get-left" "node" "'node" "get-kind" "eq?" "and" "lvl?" "let" "draw-background" "height" "width" "cell" "row" "context" "surface")}
+        {Lisp-Entry "present?" #f 945 38 945 46 ("cell")}
+        {Lisp-Entry "present-image" #f 949 38 949 51 ("cell")}}
+      {Lisp-Entry "Left-Column" #f 958 7 958 18 ("Item-Column")
+        {Lisp-Entry "present?" #f 961 11 961 19 ("get-left" "cell")}
+        {Lisp-Entry "present-image" #f 965 11 965 24 ("Bitmap-Resource" "cell")}}
+      {Lisp-Entry "Action-Column" #f 977 7 977 20 ("Tree-Column")
+        {Lisp-Entry "draw-cell" #f 980 11 980 20 ("0" "1" "2" "16" "-" "quotient" "+" "get-icons-cache" "draw-image" "get-right" "get-left" "creator" "action-image" "image" "get-application" "appl" "when" "get-action" "action" "let" "draw-background" "height" "width" "cell" "row" "context" "surface")}}
+      {Lisp-Entry "Right-Column" #f 997 7 997 19 ("Item-Column")
+        {Lisp-Entry "present?" #f 1000 11 1000 19 ("get-right" "cell")}
+        {Lisp-Entry "present-image" #f 1004 11 1004 24 ("Bitmap-Resource" "cell")}}
+      {Lisp-Entry "Compare-Menu" #f 1016 7 1016 19 ("on-open-blue" "open-blue" "on-open-green" "open-green" "open-group" "on-reset-actions" "reset-actions" "on-register-base-date" ":document" "Event-Handler" "action-handler:" "register-base-date" "action-group" "name:" "Bitmap-Resource" "icon:" "title:" "Context-Menu")}
+      {Lisp-Entry "Configure-Menu" #f 1037 7 1037 21 ("Context-Menu")
+        {Lisp-Entry "finish" #f 1040 11 1040 17 ("update-menu" "nextmethod" "rest")}
+        {Lisp-Entry "update-menu" #f 1045 18 1045 29 ("compare-directories" "tools" "get-preferences" "get-children" "configuration:" "list" "properties:" "on-configure" "'on-configure" "method-name:" ":document" "target-name:" "Event-Handler" "action-handler:" "title:" "self" "parent:" "Label-Item" "new" "get-presentation" "title" "let" "config" "function" "for-each")}}}})
+"Compare-Trees-Actions"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Compare-Trees-Actions.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Compare-Trees-Actions" #f 38 9 38 53 ("jazz")
+      {Lisp-Entry "Compare-Trees-Actions" #f 48 7 48 28 ("on-compare-previous" "compare-previous" ":control" "on-compare-next" "compare-next" "copy-left" "F11" "on-copy-left" "copy-left&next-comparable" "on-copy-righ" "copy-right" "F10" "next?:" "on-copy-right" "copy-right&next-comparable" "on-previous-uncomparable" "previous-uncomparable" ":alt" "on-next-uncomparable" "next-uncomparable" ":shift" "on-previous-comparable" "previous-comparable" "F9" "Shortcut" "shortcut:" "on-next-comparable" ":document" "Event-Handler" "action-handler:" "next-comparable" "name:" "Actions")}}})
+"Compare-Trees-Preferences"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "preference" "Compare-Trees-Preferences.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.preference.Compare-Trees-Preferences" #f 37 9 37 60 ("jazz")
+      {Lisp-Entry "Compare-Trees-Preferences" #f 46 7 46 32 ("Frame-Preferences")
+        {Lisp-Entry "active-configuration" #f 49 12 49 32 ("generate")}
+        {Lisp-Entry "base-dates" #f 50 12 50 22 ("generate")}}}})
+"Depot-Synchronizer"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Depot-Synchronizer.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Depot-Synchronizer" #f 37 9 37 50 ("jazz")
+      {Lisp-Entry "Depot-Synchronizer" #f 46 7 46 25 ("Directory-Comparer")
+        {Lisp-Entry "leaf-feedback" #f 54 11 54 24 ("get-moniker" "feedback" "leaf2" "leaf1")}
+        {Lisp-Entry "create-item" #f 63 11 63 22 ("get-name" "make-item" "moniker")}
+        {Lisp-Entry "get-item-content" #f 67 11 67 27 ("get-name" "make-item" "function" "map" "leaves" "'leaves" "leaves?:" "nodes" "'nodes" "=" "nodes?:" "get-children" "children" "nextmethod" "Depot-Moniker" "is-not?" "if" "get-moniker" "moniker" "let" "kind" "item")}
+        {Lisp-Entry "get-item-type" #f 79 11 79 24 ("nextmethod" "else" "leaf" "'leaf" "node" "'node" "get-product" "if" "Depot-Moniker" "get-moniker" "is?" "cond" "item")}
+        {Lisp-Entry "new-entry" #f 94 11 94 20 ("nextmethod" "leaf" "'leaf" "=" "and" "unless" "right-value" "right" "left-value" "left" "kind" "parent")}
+        {Lisp-Entry "different?" #f 99 11 99 21 ("get-moniker" "is-different" "check-algorithm" "item" "file")}
+        {Lisp-Entry "collect-item?" #f 103 11 103 24 ("/=" "get-name" "name" "let" "nextmethod" "and" "ignored-extensions" "ignored-leaves" "ignored-nodes" "content" "item")}}}})
+"Directory-Comparer"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Directory-Comparer.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Directory-Comparer" #f 38 9 38 50 ("jazz")
+      {Lisp-Entry "Directory-Comparer" #f 48 7 48 25 ("Tree-Comparer")
+        {Lisp-Entry "scanned-date" #f 51 8 51 20 ()}
+        {Lisp-Entry "create-item" #f 59 11 59 22 ("get-modification-time" "get-name" "make-item" "moniker")}
+        {Lisp-Entry "get-item-type" #f 63 11 63 24 ("leaf" "'leaf" "File" "node" "'node" "Directory" "get-moniker" "typecase" "item")}
+        {Lisp-Entry "get-item-content" #f 69 11 69 27 ("create-item" "length" "0" "naturals" "get-modification-time" "->string" "append" "make-item" "index" "moniker" "function" "map" "Directory-Group" "is?" "if" "leaves" "'leaves" "leaves?:" "nodes" "'nodes" "eq?" "nodes?:" "get-content" "content" "get-moniker" "parent" "let*" "kind" "item")}
+        {Lisp-Entry "compare-leaf-values" #f 80 11 80 30 ("else" "set!" "time->seconds" ">" "scanned-date" "or" "timestamp" "'timestamp" "not" "leaf" "'leaf" "new-entry" "set-car!" "different?" "cond" "and" "when" "value2" "get-value" "value1" "let" "leaf-feedback" "has-differences?" "feedback" "check-algorithm" "ignored-extensions" "ignored-leaves" "ignored-nodes" "content2" "leaf2" "content1" "leaf1" "parent")}
+        {Lisp-Entry "different?" #f 97 11 97 21 ("different-file-content-no-whitespace?" "whitespace" "get-moniker" "different-file-content?" "and" "content" "get-value" "different-times?" "timestamp" "'timestamp" "either" "case" "check-algorithm" "leaf2" "leaf1")}
+        {Lisp-Entry "scanned-values" #f 109 11 109 25 ("scanned-date")}}}})
+"Favorite-Compare-Directories"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "favorite" "Favorite-Compare-Directories.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.favorite.Favorite-Compare-Directories" #f 37 9 37 61 ("jazz")
+      {Lisp-Entry "Mode-Values" #f 48 12 48 23 ("merge" "backup")}
+      {Lisp-Entry "Check-Algorithm-Values" #f 52 12 52 34 ("content" "timestamp")}
+      {Lisp-Entry "Favorite-Compare-Directories" #f 57 7 57 35 ("Favorite")
+        {Lisp-Entry "mode" #f 60 12 60 16 ("generate")}
+        {Lisp-Entry "left" #f 61 12 61 16 ("generate")}
+        {Lisp-Entry "right" #f 62 12 62 17 ("generate")}
+        {Lisp-Entry "ignored-nodes" #f 63 12 63 25 ("generate")}
+        {Lisp-Entry "ignored-leaves" #f 64 12 64 26 ("generate")}
+        {Lisp-Entry "ignored-extensions" #f 65 12 65 30 ("generate")}
+        {Lisp-Entry "check-algorithm" #f 66 12 66 27 ("generate")}
+        {Lisp-Entry "launch" #f 74 11 74 17 ("self" "install-configuration" "get-guest" "guest" "Compare-Directories" "new-frame" "frame" "let*")}
+        {Lisp-Entry "get-domain" #f 85 16 85 26 ("nextmethod" "else" "Check-Algorithm-Values" "check-algorithm" "Mode-Values" "choices:" "Enumeration-Domain" "new" "mode" "field-name" "case" "property")}
+        {Lisp-Entry "property-presentation" #f 97 16 97 37 ("nextmethod" "else" "check-algorithm" "ignored-extensions" "ignored-leaves" "ignored-nodes" "right" "left" "mode" "field-name" "case" "property")}
+        {Lisp-Entry "get-categorized-properties" #f 109 11 109 37 ("check-algorithm" "ignored-extensions" "ignored-leaves" "ignored-nodes" "right" "left" "mode")}
+        {Lisp-Entry "get-row-instance" #f 113 11 113 27 ("nextmethod" "else" "Directory-Row" "right" "left" "Check-Algorithm-Values" "check-algorithm" "Mode-Values" "choices:" "Combo-Row" "new" "mode" "field-name" "case" "property")}}}})
+"Favorite-Compare-Files"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "favorite" "Favorite-Compare-Files.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.favorite.Favorite-Compare-Files" #f 37 9 37 55 ("jazz")
+      {Lisp-Entry "Favorite-Compare-Files" #f 48 7 48 29 ("Favorite")
+        {Lisp-Entry "green" #f 51 12 51 17 ("generate")}
+        {Lisp-Entry "blue" #f 52 12 52 16 ("generate")}
+        {Lisp-Entry "launch" #f 60 11 60 17 ("self" "install-configuration" "get-guest" "guest" "Compare-Files" "new-frame" "frame" "let*")}
+        {Lisp-Entry "get-categorized-properties" #f 71 11 71 37 ("blue" "green")}
+        {Lisp-Entry "get-row-instance" #f 75 11 75 27 ("nextmethod" "else" "File-Row" "new" "blue" "green" "field-name" "case" "property")}}}})
+"Form-Comparer"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Form-Comparer.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Form-Comparer" #f 37 9 37 45 ("jazz")
+      {Lisp-Entry "Form-Comparer" #f 45 7 45 20 ("Tree-Comparer")
+        {Lisp-Entry "compare-nodes/leaves" #f 48 11 48 31 ("leaves" "nodes")}
+        {Lisp-Entry "form-present" #f 58 11 58 23 ("get-presentation" "get-name" "form")}
+        {Lisp-Entry "create-item" #f 69 11 69 22 ("cdr" "car" "make-item" "error" "not" "form-present" "title" "let" "Form" "is?" "if" "item")}
+        {Lisp-Entry "get-item-content" #f 78 11 78 27 ("create-item" "map" "get-leaves" "leaves" "get-nodes" "nodes" "case" "content" "get-moniker" "form" "let*" "kind" "item")}
+        {Lisp-Entry "get-nodes" #f 84 11 84 20 ("get-children" "form")}
+        {Lisp-Entry "get-leaves" #f 88 11 88 21 ("get-properties" "cons" "set!" "field-name" "field?" "if" "symbol" "value" "property" "function" "for-each-property" "leaves" "let" "form")}
+        {Lisp-Entry "get-item-type" #f 97 11 97 24 ("leaf" "'leaf" "node" "'node" "Form" "is?" "if" "item")}
+        {Lisp-Entry "different?" #f 103 11 103 21 ("/=" "value2" "get-value" "value1" "let" "check-algorithm" "leaf2" "leaf1")}}}})
+"Groupware-Workspace"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "workspace" "Groupware-Workspace.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.workspace.Groupware-Workspace" #f 37 9 37 53 ("jazz")
+      {Lisp-Entry "Groupware-Workspace" #f 47 7 47 26 ("Search-Results" "Properties-Manager" "second" "Repositories-Manager" "Workbench-Manager" "model-name:" "selection" "-31" "vert" "5" "Rect" "insets:" "20" "division:" "relative" "mode:" "horz" "orientation:" "split" "state:" "first" "location:" "status" "toolbar" "menubar" "name:" "maximized?:" "Bitmap-Resource" "icon:" "title:" "Standard-Workspace")
+        {Lisp-Entry "default-name" #f 66 11 66 23 ("groupware" "'groupware")}}}})
+"Synchronize-Depots"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Synchronize-Depots.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Synchronize-Depots" #f 37 9 37 50 ("jazz")
+      {Lisp-Entry "Synchronize-Depots" #f 47 7 47 25 ("12" "100" "Dimension" "size:" "title:" "backup" "mode" "name:" "Compare-Directories")
+        {Lisp-Entry "host-title" #f 61 16 61 26 ()}
+        {Lisp-Entry "get-directories" #f 70 11 70 26 ("get-pathname" "values" "require-right-moniker" "item" "let")}
+        {Lisp-Entry "new-comparer" #f 75 11 75 23 ("Depot-Synchronizer" "new")}
+        {Lisp-Entry "backup-action" #f 85 11 85 24 ("read-only?" "copy-left" "'copy-left" "not" "if" "when" "item-date" "item" "file-date" "file" "date")}
+        {Lisp-Entry "merge-action" #f 93 11 93 23 ("read-only?" "checked-out-me" "'checked-out-me" "eq?" "get-status" "status" "let" "copy-right" "'copy-right" "not" "if" "when" "item-date" "item" "file-date" "file" "base-date")}}}})
+"Text-Comparer"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Text-Comparer.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Text-Comparer" #f 38 9 38 45 ("jazz")
+      {Lisp-Entry "Text-Comparer" #f 47 7 47 20 ("Object")
+        {Lisp-Entry "moniker1" #f 50 8 50 16 ()}
+        {Lisp-Entry "moniker2" #f 51 8 51 16 ()}
+        {Lisp-Entry "lines1" #f 52 8 52 14 ()}
+        {Lisp-Entry "lines2" #f 53 8 53 14 ()}
+        {Lisp-Entry "root" #f 54 8 54 12 ()}
+        {Lisp-Entry "matches" #f 55 8 55 15 ()}
+        {Lisp-Entry "compare-monikers" #f 58 18 58 34 ("compare-line-sets" "lines2" "read-moniker" "lines1" "moniker2" "moniker1" "set!" "m2" "m1")}
+        {Lisp-Entry "compare-line-sets" #f 66 11 66 28 ("collect-lines" "1" "sames2" "element" "get-rank" "diff" "key:" "<" "sort" "sames1" "moniker2" "moniker1" "extract-diff" "node" "map" "sames" "collect-matches" "append!" "matches" "cdr" "for-each" "0" "string-ref" "list" "Compare-Node" "new" "set!" "root" "insert-line" "function" "proc" "get-string" "string" "car" "line" "let*" "not-null?" "and" "if" "collect-commons" "set2" "set1" "commons" "receive" "initial-set2" "initial-set1")}
+        {Lisp-Entry "collect-lines" #f 88 11 88 24 ("get-output" "1" "+" "cdr" "when" "neq?" "color" "line" "lines2" "lines1" "subseq" "compare-line-sets" "put-sequence" "eq?" "cond" "second" "stop2" "stop1" "set!" "and" "if" "next" "let" "not" "done?" "increase!" "put" "<" "while" "create" "end" "proc" "'blue" "blue" "'green" "element" "list" "lines" "rank" "function" "green" "List-Factory" "new" "fact" "next2" "car" "not-null?" "essay" "next1" "end2" "last" "end1" "rank2" "first" "get-rank" "rank1" "let*" "set2" "set1" "sames2" "sames1")}
+        {Lisp-Entry "collect-commons" #f 135 11 135 26 ("reverse!" "append!" "reverse" "middle2" "middle1" "commons-bottom" "bottom2" "bottom1" "commons-top" "receive" "values" "cdr" "list" "Compare-Node" "new" "cons" "set!" "get-string" "string=?" "while" "commons" "line2" "car" "not-null?" "and" "line1" "function" "proc" "let" "set2" "set1")}
+        {Lisp-Entry "string-ref" #f 158 11 158 21 ("element" "cardinality" "<" "if" "n" "string")}
+        {Lisp-Entry "insert-line" #f 164 11 164 22 ("0" "1" "+" "list" "not" "get-key" "key:" "get-children" "find-in" "matchnode" "c" "add-child" "set-lines" "Compare-Node" "new" "newnode" "string-ref" "key" "add-line" "string=?" "basestring" "let" "car" "null?" "if" "baseline" "get-lines" "lines" "let*" "n" "subnode" "function" "proc" "get-string" "string" "letrec" "line" "node")}
+        {Lisp-Entry "collect-matches" #f 187 11 187 26 ("null?" "collect-matches" "map" "apply" "second" "first" "get-moniker" "neq?" "2" "length" "=" "not-null?" "and" "get-lines" "lines" "subnode" "function" "collect-if" "append!" "get-children" "children" "let" "node")}
+        {Lisp-Entry "load-moniker" #f 206 29 206 41 ("char-encoding-errors:" "load-lines" "moniker")}
+        {Lisp-Entry "read-moniker" #f 210 11 210 23 ("Compare-Line" "new" "collect" "0" "from" "n" "in" "string" "for" "loop" "load-moniker" "lines" "let" "moniker")}
+        {Lisp-Entry "print-tree" #f 222 18 222 28 ("0" "get-children" "1" "+" "subnode" "for-each" "2" "*" "format" "level" "function" "proc" "letrec" "printer" "node")}}}})
+"Tree-Comparer"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "compare" "Tree-Comparer.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.compare.Tree-Comparer" #f 38 9 38 45 ("jazz")
+      {Lisp-Entry "Tree-Comparer" #f 46 7 46 20 ("Object")
+        {Lisp-Entry "compare-nodes" #f 49 18 49 31 ("scanned-values" "car" "values" "create-item" "compare-node-contents" "entry" "list" "has-differences?" "let*" "feedback" "feedback:" "check-algorithm" "check-algorithm:" "ignored-extensions" "ignored-extensions:" "ignored-leaves" "ignored-leaves:" "ignored-nodes" "ignored-nodes:" "right-content" "right-content:" "left-content" "left-content:" "right-node" "left-node" "parent")}
+        {Lisp-Entry "compare-node-contents" #f 55 11 55 32 ("get-output" "set-children" "compare-nodes/leaves" "compare-leaf-values" "leaf" "'leaf" "l" "compare-node-contents" "compare-items" "function" "n" "leaves2" "leaves" "'leaves" "leaves1" "nodes2" "nodes" "'nodes" "collect-items" "nodes1" "node" "'node" "new-entry" "entry" "List-Factory" "new" "fact" "let*" "node-feedback" "has-differences?" "feedback" "check-algorithm" "ignored-extensions" "ignored-leaves" "ignored-nodes" "content2" "node2" "content1" "node1" "parent")}
+        {Lisp-Entry "compare-nodes/leaves" #f 70 29 70 49 ("leaves" "nodes")}
+        {Lisp-Entry "compare-leaf-values" #f 75 29 75 48 ("leaf" "'leaf" "new-entry" "set-car!" "different?" "and" "when" "value2" "get-value" "value1" "let" "leaf-feedback" "has-differences?" "feedback" "check-algorithm" "ignored-extensions" "ignored-leaves" "ignored-nodes" "content2" "leaf2" "content1" "leaf1" "parent")}
+        {Lisp-Entry "compare-items" #f 84 11 84 24 ("item-name" "key:" "content-find" "result" "let" ":same" ":right" "get-value" "leaf" "'leaf" "eq?" "new-entry" "put" "set-car!" ":left" "case" "or" "when" "right" "left" "key" "what" "function" "merge-ordered" "has-differences?" "fact" "feedback" "check-algorithm" "proc" "ignored-extensions" "ignored-leaves" "ignored-nodes" "content2" "items2" "content1" "items1" "kind" "parent")}
+        {Lisp-Entry "content-find" #f 97 11 97 23 ("equal?" "test:" "key:" "item-name" "find-in" "cdr" "eq?" "if" "content" "item")}
+        {Lisp-Entry "node-feedback" #f 108 29 108 42 ("get-moniker" "feedback" "node2" "node1")}
+        {Lisp-Entry "leaf-feedback" #f 112 29 112 42 ("feedback" "leaf2" "leaf1")}
+        {Lisp-Entry "make-item" #f 121 11 121 20 ("Compare-Item" "new" "value" "name" "moniker")}
+        {Lisp-Entry "item-name" #f 125 11 125 20 ("get-name" "item")}
+        {Lisp-Entry "create-item" #f 129 29 129 40 ("moniker")}
+        {Lisp-Entry "get-item-type" #f 133 29 133 42 ("item")}
+        {Lisp-Entry "get-item-content" #f 137 29 137 45 ("kind" "item")}
+        {Lisp-Entry "different?" #f 141 29 141 39 ("check-algorithm" "leaf2" "leaf1")}
+        {Lisp-Entry "Not-Ignored-Leaves" #f 151 14 151 32 ()}
+        {Lisp-Entry "new-entry" #f 155 29 155 38 ("get-moniker" "essay" "Compare-Entry" "new" "right-value" "right" "left-value" "left" "kind" "parent")}
+        {Lisp-Entry "collect-items" #f 159 11 159 24 ("item-name" "key:" "get-item-content" "string<?" "sort" "collect-item?" "item" "function" "collect-if" "kind" "ignored-extensions" "ignored-leaves" "ignored-nodes" "content" "node")}
+        {Lisp-Entry "collect-item?" #f 165 29 165 42 ("get-moniker" "get-extension" "Not-Ignored-Leaves" "null?" "'leaf" "key:" "neq?" "member?" "not" "eq?" "or" "and" "else" "leaf" "node" "case" "ignored" "get-item-type" "type" "item-name" "name" "let*" "ignored-extensions" "ignored-leaves" "ignored-nodes" "content" "item")}
+        {Lisp-Entry "scanned-values" #f 179 29 179 43 ()}}}})
+"_groupware"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "_groupware.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware" #f 37 9 37 23 ("jazz")
+      {Lisp-Entry "Green-Color" #f 46 10 46 21 ("blue:" "140" "green:" "0" "red:" "Color")}
+      {Lisp-Entry "Blue-Color" #f 47 10 47 20 ("220" "blue:" "green:" "0" "red:" "Color")}}})
+"autoload"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.groupware" "src" "jazz" "groupware" "autoload.jazz"} 1236813140
+    {Lisp-Entry "jazz.groupware.autoload" #f 37 9 37 32 ("jazz")}})

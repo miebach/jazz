@@ -1,0 +1,236 @@
+"Lisp-Entry"
+ ({Lisp-File-Entry {File jazz.language.lisp "src" "jazz" "language" "lisp" "catalog" "Lisp-Entry.jazz"} 1237815288
+    {Lisp-Entry "jazz.language.lisp.catalog.Lisp-Entry" #f 37 9 37 46 ("jazz")
+      {Lisp-Entry "Lisp-Entry" #f 45 7 45 17 ("Indexed-Entry")
+        {Lisp-Entry "end-line" #f 48 8 48 16 ()}
+        {Lisp-Entry "end-column" #f 49 8 49 18 ()}
+        {Lisp-Entry "signature" #f 50 8 50 17 ()}
+        {Lisp-Entry "initialize" #f 55 11 55 21 ("signature~self" "end-column~self" "end-line~self" "set!" "nextmethod" "r" "d" "ec" "el" "c" "l" "s" "n")}
+        {Lisp-Entry "print-catalog" #f 62 11 62 24 ("print-definitions" "references" "end-column" "end-line" "column" "line" "signature" "name" "self" "class-of" "type-name" "identifier-name" "2" "*" "format" "printer" "level")}
+        {Lisp-Entry "get-image" #f 72 11 72 20 ("Bitmap-Resource")}
+        {Lisp-Entry "get-end-line" #f 81 18 81 30 ("end-line")}
+        {Lisp-Entry "get-end-column" #f 85 18 85 32 ("end-column")}
+        {Lisp-Entry "get-signature" #f 89 18 89 31 ("signature")}
+        {Lisp-Entry "present" #f 98 11 98 18 ("present-identifier")}
+        {Lisp-Entry "present-name" #f 102 11 102 23 ("present-noname" "not" "if" "get-name" "name" "let")}
+        {Lisp-Entry "present-identifier" #f 109 11 109 29 ("compose-name" ":string" "format" "signature" "present-noname" "not" "if" "get-name" "name" "let")}
+        {Lisp-Entry "compose-name" #f 118 11 118 23 (":string" "format" "present-name" "parent-name" "let" "get-name" "Lisp-Entry" "parent" "is?" "and" "if" "name")}
+        {Lisp-Entry "present-noname" #f 125 11 125 25 ()}
+        {Lisp-Entry "entry-range" #f 134 11 134 22 ("end-column" "end-line" "column" "line" "Cell" "Range$Cell$" "new")}
+        {Lisp-Entry "edit-reference" #f 138 11 138 25 ("center-caret" "'center-caret" "ensure-displayed?:" "set-selection" "find-expression" "reference-range" "let" "when" "get-start" "definition-range" "range" "get-guest" "text" "edit" "apply" "frame" "let*" "rest" "target")}
+        {Lisp-Entry "update-indexes" #f 153 11 153 25 ("definitions" "update-indexes" "definition" "references" "key" "function" "for-each" "name" "update-index" "references-index" "definitions-index")}}}})
+"Lisp-Explorer"
+ ({Lisp-File-Entry {File jazz.language.lisp "src" "jazz" "language" "lisp" "text" "Lisp-Explorer.jazz"} 1237815288
+    {Lisp-Entry "jazz.language.lisp.text.Lisp-Explorer" #f 37 9 37 46 ("jazz")
+      {Lisp-Entry "Lisp-Explorer" #f 66 7 66 20 ("Code-Explorer")
+        {Lisp-Entry "find-comment-last-row" #f 71 8 71 29 ()}
+        {Lisp-Entry "find-comment-last-col" #f 72 8 72 29 ()}
+        {Lisp-Entry "Composites" #f 75 12 75 22 ("literal" "reference" "list")}
+        {Lisp-Entry "Open-Composites" #f 81 12 81 27 ()}
+        {Lisp-Entry "Close-Composites" #f 87 12 87 28 ()}
+        {Lisp-Entry "get-modifiers" #f 93 26 93 39 ()}
+        {Lisp-Entry "explore-error" #f 97 11 97 24 ("end:" "start:" "message:" "Explore-Error" "new" "signal" "end" "start" "message")}
+        {Lisp-Entry "present-char" #f 101 11 101 23 ("string" "else" "char-symbol" "memv?" "not" "cond" "c")}
+        {Lisp-Entry "current-expr" #f 110 18 110 30 ("get-marked" "symbol" "'symbol" "kind" "eq?" "backward-expr" "and" "when")}
+        {Lisp-Entry "forward-expr" #f 115 11 115 23 ("forward-simple-expr" "forward-expr" "if" "found" "eqv?" "and" "or" "next" "forward" "when" "memv?" "quotation?" "get-start" "start" "0" "char-forward" "c" "let" "end" "set-start" "forward-whites")}
+        {Lisp-Entry "backward-expr" #f 135 11 135 24 ("else" "name-comment" "'name-comment" "not" "jazz" "'jazz" "get-syntax" "eq?" "backward" "case" "prev" "when" "backward-simple-expr" "found" "backward-scheme-char" "2" "backward-delimited-string" "eqv?" "and" "if" "1" "c1" "0" "char-backward" "c0" "let" "start" "set-end" "backward-whites")}
+        {Lisp-Entry "forward-simple-expr" #f 168 19 168 38 ("else" "literal" "'literal" "reference" "'reference" "list" "'list" "forward-composite" "forward-named-comment" "forward-constituent" "text-constituent?" "forward-escaped-symbol" "forward-string" "string-delimiter?" "forward-sharp" "eqv?" "cond" "when" "0" "char-forward" "c" "let")}
+        {Lisp-Entry "backward-simple-expr" #f 182 19 182 39 ("else" "literal" "'literal" "reference" "'reference" "list" "'list" "backward-composite" "backward-constituent" "text-constituent?" "backward-escaped-symbol" "eqv?" "backward-string" "string-delimiter?" "cond" "when" "0" "char-backward" "c" "let")}
+        {Lisp-Entry "forward-all-expr" #f 194 18 194 34 ("start" "set!" "forward-expr" "while" "end" "copy" "initial-end" "let")}
+        {Lisp-Entry "backward-all-expr" #f 201 18 201 35 ("end" "set!" "backward-expr" "while" "start" "copy" "initial-start" "let")}
+        {Lisp-Entry "forward-constituent" #f 208 19 208 38 ("else" "symbol" "'symbol" "keyword" "'keyword" "and" "if" "kind" "text-constituent?" "not" "or" "set!" "forward" "cond" "c" "iterate" "last" "0" "char-forward" "eqv?" "keyword?" "let")}
+        {Lisp-Entry "backward-constituent" #f 227 19 227 39 ("else" "symbol" "'symbol" "keyword" "'keyword" "if" "kind" "text-constituent?" "not" "or" "set!" "backward" "1" "cond" "c" "iterate" "unspecified" "last" "0" "char-backward" "eqv?" "keyword?" "let")}
+        {Lisp-Entry "backward-escaped-symbol" #f 246 19 246 42 ("else" "symbol" "'symbol" "kind" "set!" "1" "eqv?" "cond" "not" "if" "0" "char-backward" "c" "iterate" "let" "backward")}
+        {Lisp-Entry "backward-scheme-char" #f 265 19 265 39 ("char" "'char" "kind" "set!" "backward")}
+        {Lisp-Entry "forward-expr-comment" #f 273 19 273 39 ("expr-comment" "'expr-comment" "kind" "set!" "forward-expr" "forward")}
+        {Lisp-Entry "forward-named-comment" #f 280 19 280 40 ("named-comment" "'named-comment" "kind" "set!" "forward-expr" "forward" "forward-constituent" "jazz" "'jazz" "get-syntax" "neq?" "if")}
+        {Lisp-Entry "forward-sharp" #f 289 19 289 32 ("forward-constituent" "else" "forward-expr-comment" "forward-scheme-char" "forward-named-string" "1" "and" "forward-delimited-string" "eqv?" "boolean" "'boolean" "kind" "set!" "memq?" "cond" "0" "char-forward" "c0" "let" "forward")}
+        {Lisp-Entry "forward-escaped-symbol" #f 308 19 308 41 ("else" "symbol" "'symbol" "kind" "set!" "eqv?" "cond" "not" "if" "0" "char-forward" "c" "iterate" "let" "forward")}
+        {Lisp-Entry "forward-delimited-string" #f 327 19 327 43 ("else" "delimited-string" "'delimited-string" "kind" "set!" "eqv?" "and" "not" "or" "cond" "1" "c1" "0" "char-forward" "c0" "iterate" "let" "forward")}
+        {Lisp-Entry "forward-named-string" #f 344 19 344 39 ("named-string" "'named-string" "continuation-return" "begin" "nu=?" "if" "limit" "<" "while" "0" "1" "+" "Cell" "new" "set-end" "get-col" "end" "get-row" "paragraph-string" "subseq" "name" "let" "return" "function" "continuation-capture" "forward")}
+        {Lisp-Entry "forward-scheme-char" #f 360 19 360 38 ("else" "text-constituent?" "cond" "iterate" "char" "'char" "kind" "set!" "begin" "alphanumeric?" "not" "if" "0" "char-forward" "c" "let" "forward")}
+        {Lisp-Entry "forward-string" #f 380 19 380 33 ("else" "string" "'string" "kind" "set!" "string-delimiter?" "eqv?" "not" "cond" "0" "char-forward" "c" "iterate" "let" "forward")}
+        {Lisp-Entry "backward-delimited-string" #f 399 19 399 44 ("else" "delimited-string" "'delimited-string" "kind" "set!" "eqv?" "and" "not" "or" "cond" "1" "c1" "0" "char-backward" "c0" "iterate" "let" "backward")}
+        {Lisp-Entry "backward-string" #f 417 19 417 34 ("else" "string" "'string" "kind" "set!" "string-delimiter?" "1" "eqv?" "not" "cond" "0" "char-backward" "c" "iterate" "let" "backward")}
+        {Lisp-Entry "forward-composite" #f 436 19 436 36 ("kind" "set!" "1" "next-pos" "present-char" "format" "explore-error" "eqv?" "not" "if" "0" "char-forward" "c" "let" "forward-whites" "forward-all-expr" "forward" "end" "set-start" "delimiter" "knd")}
+        {Lisp-Entry "backward-composite" #f 449 19 449 37 ("kind" "end" "set!" "1" "previous-pos" "present-char" "format" "explore-error" "eqv?" "not" "if" "0" "char-backward" "c" "backward-whites" "backward-all-expr" "backward" "start" "copy" "initial-start" "let" "delimiter" "knd")}
+        {Lisp-Entry "enter-list" #f 463 18 463 28 ("forward" "0" "char-forward" "eqv?" "when" "forward-whites")}
+        {Lisp-Entry "exit-list" #f 470 18 470 27 ("forward" "0" "char-forward" "eqv?" "when" "forward-whites" "forward-all-expr")}
+        {Lisp-Entry "enter-composite" #f 478 18 478 33 ("else" "literal" "'literal" "reference" "'reference" "list" "'list" "quasiquote" "'quasiquote" "quote" "'quote" "unquote" "'unquote" "unquote-splicing" "'unquote-splicing" "kind" "set!" "forward" "1" "eqv?" "and" "cond" "0" "char-forward" "c0" "forward-whites" "get-start" "set-end" "get-end" "end" "let")}
+        {Lisp-Entry "exit-composite" #f 517 18 517 32 ("forward" "Close-Composites" "0" "char-forward" "memv?" "when" "forward-whites" "forward-all-expr")}
+        {Lisp-Entry "skip-forward" #f 525 18 525 30 ("get-marked" "=" "forward-expr" "and" "name")}
+        {Lisp-Entry "skip-backward" #f 529 18 529 31 ("get-marked" "=" "backward-expr" "and" "name")}
+        {Lisp-Entry "forward-modifiers" #f 533 18 533 35 ("meta" "'meta" "get-modifiers" "memq?" "find-marked-symbol" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "iterate" "symbol" "meta?" "end" "copy" "old" "let")}
+        {Lisp-Entry "forward-comments" #f 549 11 549 27 ("next-paragraph")}
+        {Lisp-Entry "backward-comments" #f 553 11 553 28 ()}
+        {Lisp-Entry "forward-whites" #f 557 18 557 32 ("forward" "forward-comments" "begin" "if" "eqv?" "whitespace?" "or" "and" "when" "0" "char-forward" "c" "iterate" "let")}
+        {Lisp-Entry "backward-whites" #f 569 18 569 33 ("backward-lisp-comment" "backward" "whitespace?" "and" "when" "0" "char-backward" "c" "iterate" "let")}
+        {Lisp-Entry "backward-lisp-comment" #f 579 11 579 32 ("set-col" "<" "and" "when" "set!" "find-lisp-comment" "find-comment-last-col" "find-comment-last-row" "eqv?" "if" "col" "get-col" "start-col" "start" "get-row" "start-row" "let")}
+        {Lisp-Entry "find-lisp-comment" #f 593 11 593 28 ("else" "forward-scheme-char" "forward-delimited-string" "forward" "1" "c1" "forward-string" "eqv?" "cond" "char-forward" "c0" "get-col" "<" "get-row" "=" "and" "when" "iterate" "0" "Cell" "new" "set-end" "result" "end" "copy" "preserved-end" "paragraph-length" "max-col" "let" "row")}
+        {Lisp-Entry "outer-expr" #f 655 11 655 21 ("kind" "forward" "backward" "knd" "close" "open" "bind" "Composites" "assq" "info" "nc" "pc" "present-char" "format" "explore-error" "composites-match?" "char-backward" "starter" "backward-all-expr" "skipped" "set!" "char-forward" "ender" "forward-all-expr" "when" "else" "next-pos" "set-end" "1" "previous-pos" "set-start" "eqv?" "get-char" "let*" "memv?" "forward-expr" "open-composite?" "backward-constituent" "forward-constituent" "backward-expr" "text-constituent?" "not" "string-delimiter?" "close-composite?" "or" "=" "and" "cond" "next-char" "nxt" "0" "previous-char" "prv" "end" "e" "start" "copy" "s" "let" "outer-composite?" "outer-composite?:" "composite?" "composite?:")}
+        {Lisp-Entry "form-expr" #f 714 18 714 27 ("set-start" "find-marked-symbol" "symbol" "'symbol" "kind" "eq?" "forward-expr" "enter-list" "0" "next-char" "eqv?" "when" "prog1" "set-end" "end" "e" "start" "copy" "s" "let")}
+        {Lisp-Entry "form-expr?" #f 728 18 728 28 ("form-expr" "memq?" "symbols")}
+        {Lisp-Entry "form-name" #f 732 18 732 27 ("symbol?" "if" "expr" "set!" "memq?" "not-null?" "while" "get-modifiers" "modifiers" "cdr" "scan" "let" "car" "definition-name?" "pair?" "and" "when" "form")}
+        {Lisp-Entry "category-expr?" #f 747 18 747 32 ("com-interface" "com-class" "remotable-stub" "package" "interface" "class" "form-expr?")}
+        {Lisp-Entry "definition-expr?" #f 751 26 751 42 ("form-expr" "definition-name?")}
+        {Lisp-Entry "definition-name?" #f 755 26 755 42 ("com-interface" "com-class" "remotable-stub" "package" "interface" "class" "memq?" "name")}
+        {Lisp-Entry "definition-name" #f 759 18 759 33 ("set-start" "values" "prog1" "begin" "0" "char-forward" "eqv?" "if" "forward-whites" "java-method" "java-external" "com-method" "com-external" "specific" "generic" "intrinsic" "winexternal" "external" "memq?" "cond" "forward-modifiers" "meta?" "package" "'package" "eq?" "package?" "find-marked-symbol" "type" "let*" "forward-expr" "enter-list" "set-end" "end" "e" "start" "copy" "s" "let")}
+        {Lisp-Entry "definition-only-name" #f 784 11 784 31 ("definition-name" "name" "meta?" "package?" "receive")}
+        {Lisp-Entry "for-each-comment" #f 794 18 794 34 ("comment-string" "text-search-all" "get-syntax" "title-comment-string" "subseq" "string=?" "cardinality" "cast" "4" "+" "<" "and" "end" "paragraph-end" "set-end" "set!" "string-style?" "Named-Comment" "Expr-Comment" "get-name" "memq?" "unless" "start" "text" "get-style-at" "style" "paragraph-string" "string" "/=" "not" "or" "when" "get-col" "col" "get-row" "row" "pos" "function" "for-each" "previous-row" "let" "proc")}
+        {Lisp-Entry "walk-declarations" #f 816 26 816 43 ("walk-declaration" "while" "walk-expressions?" "doc" "expression" "keyword" "declaration" "context")}
+        {Lisp-Entry "walk-declaration" #f 821 26 821 42 ("walk-expressions?" "line" "doc" "expression" "keyword" "declaration" "context")}
+        {Lisp-Entry "walk-parameters" #f 825 21 825 36 ("code" "'code" "walk-expression" "set!" "start" "/=" "if" "not" "forward-expr" "and" "while" "out?" "end" "get-row" "let" "line" "doc" "expression" "keyword" "declaration" "context")}
+        {Lisp-Entry "iterate-expressions" #f 839 18 839 37 ("for-each-expressions" "recursive?" "recursive?:" "code" "'code" "mode" "mode:" "proc")}
+        {Lisp-Entry "iterate-expression" #f 843 18 843 36 ("for-each-expression" "recursive?" "recursive?:" "code" "'code" "mode" "mode:" "proc")}
+        {Lisp-Entry "for-each-expressions" #f 847 11 847 31 ("for-each-expression" "forward-expr" "while" "mode" "proc")}
+        {Lisp-Entry "for-each-expression" #f 852 11 852 30 ("for-each-expression" "forward-expr" "code" "'code" "quasiquote" "quote" "memq?" "else" "exit-composite" "for-each-expressions" "quotation" "'quotation" "literal" "'literal" "if" "let" "composite-kind?" "exit-list" "for-each-forms" "list" "'list" "kind" "eq?" "cond" "enter-composite" "when" "mode" "proc")}
+        {Lisp-Entry "Quotation-Forms" #f 868 14 868 29 ("intrinsic" "external" "jml>>" "form>>" "form" "quasiquote" "quote")}
+        {Lisp-Entry "for-each-forms" #f 872 11 872 25 ("for-each-expressions" "for-each-expression" "quotation" "'quotation" "0" "char-forward" "eqv?" "form" "'form" "intern-marked-symbol" "neq?" "or" "Quotation-Forms" "find-marked-symbol" "memq?" "symbol" "'symbol" "eq?" "and" "if" "let" "kind" "when" "forward-expr" "mode" "proc")}
+        {Lisp-Entry "walk-expressions" #f 885 18 885 34 ("set!" "walk-expression" "forward-expr" "while" "first?" "code" "'code" "mode" "expression" "context")}
+        {Lisp-Entry "walk-expression" #f 891 11 891 26 ("walk-expression" "forward-expr" "code" "'code" "quasiquote" "quote" "memq?" "let" "else" "exit-composite" "walk-expressions" "composite-kind?" "cond" "enter-composite" "when" "specifier" "'specifier" "tag" "'tag" "specifier-marked?" "symbol" "'symbol" "kind" "eq?" "and" "if" "end" "start" "first?" "mode" "expression" "context")}
+        {Lisp-Entry "specifier-marked?" #f 908 11 908 28 ("1" "end" "-" "start" "get-char" "eqv?" "symbol" "'symbol" "kind" "eq?" "and")}
+        {Lisp-Entry "constant?" #f 919 18 919 27 ("keyword" "symbol" "char" "boolean" "number" "kind" "memq?")}
+        {Lisp-Entry "get-constant" #f 923 18 923 30 ("get-marked" "read-string-element" "function" "with-jazz-readtable" "else" "intern-marked-symbol" "symbol" "kind" "case")}
+        {Lisp-Entry "search-expressions" #f 964 18 964 36 ("mode:" "get-range" "list" "continuation-return" "match?" "start" ">=" "and" "when" "bind" "info" "for-each" "iterate-expressions" "return" "continuation-capture" "cons" "read-string-element" "target" "target-string" "function" "map" "all" "let" "ignore-case?" "whole-words?" "position" "targets" "mode")}
+        {Lisp-Entry "match?" #f 982 11 982 17 ("get-marked" "read-string-element" "equal?" "expression-kind" "eq?" "not" "or" "and" "parse-pattern-variable" "kind" "name" "pattern-variable?" "if" "get-kind" "expl-kind" "let" "parse-expression" "expression" "mode" "receive" "target" "expl-mode")}
+        {Lisp-Entry "expression-kind" #f 995 11 995 26 ("expression-kind" "'expression-kind" "unimplemented" "else" "symbol" "'symbol" "symbol?" "string" "'string" "string?" "char" "'char" "char?" "boolean" "'boolean" "boolean?" "number" "'number" "number?" "cond" "expression")}
+        {Lisp-Entry "parse-expression" #f 1004 11 1004 27 ("cadr" "quotation" "'quotation" "values" "quote" "'quote" "car" "eq?" "pair?" "and" "if" "expression")}
+        {Lisp-Entry "pattern-variable?" #f 1010 11 1010 28 ("0" "symbol->string" "element" "eqv?" "symbol?" "and" "expression")}
+        {Lisp-Entry "parse-pattern-variable" #f 1015 11 1015 33 ("string->symbol" "empty-string?" "if" "values" "mode" "kind" "name" "bind-optionals" "separator:" "1" "symbol->string" "subseq" "parse-strings" "elements" "let" "variable")}
+        {Lisp-Entry "open-composite?" #f 1028 11 1028 26 ("Open-Composites" "memv?" "char")}
+        {Lisp-Entry "close-composite?" #f 1032 11 1032 27 ("Close-Composites" "memv?" "char")}
+        {Lisp-Entry "composite-kind?" #f 1036 11 1036 26 ("literal" "reference" "list" "memq?" "kind")}
+        {Lisp-Entry "composites-match?" #f 1040 11 1040 28 ("eqv?" "and" "or" "end" "start")}}}})
+"Lisp-File-Entry"
+ ({Lisp-File-Entry {File jazz.language.lisp "src" "jazz" "language" "lisp" "catalog" "Lisp-File-Entry.jazz"} 1237815288
+    {Lisp-Entry "jazz.language.lisp.catalog.Lisp-File-Entry" #f 37 9 37 51 ("jazz")
+      {Lisp-Entry "Lisp-File-Entry" #f 45 7 45 22 ("File-Entry")}}})
+"Lisp-Parser"
+ ({Lisp-File-Entry {File jazz.language.lisp "src" "jazz" "language" "lisp" "parser" "Lisp-Parser.jazz"} 1237815288
+    {Lisp-Entry "jazz.language.lisp.parser.Lisp-Parser" #f 37 9 37 46 ("jazz")
+      {Lisp-Entry "Lisp-Parser" #f 46 7 46 18 ("File-Parser")
+        {Lisp-Entry "parse" #f 49 11 49 16 ("parse-definitions" "catalog" "Lisp-File-Entry" "new" "time" "file")}
+        {Lisp-Entry "Lisp-Period" #f 54 14 54 25 ()}
+        {Lisp-Entry "parse-definitions" #f 58 11 58 28 ("get-output" "else" "dispatch->name" "dispatch-string?" "tag->name" "tag-string?" "cond" "add-reference" "Lisp-Period" "string=?" "unless" "get-marked" "keyword" "symbol" "memq?" "and" "when" "kind" "mode" "add-definition" "set-parent" "put" "not" "get-col" "get-row" "Lisp-Entry" "entry" "cdr" "signature" "car" "pair?" "if" "name" "documented?" "marked" "end" "start" "parent" "function" "walk-declarations" "List-Factory" "fact" "end:" "start:" "explorer-class" "expl" "text-beginning" "beginning" "let*" "set-moniker" "colorize?:" "char-encoding" "char-encoding:" "text-view-class" "new" "text" "let" "file")}
+        {Lisp-Entry "explorer-class" #f 91 29 91 43 ("file")}
+        {Lisp-Entry "text-view-class" #f 95 29 95 44 ()}}}})
+"Lisp-Syntax"
+ ({Lisp-File-Entry {File jazz.language.lisp "src" "jazz" "language" "lisp" "text" "Lisp-Syntax.jazz"} 1237815288
+    {Lisp-Entry "jazz.language.lisp.text.Lisp-Syntax" #f 37 9 37 44 ("jazz")
+      {Lisp-Entry "Lisp-Syntax" #f 45 7 45 18 ("Code-Syntax")
+        {Lisp-Entry "translate-lisp-key" #f 53 11 53 29 ("else" "case" "key")}
+        {Lisp-Entry "Comment" #f 77 14 77 21 ("1" "make-string")}
+        {Lisp-Entry "Title-Comment" #f 81 14 81 27 ("4" "make-string")}
+        {Lisp-Entry "comment-string" #f 85 11 85 25 ("Comment")}
+        {Lisp-Entry "title-comment-string" #f 89 11 89 31 ("Title-Comment")}
+        {Lisp-Entry "get-constituent-test" #f 99 11 99 31 ("scheme-constituent?")}
+        {Lisp-Entry "Auto-Complete-Characters" #f 108 14 108 38 ()}
+        {Lisp-Entry "auto-complete-characters" #f 112 11 112 35 ("Auto-Complete-Characters")}}}})
+"Lisp-Text-Actions"
+ ({Lisp-File-Entry {File jazz.language.lisp "src" "jazz" "language" "lisp" "text" "Lisp-Text-Actions.jazz"} 1237815288
+    {Lisp-Entry "jazz.language.lisp.text.Lisp-Text-Actions" #f 37 9 37 50 ("jazz")
+      {Lisp-Entry "Lisp-Text-Actions" #f 47 7 47 24 (":shift" "on-remove-highlights" "remove-highlights" ":alt" "on-highlight-selection" "highlight-selection" "Tab" "Shortcut" "shortcut:" "on-tabulate" ":focus" "Event-Handler" "action-handler:" "tabulate" "name:" "Actions")}}})
+"Lisp-Text-Preferences"
+ ({Lisp-File-Entry {File jazz.language.lisp "src" "jazz" "language" "lisp" "text" "Lisp-Text-Preferences.jazz"} 1237815288
+    {Lisp-Entry "jazz.language.lisp.text.Lisp-Text-Preferences" #f 37 9 37 54 ("jazz")
+      {Lisp-Entry "Lisp-Text-Preferences" #f 46 7 46 28 ("Code-Text-Preferences")
+        {Lisp-Entry "title-color" #f 49 12 49 23 ("generate")}
+        {Lisp-Entry "comment-color" #f 50 12 50 25 ("generate")}
+        {Lisp-Entry "expr-comment-color" #f 51 12 51 30 ("generate")}
+        {Lisp-Entry "declaration-keyword-color" #f 52 12 52 37 ("generate")}
+        {Lisp-Entry "declaration-color" #f 53 12 53 29 ("generate")}
+        {Lisp-Entry "keyword-color" #f 54 12 54 25 ("generate")}
+        {Lisp-Entry "tag-color" #f 55 12 55 21 ("generate")}
+        {Lisp-Entry "specifier-color" #f 56 12 56 27 ("generate")}
+        {Lisp-Entry "char-color" #f 57 12 57 22 ("generate")}
+        {Lisp-Entry "number-color" #f 58 12 58 24 ("generate")}
+        {Lisp-Entry "boolean-color" #f 59 12 59 25 ("generate")}
+        {Lisp-Entry "string-color" #f 60 12 60 24 ("generate")}
+        {Lisp-Entry "delimited-string-color" #f 61 12 61 34 ("generate")}
+        {Lisp-Entry "named-string-color" #f 62 12 62 30 ("generate")}
+        {Lisp-Entry "quotation-color" #f 63 12 63 27 ("generate")}
+        {Lisp-Entry "feature-color" #f 64 12 64 25 ("generate")}
+        {Lisp-Entry "completions" #f 65 12 65 23 ("generate")}
+        {Lisp-Entry "translate-keys?" #f 66 12 66 27 ("generate")}}}})
+"Lisp-Text-View"
+ ({Lisp-File-Entry {File jazz.language.lisp "src" "jazz" "language" "lisp" "text" "Lisp-Text-View.jazz"} 1237815288
+    {Lisp-Entry "jazz.language.lisp.text.Lisp-Text-View" #f 37 9 37 47 ("jazz")
+      {Lisp-Entry "Auto-Complete-Characters" #f 48 10 48 34 ()}
+      {Lisp-Entry "Lisp-Text-View" #f 52 7 52 21 ("cond" "list" "x" "function" "for-each" "b" "a" "foo" "virtual" "public" "method" "comment" "Code-Text-View")
+        {Lisp-Entry "new-syntax" #f 55 11 55 21 ("Lisp-Syntax" "new")}
+        {Lisp-Entry "host-icon" #f 64 16 64 25 ("Bitmap-Resource")}
+        {Lisp-Entry "get-locat-container" #f 73 18 73 37 ("parse" "if" "get-moniker" "moniker" "let")}
+        {Lisp-Entry "focus-actions" #f 85 11 85 24 ("nextmethod" "lisp-text" "'lisp-text" "find-actions" "cons")}
+        {Lisp-Entry "context-menu" #f 95 11 95 23 ("get-context-menu" "track-popup-menu" "edit-references" "edit-definitions" "move-caret:" "context-menu-click" "always" "'always" "else" "never" "'never" "outside-selection" "'outside-selection" "not" "and" "cond" "move-caret" "let" "modifiers-down" "alt?" "control?" "shift?" "receive" "pos")}
+        {Lisp-Entry "tab-press" #f 108 11 108 20 ("tabulate" "function" "undoer" "with-atomic-undo" "insert-char" "shift-key?" "nextmethod" "accepts-returns?" "not" "has-completion?" "or" "if" "modifiers" "key")}
+        {Lisp-Entry "colorize-syntax" #f 124 11 124 26 ("colorize-comments" "colorize-declarations" "function" "with-safe-explore" "entries?:" "nextmethod" "recoloring?" "recoloring?:")}
+        {Lisp-Entry "Syntax-Targets" #f 132 14 132 28 ()}
+        {Lisp-Entry "Syntax-Automata" #f 135 14 135 29 ()}
+        {Lisp-Entry "syntax-targets" #f 139 11 139 25 ("compute-syntax-targets" "set!" "Syntax-Targets" "unless")}
+        {Lisp-Entry "syntax-automata" #f 145 11 145 26 ("compute-syntax-automata" "set!" "Syntax-Automata" "unless")}
+        {Lisp-Entry "compute-syntax-targets" #f 151 11 151 33 ("Syntax-Targets")}
+        {Lisp-Entry "compute-syntax-automata" #f 155 11 155 34 ("text-constituent?" "self" "syntax-targets" "build-search-automata")}
+        {Lisp-Entry "colorize-type" #f 159 11 159 24 ("recolorize?" "colorizer" "end" "start" "type" "found")}
+        {Lisp-Entry "colorize-declarations" #f 163 11 163 32 ("finish-current" "get-application" "get-documentation-cataloguer" "Feature" "'Feature" "feature" "Literal" "'Literal" "literal" "Named-Comment" "'Named-Comment" "named-comment" "Expr-Comment" "'Expr-Comment" "expr-comment" "Named-String" "'Named-String" "named-string" "Delimited-String" "'Delimited-String" "delimited-string" "String" "'String" "string" "Boolean" "'Boolean" "boolean" "Number" "'Number" "number" "Char" "'Char" "char" "colorize-specifier" "specifier" "colorize-tag" "tag" "Keyword" "'Keyword" "Default" "'Default" "get-style-at" "get-name" "eq?" "keyword" "Quotation" "'Quotation" "quasiquote" "quote" "memq?" "symbol" "case" "kind" "mode" "Declaration-Keyword" "'Declaration-Keyword" "declaration-style" "apply-coloring" "when" "documented?" "marked" "end" "start" "context" "function" "walk-declarations" "new-colorizer" "not" "essay" "colorizer" "end:" "text-beginning" "start:" "self" "explorer-class" "new" "expl" "let" "recoloring?")}
+        {Lisp-Entry "colorize-tag" #f 216 29 216 41 ("end" "start" "colorizer")}
+        {Lisp-Entry "colorize-specifier" #f 220 29 220 47 ("end" "start" "colorizer")}
+        {Lisp-Entry "declaration-style" #f 224 29 224 46 ("documented?")}
+        {Lisp-Entry "colorize-comments" #f 228 11 228 28 ("finish-current" "when" "Title" "'Title" "4" "+" "Comment" "'Comment" "apply-coloring" "if" "Cell" "paragraph-length" "len" "get-row" "row" "let*" "title?" "end" "start" "function" "for-each-comment" "new-colorizer" "not" "essay" "colorizer" "text-beginning" "end:" "self" "explorer-class" "new" "expl" "let" "recoloring?")}
+        {Lisp-Entry "recolorize-text" #f 244 11 244 26 ("recolorize-row" "to" "get-row" "from" "row" "for" "loop" "nextmethod" "end-row" "start")}
+        {Lisp-Entry "recolorize-row" #f 250 29 250 43 ("recolorize-delimited-strings" "recolorize-strings" "recolorize-specifiers" "recolorize-chars" "recolorize-booleans" "recolorize-comments" "recolorize-declarations" "row")}
+        {Lisp-Entry "Max-Declaration-Col" #f 260 14 260 33 ("4")}
+        {Lisp-Entry "recolorize-declarations" #f 264 11 264 34 ("get-application" "get-documentation-cataloguer" "Named-Comment" "'Named-Comment" "named-comment" "Expr-Comment" "'Expr-Comment" "expr-comment" "String" "'String" "string" "Specifier" "'Specifier" "specifier" "Tag" "'Tag" "tag" "case" "kind" "mode" "Declaration-Keyword" "'Declaration-Keyword" "declaration-style" "apply-style" "documented?" "marked" "end" "start" "context" "function" "walk-declaration" "end:" "start:" "self" "explorer-class" "expl" "Cell" "new" "pos" "element" "eqv?" "Max-Declaration-Col" "<=" "cardinality" "<" "and" "when" "skip-whitespace" "col" "paragraph-string" "line" "let*" "Explore-Error" "catch" "row")}
+        {Lisp-Entry "recolorize-comments" #f 295 11 295 30 ("Title" "'Title" "Comment" "'Comment" "apply-style" "begin" "title-comment-string" "subseq" "string=?" "<" "if" "4" "+" "title-end" "let" "Cell" "new" "get-style-at" "textual-style?" "not" "and" "when" "syntax" "comment-string" "search" "comment" "cardinality" "len" "paragraph-string" "line" "let*" "row")}
+        {Lisp-Entry "recolorize-booleans" #f 308 11 308 30 ("Boolean" "'Boolean" "apply-style" "Cell" "new" "commented?" "unless" "get-target" "+" "end" "ctx" "bind" "set!" "if" "start:" "multisearch" "pos" "let" "not" "while" "done?" "0" "col" "cardinality" "len" "make-search-context" "list" "trg" "paragraph-string" "str" "let*" "row")}
+        {Lisp-Entry "recolorize-chars" #f 325 11 325 27 ("increase!" "text-constituent?" "<" "and" "Char" "'Char" "apply-style" "commented?" "unless" "3" "end" "2" "+" "Cell" "new" "get-char" "alphanumeric?" "set!" "if" "start:" "search" "pos" "let" "not" "while" "done?" "0" "col" "cardinality" "len" "paragraph-string" "str" "let*" "row")}
+        {Lisp-Entry "recolorize-specifiers" #f 347 11 347 32 ("get-col" "+" "Specifier" "'Specifier" "Tag" "'Tag" "eqv?" "apply-style" "1" "-" "get-char" ">" "essay" "before" "Cell" "new" "find-specifier-end" "end" "set!" "if" "start:" "search" "pos" "let" "not" "while" "done?" "0" "col" "cardinality" "len" "paragraph-string" "str" "let*" "row")}
+        {Lisp-Entry "recolorize-strings" #f 364 11 364 29 ("commented?" "unless" "Cell" "new" "String" "'String" "apply-style" "begin" "1" "+" "end" "set!" "if" "start:" "search" "pos" "let" "not" "while" "done?" "0" "col" "cardinality" "len" "paragraph-string" "str" "let*" "row")}
+        {Lisp-Entry "recolorize-delimited-strings" #f 383 11 383 39 ("commented?" "unless" "Cell" "new" "Delimited-String" "'Delimited-String" "apply-style" "begin" "2" "+" "end" "set!" "if" "start:" "search" "pos" "let" "not" "while" "done?" "0" "col" "cardinality" "len" "paragraph-string" "str" "let*" "row")}
+        {Lisp-Entry "Comment-Styles" #f 407 14 407 28 ("Comment" "Title")}
+        {Lisp-Entry "String-Styles" #f 410 14 410 27 ("Named-String" "Delimited-String" "String")}
+        {Lisp-Entry "commented?" #f 414 11 414 21 ("get-style-at" "comment-style?" "pos")}
+        {Lisp-Entry "comment-style?" #f 418 11 418 25 ("Comment-Styles" "inherits?" "style-name" "function" "some?" "style")}
+        {Lisp-Entry "string-style?" #f 424 11 424 24 ("String-Styles" "inherits?" "style-name" "function" "some?" "style")}
+        {Lisp-Entry "textual-style?" #f 430 11 430 25 ("string-style?" "comment-style?" "or" "style")}
+        {Lisp-Entry "favorite-completions" #f 435 11 435 31 ("preferences" "get-completions")}
+        {Lisp-Entry "on-tabulate" #f 466 11 466 22 ("tabulate" "evt")}
+        {Lisp-Entry "get-specials" #f 470 29 470 41 ()}
+        {Lisp-Entry "return-press" #f 474 11 474 23 ("tabulate" "nextmethod" "function" "undoer" "with-atomic-undo" "key")}
+        {Lisp-Entry "tabulate" #f 481 11 481 19 ("ignore" "'ignore" "action:" "set-modified?" "when" "+" "get-row" "tabulate-lines" "last-delta" "modified?" "receive" "set-caret" "with-safe-explore" "function" "with-update-locked" "get-end" "end" "get-start" "start" "let")}
+        {Lisp-Entry "tabulate-lines" #f 496 11 496 25 ("values" "set!" "0" "/=" "when" "tabulate-line" "delta" "with" "to" "from" "row" "for" "loop" "last-delta" "modified?" "let" "end" "start")}
+        {Lisp-Entry "remove-specifiers" #f 507 11 507 28 ("cdr" "1" "get-end" "-" "get-start" "get-char" "eqv?" "or" "get-range" "range" "let" "mark" "function" "collect-if" "car" "cons" "pair?" "not" "if" "lst")}
+        {Lisp-Entry "effective-symbol" #f 518 11 518 27 ("1" "cardinality" "cast" "-" "0" "subseq" "string->symbol" "ends-with?" "if" "string")}
+        {Lisp-Entry "tabulate-line" #f 524 11 524 24 ("tabulate-column" "tabulate-delta" "delta" "let" "row")}
+        {Lisp-Entry "tabulate-delta" #f 530 18 530 32 ("get-column" "*" "-1" "count-modifiers" "decrease!" "when" "specials" "modifiers?" "bind" "element" "upper-case?" ">" "default-col" "4" "threshold" "proposed-col" "else" "'else" "neq?" "2" "/=" "=" "get-row" "first-row" "first-on-last-line" "first-last" "let" "cdr" "info" "get-specials" "assq" "special-info" "not" "or" "first-indent" "ends-with?" "first-dispatch?" "first-without?" "first-with?" "starts-with?" "and" "first-call-with?" "tag?" "first-tag?" "effective-symbol" "symbol" "'symbol" "get-kind" "eq?" "essay" "first-symbol" "get-range" "get-string" "first-string" "car" "first" "get-col" "+" "set!" "null?" "if" "col" "rank" "length" "count" "1" "get-start" "-" "opening" "collect-backward-exprs" "remove-specifiers" "expressions" "start:" "self" "explorer-class" "expl" "0" "Cell" "new" "pos" "let*" "row")}
+        {Lisp-Entry "tabulate-column" #f 578 11 578 26 ("+" "make-string" "list" "Cell" "Range$Cell$" "new" "replace-text" "get-column" "actual" "let" "0" "/=" "when" "delta" "row")}
+        {Lisp-Entry "count-modifiers" #f 585 11 585 26 ("cdr" "increase!" "set!" "self" "explorer-class" "new" "get-modifiers" "memq?" "or" "if" "car" "get-range" "get-string" "find-symbol" "symbol" "not" "not-null?" "and" "while" "done?" "0" "total" "let" "expressions")}
+        {Lisp-Entry "first-on-last-line" #f 598 11 598 29 ("set!" "=" "not-null?" "and" "while" "get-range" "get-start" "get-row" "line" "car" "first" "cdr" "reverse" "1" ">" "if" "reversed" "let*" "count" "expressions")}
+        {Lisp-Entry "current-name" #f 613 11 613 23 ("get-string" "when" "current-expr-range" "range" "let")}
+        {Lisp-Entry "current-expr" #f 619 11 619 23 ("get-string" "read-string-element" "when" "current-expr-range" "range" "let")}
+        {Lisp-Entry "current-expr-range" #f 625 11 625 29 ("get-end" "expr-range" "get-selection" "has-selection?" "completion-active?" "not" "and" "if")}
+        {Lisp-Entry "expr-range" #f 631 11 631 21 ("get-range" "outer-expr" "end:" "start:" "self" "explorer-class" "new" "expl" "let" "pos")}
+        {Lisp-Entry "current-symbol" #f 637 11 637 25 ("symbol?" "when" "current-expr" "expr" "let")}
+        {Lisp-Entry "expr-at" #f 643 11 643 18 ("butlast" "read-string-element" "ends-with?" "if" "expr-range" "get-string" "string" "let" "pos")}
+        {Lisp-Entry "flash-character?" #f 655 11 655 27 ("memq?" "char")}
+        {Lisp-Entry "headers" #f 664 12 664 19 ("4" "make-string" "string-append" "list")}
+        {Lisp-Entry "get-headers" #f 669 11 669 22 ("headers")}
+        {Lisp-Entry "get-context" #f 678 11 678 22 ("jazz")}
+        {Lisp-Entry "current-definition" #f 682 11 682 29 ("get-string" "read-string-element" "when" "current-definition-range" "range" "let")}
+        {Lisp-Entry "current-definition-range" #f 688 11 688 35 ("get-end" "definition-range" "get-selection" "has-selection?" "completion-active?" "not" "and" "if")}
+        {Lisp-Entry "definition-range" #f 694 18 694 34 ("need-definition?" "or" "and" "definition-expr?" "when" "get-range" "set!" "outer-expr" "if" "not" "while" "done?" "definition?" "range" "end:" "start:" "self" "explorer-class" "new" "expl" "let" "pos")}
+        {Lisp-Entry "need-definition?" #f 710 29 710 45 ()}
+        {Lisp-Entry "Highlight-Styles" #f 719 14 719 30 ("Break" "Walk-Fatal" "Walk-Warning" "Reference")}
+        {Lisp-Entry "highlight-style?" #f 723 11 723 27 ("Highlight-Styles" "inherits?" "style-name" "function" "some?" "style")}
+        {Lisp-Entry "constant?" #f 729 18 729 27 ("keyword?" "symbol?" "char?" "boolean?" "number?" "or" "expr")}
+        {Lisp-Entry "on-highlight-selection" #f 737 11 737 33 ("highlight-expression" "unhighlight-expression" "highlight-style?" "get-end" "get-style-at" "style" "bell" "constant?" "not" "or" "if" "current-expr" "constant" "get-start" "definition-range" "range" "let" "evt")}
+        {Lisp-Entry "on-remove-highlights" #f 748 11 748 31 ("remove-highlights" "bell" "not" "if" "get-start" "definition-range" "range" "let" "evt")}
+        {Lisp-Entry "find-expression" #f 755 18 755 33 ("get-range" "continuation-return" "get-constant" "standardize-form" "eqv?" "constant?" "and" "when" "mode" "iterate-expression" "return" "function" "continuation-capture" "end:" "get-start" "start:" "self" "explorer-class" "new" "expl" "let" "constant" "range")}
+        {Lisp-Entry "highlight-expression" #f 766 18 766 38 ("get-end" "Reference" "'Reference" "apply-style" "get-constant" "standardize-form" "eqv?" "constant?" "and" "when" "mode" "function" "iterate-expression" "end:" "get-start" "start:" "self" "explorer-class" "new" "expl" "let" "constant" "range")}
+        {Lisp-Entry "unhighlight-expression" #f 774 18 774 40 ("get-end" "default-style" "apply-style" "get-constant" "standardize-form" "eqv?" "constant?" "and" "when" "mode" "function" "iterate-expression" "end:" "get-start" "start:" "self" "explorer-class" "new" "expl" "let" "constant" "range")}
+        {Lisp-Entry "remove-highlights" #f 782 18 782 35 ("1" "get-end" "+" "end:" "get-start" "get-row" "start:" "get-runs" "invalidate-paragraph" "default-style" "set-style" "highlight-style?" "when" "get-style" "style" "let" "run" "for-each" "paragraph" "row" "function" "for-each-paragraph" "range")}}}})
+"_lisp"
+ ({Lisp-File-Entry {File jazz.language.lisp "src" "jazz" "language" "lisp" "_lisp.jazz"} 1237815288
+    {Lisp-Entry "jazz.language.lisp" #f 37 9 37 27 ("jazz")}})
+"autoload"
+ ({Lisp-File-Entry {File jazz.language.lisp "src" "jazz" "language" "lisp" "autoload.jazz"} 1237815288
+    {Lisp-Entry "jazz.language.lisp.autoload" #f 37 9 37 36 ("jazz")}})

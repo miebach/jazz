@@ -1,43 +1,43 @@
 "Mandelbrot"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.mandelbrot" "src" "jazz" "sample" "mandelbrot" "Mandelbrot.jazz"} 1226584772
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.mandelbrot" "src" "jazz" "sample" "mandelbrot" "Mandelbrot.jazz"} 1237219903
     {Lisp-Entry "jazz.sample.mandelbrot.Mandelbrot" #f 38 9 38 42 ("jazz")
-      {Lisp-Entry "Mandelbrot" #f 47 7 47 17 ("View")
-        {Lisp-Entry "iterations" #f 50 12 50 22 ("generate" "10")}
-        {Lisp-Entry "ch" #f 53 8 53 10 ()}
-        {Lisp-Entry "cv" #f 54 8 54 10 ()}
-        {Lisp-Entry "scale" #f 55 8 55 13 ()}
-        {Lisp-Entry "c" #f 56 8 56 9 ()}
-        {Lisp-Entry "n" #f 57 8 57 9 ()}
-        {Lisp-Entry "pixels" #f 58 8 58 14 ("List-Factory" "new")}
-        {Lisp-Entry "host-title" #f 66 16 66 26 ()}
-        {Lisp-Entry "host-size" #f 70 16 70 25 ("600" "Dimension")}
-        {Lisp-Entry "setup-coordinates" #f 79 11 79 28 ("scale~self" "cv~self" "ch~self" "set!" "5" "50" "min" "-" "scale" "cv" "2" "/" "ch" "get-height" "height" "get-width" "width" "let*")}
-        {Lisp-Entry "complex->view" #f 90 11 90 24 ("cv" "scale" "*" "ch" "+" "round" "Point" "new" "i" "r")}
-        {Lisp-Entry "view->complex" #f 94 11 94 24 ("make-rectangular" "cv" "i" "scale" "ch" "-" "/" "r" "let" "rest" "v" "h")}
-        {Lisp-Entry "iterate" #f 105 11 105 18 (".25" ".05" "Pixel-Radius" "to" "1" "radius" "draw-pixel" "pixels" "put" "iteration-color" "complex->view" "Pixel" "set!" "begin" "2" ">" "if" "norm" ".1" "sleep" "imag-part" "real-part" "line" "not" "when" "c" "*" "+" "next" "unless" "do" "iterations" "below" "from" "n" "for" "loop" "outside?" "pixel" "0" "z" "let" "Dark-Red" "name:" "Color" "color:" "Pen" "new" "set-pen" "get-surface" "surface" "with-closed" "dragging?")}
-        {Lisp-Entry "change-iterations" #f 135 11 135 28 ("parse-integer" "set!" "iterations" "->string" "initial-value:" "prefix:" "title:" "request-string" "new-iterations" "let")}
-        {Lisp-Entry "size-change" #f 145 11 145 22 ("recalculate-pixel-positions" "setup-coordinates" "nextmethod" "size")}
-        {Lisp-Entry "recalculate-pixel-positions" #f 151 11 151 38 ("pixels" "get-output" "imag-part" "real-part" "complex->view" "set-pos" "get-c" "c" "let" "pixel" "function" "for-each")}
-        {Lisp-Entry "Colors" #f 163 14 163 20 ("Purple" "Red" "Orange" "Yellow" "Green" "Blue" "name:" "Color")}
-        {Lisp-Entry "Background-Color" #f 171 14 171 30 ("Dark-Gray" "name:" "Color")}
-        {Lisp-Entry "Radius-Color" #f 174 14 174 26 ("Gray" "name:" "Color")}
-        {Lisp-Entry "Pixel-Radius" #f 177 14 177 26 ("10")}
-        {Lisp-Entry "Draw-Outside?" #f 180 14 180 27 ()}
-        {Lisp-Entry "draw" #f 184 11 184 15 ("pixels" "get-output" "draw-pixel" "pixel" "function" "for-each" "Radius-Color" "get-v" "get-h" "Rect" "new" "ellipse" "rb" "complex->view" "lt" "2" "0" "-2" "line" "White" "name:" "Pen" "set-pen" "Background-Color" "fill-rect" "get-bounds" "bounds" "let" "lv" "lh" "context" "surface")}
-        {Lisp-Entry "draw-pixel" #f 198 11 198 21 ("+" "get-v" "get-h" "-" "Rect" "new" "ellipse" "Draw-Outside?" "when" "get-color" "color" "get-pos" "pos" "let" "Pixel-Radius" "radius" "pixel" "surface")}
-        {Lisp-Entry "iteration-color" #f 205 11 205 26 ("length" "modulo" "Colors" "element" "Black" "name:" "Color" "not" "if" "n")}
-        {Lisp-Entry "line" #f 211 11 211 15 ("get-v" "get-h" "line" "dst" "complex->view" "src" "let" "di" "dr" "i" "r" "surface")}
-        {Lisp-Entry "mouse-down" #f 222 11 222 21 ("redraw-view" "iterate" "0" "n~self" "c~self" "set!" "get-v" "get-h" "view->complex" "c" "let" "acquire-focus" "pos")}
-        {Lisp-Entry "drag-move" #f 231 11 231 20 ("iterate" "0" "n~self" "c~self" "set!" "get-v" "get-h" "view->complex" "c" "let" "pos")}
-        {Lisp-Entry "mouse-up" #f 238 11 238 19 ("redraw-view" "pos")}
-        {Lisp-Entry "key-press" #f 247 11 247 20 ("change-iterations" "clear" "case" "char")}
-        {Lisp-Entry "clear" #f 253 11 253 16 ("redraw-view" "pixels" "reset")}}
-      {Lisp-Entry "Pixel" #f 263 7 263 12 ("Object")
-        {Lisp-Entry "c" #f 266 8 266 9 ("generate")}
-        {Lisp-Entry "pos" #f 267 8 267 11 ("generate")}
-        {Lisp-Entry "iter" #f 268 8 268 12 ("generate")}
-        {Lisp-Entry "color" #f 269 8 269 13 ("generate")}
-        {Lisp-Entry "initialize" #f 272 11 272 21 ("color~self" "iter~self" "pos~self" "c~self" "set!" "nextmethod" "color" "iter" "pos" "c")}}}})
+      {Lisp-Entry "Mandelbrot" #f 48 7 48 17 ("View")
+        {Lisp-Entry "iterations" #f 51 12 51 22 ("generate" "10")}
+        {Lisp-Entry "ch" #f 54 8 54 10 ()}
+        {Lisp-Entry "cv" #f 55 8 55 10 ()}
+        {Lisp-Entry "scale" #f 56 8 56 13 ()}
+        {Lisp-Entry "c" #f 57 8 57 9 ()}
+        {Lisp-Entry "n" #f 58 8 58 9 ()}
+        {Lisp-Entry "pixels" #f 59 8 59 14 ("List-Factory" "new")}
+        {Lisp-Entry "host-title" #f 67 16 67 26 ()}
+        {Lisp-Entry "host-size" #f 71 16 71 25 ("600" "Dimension")}
+        {Lisp-Entry "setup-coordinates" #f 80 11 80 28 ("scale~self" "cv~self" "ch~self" "set!" "5" "50" "min" "-" "scale" "cv" "2" "/" "ch" "get-height" "height" "get-width" "width" "let*")}
+        {Lisp-Entry "complex->view" #f 91 11 91 24 ("cv" "scale" "*" "ch" "+" "round" "Point" "new" "i" "r")}
+        {Lisp-Entry "view->complex" #f 95 11 95 24 ("make-rectangular" "cv" "i" "scale" "ch" "-" "/" "r" "let" "rest" "v" "h")}
+        {Lisp-Entry "iterate" #f 106 11 106 18 (".25" ".05" "Pixel-Radius" "to" "1" "radius" "draw-pixel" "pixels" "put" "iteration-color" "complex->view" "Pixel" "new" "set!" "begin" "2" ">" "if" "norm" ".1" "sleep" "imag-part" "real-part" "line" "not" "when" "c" "*" "+" "next" "unless" "do" "iterations" "below" "from" "n" "for" "loop" "outside?" "pixel" "0" "z" "let" "Dark-Red" "name:" "Color" "set-color" "get-surface" "surface" "with-closed" "dragging?")}
+        {Lisp-Entry "change-iterations" #f 136 11 136 28 ("parse-integer" "set!" "iterations" "->string" "initial-value:" "prefix:" "title:" "request-string" "new-iterations" "let")}
+        {Lisp-Entry "size-change" #f 146 11 146 22 ("recalculate-pixel-positions" "setup-coordinates" "nextmethod" "size")}
+        {Lisp-Entry "recalculate-pixel-positions" #f 152 11 152 38 ("pixels" "get-output" "imag-part" "real-part" "complex->view" "set-pos" "get-c" "c" "let" "pixel" "function" "for-each")}
+        {Lisp-Entry "Colors" #f 164 14 164 20 ("Purple" "Red" "Orange" "Yellow" "Green" "Blue" "name:" "Color")}
+        {Lisp-Entry "Background-Color" #f 172 14 172 30 ("Dark-Gray" "name:" "Color")}
+        {Lisp-Entry "Radius-Color" #f 175 14 175 26 ("Gray" "name:" "Color")}
+        {Lisp-Entry "Pixel-Radius" #f 178 14 178 26 ("10")}
+        {Lisp-Entry "Draw-Outside?" #f 181 14 181 27 ()}
+        {Lisp-Entry "draw" #f 185 11 185 15 ("pixels" "get-output" "draw-pixel" "pixel" "function" "for-each" "Radius-Color" "get-v" "get-h" "Rect" "new" "ellipse" "rb" "complex->view" "lt" "2" "0" "-2" "line" "White" "name:" "Color" "set-color" "Background-Color" "fill-rect" "get-bounds" "bounds" "let" "lv" "lh" "context" "surface")}
+        {Lisp-Entry "draw-pixel" #f 199 11 199 21 ("+" "get-v" "get-h" "-" "Rect" "new" "ellipse" "Draw-Outside?" "when" "get-color" "color" "get-pos" "pos" "let" "Pixel-Radius" "radius" "pixel" "surface")}
+        {Lisp-Entry "iteration-color" #f 206 11 206 26 ("length" "modulo" "Colors" "element" "Black" "name:" "Color" "not" "if" "n")}
+        {Lisp-Entry "line" #f 212 11 212 15 ("get-v" "get-h" "line" "dst" "complex->view" "src" "let" "di" "dr" "i" "r" "surface")}
+        {Lisp-Entry "mouse-down" #f 223 11 223 21 ("redraw-view" "iterate" "0" "n~self" "c~self" "set!" "get-v" "get-h" "view->complex" "c" "let" "acquire-focus" "pos")}
+        {Lisp-Entry "drag-move" #f 232 11 232 20 ("iterate" "0" "n~self" "c~self" "set!" "get-v" "get-h" "view->complex" "c" "let" "pos")}
+        {Lisp-Entry "mouse-up" #f 239 11 239 19 ("redraw-view" "pos")}
+        {Lisp-Entry "key-press" #f 248 11 248 20 ("change-iterations" "clear" "case" "char")}
+        {Lisp-Entry "clear" #f 254 11 254 16 ("redraw-view" "pixels" "reset")}}
+      {Lisp-Entry "Pixel" #f 264 7 264 12 ("Object")
+        {Lisp-Entry "c" #f 267 8 267 9 ("generate")}
+        {Lisp-Entry "pos" #f 268 8 268 11 ("generate")}
+        {Lisp-Entry "iter" #f 269 8 269 12 ("generate")}
+        {Lisp-Entry "color" #f 270 8 270 13 ("generate")}
+        {Lisp-Entry "initialize" #f 273 11 273 21 ("color~self" "iter~self" "pos~self" "c~self" "set!" "nextmethod" "color" "iter" "pos" "c")}}}})
 "_mandelbrot"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.mandelbrot" "src" "jazz" "sample" "mandelbrot" "_mandelbrot.jazz"} 1226584772
     {Lisp-Entry "jazz.sample.mandelbrot" #f 38 9 38 31 ("jazz")}})

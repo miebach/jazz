@@ -1,80 +1,5 @@
-"ADODB"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "com" "ADODB.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.windows.com.ADODB" #f 37 9 37 40 ("BSTR*" "VARIANT" "VARIANT_BOOL*" "INT" "LONG*" "IUnknown**" "LONG" "VARIANT*" "BSTR" "in" "INT*" "out" "jazz")
-      {Lisp-Entry "patch-link" #f 46 13 46 23 ("HRESULT" "LPVOID*" "DWORD" "IUnknown*" "GUID*" "c-function" "coptr*" "interface" "context" "aggregate" "class")}
-      {Lisp-Entry "Collection$get-Count" #f 55 25 55 45 ()}
-      {Lisp-Entry "_Connection" #f 63 12 63 23 ("com-interface")}
-      {Lisp-Entry "Connection-class" #f 67 12 67 28 ("_Connection" "com-class")}
-      {Lisp-Entry "Connection$Close" #f 71 26 71 42 ()}
-      {Lisp-Entry "Connection$Execute" #f 72 26 72 44 ()}
-      {Lisp-Entry "Connection$BeginTrans" #f 73 26 73 47 ()}
-      {Lisp-Entry "Connection$CommitTrans" #f 74 26 74 48 ()}
-      {Lisp-Entry "Connection$RollbackTrans" #f 75 26 75 50 ()}
-      {Lisp-Entry "Connection$Open" #f 76 26 76 41 ()}
-      {Lisp-Entry "Recordset-class" #f 84 12 84 27 ("cons")}
-      {Lisp-Entry "Recordset$get-EOF" #f 88 26 88 43 ()}
-      {Lisp-Entry "Recordset$get-Fields" #f 89 26 89 46 ()}
-      {Lisp-Entry "Recordset$Close" #f 90 26 90 41 ()}
-      {Lisp-Entry "Recordset$MoveNext" #f 91 26 91 44 ()}
-      {Lisp-Entry "Recordset$Open" #f 92 26 92 40 ()}
-      {Lisp-Entry "Recordset$get-State" #f 93 26 93 45 ()}
-      {Lisp-Entry "Fields$get-Item" #f 101 26 101 41 ()}
-      {Lisp-Entry "Field$get-Name" #f 109 26 109 40 ()}
-      {Lisp-Entry "Field$get-Value" #f 110 26 110 41 ()}
-      {Lisp-Entry "CursorTypeEnum" #f 118 15 118 29 ("3" "adOpenStatic" "2" "adOpenDynamic" "1" "adOpenKeyset" "0" "adOpenForwardOnly" "-1" "adOpenUnspecified")}
-      {Lisp-Entry "CursorOptionEnum" #f 133 15 133 31 ("8388608" "adIndex" "4194304" "adSeek" "524288" "adFind" "262144" "adNotify" "131072" "adResync" "65536" "adUpdateBatch" "16384" "adApproxPosition" "8192" "adBookmark" "16809984" "adUpdate" "16779264" "adDelete" "16778240" "adAddNew" "512" "adMovePrevious" "256" "adHoldRecords")}
-      {Lisp-Entry "LockTypeEnum" #f 156 15 156 27 ("4" "adLockBatchOptimistic" "3" "adLockOptimistic" "2" "adLockPessimistic" "1" "adLockReadOnly" "-1" "adLockUnspecified")}
-      {Lisp-Entry "ExecuteOptionEnum" #f 171 15 171 32 ("128" "adExecuteNoRecords" "64" "adAsyncFetchNonBlocking" "32" "adAsyncFetch" "16" "adAsyncExecute" "-1" "adOptionUnspecified")}
-      {Lisp-Entry "ConnectOptionEnum" #f 186 15 186 32 ("16" "adAsyncConnect" "-1" "adConnectUnspecified")}
-      {Lisp-Entry "ObjectStateEnum" #f 198 15 198 30 ("8" "adStateFetching" "4" "adStateExecuting" "2" "adStateConnecting" "1" "adStateOpen" "0" "adStateClosed")}
-      {Lisp-Entry "CursorLocationEnum" #f 213 15 213 33 ("adUseClientBatch" "3" "adUseClient" "2" "adUseServer" "1" "adUseNone")}
-      {Lisp-Entry "DataTypeEnum" #f 227 15 227 27 ("8192" "adArray" "139" "adVarNumeric" "138" "adPropVariant" "64" "adFileTime" "136" "adChapter" "205" "adLongVarBinary" "204" "adVarBinary" "128" "adBinary" "203" "adLongVarWChar" "202" "adVarWChar" "130" "adWChar" "201" "adLongVarChar" "200" "adVarChar" "129" "adChar" "8" "adBSTR" "135" "adDBTimeStamp" "134" "adDBTime" "133" "adDBDate" "7" "adDate" "72" "adGUID" "13" "adIUnknown" "9" "adIDispatch" "12" "adVariant" "132" "adUserDefined" "10" "adError" "11" "adBoolean" "131" "adNumeric" "14" "adDecimal" "6" "adCurrency" "5" "adDouble" "4" "adSingle" "21" "adUnsignedBigInt" "19" "adUnsignedInt" "18" "adUnsignedSmallInt" "17" "adUnsignedTinyInt" "20" "adBigInt" "3" "adInteger" "2" "adSmallInt" "16" "adTinyInt" "0" "adEmpty")}
-      {Lisp-Entry "FieldAttributeEnum" #f 277 15 277 33 ("262144" "adFldIsCollection" "131072" "adFldIsDefaultStream" "65536" "adFldIsRowURL" "32768" "adFldKeyColumn" "16384" "adFldNegativeScale" "8192" "adFldIsChapter" "4096" "adFldCacheDeferred" "512" "adFldRowVersion" "256" "adFldRowID" "128" "adFldLong" "64" "adFldMayBeNull" "32" "adFldIsNullable" "16" "adFldFixed" "8" "adFldUnknownUpdatable" "4" "adFldUpdatable" "2" "adFldMayDefer" "-1" "adFldUnspecified")}
-      {Lisp-Entry "EditModeEnum" #f 304 15 304 27 ("4" "adEditDelete" "2" "adEditAdd" "1" "adEditInProgress" "0" "adEditNone")}
-      {Lisp-Entry "RecordStatusEnum" #f 318 15 318 31 ("262144" "adRecDBDeleted" "131072" "adRecSchemaViolation" "65536" "adRecPermissionDenied" "32768" "adRecOutOfMemory" "16384" "adRecObjectOpen" "8192" "adRecMaxChangesExceeded" "4096" "adRecIntegrityViolation" "2048" "adRecConcurrencyViolation" "1024" "adRecCantRelease" "256" "adRecCanceled" "128" "adRecPendingChanges" "64" "adRecMultipleChanges" "16" "adRecInvalid" "8" "adRecUnmodified" "4" "adRecDeleted" "2" "adRecModified" "1" "adRecNew" "0" "adRecOK")}
-      {Lisp-Entry "GetRowsOptionEnum" #f 346 15 346 32 ("-1" "adGetRowsRest")}
-      {Lisp-Entry "PositionEnum" #f 357 15 357 27 ("-3" "adPosEOF" "-2" "adPosBOF" "-1" "adPosUnknown")}
-      {Lisp-Entry "BookmarkEnum" #f 370 15 370 27 ("2" "adBookmarkLast" "1" "adBookmarkFirst" "0" "adBookmarkCurrent")}
-      {Lisp-Entry "MarshalOptionsEnum" #f 384 15 384 33 ("1" "adMarshalModifiedOnly" "0" "adMarshalAll")}
-      {Lisp-Entry "AffectEnum" #f 397 15 397 25 ("4" "adAffectAllChapters" "3" "adAffectAll" "2" "adAffectGroup" "1" "adAffectCurrent")}
-      {Lisp-Entry "ResyncEnum" #f 412 15 412 25 ("2" "adResyncAllValues" "1" "adResyncUnderlyingValues")}
-      {Lisp-Entry "CompareEnum" #f 425 15 425 26 ("4" "adCompareNotComparable" "3" "adCompareNotEqual" "2" "adCompareGreaterThan" "1" "adCompareEqual" "0" "adCompareLessThan")}
-      {Lisp-Entry "FilterGroupEnum" #f 441 15 441 30 ("5" "adFilterConflictingRecords" "4" "adFilterPredicate" "3" "adFilterFetchedRecords" "2" "adFilterAffectedRecords" "1" "adFilterPendingRecords" "0" "adFilterNone")}
-      {Lisp-Entry "SearchDirectionEnum" #f 458 15 458 34 ("-1" "adSearchBackward" "1" "adSearchForward")}
-      {Lisp-Entry "PersistFormatEnum" #f 479 15 479 32 ("1" "adPersistXML" "0" "adPersistADTG")}
-      {Lisp-Entry "StringFormatEnum" #f 492 15 492 31 ("2" "adClipString")}
-      {Lisp-Entry "ConnectPromptEnum" #f 503 15 503 32 ("4" "adPromptNever" "3" "adPromptCompleteRequired" "2" "adPromptComplete" "1" "adPromptAlways")}
-      {Lisp-Entry "ConnectModeEnum" #f 517 15 517 30 ("4194304" "adModeRecursive" "16" "adModeShareDenyNone" "12" "adModeShareExclusive" "8" "adModeShareDenyWrite" "4" "adModeShareDenyRead" "3" "adModeReadWrite" "2" "adModeWrite" "1" "adModeRead" "0" "adModeUnknown")}
-      {Lisp-Entry "RecordCreateOptionsEnum" #f 536 15 536 38 ("-1" "adFailIfNotExists" "67108864" "adCreateOverwrite" "33554432" "adOpenIfExists" "0" "adCreateNonCollection" "-2147483648" "adCreateStructDoc" "8192" "adCreateCollection")}
-      {Lisp-Entry "RecordOpenOptionsEnum" #f 552 15 552 36 ("32768" "adDelayFetchFields" "16384" "adDelayFetchStream" "4096" "adOpenAsync" "8388608" "adOpenSource" "-1" "adOpenRecordUnspecified")}
-      {Lisp-Entry "IsolationLevelEnum" #f 567 15 567 33 ("adXactIsolated" "1048576" "adXactSerializable" "65536" "adXactRepeatableRead" "adXactReadCommitted" "4096" "adXactCursorStability" "adXactBrowse" "256" "adXactReadUncommitted" "16" "adXactChaos" "-1" "adXactUnspecified")}
-      {Lisp-Entry "XactAttributeEnum" #f 587 15 587 32 ("1048576" "adXactSyncPhaseOne" "524288" "adXactAsyncPhaseOne" "262144" "adXactAbortRetaining" "131072" "adXactCommitRetaining")}
-      {Lisp-Entry "PropertyAttributesEnum" #f 601 15 601 37 ("1024" "adPropWrite" "512" "adPropRead" "2" "adPropOptional" "1" "adPropRequired" "0" "adPropNotSupported")}
-      {Lisp-Entry "ErrorValueEnum" #f 617 15 617 29 ("3751" "adErrDenyTypeNotSupported" "3750" "adErrDenyNotSupported" "3749" "adErrFieldsUpdateFailed" "3748" "adErrCantChangeConnection" "3747" "adErrCatalogNotSet" "3746" "adErrPropNotSupported" "3745" "adErrPropNotSettable" "3744" "adErrPropNotSet" "3743" "adErrPropNotAllSettable" "3742" "adErrPropConflicting" "3741" "adErrPropInvalidValue" "3740" "adErrPropInvalidOption" "3739" "adErrPropInvalidColumn" "3738" "adErrDelResOutOfScope" "3737" "adErrURLNamedRowDoesNotExist" "3736" "adErrUnavailable" "3735" "adErrResourceOutOfScope" "3734" "adErrOutOfSpace" "3733" "adErrVolumeNotFound" "3732" "adErrCannotComplete" "3731" "adErrResourceExists" "3730" "adErrResourceLocked" "3729" "adErrInvalidURL" "3728" "adErrTreePermissionDenied" "3727" "adErrURLDoesNotExist" "3726" "adErrColumnNotOnThisRow" "3725" "adErrCantCreate" "3724" "adErrCantConvertvalue" "3723" "adErrSignMismatch" "3722" "adErrSchemaViolation" "3721" "adErrDataOverflow" "3720" "adErrPermissionDenied" "3719" "adErrIntegrityViolation" "3718" "adwrnSecurityDialogHeader" "3717" "adwrnSecurityDialog" "3716" "adErrUnsafeOperation" "3715" "adErrNotExecuting" "3714" "adErrInvalidTransaction" "3713" "adErrStillConnecting" "3712" "adErrOperationCancelled" "3711" "adErrStillExecuting" "3710" "adErrNotReentrant" "3709" "adErrInvalidConnection" "3708" "adErrInvalidParamInfo" "3707" "adErrBoundToCommand" "3706" "adErrProviderNotFound" "3705" "adErrObjectOpen" "3704" "adErrObjectClosed" "3421" "adErrDataConversion" "3420" "adErrObjectNotSet" "3367" "adErrObjectInCollection" "3265" "adErrItemNotFound" "3251" "adErrFeatureNotAvailable" "3246" "adErrInTransaction" "3220" "adErrCantChangeProvider" "3219" "adErrIllegalOperation" "3021" "adErrNoCurrentRecord" "3004" "adErrWriteFile" "3003" "adErrReadFile" "3002" "adErrOpeningFile" "3001" "adErrInvalidArgument" "3000" "adErrProviderFailed")}
-      {Lisp-Entry "ParameterAttributesEnum" #f 689 15 689 38 ("128" "adParamLong" "64" "adParamNullable" "16" "adParamSigned")}
-      {Lisp-Entry "ParameterDirectionEnum" #f 702 15 702 37 ("4" "adParamReturnValue" "3" "adParamInputOutput" "2" "adParamOutput" "1" "adParamInput" "0" "adParamUnknown")}
-      {Lisp-Entry "CommandTypeEnum" #f 717 15 717 30 ("512" "adCmdTableDirect" "256" "adCmdFile" "4" "adCmdStoredProc" "2" "adCmdTable" "1" "adCmdText" "8" "adCmdUnknown" "-1" "adCmdUnspecified")}
-      {Lisp-Entry "EventStatusEnum" #f 735 15 735 30 ("5" "adStatusUnwantedEvent" "4" "adStatusCancel" "3" "adStatusCantDeny" "2" "adStatusErrorsOccurred" "1" "adStatusOK")}
-      {Lisp-Entry "EventReasonEnum" #f 751 15 751 30 ("15" "adRsnMoveLast" "14" "adRsnMovePrevious" "13" "adRsnMoveNext" "12" "adRsnMoveFirst" "11" "adRsnFirstChange" "10" "adRsnMove" "9" "adRsnClose" "8" "adRsnResynch" "7" "adRsnRequery" "6" "adRsnUndoDelete" "5" "adRsnUndoAddNew" "4" "adRsnUndoUpdate" "3" "adRsnUpdate" "2" "adRsnDelete" "1" "adRsnAddNew")}
-      {Lisp-Entry "SchemaEnum" #f 777 15 777 25 ("39" "adSchemaTrustees" "38" "adSchemaMembers" "37" "adSchemaProperties" "36" "adSchemaMeasures" "35" "adSchemaLevels" "34" "adSchemaHierarchies" "33" "adSchemaDimensions" "32" "adSchemaCubes" "31" "adSchemaDBInfoLiterals" "30" "adSchemaDBInfoKeywords" "29" "adSchemaProcedureColumns" "28" "adSchemaPrimaryKeys" "27" "adSchemaForeignKeys" "26" "adSchemaProcedureParameters" "25" "adSchemaViewTableUsage" "24" "adSchemaViewColumnUsage" "23" "adSchemaViews" "22" "adSchemaProviderTypes" "21" "adSchemaTranslations" "20" "adSchemaTables" "19" "adSchemaStatistics" "18" "adSchemaSQLLanguages" "17" "adSchemaSchemata" "16" "adSchemaProcedures" "15" "adSchemaUsagePrivileges" "14" "adSchemaTablePrivileges" "13" "adSchemaColumnPrivileges" "12" "adSchemaIndexes" "11" "adSchemaColumnsDomainUsage" "10" "adSchemaTableConstraints" "adSchemaReferentialConstraints" "9" "adSchemaReferentialContraints" "8" "adSchemaKeyColumnUsage" "7" "adSchemaConstraintTableUsage" "6" "adSchemaConstraintColumnUsage" "5" "adSchemaCheckConstraints" "4" "adSchemaColumns" "3" "adSchemaCollations" "2" "adSchemaCharacterSets" "1" "adSchemaCatalogs" "0" "adSchemaAsserts" "-1" "adSchemaProviderSpecific")}
-      {Lisp-Entry "FieldStatusEnum" #f 830 15 830 30 ("1048576" "adFieldPendingUnknownDelete" "524288" "adFieldPendingUnknown" "262144" "adFieldPendingChange" "131072" "adFieldPendingDelete" "65536" "adFieldPendingInsert" "26" "adFieldAlreadyExists" "25" "adFieldResourceOutOfScope" "24" "adFieldReadOnly" "23" "adFieldCannotDeleteSource" "22" "adFieldOutOfSpace" "21" "adFieldVolumeNotFound" "20" "adFieldCannotComplete" "19" "adFieldResourceExists" "18" "adFieldResourceLocked" "17" "adFieldInvalidURL" "16" "adFieldDoesNotExist" "15" "adFieldIgnore" "13" "adFieldDefault" "12" "adFieldBadStatus" "11" "adFieldSchemaViolation" "10" "adFieldIntegrityViolation" "9" "adFieldPermissionDenied" "8" "adFieldUnavailable" "7" "adFieldCantCreate" "6" "adFieldDataOverflow" "5" "adFieldSignMismatch" "4" "adFieldTruncated" "3" "adFieldIsNull" "2" "adFieldCantConvertValue" "0" "adFieldOK")}
-      {Lisp-Entry "SeekEnum" #f 871 15 871 23 ("32" "adSeekBefore" "16" "adSeekBeforeEQ" "8" "adSeekAfter" "4" "adSeekAfterEQ" "2" "adSeekLastEQ" "1" "adSeekFirstEQ")}
-      {Lisp-Entry "ADCPROP_UPDATECRITERIA_ENUM" #f 888 15 888 42 ("3" "adCriteriaTimeStamp" "2" "adCriteriaUpdCols" "1" "adCriteriaAllCols" "0" "adCriteriaKey")}
-      {Lisp-Entry "ADCPROP_ASYNCTHREADPRIORITY_ENUM" #f 903 15 903 47 ("5" "adPriorityHighest" "4" "adPriorityAboveNormal" "3" "adPriorityNormal" "2" "adPriorityBelowNormal" "1" "adPriorityLowest")}
-      {Lisp-Entry "ADCPROP_AUTORECALC_ENUM" #f 919 15 919 38 ("1" "adRecalcAlways" "0" "adRecalcUpFront")}
-      {Lisp-Entry "ADCPROP_UPDATERESYNC_ENUM" #f 932 15 932 40 ("15" "adResyncAll" "8" "adResyncInserts" "4" "adResyncUpdates" "2" "adResyncConflicts" "1" "adResyncAutoIncrement" "0" "adResyncNone")}
-      {Lisp-Entry "MoveRecordOptionsEnum" #f 948 15 948 36 ("4" "adMoveAllowEmulation" "2" "adMoveDontUpdateLinks" "1" "adMoveOverWrite" "-1" "adMoveUnspecified")}
-      {Lisp-Entry "CopyRecordOptionsEnum" #f 962 15 962 36 ("2" "adCopyNonRecursive" "4" "adCopyAllowEmulation" "1" "adCopyOverWrite" "-1" "adCopyUnspecified")}
-      {Lisp-Entry "StreamTypeEnum" #f 977 15 977 29 ("2" "adTypeText" "1" "adTypeBinary")}
-      {Lisp-Entry "LineSeparatorEnum" #f 990 15 990 32 ("-1" "adCRLF" "13" "adCR" "10" "adLF")}
-      {Lisp-Entry "StreamOpenOptionsEnum" #f 1004 15 1004 36 ("4" "adOpenStreamFromRecord" "1" "adOpenStreamAsync" "-1" "adOpenStreamUnspecified")}
-      {Lisp-Entry "StreamWriteEnum" #f 1018 15 1018 30 ("stWriteLine" "stWriteChar" "1" "adWriteLine" "0" "adWriteChar")}
-      {Lisp-Entry "SaveOptionsEnum" #f 1033 15 1033 30 ("2" "adSaveCreateOverWrite" "1" "adSaveCreateNotExist")}
-      {Lisp-Entry "FieldEnum" #f 1046 15 1046 24 ("-2" "adRecordURL" "-1" "adDefaultStream")}
-      {Lisp-Entry "StreamReadEnum" #f 1059 15 1059 29 ("-2" "adReadLine" "-1" "adReadAll")}
-      {Lisp-Entry "RecordTypeEnum" #f 1071 15 1071 29 ("2" "adStructDoc" "1" "adCollectionRecord" "0" "adSimpleRecord")}}})
 "COM-ffi-struct"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "com" "COM-ffi-struct.jazz"} 1236813140
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "com" "COM-ffi-struct.jazz"} 1237033581
     {Lisp-Entry "cast-void*" #f 0 12 0 22 ("void*" "int" "c-function")}
     {Lisp-Entry "cast-int*" #f 3 12 3 21 ("int*" "int" "c-function")}
     {Lisp-Entry "foo-foo" #f 9 13 9 20 ("u32vect-ref" "defoo" "void" "U32PTR" "c-lambda" "enfoo" "0" "u32vect-set!" "1" "make-u32vect" "vect" "let*")}
@@ -102,13 +27,9 @@
     {Lisp-Entry "GUID-decode" #f 217 13 217 24 ("GUID-free" "GUID-ref" "str" "let" "guid")}
     {Lisp-Entry "CoCreateInstance" #f 223 13 223 29 ("IUnknown*-deref" "GUID-free" "CLSCTX_SERVER" "validate-hresult" "HRESULT" "LPVOID*" "DWORD" "IUnknown*" "GUID*" "c-function" "proc" "IUnknown*-enref" "coptr*" "interface-guid" "GUID-encode" "class-guid" "let" "interface" "class")}
     {Lisp-Entry "ado" #f 234 13 234 16 ("coptr" "CoRelease" "CoCreateInstance" "connection" "let" "initialize-com")}})
-"DAO"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "com" "DAO.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.windows.com.DAO" #f 37 9 37 38 ("jazz")
-      {Lisp-Entry "patch-link" #f 46 13 46 23 ("HRESULT" "LPVOID*" "DWORD" "IUnknown*" "GUID*" "c-function" "coptr*" "interface" "context" "aggregate" "class")}}})
 "WinBase"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinBase.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.windows.WinBase" #f 37 9 37 38 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinBase.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.windows.WinBase" #f 37 19 37 48 ("jazz")
       {Lisp-Entry "INVALID_HANDLE_VALUE" #f 52 12 52 32 ("-1")}
       {Lisp-Entry "INVALID_FILE_SIZE" #f 53 12 53 29 ("#xFFFFFFFF")}
       {Lisp-Entry "FILE_BEGIN" #f 55 12 55 22 ("0")}
@@ -198,8 +119,8 @@
       {Lisp-Entry "LPOVERLAPPED" #f 262 8 262 20 ("OVERLAPPED*")}
       {Lisp-Entry "GetModuleFileName" #f 265 12 265 29 ("LPTSTR" "c-function")}}})
 "WinCtrl"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinCtrl.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.windows.WinCtrl" #f 37 9 37 38 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinCtrl.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.windows.WinCtrl" #f 37 19 37 48 ("jazz")
       {Lisp-Entry "TME_HOVER" #f 45 14 45 23 ("#x00000001")}
       {Lisp-Entry "TME_LEAVE" #f 46 14 46 23 ("#x00000002")}
       {Lisp-Entry "TME_QUERY" #f 47 14 47 23 ("#x40000000")}
@@ -227,8 +148,8 @@
       {Lisp-Entry "ILD_FOCUS" #f 73 14 73 23 ("ILD_BLEND25")}
       {Lisp-Entry "ILD_BLEND" #f 74 14 74 23 ("ILD_BLEND50")}}})
 "WinDef"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinDef.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.windows.WinDef" #f 37 9 37 37 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinDef.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.windows.WinDef" #f 37 19 37 47 ("jazz")
       {Lisp-Entry "NULL" #f 48 12 48 16 ()}
       {Lisp-Entry "FALSE" #f 49 12 49 17 ("0")}
       {Lisp-Entry "TRUE" #f 50 12 50 16 ("1")}
@@ -255,8 +176,8 @@
       {Lisp-Entry "rect->RECT" #f 157 20 157 30 ("get-bottom" "get-right" "get-top" "get-left" "new-RECT" "rect")}
       {Lisp-Entry "RECT->rect" #f 164 20 164 30 ("RECT-bottom-ref" "RECT-right-ref" "RECT-top-ref" "RECT-left-ref" "Rect" "new" "not" "if" "rect")}}})
 "WinDlg"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinDlg.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.windows.WinDlg" #f 37 9 37 37 ("PAGESETUPDLG*" "PRINTDLG*" "BROWSEINFO*" "OPENFILENAME*" "jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinDlg.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.windows.WinDlg" #f 37 19 37 47 ("PAGESETUPDLG*" "PRINTDLG*" "BROWSEINFO*" "OPENFILENAME*" "jazz")
       {Lisp-Entry "OFN_READONLY" #f 54 12 54 24 ("#x00000001")}
       {Lisp-Entry "OFN_OVERWRITEPROMPT" #f 55 12 55 31 ("#x00000002")}
       {Lisp-Entry "OFN_HIDEREADONLY" #f 56 12 56 28 ("#x00000004")}
@@ -372,8 +293,8 @@
       {Lisp-Entry "PrintDlg" #f 284 21 284 29 ()}
       {Lisp-Entry "PageSetupDlg" #f 285 21 285 33 ()}}})
 "WinGDI"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinGDI.jazz"} 1237219903
-    {Lisp-Entry "jazz.platform.windows.WinGDI" #f 37 9 37 37 ("DOCINFO*" "DEVMODE*" "PVOID" "LOGFONTW*" "LPCWSTR" "DWORD" "LPRECT" "HRGN" "LPCRECT" "INT" "HGDIOBJ" "HANDLE" "HDC" "jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinGDI.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.windows.WinGDI" #f 37 19 37 47 ("DOCINFO*" "DEVMODE*" "PVOID" "LOGFONTW*" "LPCWSTR" "DWORD" "LPRECT" "HRGN" "LPCRECT" "INT" "HGDIOBJ" "HANDLE" "HDC" "jazz")
       {Lisp-Entry "ANSI_CHARSET" #f 51 12 51 24 ("0")}
       {Lisp-Entry "DEFAULT_CHARSET" #f 52 12 52 27 ("1")}
       {Lisp-Entry "SYMBOL_CHARSET" #f 53 12 53 26 ("2")}
@@ -701,11 +622,11 @@
       {Lisp-Entry "StartPage" #f 582 29 582 38 ()}
       {Lisp-Entry "EndPage" #f 583 29 583 36 ()}}})
 "WinIDL"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinIDL.jazz"} 1236813140
-    {Lisp-Entry "WinIDL" #f 37 9 37 15 ("jazz")}})
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinIDL.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.windows.WinIDL" #f 37 19 37 47 ("jazz")}})
 "WinKernel"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinKernel.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.windows.WinKernel" #f 37 9 37 40 ("PROCESSENTRY32*" "WIN32_FIND_DATA*" "HRSRC" "WORD" "LONG&" "LPOVERLAPPED" "GET_FILEEX_INFO_LEVELS" "INT" "LCID" "SYSTEMTIME*" "FILETIME*" "UINT" "LPWSTR" "STR" "HINSTANCE" "LONG*" "LONG" "PVOID" "HANDLE*" "PDWORD" "PROCESS_INFORMATION*" "BOOL" "SECURITY_ATTRIBUTES*" "CWSTR" "PSIZE_T" "STARTUPINFO*" "WCHAR*" "VOID*" "DWORD" "HANDLE" "OSVERSIONINFO*" "jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinKernel.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.windows.WinKernel" #f 37 19 37 50 ("PROCESSENTRY32*" "WIN32_FIND_DATA*" "HRSRC" "WORD" "LONG&" "LPOVERLAPPED" "GET_FILEEX_INFO_LEVELS" "INT" "LCID" "SYSTEMTIME*" "FILETIME*" "UINT" "LPWSTR" "STR" "HINSTANCE" "LONG*" "LONG" "PVOID" "HANDLE*" "PDWORD" "PROCESS_INFORMATION*" "BOOL" "SECURITY_ATTRIBUTES*" "CWSTR" "PSIZE_T" "STARTUPINFO*" "WCHAR*" "VOID*" "DWORD" "HANDLE" "OSVERSIONINFO*" "jazz")
       {Lisp-Entry "TH32CS_SNAPHEAPLIST" #f 58 12 58 31 ("#x00000001")}
       {Lisp-Entry "TH32CS_SNAPPROCESS" #f 59 12 59 30 ("#x00000002")}
       {Lisp-Entry "TH32CS_SNAPTHREAD" #f 60 12 60 29 ("#x00000004")}
@@ -800,8 +721,8 @@
       {Lisp-Entry "Process32First" #f 177 29 177 43 ()}
       {Lisp-Entry "GetProcessHandleCount" #f 181 12 181 33 ("DWORD" "HANDLE" "c-function")}}})
 "WinMM"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinMM.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.windows.WinMM" #f 37 9 37 36 ("HWND" "LPWSTR" "INT" "HMODULE" "CWSTR" "jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinMM.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.windows.WinMM" #f 37 19 37 46 ("HWND" "LPWSTR" "INT" "HMODULE" "CWSTR" "jazz")
       {Lisp-Entry "SND_SYNC" #f 50 12 50 20 ("#x0000")}
       {Lisp-Entry "SND_ASYNC" #f 51 12 51 21 ("#x0001")}
       {Lisp-Entry "SND_NODEFAULT" #f 52 12 52 25 ("#x0002")}
@@ -818,8 +739,8 @@
       {Lisp-Entry "PlaySound" #f 71 20 71 29 ()}
       {Lisp-Entry "mciSendString" #f 72 20 72 33 ()}}})
 "WinNT"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinNT.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.windows.WinNT" #f 37 9 37 36 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinNT.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.windows.WinNT" #f 37 19 37 46 ("jazz")
       {Lisp-Entry "FILE_ATTRIBUTE_READONLY" #f 40 12 40 35 ("#x00000001")}
       {Lisp-Entry "FILE_ATTRIBUTE_HIDDEN" #f 41 12 41 33 ("#x00000002")}
       {Lisp-Entry "FILE_ATTRIBUTE_SYSTEM" #f 42 12 42 33 ("#x00000004")}
@@ -833,30 +754,9 @@
       {Lisp-Entry "FILE_ATTRIBUTE_COMPRESSED" #f 50 12 50 37 ("#x00000800")}
       {Lisp-Entry "FILE_ATTRIBUTE_OFFLINE" #f 51 12 51 34 ("#x00001000")}
       {Lisp-Entry "FILE_ATTRIBUTE_NOT_CONTENT_INDEXED" #f 52 12 52 46 ("#x00002000")}}})
-"WinOpenGL"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinOpenGL.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.windows.WinOpenGL" #f 37 9 37 40 ("HGLRC" "INT" "PIXELFORMATDESCRIPTOR*" "HDC" "jazz")
-      {Lisp-Entry "HGLRC" #f 51 8 51 13 ("handle" "struct" "pointer")}
-      {Lisp-Entry "PFD_TYPE_RGBA" #f 59 12 59 25 ("0")}
-      {Lisp-Entry "PFD_MAIN_PLANE" #f 60 12 60 26 ("0")}
-      {Lisp-Entry "PFD_DOUBLEBUFFER" #f 61 12 61 28 ("1")}
-      {Lisp-Entry "PFD_STEREO" #f 62 12 62 22 ("2")}
-      {Lisp-Entry "PFD_DRAW_TO_WINDOW" #f 63 12 63 30 ("4")}
-      {Lisp-Entry "PFD_DRAW_TO_BITMAP" #f 64 12 64 30 ("8")}
-      {Lisp-Entry "PFD_SUPPORT_GDI" #f 65 12 65 27 ("16")}
-      {Lisp-Entry "PFD_SUPPORT_OPENGL" #f 66 12 66 30 ("32")}
-      {Lisp-Entry "PFD_GENERIC_FORMAT" #f 67 12 67 30 ("64")}
-      {Lisp-Entry "PIXELFORMATDESCRIPTOR" #f 75 13 75 34 ("dwDamageMask" "dwVisibleMask" "dwLayerMask" "bReserved" "iLayerType" "cAuxBuffers" "cStencilBits" "cDepthBits" "cAccumAlphaBits" "cAccumBlueBits" "cAccumGreenBits" "cAccumRedBits" "cAccumBits" "cAlphaShift" "cAlphaBits" "cBlueShift" "cBlueBits" "cGreenShift" "cGreenBits" "cRedShift" "cRedBits" "cColorBits" "iPixelType" "BYTE" "dwFlags" "DWORD" "nVersion" "nSize" "WORD")}
-      {Lisp-Entry "ChoosePixelFormat" #f 109 29 109 46 ()}
-      {Lisp-Entry "SetPixelFormat" #f 110 29 110 43 ()}
-      {Lisp-Entry "wglCreateContext" #f 111 29 111 45 ()}
-      {Lisp-Entry "wglDeleteContext" #f 112 29 112 45 ()}
-      {Lisp-Entry "wglMakeCurrent" #f 113 29 113 43 ()}
-      {Lisp-Entry "wglGetCurrentContext" #f 114 29 114 49 ()}
-      {Lisp-Entry "SwapBuffers" #f 115 29 115 40 ()}}})
 "WinPerf"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinPerf.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.windows.WinPerf" #f 37 9 37 38 ("PPDH_FMT_COUNTERVALUE" "LPDWORD" "DWORD" "PDH_HCOUNTER" "PDH_HQUERY" "jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinPerf.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.windows.WinPerf" #f 37 19 37 48 ("PPDH_FMT_COUNTERVALUE" "LPDWORD" "PDH_HCOUNTER" "PDH_HQUERY" "szDialogBoxCaption" "dwDefaultDetailLevel" "CallBackStatus" "dwCallBackArg" "pCallBack" "cchReturnPathLength" "szReturnPathBuffer" "szDataSource" "LPTSTR" "hWndOwner" "HWND" "configurationFlags" "DWORD" "PDH_BROWSE_DLG_CONFIG" "szCounterName" "dwInstanceIndex" "int" "szParentInstance" "szInstanceName" "szObjectName" "szMachineName" "string" "PDH_COUNTER_PATH_ELEMENTS" "structure" "jazz")
       {Lisp-Entry "PDH_MAX_COUNTER_NAME" #f 54 12 54 32 ("1024")}
       {Lisp-Entry "PDH_MAX_INSTANCE_NAME" #f 55 12 55 33 ("1024")}
       {Lisp-Entry "PDH_MAX_COUNTER_PATH" #f 56 12 56 32 ("2048")}
@@ -882,7 +782,6 @@
       {Lisp-Entry "PDH_STATUS" #f 85 8 85 18 ("LONG")}
       {Lisp-Entry "PDH_FMT_COUNTERVALUE" #f 93 13 93 33 ("longValue" "LONG" "CStatus" "DWORD")}
       {Lisp-Entry "PPDH_FMT_COUNTERVALUE" #f 99 8 99 29 ("PDH_FMT_COUNTERVALUE*")}
-      {Lisp-Entry "PDH_COUNTER_PATH_ELEMENTS" #f 103 11 103 36 ("szCounterName" "dwInstanceIndex" "int" "szParentInstance" "szInstanceName" "szObjectName" "szMachineName" "string")}
       {Lisp-Entry "PDH_BROWSE_DLG_CONFIG_bIncludeInstanceIndex" #f 112 12 112 55 ("#x00000001")}
       {Lisp-Entry "PDH_BROWSE_DLG_CONFIG_bSingleCounterPerAdd" #f 113 12 113 54 ("#x00000002")}
       {Lisp-Entry "PDH_BROWSE_DLG_CONFIG_bSingleCounterPerDialog" #f 114 12 114 57 ("#x00000004")}
@@ -893,7 +792,6 @@
       {Lisp-Entry "PDH_BROWSE_DLG_CONFIG_bDisableMachineSelection" #f 119 12 119 58 ("#x00000080")}
       {Lisp-Entry "PDH_BROWSE_DLG_CONFIG_bIncludeCostlyObjects" #f 120 12 120 55 ("#x00000100")}
       {Lisp-Entry "PDH_BROWSE_DLG_CONFIG_bShowObjectBrowser" #f 121 12 121 52 ("#x00000200")}
-      {Lisp-Entry "PDH_BROWSE_DLG_CONFIG" #f 125 11 125 32 ("szDialogBoxCaption" "string" "dwDefaultDetailLevel" "CallBackStatus" "dwCallBackArg" "pCallBack" "int" "cchReturnPathLength" "szReturnPathBuffer" "szDataSource" "LPTSTR" "hWndOwner" "HWND" "configurationFlags" "DWORD")}
       {Lisp-Entry "BrowseCounterPath" #f 138 12 138 29 ("LPTSTR" "c-function")}
       {Lisp-Entry "PDH_HCOUNTER-ref" #f 169 12 169 28 ("PDH_HCOUNTER" "PDH_HCOUNTER*" "c-function")}
       {Lisp-Entry "PDH_HCOUNTER-alloc" #f 174 12 174 30 ("PDH_HCOUNTER*" "c-function")}
@@ -907,16 +805,16 @@
       {Lisp-Entry "PdhCollectQueryData" #f 222 25 222 44 ()}
       {Lisp-Entry "PdhGetFormattedCounterValue" #f 223 25 223 52 ()}}})
 "WinShell"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinShell.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.windows.WinShell" #f 37 9 37 39 ("LPPOINT" "LPWSTR" "UINT" "HDROP" "BOOL" "HWND" "jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinShell.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.windows.WinShell" #f 37 19 37 49 ("LPPOINT" "LPWSTR" "UINT" "HDROP" "BOOL" "HWND" "jazz")
       {Lisp-Entry "WPARAM->HDROP" #f 45 12 45 25 ("HDROP" "WPARAM" "c-function")}
       {Lisp-Entry "DragAcceptFiles" #f 50 29 50 44 ()}
       {Lisp-Entry "DragQueryFile" #f 51 29 51 42 ()}
       {Lisp-Entry "DragQueryPoint" #f 52 29 52 43 ()}
       {Lisp-Entry "DragFinish" #f 53 29 53 39 ()}}})
 "WinTypes"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinTypes.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.windows.WinTypes" #f 37 9 37 39 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinTypes.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.windows.WinTypes" #f 37 19 37 49 ("jazz")
       {Lisp-Entry "VOID" #f 43 8 43 12 ("void" "native")}
       {Lisp-Entry "SHORT" #f 44 8 44 13 ("short" "native")}
       {Lisp-Entry "SHORT*" #f 45 8 45 14 ("SHORT*" "SHORT" "pointer")}
@@ -1005,8 +903,8 @@
       {Lisp-Entry "WCHAR-copy" #f 144 12 144 22 ("VOID" "INT" "CWSTR" "WCHAR*" "c-function")}
       {Lisp-Entry "WCHAR-ref" #f 145 12 145 21 ("ULONG" "WCHAR*" "c-function")}}})
 "WinUser"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinUser.jazz"} 1237219903
-    {Lisp-Entry "jazz.platform.windows.WinUser" #f 37 9 37 38 ("HANDLE" "HCURSOR" "TIMERPROC" "WCHAR*" "GetWindowText" "1" "c-external-so" "BYTE" "COLORREF" "LPTRACKMOUSEEVENT" "LONG" "HRGN" "BOOL" "LPCRECT" "LPRECT" "LPPOINT" "PAINTSTRUCT*" "MSG*" "LPARAM" "WPARAM" "UINT" "LPVOID" "HINSTANCE" "HMENU" "HWND" "INT" "LPCWSTR" "ATOM" "DWORD" "WNDCLASSEX*" "jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "WinUser.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.windows.WinUser" #f 37 19 37 48 ("HANDLE" "HCURSOR" "TIMERPROC" "WCHAR*" "GetWindowText" "1" "c-external-so" "BYTE" "COLORREF" "LPTRACKMOUSEEVENT" "LONG" "HRGN" "BOOL" "LPCRECT" "LPRECT" "LPPOINT" "PAINTSTRUCT*" "MSG*" "LPARAM" "WPARAM" "UINT" "LPVOID" "HINSTANCE" "HMENU" "HWND" "INT" "LPCWSTR" "ATOM" "DWORD" "WNDCLASSEX*" "jazz")
       {Lisp-Entry "LWA_COLORKEY" #f 55 12 55 24 ("#x01")}
       {Lisp-Entry "LWA_ALPHA" #f 56 12 56 21 ("#x02")}
       {Lisp-Entry "ULW_COLORKEY" #f 57 12 57 24 ("#x01")}
@@ -1526,8 +1424,8 @@
       {Lisp-Entry "set-process-hwnd-message" #f 983 20 983 44 ("process-hwnd-message" "set!" "proc")}
       {Lisp-Entry "call-process-hwnd-message" #f 987 15 987 40 ("lParam" "wParam" "uMsg" "hWnd" "process-hwnd-message" "LRESULT" "LPARAM" "WPARAM" "UINT" "HWND")}}})
 "_cairo"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "cairo" "_cairo.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.cairo" #f 37 9 37 28 ("uchar*" "cairo_format_t" "cairo_matrix_t*" "cairo_hint_metrics_t" "cairo_hint_style_t" "cairo_subpixel_order_t" "cairo_antialias_t" "cairo_font_options_t*" "cairo_font_weight_t" "cairo_font_slant_t" "char-string" "cairo_text_extents_t*" "int" "cairo_glyph_t*" "cairo_font_extents_t*" "cairo_scaled_font_t*" "cairo_font_face_t*" "UTF-8-string" "double*" "cairo_pattern_t*" "double" "cairo_t*" "cairo_surface_t*" "else" "x11" "windows" "c-include" "carbon" "cond-expand" "jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "cairo" "_cairo.jazz"} 1244896779
+    {Lisp-Entry "jazz.platform.cairo" #f 37 9 37 28 ("uchar*" "cairo_format_t" "cairo_matrix_t*" "cairo_hint_metrics_t" "cairo_hint_style_t" "cairo_subpixel_order_t" "cairo_antialias_t" "cairo_font_options_t*" "cairo_font_weight_t" "cairo_font_slant_t" "char-string" "cairo_text_extents_t*" "int" "cairo_glyph_t*" "cairo_font_extents_t*" "cairo_scaled_font_t*" "cairo_font_face_t*" "UTF-8-string" "double*" "cairo_pattern_t*" "double" "cairo_operator_t" "cairo_t*" "cairo_surface_t*" "jazz")
       {Lisp-Entry "M_PI" #f 67 12 67 16 ("3.14159265358979323846")}
       {Lisp-Entry "cairo_t" #f 69 8 69 15 ("native")}
       {Lisp-Entry "cairo_t*" #f 70 8 70 16 ("cairo_t*" "cairo_t" "pointer")}
@@ -1537,117 +1435,120 @@
       {Lisp-Entry "cairo_content_t" #f 80 8 80 23 ("int")}
       {Lisp-Entry "cairo_format_t" #f 83 15 83 29 ("3" "CAIRO_FORMAT_A1" "2" "CAIRO_FORMAT_A8" "1" "CAIRO_FORMAT_RGB24" "0" "CAIRO_FORMAT_ARGB32")}
       {Lisp-Entry "cairo_format_t" #f 89 8 89 22 ("int")}
-      {Lisp-Entry "cairo_font_slant_t" #f 92 15 92 33 ("2" "CAIRO_FONT_SLANT_OBLIQUE" "1" "CAIRO_FONT_SLANT_ITALIC" "0" "CAIRO_FONT_SLANT_NORMAL")}
-      {Lisp-Entry "cairo_font_slant_t" #f 97 8 97 26 ("int")}
-      {Lisp-Entry "cairo_font_weight_t" #f 100 15 100 34 ("1" "CAIRO_FONT_WEIGHT_BOLD" "0" "CAIRO_FONT_WEIGHT_NORMAL")}
-      {Lisp-Entry "cairo_font_weight_t" #f 104 8 104 27 ("int")}
-      {Lisp-Entry "cairo_status_t" #f 107 15 107 29 ("22" "CAIRO_STATUS_CLIP_NOT_REPRESENTABLE" "21" "CAIRO_STATUS_INVALID_INDEX" "20" "CAIRO_STATUS_INVALID_DSC_COMMENT" "19" "CAIRO_STATUS_INVALID_DASH" "18" "CAIRO_STATUS_FILE_NOT_FOUND" "17" "CAIRO_STATUS_INVALID_VISUAL" "16" "CAIRO_STATUS_INVALID_FORMAT" "15" "CAIRO_STATUS_INVALID_CONTENT" "14" "CAIRO_STATUS_PATTERN_TYPE_MISMATCH" "13" "CAIRO_STATUS_SURFACE_TYPE_MISMATCH" "12" "CAIRO_STATUS_SURFACE_FINISHED" "11" "CAIRO_STATUS_WRITE_ERROR" "10" "CAIRO_STATUS_READ_ERROR" "9" "CAIRO_STATUS_INVALID_PATH_DATA" "8" "CAIRO_STATUS_INVALID_STRING" "7" "CAIRO_STATUS_NULL_POINTER" "6" "CAIRO_STATUS_INVALID_STATUS" "5" "CAIRO_STATUS_INVALID_MATRIX" "4" "CAIRO_STATUS_NO_CURRENT_POINT" "3" "CAIRO_STATUS_INVALID_POP_GROUP" "2" "CAIRO_STATUS_INVALID_RESTORE" "1" "CAIRO_STATUS_NO_MEMORY" "0" "CAIRO_STATUS_SUCCESS")}
-      {Lisp-Entry "cairo_status_t" #f 132 8 132 22 ("int")}
-      {Lisp-Entry "cairo_font_extents_t" #f 135 13 135 33 ("max_y_advance" "max_x_advance" "height" "descent" "ascent" "double")}
-      {Lisp-Entry "cairo_text_extents_t" #f 143 13 143 33 ("y_advance" "x_advance" "height" "width" "y_bearing" "x_bearing" "double")}
-      {Lisp-Entry "cairo_matrix_t" #f 152 13 152 27 ("y0" "x0" "yy" "xy" "yx" "xx" "double")}
-      {Lisp-Entry "cairo_glyph_t" #f 161 13 161 26 ("y" "x" "double" "index" "ulong")}
-      {Lisp-Entry "cairo_current_point" #f 172 13 172 32 ("1" "0" "f64vector-ref" "fxfloor" "Point" "new" "2" "make-f64vector" "pt" "void" "F64PTR" "cairo_t*" "c-function" "fn" "let" "context")}
-      {Lisp-Entry "cairo_device_to_user" #f 185 13 185 33 ("1" "0" "f64vector-ref" "fxfloor" "Point" "new" "get-v" "get-h" "cast" "f64vector" "vec" "void" "F64PTR" "cairo_t*" "c-function" "fn" "let" "pt" "context")}
-      {Lisp-Entry "cairo_user_to_device" #f 193 13 193 33 ("1" "0" "f64vector-ref" "fxfloor" "Point" "new" "get-v" "get-h" "cast" "f64vector" "vec" "void" "F64PTR" "cairo_t*" "c-function" "fn" "let" "pt" "context")}
-      {Lisp-Entry "glyph-array-make" #f 206 12 206 28 ("cairo_glyph_t*" "int" "c-function")}
-      {Lisp-Entry "glyph-array-ref" #f 207 12 207 27 ("int" "cairo_glyph_t*" "c-function")}
-      {Lisp-Entry "glyph-array-free" #f 208 12 208 28 ("void" "cairo_glyph_t*" "c-function")}
-      {Lisp-Entry "cairo_surface_destroy" #f 216 32 216 53 ()}
-      {Lisp-Entry "cairo_surface_status" #f 217 32 217 52 ()}
-      {Lisp-Entry "cairo_surface_get_content" #f 218 32 218 57 ()}
-      {Lisp-Entry "cairo_surface_finish" #f 219 32 219 52 ()}
-      {Lisp-Entry "cairo_surface_flush" #f 220 32 220 51 ()}
-      {Lisp-Entry "cairo_create" #f 228 32 228 44 ()}
-      {Lisp-Entry "cairo_destroy" #f 229 32 229 45 ()}
-      {Lisp-Entry "cairo_save" #f 230 32 230 42 ()}
-      {Lisp-Entry "cairo_restore" #f 231 32 231 45 ()}
-      {Lisp-Entry "cairo_status" #f 232 32 232 44 ()}
-      {Lisp-Entry "cairo_clip" #f 233 32 233 42 ()}
-      {Lisp-Entry "cairo_reset_clip" #f 234 32 234 48 ()}
-      {Lisp-Entry "cairo_fill" #f 235 32 235 42 ()}
-      {Lisp-Entry "cairo_fill_preserve" #f 236 32 236 51 ()}
-      {Lisp-Entry "cairo_paint" #f 237 32 237 43 ()}
-      {Lisp-Entry "cairo_stroke" #f 238 32 238 44 ()}
-      {Lisp-Entry "cairo_stroke_preserve" #f 239 32 239 53 ()}
-      {Lisp-Entry "cairo_move_to" #f 247 32 247 45 ()}
-      {Lisp-Entry "cairo_line_to" #f 248 32 248 45 ()}
-      {Lisp-Entry "cairo_rel_line_to" #f 249 32 249 49 ()}
-      {Lisp-Entry "cairo_arc" #f 250 32 250 41 ()}
-      {Lisp-Entry "cairo_rel_curve_to" #f 251 32 251 50 ()}
-      {Lisp-Entry "cairo_rectangle" #f 252 32 252 47 ()}
-      {Lisp-Entry "cairo_set_line_width" #f 253 32 253 52 ()}
-      {Lisp-Entry "cairo_get_line_width" #f 254 32 254 52 ()}
-      {Lisp-Entry "cairo_rel_move_to" #f 255 32 255 49 ()}
-      {Lisp-Entry "cairo_close_path" #f 256 32 256 48 ()}
-      {Lisp-Entry "cairo_set_source" #f 264 32 264 48 ()}
-      {Lisp-Entry "cairo_set_source_surface" #f 265 32 265 56 ()}
-      {Lisp-Entry "cairo_set_source_rgb" #f 266 32 266 52 ()}
-      {Lisp-Entry "cairo_set_source_rgba" #f 267 32 267 53 ()}
-      {Lisp-Entry "cairo_get_source" #f 268 32 268 48 ()}
-      {Lisp-Entry "cairo_pattern_get_rgba" #f 269 32 269 54 ()}
-      {Lisp-Entry "cairo_pattern_create_for_surface" #f 270 32 270 64 ()}
-      {Lisp-Entry "cairo_pattern_create_linear" #f 271 32 271 59 ()}
-      {Lisp-Entry "cairo_pattern_add_color_stop_rgb" #f 272 32 272 64 ()}
-      {Lisp-Entry "cairo_pattern_add_color_stop_rgba" #f 273 32 273 65 ()}
-      {Lisp-Entry "cairo_show_text" #f 281 32 281 47 ()}
-      {Lisp-Entry "cairo_set_font_face" #f 282 32 282 51 ()}
-      {Lisp-Entry "cairo_get_font_face" #f 283 32 283 51 ()}
-      {Lisp-Entry "cairo_set_font_size" #f 284 32 284 51 ()}
-      {Lisp-Entry "cairo_set_scaled_font" #f 285 32 285 53 ()}
-      {Lisp-Entry "cairo_font_extents" #f 286 32 286 50 ()}
-      {Lisp-Entry "cairo_glyph_extents" #f 287 32 287 51 ()}
-      {Lisp-Entry "cairo_select_font_face" #f 288 32 288 54 ()}
-      {Lisp-Entry "cairo_show_glyphs" #f 289 32 289 49 ()}
-      {Lisp-Entry "cairo_text_extents" #f 290 32 290 50 ()}
-      {Lisp-Entry "cairo_antialias_t" #f 298 15 298 32 ("3" "CAIRO_ANTIALIAS_SUBPIXEL" "2" "CAIRO_ANTIALIAS_GRAY" "1" "CAIRO_ANTIALIAS_NONE" "0" "CAIRO_ANTIALIAS_DEFAULT")}
-      {Lisp-Entry "cairo_antialias_t" #f 304 8 304 25 ("int")}
-      {Lisp-Entry "cairo_subpixel_order_t" #f 307 15 307 37 ("4" "CAIRO_SUBPIXEL_ORDER_VBGR" "3" "CAIRO_SUBPIXEL_ORDER_VRGB" "2" "CAIRO_SUBPIXEL_ORDER_BGR" "1" "CAIRO_SUBPIXEL_ORDER_RGB" "0" "CAIRO_SUBPIXEL_ORDER_DEFAULT")}
-      {Lisp-Entry "cairo_subpixel_order_t" #f 314 8 314 30 ("int")}
-      {Lisp-Entry "cairo_hint_style_t" #f 317 15 317 33 ("4" "CAIRO_HINT_STYLE_FULL" "3" "CAIRO_HINT_STYLE_MEDIUM" "2" "CAIRO_HINT_STYLE_SLIGHT" "1" "CAIRO_HINT_STYLE_NONE" "0" "CAIRO_HINT_STYLE_DEFAULT")}
-      {Lisp-Entry "cairo_hint_style_t" #f 324 8 324 26 ("int")}
-      {Lisp-Entry "cairo_hint_metrics_t" #f 327 15 327 35 ("2" "CAIRO_HINT_METRICS_ON" "1" "CAIRO_HINT_METRICS_OFF" "0" "CAIRO_HINT_METRICS_DEFAULT")}
-      {Lisp-Entry "cairo_hint_metrics_t" #f 332 8 332 28 ("int")}
-      {Lisp-Entry "cairo_font_options_t" #f 335 8 335 28 ("native")}
-      {Lisp-Entry "cairo_font_options_t*" #f 336 8 336 29 ("cairo_font_options_t*" "cairo_font_options_t" "pointer")}
-      {Lisp-Entry "cairo_font_options_create" #f 338 36 338 61 ()}
-      {Lisp-Entry "cairo_font_options_destroy" #f 339 36 339 62 ()}
-      {Lisp-Entry "cairo_font_options_get_antialias" #f 340 36 340 68 ()}
-      {Lisp-Entry "cairo_font_options_set_antialias" #f 341 36 341 68 ()}
-      {Lisp-Entry "cairo_font_options_get_subpixel_order" #f 342 36 342 73 ()}
-      {Lisp-Entry "cairo_font_options_set_subpixel_order" #f 343 36 343 73 ()}
-      {Lisp-Entry "cairo_font_options_get_hint_style" #f 344 36 344 69 ()}
-      {Lisp-Entry "cairo_font_options_set_hint_style" #f 345 36 345 69 ()}
-      {Lisp-Entry "cairo_font_options_get_hint_metrics" #f 346 36 346 71 ()}
-      {Lisp-Entry "cairo_font_options_set_hint_metrics" #f 347 36 347 71 ()}
-      {Lisp-Entry "cairo_scaled_font_t" #f 350 8 350 27 ("native")}
-      {Lisp-Entry "cairo_scaled_font_t*" #f 351 8 351 28 ("cairo_scaled_font_t*" "cairo_scaled_font_t" "pointer")}
-      {Lisp-Entry "cairo_scaled_font_create" #f 353 35 353 59 ()}
-      {Lisp-Entry "cairo_scaled_font_destroy" #f 354 35 354 60 ()}
-      {Lisp-Entry "cairo_translate" #f 362 32 362 47 ()}
-      {Lisp-Entry "cairo_transform" #f 363 32 363 47 ()}
-      {Lisp-Entry "cairo_set_matrix" #f 364 32 364 48 ()}
-      {Lisp-Entry "cairo_get_matrix" #f 365 32 365 48 ()}
-      {Lisp-Entry "cairo_matrix_init_identity" #f 366 32 366 58 ()}
-      {Lisp-Entry "cairo_matrix_init_scale" #f 367 32 367 55 ()}
-      {Lisp-Entry "cairo_identity_matrix" #f 368 32 368 53 ()}
-      {Lisp-Entry "cairo_scale" #f 369 32 369 43 ()}
-      {Lisp-Entry "cairo_device_to_user_distance" #f 370 32 370 61 ()}
-      {Lisp-Entry "cairo_image_surface_create_from_png" #f 378 32 378 67 ()}
-      {Lisp-Entry "cairo_image_surface_create" #f 379 32 379 58 ()}
-      {Lisp-Entry "cairo_image_surface_create_for_data" #f 380 32 380 67 ()}
-      {Lisp-Entry "cairo_pattern_destroy" #f 381 32 381 53 ()}
-      {Lisp-Entry "cairo_image_surface_get_width" #f 382 32 382 61 ()}
-      {Lisp-Entry "cairo_image_surface_get_height" #f 383 32 383 62 ()}
-      {Lisp-Entry "cairo_image_surface_get_data" #f 384 32 384 60 ()}
-      {Lisp-Entry "cairo_surface_write_to_png" #f 385 32 385 58 ()}
-      {Lisp-Entry "cairo_surface_show_page" #f 388 34 388 57 ()}
-      {Lisp-Entry "cairo_set_alternate" #f 391 12 391 31 ("void" "cairo_t*" "c-function")}
-      {Lisp-Entry "cairo_set_solid" #f 398 12 398 27 ("void" "cairo_t*" "c-function")}
-      {Lisp-Entry "cairo_get_clipper" #f 403 13 403 30 ("Rect" "new" "3" "bottom" "2" "right" "1" "top" "0" "f64vector-ref" "left" "4" "make-f64vector" "vec" "void" "F64PTR" "cairo_t*" "c-function" "fn" "let" "context")}}})
+      {Lisp-Entry "cairo_operator" #f 92 15 92 29 ("13" "CAIRO_OPERATOR_SATURATE" "12" "CAIRO_OPERATOR_ADD" "11" "CAIRO_OPERATOR_XOR" "10" "CAIRO_OPERATOR_DEST_ATOP" "9" "CAIRO_OPERATOR_DEST_OUT" "8" "CAIRO_OPERATOR_DEST_IN" "7" "CAIRO_OPERATOR_DEST_OVER" "6" "CAIRO_OPERATOR_DEST" "5" "CAIRO_OPERATOR_ATOP" "4" "CAIRO_OPERATOR_OUT" "3" "CAIRO_OPERATOR_IN" "2" "CAIRO_OPERATOR_OVER" "1" "CAIRO_OPERATOR_SOURCE" "0" "CAIRO_OPERATOR_CLEAR")}
+      {Lisp-Entry "cairo_operator_t" #f 108 8 108 24 ("int")}
+      {Lisp-Entry "cairo_font_slant_t" #f 111 15 111 33 ("2" "CAIRO_FONT_SLANT_OBLIQUE" "1" "CAIRO_FONT_SLANT_ITALIC" "0" "CAIRO_FONT_SLANT_NORMAL")}
+      {Lisp-Entry "cairo_font_slant_t" #f 116 8 116 26 ("int")}
+      {Lisp-Entry "cairo_font_weight_t" #f 119 15 119 34 ("1" "CAIRO_FONT_WEIGHT_BOLD" "0" "CAIRO_FONT_WEIGHT_NORMAL")}
+      {Lisp-Entry "cairo_font_weight_t" #f 123 8 123 27 ("int")}
+      {Lisp-Entry "cairo_status_t" #f 126 15 126 29 ("22" "CAIRO_STATUS_CLIP_NOT_REPRESENTABLE" "21" "CAIRO_STATUS_INVALID_INDEX" "20" "CAIRO_STATUS_INVALID_DSC_COMMENT" "19" "CAIRO_STATUS_INVALID_DASH" "18" "CAIRO_STATUS_FILE_NOT_FOUND" "17" "CAIRO_STATUS_INVALID_VISUAL" "16" "CAIRO_STATUS_INVALID_FORMAT" "15" "CAIRO_STATUS_INVALID_CONTENT" "14" "CAIRO_STATUS_PATTERN_TYPE_MISMATCH" "13" "CAIRO_STATUS_SURFACE_TYPE_MISMATCH" "12" "CAIRO_STATUS_SURFACE_FINISHED" "11" "CAIRO_STATUS_WRITE_ERROR" "10" "CAIRO_STATUS_READ_ERROR" "9" "CAIRO_STATUS_INVALID_PATH_DATA" "8" "CAIRO_STATUS_INVALID_STRING" "7" "CAIRO_STATUS_NULL_POINTER" "6" "CAIRO_STATUS_INVALID_STATUS" "5" "CAIRO_STATUS_INVALID_MATRIX" "4" "CAIRO_STATUS_NO_CURRENT_POINT" "3" "CAIRO_STATUS_INVALID_POP_GROUP" "2" "CAIRO_STATUS_INVALID_RESTORE" "1" "CAIRO_STATUS_NO_MEMORY" "0" "CAIRO_STATUS_SUCCESS")}
+      {Lisp-Entry "cairo_status_t" #f 151 8 151 22 ("int")}
+      {Lisp-Entry "cairo_font_extents_t" #f 154 13 154 33 ("max_y_advance" "max_x_advance" "height" "descent" "ascent" "double")}
+      {Lisp-Entry "cairo_text_extents_t" #f 162 13 162 33 ("y_advance" "x_advance" "height" "width" "y_bearing" "x_bearing" "double")}
+      {Lisp-Entry "cairo_matrix_t" #f 171 13 171 27 ("y0" "x0" "yy" "xy" "yx" "xx" "double")}
+      {Lisp-Entry "cairo_glyph_t" #f 180 13 180 26 ("y" "x" "double" "index" "ulong")}
+      {Lisp-Entry "cairo_current_point" #f 191 13 191 32 ("1" "0" "f64vector-ref" "fxfloor" "Point" "new" "2" "make-f64vector" "pt" "void" "F64PTR" "cairo_t*" "c-function" "fn" "let" "context")}
+      {Lisp-Entry "cairo_device_to_user" #f 204 13 204 33 ("1" "0" "f64vector-ref" "fxfloor" "Point" "new" "get-v" "get-h" "cast" "f64vector" "vec" "void" "F64PTR" "cairo_t*" "c-function" "fn" "let" "pt" "context")}
+      {Lisp-Entry "cairo_user_to_device" #f 212 13 212 33 ("1" "0" "f64vector-ref" "fxfloor" "Point" "new" "get-v" "get-h" "cast" "f64vector" "vec" "void" "F64PTR" "cairo_t*" "c-function" "fn" "let" "pt" "context")}
+      {Lisp-Entry "glyph-array-make" #f 225 12 225 28 ("cairo_glyph_t*" "int" "c-function")}
+      {Lisp-Entry "glyph-array-ref" #f 226 12 226 27 ("int" "cairo_glyph_t*" "c-function")}
+      {Lisp-Entry "glyph-array-free" #f 227 12 227 28 ("void" "cairo_glyph_t*" "c-function")}
+      {Lisp-Entry "cairo_surface_destroy" #f 235 32 235 53 ()}
+      {Lisp-Entry "cairo_surface_status" #f 236 32 236 52 ()}
+      {Lisp-Entry "cairo_surface_get_content" #f 237 32 237 57 ()}
+      {Lisp-Entry "cairo_surface_finish" #f 238 32 238 52 ()}
+      {Lisp-Entry "cairo_surface_flush" #f 239 32 239 51 ()}
+      {Lisp-Entry "cairo_create" #f 247 32 247 44 ()}
+      {Lisp-Entry "cairo_destroy" #f 248 32 248 45 ()}
+      {Lisp-Entry "cairo_save" #f 249 32 249 42 ()}
+      {Lisp-Entry "cairo_restore" #f 250 32 250 45 ()}
+      {Lisp-Entry "cairo_status" #f 251 32 251 44 ()}
+      {Lisp-Entry "cairo_clip" #f 252 32 252 42 ()}
+      {Lisp-Entry "cairo_reset_clip" #f 253 32 253 48 ()}
+      {Lisp-Entry "cairo_fill" #f 254 32 254 42 ()}
+      {Lisp-Entry "cairo_fill_preserve" #f 255 32 255 51 ()}
+      {Lisp-Entry "cairo_paint" #f 256 32 256 43 ()}
+      {Lisp-Entry "cairo_stroke" #f 257 32 257 44 ()}
+      {Lisp-Entry "cairo_stroke_preserve" #f 258 32 258 53 ()}
+      {Lisp-Entry "cairo_set_operator" #f 259 32 259 50 ()}
+      {Lisp-Entry "cairo_move_to" #f 267 32 267 45 ()}
+      {Lisp-Entry "cairo_line_to" #f 268 32 268 45 ()}
+      {Lisp-Entry "cairo_rel_line_to" #f 269 32 269 49 ()}
+      {Lisp-Entry "cairo_arc" #f 270 32 270 41 ()}
+      {Lisp-Entry "cairo_rel_curve_to" #f 271 32 271 50 ()}
+      {Lisp-Entry "cairo_rectangle" #f 272 32 272 47 ()}
+      {Lisp-Entry "cairo_set_line_width" #f 273 32 273 52 ()}
+      {Lisp-Entry "cairo_get_line_width" #f 274 32 274 52 ()}
+      {Lisp-Entry "cairo_rel_move_to" #f 275 32 275 49 ()}
+      {Lisp-Entry "cairo_close_path" #f 276 32 276 48 ()}
+      {Lisp-Entry "cairo_set_source" #f 284 32 284 48 ()}
+      {Lisp-Entry "cairo_set_source_surface" #f 285 32 285 56 ()}
+      {Lisp-Entry "cairo_set_source_rgb" #f 286 32 286 52 ()}
+      {Lisp-Entry "cairo_set_source_rgba" #f 287 32 287 53 ()}
+      {Lisp-Entry "cairo_get_source" #f 288 32 288 48 ()}
+      {Lisp-Entry "cairo_pattern_get_rgba" #f 289 32 289 54 ()}
+      {Lisp-Entry "cairo_pattern_create_for_surface" #f 290 32 290 64 ()}
+      {Lisp-Entry "cairo_pattern_create_linear" #f 291 32 291 59 ()}
+      {Lisp-Entry "cairo_pattern_add_color_stop_rgb" #f 292 32 292 64 ()}
+      {Lisp-Entry "cairo_pattern_add_color_stop_rgba" #f 293 32 293 65 ()}
+      {Lisp-Entry "cairo_show_text" #f 301 32 301 47 ()}
+      {Lisp-Entry "cairo_set_font_face" #f 302 32 302 51 ()}
+      {Lisp-Entry "cairo_get_font_face" #f 303 32 303 51 ()}
+      {Lisp-Entry "cairo_set_font_size" #f 304 32 304 51 ()}
+      {Lisp-Entry "cairo_set_scaled_font" #f 305 32 305 53 ()}
+      {Lisp-Entry "cairo_font_extents" #f 306 32 306 50 ()}
+      {Lisp-Entry "cairo_glyph_extents" #f 307 32 307 51 ()}
+      {Lisp-Entry "cairo_select_font_face" #f 308 32 308 54 ()}
+      {Lisp-Entry "cairo_show_glyphs" #f 309 32 309 49 ()}
+      {Lisp-Entry "cairo_text_extents" #f 310 32 310 50 ()}
+      {Lisp-Entry "cairo_antialias_t" #f 318 15 318 32 ("3" "CAIRO_ANTIALIAS_SUBPIXEL" "2" "CAIRO_ANTIALIAS_GRAY" "1" "CAIRO_ANTIALIAS_NONE" "0" "CAIRO_ANTIALIAS_DEFAULT")}
+      {Lisp-Entry "cairo_antialias_t" #f 324 8 324 25 ("int")}
+      {Lisp-Entry "cairo_subpixel_order_t" #f 327 15 327 37 ("4" "CAIRO_SUBPIXEL_ORDER_VBGR" "3" "CAIRO_SUBPIXEL_ORDER_VRGB" "2" "CAIRO_SUBPIXEL_ORDER_BGR" "1" "CAIRO_SUBPIXEL_ORDER_RGB" "0" "CAIRO_SUBPIXEL_ORDER_DEFAULT")}
+      {Lisp-Entry "cairo_subpixel_order_t" #f 334 8 334 30 ("int")}
+      {Lisp-Entry "cairo_hint_style_t" #f 337 15 337 33 ("4" "CAIRO_HINT_STYLE_FULL" "3" "CAIRO_HINT_STYLE_MEDIUM" "2" "CAIRO_HINT_STYLE_SLIGHT" "1" "CAIRO_HINT_STYLE_NONE" "0" "CAIRO_HINT_STYLE_DEFAULT")}
+      {Lisp-Entry "cairo_hint_style_t" #f 344 8 344 26 ("int")}
+      {Lisp-Entry "cairo_hint_metrics_t" #f 347 15 347 35 ("2" "CAIRO_HINT_METRICS_ON" "1" "CAIRO_HINT_METRICS_OFF" "0" "CAIRO_HINT_METRICS_DEFAULT")}
+      {Lisp-Entry "cairo_hint_metrics_t" #f 352 8 352 28 ("int")}
+      {Lisp-Entry "cairo_font_options_t" #f 355 8 355 28 ("native")}
+      {Lisp-Entry "cairo_font_options_t*" #f 356 8 356 29 ("cairo_font_options_t*" "cairo_font_options_t" "pointer")}
+      {Lisp-Entry "cairo_font_options_create" #f 358 36 358 61 ()}
+      {Lisp-Entry "cairo_font_options_destroy" #f 359 36 359 62 ()}
+      {Lisp-Entry "cairo_font_options_get_antialias" #f 360 36 360 68 ()}
+      {Lisp-Entry "cairo_font_options_set_antialias" #f 361 36 361 68 ()}
+      {Lisp-Entry "cairo_font_options_get_subpixel_order" #f 362 36 362 73 ()}
+      {Lisp-Entry "cairo_font_options_set_subpixel_order" #f 363 36 363 73 ()}
+      {Lisp-Entry "cairo_font_options_get_hint_style" #f 364 36 364 69 ()}
+      {Lisp-Entry "cairo_font_options_set_hint_style" #f 365 36 365 69 ()}
+      {Lisp-Entry "cairo_font_options_get_hint_metrics" #f 366 36 366 71 ()}
+      {Lisp-Entry "cairo_font_options_set_hint_metrics" #f 367 36 367 71 ()}
+      {Lisp-Entry "cairo_scaled_font_t" #f 370 8 370 27 ("native")}
+      {Lisp-Entry "cairo_scaled_font_t*" #f 371 8 371 28 ("cairo_scaled_font_t*" "cairo_scaled_font_t" "pointer")}
+      {Lisp-Entry "cairo_scaled_font_create" #f 373 35 373 59 ()}
+      {Lisp-Entry "cairo_scaled_font_destroy" #f 374 35 374 60 ()}
+      {Lisp-Entry "cairo_translate" #f 382 32 382 47 ()}
+      {Lisp-Entry "cairo_transform" #f 383 32 383 47 ()}
+      {Lisp-Entry "cairo_set_matrix" #f 384 32 384 48 ()}
+      {Lisp-Entry "cairo_get_matrix" #f 385 32 385 48 ()}
+      {Lisp-Entry "cairo_matrix_init_identity" #f 386 32 386 58 ()}
+      {Lisp-Entry "cairo_matrix_init_scale" #f 387 32 387 55 ()}
+      {Lisp-Entry "cairo_identity_matrix" #f 388 32 388 53 ()}
+      {Lisp-Entry "cairo_scale" #f 389 32 389 43 ()}
+      {Lisp-Entry "cairo_device_to_user_distance" #f 390 32 390 61 ()}
+      {Lisp-Entry "cairo_image_surface_create_from_png" #f 398 32 398 67 ()}
+      {Lisp-Entry "cairo_image_surface_create" #f 399 32 399 58 ()}
+      {Lisp-Entry "cairo_image_surface_create_for_data" #f 400 32 400 67 ()}
+      {Lisp-Entry "cairo_pattern_destroy" #f 401 32 401 53 ()}
+      {Lisp-Entry "cairo_image_surface_get_width" #f 402 32 402 61 ()}
+      {Lisp-Entry "cairo_image_surface_get_height" #f 403 32 403 62 ()}
+      {Lisp-Entry "cairo_image_surface_get_data" #f 404 32 404 60 ()}
+      {Lisp-Entry "cairo_surface_write_to_png" #f 405 32 405 58 ()}
+      {Lisp-Entry "cairo_surface_show_page" #f 408 34 408 57 ()}
+      {Lisp-Entry "cairo_set_alternate" #f 411 12 411 31 ("void" "cairo_t*" "c-function")}
+      {Lisp-Entry "cairo_set_solid" #f 418 12 418 27 ("void" "cairo_t*" "c-function")}
+      {Lisp-Entry "cairo_get_clipper" #f 423 13 423 30 ("Rect" "new" "3" "bottom" "2" "right" "1" "top" "0" "f64vector-ref" "left" "4" "make-f64vector" "vec" "void" "F64PTR" "cairo_t*" "c-function" "fn" "let" "context")}}})
 "_carbon"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "carbon" "_carbon.jazz"} 1237815288
-    {Lisp-Entry "jazz.platform.carbon" #f 37 9 37 29 ("TransformProcessType" "RgnHandle" "HIViewFeatures" "HIViewZOrderOp" "float" "Bool" "HIViewRef" "EventRef" "short" "WindowRef" "jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "carbon" "_carbon.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.carbon" #f 37 19 37 39 ("TransformProcessType" "RgnHandle" "HIViewFeatures" "HIViewZOrderOp" "float" "Bool" "HIViewRef" "EventRef" "short" "WindowRef" "jazz")
       {Lisp-Entry "noErr" #f 52 12 52 17 ("0")}
       {Lisp-Entry "kDocumentWindowClass" #f 60 12 60 32 ("6")}
       {Lisp-Entry "kPlainWindowClass" #f 61 12 61 29 ("13")}
@@ -1768,8 +1669,8 @@
       {Lisp-Entry "GetCurrentProcessId" #f 556 20 556 39 ("getpid")}
       {Lisp-Entry "system-message" #f 565 13 565 27 ("newline" "display" "rest" "text")}}})
 "_com"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "com" "_com.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.windows.com" #f 37 9 37 34 ("DWORD*" "BSTR*" "GUID*" "IUnknown**" "out" "GUID" "in" "jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "com" "_com.jazz"} 1245020049
+    {Lisp-Entry "jazz.platform.windows.com" #f 37 19 37 44 ("ISupportErrorInfo$InterfaceSupportsErrorInfo" "DWORD*" "IErrorInfo$GetHelpContext" "7" "IErrorInfo$GetHelpFile" "6" "IErrorInfo$GetDescription" "5" "BSTR*" "IErrorInfo$GetSource" "4" "IErrorInfo$GetGUID" "3" "CoRelease" "2" "CoAddRef" "1" "GUID*" "CoQueryNoValidate" "ULONG" "IUnknown**" "out" "GUID" "in" "CoQuery" "HRESULT" "0" "com-external" "jazz")
       {Lisp-Entry "initialize-com" #f 53 12 53 26 ("set!" "COINIT_APARTMENTTHREADED" "CoInitializeEx" "LoadLibrary" "unless" "function" "initialized?" "let")}
       {Lisp-Entry "COINIT_APARTMENTTHREADED" #f 62 12 62 36 ("2")}
       {Lisp-Entry "CLSCTX_SERVER" #f 63 12 63 25 ("16" "4" "1" "+")}
@@ -1830,10 +1731,6 @@
       {Lisp-Entry "IUnknown**-set!" #f 388 12 388 27 ("void" "IUnknown*" "LPVOID*" "c-function")}
       {Lisp-Entry "IUnknown*-enref" #f 393 13 393 28 ("IUnknown**-set!" "IUnknown**-make" "ptr" "let" "coptr")}
       {Lisp-Entry "IUnknown*-deref" #f 399 13 399 28 ("IUnknown**-free" "IUnknown**-ref" "coptr" "let" "coptr*")}
-      {Lisp-Entry "CoQuery" #f 405 25 405 32 ()}
-      {Lisp-Entry "CoQueryNoValidate" #f 406 23 406 40 ()}
-      {Lisp-Entry "CoAddRef" #f 407 23 407 31 ()}
-      {Lisp-Entry "CoRelease" #f 408 23 408 32 ()}
       {Lisp-Entry "CoCreateInstance" #f 411 13 411 29 ("IUnknown*-deref" "GUID-free" "CLSCTX_SERVER" "validate-hresult" "HRESULT" "LPVOID*" "DWORD" "IUnknown*" "GUID*" "c-function" "proc" "IUnknown*-enref" "coptr*" "interface-guid" "GUID-encode" "class-guid" "let" "interface" "class")}
       {Lisp-Entry "com-interface" #f 422 13 422 26 ("guid")}
       {Lisp-Entry "com-interface-guid" #f 425 13 425 31 ("coint")}
@@ -1872,19 +1769,13 @@
       {Lisp-Entry "SystemTimeToVariantTime" #f 692 13 692 36 ("0" "f64vector-ref" "SYSTEMTIME-free" "1000" "date-nanosecond" "quotient" "SYSTEMTIME-wMilliseconds-set!" "date-second" "SYSTEMTIME-wSecond-set!" "date-minute" "SYSTEMTIME-wMinute-set!" "date-hour" "SYSTEMTIME-wHour-set!" "date-day" "SYSTEMTIME-wDay-set!" "date-week-day" "SYSTEMTIME-wDayOfWeek-set!" "date-month" "SYSTEMTIME-wMonth-set!" "date-year" "SYSTEMTIME-wYear-set!" "void" "F64PTR" "SYSTEMTIME*" "c-function" "fun" "1" "make-f64vector" "buffer" "SYSTEMTIME-make" "system-time" "let" "date")}
       {Lisp-Entry "VariantTimeToSystemTime" #f 709 13 709 36 ("0" "1000" "*" "make-date" "SYSTEMTIME-free" "SYSTEMTIME-wMilliseconds-ref" "milliseconds" "SYSTEMTIME-wSecond-ref" "second" "SYSTEMTIME-wMinute-ref" "minute" "SYSTEMTIME-wHour-ref" "hour" "SYSTEMTIME-wDay-ref" "day" "SYSTEMTIME-wDayOfWeek-ref" "day-of-week" "SYSTEMTIME-wMonth-ref" "month" "SYSTEMTIME-wYear-ref" "year" "void" "SYSTEMTIME*" "double" "c-function" "fun" "SYSTEMTIME-make" "system-time" "let" "variant-time")}
       {Lisp-Entry "IErrorInfo" #f 730 12 730 22 ("com-interface")}
-      {Lisp-Entry "IErrorInfo$GetGUID" #f 734 23 734 41 ()}
-      {Lisp-Entry "IErrorInfo$GetSource" #f 735 23 735 43 ()}
-      {Lisp-Entry "IErrorInfo$GetDescription" #f 736 23 736 48 ()}
-      {Lisp-Entry "IErrorInfo$GetHelpFile" #f 737 23 737 45 ()}
-      {Lisp-Entry "IErrorInfo$GetHelpContext" #f 738 23 738 48 ()}
       {Lisp-Entry "GetErrorInfo" #f 741 13 741 25 ("IUnknown*-deref" "S_OK" "=" "if" "HRESULT" "IUnknown**" "c-function" "result" "IUnknown**-make" "ptr" "let*")}
-      {Lisp-Entry "ISupportErrorInfo" #f 756 12 756 29 ("com-interface")}
-      {Lisp-Entry "ISupportErrorInfo$InterfaceSupportsErrorInfo" #f 760 23 760 67 ()}}})
+      {Lisp-Entry "ISupportErrorInfo" #f 756 12 756 29 ("com-interface")}}})
 "_crash"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "crash" "_crash.jazz"} 1236813140
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "crash" "_crash.jazz"} 1237033581
     {Lisp-Entry "jazz.platform.crash" #f 37 9 37 28 ("jazz")}})
 "_freetype"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "freetype" "_freetype.jazz"} 1236813140
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "freetype" "_freetype.jazz"} 1237033581
     {Lisp-Entry "jazz.platform.freetype" #f 37 9 37 31 ("FT_Face" "FT_Face*" "FT_Long" "char-string" "FT_Library" "FT_Library*" "jazz")
       {Lisp-Entry "FT_Long" #f 47 8 47 15 ("long")}
       {Lisp-Entry "FT_LibraryRec_" #f 48 8 48 22 ("struct")}
@@ -1899,16 +1790,16 @@
       {Lisp-Entry "free-FT_Face" #f 60 12 60 24 ("void" "FT_Face*" "c-function")}
       {Lisp-Entry "ft-library" #f 62 12 62 22 ("FT_Library" "c-function")}}})
 "_platform"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "_platform.jazz"} 1236813140
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "_platform.jazz"} 1237033581
     {Lisp-Entry "jazz.platform" #f 37 9 37 22 ("jazz")}})
 "_windows"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "_windows.jazz"} 1237815288
-    {Lisp-Entry "jazz.platform.windows" #f 37 9 37 30 ("jazz")
-      {Lisp-Entry "relinquish-process" #f 62 20 62 38 ("thread-yield!")}
-      {Lisp-Entry "bell" #f 71 20 71 24 ("MB_ICONEXCLAMATION" "MessageBeep")}
-      {Lisp-Entry "system-message" #f 80 20 80 34 ("else" "no" "'no" "IDNO" "IDYES" "cancel" "'cancel" "IDCANCEL" "yes" "'yes" "IDOK" "ecase" "MB_TASKMODAL" "get-handle" "if" "MessageBox" "code" "MB_OKCANCEL" "MB_ICONERROR" "MB_YESNOCANCEL" "MB_ICONWARNING" "MB_YESNO" "MB_ICONINFORMATION" "MB_OK" "bitwise-ior" "flags" "error" "problem" "confirmation" "question" "case" "or" "get-toplevel" "window" "let" "others" "title" "message" "'message" "type" "bind-keywords" "rest" "text")}}})
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "windows" "_windows.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.windows" #f 37 19 37 40 ("jazz")
+      {Lisp-Entry "relinquish-process" #f 64 20 64 38 ("thread-yield!")}
+      {Lisp-Entry "bell" #f 73 20 73 24 ("MB_ICONEXCLAMATION" "MessageBeep")}
+      {Lisp-Entry "system-message" #f 82 20 82 34 ("else" "no" "'no" "IDNO" "IDYES" "cancel" "'cancel" "IDCANCEL" "yes" "'yes" "IDOK" "ecase" "MB_TASKMODAL" "get-handle" "if" "MessageBox" "code" "MB_OKCANCEL" "MB_ICONERROR" "MB_YESNOCANCEL" "MB_ICONWARNING" "MB_YESNO" "MB_ICONINFORMATION" "MB_OK" "bitwise-ior" "flags" "error" "problem" "confirmation" "question" "case" "or" "get-toplevel" "window" "let" "others" "title" "message" "'message" "type" "bind-keywords" "rest" "text")}}})
 "_x11"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "x11" "_x11.jazz"} 1237815288
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "x11" "_x11.jazz"} 1238328026
     {Lisp-Entry "jazz.platform.x11" #f 37 9 37 26 ("XKeyEvent*" "XIM" "XrmDatabase" "void*" "XRectangle*" "XGCValues*" "uint8*" "Atom" "Cursor" "char-string" "XERRORPROC" "Time" "KeyCode" "KeySym" "XWindowAttributes*" "XSetWindowAttributes*" "Visual*" "long" "XEvent*" "ulong" "char*" "GC" "Drawable" "Bool" "uint" "int" "Window" "Display*" "jazz")
       {Lisp-Entry "None" #f 53 12 53 16 ("#x00000000")}
       {Lisp-Entry "PointerRoot" #f 54 12 54 23 ("1")}
@@ -2364,22 +2255,22 @@
       {Lisp-Entry "Cursors" #f 1333 19 1333 26 ()}
       {Lisp-Entry "x11-create-cursors" #f 1337 13 1337 31 (":spy" ":zoom-out" ":zoom-in" ":zoom" ":closed-hand" ":opened-hand" "Cursor-Resource" "new" ":move" "IDC_NO" ":no" "IDC_SIZEWE" ":west-east" "IDC_SIZEALL" ":all" "XC_arrow" ":left-arrow" "XC_crosshair" ":cross" "XC_hand2" ":finger" "XC_xterm" ":ibeam" "XC_sb_v_double_arrow" ":horizontal-splitter" "XC_sb_h_double_arrow" ":vertical-splitter" "XC_watch" ":wait" "XC_left_ptr" "default-x11-display" "XCreateFontCursor" ":arrow" "list" "Cursors" "set!")}}})
 "cairo-carbon"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "cairo" "cairo-carbon.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.cairo.cairo-carbon" #f 37 9 37 41 ("uint" "CGContextRef" "jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "cairo" "cairo-carbon.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.cairo.cairo-carbon" #f 37 19 37 51 ("uint" "CGContextRef" "jazz")
       {Lisp-Entry "cairo_surface_t" #f 48 8 48 23 ("native")}
       {Lisp-Entry "cairo_surface_t*" #f 49 8 49 24 ("cairo_surface_t*" "cairo_surface_t" "pointer")}
       {Lisp-Entry "cairo_quartz_surface_create_for_cg_context" #f 52 30 52 72 ()}}})
 "cairo-freetype"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "cairo" "cairo-freetype.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.cairo.cairo-freetype" #f 37 9 37 43 ("cairo_font_face_t*" "jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "cairo" "cairo-freetype.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.cairo.cairo-freetype" #f 37 19 37 53 ("cairo_font_face_t*" "jazz")
       {Lisp-Entry "cairo_font_face_t" #f 47 8 47 25 ("native")}
       {Lisp-Entry "cairo_font_face_t*" #f 48 8 48 26 ("cairo_font_face_t*" "cairo_font_face_t" "pointer")}
       {Lisp-Entry "cairo_ft_font_face_create_for_ft_face" #f 51 12 51 49 ("cairo_font_face_t*" "int" "FT_Face*" "c-function")}
       {Lisp-Entry "cairo_glyph_index" #f 55 13 55 30 ("uint" "ulong" "FT_Face*" "c-function" "char" "surface" "font")}
       {Lisp-Entry "cairo_font_face_destroy" #f 60 32 60 55 ()}}})
 "cairo-logfont"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "cairo" "cairo-logfont.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.cairo.cairo-logfont" #f 37 9 37 42 ("cairo_font_face_t*" "LOGFONTW*" "jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "cairo" "cairo-logfont.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.cairo.cairo-logfont" #f 37 19 37 52 ("cairo_font_face_t*" "LOGFONTW*" "jazz")
       {Lisp-Entry "cairo_font_face_t" #f 48 8 48 25 ("native")}
       {Lisp-Entry "cairo_font_face_t*" #f 49 8 49 26 ("cairo_font_face_t*" "cairo_font_face_t" "pointer")}
       {Lisp-Entry "DC" #f 52 12 52 14 ()}
@@ -2388,25 +2279,25 @@
       {Lisp-Entry "cairo_win32_font_face_create_for_logfontw" #f 75 32 75 73 ()}
       {Lisp-Entry "cairo_font_face_destroy" #f 76 32 76 55 ()}}})
 "cairo-windows"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "cairo" "cairo-windows.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.cairo.cairo-windows" #f 37 9 37 42 ("cairo_surface_t*" "HDC" "jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "cairo" "cairo-windows.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.cairo.cairo-windows" #f 37 19 37 52 ("cairo_surface_t*" "HDC" "jazz")
       {Lisp-Entry "cairo_surface_t" #f 47 8 47 23 ("native")}
       {Lisp-Entry "cairo_surface_t*" #f 48 8 48 24 ("cairo_surface_t*" "cairo_surface_t" "pointer")}
       {Lisp-Entry "cairo_win32_surface_create" #f 56 32 56 58 ()}
       {Lisp-Entry "cairo_win32_surface_get_dc" #f 57 32 57 58 ()}
       {Lisp-Entry "cairo_win32_printing_surface_create" #f 58 32 58 67 ()}}})
 "cairo-x11"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "cairo" "cairo-x11.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.cairo.cairo-x11" #f 37 9 37 38 ("int" "Visual*" "Drawable" "Display*" "jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "cairo" "cairo-x11.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.cairo.cairo-x11" #f 37 19 37 48 ("int" "Visual*" "Drawable" "Display*" "jazz")
       {Lisp-Entry "cairo_surface_t" #f 48 8 48 23 ("native")}
       {Lisp-Entry "cairo_surface_t*" #f 49 8 49 24 ("cairo_surface_t*" "cairo_surface_t" "pointer")}
       {Lisp-Entry "cairo_xlib_surface_create" #f 57 32 57 57 ()}}})
 "carbon"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "crash" "carbon.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.crash.carbon" #f 37 9 37 35 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "crash" "carbon.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.crash.carbon" #f 37 19 37 45 ("jazz")
       {Lisp-Entry "setup-crash-handler" #f 40 13 40 32 ()}}})
 "carbon-types"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "carbon" "carbon-types.jazz"} 1236813140
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "carbon" "carbon-types.jazz"} 1237033581
     {Lisp-Entry "jazz.platform.carbon.carbon-types" #f 37 9 37 42 ("jazz")
       {Lisp-Entry "UInt16" #f 48 8 48 14 ("int" "native")}
       {Lisp-Entry "UInt32" #f 49 8 49 14 ("unsigned-long" "native")}
@@ -2446,17 +2337,17 @@
       {Lisp-Entry "CGSize" #f 132 13 132 19 ("height" "width" "CGFloat")}
       {Lisp-Entry "CGRect" #f 137 13 137 19 ("size" "CGSize" "origin" "CGPoint")}}})
 "clipboard"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "carbon" "clipboard.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.carbon.clipboard" #f 37 9 37 39 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "carbon" "clipboard.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.carbon.clipboard" #f 37 19 37 49 ("jazz")
       {Lisp-Entry "*clipboard*" #f 48 12 48 23 ()}
       {Lisp-Entry "carbon-initialize-clipboard" #f 51 20 51 47 ("*clipboard*" "set!" "PasteboardRef" "c-function" "func" "let")}
       {Lisp-Entry "carbon-set-clipboard-text" #f 59 20 59 45 ("*clipboard*" "void" "scheme-object" "PasteboardRef" "c-function" "func" "let" "text")}
       {Lisp-Entry "carbon-get-clipboard-text" #f 71 20 71 45 ("*clipboard*" "scheme-object" "PasteboardRef" "c-function" "func" "let")}}})
 "example"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "swig" "example" "example.scm"} 1236813140}
-  {C-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "swig" "example" "example.h"} 1236813140})
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "swig" "example" "example.scm"} 1237033581}
+  {C-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "swig" "example" "example.h"} 1237033581})
 "product"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "product.scm"} 1237815288
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "product.scm"} 1244896779
     {Lisp-Entry "jazz.platform.product" #f 37 8 37 29 ("jazz.build-platform" "build:" "jazz.platform" "'jazz.platform" "jazz.register-product")
       {Lisp-Entry "jazz.build-types" #f 45 9 45 25 ("jazz.platform.types" "'jazz.platform.types" "jazz.platform.types-syntax" "'jazz.platform.types-syntax" "jazz.compile-module")}
       {Lisp-Entry "jazz.build-cairo" #f 52 13 52 29 ("jazz.platform.cairo.cairo-freetype" "'jazz.platform.cairo.cairo-freetype" "jazz.platform.cairo.cairo-carbon" "'jazz.platform.cairo.cairo-carbon" "ld-options:" "cc-options:" "jazz.platform.cairo" "'jazz.platform.cairo" "jazz.compile-module" "jazz.pkg-config-libs" "ld-flags" "jazz.pkg-config-cflags" "cc-flags" "let" "jazz.error" "4" "<" "if" "jazz.pkg-config-version" "jazz.parse-dot-version" "build" "minor" "major" "receive")}
@@ -2467,24 +2358,24 @@
       {Lisp-Entry "jazz.build-freetype" #f 87 9 87 28 ("ld-options:" "cc-options:" "jazz.platform.freetype" "'jazz.platform.freetype" "jazz.compile-module" "jazz.pkg-config-libs" "ld-flags" "jazz.pkg-config-cflags" "cc-flags" "let")}
       {Lisp-Entry "jazz.build-logfont" #f 93 9 93 27 ("ld-options:" "string-append" "cc-options:" "jazz.platform.cairo.cairo-logfont" "'jazz.platform.cairo.cairo-logfont" "jazz.compile-module" "cairo-lib-path" "jazz.quote-jazz-gcc-pathname" "cairo-include-path" "let")}
       {Lisp-Entry "jazz.build-carbon" #f 99 9 99 26 ("jazz.platform.carbon.carbon-types" "'jazz.platform.carbon.carbon-types" "ld-options:" "jazz.platform.carbon" "'jazz.platform.carbon" "jazz.compile-module" "core.module.builder" "'core.module.builder" "jazz.load-module")}
-      {Lisp-Entry "jazz.build-windows" #f 105 9 105 27 ("jazz.system.platform.windows" "'jazz.system.platform.windows" "jazz.platform.crash.windows" "'jazz.platform.crash.windows" "jazz.platform.cairo.cairo-windows" "'jazz.platform.cairo.cairo-windows" "string-append" "jazz.platform.windows.WinPerf" "'jazz.platform.windows.WinPerf" "jazz.platform.windows.WinDlg" "'jazz.platform.windows.WinDlg" "jazz.platform.windows.WinCtrl" "'jazz.platform.windows.WinCtrl" "jazz.platform.windows.WinShell" "'jazz.platform.windows.WinShell" "jazz.platform.windows.WinUser" "'jazz.platform.windows.WinUser" "jazz.platform.windows.WinOpenGL" "'jazz.platform.windows.WinOpenGL" "jazz.platform.windows.WinMM" "'jazz.platform.windows.WinMM" "jazz.platform.windows.WinGDI" "'jazz.platform.windows.WinGDI" "jazz.platform.windows.WinKernel" "'jazz.platform.windows.WinKernel" "jazz.platform.windows.WinNT" "'jazz.platform.windows.WinNT" "jazz.platform.windows.WinBase" "'jazz.platform.windows.WinBase" "jazz.platform.windows.WinTypes" "'jazz.platform.windows.WinTypes" "ld-options:" "cc-options:" "jazz.platform.windows.WinDef" "'jazz.platform.windows.WinDef" "jazz.platform.windows" "'jazz.platform.windows" "jazz.compile-module" "core.module.builder" "'core.module.builder" "jazz.load-module" "base-windows-cc-options" "windows-lib-path" "windows-include-path" "cairo-lib-path" "jazz.quote-jazz-gcc-pathname" "cairo-include-path" "let")}
-      {Lisp-Entry "jazz.build-com" #f 131 9 131 23 ("jazz.platform.windows.com.ADODB" "'jazz.platform.windows.com.ADODB" "jazz.platform.windows.com.DAO" "'jazz.platform.windows.com.DAO" "ld-options:" "cc-options:" "jazz.platform.windows.com" "'jazz.platform.windows.com" "jazz.compile-module")}
-      {Lisp-Entry "jazz.build-x11" #f 139 9 139 23 ("jazz.platform.x11.x11-types" "'jazz.platform.x11.x11-types" "ld-options:" "cc-options:" "jazz.platform.x11" "'jazz.platform.x11" "jazz.compile-module" "core.module.builder" "'core.module.builder" "jazz.load-module")}
-      {Lisp-Entry "jazz.build-clipboard" #f 147 11 147 31 ("jazz.platform.carbon.clipboard" "'jazz.platform.carbon.clipboard" "ld-options:" "jazz.platform.carbon.carbon-types" "'jazz.platform.carbon.carbon-types" "jazz.compile-module")}
-      {Lisp-Entry "jazz.build-clipboard" #f 151 11 151 31 ()}
-      {Lisp-Entry "jazz.build-platform" #f 157 13 157 32 ("jazz.build-clipboard" "jazz.build-carbon" "jazz.build-font" "jazz.build-cairo" "jazz.build-types" "jazz.platform" "'jazz.platform" "jazz.compile-module" "descriptor")}
-      {Lisp-Entry "jazz.build-platform" #f 165 13 165 32 ("jazz.build-com" "jazz.build-windows" "jazz.build-font" "jazz.build-cairo" "jazz.build-types" "jazz.platform.crash" "'jazz.platform.crash" "jazz.platform" "'jazz.platform" "jazz.compile-module" "jazz.feedback" "feedback:" "jazz.copy-file" "copy-platform-files" "source-file" "string-append" "path" "install-file" "define" "jazz.source" "source" "jazz.kernel-install" "install" "let" "descriptor")}
-      {Lisp-Entry "jazz.build-platform" #f 189 13 189 32 ("jazz.build-clipboard" "jazz.build-x11" "jazz.build-font" "jazz.build-cairo" "jazz.build-types" "jazz.platform" "'jazz.platform" "jazz.compile-module" "descriptor")}
-      {Lisp-Entry "jazz.quote-jazz-gcc-pathname" #f 198 9 198 37 ("jazz.kernel-platform" "jazz.kernel-source" "string-append" "path-expand" "jazz.quote-gcc-pathname" "suffix")}
-      {Lisp-Entry "jazz.parse-dot-version" #f 202 9 202 31 ("values" "caddr" "build" "cadr" "minor" "car" "major" "jazz.split-string" "string->number" "map" "let" "version")}
-      {Lisp-Entry "jazz.pkg-config" #f 210 9 210 24 ("jazz.error" "get-output-string" "jazz.pipe-no-return" "begin" "0" "process-status" "%%fx=" "if" "arguments:" "path:" "list" "open-process" "process-port" "open-output-string" "string-port" "let" "libname" "what")}
-      {Lisp-Entry "jazz.pkg-config-cflags" #f 219 9 219 31 ("jazz.pkg-config" "libname")}
-      {Lisp-Entry "jazz.pkg-config-libs" #f 222 9 222 29 ("jazz.pkg-config" "libname")}
-      {Lisp-Entry "jazz.pkg-config-version" #f 225 9 225 32 ("jazz.pkg-config" "libname")}
-      {Lisp-Entry "jazz.pipe-no-return" #f 228 9 228 28 ("write-char" "begin" "eq?" "eof-object?" "or" "not" "if" "read-char" "c" "iterate" "let" "output" "input")}}})
+      {Lisp-Entry "jazz.build-windows" #f 105 9 105 27 ("jazz.system.platform.windows" "'jazz.system.platform.windows" "jazz.platform.crash.windows" "'jazz.platform.crash.windows" "jazz.platform.cairo.cairo-windows" "'jazz.platform.cairo.cairo-windows" "string-append" "jazz.platform.windows.WinPerf" "'jazz.platform.windows.WinPerf" "jazz.platform.windows.WinDlg" "'jazz.platform.windows.WinDlg" "jazz.platform.windows.WinCtrl" "'jazz.platform.windows.WinCtrl" "jazz.platform.windows.WinShell" "'jazz.platform.windows.WinShell" "jazz.platform.windows.WinUser" "'jazz.platform.windows.WinUser" "jazz.platform.windows.WinMM" "'jazz.platform.windows.WinMM" "jazz.platform.windows.WinIDL" "'jazz.platform.windows.WinIDL" "jazz.platform.windows.WinGDI" "'jazz.platform.windows.WinGDI" "jazz.platform.windows.WinKernel" "'jazz.platform.windows.WinKernel" "jazz.platform.windows.WinNT" "'jazz.platform.windows.WinNT" "jazz.platform.windows.WinBase" "'jazz.platform.windows.WinBase" "jazz.platform.windows.WinTypes" "'jazz.platform.windows.WinTypes" "ld-options:" "cc-options:" "jazz.platform.windows.WinDef" "'jazz.platform.windows.WinDef" "jazz.platform.windows" "'jazz.platform.windows" "jazz.compile-module" "core.module.builder" "'core.module.builder" "jazz.load-module" "base-windows-cc-options" "windows-lib-path" "windows-include-path" "cairo-lib-path" "jazz.quote-jazz-gcc-pathname" "cairo-include-path" "let")}
+      {Lisp-Entry "jazz.build-com" #f 131 9 131 23 ("ld-options:" "cc-options:" "jazz.platform.windows.com" "'jazz.platform.windows.com" "jazz.compile-module")}
+      {Lisp-Entry "jazz.build-x11" #f 135 9 135 23 ("jazz.platform.x11.x11-types" "'jazz.platform.x11.x11-types" "ld-options:" "cc-options:" "jazz.platform.x11" "'jazz.platform.x11" "jazz.compile-module" "core.module.builder" "'core.module.builder" "jazz.load-module")}
+      {Lisp-Entry "jazz.build-clipboard" #f 143 11 143 31 ("jazz.platform.carbon.clipboard" "'jazz.platform.carbon.clipboard" "ld-options:" "jazz.platform.carbon.carbon-types" "'jazz.platform.carbon.carbon-types" "jazz.compile-module")}
+      {Lisp-Entry "jazz.build-clipboard" #f 147 11 147 31 ()}
+      {Lisp-Entry "jazz.build-platform" #f 153 13 153 32 ("jazz.build-clipboard" "jazz.build-carbon" "jazz.build-font" "jazz.build-cairo" "jazz.build-types" "jazz.platform" "'jazz.platform" "jazz.compile-module" "descriptor")}
+      {Lisp-Entry "jazz.build-platform" #f 161 13 161 32 ("jazz.build-com" "jazz.build-windows" "jazz.build-font" "jazz.build-cairo" "jazz.build-types" "jazz.platform.crash" "'jazz.platform.crash" "jazz.platform" "'jazz.platform" "jazz.compile-module" "jazz.feedback" "feedback:" "jazz.copy-file" "copy-platform-files" "source-file" "string-append" "path" "install-file" "define" "jazz.source" "source" "jazz.kernel-install" "install" "let" "descriptor")}
+      {Lisp-Entry "jazz.build-platform" #f 185 13 185 32 ("jazz.build-clipboard" "jazz.build-x11" "jazz.build-font" "jazz.build-cairo" "jazz.build-types" "jazz.platform" "'jazz.platform" "jazz.compile-module" "descriptor")}
+      {Lisp-Entry "jazz.quote-jazz-gcc-pathname" #f 194 9 194 37 ("jazz.kernel-platform" "jazz.kernel-source" "string-append" "path-expand" "jazz.quote-gcc-pathname" "suffix")}
+      {Lisp-Entry "jazz.parse-dot-version" #f 198 9 198 31 ("values" "caddr" "build" "cadr" "minor" "car" "major" "jazz.split-string" "string->number" "map" "let" "version")}
+      {Lisp-Entry "jazz.pkg-config" #f 206 9 206 24 ("jazz.error" "get-output-string" "jazz.pipe-no-return" "begin" "0" "process-status" "%%fx=" "if" "arguments:" "path:" "list" "open-process" "process-port" "open-output-string" "string-port" "let" "libname" "what")}
+      {Lisp-Entry "jazz.pkg-config-cflags" #f 215 9 215 31 ("jazz.pkg-config" "libname")}
+      {Lisp-Entry "jazz.pkg-config-libs" #f 218 9 218 29 ("jazz.pkg-config" "libname")}
+      {Lisp-Entry "jazz.pkg-config-version" #f 221 9 221 32 ("jazz.pkg-config" "libname")}
+      {Lisp-Entry "jazz.pipe-no-return" #f 224 9 224 28 ("write-char" "begin" "eq?" "eof-object?" "or" "not" "if" "read-char" "c" "iterate" "let" "output" "input")}}})
 "types"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "types.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.types" #f 38 9 38 28 ("long*" "ulong*" "uint32*" "define-cast-lambda-ptr" "wchar_t-string" "wchar_t*" "UTF-8-string" "char*" "char-string" "define-cast-lambda" "ulong" "double" "long" "int" "short" "wchar_t" "char" "uint32" "uint16" "uint8*" "define-pointer-to-pointer" "uint8" "byte" "define-pointer-to-type" "#<<c-declare-end\n           \ntypedef ___F64*  F64PTR;\n\n___SCMOBJ SCMOBJ_to_F64PTR (___SCMOBJ src, F64PTR *dst)\n{\n  ___SCMOBJ ___temp; // for F64VECTORP\n  ___SCMOBJ ___err = ___FIX(___NO_ERR);\n  if (!___F64VECTORP(src))\n    ___err = ___FIX(___UNKNOWN_ERR);\n  else\n    {\n     *dst = ___CAST(___F64*,___BODY_AS(src,___tSUBTYPED));\n    }\n  return ___err;\n}\n\n#define ___BEGIN_CFUN_SCMOBJ_to_F64PTR(src,dst,i) \\\nif ((___err = SCMOBJ_to_F64PTR (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_SCMOBJ_to_F64PTR(src,dst,i) }\n\n#define ___BEGIN_CFUN_F64PTR_to_SCMOBJ(src,dst) \\\nif ((___err = ___FIX(___UNKNOWN_ERR)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_F64PTR_to_SCMOBJ(src,dst) }\n\n#define ___BEGIN_SFUN_F64PTR_to_SCMOBJ(src,dst,i) \\\nif ((___err = F64PTR_to_SCMOBJ (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_SFUN_F64PTR_to_SCMOBJ(src,dst,i) }\n\n#define ___BEGIN_SFUN_SCMOBJ_to_F64PTR(src,dst) \\\n{ ___err = ___FIX(___UNKNOWN_ERR);\n#define ___END_SFUN_SCMOBJ_to_F64PTR(src,dst) }\n\nc-declare-end\n" "F64PTR-declare" "#<<c-declare-end\n           \ntypedef ___U32* U32PTR;\n\n___SCMOBJ SCMOBJ_to_U32PTR (___SCMOBJ src, U32PTR *dst)\n{\n  ___SCMOBJ ___temp; // for U32VECTORP\n  ___SCMOBJ ___err = ___FIX(___NO_ERR);\n  if (!___U32VECTORP(src))\n    ___err = ___FIX(___UNKNOWN_ERR);\n  else\n    {\n     *dst = ___CAST(___U32*,___BODY_AS(src,___tSUBTYPED));\n    }\n  return ___err;\n}\n\n#define ___BEGIN_CFUN_SCMOBJ_to_U32PTR(src,dst,i) \\\nif ((___err = SCMOBJ_to_U32PTR (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_SCMOBJ_to_U32PTR(src,dst,i) }\n\n#define ___BEGIN_CFUN_U32PTR_to_SCMOBJ(src,dst) \\\nif ((___err = ___FIX(___UNKNOWN_ERR)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_U32PTR_to_SCMOBJ(src,dst) }\n\n#define ___BEGIN_SFUN_U32PTR_to_SCMOBJ(src,dst,i) \\\nif ((___err = U32PTR_to_SCMOBJ (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_SFUN_U32PTR_to_SCMOBJ(src,dst,i) }\n\n#define ___BEGIN_SFUN_SCMOBJ_to_U32PTR(src,dst) \\\n{ ___err = ___FIX(___UNKNOWN_ERR);\n#define ___END_SFUN_SCMOBJ_to_U32PTR(src,dst) }\n\nc-declare-end\n" "U32PTR-declare" "#<<c-declare-end\n\ntypedef ___U16* U16PTR;\n\n___SCMOBJ SCMOBJ_to_U16PTR (___SCMOBJ src, U16PTR *dst)\n{\n  ___SCMOBJ ___temp; // for U16VECTORP\n  ___SCMOBJ ___err = ___FIX(___NO_ERR);\n  if (!___U16VECTORP(src))\n    ___err = ___FIX(___UNKNOWN_ERR);\n  else\n    {\n     *dst = ___CAST(___U16*,___BODY_AS(src,___tSUBTYPED));\n    }\n  return ___err;\n}\n\n#define ___BEGIN_CFUN_SCMOBJ_to_U16PTR(src,dst,i) \\\nif ((___err = SCMOBJ_to_U16PTR (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_SCMOBJ_to_U16PTR(src,dst,i) }\n\n#define ___BEGIN_CFUN_U16PTR_to_SCMOBJ(src,dst) \\\nif ((___err = ___FIX(___UNKNOWN_ERR)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_U16PTR_to_SCMOBJ(src,dst) }\n\n#define ___BEGIN_SFUN_U16PTR_to_SCMOBJ(src,dst,i) \\\nif ((___err = U16PTR_to_SCMOBJ (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_SFUN_U16PTR_to_SCMOBJ(src,dst,i) }\n\n#define ___BEGIN_SFUN_SCMOBJ_to_U16PTR(src,dst) \\\n{ ___err = ___FIX(___UNKNOWN_ERR);\n#define ___END_SFUN_SCMOBJ_to_U16PTR(src,dst) }\n\nc-declare-end\n" "U16PTR-declare" "#<<c-declare-end\n           \ntypedef ___U8*  U8PTR;\n\n___SCMOBJ SCMOBJ_to_U8PTR (___SCMOBJ src, U8PTR *dst)\n{\n  ___SCMOBJ ___temp; // for U8VECTORP\n  ___SCMOBJ ___err = ___FIX(___NO_ERR);\n  if (!___U8VECTORP(src))\n    ___err = ___FIX(___UNKNOWN_ERR);\n  else\n    {\n     *dst = ___CAST(___U8*,___BODY_AS(src,___tSUBTYPED));\n    }\n  return ___err;\n}\n\n#define ___BEGIN_CFUN_SCMOBJ_to_U8PTR(src,dst,i) \\\nif ((___err = SCMOBJ_to_U8PTR (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_SCMOBJ_to_U8PTR(src,dst,i) }\n\n#define ___BEGIN_CFUN_U8PTR_to_SCMOBJ(src,dst) \\\nif ((___err = ___FIX(___UNKNOWN_ERR)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_U8PTR_to_SCMOBJ(src,dst) }\n\n#define ___BEGIN_SFUN_U8PTR_to_SCMOBJ(src,dst,i) \\\nif ((___err = U8PTR_to_SCMOBJ (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_SFUN_U8PTR_to_SCMOBJ(src,dst,i) }\n\n#define ___BEGIN_SFUN_SCMOBJ_to_U8PTR(src,dst) \\\n{ ___err = ___FIX(___UNKNOWN_ERR);\n#define ___END_SFUN_SCMOBJ_to_U8PTR(src,dst) }\n\nc-declare-end\n" "U8PTR-declare" "#<<c-declare-end\n\n___SCMOBJ SCMOBJ_to_size_t (___SCMOBJ src, size_t *dst) {\n  ___SCMOBJ ___err = ___FIX(___NO_ERR);\n\n  if ( ___FIXNUMP(src) ) {\n    ___WORD ___temp = ___INT(src);\n                            \n    if ( ___temp > ___MAX_FIX32 || ___temp < 0 )\n       ___err = ___FIX(___UNKNOWN_ERR);\n    else\n       *dst = ___CAST(size_t,___temp);\n  }\n  \n  else\n    ___err = ___FIX(___UNKNOWN_ERR);\n    \n  return ___err;\n}\n\n\n___SCMOBJ size_t_to_SCMOBJ (size_t src, ___SCMOBJ *dst) {\n  ___SCMOBJ ___err = ___FIX(___NO_ERR);\n\n  if ( src > ___MAX_FIX32 )\n    ___err = ___FIX(___UNKNOWN_ERR);\n  else\n    *dst = ___FIX(src);\n    \n  return ___err;\n}\n\n#define ___BEGIN_CFUN_SCMOBJ_to_size_t(src,dst,i) \\\nif ((___err = SCMOBJ_to_size_t (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_SCMOBJ_to_size_t(src,dst,i) }\n\n#define ___BEGIN_CFUN_size_t_to_SCMOBJ(src,dst) \\\nif ((___err = size_t_to_SCMOBJ (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_size_t_to_SCMOBJ(src,dst) }\n\n#define ___BEGIN_SFUN_size_t_to_SCMOBJ(src,dst,i) \\\nif ((___err = size_t_to_SCMOBJ (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_SFUN_size_t_to_SCMOBJ(src,dst,i) }\n\n#define ___BEGIN_SFUN_SCMOBJ_to_size_t(src,dst) \\\n{ ___err = SCMOBJ_to_size_t (src, &dst);\n#define ___END_SFUN_SCMOBJ_to_size_t(src,dst) }\n\nc-declare-end\n" "size_t-declare" "else" "c-include" "mac" "cond-expand" "jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "types.jazz"} 1237033581
+    {Lisp-Entry "jazz.platform.types" #f 38 9 38 28 ("long*" "ulong*" "uint32*" "define-cast-lambda-ptr" "wchar_t-string" "wchar_t*" "UTF-8-string" "char*" "char-string" "define-cast-lambda" "ulong" "double" "long" "int" "short" "wchar_t" "char" "uint32" "uint16" "uint8*" "define-pointer-to-pointer" "uint8" "byte" "define-pointer-to-type" "#<<c-declare-end\n           \ntypedef ___F64*  F64PTR;\n\n___SCMOBJ SCMOBJ_to_F64PTR (___SCMOBJ src, F64PTR *dst)\n{\n  ___SCMOBJ ___temp; // for F64VECTORP\n  ___SCMOBJ ___err = ___FIX(___NO_ERR);\n  if (!___F64VECTORP(src))\n    ___err = ___FIX(___UNKNOWN_ERR);\n  else\n    {\n     *dst = ___CAST(___F64*,___BODY_AS(src,___tSUBTYPED));\n    }\n  return ___err;\n}\n\n#define ___BEGIN_CFUN_SCMOBJ_to_F64PTR(src,dst,i) \\\nif ((___err = SCMOBJ_to_F64PTR (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_SCMOBJ_to_F64PTR(src,dst,i) }\n\n#define ___BEGIN_CFUN_F64PTR_to_SCMOBJ(src,dst) \\\nif ((___err = ___FIX(___UNKNOWN_ERR)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_F64PTR_to_SCMOBJ(src,dst) }\n\n#define ___BEGIN_SFUN_F64PTR_to_SCMOBJ(src,dst,i) \\\nif ((___err = F64PTR_to_SCMOBJ (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_SFUN_F64PTR_to_SCMOBJ(src,dst,i) }\n\n#define ___BEGIN_SFUN_SCMOBJ_to_F64PTR(src,dst) \\\n{ ___err = ___FIX(___UNKNOWN_ERR);\n#define ___END_SFUN_SCMOBJ_to_F64PTR(src,dst) }\n\nc-declare-end\n" "F64PTR-declare" "#<<c-declare-end\n           \ntypedef ___U32* U32PTR;\n\n___SCMOBJ SCMOBJ_to_U32PTR (___SCMOBJ src, U32PTR *dst)\n{\n  ___SCMOBJ ___temp; // for U32VECTORP\n  ___SCMOBJ ___err = ___FIX(___NO_ERR);\n  if (!___U32VECTORP(src))\n    ___err = ___FIX(___UNKNOWN_ERR);\n  else\n    {\n     *dst = ___CAST(___U32*,___BODY_AS(src,___tSUBTYPED));\n    }\n  return ___err;\n}\n\n#define ___BEGIN_CFUN_SCMOBJ_to_U32PTR(src,dst,i) \\\nif ((___err = SCMOBJ_to_U32PTR (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_SCMOBJ_to_U32PTR(src,dst,i) }\n\n#define ___BEGIN_CFUN_U32PTR_to_SCMOBJ(src,dst) \\\nif ((___err = ___FIX(___UNKNOWN_ERR)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_U32PTR_to_SCMOBJ(src,dst) }\n\n#define ___BEGIN_SFUN_U32PTR_to_SCMOBJ(src,dst,i) \\\nif ((___err = U32PTR_to_SCMOBJ (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_SFUN_U32PTR_to_SCMOBJ(src,dst,i) }\n\n#define ___BEGIN_SFUN_SCMOBJ_to_U32PTR(src,dst) \\\n{ ___err = ___FIX(___UNKNOWN_ERR);\n#define ___END_SFUN_SCMOBJ_to_U32PTR(src,dst) }\n\nc-declare-end\n" "U32PTR-declare" "#<<c-declare-end\n\ntypedef ___U16* U16PTR;\n\n___SCMOBJ SCMOBJ_to_U16PTR (___SCMOBJ src, U16PTR *dst)\n{\n  ___SCMOBJ ___temp; // for U16VECTORP\n  ___SCMOBJ ___err = ___FIX(___NO_ERR);\n  if (!___U16VECTORP(src))\n    ___err = ___FIX(___UNKNOWN_ERR);\n  else\n    {\n     *dst = ___CAST(___U16*,___BODY_AS(src,___tSUBTYPED));\n    }\n  return ___err;\n}\n\n#define ___BEGIN_CFUN_SCMOBJ_to_U16PTR(src,dst,i) \\\nif ((___err = SCMOBJ_to_U16PTR (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_SCMOBJ_to_U16PTR(src,dst,i) }\n\n#define ___BEGIN_CFUN_U16PTR_to_SCMOBJ(src,dst) \\\nif ((___err = ___FIX(___UNKNOWN_ERR)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_U16PTR_to_SCMOBJ(src,dst) }\n\n#define ___BEGIN_SFUN_U16PTR_to_SCMOBJ(src,dst,i) \\\nif ((___err = U16PTR_to_SCMOBJ (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_SFUN_U16PTR_to_SCMOBJ(src,dst,i) }\n\n#define ___BEGIN_SFUN_SCMOBJ_to_U16PTR(src,dst) \\\n{ ___err = ___FIX(___UNKNOWN_ERR);\n#define ___END_SFUN_SCMOBJ_to_U16PTR(src,dst) }\n\nc-declare-end\n" "U16PTR-declare" "#<<c-declare-end\n           \ntypedef ___U8*  U8PTR;\n\n___SCMOBJ SCMOBJ_to_U8PTR (___SCMOBJ src, U8PTR *dst)\n{\n  ___SCMOBJ ___temp; // for U8VECTORP\n  ___SCMOBJ ___err = ___FIX(___NO_ERR);\n  if (!___U8VECTORP(src))\n    ___err = ___FIX(___UNKNOWN_ERR);\n  else\n    {\n     *dst = ___CAST(___U8*,___BODY_AS(src,___tSUBTYPED));\n    }\n  return ___err;\n}\n\n#define ___BEGIN_CFUN_SCMOBJ_to_U8PTR(src,dst,i) \\\nif ((___err = SCMOBJ_to_U8PTR (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_SCMOBJ_to_U8PTR(src,dst,i) }\n\n#define ___BEGIN_CFUN_U8PTR_to_SCMOBJ(src,dst) \\\nif ((___err = ___FIX(___UNKNOWN_ERR)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_U8PTR_to_SCMOBJ(src,dst) }\n\n#define ___BEGIN_SFUN_U8PTR_to_SCMOBJ(src,dst,i) \\\nif ((___err = U8PTR_to_SCMOBJ (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_SFUN_U8PTR_to_SCMOBJ(src,dst,i) }\n\n#define ___BEGIN_SFUN_SCMOBJ_to_U8PTR(src,dst) \\\n{ ___err = ___FIX(___UNKNOWN_ERR);\n#define ___END_SFUN_SCMOBJ_to_U8PTR(src,dst) }\n\nc-declare-end\n" "U8PTR-declare" "#<<c-declare-end\n\n___SCMOBJ SCMOBJ_to_size_t (___SCMOBJ src, size_t *dst) {\n  ___SCMOBJ ___err = ___FIX(___NO_ERR);\n\n  if ( ___FIXNUMP(src) ) {\n    ___WORD ___temp = ___INT(src);\n                            \n    if ( ___temp > ___MAX_FIX32 || ___temp < 0 )\n       ___err = ___FIX(___UNKNOWN_ERR);\n    else\n       *dst = ___CAST(size_t,___temp);\n  }\n  \n  else\n    ___err = ___FIX(___UNKNOWN_ERR);\n    \n  return ___err;\n}\n\n\n___SCMOBJ size_t_to_SCMOBJ (size_t src, ___SCMOBJ *dst) {\n  ___SCMOBJ ___err = ___FIX(___NO_ERR);\n\n  if ( src > ___MAX_FIX32 )\n    ___err = ___FIX(___UNKNOWN_ERR);\n  else\n    *dst = ___FIX(src);\n    \n  return ___err;\n}\n\n#define ___BEGIN_CFUN_SCMOBJ_to_size_t(src,dst,i) \\\nif ((___err = SCMOBJ_to_size_t (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_SCMOBJ_to_size_t(src,dst,i) }\n\n#define ___BEGIN_CFUN_size_t_to_SCMOBJ(src,dst) \\\nif ((___err = size_t_to_SCMOBJ (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_CFUN_size_t_to_SCMOBJ(src,dst) }\n\n#define ___BEGIN_SFUN_size_t_to_SCMOBJ(src,dst,i) \\\nif ((___err = size_t_to_SCMOBJ (src, &dst)) == ___FIX(___NO_ERR)) {\n#define ___END_SFUN_size_t_to_SCMOBJ(src,dst,i) }\n\n#define ___BEGIN_SFUN_SCMOBJ_to_size_t(src,dst) \\\n{ ___err = SCMOBJ_to_size_t (src, &dst);\n#define ___END_SFUN_SCMOBJ_to_size_t(src,dst) }\n\nc-declare-end\n" "size_t-declare" "jazz")
       {Lisp-Entry "stack-depth" #f 45 12 45 23 ("int" "c-function")}
       {Lisp-Entry "pointer-size" #f 51 12 51 24 ("int" "c-function")}
       {Lisp-Entry "void" #f 272 8 272 12 ("void" "native")}
@@ -2537,7 +2428,7 @@
       {Lisp-Entry "u32vector->long*" #f 372 13 372 29 ("1" "+" "u32vector-ref" "long*-set!" "=" "if" "0" "i" "loop" "let" "long*-alloc" "pointer" "u32vector-length" "size" "let*" "vector")}
       {Lisp-Entry "u32vector->uint32*" #f 382 13 382 31 ("1" "+" "u32vector-ref" "uint32*-set!" "=" "if" "0" "i" "loop" "let" "uint32*-alloc" "pointer" "u32vector-length" "size" "let*" "vector")}}})
 "types-syntax"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "types-syntax.jazz"} 1236813140
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "types-syntax.jazz"} 1237033581
     {Lisp-Entry "jazz.platform.types-syntax" #f 37 9 37 35 ("jazz")
       {Lisp-Entry "define-pointer-to-type" #f 40 15 40 37 ("ref-lambda" "set-lambda" "free-lambda" "alloc-lambda" ",pt-type" "void*" "define-cast-lambda-ptr" ",c-type" ",type" "size-of" "begin" "symbol->string" "string-append" "string->symbol" "pt-type" "let" "c-type" "type")}
       {Lisp-Entry "define-pointer-to-pointer" #f 52 15 52 40 ("ref-lambda-pt" "set-lambda" "free-lambda" "alloc-lambda" ",pt-type" "void*" "define-cast-lambda-ptr" ",c-type" ",type" "size-of" "begin" "symbol->string" "string-append" "string->symbol" "pt-type" "let" "c-type" "type")}
@@ -2550,17 +2441,17 @@
       {Lisp-Entry "ref-lambda" #f 107 15 107 25 (",type" "int" ",pt-type" "c-function" ",name" "definition" "symbol->string" "string-append" "string->symbol" "name" "let" "pt-type" "type")}
       {Lisp-Entry "ref-lambda-pt" #f 114 15 114 28 (",type" "int" ",pt-type" "c-function" ",name" "definition" "symbol->string" "string-append" "string->symbol" "name" "let" "pt-type" "type")}}})
 "windows"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "crash" "windows.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.crash.windows" #f 37 9 37 36 ("#<<END-OF-CRASH\n#define ANSISIZE 512\n#define UNICODESIZE 512\n\nstatic TCHAR Crashfile[_MAX_FNAME];\nstatic TCHAR Module[_MAX_PATH];\nstatic TCHAR Drive[_MAX_DRIVE];\nstatic TCHAR Filename[_MAX_FNAME];\nstatic TCHAR Directory[_MAX_DIR];\n\nstatic SYSTEMTIME SystemTime;\n\nstatic CHAR AnsiLog[ANSISIZE];\nstatic TCHAR UnicodeLog[UNICODESIZE];\n\nstatic void internal_error(int exitCode)\n{\n    ExitProcess(exitCode);\n}\n\nstatic LPWSTR exception_description(int code)\n{\n    switch (code)\n    {\n        case EXCEPTION_ACCESS_VIOLATION:\n            return L\"Access violation\";\n\n        case EXCEPTION_DATATYPE_MISALIGNMENT:\n            return L\"Datatype misalignment\";\n\n        case EXCEPTION_FLT_DIVIDE_BY_ZERO:\n            return L\"Division by zero\";\n\n        case EXCEPTION_ILLEGAL_INSTRUCTION:\n            return L\"Illegal instruction\";\n\n        case EXCEPTION_STACK_OVERFLOW:\n            return L\"Stack overflow\";\n\n        default:\n            return NULL;\n    }\n}\n\nstatic void log_printf(HANDLE handle, LPWSTR fmt, ...)\n{\n    va_list    args;\n    \n    va_start(args, fmt);\n    wvsprintf(UnicodeLog, fmt, args);\n    va_end(args);\n    \n    int size = wcslen(UnicodeLog);\n\n    WideCharToMultiByte(CP_ACP, 0, UnicodeLog, -1, AnsiLog, size + 1, NULL, NULL);\n\n    DWORD len, written;\n\n    len = strlen(AnsiLog);\n\n    WriteFile(handle, AnsiLog, len, &written, NULL);\n\n    if (written != len)\n        internal_error(-4);\n}\n\nstatic void log_error(HANDLE handle, LPEXCEPTION_RECORD record)\n{\n    LPWSTR desc = exception_description(record->ExceptionCode);\n    \n    log_printf(handle, L\"error: \");\n    if (desc)\n        log_printf(handle, L\"%s\", desc);\n    else\n        log_printf(handle, L\"0x%.2x\", record->ExceptionCode);\n}\n\nstatic BOOL filename_exists(LPWSTR filename)\n{\n    return GetFileAttributes(filename) != INVALID_FILE_ATTRIBUTES;\n}\n\nstatic void timestamped_filename(LPWSTR buffer, LPWSTR dir, LPWSTR ext)\n{\n    INT    n = 0;\n    TCHAR  suffix[8];\n    BOOL   done;\n    \n    done = FALSE;\n    while (! done)\n    {\n        SYSTEMTIME    st;\n    \n        GetLocalTime(&st);\n        \n        if (n == 0)\n            wsprintf(suffix, L\"\");\n        else\n            wsprintf(suffix, L\"_%d\", n);\n        \n        wsprintf(buffer, L\"%s\\\\%04d-%02d-%02d_%02d-%02d-%02d%s.%s\", dir, st.wYear, st.wMonth, st.wDay, st.wHour, st.wMinute, st.wSecond, suffix, ext);\n    \n        if (! filename_exists(buffer))\n            done = TRUE;\n        else\n            n++;\n    }\n}\n\nstatic void fill_crashfile()\n{\n    TCHAR    dir[_MAX_PATH];\n    \n    GetModuleFileName(NULL, Module, _MAX_PATH);\n\n    _wsplitpath(Module, Drive, Directory, NULL, NULL);\n    Directory[wcslen(Directory) - 1] = 0;\n\n    wsprintf(dir, L\"%s%s\", Drive, Directory);\n    \n    timestamped_filename(Crashfile, dir, L\"crash\");\n}\n\nstatic void snapshot_exception(LPEXCEPTION_RECORD record, PCONTEXT context)\n{\n    fill_crashfile();\n\n    HANDLE handle = CreateFile(Crashfile, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);\n\n    if (handle == INVALID_HANDLE_VALUE)\n        internal_error(-2);\n\n    GetModuleFileName(NULL, Module, _MAX_PATH);\n    _wsplitpath(Module, NULL, NULL, Filename, NULL);\n\n    log_printf(handle, L\"process: %s\\r\\n\", Filename);\n    GetLocalTime(&SystemTime);\n    log_printf(handle, L\"date: %d/%d/%d %d:%d:%.2d\\r\\n\", SystemTime.wYear, SystemTime.wMonth, SystemTime.wDay, SystemTime.wHour, SystemTime.wMinute, SystemTime.wSecond);\n    log_printf(handle, L\"\\r\\n\");\n\n    log_error(handle, record);\n    log_printf(handle, L\"\\r\\n\");\n\n    CloseHandle(handle);\n}\n\nstatic LONG WINAPI unhandled_exception_filter(LPEXCEPTION_POINTERS info)\n{\n    LPEXCEPTION_RECORD record = info->ExceptionRecord;\n    PCONTEXT context = info->ContextRecord;\n\n    snapshot_exception(record, context);\n    snapshot_process();\n \n    return EXCEPTION_CONTINUE_SEARCH;\n}\nEND-OF-CRASH\n" "jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "crash" "windows.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.crash.windows" #f 37 19 37 46 ("#<<END-OF-CRASH\n#define ANSISIZE 512\n#define UNICODESIZE 512\n\nstatic TCHAR Crashfile[_MAX_FNAME];\nstatic TCHAR Module[_MAX_PATH];\nstatic TCHAR Drive[_MAX_DRIVE];\nstatic TCHAR Filename[_MAX_FNAME];\nstatic TCHAR Directory[_MAX_DIR];\n\nstatic SYSTEMTIME SystemTime;\n\nstatic CHAR AnsiLog[ANSISIZE];\nstatic TCHAR UnicodeLog[UNICODESIZE];\n\nstatic void internal_error(int exitCode)\n{\n    ExitProcess(exitCode);\n}\n\nstatic LPWSTR exception_description(int code)\n{\n    switch (code)\n    {\n        case EXCEPTION_ACCESS_VIOLATION:\n            return L\"Access violation\";\n\n        case EXCEPTION_DATATYPE_MISALIGNMENT:\n            return L\"Datatype misalignment\";\n\n        case EXCEPTION_FLT_DIVIDE_BY_ZERO:\n            return L\"Division by zero\";\n\n        case EXCEPTION_ILLEGAL_INSTRUCTION:\n            return L\"Illegal instruction\";\n\n        case EXCEPTION_STACK_OVERFLOW:\n            return L\"Stack overflow\";\n\n        default:\n            return NULL;\n    }\n}\n\nstatic void log_printf(HANDLE handle, LPWSTR fmt, ...)\n{\n    va_list    args;\n    \n    va_start(args, fmt);\n    wvsprintf(UnicodeLog, fmt, args);\n    va_end(args);\n    \n    int size = wcslen(UnicodeLog);\n\n    WideCharToMultiByte(CP_ACP, 0, UnicodeLog, -1, AnsiLog, size + 1, NULL, NULL);\n\n    DWORD len, written;\n\n    len = strlen(AnsiLog);\n\n    WriteFile(handle, AnsiLog, len, &written, NULL);\n\n    if (written != len)\n        internal_error(-4);\n}\n\nstatic void log_error(HANDLE handle, LPEXCEPTION_RECORD record)\n{\n    LPWSTR desc = exception_description(record->ExceptionCode);\n    \n    log_printf(handle, L\"error: \");\n    if (desc)\n        log_printf(handle, L\"%s\", desc);\n    else\n        log_printf(handle, L\"0x%.2x\", record->ExceptionCode);\n}\n\nstatic BOOL filename_exists(LPWSTR filename)\n{\n    return GetFileAttributes(filename) != INVALID_FILE_ATTRIBUTES;\n}\n\nstatic void timestamped_filename(LPWSTR buffer, LPWSTR dir, LPWSTR ext)\n{\n    INT    n = 0;\n    TCHAR  suffix[8];\n    BOOL   done;\n    \n    done = FALSE;\n    while (! done)\n    {\n        SYSTEMTIME    st;\n    \n        GetLocalTime(&st);\n        \n        if (n == 0)\n            wsprintf(suffix, L\"\");\n        else\n            wsprintf(suffix, L\"_%d\", n);\n        \n        wsprintf(buffer, L\"%s\\\\%04d-%02d-%02d_%02d-%02d-%02d%s.%s\", dir, st.wYear, st.wMonth, st.wDay, st.wHour, st.wMinute, st.wSecond, suffix, ext);\n    \n        if (! filename_exists(buffer))\n            done = TRUE;\n        else\n            n++;\n    }\n}\n\nstatic void fill_crashfile()\n{\n    TCHAR    dir[_MAX_PATH];\n    \n    GetModuleFileName(NULL, Module, _MAX_PATH);\n\n    _wsplitpath(Module, Drive, Directory, NULL, NULL);\n    Directory[wcslen(Directory) - 1] = 0;\n\n    wsprintf(dir, L\"%s%s\", Drive, Directory);\n    \n    timestamped_filename(Crashfile, dir, L\"crash\");\n}\n\nstatic void snapshot_exception(LPEXCEPTION_RECORD record, PCONTEXT context)\n{\n    fill_crashfile();\n\n    HANDLE handle = CreateFile(Crashfile, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);\n\n    if (handle == INVALID_HANDLE_VALUE)\n        internal_error(-2);\n\n    GetModuleFileName(NULL, Module, _MAX_PATH);\n    _wsplitpath(Module, NULL, NULL, Filename, NULL);\n\n    log_printf(handle, L\"process: %s\\r\\n\", Filename);\n    GetLocalTime(&SystemTime);\n    log_printf(handle, L\"date: %d/%d/%d %d:%d:%.2d\\r\\n\", SystemTime.wYear, SystemTime.wMonth, SystemTime.wDay, SystemTime.wHour, SystemTime.wMinute, SystemTime.wSecond);\n    log_printf(handle, L\"\\r\\n\");\n\n    log_error(handle, record);\n    log_printf(handle, L\"\\r\\n\");\n\n    CloseHandle(handle);\n}\n\nstatic LONG WINAPI unhandled_exception_filter(LPEXCEPTION_POINTERS info)\n{\n    LPEXCEPTION_RECORD record = info->ExceptionRecord;\n    PCONTEXT context = info->ContextRecord;\n\n    snapshot_exception(record, context);\n    snapshot_process();\n \n    return EXCEPTION_CONTINUE_SEARCH;\n}\nEND-OF-CRASH\n" "jazz")
       {Lisp-Entry "crash-process" #f 52 12 52 25 ("VOID" "c-function")}
       {Lisp-Entry "SnapshotProcess" #f 62 15 62 30 ("snapshot-process" "VOID")}
       {Lisp-Entry "setup-crash-handler" #f 226 12 226 31 ("VOID" "c-function")}}})
 "x11"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "crash" "x11.jazz"} 1236813140
-    {Lisp-Entry "jazz.platform.crash.x11" #f 37 9 37 32 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "crash" "x11.jazz"} 1238328026
+    {Lisp-Entry "jazz.platform.crash.x11" #f 37 19 37 42 ("jazz")
       {Lisp-Entry "setup-crash-handler" #f 40 13 40 32 ()}}})
 "x11-types"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "x11" "x11-types.jazz"} 1236813140
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.platform" "src" "jazz" "platform" "x11" "x11-types.jazz"} 1237033581
     {Lisp-Entry "jazz.platform.x11.x11-types" #f 37 9 37 36 ("jazz")
       {Lisp-Entry "Display" #f 43 8 43 15 ("native")}
       {Lisp-Entry "Display*" #f 44 8 44 16 ("Display" "pointer")}

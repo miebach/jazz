@@ -1,5 +1,5 @@
 "_time"
- ({Lisp-File-Entry {File Jazz "lib" "srfi-19" "src" "time" "_time.jazz"} 1224106786
+ ({Lisp-File-Entry {File Jazz "lib" "srfi-19" "src" "time" "_time.jazz"} 1244896780
     {Lisp-Entry "time" #f 37 9 37 13 ("jazz")
       {Lisp-Entry "time->seconds" #f 46 20 46 33 ("1000000000.0" "time-nanosecond" "/" "time-second" "+" "time")}
       {Lisp-Entry "seconds->time" #f 50 20 50 33 ("-" "1000000" "*" "time-utc" "make-time" "floor" "inexact->exact" "int-seconds" "let" "seconds")}
@@ -10,10 +10,11 @@
       {Lisp-Entry "present-date" #f 73 20 73 32 ("date->string" "date")}
       {Lisp-Entry "present-date-day" #f 77 20 77 36 ("date->string" "date")}
       {Lisp-Entry "present-date-day-french" #f 81 20 81 43 ("date->string" "date")}
-      {Lisp-Entry "present-date-time" #f 85 20 85 37 ("date->string" "date")}}})
+      {Lisp-Entry "present-date-time" #f 85 20 85 37 ("date->string" "date")}
+      {Lisp-Entry "date-add" #f 94 20 94 28 ("make-date" "date->time-monotonic" "time-monotonic->date" "unimplemented" "else" "increase!" "case" "date-zone-offset" "zone-offset" "date-year" "year" "date-month" "month" "date-day" "day" "date-hour" "hour" "date-minute" "minute" "date-second" "second" "date-nanosecond" "nanosecond" "let" "type" "count" "date")}}})
 "classes"
- ({Lisp-File-Entry {File Jazz "lib" "srfi-19" "src" "time" "classes.scm"} 1224106786
-    {Lisp-Entry "time.classes" #f 37 8 37 20 ("date?" "'date?" "Date" "'Date" "date" "'date" "jazz.Date" "jazz.Date-Class" "jazz.register-usertype" "time?" "'time?" "jazz.type-tests" "Time" "'Time" "jazz.primitive-declarations" "time" "'time" "jazz.primitive-types" "%%table-set!" "jazz.Time" "jazz.Time-Class" "jazz.encapsulate-class")
+ ({Lisp-File-Entry {File Jazz "lib" "srfi-19" "src" "time" "classes.scm"} 1238328028
+    {Lisp-Entry "time.classes" #f 37 18 37 30 ("date?" "'date?" "Date" "'Date" "date" "'date" "jazz.Date" "jazz.Date-Class" "jazz.register-usertype" "time?" "'time?" "jazz.type-tests" "Time" "'Time" "jazz.primitive-declarations" "time" "'time" "jazz.primitive-types" "%%table-set!" "jazz.Time" "jazz.Time-Class" "jazz.encapsulate-class")
       {Lisp-Entry "jazz.Time-Class" #f 45 19 45 34 ("interface-table" "class-table" "core-vtable" "core-virtual-names" "core-virtual-alist" "core-method-alist" "dispatch-table" "level" "instance-size" "slots" "interfaces" "ascendant" "descendants" "ancestors" "virtual-size" "fields" "name" "jazz.Class")}
       {Lisp-Entry "jazz.Time" #f 46 19 46 28 ("jazz.Time-Class" "jazz.Object")}
       {Lisp-Entry "jazz.Date-Class" #f 49 19 49 34 ("interface-table" "class-table" "core-vtable" "core-virtual-names" "core-virtual-alist" "core-method-alist" "dispatch-table" "level" "instance-size" "slots" "interfaces" "ascendant" "descendants" "ancestors" "virtual-size" "fields" "name" "jazz.Class")}
@@ -29,8 +30,8 @@
       {Lisp-Entry "jazz.emit-test" ("jazz.Date-Class") 104 21 104 35 ("environment" "source-declaration" "value")}
       {Lisp-Entry "jazz.Date" #f 111 27 111 36 ()}}})
 "exports"
- ({Lisp-File-Entry {File Jazz "lib" "srfi-19" "src" "time" "exports.jazz"} 1224106786
-    {Lisp-Entry "time.exports" #f 37 9 37 21 ("scheme")
+ ({Lisp-File-Entry {File Jazz "lib" "srfi-19" "src" "time" "exports.jazz"} 1238328028
+    {Lisp-Entry "time.exports" #f 37 19 37 31 ("scheme")
       {Lisp-Entry "time-duration" #f 49 8 49 21 ()}
       {Lisp-Entry "time-monotonic" #f 50 8 50 22 ()}
       {Lisp-Entry "time-process" #f 51 8 51 20 ()}
@@ -113,8 +114,8 @@
       {Lisp-Entry "date->string" #f 177 8 177 20 ()}
       {Lisp-Entry "string->date" #f 178 8 178 20 ()}}})
 "implementation"
- ({Lisp-File-Entry {File Jazz "lib" "srfi-19" "src" "time" "implementation.scm"} 1225282191
-    {Lisp-Entry "time.implementation" #f 82 8 82 27 ("zone-offset" "year" "month" "day" "hour" "minute" "date" "make-inspector" "define-struct" "second" "nanosecond" "type" "time" "define-structure" "car" "null?" "if" "val" "_" "syntax-rules" "default-value" "rest")
+ ({Lisp-File-Entry {File Jazz "lib" "srfi-19" "src" "time" "implementation.scm"} 1238328028
+    {Lisp-Entry "time.implementation" #f 82 18 82 37 ("zone-offset" "year" "month" "day" "hour" "minute" "date" "make-inspector" "define-struct" "second" "nanosecond" "type" "time" "define-structure" "car" "null?" "if" "val" "_" "syntax-rules" "default-value" "rest")
       {Lisp-Entry "receive" #f 87 18 87 25 ("lambda" "call-with-values" "..." "body" "expression" "formals" "receive" "syntax-rules")}
       {Lisp-Entry "time-tai" #f 110 8 110 16 ("'time-tai")}
       {Lisp-Entry "time-utc" #f 111 8 111 16 ("'time-utc")}
@@ -302,7 +303,7 @@
       {Lisp-Entry "string->date" #f 1506 9 1506 21 ("list" "bad-date-format-string" "'bad-date-format-string" "string->date" "'string->date" "tm:time-error" "tm:date-ok?" "if" "open-input-string" "string-length" "tm:string->date" "tm:local-tz-offset" "0" "make-date" "newdate" "let" "template-string" "input-string")
         {Lisp-Entry "tm:date-ok?" #f 1507 11 1507 22 ("date-zone-offset" "date-year" "date-month" "date-day" "date-hour" "date-minute" "date-second" "date-nanosecond" "and" "date")}}}})
 "tests"
- ({Lisp-File-Entry {File Jazz "lib" "srfi-19" "src" "time" "tests.scm"} 1225282191
+ ({Lisp-File-Entry {File Jazz "lib" "srfi-19" "src" "time" "tests.scm"} 1236190781
     {Lisp-Entry "time.tests" #f 2 8 2 18 ("run-s19-tests" "newline" "date->time-tai" "-18000" "2003" "cd" "1045944891" "ct-tai" "1045944859" "6320000" "ct-utc" "date->time-utc" "-" "1999" "60" "1998" "59" "58" "make-date" "+" "time-tai->date" "tm:date=" "1045789645" "63072000" "10" "78796800" "11" "94694400" "12" "126230400" "13" "157766400" "14" "189302400" "15" "220924800" "16" "252460800" "17" "283996800" "18" "315532800" "19" "362793600" "20" "394329600" "21" "425865600" "22" "489024000" "23" "567993600" "24" "631152000" "25" "662688000" "26" "709948800" "27" "741484800" "28" "773020800" "29" "820454400" "30" "867715200" "31" "32" "915148800" "test-one-utc-tai-edge" "time-difference" "-2000" "t4" "2000" "time-duration" "'time-duration" "1000" "3000" "time<=?" "time>=?" "time<?" "time>?" "time=?" "and" "t13" "t12" "1001" "t11" "2" "t3" "t2" "1" "0" "make-time" "t1" "let" "time-resolution" "time-process" "'time-process" "time-thread" "'time-thread" "time-monotonic" "'time-monotonic" "time-utc" "'time-utc" "time-tai" "'time-tai" "tm:current-time" "null?" "not" "lambda" "define-s19-test!" "list" "s19-tests" "set!")
       {Lisp-Entry "s19-tests" #f 6 8 6 17 ("list")}
       {Lisp-Entry "define-s19-test!" #f 8 9 8 25 ("cons" "list" "append" "set!" "set-cdr!" "s19-tests" "assoc" "pr" "string->symbol" "symbol?" "if" "let" "thunk" "name")}

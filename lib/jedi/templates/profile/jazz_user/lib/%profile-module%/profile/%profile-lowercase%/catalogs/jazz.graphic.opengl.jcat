@@ -1,18 +1,18 @@
 "OpenGL-Window"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "platform" "OpenGL-Window.jazz"} 1237219903
-    {Lisp-Entry "jazz.graphic.opengl.platform.OpenGL-Window" #f 37 9 37 51 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "platform" "OpenGL-Window.jazz"} 1244896779
+    {Lisp-Entry "jazz.graphic.opengl.platform.OpenGL-Window" #f 37 19 37 61 ("jazz")
       {Lisp-Entry "OpenGL-Window" #f 45 7 45 20 ("Window")
         {Lisp-Entry "fullscreen?" #f 48 12 48 23 ("generate")}
         {Lisp-Entry "device" #f 51 8 51 14 ("generate")}
         {Lisp-Entry "render" #f 52 8 52 14 ("generate")}
         {Lisp-Entry "initialize-opengl" #f 55 29 55 46 ("GL_NICEST" "GL_PERSPECTIVE_CORRECTION_HINT" "gl-hint" "GL_FILL" "GL_FRONT_AND_BACK" "glPolygonMode" "GL_LEQUAL" "gl-depth-func" "GL_DEPTH_TEST" "GL_COLOR_MATERIAL" "GL_POLYGON_SMOOTH" "GL_LINE_SMOOTH" "gl-enable" "1.0" "gl-clear-depth" "0.5" "0.0" "gl-clear-color" "GL_SMOOTH" "gl-shade-model")}
         {Lisp-Entry "resize-scene" #f 71 29 71 41 ("GL_MODELVIEW" "100.0" "0.1" "fl/" "45.0" "glu-perspective" "gl-load-identity" "GL_PROJECTION" "gl-matrix-mode" "0" "gl-viewport" "height" "width")}
-        {Lisp-Entry "close-with-confirm" #f 80 11 80 29 ("exit")}
-        {Lisp-Entry "draw-scene" #f 84 29 84 39 ()}
-        {Lisp-Entry "render-scene" #f 88 29 88 41 ("swap-buffers" "draw-scene" "render" "self" "make-render-current")}
-        {Lisp-Entry "timer-pulse" #f 94 11 94 22 ("render-scene" "0" "current-repl-level" ">" "unless")}}}})
+        {Lisp-Entry "close-with-confirm" #f 80 11 80 29 ("exit" "self" "eq?" "not" "or" "when" "get-toplevel" "toplevel" "let" "nextmethod")}
+        {Lisp-Entry "draw-scene" #f 87 29 87 39 ()}
+        {Lisp-Entry "render-scene" #f 91 29 91 41 ("swap-buffers" "draw-scene" "render" "self" "make-render-current")}
+        {Lisp-Entry "timer-pulse" #f 97 11 97 22 ("render-scene" "0" "current-repl-level" ">" "unless")}}}})
 "_opengl"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "_opengl.jazz"} 1236813140
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "_opengl.jazz"} 1244896779
     {Lisp-Entry "jazz.graphic.opengl" #f 37 9 37 28 ("jazz")
       {Lisp-Entry "gl-inside-begin/end?" #f 58 12 58 32 ("make-parameter")}
       {Lisp-Entry "gl-check-error" #f 62 9 62 23 ("error" "GL_NO_ERROR" "/=" "when" "glGetError" "err" "let" "tag")}
@@ -33,31 +33,33 @@
       {Lisp-Entry "gl-pop-matrix" #f 153 13 153 26 ("glPopMatrix" "function" "gl-pop-matrix" "'gl-pop-matrix" "with-gl-error")}
       {Lisp-Entry "with-gl-matrix" #f 159 13 159 27 ("gl-pop-matrix" "gl-push-matrix" "thunk")}
       {Lisp-Entry "gl-load-identity" #f 165 13 165 29 ("glLoadIdentity" "function" "gl-load-identity" "'gl-load-identity" "with-gl-error")}
-      {Lisp-Entry "gl-translate" #f 171 13 171 25 ("glTranslatef" "function" "gl-translate" "'gl-translate" "with-gl-error" "z" "y" "x")}
-      {Lisp-Entry "gl-rotate" #f 177 13 177 22 ("glRotatef" "function" "gl-rotate" "'gl-rotate" "with-gl-error" "z" "y" "x" "angle")}
-      {Lisp-Entry "gl-scale" #f 183 13 183 21 ("glScalef" "function" "gl-scale" "'gl-scale" "with-gl-error" "z" "y" "x")}
-      {Lisp-Entry "gl-begin" #f 189 13 189 21 ("glBegin" "function" "gl-begin" "'gl-begin" "with-gl-error" "mode")}
-      {Lisp-Entry "gl-end" #f 195 13 195 19 ("glEnd" "function" "gl-end" "'gl-end" "with-gl-error")}
-      {Lisp-Entry "with-gl-begin/end" #f 201 13 201 30 ("gl-end" "gl-begin" "gl-inside-begin/end?" "parameterize" "thunk" "mode")}
-      {Lisp-Entry "gl-color" #f 208 13 208 21 ("glColor3f" "function" "gl-color" "'gl-color" "with-gl-error" "blue" "green" "red")}
-      {Lisp-Entry "gl-normal" #f 214 13 214 22 ("glNormal3f" "function" "gl-normal" "'gl-normal" "with-gl-error" "z" "y" "x")}
-      {Lisp-Entry "gl-vertex" #f 220 13 220 22 ("glVertex3f" "function" "gl-vertex" "'gl-vertex" "with-gl-error" "z" "y" "x")}
-      {Lisp-Entry "gl-bind-texture" #f 226 9 226 24 ("glBindTexture" "function" "gl-bind-texture" "'gl-bind-texture" "with-gl-error" "texture" "target")}
-      {Lisp-Entry "gl-texture-parameterize" #f 232 9 232 32 ("glTexParameteri" "function" "gl-texture-parameterize" "'gl-texture-parameterize" "with-gl-error" "param" "pname" "target")}
-      {Lisp-Entry "gl-texture-image" #f 238 9 238 25 ("glTexImage2D" "function" "gl-texture-image" "'gl-texture-image" "with-gl-error" "pixels" "type" "format" "border" "height" "width" "internalformat" "level" "target")}
-      {Lisp-Entry "gl-texture-coord" #f 244 9 244 25 ("glTexCoord2f" "function" "gl-texture-coord" "'gl-texture-coord" "with-gl-error" "t" "s")}
-      {Lisp-Entry "with-gl-enable/disable" #f 250 13 250 35 ("gl-disable" "gl-enable" "thunk" "mode")}
-      {Lisp-Entry "glu-perspective" #f 261 13 261 28 ("gluPerspective" "function" "glu-perspective" "'glu-perspective" "with-gl-error" "zfar" "znear" "aspect" "fovy")}
-      {Lisp-Entry "glu-look-at" #f 267 13 267 24 ("gluLookAt" "function" "glu-look-at" "'glu-look-at" "with-gl-error" "upz" "upy" "upx" "centerz" "centery" "centerx" "eyez" "eyey" "yex")}}})
+      {Lisp-Entry "gl-ortho" #f 171 13 171 21 ("glOrtho" "function" "gl-ortho" "'gl-ortho" "with-gl-error" "zfar" "znear" "top" "bottom" "right" "left")}
+      {Lisp-Entry "gl-translate" #f 177 13 177 25 ("glTranslatef" "function" "gl-translate" "'gl-translate" "with-gl-error" "z" "y" "x")}
+      {Lisp-Entry "gl-rotate" #f 183 13 183 22 ("glRotatef" "function" "gl-rotate" "'gl-rotate" "with-gl-error" "z" "y" "x" "angle")}
+      {Lisp-Entry "gl-scale" #f 189 13 189 21 ("glScalef" "function" "gl-scale" "'gl-scale" "with-gl-error" "z" "y" "x")}
+      {Lisp-Entry "gl-begin" #f 195 13 195 21 ("glBegin" "function" "gl-begin" "'gl-begin" "with-gl-error" "mode")}
+      {Lisp-Entry "gl-end" #f 201 13 201 19 ("glEnd" "function" "gl-end" "'gl-end" "with-gl-error")}
+      {Lisp-Entry "with-gl-begin/end" #f 207 13 207 30 ("gl-end" "gl-begin" "gl-inside-begin/end?" "parameterize" "thunk" "mode")}
+      {Lisp-Entry "gl-color" #f 214 13 214 21 ("glColor3f" "function" "gl-color" "'gl-color" "with-gl-error" "blue" "green" "red")}
+      {Lisp-Entry "gl-normal" #f 220 13 220 22 ("glNormal3f" "function" "gl-normal" "'gl-normal" "with-gl-error" "z" "y" "x")}
+      {Lisp-Entry "gl-vertex" #f 226 13 226 22 ("glVertex3f" "function" "gl-vertex" "'gl-vertex" "with-gl-error" "z" "y" "x")}
+      {Lisp-Entry "gl-bind-texture" #f 232 9 232 24 ("glBindTexture" "function" "gl-bind-texture" "'gl-bind-texture" "with-gl-error" "texture" "target")}
+      {Lisp-Entry "gl-texture-parameterize" #f 238 9 238 32 ("glTexParameteri" "function" "gl-texture-parameterize" "'gl-texture-parameterize" "with-gl-error" "param" "pname" "target")}
+      {Lisp-Entry "gl-texture-image" #f 244 9 244 25 ("glTexImage2D" "function" "gl-texture-image" "'gl-texture-image" "with-gl-error" "pixels" "type" "format" "border" "height" "width" "internalformat" "level" "target")}
+      {Lisp-Entry "gl-texture-coord" #f 250 9 250 25 ("glTexCoord2f" "function" "gl-texture-coord" "'gl-texture-coord" "with-gl-error" "t" "s")}
+      {Lisp-Entry "with-gl-enable/disable" #f 256 13 256 35 ("gl-disable" "gl-enable" "thunk" "mode")}
+      {Lisp-Entry "glu-error-string" #f 267 13 267 29 ("gluErrorString" "errCode")}
+      {Lisp-Entry "glu-perspective" #f 271 13 271 28 ("gluPerspective" "function" "glu-perspective" "'glu-perspective" "with-gl-error" "zfar" "znear" "aspect" "fovy")}
+      {Lisp-Entry "glu-look-at" #f 277 13 277 24 ("gluLookAt" "function" "glu-look-at" "'glu-look-at" "with-gl-error" "upz" "upy" "upx" "centerz" "centery" "centerx" "eyez" "eyey" "yex")}}})
 "_platform"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "platform" "_platform.jazz"} 1236525995
-    {Lisp-Entry "jazz.graphic.opengl.platform" #f 37 9 37 37 ("jazz")}})
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "platform" "_platform.jazz"} 1238328024
+    {Lisp-Entry "jazz.graphic.opengl.platform" #f 37 19 37 47 ("jazz")}})
 "autoload"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "autoload.jazz"} 1236525995
-    {Lisp-Entry "jazz.graphic.opengl.autoload" #f 37 9 37 37 ("jazz")}})
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "autoload.jazz"} 1238328024
+    {Lisp-Entry "jazz.graphic.opengl.autoload" #f 37 19 37 47 ("jazz")}})
 "gl"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "foreign" "gl.jazz"} 1236525995
-    {Lisp-Entry "jazz.graphic.opengl.foreign.gl" #f 0 9 0 39 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "foreign" "gl.jazz"} 1238328024
+    {Lisp-Entry "jazz.graphic.opengl.foreign.gl" #f 0 19 0 49 ("jazz")
       {Lisp-Entry "glClearIndex" #f 17 8 17 20 ("void" "GLfloat" "c-function")}
       {Lisp-Entry "glClearColor" #f 18 8 18 20 ("void" "GLclampf" "c-function")}
       {Lisp-Entry "glClear" #f 19 8 19 15 ("void" "GLbitfield" "c-function")}
@@ -401,8 +403,8 @@
       {Lisp-Entry "glPushName" #f 524 8 524 18 ("void" "GLuint" "c-function")}
       {Lisp-Entry "glPopName" #f 525 8 525 17 ("void" "c-function")}}})
 "gl-header"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "foreign" "gl-header.jazz"} 1236525995
-    {Lisp-Entry "jazz.graphic.opengl.foreign.gl-header" #f 0 9 0 46 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "foreign" "gl-header.jazz"} 1238328024
+    {Lisp-Entry "jazz.graphic.opengl.foreign.gl-header" #f 0 19 0 56 ("jazz")
       {Lisp-Entry "void" #f 3 8 3 12 ("void" "native")}
       {Lisp-Entry "void*" #f 4 8 4 13 ("void" "pointer")}
       {Lisp-Entry "int" #f 5 8 5 11 ("int" "native")}
@@ -968,59 +970,59 @@
       {Lisp-Entry "GL_ALL_CLIENT_ATTRIB_BITS" #f 797 8 797 33 ("#xFFFFFFFF")}
       {Lisp-Entry "GL_CLIENT_ALL_ATTRIB_BITS" #f 798 8 798 33 ("#xFFFFFFFF")}}})
 "glu"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "foreign" "glu.jazz"} 1236525995
-    {Lisp-Entry "jazz.graphic.opengl.foreign.glu" #f 0 9 0 40 ("jazz")
-      {Lisp-Entry "gluBeginCurve" #f 11 8 11 21 ("void" "GLUnurbs*" "c-function")}
-      {Lisp-Entry "gluBeginPolygon" #f 12 8 12 23 ("void" "GLUtesselator*" "c-function")}
-      {Lisp-Entry "gluBeginSurface" #f 13 8 13 23 ("void" "GLUnurbs*" "c-function")}
-      {Lisp-Entry "gluBeginTrim" #f 14 8 14 20 ("void" "GLUnurbs*" "c-function")}
-      {Lisp-Entry "gluCylinder" #f 22 8 22 19 ("void" "GLint" "GLdouble" "GLUquadric*" "c-function")}
-      {Lisp-Entry "gluDeleteNurbsRenderer" #f 23 8 23 30 ("void" "GLUnurbs*" "c-function")}
-      {Lisp-Entry "gluDeleteQuadric" #f 24 8 24 24 ("void" "GLUquadric*" "c-function")}
-      {Lisp-Entry "gluDeleteTess" #f 25 8 25 21 ("void" "GLUtesselator*" "c-function")}
-      {Lisp-Entry "gluDisk" #f 26 8 26 15 ("void" "GLint" "GLdouble" "GLUquadric*" "c-function")}
-      {Lisp-Entry "gluEndCurve" #f 27 8 27 19 ("void" "GLUnurbs*" "c-function")}
-      {Lisp-Entry "gluEndPolygon" #f 28 8 28 21 ("void" "GLUtesselator*" "c-function")}
-      {Lisp-Entry "gluEndSurface" #f 29 8 29 21 ("void" "GLUnurbs*" "c-function")}
-      {Lisp-Entry "gluEndTrim" #f 30 8 30 18 ("void" "GLUnurbs*" "c-function")}
-      {Lisp-Entry "gluErrorString" #f 31 8 31 22 ("GLubyte*" "GLenum" "c-function")}
-      {Lisp-Entry "gluGetNurbsProperty" #f 32 8 32 27 ("void" "GLfloat*" "GLenum" "GLUnurbs*" "c-function")}
-      {Lisp-Entry "gluGetString" #f 33 8 33 20 ("GLubyte*" "GLenum" "c-function")}
-      {Lisp-Entry "gluGetTessProperty" #f 34 8 34 26 ("void" "GLdouble*" "GLenum" "GLUtesselator*" "c-function")}
-      {Lisp-Entry "gluLoadSamplingMatrices" #f 35 8 35 31 ("void" "GLint*" "GLfloat*" "GLUnurbs*" "c-function")}
-      {Lisp-Entry "gluLookAt" #f 36 8 36 17 ("void" "GLdouble" "c-function")}
-      {Lisp-Entry "gluNewNurbsRenderer" #f 37 8 37 27 ("GLUnurbs*" "c-function")}
-      {Lisp-Entry "gluNewQuadric" #f 38 8 38 21 ("GLUquadric*" "c-function")}
-      {Lisp-Entry "gluNewTess" #f 39 8 39 18 ("GLUtesselator*" "c-function")}
-      {Lisp-Entry "gluNextContour" #f 40 8 40 22 ("void" "GLenum" "GLUtesselator*" "c-function")}
-      {Lisp-Entry "gluNurbsCallback" #f 41 8 41 24 ("void" "_GLUfuncptr" "GLenum" "GLUnurbs*" "c-function")}
-      {Lisp-Entry "gluNurbsCurve" #f 44 8 44 21 ("void" "GLenum" "GLfloat*" "GLint" "GLUnurbs*" "c-function")}
-      {Lisp-Entry "gluNurbsProperty" #f 45 8 45 24 ("void" "GLfloat" "GLenum" "GLUnurbs*" "c-function")}
-      {Lisp-Entry "gluNurbsSurface" #f 46 8 46 23 ("void" "GLenum" "GLfloat*" "GLint" "GLUnurbs*" "c-function")}
-      {Lisp-Entry "gluOrtho2D" #f 47 8 47 18 ("void" "GLdouble" "c-function")}
-      {Lisp-Entry "gluPartialDisk" #f 48 8 48 22 ("void" "GLint" "GLdouble" "GLUquadric*" "c-function")}
-      {Lisp-Entry "gluPerspective" #f 49 8 49 22 ("void" "GLdouble" "c-function")}
-      {Lisp-Entry "gluPickMatrix" #f 50 8 50 21 ("void" "GLint*" "GLdouble" "c-function")}
-      {Lisp-Entry "gluProject" #f 51 8 51 18 ("GLint" "GLint*" "GLdouble*" "GLdouble" "c-function")}
-      {Lisp-Entry "gluPwlCurve" #f 52 8 52 19 ("void" "GLenum" "GLfloat*" "GLint" "GLUnurbs*" "c-function")}
-      {Lisp-Entry "gluQuadricCallback" #f 53 8 53 26 ("void" "_GLUfuncptr" "GLenum" "GLUquadric*" "c-function")}
-      {Lisp-Entry "gluQuadricDrawStyle" #f 54 8 54 27 ("void" "GLenum" "GLUquadric*" "c-function")}
-      {Lisp-Entry "gluQuadricNormals" #f 55 8 55 25 ("void" "GLenum" "GLUquadric*" "c-function")}
-      {Lisp-Entry "gluQuadricOrientation" #f 56 8 56 29 ("void" "GLenum" "GLUquadric*" "c-function")}
-      {Lisp-Entry "gluQuadricTexture" #f 57 8 57 25 ("void" "GLboolean" "GLUquadric*" "c-function")}
-      {Lisp-Entry "gluScaleImage" #f 58 8 58 21 ("GLint" "GLvoid*" "void*" "GLsizei" "GLenum" "c-function")}
-      {Lisp-Entry "gluSphere" #f 59 8 59 17 ("void" "GLint" "GLdouble" "GLUquadric*" "c-function")}
-      {Lisp-Entry "gluTessBeginContour" #f 60 8 60 27 ("void" "GLUtesselator*" "c-function")}
-      {Lisp-Entry "gluTessBeginPolygon" #f 61 8 61 27 ("void" "GLvoid*" "GLUtesselator*" "c-function")}
-      {Lisp-Entry "gluTessCallback" #f 62 8 62 23 ("void" "_GLUfuncptr" "GLenum" "GLUtesselator*" "c-function")}
-      {Lisp-Entry "gluTessEndContour" #f 63 8 63 25 ("void" "GLUtesselator*" "c-function")}
-      {Lisp-Entry "gluTessEndPolygon" #f 64 8 64 25 ("void" "GLUtesselator*" "c-function")}
-      {Lisp-Entry "gluTessNormal" #f 65 8 65 21 ("void" "GLdouble" "GLUtesselator*" "c-function")}
-      {Lisp-Entry "gluTessProperty" #f 66 8 66 23 ("void" "GLdouble" "GLenum" "GLUtesselator*" "c-function")}
-      {Lisp-Entry "gluTessVertex" #f 67 8 67 21 ("void" "GLvoid*" "GLdouble*" "GLUtesselator*" "c-function")}}})
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "foreign" "glu.jazz"} 1244896779
+    {Lisp-Entry "jazz.graphic.opengl.foreign.glu" #f 0 19 0 50 ("jazz")
+      {Lisp-Entry "gluBeginCurve" #f 12 8 12 21 ("void" "GLUnurbs*" "c-function")}
+      {Lisp-Entry "gluBeginPolygon" #f 13 8 13 23 ("void" "GLUtesselator*" "c-function")}
+      {Lisp-Entry "gluBeginSurface" #f 14 8 14 23 ("void" "GLUnurbs*" "c-function")}
+      {Lisp-Entry "gluBeginTrim" #f 15 8 15 20 ("void" "GLUnurbs*" "c-function")}
+      {Lisp-Entry "gluCylinder" #f 23 8 23 19 ("void" "GLint" "GLdouble" "GLUquadric*" "c-function")}
+      {Lisp-Entry "gluDeleteNurbsRenderer" #f 24 8 24 30 ("void" "GLUnurbs*" "c-function")}
+      {Lisp-Entry "gluDeleteQuadric" #f 25 8 25 24 ("void" "GLUquadric*" "c-function")}
+      {Lisp-Entry "gluDeleteTess" #f 26 8 26 21 ("void" "GLUtesselator*" "c-function")}
+      {Lisp-Entry "gluDisk" #f 27 8 27 15 ("void" "GLint" "GLdouble" "GLUquadric*" "c-function")}
+      {Lisp-Entry "gluEndCurve" #f 28 8 28 19 ("void" "GLUnurbs*" "c-function")}
+      {Lisp-Entry "gluEndPolygon" #f 29 8 29 21 ("void" "GLUtesselator*" "c-function")}
+      {Lisp-Entry "gluEndSurface" #f 30 8 30 21 ("void" "GLUnurbs*" "c-function")}
+      {Lisp-Entry "gluEndTrim" #f 31 8 31 18 ("void" "GLUnurbs*" "c-function")}
+      {Lisp-Entry "gluErrorString" #f 32 8 32 22 ("char-string" "GLenum" "c-function")}
+      {Lisp-Entry "gluGetNurbsProperty" #f 33 8 33 27 ("void" "GLfloat*" "GLenum" "GLUnurbs*" "c-function")}
+      {Lisp-Entry "gluGetString" #f 34 8 34 20 ("GLubyte*" "GLenum" "c-function")}
+      {Lisp-Entry "gluGetTessProperty" #f 35 8 35 26 ("void" "GLdouble*" "GLenum" "GLUtesselator*" "c-function")}
+      {Lisp-Entry "gluLoadSamplingMatrices" #f 36 8 36 31 ("void" "GLint*" "GLfloat*" "GLUnurbs*" "c-function")}
+      {Lisp-Entry "gluLookAt" #f 37 8 37 17 ("void" "GLdouble" "c-function")}
+      {Lisp-Entry "gluNewNurbsRenderer" #f 38 8 38 27 ("GLUnurbs*" "c-function")}
+      {Lisp-Entry "gluNewQuadric" #f 39 8 39 21 ("GLUquadric*" "c-function")}
+      {Lisp-Entry "gluNewTess" #f 40 8 40 18 ("GLUtesselator*" "c-function")}
+      {Lisp-Entry "gluNextContour" #f 41 8 41 22 ("void" "GLenum" "GLUtesselator*" "c-function")}
+      {Lisp-Entry "gluNurbsCallback" #f 42 8 42 24 ("void" "_GLUfuncptr" "GLenum" "GLUnurbs*" "c-function")}
+      {Lisp-Entry "gluNurbsCurve" #f 45 8 45 21 ("void" "GLenum" "GLfloat*" "GLint" "GLUnurbs*" "c-function")}
+      {Lisp-Entry "gluNurbsProperty" #f 46 8 46 24 ("void" "GLfloat" "GLenum" "GLUnurbs*" "c-function")}
+      {Lisp-Entry "gluNurbsSurface" #f 47 8 47 23 ("void" "GLenum" "GLfloat*" "GLint" "GLUnurbs*" "c-function")}
+      {Lisp-Entry "gluOrtho2D" #f 48 8 48 18 ("void" "GLdouble" "c-function")}
+      {Lisp-Entry "gluPartialDisk" #f 49 8 49 22 ("void" "GLint" "GLdouble" "GLUquadric*" "c-function")}
+      {Lisp-Entry "gluPerspective" #f 50 8 50 22 ("void" "GLdouble" "c-function")}
+      {Lisp-Entry "gluPickMatrix" #f 51 8 51 21 ("void" "GLint*" "GLdouble" "c-function")}
+      {Lisp-Entry "gluProject" #f 52 8 52 18 ("GLint" "GLint*" "GLdouble*" "GLdouble" "c-function")}
+      {Lisp-Entry "gluPwlCurve" #f 53 8 53 19 ("void" "GLenum" "GLfloat*" "GLint" "GLUnurbs*" "c-function")}
+      {Lisp-Entry "gluQuadricCallback" #f 54 8 54 26 ("void" "_GLUfuncptr" "GLenum" "GLUquadric*" "c-function")}
+      {Lisp-Entry "gluQuadricDrawStyle" #f 55 8 55 27 ("void" "GLenum" "GLUquadric*" "c-function")}
+      {Lisp-Entry "gluQuadricNormals" #f 56 8 56 25 ("void" "GLenum" "GLUquadric*" "c-function")}
+      {Lisp-Entry "gluQuadricOrientation" #f 57 8 57 29 ("void" "GLenum" "GLUquadric*" "c-function")}
+      {Lisp-Entry "gluQuadricTexture" #f 58 8 58 25 ("void" "GLboolean" "GLUquadric*" "c-function")}
+      {Lisp-Entry "gluScaleImage" #f 59 8 59 21 ("GLint" "GLvoid*" "void*" "GLsizei" "GLenum" "c-function")}
+      {Lisp-Entry "gluSphere" #f 60 8 60 17 ("void" "GLint" "GLdouble" "GLUquadric*" "c-function")}
+      {Lisp-Entry "gluTessBeginContour" #f 61 8 61 27 ("void" "GLUtesselator*" "c-function")}
+      {Lisp-Entry "gluTessBeginPolygon" #f 62 8 62 27 ("void" "GLvoid*" "GLUtesselator*" "c-function")}
+      {Lisp-Entry "gluTessCallback" #f 63 8 63 23 ("void" "_GLUfuncptr" "GLenum" "GLUtesselator*" "c-function")}
+      {Lisp-Entry "gluTessEndContour" #f 64 8 64 25 ("void" "GLUtesselator*" "c-function")}
+      {Lisp-Entry "gluTessEndPolygon" #f 65 8 65 25 ("void" "GLUtesselator*" "c-function")}
+      {Lisp-Entry "gluTessNormal" #f 66 8 66 21 ("void" "GLdouble" "GLUtesselator*" "c-function")}
+      {Lisp-Entry "gluTessProperty" #f 67 8 67 23 ("void" "GLdouble" "GLenum" "GLUtesselator*" "c-function")}
+      {Lisp-Entry "gluTessVertex" #f 68 8 68 21 ("void" "GLvoid*" "GLdouble*" "GLUtesselator*" "c-function")}}})
 "glu-header"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "foreign" "glu-header.jazz"} 1236525995
-    {Lisp-Entry "jazz.graphic.opengl.foreign.glu-header" #f 0 9 0 47 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "foreign" "glu-header.jazz"} 1238328024
+    {Lisp-Entry "jazz.graphic.opengl.foreign.glu-header" #f 0 19 0 57 ("jazz")
       {Lisp-Entry "_GLUfuncptr" #f 7 8 7 19 ()}
       {Lisp-Entry "GLUnurbs" #f 8 8 8 16 ("struct")}
       {Lisp-Entry "GLUquadric" #f 9 8 9 18 ("struct")}
@@ -1192,8 +1194,8 @@
       {Lisp-Entry "GLU_TESS_WINDING_ABS_GEQ_TWO" #f 313 8 313 36 ("100134")}
       {Lisp-Entry "GLU_TESS_MAX_COORD" #f 316 8 316 26 ("1e150")}}})
 "glut"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "foreign" "glut.jazz"} 1236525995
-    {Lisp-Entry "jazz.graphic.opengl.foreign.glut" #f 0 9 0 41 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "foreign" "glut.jazz"} 1238328024
+    {Lisp-Entry "jazz.graphic.opengl.foreign.glut" #f 0 19 0 51 ("jazz")
       {Lisp-Entry "GLUT_STROKE_ROMAN" #f 17 8 17 25 ()}
       {Lisp-Entry "GLUT_STROKE_MONO_ROMAN" #f 18 8 18 30 ()}
       {Lisp-Entry "GLUT_BITMAP_9_BY_15" #f 19 8 19 27 ()}
@@ -1328,8 +1330,8 @@
       {Lisp-Entry "glutExtensionSupported" #f 318 8 318 30 ("int" "char-string" "c-function")}
       {Lisp-Entry "glutReportErrors" #f 319 8 319 24 ("void" "c-function")}}})
 "glut-header"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "foreign" "glut-header.jazz"} 1236525995
-    {Lisp-Entry "jazz.graphic.opengl.foreign.glut-header" #f 0 9 0 48 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "foreign" "glut-header.jazz"} 1238328024
+    {Lisp-Entry "jazz.graphic.opengl.foreign.glut-header" #f 0 19 0 58 ("jazz")
       {Lisp-Entry "char-string" #f 7 8 7 19 ("char-string" "native")}
       {Lisp-Entry "nonnull-char-string-list" #f 8 8 8 32 ("nonnull-char-string-list" "native")}
       {Lisp-Entry "unsigned-char" #f 9 8 9 21 ("unsigned-char" "native")}
@@ -1501,20 +1503,20 @@
       {Lisp-Entry "GLUT_GAME_MODE_REFRESH_RATE" #f 283 8 283 35 ("#x0005")}
       {Lisp-Entry "GLUT_GAME_MODE_DISPLAY_CHANGED" #f 284 8 284 38 ("#x0006")}}})
 "product"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "product.scm"} 1237388375
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "product.scm"} 1238328024
     {Lisp-Entry "jazz.graphic.opengl.product" #f 37 8 37 35 ("jazz.build-opengl" "build:" "jazz.graphic.opengl" "'jazz.graphic.opengl" "jazz.register-product")
-      {Lisp-Entry "jazz.build-opengl" #f 45 9 45 26 ("jazz.graphic.opengl.foreign.glut" "'jazz.graphic.opengl.foreign.glut" "jazz.graphic.opengl.foreign.glut-header" "'jazz.graphic.opengl.foreign.glut-header" "jazz.graphic.opengl.foreign.glu" "'jazz.graphic.opengl.foreign.glu" "jazz.graphic.opengl.foreign.glu-header" "'jazz.graphic.opengl.foreign.glu-header" "jazz.graphic.opengl.foreign.glext" "'jazz.graphic.opengl.foreign.glext" "jazz.graphic.opengl.foreign.glext-header" "'jazz.graphic.opengl.foreign.glext-header" "ld-options:" "jazz.graphic.opengl.foreign.gl" "'jazz.graphic.opengl.foreign.gl" "jazz.graphic.opengl.foreign.gl-header" "'jazz.graphic.opengl.foreign.gl-header" "jazz.compile-module" "core.module.builder" "'core.module.builder" "jazz.load-module" "descriptor")}}})
+      {Lisp-Entry "jazz.build-opengl" #f 45 9 45 26 ("jazz.graphic.opengl.foreign.glut" "'jazz.graphic.opengl.foreign.glut" "jazz.graphic.opengl.foreign.glut-header" "'jazz.graphic.opengl.foreign.glut-header" "jazz.graphic.opengl.foreign.glu" "'jazz.graphic.opengl.foreign.glu" "jazz.graphic.opengl.foreign.glu-header" "'jazz.graphic.opengl.foreign.glu-header" "jazz.graphic.opengl.foreign.glext" "'jazz.graphic.opengl.foreign.glext" "jazz.graphic.opengl.foreign.glext-header" "'jazz.graphic.opengl.foreign.glext-header" "jazz.graphic.opengl.foreign.gl" "'jazz.graphic.opengl.foreign.gl" "jazz.graphic.opengl.foreign.gl-header" "'jazz.graphic.opengl.foreign.gl-header" "ld-options:" "cc-options:" "jazz.graphic.opengl.platform.WinOpenGL" "'jazz.graphic.opengl.platform.WinOpenGL" "jazz.compile-module" "core.module.builder" "'core.module.builder" "jazz.load-module" "base-windows-cc-options" "let" "descriptor")}}})
 "windows"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "platform" "windows.jazz"} 1237219903
-    {Lisp-Entry "jazz.graphic.opengl.platform.windows" #f 37 9 37 45 ("current-instance" "window-parent" "1024" "1280" "0" "window-style" "NULL" "CLASS_ATOM" "window-ex-style" "CreateWindowEx" "WS_EX_APPWINDOW" "WS_SYSMENU" "WS_MINIMIZEBOX" "WS_OVERLAPPEDWINDOW" "WS_CLIPCHILDREN" "WS_CLIPSIBLINGS" "bitwise-ior" "WS_POPUP" "get-fullscreen?" "if" "rest" "OPENGL_CLASS_ATOM" "window" "register-window-class" "jazz")
-      {Lisp-Entry "OPENGL_CLASS_ATOM" #f 51 12 51 29 ()}
-      {Lisp-Entry "register-window-class" #f 55 13 55 34 ("RegisterClassEx" "OPENGL_CLASS_ATOM" "set!" "16" "WNDCLASSEX-hIconSm-set!" "WNDCLASSEX-lpszClassName-set!" "WNDCLASSEX-lpszMenuName-set!" "WNDCLASSEX-hbrBackground-set!" "NULL" "WNDCLASSEX-hCursor-set!" "32" "load-product-icon" "WNDCLASSEX-hIcon-set!" "WNDCLASSEX-hInstance-set!" "WNDCLASSEX-cbWndExtra-set!" "0" "WNDCLASSEX-cbClsExtra-set!" "call-process-hwnd-message" "WNDCLASSEX-lpfnWndProc-set!" "CS_OWNDC" "CS_VREDRAW" "CS_HREDRAW" "bitwise-ior" "WNDCLASSEX-style-set!" "WNDCLASSEX-sizeof" "WNDCLASSEX-cbSize-set!" "WNDCLASSEX-make" "wc" "class-background" "background" "current-instance" "instance" "let")}
-      {Lisp-Entry "window-class" #f 77 11 77 23 ()}
-      {Lisp-Entry "window-style" #f 81 11 81 23 ()}
-      {Lisp-Entry "window-ex-style" #f 92 11 92 26 ()}
-      {Lisp-Entry "create-handle" #f 96 11 96 24 ()}
-      {Lisp-Entry "swap-buffers" #f 109 13 109 25 ("get-device" "SwapBuffers" "window")}
-      {Lisp-Entry "make-render-current" #f 113 13 113 32 ("get-device" "wglMakeCurrent" "render" "window")}
-      {Lisp-Entry "new-opengl-window" #f 117 13 117 30 ("set-visible?" "NULL" "10" "SetTimer" "resize-scene" "initialize-opengl" "Dimension" "set-size" "50" "Point" "set-position" "get-fullscreen?" "unless" "set-title" "wglMakeCurrent" "set-render" "set-device" "wglCreateContext" "hrc" "SetPixelFormat" "ChoosePixelFormat" "pixel-format" "get-handle" "GetDC" "hdc" "PIXELFORMATDESCRIPTOR-dwDamageMask-set!" "PIXELFORMATDESCRIPTOR-dwVisibleMask-set!" "PIXELFORMATDESCRIPTOR-dwLayerMask-set!" "PIXELFORMATDESCRIPTOR-bReserved-set!" "PFD_MAIN_PLANE" "PIXELFORMATDESCRIPTOR-iLayerType-set!" "PIXELFORMATDESCRIPTOR-cAuxBuffers-set!" "PIXELFORMATDESCRIPTOR-cStencilBits-set!" "PIXELFORMATDESCRIPTOR-cDepthBits-set!" "PIXELFORMATDESCRIPTOR-cAccumAlphaBits-set!" "PIXELFORMATDESCRIPTOR-cAccumBlueBits-set!" "PIXELFORMATDESCRIPTOR-cAccumGreenBits-set!" "PIXELFORMATDESCRIPTOR-cAccumRedBits-set!" "PIXELFORMATDESCRIPTOR-cAccumBits-set!" "PIXELFORMATDESCRIPTOR-cAlphaShift-set!" "PIXELFORMATDESCRIPTOR-cAlphaBits-set!" "PIXELFORMATDESCRIPTOR-cBlueShift-set!" "PIXELFORMATDESCRIPTOR-cBlueBits-set!" "PIXELFORMATDESCRIPTOR-cGreenShift-set!" "PIXELFORMATDESCRIPTOR-cGreenBits-set!" "PIXELFORMATDESCRIPTOR-cRedShift-set!" "0" "PIXELFORMATDESCRIPTOR-cRedBits-set!" "32" "PIXELFORMATDESCRIPTOR-cColorBits-set!" "PFD_TYPE_RGBA" "PIXELFORMATDESCRIPTOR-iPixelType-set!" "PFD_DOUBLEBUFFER" "PFD_SUPPORT_OPENGL" "PFD_DRAW_TO_WINDOW" "bitwise-ior" "PIXELFORMATDESCRIPTOR-dwFlags-set!" "1" "PIXELFORMATDESCRIPTOR-nVersion-set!" "PIXELFORMATDESCRIPTOR-sizeof" "PIXELFORMATDESCRIPTOR-nSize-set!" "PIXELFORMATDESCRIPTOR-make" "pfd" "visible?:" "new" "window" "480" "640" "OpenGL-Window" "either" "let" "fullscreen?" "fullscreen?:" "height" "height:" "width" "width:" "class" "class:")}
-      {Lisp-Entry "set-fullscreen-mode" #f 167 13 167 32 ("CDS_FULLSCREEN" "ChangeDisplaySettings" "DM_PELSHEIGHT" "DM_PELSWIDTH" "DM_BITSPERPEL" "bitwise-ior" "DEVMODE-dmFields-set!" "DEVMODE-dmBitsPerPel-set!" "DEVMODE-dmPelsHeight-set!" "DEVMODE-dmPelsWidth-set!" "DEVMODE-sizeof" "DEVMODE-dmSize-set!" "DEVMODE-make" "devmode" "32" "bits" "1024" "height" "1280" "width" "let")}
-      {Lisp-Entry "reset-fullscreen-mode" #f 180 13 180 34 ("0" "NULL" "ChangeDisplaySettings")}}})
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic.opengl" "src" "jazz" "graphic" "opengl" "platform" "windows.jazz"} 1244896779
+    {Lisp-Entry "jazz.graphic.opengl.platform.windows" #f 37 19 37 55 ("current-instance" "window-parent" "1024" "1280" "0" "window-style" "NULL" "CLASS_ATOM" "window-ex-style" "CreateWindowEx" "WS_EX_APPWINDOW" "WS_SYSMENU" "WS_MINIMIZEBOX" "WS_OVERLAPPEDWINDOW" "WS_CLIPCHILDREN" "WS_CLIPSIBLINGS" "bitwise-ior" "WS_POPUP" "get-fullscreen?" "if" "rest" "OPENGL_CLASS_ATOM" "window" "register-window-class" "jazz")
+      {Lisp-Entry "OPENGL_CLASS_ATOM" #f 53 12 53 29 ()}
+      {Lisp-Entry "register-window-class" #f 57 13 57 34 ("RegisterClassEx" "OPENGL_CLASS_ATOM" "set!" "16" "WNDCLASSEX-hIconSm-set!" "WNDCLASSEX-lpszClassName-set!" "WNDCLASSEX-lpszMenuName-set!" "WNDCLASSEX-hbrBackground-set!" "NULL" "WNDCLASSEX-hCursor-set!" "32" "load-product-icon" "WNDCLASSEX-hIcon-set!" "WNDCLASSEX-hInstance-set!" "WNDCLASSEX-cbWndExtra-set!" "0" "WNDCLASSEX-cbClsExtra-set!" "call-process-hwnd-message" "WNDCLASSEX-lpfnWndProc-set!" "CS_OWNDC" "CS_VREDRAW" "CS_HREDRAW" "bitwise-ior" "WNDCLASSEX-style-set!" "WNDCLASSEX-sizeof" "WNDCLASSEX-cbSize-set!" "WNDCLASSEX-make" "wc" "class-background" "background" "current-instance" "instance" "let")}
+      {Lisp-Entry "window-class" #f 79 11 79 23 ()}
+      {Lisp-Entry "window-style" #f 83 11 83 23 ()}
+      {Lisp-Entry "window-ex-style" #f 94 11 94 26 ()}
+      {Lisp-Entry "create-handle" #f 98 11 98 24 ()}
+      {Lisp-Entry "swap-buffers" #f 111 13 111 25 ("get-device" "SwapBuffers" "window")}
+      {Lisp-Entry "make-render-current" #f 115 13 115 32 ("get-device" "wglMakeCurrent" "render" "window")}
+      {Lisp-Entry "new-opengl-window" #f 119 13 119 30 ("set-visible?" "NULL" "10" "SetTimer" "resize-scene" "initialize-opengl" "Dimension" "set-size" "50" "Point" "set-position" "get-fullscreen?" "unless" "set-title" "wglMakeCurrent" "set-render" "set-device" "wglCreateContext" "hrc" "SetPixelFormat" "ChoosePixelFormat" "pixel-format" "get-handle" "GetDC" "hdc" "PIXELFORMATDESCRIPTOR-dwDamageMask-set!" "PIXELFORMATDESCRIPTOR-dwVisibleMask-set!" "PIXELFORMATDESCRIPTOR-dwLayerMask-set!" "PIXELFORMATDESCRIPTOR-bReserved-set!" "PFD_MAIN_PLANE" "PIXELFORMATDESCRIPTOR-iLayerType-set!" "PIXELFORMATDESCRIPTOR-cAuxBuffers-set!" "PIXELFORMATDESCRIPTOR-cStencilBits-set!" "32" "PIXELFORMATDESCRIPTOR-cDepthBits-set!" "PIXELFORMATDESCRIPTOR-cAccumAlphaBits-set!" "PIXELFORMATDESCRIPTOR-cAccumBlueBits-set!" "PIXELFORMATDESCRIPTOR-cAccumGreenBits-set!" "PIXELFORMATDESCRIPTOR-cAccumRedBits-set!" "PIXELFORMATDESCRIPTOR-cAccumBits-set!" "PIXELFORMATDESCRIPTOR-cAlphaShift-set!" "PIXELFORMATDESCRIPTOR-cAlphaBits-set!" "PIXELFORMATDESCRIPTOR-cBlueShift-set!" "PIXELFORMATDESCRIPTOR-cBlueBits-set!" "PIXELFORMATDESCRIPTOR-cGreenShift-set!" "PIXELFORMATDESCRIPTOR-cGreenBits-set!" "PIXELFORMATDESCRIPTOR-cRedShift-set!" "0" "PIXELFORMATDESCRIPTOR-cRedBits-set!" "24" "PIXELFORMATDESCRIPTOR-cColorBits-set!" "PFD_TYPE_RGBA" "PIXELFORMATDESCRIPTOR-iPixelType-set!" "PFD_DOUBLEBUFFER" "PFD_SUPPORT_OPENGL" "PFD_DRAW_TO_WINDOW" "bitwise-ior" "PIXELFORMATDESCRIPTOR-dwFlags-set!" "1" "PIXELFORMATDESCRIPTOR-nVersion-set!" "PIXELFORMATDESCRIPTOR-sizeof" "PIXELFORMATDESCRIPTOR-nSize-set!" "PIXELFORMATDESCRIPTOR-make" "pfd" "visible?:" "new" "window" "480" "640" "OpenGL-Window" "either" "let" "fullscreen?" "fullscreen?:" "height" "height:" "width" "width:" "class" "class:")}
+      {Lisp-Entry "set-fullscreen-mode" #f 169 13 169 32 ("CDS_FULLSCREEN" "ChangeDisplaySettings" "DM_PELSHEIGHT" "DM_PELSWIDTH" "DM_BITSPERPEL" "bitwise-ior" "DEVMODE-dmFields-set!" "DEVMODE-dmBitsPerPel-set!" "DEVMODE-dmPelsHeight-set!" "DEVMODE-dmPelsWidth-set!" "DEVMODE-sizeof" "DEVMODE-dmSize-set!" "DEVMODE-make" "devmode" "32" "bits" "1024" "height" "1280" "width" "let")}
+      {Lisp-Entry "reset-fullscreen-mode" #f 182 13 182 34 ("0" "NULL" "ChangeDisplaySettings")}}})

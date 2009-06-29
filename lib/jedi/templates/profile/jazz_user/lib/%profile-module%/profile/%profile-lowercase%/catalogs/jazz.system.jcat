@@ -1,355 +1,346 @@
 "Application"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "Application.jazz"} 1237815288
-    {Lisp-Entry "jazz.system.application.Application" #f 37 9 37 44 ("jazz")
-      {Lisp-Entry "Application" #f 76 7 76 18 ("Save-Environment-Listener" "Event-Consumer" "History-Provider" "Context-Provider" "Process")
-        {Lisp-Entry "toplevel" #f 79 8 79 16 ()}
-        {Lisp-Entry "stage-border" #f 80 8 80 20 ()}
-        {Lisp-Entry "stage" #f 81 8 81 13 ()}
-        {Lisp-Entry "menubar" #f 82 8 82 15 ()}
-        {Lisp-Entry "status-bar" #f 83 8 83 18 ()}
-        {Lisp-Entry "profile-name" #f 84 8 84 20 ()}
-        {Lisp-Entry "profile-module" #f 85 8 85 22 ()}
-        {Lisp-Entry "profile-class" #f 86 8 86 21 ()}
-        {Lisp-Entry "profile-bindings" #f 87 8 87 24 ()}
-        {Lisp-Entry "profile" #f 88 8 88 15 ()}
-        {Lisp-Entry "focus-listeners" #f 89 8 89 23 ()}
-        {Lisp-Entry "application-listeners" #f 90 8 90 29 ("eq?" "test:" "make-table")}
-        {Lisp-Entry "selected-owner" #f 91 8 91 22 ()}
-        {Lisp-Entry "selected" #f 92 8 92 16 ()}
-        {Lisp-Entry "selected-listeners" #f 93 8 93 26 ()}
-        {Lisp-Entry "event-consumer" #f 94 8 94 22 ("self")}
-        {Lisp-Entry "history-manager" #f 95 8 95 23 ("self" "History-Manager" "new")}
-        {Lisp-Entry "depots-preferences" #f 96 8 96 26 ()}
-        {Lisp-Entry "active?" #f 97 8 97 15 ()}
-        {Lisp-Entry "application-actions" #f 98 8 98 27 ()}
-        {Lisp-Entry "profile-actions" #f 99 8 99 23 ()}
-        {Lisp-Entry "guest-actions" #f 100 8 100 21 ()}
-        {Lisp-Entry "focus-actions" #f 101 8 101 21 ()}
-        {Lisp-Entry "bindings-designer" #f 102 8 102 25 ()}
-        {Lisp-Entry "shortcut-table" #f 103 8 103 22 ()}
-        {Lisp-Entry "shortcut-hook" #f 104 8 104 21 ()}
-        {Lisp-Entry "resources" #f 105 8 105 17 ("equal?" "test:" "make-table")}
-        {Lisp-Entry "external-name" #f 108 16 108 29 ("application" "'application" "rest")}
-        {Lisp-Entry "get-toplevel" #f 117 11 117 23 ("toplevel")}
-        {Lisp-Entry "get-stage" #f 121 18 121 27 ("stage")}
-        {Lisp-Entry "get-menubar" #f 125 18 125 29 ("menubar")}
-        {Lisp-Entry "set-menubar" #f 129 18 129 29 ("menubar" "set!" "bar")}
-        {Lisp-Entry "get-status-bar" #f 133 18 133 32 ("status-bar")}
-        {Lisp-Entry "set-status-bar" #f 137 18 137 32 ("status-bar" "set!" "status")}
-        {Lisp-Entry "get-profile" #f 141 18 141 29 ("profile")}
-        {Lisp-Entry "get-resources" #f 145 18 145 31 ("resources")}
-        {Lisp-Entry "prepare-bindings" #f 154 11 154 27 ("Application-Bindings" "new" "set-bindings" "nextmethod")}
-        {Lisp-Entry "prepare-environment" #f 161 11 161 30 ("log-profile" "use-profile?" "when" "initialize-platform" "setup-resources" "set-look" "list" "set-looks" "Windows-Look" "windows-look" "Flat-Look" "new" "flat-look" "let" "test-java" "setup-shortcuts" "self" "set-application" "nextmethod")}
-        {Lisp-Entry "start-environment" #f 177 11 177 28 ("register-clipboard-formats" "initialize-clipboard" "setup-depots" "initialize-stage" "initialize-toplevel" "setup-bindings" "nextmethod")}
-        {Lisp-Entry "finalize-environment" #f 188 11 188 31 ("install-wallpaper" "stage" "when" "splash-screen" ":arrow" "set-cursor" "nextmethod")}
-        {Lisp-Entry "setup-profile" #f 196 11 196 24 ("profile" "get-class-actions" "set-profile-actions" "create-profile" "use-profile?" "when")}
-        {Lisp-Entry "finish-environment" #f 202 11 202 29 ("remove-splash-screen" "reload-session" "err" "continue-handler:" "init" "function" "with-safe-execution" "profile" "when" "self" "add-save-environment-listener" "nextmethod")}
-        {Lisp-Entry "finish-process" #f 216 11 216 25 ("update-windowing-actions" "update-focus-actions" "select-default-workspace" "nextmethod")}
-        {Lisp-Entry "conclude-environment" #f 223 11 223 31 ("err" "continue-handler:" "finalize" "function" "with-safe-execution" "profile" "get-handle" "select-foreground-window" "run-loop?" "when" "toplevel" "set-visible?" "nextmethod")}
-        {Lisp-Entry "conclude-process" #f 237 11 237 27 ("get-console-port" "event-thread" "start-repl-thread" "controller-debugger" "when" "nextmethod")}
-        {Lisp-Entry "terminate-process" #f 248 11 248 28 ("profile" "profile-bindings" "profile-class" "profile-module" "profile-name" "status-bar" "menubar" "stage" "stage-border" "set!" "close" "toplevel" "when" "reset-toolbars" "reset-dockeds" "reset-palettes" "Profile" "'Profile" "unregister-alias" "nextmethod")}
-        {Lisp-Entry "Java-Classpath" #f 274 14 274 28 ("File")}
-        {Lisp-Entry "test-java" #f 283 11 283 20 ("format" "message-box" "java.lang.Class" "forName" "class" "java.lang.ClassLoader" "getSystemClassLoader" "loader" "let*" "c-test" "Java-Classpath" "classpath:" "setup-jvm")}
-        {Lisp-Entry "start-loop" #f 296 11 296 21 ("process-events" "setup-events")}
-        {Lisp-Entry "resume-loop-action" #f 301 11 301 29 ("get-handle" "select-foreground-window" "toplevel" "when")}
-        {Lisp-Entry "clipboard-prefix" #f 311 26 311 42 ("process-version" "present" "process-name" "format")}
-        {Lisp-Entry "register-clipboard-formats" #f 317 29 317 55 ("register-jazz-clipboard-formats")}
-        {Lisp-Entry "Clipboard-Stack" #f 326 14 326 29 ()}
-        {Lisp-Entry "Max-Stack" #f 329 14 329 23 ("256")}
-        {Lisp-Entry "get-clipboard-stack" #f 333 18 333 37 ("Clipboard-Stack")}
-        {Lisp-Entry "empty-clipboard-stack?" #f 337 18 337 40 ("Clipboard-Stack" "null?")}
-        {Lisp-Entry "add-clipboard" #f 341 18 341 31 ("update-focus-actions" "trim-clipboard" "cons" "Clipboard-Stack" "set!" "when" "get-clipboard-text" "text" "let")}
-        {Lisp-Entry "push-clipboard-list" #f 349 18 349 37 ("update-focus-actions" "trim-clipboard" "append" "Clipboard-Stack" "set!" "error" "Max-Stack" ">" "if" "length" "pushed" "let" "list")}
-        {Lisp-Entry "trim-clipboard" #f 358 11 358 25 ("1" "-" "tail" "set-cdr!" "Max-Stack" "Clipboard-Stack" "length" ">" "when")}
-        {Lisp-Entry "pop-clipboard" #f 363 18 363 31 ("update-focus-actions" "set-clipboard-text" "cdr" "set!" "Clipboard-Stack" "car" "string" "let")}
-        {Lisp-Entry "on-paste-from-stack" #f 371 18 371 37 ("paste-clipboard" "pop-clipboard" "Clipboard-Stack" "null?" "bell" "Text-View" "is-not?" "if" "get-focus" "focus" "let" "evt")}
-        {Lisp-Entry "on-pop-clipboard-stack" #f 381 18 381 40 ("user-message" "pop-clipboard" "string" "let" "bell" "Clipboard-Stack" "null?" "if" "evt")}
-        {Lisp-Entry "on-add-history" #f 393 18 393 32 ("history-manager" "add-current" "evt")}
-        {Lisp-Entry "on-backward-history" #f 397 18 397 37 ("history-manager" "go-backward-history" "evt")}
-        {Lisp-Entry "on-forward-history" #f 401 18 401 36 ("history-manager" "go-forward-history" "evt")}
-        {Lisp-Entry "add-history" #f 405 18 405 29 ("history-manager" "add-history" "item")}
-        {Lisp-Entry "current-history-item" #f 409 11 409 31 ("current-history-item" "Document" "is?" "get-guest" "guest" "when" "current-frame" "frame" "let")}
-        {Lisp-Entry "update-history-actions" #f 417 18 417 40 ("forward-history" "not-null?" "backward-history" "application" "Action" "set-action-enabled?" "get-forward-history" "forward" "history-manager" "get-backward-history" "backward" "let")}
-        {Lisp-Entry "get-recorder" #f 429 26 429 38 ()}
-        {Lisp-Entry "use-profile?" #f 438 29 438 41 ()}
-        {Lisp-Entry "use-profile-logging?" #f 442 29 442 49 ()}
-        {Lisp-Entry "log-profile" #f 446 11 446 22 ("load-profile-jazzini" "install-profile" "compose-name" "profile-class" "profile-module" "profile-name" "set!" "system-profile" "else" "login-profile" "->string" "standard-profile" "cond" "module" "name" "receive" "profile" "'profile" "argument/setting" "jazz-profile" "shift-down?" "not" "or" "and" "profile-arg" "use-profile-logging?" "use-logging?" "let")}
-        {Lisp-Entry "load-profile-jazzini" #f 459 11 459 31 ("parse" "load" "exists?" "when" "Profile" "File" "file" "let")}
-        {Lisp-Entry "standard-profile" #f 465 11 465 27 ("values" "downcase" "format" "module-name" "string->symbol" "name" "let" "title")}
-        {Lisp-Entry "system-profile" #f 471 11 471 25 ("get-system-user-name" "standard-profile" "jazz.profile" "'jazz.profile" "Me" "'Me" "values")}
-        {Lisp-Entry "login-profile" #f 477 11 477 24 ("values" "format" "message-box" "save-content" "if" "profile" "'profile" "set-setting" "settings" "when" "profile-bindings" "set!" "choose-login" "always-use?" "bindings" "module" "name" "receive")}
-        {Lisp-Entry "install-profile" #f 489 11 489 26 ("get-parent" "get-list" "Profile" "'Profile" "register-alias" "set!" "install-new-profile" "not" "when" "profile-class" "find-module-source" "source" "let")}
-        {Lisp-Entry "install-new-profile" #f 497 11 497 30 ("load-package" "repository-add-package" "format" "repository-library-directory" "concatenate" "package-path" "package-name" "User" "'User" "find-repository" "repository" "non-expanded-nodes:" "Home" "Jazz" "Directory" "copy-template" "jazz" "'jazz" "either" "profile-bindings" "'profile-bindings" "profile-module" "'profile-module" "symbol->string" "downcase" "profile-lowercase" "'profile-lowercase" "profile-name" "profile" "'profile" "cons" "list" "associations" "let")}
-        {Lisp-Entry "standard-manifest-module" #f 512 11 512 35 ("format" "string->symbol" "name")}
-        {Lisp-Entry "create-profile" #f 516 11 516 25 ("Me" "err" "continue-handler:" "format" "list" "continue-text:" "profile-class" "load-profile-class" "new" "profile" "set!" "function" "with-safe-execution")}
-        {Lisp-Entry "preserve-environment" #f 531 11 531 31 ("call-save-environment-listeners" "nextmethod")}
-        {Lisp-Entry "close-environment" #f 536 11 536 28 ("nextmethod" "save-page-setup" "save-bindings" "close-all" "confirm-all-close" "call-exit-listeners")}
-        {Lisp-Entry "confirm-all-close" #f 548 18 548 35 ("get-children" "confirm-close" "unless" "for-each" "when" "dependent-document?" "get-controller" "controller" "Document" "get-guest" "guest" "Host-View" "is?" "and" "frame" "function" "frame-dependent-document?" "get-stage" "stage" "let")}
-        {Lisp-Entry "close-all" #f 564 11 564 20 ("close-children" "when" "get-stage" "stage" "let")}
-        {Lisp-Entry "Splash-Screen" #f 575 14 575 27 ()}
-        {Lisp-Entry "Splash-End" #f 578 14 578 24 ()}
-        {Lisp-Entry "splash-screen" #f 582 29 582 42 ()}
-        {Lisp-Entry "show-splash-screen" #f 586 11 586 29 ("current-time" "time->seconds" "+" "essay" "Splash-End" "show-splash" "Splash-Screen" "set!" "duration" "duration:")}
-        {Lisp-Entry "remove-splash-screen" #f 591 11 591 31 ("remove-splash" "-" "sleep" ">" "Splash-End" "and" "current-time" "time->seconds" "time" "let" "Splash-Screen" "when")}
-        {Lisp-Entry "show-splash" #f 599 29 599 40 ()}
-        {Lisp-Entry "remove-splash" #f 603 29 603 42 ("splash-screen")}
-        {Lisp-Entry "on-about" #f 612 18 612 26 ("show-about" "evt")}
-        {Lisp-Entry "show-about" #f 616 26 616 36 ("title:" "if" "when" "format" "Dark-Blue" "Color" "color:" "Text" "name:" "Font" "font:" "list" "append!" "message-box" "process-email" "email" "process-version" "present" "version" "process-licensee" "licensee" "process-copyright" "copyright" "process-owner" "owner" "process-name" "name" "let")}
-        {Lisp-Entry "exit-listeners" #f 648 8 648 22 ()}
-        {Lisp-Entry "add-exit-listener" #f 651 18 651 35 ("cons" "exit-listeners" "set!" "listener")}
-        {Lisp-Entry "remove-exit-listener" #f 655 18 655 38 ("remove!" "exit-listeners" "set!" "listener")}
-        {Lisp-Entry "call-exit-listeners" #f 659 18 659 37 ("exit-listeners" "prepare-exit" "listener" "function" "for-each")}
-        {Lisp-Entry "get-active?" #f 670 18 670 29 ("active?")}
-        {Lisp-Entry "deactivate" #f 674 26 674 36 ("active?" "set!" "set-mouse-in" "toplevel" "close-popups")}
-        {Lisp-Entry "activate" #f 680 26 680 34 ("verify-reloads" "function" "set-delayed-mouse-action" "mouse-clicked?" "if" "active?" "set!")}
-        {Lisp-Entry "verify-reloads" #f 690 18 690 32 ("include-invisibles?:" "get-views" "get-controller" "verify-reload" "Document" "get-guest" "guest" "let" "Frame-Host" "is?" "view" "function" "for-each" "stage" "when")}
-        {Lisp-Entry "verify-reload" #f 700 18 700 31 ("get-controller" "verify-reload" "get-guest" "document" "when" "find-document" "frame" "let" "moniker")}
-        {Lisp-Entry "save-environment-listeners" #f 712 8 712 34 ()}
-        {Lisp-Entry "add-save-environment-listener" #f 715 18 715 47 ("cons" "save-environment-listeners" "set!" "listener")}
-        {Lisp-Entry "remove-save-environment-listener" #f 719 18 719 50 ("remove!" "save-environment-listeners" "set!" "listener")}
-        {Lisp-Entry "call-save-environment-listeners" #f 723 18 723 49 ("save-environment-listeners" "save-environment" "listener" "function" "for-each")}
-        {Lisp-Entry "reload-session" #f 734 18 734 32 ("reload-opened-windows")}
-        {Lisp-Entry "reload-opened-windows" #f 738 26 738 47 ()}
-        {Lisp-Entry "reload-component" #f 742 26 742 42 ("properties" "class")}
-        {Lisp-Entry "save-environment" #f 746 11 746 27 ("save-all-guest" "save-application")}
-        {Lisp-Entry "save-application" #f 751 11 751 27 ("get-current-directory" "current-directory:" "branch:" "context" "active-context:" "preferences-designer" "set-property" "preferences-root" "when")}
-        {Lisp-Entry "save-all-guest" #f 758 11 758 25 ("get-children" "session" "session-designer" "save-guest" "get-guest" "guest" "Host-Frame" "is?" "frame" "function" "for-each" "when" "get-stage" "stage" "let")}
-        {Lisp-Entry "display-aliases?" #f 775 26 775 42 ()}
-        {Lisp-Entry "display-protocol?" #f 779 26 779 43 ()}
-        {Lisp-Entry "application-anchors" #f 783 26 783 45 ("get-aliases" "table-keys")}
-        {Lisp-Entry "add-focus-listener" #f 792 18 792 36 ("add-listener" "focus-listeners" "set!" "listener")}
-        {Lisp-Entry "remove-focus-listener" #f 796 18 796 39 ("remove-listener" "focus-listeners" "set!" "listener")}
-        {Lisp-Entry "process-focus-change" #f 800 18 800 38 ("update-focus-actions" "invoke" "listener" "function" "for-each" "self" ":focus-change" "Focus-Event" "new" "evt" "let" "focus-listeners" "when" "new-focus" "old-focus")}
-        {Lisp-Entry "update-focus-actions" #f 809 26 809 46 ("focus-update-actions" "can-select-all?" "select-all" "can-delete?" "delete" "can-paste-properties?" "paste-properties" "pop-clipboard-stack" "Clipboard-Stack" "not-null?" "paste-from-stack" "application" "can-paste?" "paste" "can-copy?" "copy" "can-cut?" "cut" "can-redo?" "redo" "can-undo?" "undo" "view" "Action" "set-action-enabled?" "preferences-root" "when" "View" "is?" "and" "view?" "get-focus" "focus" "let*")}
-        {Lisp-Entry "add-selected-listener" #f 832 18 832 39 ("add-listener" "selected-listeners" "set!" "listener")}
-        {Lisp-Entry "remove-selected-listener" #f 836 18 836 42 ("remove-listener" "selected-listeners" "set!" "listener")}
-        {Lisp-Entry "get-selected" #f 840 18 840 30 ("selected")}
-        {Lisp-Entry "get-selected-owner" #f 844 18 844 36 ("selected-owner")}
-        {Lisp-Entry "set-selected" #f 848 18 848 30 ("process-selected-change" "selected" "or" "when" "selected-owner" "neq?" "new-owner?" "let" "force?" "force?:" "sel" "owner")}
-        {Lisp-Entry "close-selected" #f 854 18 854 32 ("selected" "process-selected-change" "set!" "selected-owner" "eq?" "when" "owner")}
-        {Lisp-Entry "process-selected-change" #f 860 11 860 34 ("invoke" "listener" "function" "for-each" "force?:" "self" ":selected-change" "Selected-Event" "new" "evt" "let" "exiting-process?" "not" "selected-listeners" "and" "when" "selected" "selected-owner" "set!" "force?" "new-selected" "old-selected" "owner")}
-        {Lisp-Entry "add-application-listener" #f 875 18 875 42 ("get-application-listeners" "add-listener" "set-application-listeners" "listener" "category")}
-        {Lisp-Entry "remove-application-listener" #f 879 18 879 45 ("get-application-listeners" "remove-listener" "set-application-listeners" "listener" "category")}
-        {Lisp-Entry "process-application-event" #f 883 18 883 43 ("self" "invoke" "listener" "function" "for-each" "Application-Event" "new" "apply" "evt" "get-application-listeners" "listeners" "let" "properties" "sender" "kind" "category")}
-        {Lisp-Entry "get-application-listeners" #f 891 11 891 36 ("application-listeners" "table-ref" "category")}
-        {Lisp-Entry "set-application-listeners" #f 895 11 895 36 ("application-listeners" "table-set!" "listeners" "category")}
-        {Lisp-Entry "get-depots-preferences" #f 904 18 904 40 ("depots-preferences")}
-        {Lisp-Entry "setup-depots" #f 908 11 908 23 ("load-depots-preferences")}
-        {Lisp-Entry "depots-file" #f 912 11 912 22 ("Profile" "File")}
-        {Lisp-Entry "load-depots-preferences" #f 916 11 916 34 ("depots-preferences" "set!" "install-context" "read-from-file" "instantiate" "preferences" "exists?" "Profile" "'Profile" "is-alias?" "and" "when" "depots-file" "file" "let" "function" "with-safe-execution")}
-        {Lisp-Entry "get-depot-classes" #f 926 26 926 43 ()}
-        {Lisp-Entry "default-frame-class" #f 935 26 935 45 ()}
-        {Lisp-Entry "file-frame-class" #f 939 26 939 42 ("error" "extension-frame-class" "either" "get-extension" "extension" "let" "file")}
-        {Lisp-Entry "extension-frame-class" #f 945 26 945 47 ("unknown-extension-frame-class" "known-extension-frame-class" "profile-extension-frame-class" "either" "ext")}
-        {Lisp-Entry "profile-extension-frame-class" #f 951 11 951 40 ("extension-frame-class" "profile" "when" "ext")}
-        {Lisp-Entry "known-extension-frame-class" #f 956 26 956 53 ("ext")}
-        {Lisp-Entry "unknown-extension-frame-class" #f 960 26 960 55 ()}
-        {Lisp-Entry "frame-class" #f 964 26 964 37 ("file-frame-class" "default-frame-class" "not" "if" "file" "file:")}
-        {Lisp-Entry "get-default-frame-class" #f 970 11 970 34 ("default-frame-class" "autoload" "if" "get-frame-model" "model" "get-workspace-preferences" "pref" "let*")}
-        {Lisp-Entry "initialize-toplevel" #f 983 11 983 30 ("initialize-actions" "ensure-displayed" "new-toplevel" "toplevel" "set!")}
-        {Lisp-Entry "new-toplevel" #f 989 26 989 38 ("Toplevel" "new")}
-        {Lisp-Entry "initialize-actions" #f 993 11 993 29 ("self" "get-class-actions" "set-application-actions")}
-        {Lisp-Entry "initialize-stage" #f 1002 11 1002 27 ("new-stage" "stage" "set!")}
-        {Lisp-Entry "new-stage" #f 1006 26 1006 35 ("stage" "'stage" "name:" "Stage-Border" "parent:" "stage-class" "new")}
-        {Lisp-Entry "stage-class" #f 1010 29 1010 40 ("Stage")}
-        {Lisp-Entry "setup-shortcuts" #f 1019 11 1019 26 ("shortcut-hash" "hash:" "shortcut=?" "test:" "make-table" "shortcut-table" "set!")}
-        {Lisp-Entry "register-actions-shortcuts" #f 1023 11 1023 37 ("table-add" "for-each-reversed" "get-children" "table-remove!" "table-ref" "and" "get-shortcut" "shortcut" "let" "get-visible?" "action-item" "actions" "function" "for-each" "shortcut-table" "when" "new-actions" "old-actions")}
-        {Lisp-Entry "update-shortcut" #f 1044 18 1044 33 ("table-add" "shortcut-table" "table-remove!" "when" "new-shortcut" "old-shortcut" "action-item")}
-        {Lisp-Entry "dispatch-shortcut" #f 1051 18 1051 35 ("self" "car" "invoke" "not-null?" "get-bound-actions" "action-items" "let" "shortcut-hook" "not" "or" "when" "shortcut")}
-        {Lisp-Entry "get-bound-actions" #f 1060 18 1060 35 ("shortcut-table" "table-ref" "shortcut")}
-        {Lisp-Entry "get-shortcut-hook" #f 1064 18 1064 35 ("shortcut-hook")}
-        {Lisp-Entry "set-shortcut-hook" #f 1068 18 1068 35 ("shortcut-hook" "set!" "value")}
-        {Lisp-Entry "Bindings-File" #f 1077 14 1077 27 ("Profile" "File")}
-        {Lisp-Entry "setup-bindings" #f 1081 11 1081 25 ("default-bindings" "err" "continue-handler:" "set-active-branch" "Branch" "is?" "when" "locate-component" "branch" "jazz" "'jazz" "get-preferences" "get-active-bindings" "either" "active" "load-bindings" "let" "function" "with-safe-execution" "reference:" "get-form" "form:" "Designer" "new" "bindings-designer" "set!" "set-bindings" "bindings" "set-bindings/designer" "define")}
-        {Lisp-Entry "load-bindings" #f 1099 29 1099 42 ("default-bindings" "read-from-file" "instantiate" "exists?" "Profile" "'Profile" "is-alias?" "and" "if" "Bindings-File" "file" "let")}
-        {Lisp-Entry "default-bindings" #f 1106 29 1106 45 ("Application-Bindings" "new")}
-        {Lisp-Entry "save-bindings" #f 1110 11 1110 24 ("save" "get-form" "get-origin" "file?" "get-modified?" "bindings-designer" "and" "when")}
-        {Lisp-Entry "get-bindings-designer" #f 1115 18 1115 39 ("bindings-designer")}
-        {Lisp-Entry "set-application-actions" #f 1124 18 1124 41 ("set!" "application-actions" "register-actions-shortcuts" "actions-list")}
-        {Lisp-Entry "set-profile-actions" #f 1129 18 1129 37 ("set!" "profile-actions" "register-actions-shortcuts" "actions-list")}
-        {Lisp-Entry "set-guest-actions" #f 1134 18 1134 35 ("set!" "guest-actions" "register-actions-shortcuts" "actions-list")}
-        {Lisp-Entry "set-focus-actions" #f 1139 18 1139 35 ("set!" "focus-actions" "register-actions-shortcuts" "actions-list")}
-        {Lisp-Entry "get-menubar-class" #f 1149 18 1149 35 ("cdr" "autoload-class" ":menubar" "assq" "model-info" "get-toolbar-classes" "classes" "let*" "when" "workspaces" "'workspaces" "get-preferences" "pref" "let")}
-        {Lisp-Entry "find-menubar" #f 1158 18 1158 30 ("toplevel" "find-palette" "when" "get-menubar-class" "menubar-class" "let")}
-        {Lisp-Entry "update-menubar-buttons" #f 1164 18 1164 40 ("update-buttons" "menubar" "when")}
-        {Lisp-Entry "Undisplayed-Message" #f 1174 14 1174 33 ()}
-        {Lisp-Entry "set-status-message" #f 1178 18 1178 36 ("->string" "else" "Locales" "is?" "cond" "set-title" "Undisplayed-Message" "set!" "not" "if" "get-message-view" "message" "let" "msg")}
-        {Lisp-Entry "get-message-view" #f 1188 18 1188 34 ("message" "'message" "find-component" "status-bar" "when")}
-        {Lisp-Entry "show-undisplayed-message" #f 1193 18 1193 42 ("set!" "set-status-message" "Undisplayed-Message" "when")}
-        {Lisp-Entry "class-actions" #f 1204 11 1204 24 ("nextmethod" "application" "'application" "find-actions" "cons")}
-        {Lisp-Entry "process-alias" #f 1214 11 1214 24 ("nextmethod" "else" "get-banner-icons-cache" ":banner-icons" "get-invite-icons-cache" ":invite-icons" "get-large-icons-cache" ":large-icons" "get-small-icons-cache" ":small-icons" "get-icons-cache" ":icons" "get-profile" ":profile" "get-focus" ":focus" "focus-guest" ":focus-guest" "current-guest" ":guest" "current-document" ":document" "current-frame" ":frame" "get-stage" ":stage" "get-toplevel" ":toplevel" "self" ":application" "case" "name")}
-        {Lisp-Entry "text-menu" #f 1238 26 1238 35 ("new-text-context-menu" "text")}
-        {Lisp-Entry "get-output-log" #f 1247 26 1247 40 ()}
-        {Lisp-Entry "All-Results" #f 1256 14 1256 25 ()}
-        {Lisp-Entry "Active-Results" #f 1259 14 1259 28 ()}
-        {Lisp-Entry "navigable-results" #f 1263 26 1263 43 ("navigable-results" "'navigable-results" "must-implement")}
-        {Lisp-Entry "get-navigable-results" #f 1267 11 1267 32 ("navigable-results" "set!" "All-Results" "unless")}
-        {Lisp-Entry "get-active-results" #f 1273 18 1273 36 ("get-navigable-results" "car" "set!" "Active-Results" "unless")}
-        {Lisp-Entry "set-active-results" #f 1279 18 1279 36 ("Active-Results" "set!" "results")}
-        {Lisp-Entry "select-locale" #f 1288 18 1288 31 ("present-locale" "localize" "set-title" "locales" "'locales" "locate-component" "label" "when" "get-status-bar" "status" "let" "locale")}
-        {Lisp-Entry "locale-update" #f 1296 18 1296 31 ("get-toplevel" "redraw-window" "get-menubar" "layout-menu")}
-        {Lisp-Entry "select-default-workspace" #f 1307 11 1307 35 ("apply-preferences" "child" "get-active" "active" "default-workspace" "not" "if" "error?:" "workspaces" "'workspaces" "get-preferences" "pref" "let" "find-workspace" "define")}
-        {Lisp-Entry "default-workspace" #f 1320 11 1320 28 ("Default-Workspace" "new")}
-        {Lisp-Entry "on-select-workspace" #f 1324 18 1324 37 ("workspace:" "get-property" "select-workspace" "evt")}
-        {Lisp-Entry "on-next-workspace" #f 1328 18 1328 35 ("select-next-workspace" "evt")}
-        {Lisp-Entry "on-previous-workspace" #f 1332 18 1332 39 ("select-previous-workspace" "evt")}
-        {Lisp-Entry "on-workspace" #f 1336 26 1336 38 ("activate-workspace-button" "activate-workspace-item" "workspace:" "get-property" "workspace" "let" "activate" "get-kind" "case" "evt")}
-        {Lisp-Entry "activate-workspace-item" #f 1344 18 1344 41 ("set-selected?" "group:" "Radio-Item" "class:" "unselect-elements" "not" "if" "get-name" "locate-component" "radio" "get-content" "menu" "when" "'workspace" "menubar" "find-component" "item" "let" "workspace")}
-        {Lisp-Entry "activate-workspace-button" #f 1354 18 1354 43 ("set-selected?" "set-visit?" "'workspace" "group:" "Radio-Tool" "class:" "unselect-elements" "not" "if" "get-name" "locate-component" "radio" "when" "find-toolbar" "toolbar" "let" "workspace")}
-        {Lisp-Entry "select-workspace" #f 1364 18 1364 34 ("workspaces" "'workspaces" "list" "get-preferences" "apply-preferences" "name")}
-        {Lisp-Entry "select-next-workspace" #f 1368 18 1368 39 ("apply-preferences" "eq?" "unless" "length" "1" "+" "modulo" "element" "next" "find" "rank" "'workspaces" "get-preferences" "get-children" "Workspace-Preferences" "collect-type" "workspaces" "get-workspace-preferences" "current" "let*")}
-        {Lisp-Entry "select-previous-workspace" #f 1377 21 1377 46 ("apply-preferences" "eq?" "unless" "element" "previous" "1" "length" "-" "0" "=" "if" "previous-rank" "find" "rank" "'workspaces" "get-preferences" "get-children" "Workspace-Preferences" "collect-type" "workspaces" "get-workspace-preferences" "current" "let*")}
-        {Lisp-Entry "workspace-installed" #f 1387 26 1387 45 ()}
-        {Lisp-Entry "on-zoom-horizontally" #f 1391 18 1391 38 ("set!" "unzoom" "zoom" "workspace-zoomable?" "split" "'split" "get-state" "continuation-return" "when" "vert" "'vert" "get-orientation" "eq?" "if" "window" "splitter" "get-stage-border" "for-each-splitter" "return" "continuation-capture" "started?" "let" "function" "with-locked-update" "evt")}
-        {Lisp-Entry "on-zoom-vertically" #f 1410 18 1410 36 ("set!" "unzoom" "zoom" "split" "'split" "get-state" "continuation-return" "when" "horz" "'horz" "get-orientation" "eq?" "if" "window" "splitter" "for-each-splitter" "return" "continuation-capture" "get-stage-border" "border" "started?" "let" "function" "with-locked-update" "evt")}
-        {Lisp-Entry "on-maximize/restore" #f 1430 18 1430 37 ("maximize" "restore" "get-maximized?" "if" "get-stage" "stage" "let" "evt")}
-        {Lisp-Entry "on-full-screen" #f 1437 18 1437 32 ("full-screen-stage" "selected-workspace" "set-fullscreen?" "get-toplevel" "get-fullscreen?" "fullscreen?" "fullscreen-warned?" "'fullscreen-warned?" "preferences-designer" "set-property" "message-box" "get-fullscreen-warned?" "not" "when" "get-preferences" "pref" "let" "evt")}
-        {Lisp-Entry "full-screen-stage" #f 1447 18 1447 35 ("get-stage-border" "full-screen" "fullscreen?")}
-        {Lisp-Entry "toggle-full-screen" #f 1451 18 1451 36 ("full-screen" "get-toplevel" "get-fullscreen?" "not" "fullscreen?" "let" "window")}
-        {Lisp-Entry "full-screen" #f 1456 18 1456 29 ("unzoom" "zoom" "if" "set-full?" "splitter" "for-each-splitter" "set-fullscreen?" "function" "with-locked-update" "get-fullscreen?" "neq?" "when" "get-stage" "stage" "get-toplevel" "toplevel" "let" "fullscreen?" "window")}
-        {Lisp-Entry "get-toolbar-class" #f 1477 18 1477 35 ("cdr" "autoload-class" ":toolbar" "assq" "model-info" "get-toolbar-classes" "classes" "let*" "when" "workspaces" "'workspaces" "get-preferences" "pref" "let")}
-        {Lisp-Entry "find-toolbar" #f 1486 18 1486 30 ("toplevel" "find-palette" "when" "get-toolbar-class" "toolbar-class" "let")}
-        {Lisp-Entry "get-context-text" #f 1497 11 1497 27 ()}
-        {Lisp-Entry "get-text-class" #f 1506 26 1506 40 ("Plain-Text-View")}
-        {Lisp-Entry "setup-resources" #f 1515 11 1515 26 ("Bin" "icon" "'icon" "cursor" "'cursor" "Directory" "bitmap" "'bitmap" "setup-resources-directory" "begin" "Jazz" "'Jazz" "find-alias" "if")}
-        {Lisp-Entry "setup-resources-directory" #f 1526 11 1526 36 ("get-base" "register-resource" "get-extension" "ci=?" "file" "function" "iterate-directory" "exists?" "when" "extension" "directory" "type")}
-        {Lisp-Entry "register-resource" #f 1534 18 1534 35 ("cons" "resources" "table-set!" "file" "name" "type")}
-        {Lisp-Entry "get-resource" #f 1538 18 1538 30 ("error" "cons" "resources" "table-ref" "or" "name" "type")}
-        {Lisp-Entry "Icons-Cache" #f 1548 14 1548 25 ()}
-        {Lisp-Entry "Small-Icons-Cache" #f 1551 14 1551 31 ()}
-        {Lisp-Entry "Large-Icons-Cache" #f 1554 14 1554 31 ()}
-        {Lisp-Entry "Invite-Icons-Cache" #f 1557 14 1557 32 ()}
-        {Lisp-Entry "Banner-Icons-Cache" #f 1560 14 1560 32 ()}
-        {Lisp-Entry "get-icons-cache" #f 1564 18 1564 33 ("height:" "16" "width:" "Portfolio" "new" "set!" "Icons-Cache" "unless")}
-        {Lisp-Entry "get-small-icons-cache" #f 1570 18 1570 39 ("height:" "12" "width:" "Portfolio" "new" "set!" "Small-Icons-Cache" "unless")}
-        {Lisp-Entry "get-large-icons-cache" #f 1576 18 1576 39 ("height:" "32" "width:" "Portfolio" "new" "set!" "Large-Icons-Cache" "unless")}
-        {Lisp-Entry "get-invite-icons-cache" #f 1582 18 1582 40 ("height:" "52" "width:" "Portfolio" "new" "set!" "Invite-Icons-Cache" "unless")}
-        {Lisp-Entry "get-banner-icons-cache" #f 1588 18 1588 40 ("200" "height:" "1200" "width:" "Portfolio" "new" "set!" "Banner-Icons-Cache" "unless")}
-        {Lisp-Entry "get-cataloguer" #f 1599 26 1599 40 ()}
-        {Lisp-Entry "get-catalog-context" #f 1603 26 1603 45 ()}
-        {Lisp-Entry "user-feedback" #f 1612 11 1612 24 ("message")}
-        {Lisp-Entry "get-event-consumer" #f 1621 11 1621 29 ("event-consumer")}
-        {Lisp-Entry "set-event-consumer" #f 1625 11 1625 29 ("event-consumer" "set!" "consumer")}
-        {Lisp-Entry "deliver-event" #f 1629 11 1629 24 ("event" "proc" "target" "handler")}
-        {Lisp-Entry "record-event?" #f 1633 26 1633 39 ("event")}
-        {Lisp-Entry "fresh-prompt" #f 1642 18 1642 30 ("ensure-displayed" "fresh-prompt" "when" "get-console-text" "either" "let" "text" "text:")}
-        {Lisp-Entry "on-console" #f 1649 18 1649 28 ("fresh-prompt" "when" "show-console" "Console-Text-View" "get-focus" "is?" "had-focus?" "let" "evt")}
-        {Lisp-Entry "show-console" #f 1656 18 1656 30 ("acquire-focus" "bell" "not" "if" "get-text" "text" "focus?" "and" "when" "workspace" "workspace:" "select-palette" "manager" "let" "Console-Manager" "class" "class:")}
-        {Lisp-Entry "on-sql-console" #f 1668 18 1668 32 ("get-sql-console-text" "text:" "fresh-prompt" "when" "sql" "'sql" "workspace:" "SQL-Console-Manager" "class:" "show-console" "SQL-Console-Text-View" "get-focus" "is?" "had-focus?" "let" "evt")}
-        {Lisp-Entry "on-sql-connections" #f 1676 11 1676 29 ("focus?:" "sql" "'sql" "workspace:" "SQL-Connections-Manager" "select-palette" "evt")}
-        {Lisp-Entry "on-sql-inventory" #f 1681 11 1681 27 ("focus?:" "sql" "'sql" "workspace:" "Inventory-Browser" "select-palette" "evt")}
-        {Lisp-Entry "on-sql-tree-output" #f 1686 11 1686 29 ("focus?:" "sql" "'sql" "SQL-Tree-Output" "select-palette" "evt")}
-        {Lisp-Entry "process-debuggee-loop" #f 1695 11 1695 32 ("nextmethod" "process-events" "with-jazz-exception-debugger" "event-thread?" "controller-debugger" "local-proxy?" "and" "if")}
-        {Lisp-Entry "exception-reported" #f 1708 11 1708 29 ("cleanup-mouse-processing" "Exception" "catch")}
-        {Lisp-Entry "present-execution-context" #f 1715 11 1715 36 ("prefix?:" "type:" "Exception-Presenter" "new" "present" "prefix?" "type" "exception")}
-        {Lisp-Entry "get-search-manager" #f 1724 26 1724 44 ()}
-        {Lisp-Entry "get-search-results" #f 1728 26 1728 44 ("Search-Results" "singleton-docked" "get-guest")}
-        {Lisp-Entry "active-search" #f 1732 18 1732 31 ("get-guest" "get-search" "when" "get-search-manager" "manager" "let")}
-        {Lisp-Entry "update-search-actions" #f 1739 18 1739 39 ("replace-all-selected" "replace-all" "replace&find-forward" "replace" "find-backward" "find-forward" ">" "pop-results" "edit-current" "edit-previous" "1" ">=" "edit-next" "application" "Action" "set-action-enabled?" "in-modal?" "get-results-stack" "results-stack-count" "get-tree" "get-visible-count" "results-count" "get-search-results" "results" "length" "count" "get-views" "not" "if" "frames" "get-stage" "stage" "let*")}
-        {Lisp-Entry "on-find" #f 1765 18 1765 25 ("active-window" "'active-window" "text" "'text" "update-search" "evt")}
-        {Lisp-Entry "on-find-in-text" #f 1769 18 1769 33 ("text" "'text" "update-search" "evt")}
-        {Lisp-Entry "on-find-in-directories" #f 1773 18 1773 40 ("directories" "'directories" "update-search" "evt")}
-        {Lisp-Entry "on-find-in-projects" #f 1777 18 1777 37 ("projects" "'projects" "update-search" "evt")}
-        {Lisp-Entry "update-search" #f 1781 11 1781 24 ("select-search" "get-searches" "list" "set-search-targets" "first" "equal?" "not-null?" "or" "unless" "get-search-targets" "targets" "let" "search" "function" "for-each" "set-visible?" "bring-to-front" "set-search-domain" "set-selection-name" "when" "get-search" "next-radio" "get-window-focus" "get-selection-name" "eq?" "same-tab?" "'tab" "locate" "tab-view" "get-guest" "manager" "get-player" "player" "get-search-manager" "palette" "get-selected-string" "Text-View" "not" "and" "if" "string" "Tree-Embedded-Search-Text-View" "is?" "internal?" "get-focus" "focus" "let*" "domain" "tab")}
-        {Lisp-Entry "end-search-edition" #f 1811 18 1811 36 ("end-edition" "get-targets-tree" "tree" "get-search" "search" "get-guest" "manager" "get-search-manager" "palette" "let*")}
-        {Lisp-Entry "on-edit-next" #f 1819 18 1819 30 ("get-active-results" "edit-next" "evt")}
-        {Lisp-Entry "on-edit-previous" #f 1823 18 1823 34 ("get-active-results" "edit-previous" "evt")}
-        {Lisp-Entry "on-edit-current" #f 1827 18 1827 33 ("get-active-results" "edit-current" "evt")}
-        {Lisp-Entry "on-pop-results" #f 1831 18 1831 32 ("get-search-results" "clear-results" "evt")}
-        {Lisp-Entry "on-find-forward" #f 1835 18 1835 33 ("on-find-forward" "bell" "select-next" "unless" "get-syntax" "get-constituent-test" "get-find-targets" "targets" "stage" "first-view" "get-guest" "get-text-view" "text" "not" "if" "active-search" "search" "let" "evt")}
-        {Lisp-Entry "on-find-backward" #f 1845 18 1845 34 ("on-find-backward" "bell" "select-previous" "unless" "get-syntax" "get-constituent-test" "get-find-targets" "targets" "stage" "first-view" "get-guest" "get-text-view" "text" "not" "if" "active-search" "search" "let" "evt")}
-        {Lisp-Entry "on-replace" #f 1855 18 1855 28 ("on-replace" "bell" "not" "if" "active-search" "search" "let" "evt")}
-        {Lisp-Entry "on-replace&find-forward" #f 1862 18 1862 41 ("on-replace&find-forward" "bell" "not" "if" "active-search" "search" "let" "evt")}
-        {Lisp-Entry "on-replace-all" #f 1869 18 1869 32 ("on-replace-all" "bell" "not" "if" "active-search" "search" "let" "evt")}
-        {Lisp-Entry "on-replace-all-selected" #f 1876 18 1876 41 ("on-replace-all-selected" "bell" "not" "if" "active-search" "search" "let" "evt")}
-        {Lisp-Entry "on-command-shell" #f 1888 18 1888 34 ("execute" "'execute" "select-command-mode" "evt")}
-        {Lisp-Entry "get-command-shell" #f 1892 26 1892 43 ("command-shell" "'command-shell" "locate-component" "when" "find-toolbar" "toolbar" "let")}
-        {Lisp-Entry "get-command-text" #f 1898 26 1898 42 ("get-text" "when" "get-command-shell" "shell" "let")}
-        {Lisp-Entry "select-command-mode" #f 1904 18 1904 37 ("get-command-text" "select-mode" "text" "mode")}
-        {Lisp-Entry "get-search-targets" #f 1913 18 1913 36 ("get-search-targets" "Search-Targets" "'Search-Targets" "get-setting" "not" "if" "active-search" "search" "let")}
-        {Lisp-Entry "set-search-targets" #f 1920 18 1920 36 ("set-search-targets" "Search-Targets" "'Search-Targets" "set-setting" "not" "if" "active-search" "search" "let" "targets")}
-        {Lisp-Entry "get-find-targets" #f 1927 18 1927 34 ("get-find-targets" "get-search-targets" "constituent-test:" "get-ignore-case?" "ignore-case?:" "get-whole-words?" "whole-words?:" "first" "make-search-context" "target" "function" "map" "not" "if" "active-search" "search" "let" "constituent-test")}
-        {Lisp-Entry "get-replace-targets" #f 1939 18 1939 37 ("get-replace-targets" "get-search-targets" "second" "map" "not" "if" "active-search" "search" "let")}
-        {Lisp-Entry "get-whole-words?" #f 1946 18 1946 34 ("get-whole-words?" "Search-Whole-Words?" "'Search-Whole-Words?" "get-setting" "not" "if" "active-search" "search" "let")}
-        {Lisp-Entry "get-ignore-case?" #f 1953 18 1953 34 ("get-ignore-case?" "Search-Ignore-Case?" "'Search-Ignore-Case?" "get-setting" "not" "if" "active-search" "search" "let")}
-        {Lisp-Entry "get-preserve-case?" #f 1960 18 1960 36 ("get-preserve-case?" "Search-Preserve-Case?" "'Search-Preserve-Case?" "get-setting" "not" "if" "active-search" "search" "let")}
-        {Lisp-Entry "get-play-recording?" #f 1967 18 1967 37 ("get-play-recording?" "Search-Play-Recording?" "'Search-Play-Recording?" "get-setting" "not" "if" "active-search" "search" "let")}
-        {Lisp-Entry "get-expression?" #f 1974 18 1974 33 ("get-expression?" "Search-Expression?" "'Search-Expression?" "get-setting" "not" "if" "active-search" "search" "let")}
-        {Lisp-Entry "on-new" #f 1986 26 1986 32 ("get-default-frame-class" "new-event" "evt")}
-        {Lisp-Entry "on-open" #f 1990 26 1990 33 ("open-files" "evt")}
-        {Lisp-Entry "open-files" #f 1994 18 1994 28 ("get-name" "file" "function" "key:" "string>?" "sort" "edit-file" "for-each" "multiple-selection?:" "open-extensions" "extensions:" "choose-file" "files" "let" "directory" "directory:")}
-        {Lisp-Entry "receive-files" #f 2000 26 2000 39 ("edit-file" "class:" "edit-document" "file?" "when" "pathname" "function" "for-each" "else" "Jazz-Text-View" "shift-down?" "Jazz-Plain-Text-View" "alt-down?" "cond" "class" "parse" "user-message" "set-current-directory" "dir" "let" "car" "directory?" "1" "length" "=" "and" "if" "pathnames" "pos")}
-        {Lisp-Entry "edit-file" #f 2016 26 2016 35 ("edit-document" "file")}
-        {Lisp-Entry "open-extensions" #f 2021 26 2021 41 ()}
-        {Lisp-Entry "find-document" #f 2025 18 2025 31 ("stage" "get-children" "pathname=?" "get-controller" "get-moniker" "guest-moniker" "Document" "get-guest" "guest" "let" "Frame-Host" "is?" "and" "frame" "function" "find-if" "moniker")}
-        {Lisp-Entry "edit-document" #f 2036 18 2036 31 ("verify-reload" "focus-host" "set-visible?" "bring-to-front" "get-guest" "center-caret" "'center-caret" "ensure-displayed?:" "set-selection-safe" "selection" "set-wrap?" "wrap?" "get-controller" "set-moniker" "char-encoding" "set-char-encoding" "document" "host" "initialize:" "activate-focus?" "host-focus?:" "visible?" "host-visible?:" "workspace" "host-workspace:" "new-frame" ":wait" "with-cursor" "file-frame-class" "either" "class" "values" "return-new?" "new?" "function" "result" "find-document" "force-new?" "frame" "let*" "file" "let" "error" "exists?" "not" "if" "when" "moniker")}
-        {Lisp-Entry "edit-help-document" #f 2080 18 2080 36 ("set-editable?" "get-guest" "text" "edit-document" "frame" "let*" "moniker")}
-        {Lisp-Entry "edit-filename" #f 2086 18 2086 31 ("get-controller" "verify-reload" "get-guest" "text" "get-source" "edit-document" "frame" "error" "not" "if" "find-filename" "project-file" "get-workbench" "workbench" "let*" "filename")}
-        {Lisp-Entry "edit-category" #f 2096 26 2096 39 ("name")}
-        {Lisp-Entry "on-close" #f 2100 26 2100 34 ("close-with-confirm" "when" "stage" "first-view" "frame" "let" "evt")}
-        {Lisp-Entry "on-close-all" #f 2106 26 2106 38 ("stage" "get-views" "close" "confirm-close" "get-controller" "close-on-close-all?" "Document" "and" "get-guest" "guest" "let" "Frame-Host" "is?" "when" "view" "function" "for-each" "evt")}
-        {Lisp-Entry "on-save-all" #f 2116 26 2116 37 ("save-all" "evt")}
-        {Lisp-Entry "on-print" #f 2120 26 2120 34 ("print-document" "current-guest" "guest" "let" "evt")}
-        {Lisp-Entry "on-print-layout" #f 2125 26 2125 41 ("print-layout" "current-guest" "guest" "let" "evt")}
-        {Lisp-Entry "on-print-preview" #f 2130 26 2130 42 ("print-preview" "current-guest" "guest" "let" "evt")}
-        {Lisp-Entry "on-quit-application" #f 2135 26 2135 45 ("exit-process" "evt")}
-        {Lisp-Entry "save-all" #f 2139 18 2139 26 ("include-invisibles?:" "stage" "get-views" "save" "get-modified?" "dependent-document?" "xor" "get-moniker" "or" "and" "get-controller" "controller" "get-guest" "guest" "Frame-Host" "is?" "when" "window" "for-each" "main-documents?" "function" "save-documents" "let" "save-unanchored?" "save-unanchored?:" "Document" "class" "class:")}
-        {Lisp-Entry "edit-definitions" #f 2163 26 2163 42 ("rest" "object")}
-        {Lisp-Entry "edit-references" #f 2167 26 2167 41 ("rest" "object")}
-        {Lisp-Entry "context-update" #f 2176 11 2176 25 ("context" "user-message" "modify-profile" "modify-catalogs" "nextmethod")}
-        {Lisp-Entry "modify-catalogs" #f 2183 11 2183 26 ("get-children" "get-active?" "set-active?" "get-catalog" "catalog" "get-name" "name" "let*" "config" "function" "for-each" "get-cataloguer" "cataloguer" "when" "error?:" "catalogs" "'catalogs" "get-preferences" "pref" "let")}
-        {Lisp-Entry "modify-profile" #f 2195 11 2195 25 ("finalize" "init" "autoload" "new" "set!" "Profile" "get-profile-class" "either" "class" "error?:" "get-preferences" "pref" "let" "close" "profile" "when")}
-        {Lisp-Entry "on-add-to-favorites" #f 2215 11 2215 30 ("add-to-favorites" "bell" "not" "if" "current-document" "guest" "let" "evt")}
-        {Lisp-Entry "setup-preferences" #f 2227 11 2227 28 ("default-preferences" "set-preferences/designer" "err" "continue-handler:" "setup-preferences/designer" "function" "with-safe-execution")}
-        {Lisp-Entry "default-preferences" #f 2236 11 2236 30 ("Application-Preferences" "new")}
-        {Lisp-Entry "Default-Page-Setup" #f 2245 14 2245 32 ()}
-        {Lisp-Entry "Default-Page-Setup-Designer" #f 2248 14 2248 41 ()}
-        {Lisp-Entry "Default-Page-Setup-Form" #f 2251 14 2251 37 ("form>>")}
-        {Lisp-Entry "Default-Page-Setup-File" #f 2255 14 2255 37 ("Profile" "File")}
-        {Lisp-Entry "set-default-page-setup" #f 2259 18 2259 40 ("Default-Page-Setup" "set!" "page-setup")}
-        {Lisp-Entry "default-page-setup" #f 2263 18 2263 36 ("setup-page-setup" "Default-Page-Setup" "not" "when")}
-        {Lisp-Entry "default-page-setup-designer" #f 2269 18 2269 45 ("setup-page-setup" "Default-Page-Setup-Designer" "not" "when")}
-        {Lisp-Entry "setup-page-setup" #f 2275 19 2275 35 ("reference:" "get-form" "form:" "Designer" "new" "Default-Page-Setup-Designer" "instantiate" "Default-Page-Setup" "set!" "Default-Page-Setup-Form" "read-from-file" "exists?" "Profile" "'Profile" "is-alias?" "and" "if" "form" "Default-Page-Setup-File" "file" "let*")}
-        {Lisp-Entry "save-page-setup" #f 2282 19 2282 34 ("save" "Default-Page-Setup-File" "set-origin" "not" "form" "let" "get-form" "get-origin" "file?" "Default-Page-Setup-Designer" "and" "when")}
-        {Lisp-Entry "get-documentation-cataloguer" #f 2295 26 2295 54 ()}
-        {Lisp-Entry "on-zoom-out" #f 2304 11 2304 22 ("0.25" "-" "scale-view" "get-scaling" "scaling" "bell" "not" "if" "what:" "get-property" "scaled-view" "view" "let" "evt")}
-        {Lisp-Entry "on-zoom-in" #f 2312 11 2312 21 ("0.25" "+" "scale-view" "get-scaling" "scaling" "bell" "not" "if" "what:" "get-property" "scaled-view" "view" "let" "evt")}
-        {Lisp-Entry "on-unzoom" #f 2320 11 2320 20 ("1.0" "scale-view" "bell" "not" "if" "what:" "get-property" "scaled-view" "view" "let" "evt")}
-        {Lisp-Entry "scaled-view" #f 2327 11 2327 22 ("mouse-view" "current-document" "document" "case" "what")}
-        {Lisp-Entry "scale-view" #f 2333 11 2333 21 ("set-scaled?" "set-scaling" "user-message" "scaled?" "scaling" "view")}
-        {Lisp-Entry "on-capture-document" #f 2345 11 2345 30 ("tooltips?:" "report-figure?:" "obscure-unhighlighted?:" "highlight-figure?:" "highlight:" "capture-document" "pos" "view" "function" "click:" "pick-figure" "evt")}
-        {Lisp-Entry "on-capture-mouse-document" #f 2355 11 2355 36 ("capture-document" "bell" "not" "if" "mouse-view" "view" "let" "evt")}
-        {Lisp-Entry "capture-document" #f 2362 15 2362 31 ("export-picture" "get-guest" "guest" "bell" "not" "if" "get-host" "host" "let" "view")}
-        {Lisp-Entry "on-capture-host" #f 2372 11 2372 26 ("tooltips?:" "report-figure?:" "obscure-unhighlighted?:" "highlight-figure?:" "highlight:" "capture-host" "pos" "view" "function" "click:" "pick-figure" "evt")}
-        {Lisp-Entry "on-capture-mouse-host" #f 2382 11 2382 32 ("capture-host" "bell" "not" "if" "mouse-view" "view" "let" "evt")}
-        {Lisp-Entry "capture-host" #f 2389 15 2389 27 ("export-picture" "bell" "not" "if" "get-host" "host" "let" "view")}
-        {Lisp-Entry "update-windowing-actions" #f 2401 26 2401 50 ("update-menubar-buttons" "update-window-actions" "update-history-actions" "exiting-process?" "unless")}
-        {Lisp-Entry "update-window-actions" #f 2408 18 2408 39 ("tile-vertically" "tile-horizontally" "cascade" "toggle-frame" "current-frame" "previous-frame" "2" "next-frame" "print" "print-preview" "print-layout" "page-setup" "compare-saved" "revert-saved" "save-all" "save-as" "save" "guest" "close-all" "not" "1" ">=" "and" "close" "application" "Action" "set-action-enabled?" "in-modal?" "length" "count" "get-views" "frames" "let*" "when" "get-stage" "stage" "let")}
-        {Lisp-Entry "on-next-frame" #f 2436 26 2436 39 ("current-frame" "focus-host" "send-to-back" "first-view" "first" "get-stage" "stage" "let*" "evt")}
-        {Lisp-Entry "on-previous-frame" #f 2443 26 2443 43 ("current-frame" "focus-host" "bring-to-front" "last-view" "last" "get-stage" "stage" "let*" "evt")}
-        {Lisp-Entry "on-current-frame" #f 2450 26 2450 42 ("focus-host" "first-view" "first" "get-stage" "stage" "let*" "evt")}
-        {Lisp-Entry "on-toggle-frame" #f 2456 26 2456 41 ("bell" "toggle-text" "Text-View" "is?" "if" "current-document" "text" "let" "evt")}
-        {Lisp-Entry "toggle-text" #f 2463 11 2463 22 ("else" "toggle-c-text" "ci=?" "test:" "C-Extensions" "member?" "cond" "get-extension" "ext" "bell" "not" "if" "get-controller" "get-moniker" "file" "let" "text")}
-        {Lisp-Entry "toggle-c-text" #f 2472 11 2472 24 ("edit-filename" "format" "filename" "ci=?" "if" "toggled" "get-extension" "ext" "get-base" "base" "let*" "file")}
-        {Lisp-Entry "on-cascade" #f 2480 26 2480 36 ("on-cascade" "'on-cascade" "unimplemented" "get-views" "frames" "get-stage" "stage" "let*" "evt")}
-        {Lisp-Entry "on-tile-horizontally" #f 2486 26 2486 46 ("increase!" "Dimension" "set-size" "Point" "new" "set-position" "frame" "for-each" "restore" "function" "with-locked-update" "0" "t" "quotient" "h" "get-height" "height" "get-width" "width" "length" "count" "get-views" "frames" "get-stage" "stage" "let*" "evt")}
-        {Lisp-Entry "on-tile-vertically" #f 2504 26 2504 44 ("increase!" "Dimension" "set-size" "Point" "new" "set-position" "frame" "for-each" "restore" "function" "with-locked-update" "0" "l" "quotient" "w" "get-height" "height" "get-width" "width" "length" "count" "get-views" "frames" "get-stage" "stage" "let*" "evt")}
-        {Lisp-Entry "on-select-window" #f 2522 26 2522 42 ("focus-host" "bring-to-front" "window:" "get-property" "window" "let" "evt")}}}})
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "Application.jazz"} 1245777538
+    {Lisp-Entry "jazz.system.application.Application" #f 37 19 37 54 ("jazz")
+      {Lisp-Entry "Application" #f 72 7 72 18 ("Save-Environment-Listener" "Event-Consumer" "History-Provider" "Context-Provider" "Process")
+        {Lisp-Entry "toplevel" #f 75 8 75 16 ()}
+        {Lisp-Entry "stage-border" #f 76 8 76 20 ()}
+        {Lisp-Entry "stage" #f 77 8 77 13 ()}
+        {Lisp-Entry "menubar" #f 78 8 78 15 ()}
+        {Lisp-Entry "status-bar" #f 79 8 79 18 ()}
+        {Lisp-Entry "profile-name" #f 80 8 80 20 ()}
+        {Lisp-Entry "profile-module" #f 81 8 81 22 ()}
+        {Lisp-Entry "profile-class" #f 82 8 82 21 ()}
+        {Lisp-Entry "profile-bindings" #f 83 8 83 24 ()}
+        {Lisp-Entry "profile" #f 84 8 84 15 ()}
+        {Lisp-Entry "focus-listeners" #f 85 8 85 23 ()}
+        {Lisp-Entry "application-listeners" #f 86 8 86 29 ("eq?" "test:" "make-table")}
+        {Lisp-Entry "selected-owner" #f 87 8 87 22 ()}
+        {Lisp-Entry "selected" #f 88 8 88 16 ()}
+        {Lisp-Entry "selected-listeners" #f 89 8 89 26 ()}
+        {Lisp-Entry "event-consumer" #f 90 8 90 22 ("self")}
+        {Lisp-Entry "history-manager" #f 91 8 91 23 ("self" "History-Manager" "new")}
+        {Lisp-Entry "active?" #f 92 8 92 15 ()}
+        {Lisp-Entry "application-actions" #f 93 8 93 27 ()}
+        {Lisp-Entry "profile-actions" #f 94 8 94 23 ()}
+        {Lisp-Entry "guest-actions" #f 95 8 95 21 ()}
+        {Lisp-Entry "focus-actions" #f 96 8 96 21 ()}
+        {Lisp-Entry "bindings-designer" #f 97 8 97 25 ()}
+        {Lisp-Entry "shortcut-table" #f 98 8 98 22 ()}
+        {Lisp-Entry "shortcut-hook" #f 99 8 99 21 ()}
+        {Lisp-Entry "resources" #f 100 8 100 17 ("equal?" "test:" "make-table")}
+        {Lisp-Entry "external-name" #f 103 16 103 29 ("application" "'application" "rest")}
+        {Lisp-Entry "get-toplevel" #f 112 11 112 23 ("toplevel")}
+        {Lisp-Entry "get-stage" #f 116 18 116 27 ("stage")}
+        {Lisp-Entry "get-menubar" #f 120 18 120 29 ("menubar")}
+        {Lisp-Entry "set-menubar" #f 124 18 124 29 ("menubar" "set!" "bar")}
+        {Lisp-Entry "get-status-bar" #f 128 18 128 32 ("status-bar")}
+        {Lisp-Entry "set-status-bar" #f 132 18 132 32 ("status-bar" "set!" "status")}
+        {Lisp-Entry "get-profile" #f 136 18 136 29 ("profile")}
+        {Lisp-Entry "get-resources" #f 140 18 140 31 ("resources")}
+        {Lisp-Entry "prepare-bindings" #f 149 11 149 27 ("Application-Bindings" "new" "set-bindings" "nextmethod")}
+        {Lisp-Entry "prepare-environment" #f 156 11 156 30 ("log-profile" "use-profile?" "when" "initialize-platform" "setup-resources" "set-look" "list" "set-looks" "Windows-Look" "windows-look" "Flat-Look" "new" "flat-look" "let" "test-java" "setup-shortcuts" "self" "set-application" "nextmethod")}
+        {Lisp-Entry "start-environment" #f 172 11 172 28 ("register-clipboard-formats" "initialize-clipboard" "initialize-stage" "initialize-toplevel" "setup-bindings" "nextmethod")}
+        {Lisp-Entry "finalize-environment" #f 181 11 181 31 ("install-wallpaper" "stage" "when" "splash-screen" ":arrow" "set-cursor" "nextmethod")}
+        {Lisp-Entry "setup-profile" #f 189 11 189 24 ("profile" "get-class-actions" "set-profile-actions" "create-profile" "use-profile?" "when")}
+        {Lisp-Entry "finish-environment" #f 195 11 195 29 ("remove-splash-screen" "reload-session" "err" "continue-handler:" "init" "function" "with-safe-execution" "profile" "when" "self" "add-save-environment-listener" "nextmethod")}
+        {Lisp-Entry "finish-process" #f 209 11 209 25 ("update-windowing-actions" "update-focus-actions" "select-default-workspace" "nextmethod")}
+        {Lisp-Entry "conclude-environment" #f 216 11 216 31 ("err" "continue-handler:" "finalize" "function" "with-safe-execution" "profile" "get-handle" "select-foreground-window" "run-loop?" "when" "toplevel" "set-visible?" "nextmethod")}
+        {Lisp-Entry "terminate-process" #f 235 11 235 28 ("profile" "profile-bindings" "profile-class" "profile-module" "profile-name" "status-bar" "menubar" "stage" "stage-border" "set!" "close" "toplevel" "when" "reset-toolbars" "reset-dockeds" "reset-palettes" "Profile" "'Profile" "unregister-alias" "nextmethod")}
+        {Lisp-Entry "Java-Classpath" #f 261 14 261 28 ("File")}
+        {Lisp-Entry "test-java" #f 270 11 270 20 ("format" "message-box" "java.lang.Class" "forName" "class" "java.lang.ClassLoader" "getSystemClassLoader" "loader" "let*" "c-test" "Java-Classpath" "classpath:" "setup-jvm")}
+        {Lisp-Entry "start-loop" #f 283 11 283 21 ("process-events" "setup-events")}
+        {Lisp-Entry "resume-loop-action" #f 288 11 288 29 ("get-handle" "select-foreground-window" "toplevel" "when")}
+        {Lisp-Entry "clipboard-prefix" #f 298 26 298 42 ("process-version" "present" "process-name" "format")}
+        {Lisp-Entry "register-clipboard-formats" #f 304 29 304 55 ("register-jazz-clipboard-formats")}
+        {Lisp-Entry "Clipboard-Stack" #f 313 14 313 29 ()}
+        {Lisp-Entry "Max-Stack" #f 316 14 316 23 ("256")}
+        {Lisp-Entry "get-clipboard-stack" #f 320 18 320 37 ("Clipboard-Stack")}
+        {Lisp-Entry "empty-clipboard-stack?" #f 324 18 324 40 ("Clipboard-Stack" "null?")}
+        {Lisp-Entry "add-clipboard" #f 328 18 328 31 ("update-focus-actions" "trim-clipboard" "cons" "Clipboard-Stack" "set!" "when" "get-clipboard-text" "text" "let")}
+        {Lisp-Entry "push-clipboard-list" #f 336 18 336 37 ("update-focus-actions" "trim-clipboard" "append" "Clipboard-Stack" "set!" "error" "Max-Stack" ">" "if" "length" "pushed" "let" "list")}
+        {Lisp-Entry "trim-clipboard" #f 345 11 345 25 ("1" "-" "tail" "set-cdr!" "Max-Stack" "Clipboard-Stack" "length" ">" "when")}
+        {Lisp-Entry "pop-clipboard" #f 350 18 350 31 ("update-focus-actions" "set-clipboard-text" "cdr" "set!" "Clipboard-Stack" "car" "string" "let")}
+        {Lisp-Entry "on-paste-from-stack" #f 358 18 358 37 ("paste-clipboard" "pop-clipboard" "Clipboard-Stack" "null?" "bell" "Text-View" "is-not?" "if" "get-focus" "focus" "let" "evt")}
+        {Lisp-Entry "on-pop-clipboard-stack" #f 368 18 368 40 ("user-message" "pop-clipboard" "string" "let" "bell" "Clipboard-Stack" "null?" "if" "evt")}
+        {Lisp-Entry "on-add-history" #f 380 18 380 32 ("history-manager" "add-current" "evt")}
+        {Lisp-Entry "on-backward-history" #f 384 18 384 37 ("history-manager" "go-backward-history" "evt")}
+        {Lisp-Entry "on-forward-history" #f 388 18 388 36 ("history-manager" "go-forward-history" "evt")}
+        {Lisp-Entry "add-history" #f 392 18 392 29 ("history-manager" "add-history" "item")}
+        {Lisp-Entry "current-history-item" #f 396 11 396 31 ("current-history-item" "Document" "is?" "get-guest" "guest" "when" "current-frame" "frame" "let")}
+        {Lisp-Entry "update-history-actions" #f 404 18 404 40 ("forward-history" "not-null?" "backward-history" "application" "Action" "set-action-enabled?" "get-forward-history" "forward" "history-manager" "get-backward-history" "backward" "let")}
+        {Lisp-Entry "get-recorder" #f 416 26 416 38 ()}
+        {Lisp-Entry "macro-recording?" #f 420 18 420 34 ("get-recording?" "and" "get-recorder" "recorder" "let")}
+        {Lisp-Entry "macro-playing?" #f 425 18 425 32 ("get-playing?" "and" "get-recorder" "recorder" "let")}
+        {Lisp-Entry "use-profile?" #f 435 29 435 41 ()}
+        {Lisp-Entry "use-profile-logging?" #f 439 29 439 49 ()}
+        {Lisp-Entry "log-profile" #f 443 11 443 22 ("load-profile-jazzini" "install-profile" "compose-name" "profile-class" "profile-module" "profile-name" "set!" "system-profile" "else" "login-profile" "->string" "standard-profile" "cond" "module" "name" "receive" "profile" "'profile" "argument/setting" "jazz-profile" "shift-down?" "not" "or" "and" "profile-arg" "use-profile-logging?" "use-logging?" "let")}
+        {Lisp-Entry "load-profile-jazzini" #f 456 11 456 31 ("parse" "load" "exists?" "when" "Profile" "File" "file" "let")}
+        {Lisp-Entry "standard-profile" #f 462 11 462 27 ("values" "downcase" "format" "module-name" "string->symbol" "name" "let" "title")}
+        {Lisp-Entry "system-profile" #f 468 11 468 25 ("get-system-user-name" "standard-profile" "jazz.profile" "'jazz.profile" "Me" "'Me" "values")}
+        {Lisp-Entry "login-profile" #f 474 11 474 24 ("values" "format" "message-box" "save-content" "if" "profile" "'profile" "set-setting" "settings" "when" "profile-bindings" "set!" "choose-login" "'choose-login" "require-service" "always-use?" "bindings" "module" "name" "receive")}
+        {Lisp-Entry "install-profile" #f 486 11 486 26 ("get-parent" "get-list" "Profile" "'Profile" "register-alias" "set!" "install-new-profile" "not" "when" "profile-class" "find-module-source" "source" "let")}
+        {Lisp-Entry "install-new-profile" #f 494 11 494 30 ("load-package" "repository-add-package" "format" "repository-library-directory" "concatenate" "package-path" "package-name" "User" "'User" "find-repository" "repository" "non-expanded-nodes:" "Home" "Jazz" "Directory" "copy-template" "jazz" "'jazz" "either" "profile-bindings" "'profile-bindings" "profile-module" "'profile-module" "symbol->string" "downcase" "profile-lowercase" "'profile-lowercase" "profile-name" "profile" "'profile" "cons" "list" "associations" "let")}
+        {Lisp-Entry "standard-manifest-module" #f 509 11 509 35 ("format" "string->symbol" "name")}
+        {Lisp-Entry "create-profile" #f 513 11 513 25 ("Me" "err" "continue-handler:" "format" "list" "continue-text:" "profile-class" "load-profile-class" "new" "profile" "set!" "function" "with-safe-execution")}
+        {Lisp-Entry "preserve-environment" #f 528 11 528 31 ("call-save-environment-listeners" "nextmethod")}
+        {Lisp-Entry "close-environment" #f 533 11 533 28 ("nextmethod" "save-page-setup" "save-bindings" "close-all" "confirm-all-close" "call-exit-listeners")}
+        {Lisp-Entry "confirm-all-close" #f 545 18 545 35 ("get-children" "confirm-close" "unless" "for-each" "when" "dependent-document?" "get-controller" "controller" "Document" "get-guest" "guest" "Host-View" "is?" "and" "frame" "function" "frame-dependent-document?" "get-stage" "stage" "let")}
+        {Lisp-Entry "close-all" #f 561 11 561 20 ("close-children" "when" "get-stage" "stage" "let")}
+        {Lisp-Entry "Splash-Screen" #f 572 14 572 27 ()}
+        {Lisp-Entry "Splash-End" #f 575 14 575 24 ()}
+        {Lisp-Entry "splash-screen" #f 579 29 579 42 ()}
+        {Lisp-Entry "show-splash-screen" #f 583 11 583 29 ("current-time" "time->seconds" "+" "essay" "Splash-End" "show-splash" "Splash-Screen" "set!" "duration" "duration:")}
+        {Lisp-Entry "remove-splash-screen" #f 588 11 588 31 ("remove-splash" "-" "sleep" ">" "Splash-End" "and" "current-time" "time->seconds" "time" "let" "Splash-Screen" "when")}
+        {Lisp-Entry "show-splash" #f 596 29 596 40 ()}
+        {Lisp-Entry "remove-splash" #f 600 29 600 42 ("splash-screen")}
+        {Lisp-Entry "on-about" #f 609 18 609 26 ("show-about" "evt")}
+        {Lisp-Entry "show-about" #f 613 26 613 36 ("title:" "if" "when" "format" "Dark-Blue" "Color" "color:" "Text" "name:" "Font" "font:" "list" "append!" "message-box" "process-email" "email" "process-version" "present" "version" "process-licensee" "licensee" "process-copyright" "copyright" "process-owner" "owner" "process-name" "name" "let")}
+        {Lisp-Entry "exit-listeners" #f 645 8 645 22 ()}
+        {Lisp-Entry "add-exit-listener" #f 648 18 648 35 ("cons" "exit-listeners" "set!" "listener")}
+        {Lisp-Entry "remove-exit-listener" #f 652 18 652 38 ("remove!" "exit-listeners" "set!" "listener")}
+        {Lisp-Entry "call-exit-listeners" #f 656 18 656 37 ("exit-listeners" "prepare-exit" "listener" "function" "for-each")}
+        {Lisp-Entry "get-active?" #f 667 18 667 29 ("active?")}
+        {Lisp-Entry "deactivate" #f 671 26 671 36 ("active?" "set!" "set-mouse-in" "toplevel" "close-popups")}
+        {Lisp-Entry "activate" #f 677 26 677 34 ("verify-reloads" "function" "set-delayed-mouse-action" "mouse-clicked?" "if" "active?" "set!")}
+        {Lisp-Entry "verify-reloads" #f 687 18 687 32 ("include-invisibles?:" "get-views" "get-controller" "verify-reload" "Document" "get-guest" "guest" "let" "Frame-Host" "is?" "view" "function" "for-each" "stage" "when")}
+        {Lisp-Entry "verify-reload" #f 697 18 697 31 ("get-controller" "verify-reload" "get-guest" "document" "when" "find-document" "frame" "let" "moniker")}
+        {Lisp-Entry "save-environment-listeners" #f 709 8 709 34 ()}
+        {Lisp-Entry "add-save-environment-listener" #f 712 18 712 47 ("cons" "save-environment-listeners" "set!" "listener")}
+        {Lisp-Entry "remove-save-environment-listener" #f 716 18 716 50 ("remove!" "save-environment-listeners" "set!" "listener")}
+        {Lisp-Entry "call-save-environment-listeners" #f 720 18 720 49 ("save-environment-listeners" "save-environment" "listener" "function" "for-each")}
+        {Lisp-Entry "reload-session" #f 731 18 731 32 ("reload-opened-windows")}
+        {Lisp-Entry "reload-opened-windows" #f 735 26 735 47 ()}
+        {Lisp-Entry "reload-component" #f 739 26 739 42 ("properties" "class")}
+        {Lisp-Entry "save-environment" #f 743 11 743 27 ("save-all-guest" "save-application")}
+        {Lisp-Entry "save-application" #f 748 11 748 27 ("get-current-directory" "current-directory:" "branch:" "context" "active-context:" "preferences-designer" "set-property" "preferences-root" "when")}
+        {Lisp-Entry "save-all-guest" #f 755 11 755 25 ("get-children" "session" "session-designer" "save-guest" "get-guest" "guest" "Host-Frame" "is?" "frame" "function" "for-each" "when" "get-stage" "stage" "let")}
+        {Lisp-Entry "display-aliases?" #f 772 26 772 42 ()}
+        {Lisp-Entry "display-protocol?" #f 776 26 776 43 ()}
+        {Lisp-Entry "application-anchors" #f 780 26 780 45 ("get-aliases" "table-keys")}
+        {Lisp-Entry "add-focus-listener" #f 789 18 789 36 ("add-listener" "focus-listeners" "set!" "listener")}
+        {Lisp-Entry "remove-focus-listener" #f 793 18 793 39 ("remove-listener" "focus-listeners" "set!" "listener")}
+        {Lisp-Entry "process-focus-change" #f 797 18 797 38 ("update-focus-actions" "invoke" "listener" "function" "for-each" "self" ":focus-change" "Focus-Event" "new" "evt" "let" "focus-listeners" "when" "new-focus" "old-focus")}
+        {Lisp-Entry "update-focus-actions" #f 806 26 806 46 ("focus-update-actions" "can-select-all?" "select-all" "can-delete?" "delete" "can-paste-properties?" "paste-properties" "pop-clipboard-stack" "Clipboard-Stack" "not-null?" "paste-from-stack" "application" "can-paste?" "paste" "can-copy?" "copy" "can-cut?" "cut" "can-redo?" "redo" "can-undo?" "undo" "view" "Action" "set-action-enabled?" "preferences-root" "when" "View" "is?" "and" "view?" "get-focus" "focus" "let*")}
+        {Lisp-Entry "add-selected-listener" #f 829 18 829 39 ("add-listener" "selected-listeners" "set!" "listener")}
+        {Lisp-Entry "remove-selected-listener" #f 833 18 833 42 ("remove-listener" "selected-listeners" "set!" "listener")}
+        {Lisp-Entry "get-selected" #f 837 18 837 30 ("selected")}
+        {Lisp-Entry "get-selected-owner" #f 841 18 841 36 ("selected-owner")}
+        {Lisp-Entry "set-selected" #f 845 18 845 30 ("process-selected-change" "selected" "or" "when" "selected-owner" "neq?" "new-owner?" "let" "force?" "force?:" "sel" "owner")}
+        {Lisp-Entry "close-selected" #f 851 18 851 32 ("selected" "process-selected-change" "set!" "selected-owner" "eq?" "when" "owner")}
+        {Lisp-Entry "process-selected-change" #f 857 11 857 34 ("invoke" "listener" "function" "for-each" "force?:" "self" ":selected-change" "Selected-Event" "new" "evt" "let" "exiting-process?" "not" "selected-listeners" "and" "when" "selected" "selected-owner" "set!" "force?" "new-selected" "old-selected" "owner")}
+        {Lisp-Entry "add-application-listener" #f 872 18 872 42 ("get-application-listeners" "add-listener" "set-application-listeners" "listener" "category")}
+        {Lisp-Entry "remove-application-listener" #f 876 18 876 45 ("get-application-listeners" "remove-listener" "set-application-listeners" "listener" "category")}
+        {Lisp-Entry "process-application-event" #f 880 18 880 43 ("self" "invoke" "listener" "function" "for-each" "Application-Event" "new" "apply" "evt" "get-application-listeners" "listeners" "let" "properties" "sender" "kind" "category")}
+        {Lisp-Entry "get-application-listeners" #f 888 11 888 36 ("application-listeners" "table-ref" "category")}
+        {Lisp-Entry "set-application-listeners" #f 892 11 892 36 ("application-listeners" "table-set!" "listeners" "category")}
+        {Lisp-Entry "default-frame-class" #f 901 26 901 45 ()}
+        {Lisp-Entry "file-frame-class" #f 905 26 905 42 ("error" "extension-frame-class" "either" "get-extension" "extension" "let" "file")}
+        {Lisp-Entry "extension-frame-class" #f 911 26 911 47 ("unknown-extension-frame-class" "known-extension-frame-class" "profile-extension-frame-class" "either" "ext")}
+        {Lisp-Entry "profile-extension-frame-class" #f 917 11 917 40 ("extension-frame-class" "profile" "when" "ext")}
+        {Lisp-Entry "known-extension-frame-class" #f 922 26 922 53 ("ext")}
+        {Lisp-Entry "unknown-extension-frame-class" #f 926 26 926 55 ()}
+        {Lisp-Entry "frame-class" #f 930 26 930 37 ("file-frame-class" "default-frame-class" "not" "if" "file" "file:")}
+        {Lisp-Entry "get-default-frame-class" #f 936 11 936 34 ("default-frame-class" "autoload" "if" "get-frame-model" "model" "get-workspace-preferences" "pref" "let*")}
+        {Lisp-Entry "initialize-toplevel" #f 949 11 949 30 ("initialize-actions" "ensure-displayed" "new-toplevel" "toplevel" "set!")}
+        {Lisp-Entry "new-toplevel" #f 955 26 955 38 ("Toplevel" "new")}
+        {Lisp-Entry "initialize-actions" #f 959 11 959 29 ("self" "get-class-actions" "set-application-actions")}
+        {Lisp-Entry "initialize-stage" #f 968 11 968 27 ("new-stage" "stage" "set!")}
+        {Lisp-Entry "new-stage" #f 972 26 972 35 ("stage" "'stage" "name:" "Stage-Border" "parent:" "stage-class" "new")}
+        {Lisp-Entry "stage-class" #f 976 29 976 40 ("Stage")}
+        {Lisp-Entry "setup-shortcuts" #f 985 11 985 26 ("shortcut-hash" "hash:" "shortcut=?" "test:" "make-table" "shortcut-table" "set!")}
+        {Lisp-Entry "register-actions-shortcuts" #f 989 11 989 37 ("table-add" "for-each-reversed" "get-children" "table-remove!" "table-ref" "and" "get-shortcut" "shortcut" "let" "get-visible?" "action-item" "actions" "function" "for-each" "shortcut-table" "when" "new-actions" "old-actions")}
+        {Lisp-Entry "update-shortcut" #f 1010 18 1010 33 ("table-add" "shortcut-table" "table-remove!" "when" "new-shortcut" "old-shortcut" "action-item")}
+        {Lisp-Entry "dispatch-shortcut" #f 1017 18 1017 35 ("self" "car" "invoke" "not-null?" "get-bound-actions" "action-items" "let" "shortcut-hook" "not" "or" "when" "shortcut")}
+        {Lisp-Entry "get-bound-actions" #f 1026 18 1026 35 ("shortcut-table" "table-ref" "shortcut")}
+        {Lisp-Entry "get-shortcut-hook" #f 1030 18 1030 35 ("shortcut-hook")}
+        {Lisp-Entry "set-shortcut-hook" #f 1034 18 1034 35 ("shortcut-hook" "set!" "value")}
+        {Lisp-Entry "Bindings-File" #f 1043 14 1043 27 ("Profile" "File")}
+        {Lisp-Entry "setup-bindings" #f 1047 11 1047 25 ("default-bindings" "err" "continue-handler:" "set-active-branch" "Branch" "is?" "when" "locate-component" "branch" "jazz" "'jazz" "get-preferences" "get-active-bindings" "either" "active" "load-bindings" "let" "function" "with-safe-execution" "reference:" "get-form" "form:" "Designer" "new" "bindings-designer" "set!" "set-bindings" "bindings" "set-bindings/designer" "define")}
+        {Lisp-Entry "load-bindings" #f 1065 29 1065 42 ("default-bindings" "read-from-file" "instantiate" "exists?" "Profile" "'Profile" "is-alias?" "and" "if" "Bindings-File" "file" "let")}
+        {Lisp-Entry "default-bindings" #f 1072 29 1072 45 ("Application-Bindings" "new")}
+        {Lisp-Entry "save-bindings" #f 1076 11 1076 24 ("save" "get-form" "get-origin" "file?" "get-modified?" "bindings-designer" "and" "when")}
+        {Lisp-Entry "get-bindings-designer" #f 1081 18 1081 39 ("bindings-designer")}
+        {Lisp-Entry "set-application-actions" #f 1090 18 1090 41 ("set!" "application-actions" "register-actions-shortcuts" "actions-list")}
+        {Lisp-Entry "set-profile-actions" #f 1095 18 1095 37 ("set!" "profile-actions" "register-actions-shortcuts" "actions-list")}
+        {Lisp-Entry "set-guest-actions" #f 1100 18 1100 35 ("set!" "guest-actions" "register-actions-shortcuts" "actions-list")}
+        {Lisp-Entry "set-focus-actions" #f 1105 18 1105 35 ("set!" "focus-actions" "register-actions-shortcuts" "actions-list")}
+        {Lisp-Entry "get-menubar-class" #f 1115 18 1115 35 ("cdr" "autoload-class" ":menubar" "assq" "model-info" "get-toolbar-classes" "classes" "let*" "when" "workspaces" "'workspaces" "get-preferences" "pref" "let")}
+        {Lisp-Entry "find-menubar" #f 1124 18 1124 30 ("toplevel" "find-palette" "when" "get-menubar-class" "menubar-class" "let")}
+        {Lisp-Entry "update-menubar-buttons" #f 1130 18 1130 40 ("update-buttons" "menubar" "when")}
+        {Lisp-Entry "Undisplayed-Message" #f 1140 14 1140 33 ()}
+        {Lisp-Entry "set-status-message" #f 1144 18 1144 36 ("->string" "else" "Locales" "is?" "cond" "set-title" "Undisplayed-Message" "set!" "not" "if" "get-message-view" "message" "let" "msg")}
+        {Lisp-Entry "get-message-view" #f 1154 18 1154 34 ("message" "'message" "find-component" "status-bar" "when")}
+        {Lisp-Entry "show-undisplayed-message" #f 1159 18 1159 42 ("set!" "set-status-message" "Undisplayed-Message" "when")}
+        {Lisp-Entry "class-actions" #f 1170 11 1170 24 ("nextmethod" "application" "'application" "find-actions" "cons")}
+        {Lisp-Entry "process-alias" #f 1180 11 1180 24 ("nextmethod" "else" "get-banner-icons-cache" ":banner-icons" "get-invite-icons-cache" ":invite-icons" "get-large-icons-cache" ":large-icons" "get-small-icons-cache" ":small-icons" "get-icons-cache" ":icons" "get-profile" ":profile" "get-focus" ":focus" "focus-guest" ":focus-guest" "current-guest" ":guest" "current-document" ":document" "current-frame" ":frame" "get-stage" ":stage" "get-toplevel" ":toplevel" "self" ":application" "case" "name")}
+        {Lisp-Entry "text-menu" #f 1204 26 1204 35 ("new-text-context-menu" "text")}
+        {Lisp-Entry "get-output-log" #f 1213 26 1213 40 ()}
+        {Lisp-Entry "All-Results" #f 1222 14 1222 25 ()}
+        {Lisp-Entry "Active-Results" #f 1225 14 1225 28 ()}
+        {Lisp-Entry "navigable-results" #f 1229 26 1229 43 ("navigable-results" "'navigable-results" "must-implement")}
+        {Lisp-Entry "get-navigable-results" #f 1233 11 1233 32 ("navigable-results" "set!" "All-Results" "unless")}
+        {Lisp-Entry "get-active-results" #f 1239 18 1239 36 ("get-navigable-results" "car" "set!" "Active-Results" "unless")}
+        {Lisp-Entry "set-active-results" #f 1245 18 1245 36 ("Active-Results" "set!" "results")}
+        {Lisp-Entry "select-locale" #f 1254 18 1254 31 ("present-locale" "localize" "set-title" "locales" "'locales" "locate-component" "label" "when" "get-status-bar" "status" "let" "locale")}
+        {Lisp-Entry "locale-update" #f 1262 18 1262 31 ("get-toplevel" "redraw-window" "get-menubar" "layout-menu")}
+        {Lisp-Entry "select-default-workspace" #f 1273 11 1273 35 ("apply-preferences" "child" "get-active" "active" "default-workspace" "not" "if" "error?:" "workspaces" "'workspaces" "get-preferences" "pref" "let" "find-workspace" "define")}
+        {Lisp-Entry "default-workspace" #f 1286 11 1286 28 ("Default-Workspace" "new")}
+        {Lisp-Entry "on-select-workspace" #f 1290 18 1290 37 ("workspace:" "get-property" "select-workspace" "evt")}
+        {Lisp-Entry "on-next-workspace" #f 1294 18 1294 35 ("select-next-workspace" "evt")}
+        {Lisp-Entry "on-previous-workspace" #f 1298 18 1298 39 ("select-previous-workspace" "evt")}
+        {Lisp-Entry "on-workspace" #f 1302 26 1302 38 ("activate-workspace-button" "activate-workspace-item" "workspace:" "get-property" "workspace" "let" "activate" "get-kind" "case" "evt")}
+        {Lisp-Entry "activate-workspace-item" #f 1310 18 1310 41 ("set-selected?" "group:" "Radio-Item" "class:" "unselect-elements" "not" "if" "get-name" "locate-component" "radio" "get-content" "menu" "when" "'workspace" "menubar" "find-component" "item" "let" "workspace")}
+        {Lisp-Entry "activate-workspace-button" #f 1320 18 1320 43 ("set-selected?" "set-visit?" "'workspace" "group:" "Radio-Tool" "class:" "unselect-elements" "not" "if" "workspace-button-name" "locate-component" "radio" "when" "find-toolbar" "toolbar" "let" "workspace")}
+        {Lisp-Entry "workspace-button-name" #f 1330 26 1330 47 ("get-name" "workspace")}
+        {Lisp-Entry "select-workspace" #f 1334 18 1334 34 ("workspaces" "'workspaces" "list" "get-preferences" "apply-preferences" "name")}
+        {Lisp-Entry "select-next-workspace" #f 1338 18 1338 39 ("apply-preferences" "eq?" "unless" "length" "1" "+" "modulo" "element" "next" "find" "rank" "'workspaces" "get-preferences" "get-children" "Workspace-Preferences" "collect-type" "workspaces" "get-workspace-preferences" "current" "let*")}
+        {Lisp-Entry "select-previous-workspace" #f 1347 21 1347 46 ("apply-preferences" "eq?" "unless" "element" "previous" "1" "length" "-" "0" "=" "if" "previous-rank" "find" "rank" "'workspaces" "get-preferences" "get-children" "Workspace-Preferences" "collect-type" "workspaces" "get-workspace-preferences" "current" "let*")}
+        {Lisp-Entry "workspace-installed" #f 1357 26 1357 45 ()}
+        {Lisp-Entry "on-zoom-horizontally" #f 1361 18 1361 38 ("set!" "unzoom" "zoom" "workspace-zoomable?" "split" "'split" "get-state" "continuation-return" "when" "vert" "'vert" "get-orientation" "eq?" "if" "window" "splitter" "get-stage-border" "for-each-splitter" "return" "continuation-capture" "started?" "let" "function" "with-locked-update" "evt")}
+        {Lisp-Entry "on-zoom-vertically" #f 1380 18 1380 36 ("set!" "unzoom" "zoom" "split" "'split" "get-state" "continuation-return" "when" "horz" "'horz" "get-orientation" "eq?" "if" "window" "splitter" "for-each-splitter" "return" "continuation-capture" "get-stage-border" "border" "started?" "let" "function" "with-locked-update" "evt")}
+        {Lisp-Entry "on-maximize/restore" #f 1400 18 1400 37 ("maximize" "restore" "get-maximized?" "if" "get-stage" "stage" "let" "evt")}
+        {Lisp-Entry "on-full-screen" #f 1407 18 1407 32 ("full-screen-stage" "selected-workspace" "set-fullscreen?" "get-toplevel" "get-fullscreen?" "fullscreen?" "fullscreen-warned?" "'fullscreen-warned?" "preferences-designer" "set-property" "message-box" "get-fullscreen-warned?" "not" "when" "get-preferences" "pref" "let" "evt")}
+        {Lisp-Entry "full-screen-stage" #f 1417 18 1417 35 ("get-stage-border" "full-screen" "fullscreen?")}
+        {Lisp-Entry "toggle-full-screen" #f 1421 18 1421 36 ("full-screen" "get-toplevel" "get-fullscreen?" "not" "fullscreen?" "let" "window")}
+        {Lisp-Entry "full-screen" #f 1426 18 1426 29 ("unzoom" "zoom" "if" "set-full?" "splitter" "for-each-splitter" "set-fullscreen?" "function" "with-locked-update" "get-fullscreen?" "neq?" "when" "get-stage" "stage" "get-toplevel" "toplevel" "let" "fullscreen?" "window")}
+        {Lisp-Entry "get-toolbar-class" #f 1447 18 1447 35 ("cdr" "autoload-class" ":toolbar" "assq" "model-info" "get-toolbar-classes" "classes" "let*" "when" "workspaces" "'workspaces" "get-preferences" "pref" "let")}
+        {Lisp-Entry "find-toolbar" #f 1456 18 1456 30 ("find-palette" "get-toolbar-class" "toolbar-class" "let" "toplevel" "when")}
+        {Lisp-Entry "get-context-text" #f 1468 11 1468 27 ()}
+        {Lisp-Entry "get-text-class" #f 1477 26 1477 40 ("Plain-Text-View")}
+        {Lisp-Entry "setup-resources" #f 1486 11 1486 26 ("Bin" "icon" "'icon" "cursor" "'cursor" "Directory" "bitmap" "'bitmap" "setup-resources-directory" "begin" "Jazz" "'Jazz" "find-alias" "if")}
+        {Lisp-Entry "setup-resources-directory" #f 1497 11 1497 36 ("get-base" "register-resource" "get-extension" "ci=?" "file" "function" "iterate-directory" "exists?" "when" "extension" "directory" "type")}
+        {Lisp-Entry "register-resource" #f 1505 18 1505 35 ("cons" "resources" "table-set!" "file" "name" "type")}
+        {Lisp-Entry "get-resource" #f 1509 18 1509 30 ("error" "cons" "resources" "table-ref" "or" "name" "type")}
+        {Lisp-Entry "Icons-Cache" #f 1519 14 1519 25 ()}
+        {Lisp-Entry "Small-Icons-Cache" #f 1522 14 1522 31 ()}
+        {Lisp-Entry "Large-Icons-Cache" #f 1525 14 1525 31 ()}
+        {Lisp-Entry "Invite-Icons-Cache" #f 1528 14 1528 32 ()}
+        {Lisp-Entry "Banner-Icons-Cache" #f 1531 14 1531 32 ()}
+        {Lisp-Entry "get-icons-cache" #f 1535 18 1535 33 ("height:" "16" "width:" "Portfolio" "new" "set!" "Icons-Cache" "unless")}
+        {Lisp-Entry "get-small-icons-cache" #f 1541 18 1541 39 ("height:" "12" "width:" "Portfolio" "new" "set!" "Small-Icons-Cache" "unless")}
+        {Lisp-Entry "get-large-icons-cache" #f 1547 18 1547 39 ("height:" "32" "width:" "Portfolio" "new" "set!" "Large-Icons-Cache" "unless")}
+        {Lisp-Entry "get-invite-icons-cache" #f 1553 18 1553 40 ("height:" "52" "width:" "Portfolio" "new" "set!" "Invite-Icons-Cache" "unless")}
+        {Lisp-Entry "get-banner-icons-cache" #f 1559 18 1559 40 ("200" "height:" "1200" "width:" "Portfolio" "new" "set!" "Banner-Icons-Cache" "unless")}
+        {Lisp-Entry "get-cataloguer" #f 1570 26 1570 40 ()}
+        {Lisp-Entry "get-catalog-context" #f 1574 26 1574 45 ()}
+        {Lisp-Entry "user-feedback" #f 1583 11 1583 24 ("message")}
+        {Lisp-Entry "get-event-consumer" #f 1592 11 1592 29 ("event-consumer")}
+        {Lisp-Entry "set-event-consumer" #f 1596 11 1596 29 ("event-consumer" "set!" "consumer")}
+        {Lisp-Entry "deliver-event" #f 1600 11 1600 24 ("event" "proc" "target" "handler")}
+        {Lisp-Entry "record-event?" #f 1604 26 1604 39 ("event")}
+        {Lisp-Entry "fresh-prompt" #f 1613 18 1613 30 ("fresh-prompt" "when" "get-console-text" "either" "let" "text" "text:")}
+        {Lisp-Entry "on-console" #f 1619 18 1619 28 ("fresh-prompt" "get-console-manager" "select-next-console" "at-end?" "if" "eq?" "when" "show-console" "text" "get-focus" "focus" "let" "evt")}
+        {Lisp-Entry "show-console" #f 1628 18 1628 30 ("acquire-focus" "bell" "not" "if" "get-text" "text" "and" "when" "select-palette" "manager" "let" "focus?" "focus?:" "home" "'home" "workspace" "workspace:" "Console-Manager" "class" "class:")}
+        {Lisp-Entry "on-sql-console" #f 1640 18 1640 32 ("get-sql-console-text" "text:" "fresh-prompt" "when" "sql" "'sql" "workspace:" "SQL-Console-Manager" "class:" "show-console" "SQL-Console-Text-View" "get-focus" "is?" "had-focus?" "let" "evt")}
+        {Lisp-Entry "on-sql-connections" #f 1647 11 1647 29 ("focus?:" "sql" "'sql" "workspace:" "SQL-Connections-Manager" "select-palette" "evt")}
+        {Lisp-Entry "on-sql-inventory" #f 1652 11 1652 27 ("focus?:" "sql" "'sql" "workspace:" "Inventory-Browser" "select-palette" "evt")}
+        {Lisp-Entry "on-sql-tree-output" #f 1656 11 1656 29 ("focus?:" "sql" "'sql" "SQL-Tree-Output" "select-palette" "evt")}
+        {Lisp-Entry "process-debuggee-loop" #f 1665 11 1665 32 ("nextmethod" "process-events" "with-jazz-exception-debugger" "event-thread?" "controller-debugger" "local-proxy?" "and" "if")}
+        {Lisp-Entry "exception-reported" #f 1678 11 1678 29 ("cleanup-mouse-processing" "Exception" "catch")}
+        {Lisp-Entry "present-execution-context" #f 1685 11 1685 36 ("prefix?:" "type:" "Exception-Presenter" "new" "present" "prefix?" "type" "exception")}
+        {Lisp-Entry "get-search-manager" #f 1694 26 1694 44 ()}
+        {Lisp-Entry "get-search-results" #f 1698 26 1698 44 ("Search-Results" "singleton-docked" "get-guest")}
+        {Lisp-Entry "active-search" #f 1702 18 1702 31 ("get-guest" "get-search" "when" "get-search-manager" "manager" "let")}
+        {Lisp-Entry "update-search-actions" #f 1709 18 1709 39 ("replace-all-selected" "replace-all" "replace&find-forward" "replace" "find-backward" "find-forward" ">" "pop-results" "edit-current" "edit-previous" "1" ">=" "edit-next" "application" "Action" "set-action-enabled?" "in-modal?" "get-results-stack" "results-stack-count" "get-tree" "get-visible-count" "results-count" "get-search-results" "results" "length" "count" "get-views" "not" "if" "frames" "get-stage" "stage" "let*")}
+        {Lisp-Entry "on-find" #f 1735 18 1735 25 ("active-window" "'active-window" "text" "'text" "update-search" "evt")}
+        {Lisp-Entry "on-find-in-text" #f 1739 18 1739 33 ("text" "'text" "update-search" "evt")}
+        {Lisp-Entry "on-find-in-directories" #f 1743 18 1743 40 ("directories" "'directories" "update-search" "evt")}
+        {Lisp-Entry "on-find-in-projects" #f 1747 18 1747 37 ("projects" "'projects" "update-search" "evt")}
+        {Lisp-Entry "update-search" #f 1751 11 1751 24 ("select-search" "get-searches" "list" "set-search-targets" "first" "equal?" "not-null?" "or" "unless" "get-search-targets" "targets" "let" "search" "function" "for-each" "set-visible?" "bring-to-front" "set-search-domain" "set-selection-name" "when" "get-search" "next-radio" "get-window-focus" "get-selection-name" "eq?" "same-tab?" "'tab" "locate" "tab-view" "get-guest" "manager" "get-player" "player" "get-search-manager" "palette" "get-selected-string" "Text-View" "not" "and" "if" "string" "Tree-Embedded-Search-Text-View" "is?" "internal?" "get-focus" "focus" "let*" "domain" "tab")}
+        {Lisp-Entry "end-search-edition" #f 1781 18 1781 36 ("end-edition" "get-targets-tree" "tree" "get-search" "search" "get-guest" "manager" "get-search-manager" "palette" "let*")}
+        {Lisp-Entry "on-edit-next" #f 1789 18 1789 30 ("get-active-results" "edit-next" "evt")}
+        {Lisp-Entry "on-edit-previous" #f 1793 18 1793 34 ("get-active-results" "edit-previous" "evt")}
+        {Lisp-Entry "on-edit-current" #f 1797 18 1797 33 ("get-active-results" "edit-current" "evt")}
+        {Lisp-Entry "on-pop-results" #f 1801 18 1801 32 ("get-search-results" "clear-results" "evt")}
+        {Lisp-Entry "on-find-forward" #f 1805 18 1805 33 ("on-find-forward" "bell" "select-next" "unless" "get-syntax" "get-constituent-test" "get-find-targets" "targets" "stage" "first-view" "get-guest" "get-text-view" "text" "not" "if" "active-search" "search" "let" "evt")}
+        {Lisp-Entry "on-find-backward" #f 1815 18 1815 34 ("on-find-backward" "bell" "select-previous" "unless" "get-syntax" "get-constituent-test" "get-find-targets" "targets" "stage" "first-view" "get-guest" "get-text-view" "text" "not" "if" "active-search" "search" "let" "evt")}
+        {Lisp-Entry "on-replace" #f 1825 18 1825 28 ("on-replace" "bell" "not" "if" "active-search" "search" "let" "evt")}
+        {Lisp-Entry "on-replace&find-forward" #f 1832 18 1832 41 ("on-replace&find-forward" "bell" "not" "if" "active-search" "search" "let" "evt")}
+        {Lisp-Entry "on-replace-all" #f 1839 18 1839 32 ("on-replace-all" "bell" "not" "if" "active-search" "search" "let" "evt")}
+        {Lisp-Entry "on-replace-all-selected" #f 1846 18 1846 41 ("on-replace-all-selected" "bell" "not" "if" "active-search" "search" "let" "evt")}
+        {Lisp-Entry "on-command-shell" #f 1858 18 1858 34 ("execute" "'execute" "select-command-mode" "evt")}
+        {Lisp-Entry "get-command-shell" #f 1862 26 1862 43 ("command-shell" "'command-shell" "locate-component" "when" "find-toolbar" "toolbar" "let")}
+        {Lisp-Entry "get-command-text" #f 1868 26 1868 42 ("get-text" "when" "get-command-shell" "shell" "let")}
+        {Lisp-Entry "select-command-mode" #f 1874 18 1874 37 ("get-command-text" "select-mode" "text" "mode")}
+        {Lisp-Entry "get-search-targets" #f 1883 18 1883 36 ("get-search-targets" "Search-Targets" "'Search-Targets" "get-setting" "not" "if" "active-search" "search" "let")}
+        {Lisp-Entry "set-search-targets" #f 1890 18 1890 36 ("set-search-targets" "Search-Targets" "'Search-Targets" "set-setting" "not" "if" "active-search" "search" "let" "targets")}
+        {Lisp-Entry "get-find-targets" #f 1897 18 1897 34 ("get-find-targets" "get-search-targets" "constituent-test:" "get-ignore-case?" "ignore-case?:" "get-whole-words?" "whole-words?:" "first" "make-search-context" "target" "function" "map" "not" "if" "active-search" "search" "let" "constituent-test")}
+        {Lisp-Entry "get-replace-targets" #f 1909 18 1909 37 ("get-replace-targets" "get-search-targets" "second" "map" "not" "if" "active-search" "search" "let")}
+        {Lisp-Entry "get-whole-words?" #f 1916 18 1916 34 ("get-whole-words?" "Search-Whole-Words?" "'Search-Whole-Words?" "get-setting" "not" "if" "active-search" "search" "let")}
+        {Lisp-Entry "get-ignore-case?" #f 1923 18 1923 34 ("get-ignore-case?" "Search-Ignore-Case?" "'Search-Ignore-Case?" "get-setting" "not" "if" "active-search" "search" "let")}
+        {Lisp-Entry "get-preserve-case?" #f 1930 18 1930 36 ("get-preserve-case?" "Search-Preserve-Case?" "'Search-Preserve-Case?" "get-setting" "not" "if" "active-search" "search" "let")}
+        {Lisp-Entry "get-play-recording?" #f 1937 18 1937 37 ("get-play-recording?" "Search-Play-Recording?" "'Search-Play-Recording?" "get-setting" "not" "if" "active-search" "search" "let")}
+        {Lisp-Entry "get-expression?" #f 1944 18 1944 33 ("get-expression?" "Search-Expression?" "'Search-Expression?" "get-setting" "not" "if" "active-search" "search" "let")}
+        {Lisp-Entry "on-new" #f 1956 26 1956 32 ("get-default-frame-class" "new-event" "evt")}
+        {Lisp-Entry "on-open" #f 1960 26 1960 33 ("open-files" "evt")}
+        {Lisp-Entry "open-files" #f 1964 18 1964 28 ("get-name" "file" "function" "key:" "string>?" "sort" "edit-file" "for-each" "multiple-selection?:" "open-extensions" "extensions:" "choose-file" "files" "let" "directory" "directory:")}
+        {Lisp-Entry "receive-files" #f 1970 26 1970 39 ("edit-file" "class:" "edit-document" "file?" "when" "pathname" "function" "for-each" "else" "Jazz-Text-View" "'Jazz-Text-View" "shift-down?" "Jazz-Plain-Text-View" "'Jazz-Plain-Text-View" "autoload-class" "alt-down?" "cond" "class" "parse" "user-message" "set-current-directory" "dir" "let" "car" "directory?" "1" "length" "=" "and" "if" "pathnames" "pos")}
+        {Lisp-Entry "edit-file" #f 1986 26 1986 35 ("edit-document" "file")}
+        {Lisp-Entry "open-extensions" #f 1991 26 1991 41 ()}
+        {Lisp-Entry "find-document" #f 1995 18 1995 31 ("stage" "get-children" "pathname=?" "get-controller" "get-moniker" "guest-moniker" "Document" "get-guest" "guest" "let" "Frame-Host" "is?" "and" "frame" "function" "find-if" "moniker")}
+        {Lisp-Entry "edit-document" #f 2006 18 2006 31 ("verify-reload" "focus-host" "set-visible?" "bring-to-front" "get-guest" "center-caret" "'center-caret" "ensure-displayed?:" "set-selection-safe" "set-wrap?" "get-controller" "set-moniker" "set-char-encoding" "document" "host" "initialize:" "host-focus?:" "host-visible?:" "host-workspace:" "new-frame" ":wait" "with-cursor" "file-frame-class" "either" "values" "new?" "function" "result" "find-document" "frame" "let*" "file" "let" "error" "exists?" "not" "if" "when" "return-new?" "return-new?:" "visible?" "visible?:" "activate-focus?" "activate-focus?:" "force-new?" "force-new?:" "wrap?" "wrap?:" "char-encoding" "char-encoding:" "selection" "selection:" "workspace" "workspace:" "class" "class:" "moniker")}
+        {Lisp-Entry "edit-help-document" #f 2050 18 2050 36 ("set-editable?" "get-guest" "text" "edit-document" "frame" "let*" "moniker")}
+        {Lisp-Entry "edit-filename" #f 2056 18 2056 31 ("get-controller" "verify-reload" "get-guest" "text" "get-source" "edit-document" "frame" "error" "not" "if" "find-filename" "essay" "project-file" "'workbench" "get-service" "workbench" "let*" "filename")}
+        {Lisp-Entry "edit-category" #f 2066 26 2066 39 ("name")}
+        {Lisp-Entry "on-close" #f 2070 26 2070 34 ("close-with-confirm" "when" "stage" "first-view" "frame" "let" "evt")}
+        {Lisp-Entry "on-close-all" #f 2076 26 2076 38 ("stage" "get-views" "close" "confirm-close" "get-controller" "close-on-close-all?" "Document" "and" "get-guest" "guest" "let" "Frame-Host" "is?" "when" "view" "function" "for-each" "evt")}
+        {Lisp-Entry "on-save-all" #f 2086 26 2086 37 ("save-all" "evt")}
+        {Lisp-Entry "on-print" #f 2090 26 2090 34 ("print-document" "current-guest" "guest" "let" "evt")}
+        {Lisp-Entry "on-print-layout" #f 2095 26 2095 41 ("print-layout" "current-guest" "guest" "let" "evt")}
+        {Lisp-Entry "on-print-preview" #f 2100 26 2100 42 ("print-preview" "current-guest" "guest" "let" "evt")}
+        {Lisp-Entry "on-quit-application" #f 2105 26 2105 45 ("exit-process" "evt")}
+        {Lisp-Entry "save-all" #f 2109 18 2109 26 ("include-invisibles?:" "stage" "get-views" "save" "get-modified?" "dependent-document?" "xor" "get-moniker" "or" "and" "get-controller" "controller" "get-guest" "guest" "Frame-Host" "is?" "when" "window" "for-each" "main-documents?" "function" "save-documents" "let" "save-unanchored?" "save-unanchored?:" "Document" "class" "class:")}
+        {Lisp-Entry "edit-definitions" #f 2133 26 2133 42 ("rest" "object")}
+        {Lisp-Entry "edit-references" #f 2137 26 2137 41 ("rest" "object")}
+        {Lisp-Entry "context-update" #f 2146 11 2146 25 ("context" "user-message" "modify-profile" "modify-catalogs" "nextmethod")}
+        {Lisp-Entry "modify-catalogs" #f 2153 11 2153 26 ("get-children" "get-active?" "set-active?" "get-catalog" "catalog" "get-name" "name" "let*" "config" "function" "for-each" "get-cataloguer" "cataloguer" "when" "error?:" "catalogs" "'catalogs" "get-preferences" "pref" "let")}
+        {Lisp-Entry "modify-profile" #f 2165 11 2165 25 ("finalize" "init" "autoload" "new" "set!" "Profile" "get-profile-class" "either" "class" "error?:" "get-preferences" "pref" "let" "close" "profile" "when")}
+        {Lisp-Entry "setup-preferences" #f 2184 11 2184 28 ("default-preferences" "set-preferences/designer" "err" "continue-handler:" "setup-preferences/designer" "function" "with-safe-execution")}
+        {Lisp-Entry "default-preferences" #f 2193 11 2193 30 ("Application-Preferences" "new")}
+        {Lisp-Entry "Default-Page-Setup" #f 2202 14 2202 32 ()}
+        {Lisp-Entry "Default-Page-Setup-Designer" #f 2205 14 2205 41 ()}
+        {Lisp-Entry "Default-Page-Setup-Form" #f 2208 14 2208 37 ("form>>")}
+        {Lisp-Entry "Default-Page-Setup-File" #f 2212 14 2212 37 ("Profile" "File")}
+        {Lisp-Entry "set-default-page-setup" #f 2216 18 2216 40 ("Default-Page-Setup" "set!" "page-setup")}
+        {Lisp-Entry "default-page-setup" #f 2220 18 2220 36 ("setup-page-setup" "Default-Page-Setup" "not" "when")}
+        {Lisp-Entry "default-page-setup-designer" #f 2226 18 2226 45 ("setup-page-setup" "Default-Page-Setup-Designer" "not" "when")}
+        {Lisp-Entry "setup-page-setup" #f 2232 19 2232 35 ("reference:" "get-form" "form:" "Designer" "new" "Default-Page-Setup-Designer" "instantiate" "Default-Page-Setup" "set!" "Default-Page-Setup-Form" "read-from-file" "exists?" "Profile" "'Profile" "is-alias?" "and" "if" "form" "Default-Page-Setup-File" "file" "let*")}
+        {Lisp-Entry "save-page-setup" #f 2239 19 2239 34 ("save" "Default-Page-Setup-File" "set-origin" "not" "form" "let" "get-form" "get-origin" "file?" "Default-Page-Setup-Designer" "and" "when")}
+        {Lisp-Entry "get-documentation-cataloguer" #f 2252 26 2252 54 ()}
+        {Lisp-Entry "on-zoom-out" #f 2261 11 2261 22 ("0.25" "-" "scale-view" "get-scaling" "scaling" "bell" "not" "if" "what:" "get-property" "scaled-view" "view" "let" "evt")}
+        {Lisp-Entry "on-zoom-in" #f 2269 11 2269 21 ("0.25" "+" "scale-view" "get-scaling" "scaling" "bell" "not" "if" "what:" "get-property" "scaled-view" "view" "let" "evt")}
+        {Lisp-Entry "on-unzoom" #f 2277 11 2277 20 ("1.0" "scale-view" "bell" "not" "if" "what:" "get-property" "scaled-view" "view" "let" "evt")}
+        {Lisp-Entry "scaled-view" #f 2284 11 2284 22 ("mouse-view" "current-document" "document" "case" "what")}
+        {Lisp-Entry "scale-view" #f 2290 11 2290 21 ("set-scaled?" "set-scaling" "user-message" "scaled?" "scaling" "view")}
+        {Lisp-Entry "on-capture-document" #f 2302 11 2302 30 ("tooltips?:" "report-figure?:" "obscure-unhighlighted?:" "highlight-root-only?:" "highlight:" "capture-document" "pos" "view" "function" "click:" "pick-figure" "evt")}
+        {Lisp-Entry "on-capture-mouse-document" #f 2312 11 2312 36 ("capture-document" "bell" "not" "if" "mouse-view" "view" "let" "evt")}
+        {Lisp-Entry "capture-document" #f 2319 15 2319 31 ("export-picture" "get-guest" "guest" "bell" "not" "if" "get-host" "host" "let" "view")}
+        {Lisp-Entry "on-capture-host" #f 2329 11 2329 26 ("tooltips?:" "report-figure?:" "obscure-unhighlighted?:" "highlight-root-only?:" "highlight:" "capture-host" "pos" "view" "function" "click:" "pick-figure" "evt")}
+        {Lisp-Entry "on-capture-mouse-host" #f 2339 11 2339 32 ("capture-host" "bell" "not" "if" "mouse-view" "view" "let" "evt")}
+        {Lisp-Entry "capture-host" #f 2346 15 2346 27 ("export-picture" "bell" "not" "if" "get-host" "host" "let" "view")}
+        {Lisp-Entry "update-windowing-actions" #f 2358 26 2358 50 ("update-menubar-buttons" "update-window-actions" "update-history-actions" "exiting-process?" "unless")}
+        {Lisp-Entry "update-window-actions" #f 2365 18 2365 39 ("tile-vertically" "tile-horizontally" "current-frame" "previous-frame" "2" "next-frame" "print" "print-preview" "print-layout" "page-setup" "compare-saved" "revert-saved" "save-all" "save-as" "save" "guest" "close-all" "not" "1" ">=" "and" "close" "application" "Action" "set-action-enabled?" "in-modal?" "length" "count" "get-views" "frames" "let*" "when" "get-stage" "stage" "let")}
+        {Lisp-Entry "on-next-frame" #f 2389 26 2389 39 ("current-frame" "focus-host" "send-to-back" "first-view" "first" "get-stage" "stage" "let*" "evt")}
+        {Lisp-Entry "on-previous-frame" #f 2396 26 2396 43 ("current-frame" "focus-host" "bring-to-front" "last-view" "last" "get-stage" "stage" "let*" "evt")}
+        {Lisp-Entry "on-current-frame" #f 2403 26 2403 42 ("focus-host" "first-view" "first" "get-stage" "stage" "let*" "evt")}
+        {Lisp-Entry "on-tile-horizontally" #f 2409 26 2409 46 ("increase!" "Dimension" "set-size" "Point" "new" "set-position" "frame" "for-each" "restore" "function" "with-locked-update" "0" "t" "quotient" "h" "get-height" "height" "get-width" "width" "length" "count" "get-views" "frames" "get-stage" "stage" "let*" "evt")}
+        {Lisp-Entry "on-tile-vertically" #f 2427 26 2427 44 ("increase!" "Dimension" "set-size" "Point" "new" "set-position" "frame" "for-each" "restore" "function" "with-locked-update" "0" "l" "quotient" "w" "get-height" "height" "get-width" "width" "length" "count" "get-views" "frames" "get-stage" "stage" "let*" "evt")}
+        {Lisp-Entry "on-select-window" #f 2445 26 2445 42 ("focus-host" "bring-to-front" "window:" "get-property" "window" "let" "evt")}}}})
 "Application-Actions"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "Application-Actions.jazz"} 1236813141
-    {Lisp-Entry "jazz.system.application.Application-Actions" #f 37 9 37 52 ("jazz")
-      {Lisp-Entry "Application-Actions" #f 48 7 48 26 ("on-about" "about" "on-tile-vertically" "tile-vertically" "on-tile-horizontally" "tile-horizontally" "on-cascade" "cascade" "F7" "on-preprocess-file" "preprocess" "Tab" "on-toggle-frame" "toggle-frame" "on-current-frame" "current-frame" "on-previous-frame" "previous-frame" "on-next-frame" "next-frame" "on-previous-workspace" "previous-workspace" "F6" "on-next-workspace" "next-workspace" "Backspace" "on-full-screen" "full-screen" "on-maximize/restore" "maximize/restore" "Space" "on-zoom-vertically" "zoom-vertically" "Return" "on-zoom-horizontally" "zoom-horizontally" "on-command-shell" "command-shell" "on-replace-all-selected" "replace-all-selected" "on-replace-all" "replace-all" "on-replace&find-forward" "replace&find-forward" "on-replace" "replace" "on-find-backward" "find-backward" "F3" "on-find-forward" "find-forward" "on-pop-results" "pop-results" "on-edit-current" "edit-current" "on-edit-previous" "edit-previous" "F4" "on-edit-next" "edit-next" "on-find-in-projects" "find-in-projects" "on-find-in-directories" "find-in-directories" ":shift" "on-find-in-text" "find-in-text" "on-find" "find" "on-forward-history" "forward-history" "on-backward-history" "backward-history" "on-add-history" "add-history" "on-pop-clipboard-stack" "pop-clipboard-stack" "on-paste-from-stack" "paste-from-stack" "on-quit-application" "exit" "on-page-setup" "page-setup" "on-print-preview" "print-preview" "on-print-layout" "print-layout" "on-print" "print" "on-save-all" "save-all" "on-close-all" "close-all" "on-close" "close" "on-open" "open" ":alt" ":control" "Shortcut" "shortcut:" "on-new" ":application" "Event-Handler" "action-handler:" "new" "name:" "Actions")}}})
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "Application-Actions.jazz"} 1245777538
+    {Lisp-Entry "jazz.system.application.Application-Actions" #f 37 19 37 62 ("jazz")
+      {Lisp-Entry "Application-Actions" #f 48 7 48 26 ("on-about" "about" "on-tile-vertically" "tile-vertically" "on-tile-horizontally" "tile-horizontally" "on-current-frame" "current-frame" "on-previous-frame" "previous-frame" "on-next-frame" "next-frame" "on-previous-workspace" "previous-workspace" "F6" "on-next-workspace" "next-workspace" "Backspace" "on-full-screen" "full-screen" "on-maximize/restore" "maximize/restore" "Space" "on-zoom-vertically" "zoom-vertically" "Return" "on-zoom-horizontally" "zoom-horizontally" "on-command-shell" "command-shell" "on-replace-all-selected" "replace-all-selected" "on-replace-all" "replace-all" "on-replace&find-forward" "replace&find-forward" "on-replace" "replace" "on-find-backward" "find-backward" "F3" "on-find-forward" "find-forward" "on-pop-results" "pop-results" "on-edit-current" "edit-current" "on-edit-previous" "edit-previous" "F4" "on-edit-next" "edit-next" "on-find-in-projects" "find-in-projects" "on-find-in-directories" "find-in-directories" ":shift" "on-find-in-text" "find-in-text" "on-find" "find" "on-forward-history" "forward-history" "on-backward-history" "backward-history" "on-add-history" "add-history" "on-pop-clipboard-stack" "pop-clipboard-stack" "on-paste-from-stack" "paste-from-stack" "on-quit-application" "exit" "on-page-setup" "page-setup" "on-print-preview" "print-preview" "on-print-layout" "print-layout" "on-print" "print" "on-save-all" "save-all" "on-close-all" "close-all" "on-close" "close" "on-open" "open" ":alt" ":control" "Shortcut" "shortcut:" "on-new" ":application" "Event-Handler" "action-handler:" "new" "name:" "Actions")}}})
 "Application-Bindings"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "Application-Bindings.jazz"} 1236813141
-    {Lisp-Entry "jazz.system.application.Application-Bindings" #f 37 9 37 53 ("jazz")
-      {Lisp-Entry "Application-Bindings" #f 48 7 48 27 ("guest" "tree" "formatted-text" "text" "view" "application" "name:" "Bindings")}}})
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "Application-Bindings.jazz"} 1244896779
+    {Lisp-Entry "jazz.system.application.Application-Bindings" #f 37 19 37 63 ("jazz")
+      {Lisp-Entry "Application-Bindings" #f 47 7 47 27 ("guest" "tree" "formatted-text" "text" "view" "application" "name:" "Bindings")}}})
 "Application-Event"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "Application-Event.jazz"} 1236813141
-    {Lisp-Entry "jazz.system.application.Application-Event" #f 37 9 37 50 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "Application-Event.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.application.Application-Event" #f 37 19 37 60 ("jazz")
       {Lisp-Entry "Application-Event" #f 45 7 45 24 ("Event")}}})
 "Application-Preferences"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "Application-Preferences.jazz"} 1236813141
-    {Lisp-Entry "jazz.system.application.Application-Preferences" #f 37 9 37 56 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "Application-Preferences.jazz"} 1245730228
+    {Lisp-Entry "jazz.system.application.Application-Preferences" #f 37 19 37 66 ("jazz")
       {Lisp-Entry "Application-Preferences" #f 48 7 48 30 ("interface" "workspaces" "tools" "documents" "favorites" "aliases" "name:" "Process-Preferences")
         {Lisp-Entry "toplevel-title" #f 51 12 51 26 ("generate")}
         {Lisp-Entry "toplevel-state" #f 52 12 52 26 ("generate" "restored" "'restored")}
@@ -361,8 +352,8 @@
         {Lisp-Entry "get-row-instance" #f 90 11 90 27 ("nextmethod" "else" "Boolean-Row" "documented?" "String-Row" "new" "toplevel-title" "field-name" "case" "property")}
         {Lisp-Entry "get-categorized-properties" #f 97 11 97 37 ("documented?" "catalog-types" "toplevel-state" "toplevel-title" "protocols" "current-directory" "active-context")}}}})
 "Command-Line"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "Command-Line.jazz"} 1236813141
-    {Lisp-Entry "jazz.system.process.Command-Line" #f 37 9 37 41 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "Command-Line.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.process.Command-Line" #f 37 19 37 51 ("jazz")
       {Lisp-Entry "Command-Line" #f 45 7 45 19 ("Object")}
       {Lisp-Entry "Command-Line" #f 51 7 51 19 ("Object")
         {Lisp-Entry "for-each-action" #f 59 23 59 38 ("'argument" "argument-example" "bind-optionals" "rest" "argument-help" "argument" "'section" "arguments" "section" "list" "'action" "sections" "action-help" "action" "bind" "info" "function" "for-each" "actions" "proc")}
@@ -373,8 +364,8 @@
         {Lisp-Entry "present-argument-value" #f 127 16 127 38 ("format" "string?" "if" "value")}
         {Lisp-Entry "command-help" #f 133 23 133 35 ("title:" "present-examples" "present-help" "present-syntax" "present-version" "format" "message-box" "actions" "version" "name")}}}})
 "Exception-Presenter"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "Exception-Presenter.jazz"} 1236975967
-    {Lisp-Entry "jazz.system.application.Exception-Presenter" #f 37 9 37 52 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "Exception-Presenter.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.application.Exception-Presenter" #f 37 19 37 62 ("jazz")
       {Lisp-Entry "Exception-Presenter" #f 49 7 49 26 ("Object")}
       {Lisp-Entry "Exception-Presenter" #f 55 7 55 26 ("Object")
         {Lisp-Entry "present" #f 58 18 58 25 ("set-auto-continue?" "remove-nils" "actions:" "present-execution-stack" "content:" "message-box" "code" "let" "continue-exception" "get-continuable?" "get-auto-continue?" "and" "get-execution-stack" "execution-stack" "get-execution-context" "execution-context" "cancel" "'cancel" "cancel-action" "continue-all" "continue-all-action" "continue" "continue-action" "restart" "restart-action" "yes" "'yes" "else" "if" "case" "list" "yes-action" "continuable?" "restartable?" "present-message" "message" "let*" "prefix?" "prefix?:" "error" "'error" "type" "type:" "exception")}
@@ -382,20 +373,20 @@
       {Lisp-Entry "Context-Border" #f 110 7 110 21 ("300" "width:" "title:" "node" "selection-mode:" ":icons" "portfolio:" "tree" "fill" "layout-type:" "content" "vscroll?:" "hscroll?:" "flat?:" "Outline-Border" "name:" "Color" "border-color:" "solid" "border-type:" "Border-View")}
       {Lisp-Entry "Context-Tree" #f 128 7 128 19 ("Tree-View")}}})
 "Exit-Listener"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "Exit-Listener.jazz"} 1236813141
-    {Lisp-Entry "jazz.system.process.Exit-Listener" #f 37 9 37 42 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "Exit-Listener.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.process.Exit-Listener" #f 37 19 37 52 ("jazz")
       {Lisp-Entry "Exit-Listener" #f 46 11 46 24 ("Listener")
         {Lisp-Entry "prepare-exit" #f 49 35 49 47 ()}}}})
 "Exit-Signal"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "Exit-Signal.jazz"} 1236813141
-    {Lisp-Entry "jazz.system.process.Exit-Signal" #f 37 9 37 40 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "Exit-Signal.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.process.Exit-Signal" #f 37 19 37 50 ("jazz")
       {Lisp-Entry "Exit-Signal" #f 44 7 44 18 ("Signal")
         {Lisp-Entry "status" #f 47 8 47 14 ()}
         {Lisp-Entry "initialize" #f 50 11 50 21 ("status~self" "set!" "nextmethod" "0" "status" "status:")}
         {Lisp-Entry "get-status" #f 60 18 60 28 ("status")}}}})
 "Performance-Query"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "performance" "platform" "windows" "Performance-Query.jazz"} 1236813141
-    {Lisp-Entry "jazz.system.performance.platform.windows.Performance-Query" #f 37 9 37 67 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "performance" "platform" "windows" "Performance-Query.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.performance.platform.windows.Performance-Query" #f 37 19 37 77 ("jazz")
       {Lisp-Entry "Performance-Query" #f 44 7 44 24 ("Object")
         {Lisp-Entry "query" #f 47 8 47 13 ()}
         {Lisp-Entry "initialize" #f 50 11 50 21 ("destroy-mandatory" "query~self" "set!" "validate-status" "0" "NULL" "PdhOpenQuery" "query" "status" "receive" "nextmethod")}
@@ -407,109 +398,103 @@
         {Lisp-Entry "browse-counter-path" #f 91 11 91 30 ("BrowseCounterPath")}
         {Lisp-Entry "validate-status" #f 95 11 95 26 ("error" "0" "/=" "when" "status")}}}})
 "Process"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "Process.jazz"} 1237815090
-    {Lisp-Entry "jazz.system.process.Process" #f 37 9 37 36 ("jazz")
-      {Lisp-Entry "Process" #f 58 7 58 14 ("Object")
-        {Lisp-Entry "settings" #f 61 8 61 16 ()}
-        {Lisp-Entry "preferences-root" #f 62 8 62 24 ()}
-        {Lisp-Entry "preferences-designer" #f 63 8 63 28 ()}
-        {Lisp-Entry "context" #f 64 8 64 15 ()}
-        {Lisp-Entry "get-settings" #f 72 18 72 30 ("settings")}
-        {Lisp-Entry "get-preferences-root" #f 76 18 76 38 ("preferences-root")}
-        {Lisp-Entry "get-preferences-designer" #f 80 18 80 42 ("preferences-designer")}
-        {Lisp-Entry "process-name" #f 84 26 84 38 ()}
-        {Lisp-Entry "process-owner" #f 88 26 88 39 ()}
-        {Lisp-Entry "process-copyright" #f 92 26 92 43 ()}
-        {Lisp-Entry "process-licensee" #f 96 26 96 42 ()}
-        {Lisp-Entry "process-icon" #f 100 26 100 38 ()}
-        {Lisp-Entry "process-version" #f 104 26 104 41 ("0" "1" "Version")}
-        {Lisp-Entry "process-email" #f 108 26 108 39 ()}
-        {Lisp-Entry "process-actions" #f 112 26 112 41 ()}
-        {Lisp-Entry "process-event-source" #f 116 26 116 46 ("process-name" "EventSource" "'EventSource" "argument/setting" "either")}
-        {Lisp-Entry "boot-environment" #f 126 26 126 42 ("run-loop" "format" "system-message" "get-load-stack" "null?" "not" "run-loop?" "when" "activate-process" "conclude-phase" "finish-phase" "finalize-phase" "start-phase" "prepare-phase" "register-versions" "initialize-settings" "initialize-aliases" "install-literals" "update-debuggee" "signal" "Cancel-Signal" "catch")}
-        {Lisp-Entry "update-debuggee" #f 148 11 148 26 ("update-debuggee-process" "process-version" "present" "current-process-version-set!" "process-icon" "current-process-icon-set!" "process-name" "current-process-title-set!" "current-process-title" "unless")}
-        {Lisp-Entry "install-literals" #f 156 11 156 27 ("install-jazz-literals")}
-        {Lisp-Entry "initialize-settings" #f 160 29 160 48 ()}
-        {Lisp-Entry "register-versions" #f 164 11 164 28 ("get-windows-version" "present" "windows-version:" "register-crash-info")}
-        {Lisp-Entry "prepare-phase" #f 169 11 169 24 ("prepare-process" "prepare-workbench" "prepare-preferences-repositories" "prepare-preferences-aliases" "prepare-preferences" "prepare-environment" "prepare-aliases" "prepare-bindings")}
-        {Lisp-Entry "prepare-environment" #f 180 29 180 48 ("self" "set-process")}
-        {Lisp-Entry "prepare-preferences" #f 184 11 184 30 ("setup-preferences")}
-        {Lisp-Entry "prepare-process" #f 188 26 188 41 ("setup-crash-handler")}
-        {Lisp-Entry "start-phase" #f 192 11 192 22 ("start-process" "start-environment")}
-        {Lisp-Entry "start-environment" #f 197 29 197 46 ()}
-        {Lisp-Entry "start-process" #f 201 26 201 39 ()}
-        {Lisp-Entry "finalize-phase" #f 205 11 205 25 ("setup-profile" "finalize-process" "start-servers" "finalize-environment")}
-        {Lisp-Entry "finalize-environment" #f 212 29 212 49 ()}
-        {Lisp-Entry "finalize-process" #f 216 26 216 42 ()}
-        {Lisp-Entry "setup-profile" #f 220 26 220 39 ()}
-        {Lisp-Entry "finish-phase" #f 224 11 224 23 ("finish-process" "finish-environment")}
-        {Lisp-Entry "finish-environment" #f 229 29 229 47 ("register-base-objects")}
-        {Lisp-Entry "finish-process" #f 233 26 233 40 ()}
-        {Lisp-Entry "conclude-phase" #f 237 11 237 25 ("conclude-process" "conclude-environment")}
-        {Lisp-Entry "conclude-environment" #f 242 29 242 49 ()}
-        {Lisp-Entry "conclude-process" #f 246 26 246 42 ()}
-        {Lisp-Entry "terminate-process" #f 255 29 255 46 ("terminate-preferences-aliases")}
-        {Lisp-Entry "preserve-environment" #f 264 26 264 46 ()}
-        {Lisp-Entry "close-environment" #f 268 26 268 43 ("stop-servers" "detach-from-controller" "close-preferences")}
-        {Lisp-Entry "close-preferences" #f 274 11 274 28 ("save" "get-form" "get-origin" "file?" "persist-preferences?" "preferences-designer" "and" "when")}
-        {Lisp-Entry "get-toplevel" #f 284 26 284 38 ()}
-        {Lisp-Entry "exit-process" #f 293 18 293 30 ("exit" "invoke-restart" "if" "exit-process" "'exit-process" "find-restart" "restart" "let" "set-process" "terminate-process" "close-environment" "preserve-environment" "exiting?" "parameterize" "0" "status")}
-        {Lisp-Entry "process-alias" #f 309 26 309 39 ("else" "self" ":process" "case" "name")}
-        {Lisp-Entry "get-context" #f 320 18 320 29 ("context")}
-        {Lisp-Entry "set-context" #f 324 18 324 29 ("context-update" "context" "set!" "ctx")}
-        {Lisp-Entry "context-update" #f 334 29 334 43 ("modify-toolbox" "modify-connections" "modify-favorites" "modify-preferences")}
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "Process.jazz"} 1245732655
+    {Lisp-Entry "jazz.system.process.Process" #f 37 19 37 46 ("jazz")
+      {Lisp-Entry "Process" #f 57 7 57 14 ("Object")
+        {Lisp-Entry "settings" #f 60 8 60 16 ()}
+        {Lisp-Entry "preferences-root" #f 61 8 61 24 ()}
+        {Lisp-Entry "preferences-designer" #f 62 8 62 28 ()}
+        {Lisp-Entry "context" #f 63 8 63 15 ()}
+        {Lisp-Entry "get-settings" #f 71 18 71 30 ("settings")}
+        {Lisp-Entry "get-preferences-root" #f 75 18 75 38 ("preferences-root")}
+        {Lisp-Entry "get-preferences-designer" #f 79 18 79 42 ("preferences-designer")}
+        {Lisp-Entry "process-name" #f 83 26 83 38 ()}
+        {Lisp-Entry "process-owner" #f 87 26 87 39 ()}
+        {Lisp-Entry "process-copyright" #f 91 26 91 43 ()}
+        {Lisp-Entry "process-licensee" #f 95 26 95 42 ()}
+        {Lisp-Entry "process-icon" #f 99 26 99 38 ()}
+        {Lisp-Entry "process-version" #f 103 26 103 41 ("0" "1" "Version")}
+        {Lisp-Entry "process-email" #f 107 26 107 39 ()}
+        {Lisp-Entry "process-actions" #f 111 26 111 41 ()}
+        {Lisp-Entry "process-event-source" #f 115 26 115 46 ("process-name" "EventSource" "'EventSource" "argument/setting" "either")}
+        {Lisp-Entry "boot-environment" #f 125 26 125 42 ("run-loop" "format" "system-message" "get-load-stack" "null?" "not" "run-loop?" "when" "activate-process" "conclude-phase" "finish-phase" "finalize-phase" "start-phase" "prepare-phase" "register-versions" "initialize-settings" "initialize-aliases" "install-literals" "update-debuggee" "signal" "Cancel-Signal" "catch")}
+        {Lisp-Entry "update-debuggee" #f 147 11 147 26 ("update-debuggee-process" "process-version" "present" "current-process-version-set!" "process-icon" "current-process-icon-set!" "process-name" "current-process-title-set!" "current-process-title" "unless")}
+        {Lisp-Entry "install-literals" #f 155 11 155 27 ("install-jazz-literals")}
+        {Lisp-Entry "initialize-settings" #f 159 29 159 48 ()}
+        {Lisp-Entry "register-versions" #f 163 11 163 28 ("get-windows-version" "present" "windows-version:" "register-crash-info")}
+        {Lisp-Entry "prepare-phase" #f 168 11 168 24 ("prepare-process" "prepare-workbench" "prepare-preferences-repositories" "prepare-preferences-aliases" "prepare-preferences" "prepare-environment" "prepare-aliases" "prepare-bindings")}
+        {Lisp-Entry "prepare-environment" #f 179 29 179 48 ("self" "set-process")}
+        {Lisp-Entry "prepare-preferences" #f 183 11 183 30 ("setup-preferences")}
+        {Lisp-Entry "prepare-process" #f 187 26 187 41 ("setup-crash-handler")}
+        {Lisp-Entry "start-phase" #f 191 11 191 22 ("start-process" "start-environment")}
+        {Lisp-Entry "start-environment" #f 196 29 196 46 ()}
+        {Lisp-Entry "start-process" #f 200 26 200 39 ()}
+        {Lisp-Entry "finalize-phase" #f 204 11 204 25 ("setup-profile" "finalize-process" "start-servers" "finalize-environment")}
+        {Lisp-Entry "finalize-environment" #f 211 29 211 49 ()}
+        {Lisp-Entry "finalize-process" #f 215 26 215 42 ()}
+        {Lisp-Entry "setup-profile" #f 219 26 219 39 ()}
+        {Lisp-Entry "finish-phase" #f 223 11 223 23 ("finish-process" "finish-environment")}
+        {Lisp-Entry "finish-environment" #f 228 29 228 47 ("register-base-objects")}
+        {Lisp-Entry "finish-process" #f 232 26 232 40 ()}
+        {Lisp-Entry "conclude-phase" #f 236 11 236 25 ("conclude-process" "conclude-environment")}
+        {Lisp-Entry "conclude-environment" #f 241 29 241 49 ()}
+        {Lisp-Entry "conclude-process" #f 245 26 245 42 ("get-console-port" "current-thread" "start-repl-thread" "select-console" "controller-debugger" "when")}
+        {Lisp-Entry "terminate-process" #f 256 29 256 46 ("terminate-preferences-aliases")}
+        {Lisp-Entry "preserve-environment" #f 265 26 265 46 ()}
+        {Lisp-Entry "close-environment" #f 269 26 269 43 ("stop-servers" "detach-from-controller" "close-preferences")}
+        {Lisp-Entry "close-preferences" #f 275 11 275 28 ("save" "get-form" "get-origin" "file?" "persist-preferences?" "preferences-designer" "and" "when")}
+        {Lisp-Entry "get-toplevel" #f 285 26 285 38 ()}
+        {Lisp-Entry "exit-process" #f 294 18 294 30 ("exit" "invoke-restart" "if" "exit-process" "'exit-process" "find-restart" "restart" "let" "set-process" "terminate-process" "close-environment" "preserve-environment" "exiting?" "parameterize" "0" "status")}
+        {Lisp-Entry "process-alias" #f 310 26 310 39 ("else" "self" ":process" "case" "name")}
+        {Lisp-Entry "get-context" #f 321 18 321 29 ("context")}
+        {Lisp-Entry "set-context" #f 325 18 325 29 ("context-update" "context" "set!" "ctx")}
+        {Lisp-Entry "context-update" #f 335 29 335 43 ("modify-toolbox" "modify-connections" "modify-preferences")}
         {Lisp-Entry "modify-preferences" #f 341 11 341 29 ("set-active-branch" "context" "find-component" "branch" "get-preferences-designer" "designer" "get-preferences" "pref" "let*")}
-        {Lisp-Entry "modify-favorites" #f 348 11 348 27 ("singleton-docked" "get-guest" "modify-editor" "Favorites-Manager" "'Favorites-Manager" "in-manifest?" "when")}
-        {Lisp-Entry "modify-connections" #f 354 11 354 29 ("singleton-docked" "get-guest" "modify-editor" "SQL-Connections-Manager" "'SQL-Connections-Manager" "in-manifest?" "when")}
-        {Lisp-Entry "modify-toolbox" #f 360 11 360 25 ("singleton-docked" "get-guest" "modify-editor" "Toolbox-Manager" "'Toolbox-Manager" "in-manifest?" "when")}
-        {Lisp-Entry "modify-editor" #f 366 11 366 24 ("set-client" "set-active-branch" "context" "find-component" "branch" "get-client" "client" "let*" "editor")}
-        {Lisp-Entry "install-context" #f 374 18 374 33 ("set-active-branch" "find-child" "branch" "let" "context" "when" "component")}
-        {Lisp-Entry "persist-preferences?" #f 386 29 386 49 ()}
-        {Lisp-Entry "preferences-file" #f 390 29 390 45 ("Profile" "File")}
-        {Lisp-Entry "setup-preferences" #f 394 29 394 46 ("setup-preferences/designer")}
-        {Lisp-Entry "setup-preferences/designer" #f 398 11 398 37 ("set-current-directory" "exists?" "and" "when" "get-current-directory" "directory" "let" "preferences-root" "install-context" "preferences-context" "context" "set!" "load-preferences" "set-preferences/designer")}
-        {Lisp-Entry "set-preferences/designer" #f 407 11 407 35 ("reference:" "get-form" "form:" "Designer" "new" "preferences-designer" "preferences-root" "set!" "preferences")}
-        {Lisp-Entry "load-preferences" #f 412 29 412 45 ("default-preferences" "read-from-file" "instantiate" "exists?" "Profile" "'Profile" "find-alias" "and" "if" "preferences-file" "file" "persist-preferences?" "persist?" "let")}
-        {Lisp-Entry "default-preferences" #f 420 29 420 48 ("Process-Preferences" "new")}
-        {Lisp-Entry "preferences-context" #f 424 11 424 30 ("else" "get-active-context" "preferences-root" "string->symbol" "cond" "command-argument" "arg" "let")}
-        {Lisp-Entry "apply-preferences" #f 431 18 431 35 ("apply-preferences" "client" "preferences")}
-        {Lisp-Entry "save-preferences" #f 435 18 435 34 ("get-preferences-designer" "save-preferences" "client" "preferences")}
-        {Lisp-Entry "set-preferences-property" #f 439 18 439 42 ("get-preferences-designer" "set-property" "value" "property" "preferences")}
-        {Lisp-Entry "get-preferences-rights" #f 443 26 443 48 ()}
-        {Lisp-Entry "persist-usernames?" #f 452 26 452 44 ()}
-        {Lisp-Entry "persist-passwords?" #f 456 26 456 44 ()}
-        {Lisp-Entry "mandatory-version" #f 465 26 465 43 ("what")}
-        {Lisp-Entry "signal-readyness" #f 475 21 475 37 ("SetEvent" "when" "EVENT_MODIFY_STATE" "OpenEvent" "handle" "let" "name")}
-        {Lisp-Entry "run-loop" #f 486 26 486 34 ("start-loop" "with-current-loop" "with-repl-context" "cont" "continuation-capture" "function" "exit-process" "'exit-process" "with-restart-catcher")}
-        {Lisp-Entry "resume-loop" #f 498 18 498 29 ("invoke-restart" "resume-loop-action" "when" "resume-loop" "'resume-loop" "find-restart" "restart" "let")}
-        {Lisp-Entry "resume-loop-action" #f 505 26 505 44 ()}
-        {Lisp-Entry "start-loop" #f 509 26 509 36 ("relinquish-process" "loop" "let")}
-        {Lisp-Entry "user-feedback" #f 520 29 520 42 ("message")}
-        {Lisp-Entry "system-title" #f 529 26 529 38 ()}
-        {Lisp-Entry "prepare-bindings" #f 538 29 538 45 ()}
-        {Lisp-Entry "prepare-aliases" #f 547 29 547 44 ()}
-        {Lisp-Entry "prepare-preferences-aliases" #f 551 26 551 53 ("get-list" "register-alias" "get-directory" "directory" "get-alias" "alias" "function" "for-each" "get-children" "when" "error?:" "aliases" "'aliases" "get-preferences" "pref" "let")}
-        {Lisp-Entry "terminate-preferences-aliases" #f 563 26 563 55 ("unregister-alias" "get-alias" "alias" "function" "for-each" "get-children" "when" "error?:" "aliases" "'aliases" "get-preferences" "pref" "let")}
-        {Lisp-Entry "resolve-alias" #f 573 26 573 39 ("name")}
-        {Lisp-Entry "prepare-preferences-repositories" #f 582 26 582 58 ("parse" "install-repository" "dir" "function" "for-each" "get-repositories" "when" "error?:" "repositories" "'repositories" "get-preferences" "pref" "let")}
-        {Lisp-Entry "prepare-workbench" #f 596 26 596 43 ()}
-        {Lisp-Entry "start-servers" #f 605 29 605 42 ("start-remote-listener" "when" "command-host/service" "service" "host" "receive")}
-        {Lisp-Entry "stop-servers" #f 612 29 612 41 ("stop-remote-listener")}
-        {Lisp-Entry "get-name" #f 621 18 621 26 ("process-name")}
-        {Lisp-Entry "get-icon" #f 625 18 625 26 ("process-icon")}
-        {Lisp-Entry "get-register" #f 629 18 629 30 ("local-register")}
-        {Lisp-Entry "register-base-objects" #f 638 29 638 50 ()}
-        {Lisp-Entry "get-local-debugger" #f 647 26 647 44 ()}
-        {Lisp-Entry "initial-console-context" #f 656 26 656 49 ()}
-        {Lisp-Entry "launch-process" #f 665 18 665 32 ("wait?:" "wait-ready-timeout" "wait-ready-timeout:" "wait-ready" "wait-ready:" "create-process" "command" "command-arguments" "arguments-arg" "command-action" "action-arg" "profile" "profile-arg" "app-arg" "rootdir-arg" "format" "homedir" "if" "homedir-arg" "Bin" "File" "launcher" "Jazz" "Directory" "parse" "root" "let*" "app" "app:")}
-        {Lisp-Entry "process-debuggee-loop" #f 691 29 691 50 ("debuggee-loop")}
-        {Lisp-Entry "process-exception" #f 695 11 695 28 ("report-exception" "log-exception" "else" "exit-process" "message" "'message" "type:" "present-exception" "exception:" "dump-stack" "loop-running?" "not" "cond" "log-execution-context" "exception-reported" "accountable" "frame" "exception")}
-        {Lisp-Entry "exception-reported" #f 708 29 708 47 ()}
-        {Lisp-Entry "log-exception" #f 712 29 712 42 ("exception")}
-        {Lisp-Entry "log-execution-context" #f 716 11 716 32 ("report-execution-context" "prefix?" "prefix?:" "present-message" "message" "get-reporter" "reporter" "get-execution-stack" "stack" "when" "get-execution-context" "context" "let" "exception")}}}})
+        {Lisp-Entry "modify-connections" #f 348 11 348 29 ("singleton-docked" "get-guest" "modify-editor" "SQL-Connections-Manager" "'SQL-Connections-Manager" "in-manifest?" "when")}
+        {Lisp-Entry "modify-toolbox" #f 354 11 354 25 ("singleton-docked" "get-guest" "modify-editor" "Toolbox-Manager" "'Toolbox-Manager" "in-manifest?" "when")}
+        {Lisp-Entry "modify-editor" #f 360 11 360 24 ("set-client" "set-active-branch" "context" "find-component" "branch" "get-client" "client" "let*" "editor")}
+        {Lisp-Entry "install-context" #f 368 18 368 33 ("set-active-branch" "find-child" "branch" "let" "context" "when" "component")}
+        {Lisp-Entry "persist-preferences?" #f 380 29 380 49 ()}
+        {Lisp-Entry "preferences-file" #f 384 29 384 45 ("Profile" "File")}
+        {Lisp-Entry "setup-preferences" #f 388 29 388 46 ("setup-preferences/designer")}
+        {Lisp-Entry "setup-preferences/designer" #f 392 11 392 37 ("set-current-directory" "exists?" "and" "when" "get-current-directory" "directory" "let" "preferences-root" "install-context" "preferences-context" "context" "set!" "load-preferences" "set-preferences/designer")}
+        {Lisp-Entry "set-preferences/designer" #f 401 11 401 35 ("reference:" "get-form" "form:" "Designer" "new" "preferences-designer" "preferences-root" "set!" "preferences")}
+        {Lisp-Entry "load-preferences" #f 406 29 406 45 ("default-preferences" "read-from-file" "instantiate" "exists?" "Profile" "'Profile" "find-alias" "and" "if" "preferences-file" "file" "persist-preferences?" "persist?" "let")}
+        {Lisp-Entry "default-preferences" #f 414 29 414 48 ("Process-Preferences" "new")}
+        {Lisp-Entry "preferences-context" #f 418 11 418 30 ("else" "get-active-context" "preferences-root" "string->symbol" "cond" "command-argument" "arg" "let")}
+        {Lisp-Entry "apply-preferences" #f 425 18 425 35 ("apply-preferences" "client" "preferences")}
+        {Lisp-Entry "save-preferences" #f 429 18 429 34 ("get-preferences-designer" "save-preferences" "client" "preferences")}
+        {Lisp-Entry "set-preferences-property" #f 433 18 433 42 ("get-preferences-designer" "set-property" "value" "property" "preferences")}
+        {Lisp-Entry "get-preferences-rights" #f 437 26 437 48 ()}
+        {Lisp-Entry "persist-usernames?" #f 446 26 446 44 ()}
+        {Lisp-Entry "persist-passwords?" #f 450 26 450 44 ()}
+        {Lisp-Entry "mandatory-version" #f 459 26 459 43 ("what")}
+        {Lisp-Entry "signal-readyness" #f 469 21 469 37 ("SetEvent" "when" "EVENT_MODIFY_STATE" "OpenEvent" "handle" "let" "name")}
+        {Lisp-Entry "run-loop" #f 480 26 480 34 ("start-loop" "with-current-loop" "with-repl-context" "cont" "function" "continuation-capture")}
+        {Lisp-Entry "resume-loop" #f 490 18 490 29 ("invoke-restart" "resume-loop-action" "when" "resume-loop" "'resume-loop" "find-restart" "restart" "let")}
+        {Lisp-Entry "resume-loop-action" #f 497 26 497 44 ()}
+        {Lisp-Entry "start-loop" #f 501 26 501 36 ("relinquish-process" "loop" "let")}
+        {Lisp-Entry "user-feedback" #f 512 29 512 42 ("message")}
+        {Lisp-Entry "system-title" #f 521 26 521 38 ()}
+        {Lisp-Entry "prepare-bindings" #f 530 29 530 45 ()}
+        {Lisp-Entry "prepare-aliases" #f 539 29 539 44 ()}
+        {Lisp-Entry "prepare-preferences-aliases" #f 543 26 543 53 ("get-list" "register-alias" "get-directory" "directory" "get-alias" "alias" "function" "for-each" "get-children" "when" "error?:" "aliases" "'aliases" "get-preferences" "pref" "let")}
+        {Lisp-Entry "terminate-preferences-aliases" #f 555 26 555 55 ("unregister-alias" "get-alias" "alias" "function" "for-each" "get-children" "when" "error?:" "aliases" "'aliases" "get-preferences" "pref" "let")}
+        {Lisp-Entry "resolve-alias" #f 565 26 565 39 ("name")}
+        {Lisp-Entry "prepare-preferences-repositories" #f 574 26 574 58 ("parse" "install-repository" "dir" "function" "for-each" "get-repositories" "when" "error?:" "repositories" "'repositories" "get-preferences" "pref" "let")}
+        {Lisp-Entry "prepare-workbench" #f 588 26 588 43 ()}
+        {Lisp-Entry "start-servers" #f 597 29 597 42 ("start-remote-listener" "when" "command-host/service" "service" "host" "receive")}
+        {Lisp-Entry "stop-servers" #f 604 29 604 41 ("stop-remote-listener")}
+        {Lisp-Entry "get-name" #f 613 18 613 26 ("process-name")}
+        {Lisp-Entry "get-icon" #f 617 18 617 26 ("process-icon")}
+        {Lisp-Entry "get-register" #f 621 18 621 30 ("local-register")}
+        {Lisp-Entry "register-base-objects" #f 630 29 630 50 ()}
+        {Lisp-Entry "get-local-debugger" #f 639 26 639 44 ()}
+        {Lisp-Entry "initial-console-context" #f 648 26 648 49 (":process")}
+        {Lisp-Entry "process-debuggee-loop" #f 652 29 652 50 ("debuggee-loop")}}}})
 "Process-Preferences"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "Process-Preferences.jazz"} 1236813141
-    {Lisp-Entry "jazz.system.process.Process-Preferences" #f 37 9 37 48 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "Process-Preferences.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.process.Process-Preferences" #f 37 19 37 58 ("jazz")
       {Lisp-Entry "Process-Preferences" #f 48 7 48 26 ("title:" "Preferences")
         {Lisp-Entry "active-context" #f 51 12 51 26 ("generate")}
         {Lisp-Entry "current-directory" #f 52 12 52 29 ("generate")}
@@ -527,101 +512,45 @@
       {Lisp-Entry "Protocol-Row" #f 127 7 127 19 ("Value-Row")
         {Lisp-Entry "present" #f 135 11 135 18 ("format" "model")}}}})
 "Save-Environment-Listener"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "Save-Environment-Listener.jazz"} 1236813141
-    {Lisp-Entry "jazz.system.process.Save-Environment-Listener" #f 37 9 37 54 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "Save-Environment-Listener.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.process.Save-Environment-Listener" #f 37 19 37 64 ("jazz")
       {Lisp-Entry "Save-Environment-Listener" #f 46 11 46 36 ("Listener")
         {Lisp-Entry "save-environment" #f 49 35 49 51 ()}}}})
 "Service"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "service" "platform" "windows" "Service.jazz"} 1236813141
-    {Lisp-Entry "jazz.library.service.Service" #f 38 9 38 37 ("jazz")
-      {Lisp-Entry "Service" #f 46 7 46 14 ("Process")
-        {Lisp-Entry "mode" #f 49 8 49 12 ()}
-        {Lisp-Entry "cached-state" #f 50 8 50 20 ()}
-        {Lisp-Entry "taskicon-hwnd" #f 51 8 51 21 ()}
-        {Lisp-Entry "prepare-process" #f 54 11 54 26 ("error" "else" "debug" "'debug" "run" "'run" "mode" "set!" "unregister-service" "register-service" "EXIT_SUCCESS" "exit-process" "process-actions" "process-version" "process-name" "Command-Line" "command-help" "ci=?" "null?" "or" "cond" "command-action" "action" "let" "nextmethod")}
-        {Lisp-Entry "finalize-process" #f 74 11 74 27 ("add-taskicon" "process-taskbar-message" "set-window-callback" "register-taskicon-class" "debug" "'debug" "mode" "eq?" "when" "nextmethod")}
-        {Lisp-Entry "close-environment" #f 82 11 82 28 ("nextmethod" "remove-taskicon" "taskicon-hwnd" "debug" "'debug" "mode" "eq?" "and" "when")}
-        {Lisp-Entry "process-event-source" #f 88 11 88 31 ("service-presentation" "EventSource" "'EventSource" "argument/setting" "either")}
-        {Lisp-Entry "service-name" #f 93 29 93 41 ()}
-        {Lisp-Entry "service-presentation" #f 97 29 97 49 ()}
-        {Lisp-Entry "service-description" #f 101 29 101 48 ()}
-        {Lisp-Entry "service-messages" #f 105 29 105 45 ()}
-        {Lisp-Entry "service-executable" #f 109 29 109 47 ()}
-        {Lisp-Entry "service-icon" #f 113 29 113 41 ()}
-        {Lisp-Entry "register-service" #f 122 11 122 27 ("presentation:" "create-service" "handle" "command" "service-executable" "executable" "Service-Manager" "new" "manager" "parse" "application-key" "Bin" "Directory" "new-file" "message-file" "application-path" "service-presentation" "presentation" "let*" "service-messages" "messages" "set-value" "create-key" "service-key" "with-closed" "format" "service-path" "Registry" "Local-Machine" "local-machine-key" "when" "service-description" "description" "service-name" "name" "let")}
-        {Lisp-Entry "unregister-service" #f 149 11 149 29 ("delete-service" "open-service" "handle" "service-name" "name" "let" "Service-Manager" "new" "manager" "with-closed")}
-        {Lisp-Entry "set-state" #f 161 18 161 27 ("error" "else" "SERVICE_STOPPED" "stopped" "SERVICE_STOP_PENDING" "stop-pending" "SERVICE_PAUSED" "paused" "SERVICE_PAUSE_PENDING" "pause-pending" "SERVICE_RUNNING" "running" "SERVICE_CONTINUE_PENDING" "continue-pending" "SERVICE_START_PENDING" "start-pending" "case" "set-service-state" "cached-state" "set!" "state")}
-        {Lisp-Entry "get-state" #f 175 18 175 27 ("error" "else" "stopped" "'stopped" "SERVICE_STOPPED" "stop-pending" "'stop-pending" "SERVICE_STOP_PENDING" "paused" "'paused" "SERVICE_PAUSED" "pause-pending" "'pause-pending" "SERVICE_PAUSE_PENDING" "running" "'running" "SERVICE_RUNNING" "continue-pending" "'continue-pending" "SERVICE_CONTINUE_PENDING" "start-pending" "'start-pending" "SERVICE_START_PENDING" "get-service-state" "ecase")}
-        {Lisp-Entry "process-service-control" #f 188 18 188 41 ("stopped" "stop-service" "stop-pending" "paused" "pause-service" "pause-pending" "running" "continue-service" "continue-pending" "start-service" "start-pending" "case" "cached-state" "neq?" "when" "get-state" "updated-state" "let")}
-        {Lisp-Entry "start-service" #f 201 29 201 42 ("running" "'running" "set-state" "log-success-event")}
-        {Lisp-Entry "pause-service" #f 206 29 206 42 ("paused" "'paused" "set-state" "log-success-event")}
-        {Lisp-Entry "continue-service" #f 211 29 211 45 ("running" "'running" "set-state" "log-success-event")}
-        {Lisp-Entry "stop-service" #f 216 29 216 41 ("stopped" "'stopped" "set-state" "log-success-event")}
-        {Lisp-Entry "run-loop" #f 226 11 226 19 ("error" "0" "/=" "when" "start-service-dispatcher" "err" "let" "run" "nextmethod" "debug" "mode" "case")}
-        {Lisp-Entry "service-main" #f 234 11 234 23 ("run-service" "error" "/=" "0" "=" "or" "if" "get-service-error" "err" "get-service-handle" "handle" "let" "coinitialize")}
-        {Lisp-Entry "setup-service" #f 243 29 243 42 ()}
-        {Lisp-Entry "process-service" #f 247 29 247 44 ("process-service-control" "1" "sleep" "stopped" "'stopped" "cached-state" "/=" "while")}
-        {Lisp-Entry "run-service" #f 253 11 253 22 ("process-service" "setup-service")}
-        {Lisp-Entry "start-loop" #f 263 11 263 21 ("EXIT_SUCCESS" "exit-process" "process-messages" "launch-service-thread")}
-        {Lisp-Entry "launch-service-thread" #f 269 11 269 32 ("NULL" "WM_QUIT" "taskicon-hwnd" "PostMessage" "run-service" "thread" "function" "execute:" "self" "context:" "name:" "Thread" "new" "unimplemented")}
-        {Lisp-Entry "process-messages" #f 285 11 285 27 ("DispatchMessage" "TranslateMessage" "0" "NULL" "GetMessage" "while" "MSG" "new" "msg" "let")}
-        {Lisp-Entry "process-taskbar-message" #f 292 11 292 34 ("DefWindowProc" "else" "0" "taskbar-event" "JZ_TASKICON" "ecase" "lparam" "wparam" "msg" "hwnd")}
-        {Lisp-Entry "debug-exception" #f 307 11 307 26 ("EXIT_FAILURE" "exit-process" "exception:" "file:" "dump-stack" "distribution-build?" "not" "and" "when" "Bin" "Directory" "timestamped-file" "file" "let" "get-message" "log-error-event" "accountable" "frame" "exception")}
-        {Lisp-Entry "process-alias" #f 320 11 320 24 ("nextmethod" "else" "self" ":service" "case" "name")}
-        {Lisp-Entry "taskbar-event" #f 331 18 331 31 ("else" "taskbar-context-menu" "WM_RBUTTONDOWN" "taskbar-double-click" "WM_LBUTTONDBLCLK" "0" "taskbar-mouse-down" "WM_LBUTTONDOWN" "ecase" "lparam" "wparam")}
-        {Lisp-Entry "taskbar-mouse-down" #f 339 26 339 44 ()}
-        {Lisp-Entry "taskbar-double-click" #f 343 26 343 46 ()}
-        {Lisp-Entry "taskbar-context-menu" #f 347 26 347 46 ()}
-        {Lisp-Entry "taskicon-class" #f 356 11 356 25 ()}
-        {Lisp-Entry "register-taskicon-class" #f 360 11 360 34 ("RegisterClassEx" "lpszClassName" "'lpszClassName" "lpszMenuName" "'lpszMenuName" "hbrBackground" "'hbrBackground" "hCursor" "'hCursor" "NULL" "hIcon" "'hIcon" "hInstance" "'hInstance" "cbWndExtra" "'cbWndExtra" "0" "cbClsExtra" "'cbClsExtra" "get-window-proc" "lpfnWndProc" "'lpfnWndProc" "CS_DBLCLKS" "style" "'style" "set" "WNDCLASSEX" "new" "wc" "current-instance" "instance" "taskicon-class" "class" "let")}
-        {Lisp-Entry "create-taskicon-hwnd" #f 377 11 377 31 ("current-instance" "NULL" "100" "taskicon-class" "0" "CreateWindowEx")}
-        {Lisp-Entry "add-taskicon" #f 390 11 390 23 ("NIM_ADD" "Shell_NotifyIcon" "hIcon" "'hIcon" "JZ_TASKICON" "uCallbackMessage" "'uCallbackMessage" "NIF_ICON" "NIF_MESSAGE" "bitwise-ior" "uFlags" "'uFlags" "10" "uID" "'uID" "hWnd" "'hWnd" "size-of" "cbSize" "'cbSize" "set" "LR_SHARED" "16" "IMAGE_ICON" "int-resource" "LoadImage" "icon" "service-icon" "resource" "current-instance" "instance" "NOTIFYICONDATA" "new" "record" "let*" "create-taskicon-hwnd" "taskicon-hwnd" "set!")}
-        {Lisp-Entry "remove-taskicon" #f 405 11 405 26 ("NIM_DELETE" "Shell_NotifyIcon" "10" "uID" "'uID" "taskicon-hwnd" "hWnd" "'hWnd" "size-of" "cbSize" "'cbSize" "set" "NOTIFYICONDATA" "new" "record" "let")}
-        {Lisp-Entry "track-menu" #f 418 11 418 21 ("DestroyMenu" "invoke" ":action" "Event" "apply" "evt" "get-properties" "properties" "self" "sender" "action-handler:" "getf" "action-handler" "-" "element" "let*" "/=" "when" "NULL" "0" "y" "'y" "x" "'x" "get" "TPM_RETURNCMD" "TPM_RIGHTALIGN" "bitwise-ior" "TrackPopupMenu" "taskicon-hwnd" "SetForegroundWindow" "increase!" "id:" "default?:" "separator?:" "title:" "insert-item" "others" "default?" "separator?" "title" "bind-keywords" "function" "for-each" "1" "id" "CreatePopupMenu" "menu" "let" "GetCursorPos" "POINT" "new" "point" "with" "config")}
-        {Lisp-Entry "insert-item" #f 440 11 440 22 ("MF_SEPARATOR" "InsertMenuItem" "length" "cch" "'cch" "dwTypeData" "'dwTypeData" "wID" "'wID" "0" "MFS_DEFAULT" "fState" "'fState" "MFT_STRING" "MFT_SEPARATOR" "if" "fType" "'fType" "MIIM_ID" "MIIM_STATE" "MIIM_TYPE" "bitwise-ior" "fMask" "'fMask" "size-of" "cbSize" "'cbSize" "set" "MENUITEMINFO" "new" "info" "with" "id" "id:" "default?" "default?:" "separator?" "separator?:" "title" "title:" "menu")}}}})
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "service" "platform" "windows" "Service.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.service.platform.windows.Service" #f 38 19 38 63 ("jazz")}})
 "Service-Handle"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "service" "platform" "windows" "Service-Handle.jazz"} 1236813141
-    {Lisp-Entry "jazz.library.service.Service-Handle" #f 37 9 37 44 ("jazz")
-      {Lisp-Entry "Service-Handle" #f 44 7 44 21 ("Object")
-        {Lisp-Entry "handle" #f 47 8 47 14 ()}
-        {Lisp-Entry "initialize" #f 50 11 50 21 ("destroy-mandatory" "handle" "set!" "nextmethod" "hnd")}
-        {Lisp-Entry "destroy" #f 56 11 56 18 ("nextmethod" "handle" "CloseServiceHandle")}
-        {Lisp-Entry "delete-service" #f 66 18 66 32 ("winerror" "error" "handle" "DeleteService" "not" "when")}}}})
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "service" "platform" "windows" "Service-Handle.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.service.platform.windows.Service-Handle" #f 37 19 37 70 ("jazz")}})
 "Service-Manager"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "service" "platform" "windows" "Service-Manager.jazz"} 1236813141
-    {Lisp-Entry "jazz.library.service.Service-Manager" #f 37 9 37 45 ("jazz")
-      {Lisp-Entry "Service-Manager" #f 44 7 44 22 ("Object")
-        {Lisp-Entry "handle" #f 47 8 47 14 ()}
-        {Lisp-Entry "initialize" #f 50 11 50 21 ("destroy-mandatory" "handle" "set!" "winerror" "error" "not" "if" "SC_MANAGER_ALL_ACCESS" "NULL" "OpenSCManager" "hnd" "let" "nextmethod")}
-        {Lisp-Entry "destroy" #f 59 11 59 18 ("nextmethod" "handle" "CloseServiceHandle")}
-        {Lisp-Entry "create-service" #f 69 18 69 32 ("Service-Handle" "new" "winerror" "error" "=" "if" "NULL" "SERVICE_ERROR_NORMAL" "SERVICE_DEMAND_START" "SERVICE_WIN32_OWN_PROCESS" "SERVICE_ALL_ACCESS" "either" "handle" "CreateService" "service-handle" "let" "presentation" "presentation:" "command" "name")}
-        {Lisp-Entry "open-service" #f 81 18 81 30 ("Service-Handle" "new" "winerror" "error" "not" "if" "SERVICE_ALL_ACCESS" "handle" "OpenService" "service-handle" "let" "name")}}}})
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "service" "platform" "windows" "Service-Manager.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.service.platform.windows.Service-Manager" #f 37 19 37 71 ("jazz")}})
 "_application"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "_application.jazz"} 1236813141
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "_application.jazz"} 1237033582
     {Lisp-Entry "jazz.system.application" #f 37 9 37 32 ("jazz")}})
 "_log"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "log" "_log.jazz"} 1236813141
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "log" "_log.jazz"} 1238328026
     {Lisp-Entry "jazz.system.log" #f 38 9 38 24 ("jazz")
-      {Lisp-Entry "log-event" #f 41 20 41 29 ("ReportEvent" "0" "array-set!" "1" "string" "new-array" "strings" "RegisterEventSource" "handle" "get-process" "process-event-source" "name" "let*" "log-event" "'log-event" "unimplemented" "message" "event-id" "type")}
-      {Lisp-Entry "log-error-event" #f 51 20 51 35 ("event-id" "EVENTLOG_ERROR_TYPE" "log-event" "log-error-event" "'log-error-event" "unimplemented" "rest" "message")}
-      {Lisp-Entry "log-success-event" #f 57 20 57 37 ("EVENTLOG_SUCCESS" "log-event" "log-success-event" "'log-success-event" "unimplemented" "1" "make-event-id" "event-id" "event-id:" "message")}}})
+      {Lisp-Entry "log-event" #f 45 20 45 29 ("ReportEvent" "0" "array-set!" "1" "string" "new-array" "strings" "RegisterEventSource" "handle" "get-process" "process-event-source" "name" "let*" "log-event" "'log-event" "unimplemented" "message" "event-id" "type")}
+      {Lisp-Entry "log-error-event" #f 55 20 55 35 ("event-id" "EVENTLOG_ERROR_TYPE" "log-event" "log-error-event" "'log-error-event" "unimplemented" "rest" "message")}
+      {Lisp-Entry "log-success-event" #f 61 20 61 37 ("EVENTLOG_SUCCESS" "log-event" "log-success-event" "'log-success-event" "unimplemented" "1" "make-event-id" "event-id" "event-id:" "message")}}})
 "_performance"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "performance" "_performance.jazz"} 1236813141
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "performance" "_performance.jazz"} 1244896779
     {Lisp-Entry "jazz.system.performance" #f 37 9 37 32 ("jazz")}})
 "_process"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "_process.jazz"} 1236813141
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "_process.jazz"} 1237033582
     {Lisp-Entry "jazz.system.process" #f 37 9 37 28 ("jazz")}})
 "_service"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "service" "platform" "windows" "_service.jazz"} 1236813141
-    {Lisp-Entry "jazz.library.service.Service" #f 38 9 38 37 ("jazz")}})
+ ({Lisp-File-Entry {File jazz.system "src" "jazz" "system" "service" "_service.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.service" #f 37 9 37 28 ("jazz")}})
 "_system"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "_system.jazz"} 1236813141
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "_system.jazz"} 1244896779
     {Lisp-Entry "jazz.system" #f 37 9 37 20 ("jazz")
       {Lisp-Entry "argument/setting" #f 52 20 52 36 ("get-setting" "command-argument" "either" "prop" "arg")}
       {Lisp-Entry "pathname-argument" #f 57 20 57 37 ("length" "-" "1" "subseq" "0" "element" "=" "tokenise-filename" "not" "if" "command-argument" "arg" "let" "name")}
       {Lisp-Entry "require-argument" #f 67 20 67 36 ("command-line" "error" "command-argument" "either" "require-argument" "'require-argument" "unimplemented" "key")}
       {Lisp-Entry "require-argument/setting" #f 74 20 74 44 ("command-line" "error" "argument/setting" "either" "require-argument/setting" "'require-argument/setting" "unimplemented" "prop" "arg")}
-      {Lisp-Entry "boolean-argument/setting" #f 81 20 81 44 ("not" "if" "argument/setting" "value" "let" "default" "prop" "arg")}
+      {Lisp-Entry "boolean-argument/setting" #f 81 20 81 44 ("parse-boolean" "not" "if" "argument/setting" "value" "let" "default" "prop" "arg")}
       {Lisp-Entry "integer-argument/setting" #f 88 20 88 44 ("parse-integer" "integer?" "if" "when" "argument/setting" "str/int" "let" "prop" "arg")}
       {Lisp-Entry "file-argument/setting" #f 96 20 96 41 ("make-file" "when" "argument/setting" "str" "let" "extension" "prop" "arg")}
       {Lisp-Entry "require-file-argument/setting" #f 102 20 102 49 ("require-argument/setting" "make-file" "extension" "prop" "arg")}
@@ -655,8 +584,8 @@
       {Lisp-Entry "exiting?" #f 272 12 272 20 ("make-parameter")}
       {Lisp-Entry "exiting-process?" #f 276 20 276 36 ("exiting?")}}})
 "_windows"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "performance" "platform" "windows" "_windows.jazz"} 1236813141
-    {Lisp-Entry "jazz.system.performance.platform.windows" #f 37 9 37 49 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "performance" "platform" "windows" "_windows.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.performance.platform.windows" #f 37 19 37 59 ("jazz")
       {Lisp-Entry "performance-snapshot" #f 51 20 51 40 ("user-time:" "kernel-time:" ",name" "name:" "parse-jml" "dwHighDateTime" "'dwHighDateTime" "dwLowDateTime" "'dwLowDateTime" "get" "make-long" "filetime" "function" "time" "GetProcessTimes" "user-time" "kernel-time" "exit-time" "FILETIME" "new" "creation-time" "GetCurrentProcess" "handle" "let" "nil" "name" "bind-keywords" "rest")}
       {Lisp-Entry "resources-snapshot" #f 74 20 74 38 (",undestroyed" "undestroyed:" ",handles" "handles:" ",gui-user-objects" "gui-user-objects:" ",gui-gdi-objects" "gui-gdi-objects:" ",private-bytes" "private-bytes:" ",name" "name:" "parse-jml" "gc-undestroyed-count" "0" "undestroyed" "GetProcessHandleCount" "handles" "GR_USEROBJECTS" "gui-user-objects" "GR_GDIOBJECTS" "GetGuiResources" "gui-gdi-objects" "get-private-bytes" "private-bytes" "GetCurrentProcess" "handle" "let" "name" "bind-keywords" "rest")}
       {Lisp-Entry "Private-Bytes-Query" #f 97 12 97 31 ()}
@@ -667,13 +596,15 @@
       {Lisp-Entry "get-private-bytes" #f 123 20 123 37 ("get-counter-value" "collect-data" "get-private-bytes-counter" "counter" "get-private-bytes-query" "query" "let")}
       {Lisp-Entry "i/o-snapshot" #f 135 16 135 28 ("OtherTransferCount" "'OtherTransferCount" "other-bytes:" "WriteTransferCount" "'WriteTransferCount" "write-bytes:" "ReadTransferCount" "'ReadTransferCount" "get" "read-bytes:" ",name" "name:" "JML" "parse" "GetProcessIoCounters" "IO_COUNTERS" "new" "io" "GetCurrentProcess" "handle" "let" "nil" "name" "bind-keywords" "rest")}}})
 "autoload"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "autoload.jazz"} 1236813141
-    {Lisp-Entry "jazz.system.process.autoload" #f 37 9 37 37 ("jazz")}}
-  {Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "autoload.jazz"} 1236813141
-    {Lisp-Entry "jazz.system.application.autoload" #f 37 9 37 41 ("jazz")}})
+ ({Lisp-File-Entry {File jazz.system "src" "jazz" "system" "service" "platform" "windows" "autoload.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.service.platform.windows.autoload" #f 37 19 37 64 ("jazz")}}
+  {Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "autoload.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.process.autoload" #f 37 19 37 47 ("jazz")}}
+  {Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "autoload.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.application.autoload" #f 37 19 37 51 ("jazz")}})
 "carbon"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "platform" "carbon.jazz"} 1236813141
-    {Lisp-Entry "jazz.system.platform.carbon" #f 37 9 37 36 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "platform" "carbon.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.platform.carbon" #f 37 19 37 46 ("jazz")
       {Lisp-Entry "initialize-platform" #f 48 20 48 39 ()}
       {Lisp-Entry "get-computer-name" #f 57 20 57 37 ("adjust-string" "GetComputerName" "make-string" "name" "1" "MAX_COMPUTERNAME_LENGTH" "+" "size" "let*")}
       {Lisp-Entry "get-system-user-name" #f 67 20 67 40 ("adjust-string" "GetUserName" "MAX_PATH" "make-string" "username" "let")}
@@ -696,16 +627,19 @@
       {Lisp-Entry "Windows-Version" #f 168 19 168 34 ()}
       {Lisp-Entry "get-windows-version" #f 172 20 172 39 ("OSVERSIONINFOEX-dwMinorVersion-ref" "OSVERSIONINFOEX-dwMajorVersion-ref" "Version" "new" "version-info" "info" "let" "set!" "Windows-Version" "unless" "get-windows-version" "'get-windows-version" "unimplemented")}
       {Lisp-Entry "validate-version" #f 184 20 184 36 ("format" "if" "error" "<" "and" "mandatory-version" "mandatory" "get-process" "process" "let*" "present" "register-crash-info" "when" "validate-version" "'validate-version" "unimplemented" "cleanup" "cleanup:" "register" "register:" "version" "context" "what" "title")}}})
+"service-impl"
+ ({Lisp-File-Entry {File jazz.system "src" "jazz" "system" "service" "platform" "windows" "service-impl.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.service.platform.windows.service-impl" #f 38 19 38 68 ("jazz")}})
 "stub"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "stub.jazz"} 1236813141
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "stub.jazz"} 1237033582
     {Lisp-Entry "jazz.system.process.stub" #f 37 9 37 33 ("jazz")
       {Lisp-Entry "Process" #f 43 16 43 23 ()
         {Lisp-Entry "get-name" #f 46 23 46 31 ()}
         {Lisp-Entry "get-icon" #f 47 23 47 31 ()}
         {Lisp-Entry "get-register" #f 48 23 48 35 ()}}}})
 "windows"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "platform" "windows.jazz"} 1236813141
-    {Lisp-Entry "jazz.system.platform.windows" #f 37 9 37 37 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "platform" "windows.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.platform.windows" #f 37 19 37 47 ("jazz")
       {Lisp-Entry "initialize-platform" #f 50 20 50 39 ("initialize-com")}
       {Lisp-Entry "module-path" #f 59 20 59 31 ("GetModuleFileName" "tokenise-windows")}
       {Lisp-Entry "module-pathname" #f 63 20 63 35 ("module-path" "File" "new")}
@@ -738,12 +672,12 @@
       {Lisp-Entry "Windows-Version" #f 228 19 228 34 ()}
       {Lisp-Entry "get-windows-version" #f 232 20 232 39 ("OSVERSIONINFOEX-dwMinorVersion-ref" "OSVERSIONINFOEX-dwMajorVersion-ref" "Version" "new" "version-info" "info" "let" "set!" "Windows-Version" "unless")}
       {Lisp-Entry "validate-version" #f 242 20 242 36 ("format" "if" "error" "<" "and" "mandatory-version" "mandatory" "get-process" "process" "let*" "present" "register-crash-info" "when" "validate-version" "'validate-version" "unimplemented" "cleanup" "cleanup:" "register" "register:" "version" "context" "what" "title")}}}
-  {Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "log" "platform" "windows.jazz"} 1236813141
-    {Lisp-Entry "jazz.system.log.platform.windows" #f 38 9 38 41 ("jazz")
-      {Lisp-Entry "make-event-id" #f 41 20 41 33 ("+" "FACILITY_NULL" "facility" "facility:" "SEVERITY_SUCCESS" "severity" "severity:" "code")}}})
+  {Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "log" "platform" "windows.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.log.platform.windows" #f 38 19 38 51 ("jazz")
+      {Lisp-Entry "make-event-id" #f 42 20 42 33 ("+" "FACILITY_NULL" "facility" "facility:" "SEVERITY_SUCCESS" "severity" "severity:" "code")}}})
 "x11"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "platform" "x11.jazz"} 1236813141
-    {Lisp-Entry "jazz.system.platform.x11" #f 37 9 37 33 ("jazz")
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "platform" "x11.jazz"} 1238328026
+    {Lisp-Entry "jazz.system.platform.x11" #f 37 19 37 43 ("jazz")
       {Lisp-Entry "synchronize-x11?" #f 48 12 48 28 ()}
       {Lisp-Entry "x11-debug-error-handler" #f 52 13 52 36 ("1" "exit" "20" "depth:" "lexical-environment?:" "execution-stack" "pretty-print" "newline" "XErrorEvent-error_code-ref" "XGetErrorText" "format" "display" "error" "displ")}
       {Lisp-Entry "require-x11-display" #f 59 13 59 32 ("error" "XOpenDisplay" "either")}

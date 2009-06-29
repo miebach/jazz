@@ -1,19 +1,19 @@
 "_dialect"
- ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "dialect" "_dialect.scm"} 1236813157
-    {Lisp-Entry "scheme.dialect" #f 37 9 37 23 ("core")}})
+ ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "dialect" "_dialect.scm"} 1238328028
+    {Lisp-Entry "scheme.dialect" #f 37 19 37 33 ("core")}})
 "_scheme"
- ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "_scheme.scm"} 1236813157
+ ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "_scheme.scm"} 1237033589
     {Lisp-Entry "scheme" #f 37 9 37 15 ("core")}})
 "classes"
- ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "dialect" "classes.scm"} 1236813157
-    {Lisp-Entry "scheme.dialect.classes" #f 37 8 37 30 ()
+ ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "dialect" "classes.scm"} 1238328028
+    {Lisp-Entry "scheme.dialect.classes" #f 37 18 37 40 ()
       {Lisp-Entry "jazz.Define-Declaration" #f 45 19 45 42 ("%%set-define-declaration-value" "%%get-define-declaration-value" "value" "%%get-define-declaration-signature" "signature" "jazz.allocate-define-declaration" "jazz.Object-Class" "source" "locator" "parent" "toplevel" "attributes" "compatibility" "access" "type" "name" "jazz.Declaration")}
       {Lisp-Entry "jazz.Define-Macro-Declaration" #f 55 19 55 48 ("%%set-define-macro-body" "%%get-define-macro-body" "body" "%%set-define-macro-signature" "%%get-define-macro-signature" "signature" "jazz.allocate-define-macro-declaration" "jazz.Object-Class" "source" "locator" "parent" "toplevel" "attributes" "compatibility" "access" "type" "name" "jazz.Declaration")}
       {Lisp-Entry "jazz.Scheme-Dialect" #f 65 19 65 38 ("jazz.allocate-scheme-dialect" "jazz.Object-Class" "jazz.Dialect")}
       {Lisp-Entry "jazz.Scheme-Walker" #f 74 19 74 37 ("jazz.allocate-scheme-walker" "jazz.Object-Class" "errors" "warnings" "jazz.Walker")}}})
 "dialect"
- ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "dialect" "dialect.scm"} 1237405522
-    {Lisp-Entry "scheme.dialect.dialect" #f 37 8 37 30 ("jazz.new-scheme-dialect" "scheme" "'scheme" "jazz.register-dialect" "jazz.Scheme-Walker" "jazz.Scheme-Dialect" "jazz.Define-Macro-Declaration" "jazz.Define-Declaration" "jazz.encapsulate-class")
+ ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "dialect" "dialect.scm"} 1245732655
+    {Lisp-Entry "scheme.dialect.dialect" #f 37 18 37 40 ("jazz.new-scheme-dialect" "scheme" "'scheme" "jazz.register-dialect" "jazz.Scheme-Walker" "jazz.Scheme-Dialect" "jazz.Define-Macro-Declaration" "jazz.Define-Declaration" "jazz.encapsulate-class")
       {Lisp-Entry "jazz.Define-Declaration" #f 45 27 45 50 ()}
       {Lisp-Entry "jazz.new-define-declaration" #f 48 9 48 36 ("jazz.setup-declaration" "uptodate" "'uptodate" "public" "'public" "jazz.Define-Declaration" "jazz.allocate-define-declaration" "new-declaration" "let" "signature" "parent" "type" "name")}
       {Lisp-Entry "jazz.walk-binding-validate-call" ("jazz.Define-Declaration") 55 21 55 52 ("jazz.validate-arguments" "if" "declaration" "%%get-define-declaration-signature" "signature" "let" "arguments" "operator" "source-declaration" "resume" "walker")}
@@ -52,20 +52,20 @@
       {Lisp-Entry "jazz.walk-receive" #f 418 9 418 26 ("jazz.walk-body" "jazz.walk" "lambda" "continuation-capture" "jazz.new-receive" "%%append" "new-environment" "walk-parameters" "variables" "%%cdr" "body" "%%cddr" "%%car" "expression" "jazz.source-code" "%%cadr" "%%desourcify" "parameters" "let*" "form-src" "environment" "declaration" "resume" "walker")
         {Lisp-Entry "walk-parameters" #f 419 11 419 26 ("jazz.new-variable" "jazz.enqueue" "jazz.Any" "environment" "declaration" "resume" "walker" "jazz.walk-specifier" "type" "rest" "specifier" "lambda" "%%cdr" "jazz.parse-specifier" "%%car" "expr" "jazz.queue-list" "%%null?" "if" "scan" "iter" "jazz.new-queue" "queue" "let" "parameters")}}
       {Lisp-Entry "jazz.walk-if" #f 447 9 447 21 ("unspecified" "%%null?" "begin" "'begin" "cons" "jazz.walk" "lambda" "continuation-capture" "jazz.new-if" "%%cdr" "no" "%%cddr" "%%car" "yes" "%%cadr" "test" "let" "%%desourcify" "jazz.walk-error" "3" "jazz.source-code" "length" "<" "if" "form-src" "environment" "declaration" "resume" "walker")}
-      {Lisp-Entry "jazz.walk-cond" #f 467 9 467 23 ("jazz.queue-list" "jazz.new-cond" "jazz.walk-implicit-begin" "jazz.walk" "continuation-capture" "else" "'else" "%%eq?" "if" "cons" "jazz.enqueue" "body" "%%car" "test" "clause" "lambda" "for-each" "jazz.new-queue" "expanded-clauses" "jazz.source-code" "%%cdr" "clauses" "let" "form-src" "environment" "declaration" "resume" "walker")}
-      {Lisp-Entry "jazz.walk-case" #f 484 9 484 23 ("jazz.walk-error" "jazz.walk-implicit-begin" "cons" "%%pair?" "else" "'else" "%%eq?" "or" "unspecified" "'unspecified" "%%list" "%%null?" "if" "effective-body" "%%cdr" "body" "%%car" "%%desourcify" "tries" "let*" "clause" "map" "jazz.walk" "lambda" "continuation-capture" "jazz.new-case" "%%cddr" "clauses" "jazz.source-code" "%%cadr" "target" "let" "form-src" "environment" "declaration" "resume" "walker")}
-      {Lisp-Entry "jazz.walk-and" #f 503 9 503 22 ("jazz.source-code" "%%cdr" "jazz.walk-list" "jazz.new-and" "form-src" "environment" "declaration" "resume" "walker")}
-      {Lisp-Entry "jazz.walk-or" #f 507 9 507 21 ("jazz.source-code" "%%cdr" "jazz.walk-list" "jazz.new-or" "form-src" "environment" "declaration" "resume" "walker")}
-      {Lisp-Entry "jazz.walk-begin" #f 516 9 516 24 ("jazz.walk-list" "jazz.new-begin" "jazz.source-code" "%%cdr" "body" "let" "form-src" "environment" "declaration" "resume" "walker")}
-      {Lisp-Entry "jazz.walk-implicit-begin" #f 521 9 521 33 ("jazz.walk-list" "jazz.new-begin" "unspecified" "jazz.walk" "%%null?" "if" "form-list" "form-src" "environment" "declaration" "resume" "walker")}
-      {Lisp-Entry "jazz.walk-do" #f 532 9 532 21 ("jazz.walk-body" "jazz.queue-list" "jazz.new-do" "cons" "jazz.enqueue" "%%null?" "if" "step" "jazz.walk" "init" "continuation-capture" "variable" "for-each" "jazz.new-queue" "expanded-bindings" "%%append" "augmented-environment" "jazz.new-variable" "binding-form" "lambda" "map" "new-variables" "let*" "body" "%%cdr" "result" "%%cddr" "%%car" "test" "%%cadr" "jazz.source-code" "bindings" "let" "form-src" "environment" "declaration" "resume" "walker")}
-      {Lisp-Entry "jazz.walk-named-let" #f 558 9 558 28 ("jazz.walk-body" "jazz.queue-list" "jazz.new-named-let" "jazz.new-variable" "set!" "jazz.walk" "%%cons" "jazz.enqueue" "jazz.parse-binding" "value" "variable" "receive" "continuation-capture" "binding-form" "lambda" "for-each" "jazz.new-queue" "expanded-bindings" "augmented-environment" "%%cdr" "body" "%%cddr" "%%car" "%%desourcify" "bindings" "%%cadr" "jazz.source-code" "name" "let" "form-src" "environment" "declaration" "resume" "walker")}
-      {Lisp-Entry "jazz.signature-named-let" #f 578 9 578 33 (",@body" ",bindings" ",name" "jazz.sourcify-if" "jazz.walk-named-let" "%%cdr" "%%car" "jazz.source-code" "name" "let" "body" "bindings" "form-src" "environment" "declaration" "resume" "walker")}
-      {Lisp-Entry "jazz.walk-delay" #f 593 9 593 24 ("jazz.walk" "jazz.new-delay" "jazz.source-code" "%%cadr" "expression" "let" "form-src" "environment" "declaration" "resume" "walker")}
-      {Lisp-Entry "jazz.walk-quasiquote" #f 603 9 603 29 ("jazz.new-quasiquote" "%%cdr" "%%cons" "%%cadr" "jazz.walk" "%%list" "unquote-splicing" "'unquote-splicing" "unquote" "'unquote" "%%car" "%%eq?" "or" "%%pair?" "if" "lambda" "walk" "letrec" "%%desourcify" "form" "let" "form-src" "environment" "declaration" "resume" "walker")}}})
+      {Lisp-Entry "jazz.walk-cond" #f 467 9 467 23 ("jazz.queue-list" "jazz.new-cond" "jazz.walk-implicit-begin" "jazz.walk" "continuation-capture" "else" "'else" "%%eq?" "if" "cons" "jazz.enqueue" "body" "%%car" "test" "%%desourcify" "jazz.error" "%%pair?" "%%assertion" "clause" "lambda" "for-each" "jazz.new-queue" "expanded-clauses" "jazz.source-code" "%%cdr" "clauses" "let" "form-src" "environment" "declaration" "resume" "walker")}
+      {Lisp-Entry "jazz.walk-case" #f 485 9 485 23 ("jazz.walk-error" "jazz.walk-implicit-begin" "cons" "else" "'else" "%%eq?" "or" "unspecified" "'unspecified" "%%list" "%%null?" "if" "effective-body" "%%cdr" "body" "%%car" "tries" "let*" "%%desourcify" "jazz.error" "%%pair?" "%%assertion" "clause" "map" "jazz.walk" "lambda" "continuation-capture" "jazz.new-case" "%%cddr" "clauses" "jazz.source-code" "%%cadr" "target" "let" "form-src" "environment" "declaration" "resume" "walker")}
+      {Lisp-Entry "jazz.walk-and" #f 505 9 505 22 ("jazz.source-code" "%%cdr" "jazz.walk-list" "jazz.new-and" "form-src" "environment" "declaration" "resume" "walker")}
+      {Lisp-Entry "jazz.walk-or" #f 509 9 509 21 ("jazz.source-code" "%%cdr" "jazz.walk-list" "jazz.new-or" "form-src" "environment" "declaration" "resume" "walker")}
+      {Lisp-Entry "jazz.walk-begin" #f 518 9 518 24 ("jazz.walk-list" "jazz.new-begin" "jazz.source-code" "%%cdr" "body" "let" "form-src" "environment" "declaration" "resume" "walker")}
+      {Lisp-Entry "jazz.walk-implicit-begin" #f 523 9 523 33 ("jazz.walk-list" "jazz.new-begin" "unspecified" "jazz.walk" "%%null?" "if" "form-list" "form-src" "environment" "declaration" "resume" "walker")}
+      {Lisp-Entry "jazz.walk-do" #f 534 9 534 21 ("jazz.walk-body" "jazz.queue-list" "jazz.new-do" "cons" "jazz.enqueue" "%%null?" "if" "step" "jazz.walk" "init" "continuation-capture" "variable" "for-each" "jazz.new-queue" "expanded-bindings" "%%append" "augmented-environment" "jazz.new-variable" "binding-form" "lambda" "map" "new-variables" "let*" "body" "%%cdr" "result" "%%cddr" "%%car" "test" "%%cadr" "jazz.source-code" "bindings" "let" "form-src" "environment" "declaration" "resume" "walker")}
+      {Lisp-Entry "jazz.walk-named-let" #f 560 9 560 28 ("jazz.walk-body" "jazz.queue-list" "jazz.new-named-let" "jazz.new-variable" "set!" "jazz.walk" "%%cons" "jazz.enqueue" "jazz.parse-binding" "value" "variable" "receive" "continuation-capture" "binding-form" "lambda" "for-each" "jazz.new-queue" "expanded-bindings" "augmented-environment" "%%cdr" "body" "%%cddr" "%%car" "%%desourcify" "bindings" "%%cadr" "jazz.source-code" "name" "let" "form-src" "environment" "declaration" "resume" "walker")}
+      {Lisp-Entry "jazz.signature-named-let" #f 580 9 580 33 (",@body" ",bindings" ",name" "jazz.sourcify-if" "jazz.walk-named-let" "%%cdr" "%%car" "jazz.source-code" "name" "let" "body" "bindings" "form-src" "environment" "declaration" "resume" "walker")}
+      {Lisp-Entry "jazz.walk-delay" #f 595 9 595 24 ("jazz.walk" "jazz.new-delay" "jazz.source-code" "%%cadr" "expression" "let" "form-src" "environment" "declaration" "resume" "walker")}
+      {Lisp-Entry "jazz.walk-quasiquote" #f 605 9 605 29 ("jazz.new-quasiquote" "%%cdr" "%%cons" "%%cadr" "jazz.walk" "%%list" "unquote-splicing" "'unquote-splicing" "unquote" "'unquote" "%%car" "%%eq?" "or" "%%pair?" "if" "lambda" "walk" "letrec" "%%desourcify" "form" "let" "form-src" "environment" "declaration" "resume" "walker")}}})
 "kernel"
- ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "dialect" "kernel.scm"} 1236813157
-    {Lisp-Entry "scheme.dialect.kernel" #f 37 9 37 30 ("core")
+ ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "dialect" "kernel.scm"} 1238328028
+    {Lisp-Entry "scheme.dialect.kernel" #f 37 19 37 40 ("core")
       {Lisp-Entry "eq?" #f 55 8 55 11 ()}
       {Lisp-Entry "eqv?" #f 56 8 56 12 ()}
       {Lisp-Entry "equal?" #f 57 8 57 14 ()}

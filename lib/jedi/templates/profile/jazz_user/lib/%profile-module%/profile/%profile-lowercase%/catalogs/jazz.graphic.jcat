@@ -1,12 +1,12 @@
 "Bitmap"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "windows" "Bitmap.jazz"} 1238328024
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "windows" "Bitmap.jazz"} 1246937083
     {Lisp-Entry "jazz.graphic.platform.windows.Bitmap" #f 37 19 37 55 ("jazz")
       {Lisp-Entry "Bitmap" #f 46 7 46 13 ("Object")
         {Lisp-Entry "handle" #f 49 8 49 14 ()}
         {Lisp-Entry "initialize" #f 52 11 52 21 ("destroy-mandatory" "get-hdc" "CreateCompatibleBitmap" "handle~self" "set!" "not" "if" "nextmethod" "height" "height:" "width" "width:" "surface" "surface:" "handle" "handle:")}
         {Lisp-Entry "destroy" #f 63 11 63 18 ("nextmethod" "handle" "DeleteObject")}
         {Lisp-Entry "get-handle" #f 68 11 68 21 ("handle")}
-        {Lisp-Entry "get-size" #f 72 18 72 26 ("BITMAP-bmHeight-ref" "BITMAP-bmWidth-ref" "Dimension" "new" "size-of-BITMAP" "handle" "GetObject" "BITMAP-make" "info" "let")}}}})
+        {Lisp-Entry "get-size" #f 72 18 72 26 ("BITMAP-bmHeight-ref" "BITMAP-bmWidth-ref" "Dimension" "new" "BITMAP-sizeof" "handle" "GetObject" "BITMAP-make" "info" "let")}}}})
 "Client-Surface"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "Client-Surface.jazz"} 1238328024
     {Lisp-Entry "jazz.graphic.Client-Surface" #f 38 19 38 46 ("jazz")
@@ -284,15 +284,15 @@
       {Lisp-Entry "cairo-add-font" #f 54 13 54 27 ("get-cairo-font" "foreign-address" "cairo-font-table" "table-set!" "ft")}
       {Lisp-Entry "cairo-get-font" #f 58 13 58 27 ("foreign-address" "cairo-font-table" "table-ref" "ft")}}})
 "_graphic"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "_graphic.jazz"} 1238328024
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "_graphic.jazz"} 1246937083
     {Lisp-Entry "jazz.graphic" #f 37 9 37 21 ("jazz")
       {Lisp-Entry "registered-object" #f 49 13 49 30 ("table-set!" "object" "procedure?" "if" "table-ref" "procedure/object" "let" "name" "table")}
       {Lisp-Entry "Colors" #f 63 12 63 18 ("eq?" "test:" "make-table")}
-      {Lisp-Entry "register-color" #f 67 13 67 27 ("Colors" "table-set!" "color" "name")}
-      {Lisp-Entry "registered-color" #f 71 13 71 29 ("set-alpha" "registered-color" "copy" "if" "error" "Colors" "registered-object" "either" "color" "let" "jazz.graphic.literals.colors" "'jazz.graphic.literals.colors" "load-module" "alpha" "name")}
+      {Lisp-Entry "register-color" #f 67 20 67 34 ("Colors" "table-set!" "color" "name")}
+      {Lisp-Entry "registered-color" #f 71 20 71 36 ("set-alpha" "registered-color" "copy" "if" "error" "Colors" "registered-object" "either" "color" "let" "jazz.graphic.literals.colors" "'jazz.graphic.literals.colors" "load-module" "alpha" "name")}
       {Lisp-Entry "Fonts" #f 87 12 87 17 ("eq?" "test:" "make-table")}
-      {Lisp-Entry "register-font" #f 91 13 91 26 ("Fonts" "table-set!" "font" "name")}
-      {Lisp-Entry "registered-font" #f 95 13 95 28 ("error" "Fonts" "registered-object" "either" "jazz.graphic.literals.fonts" "'jazz.graphic.literals.fonts" "load-module" "name")}}})
+      {Lisp-Entry "register-font" #f 91 20 91 33 ("Fonts" "table-set!" "font" "name")}
+      {Lisp-Entry "registered-font" #f 95 20 95 35 ("error" "Fonts" "registered-object" "either" "jazz.graphic.literals.fonts" "'jazz.graphic.literals.fonts" "load-module" "name")}}})
 "autoload"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "autoload.jazz"} 1238328024
     {Lisp-Entry "jazz.graphic.autoload" #f 37 19 37 40 ("jazz")}})
@@ -300,24 +300,24 @@
  ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "literals" "colors.jazz"} 1237033580
     {Lisp-Entry "jazz.graphic.literals.colors" #f 37 9 37 37 ("Debug" "'Debug" "51" "Slide-Bullet" "'Slide-Bullet" "Slide-Title" "'Slide-Title" "Hyperlink" "'Hyperlink" "Unfocused-Selected-Text" "'Unfocused-Selected-Text" "Focused-Selected-Text" "'Focused-Selected-Text" "194" "222" "Unfocused-Selection" "'Unfocused-Selection" "49" "Focused-Selection" "'Focused-Selection" "207" "188" "167" "Uneditable-Border" "'Uneditable-Border" "185" "157" "127" "Entry-Border" "'Entry-Border" "Outline-Border" "'Outline-Border" "191" "209" "208" "Group-Border" "'Group-Border" "240" "248" "249" "Light-Background" "'Light-Background" "226" "239" "241" "Draw-Edge-Light" "'Draw-Edge-Light" "Draw-Edge-Medium" "'Draw-Edge-Medium" "100" "111" "113" "Draw-Edge-Dark" "'Draw-Edge-Dark" "227" "84" "Active-Caption" "'Active-Caption" "225" "Tooltip" "'Tooltip" "168" "172" "Dark" "'Dark" "216" "233" "Medium" "'Medium" "Light" "'Light" "161" "Dark-Purple" "'Dark-Purple" "Purple" "'Purple" "215" "Light-Purple" "'Light-Purple" "Dark-Blue" "'Dark-Blue" "Blue" "'Blue" "Light-Blue" "'Light-Blue" "31" "128" "18" "Dark-Green" "'Dark-Green" "Green" "'Green" "122" "254" "112" "Light-Green" "'Light-Green" "55" "197" "200" "Dark-Yellow" "'Dark-Yellow" "Yellow" "'Yellow" "153" "Light-Yellow" "'Light-Yellow" "193" "Soft-Yellow" "'Soft-Yellow" "106" "213" "Dark-Orange" "'Dark-Orange" "91" "121" "Ochre" "'Ochre" "140" "Orange" "'Orange" "102" "204" "Light-Orange" "'Light-Orange" "179" "Dark-Red" "'Dark-Red" "Red" "'Red" "171" "Light-Red" "'Light-Red" "90" "Text-Gray" "'Text-Gray" "132" "Dark-Gray" "'Dark-Gray" "218" "Gray" "'Gray" "236" "Light-Gray" "'Light-Gray" "255" "White" "'White" "blue:" "green:" "0" "red:" "name:" "Color" "new" "function" "Black" "'Black" "register-color" "jazz")}})
 "fonts"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "literals" "fonts.jazz"} 1237033580
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "literals" "fonts.jazz"} 1246480252
     {Lisp-Entry "jazz.graphic.literals.fonts" #f 37 9 37 36 ("24" "36" "11.5" "vera-mono" "'vera-mono" "vera-serif" "'vera-serif" "10.5" "vera-sans" "'vera-sans" "Doc-Heading3" "'Doc-Heading3" "Doc-Heading2" "'Doc-Heading2" "14" "Doc-Heading1" "'Doc-Heading1" "Doc-Heading0" "'Doc-Heading0" "11" "Heading5" "'Heading5" "Heading4" "'Heading4" "13" "Heading3" "'Heading3" "16" "Heading2" "'Heading2" "18" "Heading1" "'Heading1" "28" "Heading0" "'Heading0" "9" "Password" "'Password" "Hyperlink-Small" "'Hyperlink-Small" "underline?:" "Hyperlink" "'Hyperlink" "Code-Bold" "'Code-Bold" "monospace?:" "10" "Code" "'Code" "Text" "'Text" "italic?:" "12" "Text-Italic" "'Text-Italic" "Caption" "'Caption" "bold?:" "Label-Bold" "'Label-Bold" "8" "point-size:" "font-name:" "name:" "Font" "new" "function" "Label" "'Label" "register-font" "jazz")}})
 "freetype"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "font" "platform" "freetype.jazz"} 1238328024
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "font" "platform" "freetype.jazz"} 1246937083
     {Lisp-Entry "jazz.graphic.font.platform.freetype" #f 37 19 37 54 ("droid-serif" "'droid-serif" "droid-mono" "'droid-mono" "droid-sans" "'droid-sans" "vera-serif" "'vera-serif" "vera-mono" "'vera-mono" "vera-sans" "'vera-sans" "freetype-font-table" "table-set!" "jazz")
       {Lisp-Entry "freetype-font-table" #f 49 12 49 31 ("make-table")}
       {Lisp-Entry "get-freetype-font" #f 53 13 53 30 ("error" "freetype-font-table" "table-ref" "either" "name")}
       {Lisp-Entry "set-freetype-font" #f 57 13 57 30 ("freetype-font-table" "table-set!" "paths" "name")}
-      {Lisp-Entry "create-font-handle" #f 74 13 74 31 ("error" "kernel-source" "string-append" "ft-library" "FT_New_Face" "/=" "when" "make-FT_Face" "face" "let" "list-ref" "path" "0" "else" "1" "2" "3" "and" "cond" "index" "get-freetype-font" "paths" "let*" "underline?" "underline?:" "italic?" "italic?:" "bold?" "bold?:" "point-size" "point-size:" "font-name" "font-name:")}
-      {Lisp-Entry "create-cairo-font-handle" #f 96 13 96 37 ("0" "cairo_ft_font_face_create_for_ft_face" "handle")}
-      {Lisp-Entry "destroy-font-handle" #f 100 13 100 32 ("free-FT_Face" "handle")}
-      {Lisp-Entry "destroy-cairo-font-handle" #f 104 13 104 38 ("cairo_font_face_destroy" "handle")}}})
+      {Lisp-Entry "create-font-handle" #f 74 20 74 38 ("error" "kernel-source" "string-append" "ft-library" "FT_New_Face" "/=" "when" "make-FT_Face" "face" "let" "list-ref" "path" "0" "else" "1" "2" "3" "and" "cond" "index" "get-freetype-font" "paths" "let*" "underline?" "underline?:" "italic?" "italic?:" "bold?" "bold?:" "point-size" "point-size:" "font-name" "font-name:")}
+      {Lisp-Entry "create-cairo-font-handle" #f 96 20 96 44 ("0" "cairo_ft_font_face_create_for_ft_face" "handle")}
+      {Lisp-Entry "destroy-font-handle" #f 100 20 100 39 ("free-FT_Face" "handle")}
+      {Lisp-Entry "destroy-cairo-font-handle" #f 104 20 104 45 ("cairo_font_face_destroy" "handle")}}})
 "logfont"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "font" "platform" "logfont.jazz"} 1238328024
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "font" "platform" "logfont.jazz"} 1246937083
     {Lisp-Entry "jazz.graphic.font.platform.logfont" #f 37 19 37 53 ("jazz")
-      {Lisp-Entry "create-font-handle" #f 44 13 44 31 ("DEFAULT_PITCH" "DEFAULT_QUALITY" "CLIP_DEFAULT_PRECIS" "OUT_DEFAULT_PRECIS" "ANSI_CHARSET" "1" "FW_NORMAL" "FW_BOLD" "if" "0" "calculate-height" "fxround" "CreateFont" "monospace?" "monospace?:" "underline?" "underline?:" "italic?" "italic?:" "bold?" "bold?:" "point-size" "point-size:" "font-name" "font-name:")}
-      {Lisp-Entry "calculate-height" #f 68 13 68 29 ("72" "96" "*" "fxround/" "point-size")}
-      {Lisp-Entry "create-cairo-font-handle" #f 72 13 72 37 ("LOGFONTW-free" "cairo_win32_font_face_create_for_logfontw" "prog1" "get-logfont" "logfont" "let" "handle")}
-      {Lisp-Entry "get-logfont" #f 78 13 78 24 ("LOGFONTW*->PVOID" "size-of-LOGFONTW" "GetObject" "LOGFONTW-make" "info" "let" "handle")}
-      {Lisp-Entry "destroy-font-handle" #f 84 13 84 32 ("DeleteObject" "handle")}
-      {Lisp-Entry "destroy-cairo-font-handle" #f 88 13 88 38 ("cairo_font_face_destroy" "handle")}}})
+      {Lisp-Entry "create-font-handle" #f 44 20 44 38 ("DEFAULT_PITCH" "DEFAULT_QUALITY" "CLIP_DEFAULT_PRECIS" "OUT_DEFAULT_PRECIS" "ANSI_CHARSET" "1" "FW_NORMAL" "FW_BOLD" "if" "0" "calculate-height" "fxround" "CreateFont" "monospace?" "monospace?:" "underline?" "underline?:" "italic?" "italic?:" "bold?" "bold?:" "point-size" "point-size:" "font-name" "font-name:")}
+      {Lisp-Entry "calculate-height" #f 68 20 68 36 ("72" "96" "*" "fxround/" "point-size")}
+      {Lisp-Entry "create-cairo-font-handle" #f 72 20 72 44 ("LOGFONTW-free" "cairo_win32_font_face_create_for_logfontw" "prog1" "get-logfont" "logfont" "let" "handle")}
+      {Lisp-Entry "get-logfont" #f 78 20 78 31 ("LOGFONTW*->PVOID" "LOGFONTW-sizeof" "GetObject" "LOGFONTW-make" "info" "let" "handle")}
+      {Lisp-Entry "destroy-font-handle" #f 84 20 84 39 ("DeleteObject" "handle")}
+      {Lisp-Entry "destroy-cairo-font-handle" #f 88 20 88 45 ("cairo_font_face_destroy" "handle")}}})

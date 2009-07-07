@@ -1,5 +1,5 @@
 "Application"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "Application.jazz"} 1245777538
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "Application.jazz"} 1246975966
     {Lisp-Entry "jazz.system.application.Application" #f 37 19 37 54 ("jazz")
       {Lisp-Entry "Application" #f 72 7 72 18 ("Save-Environment-Listener" "Event-Consumer" "History-Provider" "Context-Provider" "Process")
         {Lisp-Entry "toplevel" #f 75 8 75 16 ()}
@@ -377,13 +377,6 @@
     {Lisp-Entry "jazz.system.process.Exit-Listener" #f 37 19 37 52 ("jazz")
       {Lisp-Entry "Exit-Listener" #f 46 11 46 24 ("Listener")
         {Lisp-Entry "prepare-exit" #f 49 35 49 47 ()}}}})
-"Exit-Signal"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "Exit-Signal.jazz"} 1238328026
-    {Lisp-Entry "jazz.system.process.Exit-Signal" #f 37 19 37 50 ("jazz")
-      {Lisp-Entry "Exit-Signal" #f 44 7 44 18 ("Signal")
-        {Lisp-Entry "status" #f 47 8 47 14 ()}
-        {Lisp-Entry "initialize" #f 50 11 50 21 ("status~self" "set!" "nextmethod" "0" "status" "status:")}
-        {Lisp-Entry "get-status" #f 60 18 60 28 ("status")}}}})
 "Performance-Query"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "performance" "platform" "windows" "Performance-Query.jazz"} 1238328026
     {Lisp-Entry "jazz.system.performance.platform.windows.Performance-Query" #f 37 19 37 77 ("jazz")
@@ -398,100 +391,103 @@
         {Lisp-Entry "browse-counter-path" #f 91 11 91 30 ("BrowseCounterPath")}
         {Lisp-Entry "validate-status" #f 95 11 95 26 ("error" "0" "/=" "when" "status")}}}})
 "Process"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "Process.jazz"} 1245732655
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "Process.jazz"} 1246650283
     {Lisp-Entry "jazz.system.process.Process" #f 37 19 37 46 ("jazz")
       {Lisp-Entry "Process" #f 57 7 57 14 ("Object")
         {Lisp-Entry "settings" #f 60 8 60 16 ()}
         {Lisp-Entry "preferences-root" #f 61 8 61 24 ()}
         {Lisp-Entry "preferences-designer" #f 62 8 62 28 ()}
         {Lisp-Entry "context" #f 63 8 63 15 ()}
-        {Lisp-Entry "get-settings" #f 71 18 71 30 ("settings")}
-        {Lisp-Entry "get-preferences-root" #f 75 18 75 38 ("preferences-root")}
-        {Lisp-Entry "get-preferences-designer" #f 79 18 79 42 ("preferences-designer")}
-        {Lisp-Entry "process-name" #f 83 26 83 38 ()}
-        {Lisp-Entry "process-owner" #f 87 26 87 39 ()}
-        {Lisp-Entry "process-copyright" #f 91 26 91 43 ()}
-        {Lisp-Entry "process-licensee" #f 95 26 95 42 ()}
-        {Lisp-Entry "process-icon" #f 99 26 99 38 ()}
-        {Lisp-Entry "process-version" #f 103 26 103 41 ("0" "1" "Version")}
-        {Lisp-Entry "process-email" #f 107 26 107 39 ()}
-        {Lisp-Entry "process-actions" #f 111 26 111 41 ()}
-        {Lisp-Entry "process-event-source" #f 115 26 115 46 ("process-name" "EventSource" "'EventSource" "argument/setting" "either")}
-        {Lisp-Entry "boot-environment" #f 125 26 125 42 ("run-loop" "format" "system-message" "get-load-stack" "null?" "not" "run-loop?" "when" "activate-process" "conclude-phase" "finish-phase" "finalize-phase" "start-phase" "prepare-phase" "register-versions" "initialize-settings" "initialize-aliases" "install-literals" "update-debuggee" "signal" "Cancel-Signal" "catch")}
-        {Lisp-Entry "update-debuggee" #f 147 11 147 26 ("update-debuggee-process" "process-version" "present" "current-process-version-set!" "process-icon" "current-process-icon-set!" "process-name" "current-process-title-set!" "current-process-title" "unless")}
-        {Lisp-Entry "install-literals" #f 155 11 155 27 ("install-jazz-literals")}
-        {Lisp-Entry "initialize-settings" #f 159 29 159 48 ()}
-        {Lisp-Entry "register-versions" #f 163 11 163 28 ("get-windows-version" "present" "windows-version:" "register-crash-info")}
-        {Lisp-Entry "prepare-phase" #f 168 11 168 24 ("prepare-process" "prepare-workbench" "prepare-preferences-repositories" "prepare-preferences-aliases" "prepare-preferences" "prepare-environment" "prepare-aliases" "prepare-bindings")}
-        {Lisp-Entry "prepare-environment" #f 179 29 179 48 ("self" "set-process")}
-        {Lisp-Entry "prepare-preferences" #f 183 11 183 30 ("setup-preferences")}
-        {Lisp-Entry "prepare-process" #f 187 26 187 41 ("setup-crash-handler")}
-        {Lisp-Entry "start-phase" #f 191 11 191 22 ("start-process" "start-environment")}
-        {Lisp-Entry "start-environment" #f 196 29 196 46 ()}
-        {Lisp-Entry "start-process" #f 200 26 200 39 ()}
-        {Lisp-Entry "finalize-phase" #f 204 11 204 25 ("setup-profile" "finalize-process" "start-servers" "finalize-environment")}
-        {Lisp-Entry "finalize-environment" #f 211 29 211 49 ()}
-        {Lisp-Entry "finalize-process" #f 215 26 215 42 ()}
-        {Lisp-Entry "setup-profile" #f 219 26 219 39 ()}
-        {Lisp-Entry "finish-phase" #f 223 11 223 23 ("finish-process" "finish-environment")}
-        {Lisp-Entry "finish-environment" #f 228 29 228 47 ("register-base-objects")}
-        {Lisp-Entry "finish-process" #f 232 26 232 40 ()}
-        {Lisp-Entry "conclude-phase" #f 236 11 236 25 ("conclude-process" "conclude-environment")}
-        {Lisp-Entry "conclude-environment" #f 241 29 241 49 ()}
-        {Lisp-Entry "conclude-process" #f 245 26 245 42 ("get-console-port" "current-thread" "start-repl-thread" "select-console" "controller-debugger" "when")}
-        {Lisp-Entry "terminate-process" #f 256 29 256 46 ("terminate-preferences-aliases")}
-        {Lisp-Entry "preserve-environment" #f 265 26 265 46 ()}
-        {Lisp-Entry "close-environment" #f 269 26 269 43 ("stop-servers" "detach-from-controller" "close-preferences")}
-        {Lisp-Entry "close-preferences" #f 275 11 275 28 ("save" "get-form" "get-origin" "file?" "persist-preferences?" "preferences-designer" "and" "when")}
-        {Lisp-Entry "get-toplevel" #f 285 26 285 38 ()}
-        {Lisp-Entry "exit-process" #f 294 18 294 30 ("exit" "invoke-restart" "if" "exit-process" "'exit-process" "find-restart" "restart" "let" "set-process" "terminate-process" "close-environment" "preserve-environment" "exiting?" "parameterize" "0" "status")}
-        {Lisp-Entry "process-alias" #f 310 26 310 39 ("else" "self" ":process" "case" "name")}
-        {Lisp-Entry "get-context" #f 321 18 321 29 ("context")}
-        {Lisp-Entry "set-context" #f 325 18 325 29 ("context-update" "context" "set!" "ctx")}
-        {Lisp-Entry "context-update" #f 335 29 335 43 ("modify-toolbox" "modify-connections" "modify-preferences")}
-        {Lisp-Entry "modify-preferences" #f 341 11 341 29 ("set-active-branch" "context" "find-component" "branch" "get-preferences-designer" "designer" "get-preferences" "pref" "let*")}
-        {Lisp-Entry "modify-connections" #f 348 11 348 29 ("singleton-docked" "get-guest" "modify-editor" "SQL-Connections-Manager" "'SQL-Connections-Manager" "in-manifest?" "when")}
-        {Lisp-Entry "modify-toolbox" #f 354 11 354 25 ("singleton-docked" "get-guest" "modify-editor" "Toolbox-Manager" "'Toolbox-Manager" "in-manifest?" "when")}
-        {Lisp-Entry "modify-editor" #f 360 11 360 24 ("set-client" "set-active-branch" "context" "find-component" "branch" "get-client" "client" "let*" "editor")}
-        {Lisp-Entry "install-context" #f 368 18 368 33 ("set-active-branch" "find-child" "branch" "let" "context" "when" "component")}
-        {Lisp-Entry "persist-preferences?" #f 380 29 380 49 ()}
-        {Lisp-Entry "preferences-file" #f 384 29 384 45 ("Profile" "File")}
-        {Lisp-Entry "setup-preferences" #f 388 29 388 46 ("setup-preferences/designer")}
-        {Lisp-Entry "setup-preferences/designer" #f 392 11 392 37 ("set-current-directory" "exists?" "and" "when" "get-current-directory" "directory" "let" "preferences-root" "install-context" "preferences-context" "context" "set!" "load-preferences" "set-preferences/designer")}
-        {Lisp-Entry "set-preferences/designer" #f 401 11 401 35 ("reference:" "get-form" "form:" "Designer" "new" "preferences-designer" "preferences-root" "set!" "preferences")}
-        {Lisp-Entry "load-preferences" #f 406 29 406 45 ("default-preferences" "read-from-file" "instantiate" "exists?" "Profile" "'Profile" "find-alias" "and" "if" "preferences-file" "file" "persist-preferences?" "persist?" "let")}
-        {Lisp-Entry "default-preferences" #f 414 29 414 48 ("Process-Preferences" "new")}
-        {Lisp-Entry "preferences-context" #f 418 11 418 30 ("else" "get-active-context" "preferences-root" "string->symbol" "cond" "command-argument" "arg" "let")}
-        {Lisp-Entry "apply-preferences" #f 425 18 425 35 ("apply-preferences" "client" "preferences")}
-        {Lisp-Entry "save-preferences" #f 429 18 429 34 ("get-preferences-designer" "save-preferences" "client" "preferences")}
-        {Lisp-Entry "set-preferences-property" #f 433 18 433 42 ("get-preferences-designer" "set-property" "value" "property" "preferences")}
-        {Lisp-Entry "get-preferences-rights" #f 437 26 437 48 ()}
-        {Lisp-Entry "persist-usernames?" #f 446 26 446 44 ()}
-        {Lisp-Entry "persist-passwords?" #f 450 26 450 44 ()}
-        {Lisp-Entry "mandatory-version" #f 459 26 459 43 ("what")}
-        {Lisp-Entry "signal-readyness" #f 469 21 469 37 ("SetEvent" "when" "EVENT_MODIFY_STATE" "OpenEvent" "handle" "let" "name")}
-        {Lisp-Entry "run-loop" #f 480 26 480 34 ("start-loop" "with-current-loop" "with-repl-context" "cont" "function" "continuation-capture")}
-        {Lisp-Entry "resume-loop" #f 490 18 490 29 ("invoke-restart" "resume-loop-action" "when" "resume-loop" "'resume-loop" "find-restart" "restart" "let")}
-        {Lisp-Entry "resume-loop-action" #f 497 26 497 44 ()}
-        {Lisp-Entry "start-loop" #f 501 26 501 36 ("relinquish-process" "loop" "let")}
-        {Lisp-Entry "user-feedback" #f 512 29 512 42 ("message")}
-        {Lisp-Entry "system-title" #f 521 26 521 38 ()}
-        {Lisp-Entry "prepare-bindings" #f 530 29 530 45 ()}
-        {Lisp-Entry "prepare-aliases" #f 539 29 539 44 ()}
-        {Lisp-Entry "prepare-preferences-aliases" #f 543 26 543 53 ("get-list" "register-alias" "get-directory" "directory" "get-alias" "alias" "function" "for-each" "get-children" "when" "error?:" "aliases" "'aliases" "get-preferences" "pref" "let")}
-        {Lisp-Entry "terminate-preferences-aliases" #f 555 26 555 55 ("unregister-alias" "get-alias" "alias" "function" "for-each" "get-children" "when" "error?:" "aliases" "'aliases" "get-preferences" "pref" "let")}
-        {Lisp-Entry "resolve-alias" #f 565 26 565 39 ("name")}
-        {Lisp-Entry "prepare-preferences-repositories" #f 574 26 574 58 ("parse" "install-repository" "dir" "function" "for-each" "get-repositories" "when" "error?:" "repositories" "'repositories" "get-preferences" "pref" "let")}
-        {Lisp-Entry "prepare-workbench" #f 588 26 588 43 ()}
-        {Lisp-Entry "start-servers" #f 597 29 597 42 ("start-remote-listener" "when" "command-host/service" "service" "host" "receive")}
-        {Lisp-Entry "stop-servers" #f 604 29 604 41 ("stop-remote-listener")}
-        {Lisp-Entry "get-name" #f 613 18 613 26 ("process-name")}
-        {Lisp-Entry "get-icon" #f 617 18 617 26 ("process-icon")}
-        {Lisp-Entry "get-register" #f 621 18 621 30 ("local-register")}
-        {Lisp-Entry "register-base-objects" #f 630 29 630 50 ()}
-        {Lisp-Entry "get-local-debugger" #f 639 26 639 44 ()}
-        {Lisp-Entry "initial-console-context" #f 648 26 648 49 (":process")}
-        {Lisp-Entry "process-debuggee-loop" #f 652 29 652 50 ("debuggee-loop")}}}})
+        {Lisp-Entry "exit-continuation" #f 64 8 64 25 ()}
+        {Lisp-Entry "get-settings" #f 72 18 72 30 ("settings")}
+        {Lisp-Entry "get-preferences-root" #f 76 18 76 38 ("preferences-root")}
+        {Lisp-Entry "get-preferences-designer" #f 80 18 80 42 ("preferences-designer")}
+        {Lisp-Entry "process-name" #f 84 26 84 38 ()}
+        {Lisp-Entry "process-owner" #f 88 26 88 39 ()}
+        {Lisp-Entry "process-copyright" #f 92 26 92 43 ()}
+        {Lisp-Entry "process-licensee" #f 96 26 96 42 ()}
+        {Lisp-Entry "process-icon" #f 100 26 100 38 ()}
+        {Lisp-Entry "process-version" #f 104 26 104 41 ("0" "1" "Version")}
+        {Lisp-Entry "process-email" #f 108 26 108 39 ()}
+        {Lisp-Entry "process-actions" #f 112 26 112 41 ()}
+        {Lisp-Entry "process-event-source" #f 116 26 116 46 ("process-name" "EventSource" "'EventSource" "argument/setting" "either")}
+        {Lisp-Entry "boot-environment" #f 126 26 126 42 ("run-loop" "format" "system-message" "get-load-stack" "null?" "not" "run-loop?" "when" "activate-process" "conclude-phase" "finish-phase" "finalize-phase" "start-phase" "prepare-phase" "register-versions" "initialize-settings" "initialize-aliases" "install-literals" "update-debuggee" "signal" "Cancel-Signal" "catch")}
+        {Lisp-Entry "update-debuggee" #f 148 11 148 26 ("update-debuggee-process" "process-version" "present" "current-process-version-set!" "process-icon" "current-process-icon-set!" "process-name" "current-process-title-set!" "current-process-title" "unless")}
+        {Lisp-Entry "install-literals" #f 156 11 156 27 ("install-jazz-literals")}
+        {Lisp-Entry "initialize-settings" #f 160 29 160 48 ()}
+        {Lisp-Entry "register-versions" #f 164 11 164 28 ("get-windows-version" "present" "windows-version:" "register-crash-info")}
+        {Lisp-Entry "prepare-phase" #f 169 11 169 24 ("prepare-process" "prepare-workbench" "prepare-preferences-repositories" "prepare-preferences-aliases" "prepare-preferences" "prepare-environment" "prepare-aliases" "prepare-bindings")}
+        {Lisp-Entry "prepare-environment" #f 180 29 180 48 ("self" "set-process")}
+        {Lisp-Entry "prepare-preferences" #f 184 11 184 30 ("setup-preferences")}
+        {Lisp-Entry "prepare-process" #f 188 26 188 41 ("setup-crash-handler")}
+        {Lisp-Entry "start-phase" #f 192 11 192 22 ("start-process" "start-environment")}
+        {Lisp-Entry "start-environment" #f 197 29 197 46 ()}
+        {Lisp-Entry "start-process" #f 201 26 201 39 ()}
+        {Lisp-Entry "finalize-phase" #f 205 11 205 25 ("setup-profile" "finalize-process" "start-servers" "finalize-environment")}
+        {Lisp-Entry "finalize-environment" #f 212 29 212 49 ()}
+        {Lisp-Entry "finalize-process" #f 216 26 216 42 ()}
+        {Lisp-Entry "setup-profile" #f 220 26 220 39 ()}
+        {Lisp-Entry "finish-phase" #f 224 11 224 23 ("finish-process" "finish-environment")}
+        {Lisp-Entry "finish-environment" #f 229 29 229 47 ("register-base-objects")}
+        {Lisp-Entry "finish-process" #f 233 26 233 40 ()}
+        {Lisp-Entry "conclude-phase" #f 237 11 237 25 ("conclude-process" "conclude-environment")}
+        {Lisp-Entry "conclude-environment" #f 242 29 242 49 ()}
+        {Lisp-Entry "conclude-process" #f 246 26 246 42 ("get-console-port" "current-thread" "start-repl-thread" "select-console" "controller-debugger" "when")}
+        {Lisp-Entry "terminate-process" #f 257 29 257 46 ("terminate-preferences-aliases")}
+        {Lisp-Entry "preserve-environment" #f 266 26 266 46 ()}
+        {Lisp-Entry "close-environment" #f 270 26 270 43 ("stop-servers" "detach-from-controller" "reloading-process?" "unless" "close-preferences")}
+        {Lisp-Entry "close-preferences" #f 277 11 277 28 ("save" "get-form" "get-origin" "file?" "persist-preferences?" "preferences-designer" "and" "when")}
+        {Lisp-Entry "get-toplevel" #f 287 26 287 38 ()}
+        {Lisp-Entry "exit-process" #f 296 18 296 30 ("exit" "continuation-return" "exit-continuation" "if" "unload-process" "0" "status")}
+        {Lisp-Entry "reload-process" #f 303 26 303 40 ("boot-environment" "exit-continuation" "continuation-graft" "unload-process" "*reloading-process?*" "parameterize" "function" "reload-process" "'reload-process" "primordial-thread" "thread-execute")}
+        {Lisp-Entry "unload-process" #f 311 11 311 25 ("set-process" "terminate-process" "close-environment" "preserve-environment" "*exiting-process?*" "parameterize")}
+        {Lisp-Entry "process-alias" #f 324 26 324 39 ("else" "self" ":process" "case" "name")}
+        {Lisp-Entry "get-context" #f 335 18 335 29 ("context")}
+        {Lisp-Entry "set-context" #f 339 18 339 29 ("context-update" "context" "set!" "ctx")}
+        {Lisp-Entry "context-update" #f 349 29 349 43 ("modify-toolbox" "modify-connections" "modify-preferences")}
+        {Lisp-Entry "modify-preferences" #f 355 11 355 29 ("set-active-branch" "context" "find-component" "branch" "get-preferences-designer" "designer" "get-preferences" "pref" "let*")}
+        {Lisp-Entry "modify-connections" #f 362 11 362 29 ("singleton-docked" "get-guest" "modify-editor" "SQL-Connections-Manager" "'SQL-Connections-Manager" "in-manifest?" "when")}
+        {Lisp-Entry "modify-toolbox" #f 368 11 368 25 ("singleton-docked" "get-guest" "modify-editor" "Toolbox-Manager" "'Toolbox-Manager" "in-manifest?" "when")}
+        {Lisp-Entry "modify-editor" #f 374 11 374 24 ("set-client" "set-active-branch" "context" "find-component" "branch" "get-client" "client" "let*" "editor")}
+        {Lisp-Entry "install-context" #f 382 18 382 33 ("set-active-branch" "find-child" "branch" "let" "context" "when" "component")}
+        {Lisp-Entry "persist-preferences?" #f 394 29 394 49 ()}
+        {Lisp-Entry "preferences-file" #f 398 29 398 45 ("Profile" "File")}
+        {Lisp-Entry "setup-preferences" #f 402 29 402 46 ("setup-preferences/designer")}
+        {Lisp-Entry "setup-preferences/designer" #f 406 11 406 37 ("set-current-directory" "exists?" "and" "when" "get-current-directory" "directory" "let" "preferences-root" "install-context" "preferences-context" "context" "set!" "load-preferences" "set-preferences/designer")}
+        {Lisp-Entry "set-preferences/designer" #f 415 11 415 35 ("reference:" "get-form" "form:" "Designer" "new" "preferences-designer" "preferences-root" "set!" "preferences")}
+        {Lisp-Entry "load-preferences" #f 420 29 420 45 ("default-preferences" "read-from-file" "instantiate" "exists?" "Profile" "'Profile" "find-alias" "and" "if" "preferences-file" "file" "persist-preferences?" "persist?" "let")}
+        {Lisp-Entry "default-preferences" #f 428 29 428 48 ("Process-Preferences" "new")}
+        {Lisp-Entry "preferences-context" #f 432 11 432 30 ("else" "get-active-context" "preferences-root" "string->symbol" "cond" "command-argument" "arg" "let")}
+        {Lisp-Entry "apply-preferences" #f 439 18 439 35 ("apply-preferences" "client" "preferences")}
+        {Lisp-Entry "save-preferences" #f 443 18 443 34 ("get-preferences-designer" "save-preferences" "client" "preferences")}
+        {Lisp-Entry "set-preferences-property" #f 447 18 447 42 ("get-preferences-designer" "set-property" "value" "property" "preferences")}
+        {Lisp-Entry "get-preferences-rights" #f 451 26 451 48 ()}
+        {Lisp-Entry "persist-usernames?" #f 460 26 460 44 ()}
+        {Lisp-Entry "persist-passwords?" #f 464 26 464 44 ()}
+        {Lisp-Entry "mandatory-version" #f 473 26 473 43 ("what")}
+        {Lisp-Entry "signal-readyness" #f 483 21 483 37 ("SetEvent" "when" "EVENT_MODIFY_STATE" "OpenEvent" "handle" "let" "name")}
+        {Lisp-Entry "run-loop" #f 494 26 494 34 ("start-loop" "with-current-loop" "with-repl-context" "exit-continuation" "set!" "cont" "function" "continuation-capture")}
+        {Lisp-Entry "resume-loop" #f 505 18 505 29 ("invoke-restart" "resume-loop-action" "when" "resume-loop" "'resume-loop" "find-restart" "restart" "let")}
+        {Lisp-Entry "resume-loop-action" #f 512 26 512 44 ()}
+        {Lisp-Entry "start-loop" #f 516 26 516 36 ("get-exception-debugger" "with-exception-debugger" "eof-object?" "not" "when" "thread-read-non-blocking" "thunk" "loop" "let")}
+        {Lisp-Entry "user-feedback" #f 530 29 530 42 ("message")}
+        {Lisp-Entry "system-title" #f 539 26 539 38 ()}
+        {Lisp-Entry "prepare-bindings" #f 548 29 548 45 ()}
+        {Lisp-Entry "prepare-aliases" #f 557 29 557 44 ()}
+        {Lisp-Entry "prepare-preferences-aliases" #f 561 26 561 53 ("get-list" "register-alias" "get-directory" "directory" "get-alias" "alias" "function" "for-each" "get-children" "when" "error?:" "aliases" "'aliases" "get-preferences" "pref" "let")}
+        {Lisp-Entry "terminate-preferences-aliases" #f 573 26 573 55 ("unregister-alias" "get-alias" "alias" "function" "for-each" "get-children" "when" "error?:" "aliases" "'aliases" "get-preferences" "pref" "let")}
+        {Lisp-Entry "resolve-alias" #f 583 26 583 39 ("name")}
+        {Lisp-Entry "prepare-preferences-repositories" #f 592 26 592 58 ("parse" "install-repository" "dir" "function" "for-each" "get-repositories" "when" "error?:" "repositories" "'repositories" "get-preferences" "pref" "let")}
+        {Lisp-Entry "prepare-workbench" #f 606 26 606 43 ()}
+        {Lisp-Entry "start-servers" #f 615 29 615 42 ("start-remote-listener" "when" "command-host/service" "service" "host" "receive")}
+        {Lisp-Entry "stop-servers" #f 622 29 622 41 ("stop-remote-listener")}
+        {Lisp-Entry "get-name" #f 631 18 631 26 ("process-name")}
+        {Lisp-Entry "get-icon" #f 635 18 635 26 ("process-icon")}
+        {Lisp-Entry "get-register" #f 639 18 639 30 ("local-register")}
+        {Lisp-Entry "register-base-objects" #f 648 29 648 50 ()}
+        {Lisp-Entry "get-local-debugger" #f 657 26 657 44 ()}
+        {Lisp-Entry "initial-console-context" #f 666 26 666 49 (":process")}
+        {Lisp-Entry "process-debuggee-loop" #f 670 29 670 50 ("debuggee-loop")}}}})
 "Process-Preferences"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "Process-Preferences.jazz"} 1238328026
     {Lisp-Entry "jazz.system.process.Process-Preferences" #f 37 19 37 58 ("jazz")
@@ -544,7 +540,7 @@
  ({Lisp-File-Entry {File jazz.system "src" "jazz" "system" "service" "_service.jazz"} 1238328026
     {Lisp-Entry "jazz.system.service" #f 37 9 37 28 ("jazz")}})
 "_system"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "_system.jazz"} 1244896779
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "_system.jazz"} 1246650283
     {Lisp-Entry "jazz.system" #f 37 9 37 20 ("jazz")
       {Lisp-Entry "argument/setting" #f 52 20 52 36 ("get-setting" "command-argument" "either" "prop" "arg")}
       {Lisp-Entry "pathname-argument" #f 57 20 57 37 ("length" "-" "1" "subseq" "0" "element" "=" "tokenise-filename" "not" "if" "command-argument" "arg" "let" "name")}
@@ -581,8 +577,10 @@
       {Lisp-Entry "*bindings*" #f 255 12 255 22 ()}
       {Lisp-Entry "get-bindings" #f 259 20 259 32 ("*bindings*")}
       {Lisp-Entry "set-bindings" #f 263 20 263 32 ("*bindings*" "set!" "bindings")}
-      {Lisp-Entry "exiting?" #f 272 12 272 20 ("make-parameter")}
-      {Lisp-Entry "exiting-process?" #f 276 20 276 36 ("exiting?")}}})
+      {Lisp-Entry "*exiting-process?*" #f 272 12 272 30 ("make-parameter")}
+      {Lisp-Entry "*reloading-process?*" #f 275 12 275 32 ("make-parameter")}
+      {Lisp-Entry "exiting-process?" #f 279 20 279 36 ("*exiting-process?*")}
+      {Lisp-Entry "reloading-process?" #f 282 20 282 38 ("*reloading-process?*")}}})
 "_windows"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "performance" "platform" "windows" "_windows.jazz"} 1238328026
     {Lisp-Entry "jazz.system.performance.platform.windows" #f 37 19 37 59 ("jazz")
@@ -596,14 +594,14 @@
       {Lisp-Entry "get-private-bytes" #f 123 20 123 37 ("get-counter-value" "collect-data" "get-private-bytes-counter" "counter" "get-private-bytes-query" "query" "let")}
       {Lisp-Entry "i/o-snapshot" #f 135 16 135 28 ("OtherTransferCount" "'OtherTransferCount" "other-bytes:" "WriteTransferCount" "'WriteTransferCount" "write-bytes:" "ReadTransferCount" "'ReadTransferCount" "get" "read-bytes:" ",name" "name:" "JML" "parse" "GetProcessIoCounters" "IO_COUNTERS" "new" "io" "GetCurrentProcess" "handle" "let" "nil" "name" "bind-keywords" "rest")}}})
 "autoload"
- ({Lisp-File-Entry {File jazz.system "src" "jazz" "system" "service" "platform" "windows" "autoload.jazz"} 1238328026
+ ({Lisp-File-Entry {File jazz.system "src" "jazz" "system" "service" "platform" "windows" "autoload.jazz"} 1246937490
     {Lisp-Entry "jazz.system.service.platform.windows.autoload" #f 37 19 37 64 ("jazz")}}
-  {Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "autoload.jazz"} 1238328026
+  {Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "autoload.jazz"} 1246650283
     {Lisp-Entry "jazz.system.process.autoload" #f 37 19 37 47 ("jazz")}}
   {Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "autoload.jazz"} 1238328026
     {Lisp-Entry "jazz.system.application.autoload" #f 37 19 37 51 ("jazz")}})
 "carbon"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "platform" "carbon.jazz"} 1238328026
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "platform" "carbon.jazz"} 1246937083
     {Lisp-Entry "jazz.system.platform.carbon" #f 37 19 37 46 ("jazz")
       {Lisp-Entry "initialize-platform" #f 48 20 48 39 ()}
       {Lisp-Entry "get-computer-name" #f 57 20 57 37 ("adjust-string" "GetComputerName" "make-string" "name" "1" "MAX_COMPUTERNAME_LENGTH" "+" "size" "let*")}
@@ -623,7 +621,7 @@
       {Lisp-Entry "mouse-clicked?" #f 132 20 132 34 ("VK_LBUTTON" "key-down?" "'key-down?" "unimplemented")}
       {Lisp-Entry "use-generic-dialogs?" #f 143 13 143 33 ()}
       {Lisp-Entry "Version-Info" #f 152 19 152 31 ()}
-      {Lisp-Entry "version-info" #f 156 13 156 25 ("GetVersionEx" "sizeof-OSVERSIONINFOEX" "OSVERSIONINFOEX-dwOSVersionInfoSize-set!" "OSVERSIONINFOEX-make" "info" "let" "set!" "Version-Info" "unless" "version-info" "'version-info" "unimplemented")}
+      {Lisp-Entry "version-info" #f 156 13 156 25 ("GetVersionEx" "OSVERSIONINFOEX-sizeof" "OSVERSIONINFOEX-dwOSVersionInfoSize-set!" "OSVERSIONINFOEX-make" "info" "let" "set!" "Version-Info" "unless" "version-info" "'version-info" "unimplemented")}
       {Lisp-Entry "Windows-Version" #f 168 19 168 34 ()}
       {Lisp-Entry "get-windows-version" #f 172 20 172 39 ("OSVERSIONINFOEX-dwMinorVersion-ref" "OSVERSIONINFOEX-dwMajorVersion-ref" "Version" "new" "version-info" "info" "let" "set!" "Windows-Version" "unless" "get-windows-version" "'get-windows-version" "unimplemented")}
       {Lisp-Entry "validate-version" #f 184 20 184 36 ("format" "if" "error" "<" "and" "mandatory-version" "mandatory" "get-process" "process" "let*" "present" "register-crash-info" "when" "validate-version" "'validate-version" "unimplemented" "cleanup" "cleanup:" "register" "register:" "version" "context" "what" "title")}}})
@@ -638,7 +636,7 @@
         {Lisp-Entry "get-icon" #f 47 23 47 31 ()}
         {Lisp-Entry "get-register" #f 48 23 48 35 ()}}}})
 "windows"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "platform" "windows.jazz"} 1238328026
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "platform" "windows.jazz"} 1246937083
     {Lisp-Entry "jazz.system.platform.windows" #f 37 19 37 47 ("jazz")
       {Lisp-Entry "initialize-platform" #f 50 20 50 39 ("initialize-com")}
       {Lisp-Entry "module-path" #f 59 20 59 31 ("GetModuleFileName" "tokenise-windows")}
@@ -668,7 +666,7 @@
       {Lisp-Entry "mouse-clicked?" #f 196 20 196 34 ("VK_LBUTTON" "key-down?")}
       {Lisp-Entry "use-generic-dialogs?" #f 205 13 205 33 ()}
       {Lisp-Entry "Version-Info" #f 214 19 214 31 ()}
-      {Lisp-Entry "version-info" #f 218 13 218 25 ("GetVersionEx" "sizeof-OSVERSIONINFOEX" "OSVERSIONINFOEX-dwOSVersionInfoSize-set!" "OSVERSIONINFOEX-make" "info" "let" "set!" "Version-Info" "unless")}
+      {Lisp-Entry "version-info" #f 218 13 218 25 ("GetVersionEx" "OSVERSIONINFOEX-sizeof" "OSVERSIONINFOEX-dwOSVersionInfoSize-set!" "OSVERSIONINFOEX-make" "info" "let" "set!" "Version-Info" "unless")}
       {Lisp-Entry "Windows-Version" #f 228 19 228 34 ()}
       {Lisp-Entry "get-windows-version" #f 232 20 232 39 ("OSVERSIONINFOEX-dwMinorVersion-ref" "OSVERSIONINFOEX-dwMajorVersion-ref" "Version" "new" "version-info" "info" "let" "set!" "Windows-Version" "unless")}
       {Lisp-Entry "validate-version" #f 242 20 242 36 ("format" "if" "error" "<" "and" "mandatory-version" "mandatory" "get-process" "process" "let*" "present" "register-crash-info" "when" "validate-version" "'validate-version" "unimplemented" "cleanup" "cleanup:" "register" "register:" "version" "context" "what" "title")}}}
@@ -676,7 +674,7 @@
     {Lisp-Entry "jazz.system.log.platform.windows" #f 38 19 38 51 ("jazz")
       {Lisp-Entry "make-event-id" #f 42 20 42 33 ("+" "FACILITY_NULL" "facility" "facility:" "SEVERITY_SUCCESS" "severity" "severity:" "code")}}})
 "x11"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "platform" "x11.jazz"} 1238328026
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "platform" "x11.jazz"} 1246937083
     {Lisp-Entry "jazz.system.platform.x11" #f 37 19 37 43 ("jazz")
       {Lisp-Entry "synchronize-x11?" #f 48 12 48 28 ()}
       {Lisp-Entry "x11-debug-error-handler" #f 52 13 52 36 ("1" "exit" "20" "depth:" "lexical-environment?:" "execution-stack" "pretty-print" "newline" "XErrorEvent-error_code-ref" "XGetErrorText" "format" "display" "error" "displ")}
@@ -699,7 +697,7 @@
       {Lisp-Entry "mouse-clicked?" #f 159 20 159 34 ("default-x11-display" "XButtonDown?")}
       {Lisp-Entry "use-generic-dialogs?" #f 168 13 168 33 ()}
       {Lisp-Entry "Version-Info" #f 177 19 177 31 ()}
-      {Lisp-Entry "version-info" #f 181 13 181 25 ("GetVersionEx" "sizeof-OSVERSIONINFOEX" "OSVERSIONINFOEX-dwOSVersionInfoSize-set!" "OSVERSIONINFOEX-make" "info" "let" "set!" "Version-Info" "unless" "version-info" "'version-info" "unimplemented")}
+      {Lisp-Entry "version-info" #f 181 13 181 25 ("GetVersionEx" "OSVERSIONINFOEX-sizeof" "OSVERSIONINFOEX-dwOSVersionInfoSize-set!" "OSVERSIONINFOEX-make" "info" "let" "set!" "Version-Info" "unless" "version-info" "'version-info" "unimplemented")}
       {Lisp-Entry "Windows-Version" #f 193 19 193 34 ()}
       {Lisp-Entry "get-windows-version" #f 197 20 197 39 ("OSVERSIONINFOEX-dwMinorVersion-ref" "OSVERSIONINFOEX-dwMajorVersion-ref" "Version" "new" "version-info" "info" "let" "set!" "Windows-Version" "unless" "get-windows-version" "'get-windows-version" "unimplemented")}
       {Lisp-Entry "validate-version" #f 209 20 209 36 ("format" "if" "error" "<" "and" "mandatory-version" "mandatory" "get-process" "process" "let*" "present" "register-crash-info" "when" "validate-version" "'validate-version" "unimplemented" "cleanup" "cleanup:" "register" "register:" "version" "context" "what" "title")}}})

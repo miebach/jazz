@@ -135,40 +135,6 @@
         {Lisp-Entry "indexable?" #f 76 11 76 21 ()}
         {Lisp-Entry "get-addable-details" #f 80 11 80 30 ("100" "name-info")}
         {Lisp-Entry "get-categorized-properties" #f 84 11 84 37 ()}}}})
-"CanvasToSql-Exporter"
- ({Lisp-File-Entry {File jazz.library "src" "jazz" "library" "canvas" "CanvasToSql-Exporter.jazz"} 1238328025
-    {Lisp-Entry "jazz.library.canvas.CanvasToSql-Exporter" #f 37 19 37 59 ("jazz")
-      {Lisp-Entry "CanvasToSQL-Exporter" #f 44 7 44 27 ("Object")}
-      {Lisp-Entry "CanvasToSQL-Exporter" #f 50 7 50 27 ("Object")
-        {Lisp-Entry "provider" #f 53 8 53 16 ()}
-        {Lisp-Entry "separator" #f 54 8 54 17 ()}
-        {Lisp-Entry "keys" #f 55 8 55 12 ()}
-        {Lisp-Entry "key-suffix" #f 56 8 56 18 ("0")}
-        {Lisp-Entry "key-id?" #f 57 8 57 15 ()}
-        {Lisp-Entry "key-serial" #f 58 8 58 18 ("equal?" "test:" "make-table")}
-        {Lisp-Entry "printer" #f 59 8 59 15 ("open-output-string")}
-        {Lisp-Entry "Default-Separator" #f 62 14 62 31 ()}
-        {Lisp-Entry "initialize" #f 66 11 66 21 ("key-id?~self" "Default-Separator" "either" "separator~self" "get-provider" "Provider" "is?" "if" "provider~self" "set!" "nextmethod" "key-id?" "key-id?:" "separator" "separator:" "provider" "provider:")}
-        {Lisp-Entry "export" #f 80 18 80 24 ("export-code" "export-component" "export-deletes" "export-header" "canvas")}
-        {Lisp-Entry "export-to" #f 87 18 87 27 ("format" "printer" "function" "parse" "call-with-output-file" "export" "code" "let" "file" "canvas")}
-        {Lisp-Entry "export-code" #f 94 11 94 22 ("format" "open-output-string" "printer" "get-output-string" "code" "let")}
-        {Lisp-Entry "export-header" #f 101 29 101 42 ("canvas")}
-        {Lisp-Entry "export-deletes" #f 105 29 105 43 ("canvas")}
-        {Lisp-Entry "export-component" #f 109 29 109 45 ("export-children" "export-properties" "component")}
-        {Lisp-Entry "export-properties" #f 114 29 114 46 ("component")}
-        {Lisp-Entry "export-children" #f 118 29 118 44 ("get-children" "export-component" "child" "function" "for-each" "component")}
-        {Lisp-Entry "output-section" #f 130 11 130 25 ("printer" "format" "section")}
-        {Lisp-Entry "ouput-comment" #f 138 11 138 24 ("printer" "format" "comment")}
-        {Lisp-Entry "format-sql-value" #f 147 11 147 27 ("provider" "format-value" "value")}
-        {Lisp-Entry "select-primary-key" #f 156 11 156 29 ("separator" "format-sql-value" "printer" "sqlserver" "provider" "external-name" "case" "increase!" "key-suffix" "format" "string->symbol" "var" "let" "get-serial-key" "register-primary-key" "key-id?" "if" "column" "table" "component")}
-        {Lisp-Entry "get-serial-key" #f 171 11 171 25 ("+" "1" "table-set!" "not" "if" "key-serial" "table-ref" "id" "let" "table")}
-        {Lisp-Entry "with-serial-insert" #f 178 11 178 29 ("else" "separator" "printer" "format" "sqlserver" "provider" "external-name" "case" "proc" "table")}
-        {Lisp-Entry "register-primary-key" #f 188 11 188 31 ("cons" "keys" "set!" "value" "component")}
-        {Lisp-Entry "get-primary-key" #f 193 11 193 26 ("error" "cdr" "if" "keys" "assq" "info" "let" "component")}
-        {Lisp-Entry "insert-row" #f 205 11 205 21 ("symbol?" "when" "value" "property" "function" "for-each-property" "separator" "printer" "join" "format" "command" "property-value" "format-sql-value" "map" "values" "property-column" "map-property" "columns" "let*" "properties" "table")}
-        {Lisp-Entry "property-column" #f 221 11 221 26 ("value" "column")}
-        {Lisp-Entry "property-value" #f 225 11 225 25 ("default-value" "null?" "not" "if" "value" "column")}
-        {Lisp-Entry "default-value" #f 231 29 231 42 ("error" "column")}}}})
 "Category-Moniker"
  ({Lisp-File-Entry {File jazz.library "src" "jazz" "library" "moniker" "Category-Moniker.jazz"} 1238328026
     {Lisp-Entry "jazz.library.moniker.Category-Moniker" #f 37 19 37 56 ("jazz")
@@ -217,7 +183,7 @@
         {Lisp-Entry "prepare-print" #f 126 11 126 24 ("columns" "prepare-print" "get-empty?" "unless" "column" "function" "for-each")}
         {Lisp-Entry "print-columns" #f 135 18 135 31 ("format" "/=" "columns" "when" "set!" "print-to" "get-next" "data" "get-empty?" "unless" "column" "function" "for-each" "previous-data" "previous-column" "below" "0" "from" "n" "for" "loop" "1" "line" "-" "last" "let" "printer")}}}})
 "Component"
- ({Lisp-File-Entry {File jazz.library "src" "jazz" "library" "component" "Component.jazz"} 1245777538
+ ({Lisp-File-Entry {File jazz.library "src" "jazz" "library" "component" "Component.jazz"} 1246489050
     {Lisp-Entry "jazz.library.component.Component" #f 37 19 37 51 ("jazz")
       {Lisp-Entry "Component" #f 47 7 47 16 ("Event-Consumer" "Object")
         {Lisp-Entry "Installed-Flag" #f 58 14 58 28 ("#x00000001")}
@@ -982,22 +948,23 @@
         {Lisp-Entry "for-each-day" #f 58 18 58 30 ("1" "day" "'day" "add" "set!" "end" "<=" "while" "start" "date" "let" "proc")}
         {Lisp-Entry "includes-day-of-week?" #f 66 18 66 39 ("return" "get-day-of-week" "Date" "symbolic-day-of-week" "=" "when" "date" "function" "for-each-day" "day")}}}})
 "Print-Sequencer"
- ({Lisp-File-Entry {File jazz.library "src" "jazz" "library" "factory" "Print-Sequencer.jazz"} 1238328026
+ ({Lisp-File-Entry {File jazz.library "src" "jazz" "library" "factory" "Print-Sequencer.jazz"} 1246940598
     {Lisp-Entry "jazz.library.factory.Print-Sequencer" #f 37 19 37 55 ("jazz")
-      {Lisp-Entry "Print-Sequencer" #f 47 7 47 22 ("Object")
-        {Lisp-Entry "printer" #f 50 8 50 15 ()}
-        {Lisp-Entry "start" #f 51 8 51 13 ()}
-        {Lisp-Entry "sections" #f 52 8 52 16 ("List-Factory" "new")}
-        {Lisp-Entry "initialize" #f 55 11 55 21 ("start-section" "printer" "set!" "nextmethod" "prt")}
-        {Lisp-Entry "start-section" #f 61 18 61 31 ("get-position" "start" "set!")}
-        {Lisp-Entry "end-section" #f 65 18 65 29 ("start-section" "get-position" "start" "cons" "prog1")}
-        {Lisp-Entry "get-position" #f 70 11 70 23 ("printer" "get-position")}
-        {Lisp-Entry "put-section" #f 79 18 79 29 ("sections" "put" "section")}
-        {Lisp-Entry "put-sections" #f 83 18 83 30 ("sections" "put-sequence" "sections-list")}
-        {Lisp-Entry "print-sections" #f 87 18 87 32 ("sections" "get-output" "transfer" "end" "start" "bind" "section" "function" "for-each" "output")}
-        {Lisp-Entry "transfer-size" #f 99 14 99 27 ("1024")}
-        {Lisp-Entry "transfer-buffer" #f 102 14 102 29 ("transfer-size" "size:" "Heap-Block" "new")}
-        {Lisp-Entry "transfer" #f 106 24 106 32 ("increase!" "decrease!" "WriteFile" "NULL" "transfer-buffer" "get-handle" "ReadFile" "transfer-size" "min" "subsize" "printer" "set-position" "0" ">" "while" "-" "size" "let" "output" "end" "start")}}}})
+      {Lisp-Entry "Print-Sequencer" #f 44 7 44 22 ("Object")}
+      {Lisp-Entry "Print-Sequencer" #f 50 7 50 22 ("Object")
+        {Lisp-Entry "printer" #f 53 8 53 15 ()}
+        {Lisp-Entry "start" #f 54 8 54 13 ()}
+        {Lisp-Entry "sections" #f 55 8 55 16 ("List-Factory" "new")}
+        {Lisp-Entry "initialize" #f 58 11 58 21 ("start-section" "printer" "set!" "nextmethod" "prt")}
+        {Lisp-Entry "start-section" #f 64 18 64 31 ("get-position" "start" "set!")}
+        {Lisp-Entry "end-section" #f 68 18 68 29 ("start-section" "get-position" "start" "cons" "prog1")}
+        {Lisp-Entry "get-position" #f 73 11 73 23 ("printer" "get-position")}
+        {Lisp-Entry "put-section" #f 82 18 82 29 ("sections" "put" "section")}
+        {Lisp-Entry "put-sections" #f 86 18 86 30 ("sections" "put-sequence" "sections-list")}
+        {Lisp-Entry "print-sections" #f 90 18 90 32 ("sections" "get-output" "transfer" "end" "start" "bind" "section" "function" "for-each" "output")}
+        {Lisp-Entry "transfer-size" #f 102 14 102 27 ("1024")}
+        {Lisp-Entry "transfer-buffer" #f 105 14 105 29 ("transfer-size" "size:" "Heap-Block" "new")}
+        {Lisp-Entry "transfer" #f 109 24 109 32 ("increase!" "decrease!" "WriteFile" "NULL" "transfer-buffer" "get-handle" "ReadFile" "transfer-size" "min" "subsize" "printer" "set-position" "0" ">" "while" "-" "size" "let" "output" "end" "start")}}}})
 "Pulse"
  ({Lisp-File-Entry {File jazz.library "src" "jazz" "library" "utility" "Pulse.jazz"} 1238328026
     {Lisp-Entry "jazz.library.utility.Pulse" #f 37 19 37 45 ("jazz")
@@ -1256,11 +1223,11 @@
         {Lisp-Entry "update-descendants" #f 364 21 364 39 ("content" "update" "has-ascendant?" "when" "exemplar" "function" "for-each" "base")}
         {Lisp-Entry "collect-persistent" #f 376 18 376 36 ("content" "get-persistent?" "exemplar" "function" "collect-if")}}}})
 "_library"
- ({Lisp-File-Entry {File jazz.library "src" "jazz" "library" "_library.jazz"} 1238328025
+ ({Lisp-File-Entry {File jazz.library "src" "jazz" "library" "_library.jazz"} 1246650283
     {Lisp-Entry "jazz.library" #f 37 9 37 21 ("jazz")
       {Lisp-Entry "Forms" #f 52 12 52 17 ("eq?" "test:" "make-table")}
-      {Lisp-Entry "register-form" #f 56 13 56 26 ("Forms" "table-set!" "form" "class-name")}
-      {Lisp-Entry "get-registered-form" #f 59 13 59 32 ("Forms" "table-ref" "class-name")}}})
+      {Lisp-Entry "register-form" #f 56 20 56 33 ("Forms" "table-set!" "form" "class-name")}
+      {Lisp-Entry "get-registered-form" #f 59 20 59 39 ("Forms" "table-ref" "class-name")}}})
 "_listener"
  ({Lisp-File-Entry {File jazz.library "src" "jazz" "library" "listener" "_listener.jazz"} 1238328026
     {Lisp-Entry "jazz.library.listener" #f 37 9 37 30 ("jazz")
@@ -1307,7 +1274,7 @@
       {Lisp-Entry "content-delimiter-end" #f 53 12 53 33 ()}
       {Lisp-Entry "copy-template" #f 57 20 57 33 ("file?" "copy-pathname" "recursive?:" "directories?:" "files?:" "full?:" "new-directory" "directory" "new-file" "file" "case" "car" "kind" "path" "iterate-directory" "create-directories" "touch-files?:" "root?" "copy-directory" "get-eol-encoding" "eol-encoding:" "parse" "path:" "list" "call-with-output-file" "ci=?" "test:" "member?" "exists?" "unless" "copy-file" "get-name" "new-brother" "pathname" "expand-pathname" "get-output-string" "format" "continuation-return" "list?" "if" "value" "printer:" "expand" "open-output-string" "output" "return" "function" "continuation-capture" "name" "expand-name" "define" "content-delimiter-end" "content-delimiter-start" "content-expander" "name-delimiter-end" "delimiter-end:" "name-delimiter-start" "delimiter-start:" "Template-Expander" "new" "name-expander" "let" "non-expanded-leaves" "non-expanded-leaves:" "non-expanded-nodes" "non-expanded-nodes:" "associations" "destination" "template")}}})
 "_utilities"
- ({Lisp-File-Entry {File jazz.library "src" "jazz" "utilities" "_utilities.jazz"} 1245732655
+ ({Lisp-File-Entry {File jazz.library "src" "jazz" "utilities" "_utilities.jazz"} 1246940598
     {Lisp-Entry "jazz.utilities" #f 37 9 37 23 ("jazz")
       {Lisp-Entry "find-actions" #f 54 20 54 32 ("find-component" "either" "error" "not" "if" "get-bindings" "bindings" "let" "context")}
       {Lisp-Entry "find-action-item" #f 62 20 62 36 ("find-actions" "find-component" "name" "context")}
@@ -1368,165 +1335,164 @@
       {Lisp-Entry "tag-string?" #f 469 20 469 31 ("ends-with?" "starts-with?" "2" "string-length" ">" "and" "string")}
       {Lisp-Entry "tag->name" #f 475 20 475 29 ("symbol->string" "string->symbol" "string?" "if" "cardinality" "-" "1" "subseq" "string" "function" "extract" "let" "tag")}
       {Lisp-Entry "name->tag" #f 484 20 484 29 ("symbol->string" "string-append" "string->symbol" "name")}
-      {Lisp-Entry "jml-keyword?" #f 488 20 488 32 ("keyword?" "expr")}
-      {Lisp-Entry "Logs" #f 497 19 497 23 ("List-Factory" "new")}
-      {Lisp-Entry "get-logs" #f 501 20 501 28 ("Logs" "get-list")}
-      {Lisp-Entry "Add-Log-Lock" #f 505 19 505 31 ("Lock" "new")}
-      {Lisp-Entry "add-log" #f 509 20 509 27 ("Logs" "put" "get-logs" "memq?" "unless" "Add-Log-Lock" "synchronize" "add-log" "'add-log" "unimplemented" "log")}
-      {Lisp-Entry "current-log" #f 517 20 517 31 ("add-log" "set-current-log" "default-log" "log" "let" "get-current-log" "either")}
-      {Lisp-Entry "default-log" #f 525 13 525 24 ("name:" "Log" "new" "default-log" "'default-log" "unimplemented")}
-      {Lisp-Entry "get-current-log" #f 531 20 531 35 ("current-log" "'current-log" "get-parameter" "get-current-log" "'get-current-log" "unimplemented")}
-      {Lisp-Entry "set-current-log" #f 537 20 537 35 ("current-log" "'current-log" "set-parameter" "set-current-log" "'set-current-log" "unimplemented" "log")}
-      {Lisp-Entry "with-log" #f 543 20 543 28 ("add-log" "not" "and" "when" "get-name" "set-current-log" "begin" "unwind-protect" "get-current-log" "preserved" "let" "with-log" "'with-log" "unimplemented" "file" "file:" "name" "name:" "proc" "log")}
-      {Lisp-Entry "with-node" #f 557 20 557 29 ("with-node" "new-entry" "either" "let" "current-log" "log" "log:" "data" "data:" "message" "message:" "name" "name:" "tag" "tag:" "node" "node:" "proc")}
-      {Lisp-Entry "log-node" #f 562 20 562 28 ("log-node" "current-log" "log" "log:" "node")}
-      {Lisp-Entry "log-entry" #f 566 20 566 29 ("log-entry" "current-log" "log" "log:" "data" "data:" "message" "message:" "name" "name:" "tag" "tag:")}
-      {Lisp-Entry "log-properties" #f 570 20 570 34 ("log-entry" "get-output-string" "keyword->symbol" "format" "set!" "if" "value" "property" "function" "for-each-property" "first?" "open-output-string" "printer" "let" "current-log" "log" "log:" "data" "data:" "message" "message:" "name" "name:" "tag" "tag:" "properties")}
-      {Lisp-Entry "new-log-node" #f 583 20 583 32 ("new-entry" "current-log" "log" "log:" "data" "data:" "message" "message:" "name" "name:" "tag" "tag:")}
-      {Lisp-Entry "with-profile" #f 592 20 592 32 ("new-entry" "either" "after" "'after" "set!" "before" "'before" "log-profile" "result" "let" "function" "with-node" "with-profile" "'with-profile" "unimplemented" "current-log" "log" "log:" "data" "data:" "message" "message:" "name" "name:" "tag" "tag:" "node" "node:" "proc")}
-      {Lisp-Entry "log-profile" #f 606 20 606 31 ("Performance" "resources-snapshot" "log-node" "gc" "log-profile" "'log-profile" "unimplemented" "current-log" "log" "log:" "name" "name:")}
-      {Lisp-Entry "log-stack" #f 613 20 613 29 ("data:" "log-entry" "Stack-Snapshot" "new" "data" "let" "log-stack" "'log-stack" "unimplemented" "current-log" "log" "log:" "message" "message:" "name" "name:" "tag" "tag:")}
-      {Lisp-Entry "profiles->jml" #f 620 20 620 33 ("'name" "get-property" "node" "key:" "<" "sort" "profile->jml" "cons" "set!" "profile-parent" "not" "when" "profile" "name" "function" "get-profiles" "iterate-table" "nodes" "let" "profiles->jml" "'profiles->jml" "unimplemented" "profiles")}
-      {Lisp-Entry "profile->jml" #f 631 13 631 25 ("insert-profile-children" "profile-content" "node" "let" "profile->jml" "'profile->jml" "unimplemented" "profile" "parent")}
-      {Lisp-Entry "profile-content" #f 639 13 639 28 ("'total" "'count" "'name" "list" "properties:" "'profile" "JML-Element" "new" "profile-total" "total" "0" "profile-count" "count" "profile-name" "name" "let" "profile-content" "'profile-content" "unimplemented" "profile" "parent")}
-      {Lisp-Entry "insert-profile-children" #f 648 13 648 36 ("collect-profile-children" "profile->jml" "child" "function" "map" "insert-profile-children" "'insert-profile-children" "unimplemented" "profile" "parent")}
-      {Lisp-Entry "collect-profile-children" #f 656 13 656 37 ("profile-previous-brother" "cons" "set!" "while" "profile-last-child" "child" "children" "let" "collect-profile-children" "'collect-profile-children" "unimplemented" "profile")}
-      {Lisp-Entry "Active-Locales" #f 672 19 672 33 ("english:")}
-      {Lisp-Entry "Active-Locale" #f 675 19 675 32 ("english:")}
-      {Lisp-Entry "get-locales" #f 679 20 679 31 ("Active-Locales")}
-      {Lisp-Entry "get-locale" #f 683 20 683 30 ("Active-Locale")}
-      {Lisp-Entry "set-locale" #f 687 20 687 30 ("locale-update" "select-locale" "get-application" "appl" "set!" "Active-Locale" "neq?" "when" "standardize-locale" "let" "update?" "update?:" "loc")}
-      {Lisp-Entry "standardize-locale" #f 697 13 697 31 ("error" "else" "symbol?" "enumerator->symbol" "symbol->keyword" "enumerator?" "keyword?" "cond" "loc")}
-      {Lisp-Entry "localize" #f 704 20 704 28 ("Active-Locale" "localize" "Locales" "is?" "if" "object")}
-      {Lisp-Entry "localize-to" #f 710 20 710 31 ("localize" "Locales" "is?" "if" "locale" "object")}
-      {Lisp-Entry "present-locale" #f 716 20 716 34 ("english:" "case" "locale")}
-      {Lisp-Entry "Scheme-Extensions" #f 726 19 726 36 ()}
-      {Lisp-Entry "CommonLisp-Extensions" #f 729 19 729 40 ()}
-      {Lisp-Entry "Jazz-Extensions" #f 732 19 732 34 ()}
-      {Lisp-Entry "C-Extensions" #f 735 19 735 31 ()}
-      {Lisp-Entry "Textual-Extensions" #f 738 19 738 37 ()}
-      {Lisp-Entry "Text-Extensions" #f 741 19 741 34 ("Textual-Extensions" "C-Extensions" "Jazz-Extensions" "CommonLisp-Extensions" "Scheme-Extensions" "append")}
-      {Lisp-Entry "effective-extensions" #f 749 20 749 40 ("else" "Text-Extensions" ":text" "C-Extensions" ":c" "Jazz-Extensions" ":jazz" "CommonLisp-Extensions" ":commonlisp" "Scheme-Extensions" ":scheme" "case" "extensions")}
-      {Lisp-Entry "Scheme-Include-Extensions" #f 759 19 759 44 ("Scheme-Extensions")}
-      {Lisp-Entry "CommonLisp-Include-Extensions" #f 762 19 762 48 ("CommonLisp-Extensions")}
-      {Lisp-Entry "Jazz-Include-Extensions" #f 765 19 765 42 ("Scheme-Include-Extensions" "append")}
-      {Lisp-Entry "C-Include-Extensions" #f 769 19 769 39 ("C-Extensions")}
-      {Lisp-Entry "Textual-Include-Extensions" #f 772 19 772 45 ("Textual-Extensions")}
-      {Lisp-Entry "Text-Include-Extensions" #f 775 19 775 42 ("Textual-Include-Extensions" "C-Include-Extensions" "Jazz-Include-Extensions" "CommonLisp-Include-Extensions" "Scheme-Include-Extensions" "append")}
-      {Lisp-Entry "effective-include-extensions" #f 783 13 783 41 ("else" "Text-Include-Extensions" ":text" "C-Include-Extensions" ":c" "Jazz-Include-Extensions" ":jazz" "CommonLisp-Include-Extensions" ":commonlisp" "Scheme-Include-Extensions" ":scheme" "case" "extensions")}
-      {Lisp-Entry "Scheme-Catalog-Extensions" #f 793 19 793 44 ("Scheme-Extensions")}
-      {Lisp-Entry "CommonLisp-Catalog-Extensions" #f 796 19 796 48 ("CommonLisp-Extensions")}
-      {Lisp-Entry "Jazz-Catalog-Extensions" #f 799 19 799 42 ("Scheme-Catalog-Extensions" "append")}
-      {Lisp-Entry "C-Catalog-Extensions" #f 803 19 803 39 ("C-Extensions")}
-      {Lisp-Entry "Textual-Catalog-Extensions" #f 806 19 806 45 ("Textual-Extensions")}
-      {Lisp-Entry "Text-Catalog-Extensions" #f 809 19 809 42 ("Textual-Catalog-Extensions" "C-Catalog-Extensions" "Jazz-Catalog-Extensions" "CommonLisp-Catalog-Extensions" "Scheme-Catalog-Extensions" "append")}
-      {Lisp-Entry "effective-catalog-extensions" #f 817 13 817 41 ("else" "Text-Catalog-Extensions" ":text" "C-Catalog-Extensions" ":c" "Jazz-Catalog-Extensions" ":jazz" "CommonLisp-Catalog-Extensions" ":commonlisp" "Scheme-Catalog-Extensions" ":scheme" "case" "extensions")}
-      {Lisp-Entry "make-filename" #f 832 20 832 33 ("format" "extension" "base")}
-      {Lisp-Entry "ensure-read/write" #f 836 20 836 37 ("throw-cancel" "read/write" "'read/write" "cancel" "'cancel" "no" "set-read/write" "'set-read/write" "yes" "process-keys?:" "question" "'question" "type:" "title:" "get-name" "format" "message-box" "case" "code" "no-action" "'no-action" "read/write?" "exists?" "not" "or" "if" "get-file" "file" "let" "throw" "'throw" "cancel-action" "cancel-action:" "moniker")}
-      {Lisp-Entry "convert-extension" #f 855 20 855 37 ("else" "directory?" "convert-file-extension" "file?" "convert-path-extension" "pair?" "convert-name-extension" "string?" "not" "cond" "convert-extension" "'convert-extension" "unimplemented" "to" "from" "object")}
-      {Lisp-Entry "convert-name-extension" #f 866 13 866 35 ("extract-base" "make-filename" "extract-extension" "ci=?" "if" "convert-name-extension" "'convert-name-extension" "unimplemented" "to" "from" "name")}
-      {Lisp-Entry "convert-path-extension" #f 874 13 874 35 ("convert-name-extension" "list" "butlast" "append" "extract-extension" "ci=?" "if" "last" "name" "let" "convert-path-extension" "'convert-path-extension" "unimplemented" "to" "from" "path")}
-      {Lisp-Entry "convert-file-extension" #f 883 13 883 35 ("get-base" "make-filename" "new-brother" "get-extension" "ci=?" "if" "to" "from" "file")}
-      {Lisp-Entry "resource?" #f 894 27 894 36 ("Resource" "is?" "object")}
-      {Lisp-Entry "sleep" #f 903 20 903 25 ("thread-sleep!" "delay")}
-      {Lisp-Entry "warn" #f 907 20 907 24 ("apply" ":console" "format" "rest" "string")}
-      {Lisp-Entry "warn-unimplemented" #f 912 20 912 38 (":console" "format" "name")}
-      {Lisp-Entry "bits->symbolic" #f 916 20 916 34 ("get-output" "put" "mask-bit-set?" "when" "value" "name" "bind" "entry" "function" "for-each" "List-Factory" "new" "fact" "get-entries" "entries" "let" "enumeration" "bits")}
-      {Lisp-Entry "copy-into!" #f 927 20 927 30 ("cardinality" "0" "naturals" "set-element!" "rank" "element" "function" "for-each" "seq2" "seq1")}
-      {Lisp-Entry "present-context-actions" #f 939 20 939 43 (":hyperlink" "image:" "list" "self" "invoke" "when" "get-handler" "handler" "get-title" "get-image" "image" "let*" "action" "function" "map" "present-context-text" "present-context-actions" "'present-context-actions" "unimplemented" "actions" "title")}
-      {Lisp-Entry "present-context-text" #f 955 20 955 40 ("list" "set-text" "Context-Text-View" "new" "text-view" "let" "present-context-text" "'present-context-text" "unimplemented" "text" "title")}
-      {Lisp-Entry "display-tabulated" #f 968 20 968 37 ("print-to" "newline" "->string" "output" "column" "object" "row" "function" "for-each" "add-columns" "left" "'left" "alignment:" "border-after:" "Aligned-Column" "Display-Column" "=" "if" "collect" "0" "from" "n" "in" "ignore" "for" "loop" "columns" "1" "length" "-" "last" "car" "sample" "Columns-Display" "new" "display" "let*" "display-tabulated" "'display-tabulated" "unimplemented" "printer" "data")}
-      {Lisp-Entry "size-rect" #f 1000 20 1000 29 ("get-height" "get-width" "0" "Rect" "new" "size")}
-      {Lisp-Entry "position/size->rect" #f 1004 20 1004 39 ("get-v" "get-h" "h/v/size->rect" "size" "position")}
-      {Lisp-Entry "h/v/size->rect" #f 1008 20 1008 34 ("get-height" "get-width" "+" "Rect" "new" "size" "v" "h")}
-      {Lisp-Entry "h/v/width/height" #f 1012 20 1012 36 ("+" "Rect" "new" "height" "width" "v" "h")}
-      {Lisp-Entry "corners->rect" #f 1016 20 1016 33 ("get-v" "get-h" "Rect" "new" "bottom-right" "top-left")}
-      {Lisp-Entry "normalize-rect" #f 1020 20 1020 34 ("<=" "if" "Rect" "new" "get-bottom" "b" "get-right" "r" "get-top" "t" "get-left" "l" "let" "rect")}
-      {Lisp-Entry "rect-position" #f 1032 20 1032 33 ("get-top" "get-left" "Point" "new" "rect")}
-      {Lisp-Entry "rect-size" #f 1036 20 1036 29 ("rect-height" "rect-width" "Dimension" "new" "rect")}
-      {Lisp-Entry "rect-width" #f 1042 20 1042 30 ("get-left" "get-right" "-" "rect")}
-      {Lisp-Entry "rect-height" #f 1046 20 1046 31 ("get-top" "get-bottom" "-" "rect")}
-      {Lisp-Entry "offset-rect" #f 1050 20 1050 31 ("get-bottom" "get-right" "get-top" "get-left" "+" "Rect" "new" "v" "h" "rect")}
-      {Lisp-Entry "inflate-rect" #f 1058 20 1058 32 ("get-bottom" "get-right" "+" "get-top" "get-left" "-" "Rect" "new" "h" "w" "rect")}
-      {Lisp-Entry "inflate-rect" #f 1066 13 1066 25 ("get-bottom" "get-right" "+" "get-top" "get-left" "-" "Rect" "new" "h" "w" "rect")}
-      {Lisp-Entry "expand-rect" #f 1074 20 1074 31 ("get-bottom" "get-right" "get-top" "get-left" "+" "Rect" "new" "b" "r" "t" "l" "rect")}
-      {Lisp-Entry "base-rect" #f 1082 20 1082 29 ("get-top" "get-left" "-" "offset-rect" "rect")}
-      {Lisp-Entry "fit-rects" #f 1086 20 1086 29 (">" "if" "both" "height" "width" "case" "rh" "/" "rw" "sh" "sw" "rect-height" "dh" "rect-width" "dw" "let*" "mode" "dst" "src")}
-      {Lisp-Entry "fit-within" #f 1099 20 1099 30 ("values" "get-v" "get-h" "between" "new-position" "max-position" "Point" "min-position" "new" "new-size" "get-height" "height" "-" "min" "get-width" "max" "width" "rect-position" "position" "rect-size" "size" "let*" "padding" "padding:" "0" "Dimension" "minimum-size" "minimum-size:" "rect" "outer")}
-      {Lisp-Entry "rect-union" #f 1111 20 1111 30 ("get-bottom" "get-right" ">" "get-top" "get-left" "<" "if" "Rect" "new" "y" "x")}
-      {Lisp-Entry "rect-intersection" #f 1119 20 1119 37 ("0" "get-bottom" "get-right" "<" "get-top" "get-left" ">" "Rect" "new" "rect-intersect?" "if" "y" "x")}
-      {Lisp-Entry "rect-intersect?" #f 1129 20 1129 35 (">" "get-bottom" "get-top" "get-right" "get-left" "<" "and" "y" "x")}
-      {Lisp-Entry "rects-intersect?" #f 1136 20 1136 36 ("get-bottom" "get-right" ">" "get-height" "get-v" "get-top" "get-width" "get-h" "+" "get-left" "<" "and" "size" "position" "rect")}
-      {Lisp-Entry "in-rect?" #f 1143 20 1143 28 ("get-bottom" "get-right" "<" "get-top" "get-v" "get-left" "get-h" ">=" "and" "rect" "pt")}
-      {Lisp-Entry "rect-in-rect?" #f 1150 20 1150 33 ("get-bottom" "get-right" "<=" "get-top" "get-left" ">=" "and" "rect" "r")}
-      {Lisp-Entry "in-size?" #f 1157 20 1157 28 ("get-height" "get-width" "<" "get-v" "0" "get-h" ">=" "and" "size" "pt")}
-      {Lisp-Entry "add-rects" #f 1164 20 1164 29 ("get-bottom" "get-right" "get-top" "get-left" "+" "Rect" "new" "r2" "r1")}
-      {Lisp-Entry "subtract-rects" #f 1172 20 1172 34 ("get-bottom" "get-right" "get-top" "get-left" "-" "Rect" "new" "r2" "r1")}
-      {Lisp-Entry "inverse-rect" #f 1180 20 1180 32 ("get-right" "get-bottom" "get-left" "get-top" "Rect" "new" "rect")}
-      {Lisp-Entry "positive-rect?" #f 1188 20 1188 34 ("get-right" "get-bottom" "get-left" "0" "get-top" ">=" "and" "rect")}
-      {Lisp-Entry "center" #f 1195 20 1195 26 ("center" "'center" "justify" "outer" "inner")}
-      {Lisp-Entry "justify" #f 1199 20 1199 27 ("class-of" "type-name" "number?" "second" "get-height" "first" "pair?" "get-width" "Point" "new" "Dimension" "is?" "and" "cond" "error" "else" "tail" "2" "-" "quotient" "center" "head" "case" "+" "0" ">=" "integer?" "if" "j" "o" "i" "function" "proc" "let" "justification" "outer" "inner")}
-      {Lisp-Entry "cycle-naturals" #f 1223 20 1223 34 ("get-output" "+" "put" "by" "m" "do" "below" "0" "from" "n" "for" "loop" "quotient" "inc" "*" "cardinality" "List-Factory" "new" "fact" "let*" "subcycle" "cycle")}
-      {Lisp-Entry "fit" #f 1233 20 1233 23 ("else" "-" ">=" "and" "+" "<=" "0" ">" "cond" "padding" "max" "size" "alternate" "pos")}
-      {Lisp-Entry "fit-point" #f 1242 20 1242 29 ("get-height" "get-v" "get-width" "essay" "get-h" "fit" "Point" "new" "padding" "max" "size" "alternate" "pos")}
-      {Lisp-Entry "scalar-product" #f 1248 20 1248 34 ("get-v" "get-h" "*" "+" "b" "a")}
-      {Lisp-Entry "line-distance" #f 1252 20 1252 33 ("Point" "new" "scalar-product" "/" "abs" "0" "=" "if" "get-v" "get-h" "-" "sqr" "+" "sqrt" "divider" "let" "end" "start" "point")}
-      {Lisp-Entry "resize-parts" #f 1273 20 1273 32 ("naturals" "1" "<=" "between?" "or" "n" "function" "map" "end2" "-1" "end" "start" "parity" "modulo" "+" "extra" "-" "quotient" "base" "0" "<" "if" "offset" "let*" "count" "delta" "size")}
-      {Lisp-Entry "scale" #f 1286 20 1286 25 ("Number" "get-bottom" "bottom" "get-right" "right" "get-top" "top" "get-left" "left" "Rect" "get-height" "height" "get-width" "width" "Dimension" "*" "fxround" "new" "get-v" "v" "get-h" "h" "Point" "typecase" "exact->inexact" "let" "sc" "shape")}
-      {Lisp-Entry "scale-factor" #f 1315 20 1315 32 ("/" "inner" "outer")}
-      {Lisp-Entry "get-area" #f 1319 20 1319 28 ("get-height" "get-width" "*" "size")}
-      {Lisp-Entry "iterate-cells" #f 1328 20 1328 33 ("set!" "while" "either" "horizontal" "'horizontal" "cell" "function" "advance" "previous-cell" "backward" "next-cell" "forward" "case" "next" "let*" "proc" "direction" "start" "bottom-right" "top-left")}
-      {Lisp-Entry "previous-cell" #f 1341 13 1341 26 ("horizontal" "Cell" "new" "minor" "major" "receive" "when" ">" "-1" "get-row" "get-col" "loop-cell" "info" "let" "vertical" "case" "direction" "max-cell" "min-cell" "cell")}
-      {Lisp-Entry "next-cell" #f 1353 13 1353 22 ("horizontal" "Cell" "new" "minor" "major" "receive" "when" "<" "1" "get-row" "get-col" "loop-cell" "info" "let" "vertical" "case" "direction" "max-cell" "min-cell" "cell")}
-      {Lisp-Entry "loop-cell" #f 1366 13 1366 22 ("else" "+" "values" "cond" "test" "step" "end-minor" "end-major" "start-minor" "start-major" "minor" "major")}
-      {Lisp-Entry "output-header" #f 1380 20 1380 33 ("when" "contributor" "for-each" "jazzscheme" "format" "toplevel-comment" "c" "case" "comment" "string-length" "make-string" "system-padding" "get-process" "system-title" "either" "let*" "function" "with-printer" "end-proper?" "end-proper?:" "contributors" "contributors:" "copyright" "copyright:" "author" "author:" "license" "license:" "system" "system:" "jazz" "'jazz" "language" "language:" "printer" "title")}
-      {Lisp-Entry "output-section" #f 1432 20 1432 34 ("2" "*" "format" "4" "string-length" "+" "make-string" "extra" "toplevel" "c" "case" "comment" "let" "0" "level" "level:" "jazz" "'jazz" "language" "language:" "printer" "title")}
-      {Lisp-Entry "get-preferences" #f 1448 20 1448 35 ("find-component" "either" "error" "when" "not" "if" "get-preferences-root" "root" "get-process" "process" "let*" "error?" "error?:" "name")}
-      {Lisp-Entry "set-preference" #f 1461 20 1461 34 ("set-property" "get-process" "get-preferences-designer" "designer" "let" "value" "property" "preferences")}
-      {Lisp-Entry "sort-case-sensitive?" #f 1466 20 1466 40 ("get-sort-case-sensitive?" "and" "error?:" "tree" "interface" "get-preferences" "pref" "let")}
-      {Lisp-Entry "sort-predicates" #f 1471 20 1471 35 ("ci>?" "ci<?" "ci=?" "nu>?" "nu<?" "nu=?" "values" "sort-case-sensitive?" "if")}
-      {Lisp-Entry "sort-predicate" #f 1477 20 1477 34 ("error" "else" "ci-compare" "compare" "ci>=?" "nu>=?" "greater/equal" "ci>?" "nu>?" "greater" "ci<=?" "nu<=?" "smaller/equal" "ci<?" "nu<?" "smaller" "ci=?" "nu=?" "if" "equal" "case" "sort-case-sensitive?" "case-sensitive?" "let" "name")}
-      {Lisp-Entry "backup-file" #f 1494 20 1494 31 ("separator:" "get-extension" "get-base" "format" "get-parent" "new-unique-file" "file")}
-      {Lisp-Entry "fail-safe-save" #f 1498 20 1498 34 ("else" "move-pathname" "exists?" "error?:" "delete-file" "not" "cond" "set!" "begin" "unwind-protect" "completed?" "backup-file" "back" "clone-file" "temp" "let" "fail-safe-save" "'fail-safe-save" "unimplemented" "proc" "file")}
-      {Lisp-Entry "read-tab-delimited" #f 1523 20 1523 38 ("get-output" "patch-for-excel" "map" "put" "split" "values" "set!" "if" "read-line" "line" "not" "while" "done?" "List-Factory" "new" "fact" "string" "tab" "let" "reader" "function" "cr-lf" "'cr-lf" "eol-encoding:" "parse" "path:" "list" "call-with-input-file" "file")}
-      {Lisp-Entry "patch-for-excel" #f 1538 13 1538 28 ("string-length" "-" "1" "subseq" "ends-with?" "starts-with?" "and" "if" "line")}
-      {Lisp-Entry "convert-tab-delimited->jml" #f 1545 20 1545 46 ("verify-reload" "get-application" "appl" "let" "get-name" "user-message" "pretty-print" "printer" "function" "UTF-8" "'UTF-8" "char-encoding:" "path:" "list" "call-with-output-file" "parse" "preferences:" "JML-Parser" "JML-Preferences" "new" "pref" "jml" "read-tab-delimited" "content" "get-base" "format" "get-parent" "new-file" "output" "let*" "convert-tab-delimited->jml" "'convert-tab-delimited->jml" "unimplemented" "parser" "input")}
-      {Lisp-Entry "save-tab-delimited" #f 1562 20 1562 38 ("format" "set!" "if" "text" "first?" "let" "line" "for-each" "printer" "function" "parse" "call-with-output-file" "save-tab-delimited" "'save-tab-delimited" "unimplemented" "file" "content")}
-      {Lisp-Entry "user-message" #f 1584 20 1584 32 ("format" "apply" "Locales" "is?" "if" "set-status-message" "when" "get-application" "appl" "let" "rest" "obj")}
-      {Lisp-Entry "clear-user-message" #f 1590 20 1590 38 ("user-message")}
-      {Lisp-Entry "make-directory-feedback" #f 1594 20 1594 43 ("set!" "3" "-" "0" "max" "subseq" "user-message" "length" "len" "expand" "expanded" "pathname=?" "not" "or" "when" "get-parent" "dir" "file" "function" "directory" "let")}
-      {Lisp-Entry "disabled-functionnality" #f 1610 20 1610 43 ("error")}
-      {Lisp-Entry "must-implement" #f 1614 20 1614 34 ("either" "error" "what" "definition-name")}
-      {Lisp-Entry "sequence->string" #f 1625 20 1625 36 ("0" "naturals" "set-element!" "+" "element" "make-word" "c" "*" "n" "i" "function" "for-each" "make-string" "string" "1" "2" "quotient" "-" "len" "cardinality" "size" "let*" "seq")}
-      {Lisp-Entry "string->sequence" #f 1637 20 1637 36 ("-" "0" "naturals" "hibyte" "lobyte" "set-element!" "element" "char->integer" "c" "n" "let" "i" "function" "for-each" "size:" "new" "seq" "2" "1" "+" "*" "size" "cardinality" "len" "let*" "type" "string")}
-      {Lisp-Entry "iterate-hierarchical-data" #f 1657 20 1657 45 ("increase!" "0" "set!" "/=" "when" "scan-id" "scan-row" "<" "while" "scan-count" "cdr" "scan" "1" "id-size" "id-data" "id" "car" "id-row" "let*" "not" "unless" "key" "size" "data" "proc")}
-      {Lisp-Entry "collect-hierarchical-data" #f 1680 20 1680 45 ("get-output" "put" "when" "object" "row" "function" "iterate-hierarchical-data" "List-Factory" "new" "fact" "let" "key" "size" "data" "proc")}
-      {Lisp-Entry "sorted-hierarchical-data" #f 1694 20 1694 44 ("key:" "list" "collect-hierarchical-data" "sort" "third" "second" "first" "function" "collect" "sort-key" "sort-test" "key" "size" "data" "proc")}
-      {Lisp-Entry "request-data-source" #f 1708 20 1708 39 ("process-modal" "external-name" "set-provider" "when" "get-guest" "manager" "let" "host-visible?:" "Data-Source-Chooser" "'Data-Source-Chooser" "autoload" "new-dialog" "dialog" "process?" "receive" "provider" "provider:")}
-      {Lisp-Entry "2-Seconds-Tolerance" #f 1721 19 1721 38 ("2")}
-      {Lisp-Entry "different-times?" #f 1725 13 1725 29 ("time->seconds" "-" "abs" ">" "2-Seconds-Tolerance" "tolerance" "tolerance:" "time2" "time1")}
-      {Lisp-Entry "different-file-content?" #f 1730 13 1730 36 ("else" "eqv?" "eof-object?" "cond" "u2" "read-u8" "u1" "iterate" "let" "get-size" "/=" "or" "input2" "input1" "function" "parse" "call-with-input-file" "different-text-file-content?" "ci=?" "test:" "Text-Extensions" "get-extension" "member?" "and" "if" "file2" "file1")}
-      {Lisp-Entry "different-text-file-content?" #f 1753 13 1753 41 ("char-encoding-errors:" "load-lines" "equal?" "not" "file2" "file1")}
-      {Lisp-Entry "different-file-content-no-whitespace?" #f 1758 13 1758 50 ("read-content-string" "wi=" "not" "input2" "input1" "function" "char-encoding-errors:" "UTF" "'UTF" "char-encoding:" "parse" "path:" "list" "call-with-input-file" "file2" "file1")}
-      {Lisp-Entry "present-hour/minutes" #f 1767 20 1767 40 ("format" "minutes" "hour")}
-      {Lisp-Entry "get-class-actions" #f 1778 20 1778 37 ("class-actions" "object")}
-      {Lisp-Entry "get-guest-actions" #f 1782 20 1782 37 ("guest-actions" "view")}
-      {Lisp-Entry "extract-actions" #f 1786 20 1786 35 ("get-output" "get-children" "put" "when" "get-shortcut" "shortcut" "action-name" "let*" "action-item" "get-name" "context-name" "action-list" "function" "for-each" "List-Factory" "new" "fact" "let" "actions-list")}
-      {Lisp-Entry "*logger-directory*" #f 1805 12 1805 30 ("Home" "Directory")}
-      {Lisp-Entry "*logger-file*" #f 1808 12 1808 25 ()}
-      {Lisp-Entry "logger-file" #f 1812 13 1812 24 ("*logger-directory*" "timestamped-file" "set!" "*logger-file*" "not" "when")}
-      {Lisp-Entry "with-logger-output" #f 1818 13 1818 31 ("port" "function" "get-eol-encoding" "eol-encoding:" "append:" "logger-file" "parse" "path:" "list" "call-with-output-file" "proc")}
-      {Lisp-Entry "logger-log" #f 1824 13 1824 23 ("format" "apply" "port" "function" "with-logger-output" "rest")}
-      {Lisp-Entry "logger-line" #f 1830 13 1830 24 ("logger-log" "line")}
-      {Lisp-Entry "logger-debug" #f 1834 13 1834 25 ("logger-log" "rest")}
-      {Lisp-Entry "logger-exception" #f 1838 13 1838 29 ("display-exception" "port" "function" "with-logger-output" "exc")}
-      {Lisp-Entry "logger-backtrace" #f 1844 13 1844 29 ("display-continuation-backtrace" "port" "function" "with-logger-output" "cont")}
-      {Lisp-Entry "*snapshots-directory*" #f 1855 12 1855 33 ("Home" "Directory")}
-      {Lisp-Entry "snapshot-process" #f 1859 20 1859 36 ("print-process-snapshot" "apply" "printer" "function" "get-eol-encoding" "eol-encoding:" "parse" "path:" "list" "call-with-output-file" "create-directories" "*snapshots-directory*" "timestamped-file" "file" "let" "rest")}
-      {Lisp-Entry "print-process-snapshot" #f 1868 20 1868 42 ("present-object" "value" "bind" "variable" "get-continuation-lexical-environment" "variables" "get-continuation-name" "name" "not" "cont" "then" "first" "first?" "get-continuation-stack" "stack" "let" "print-stack" "thread-state" "present-thread-state" "thread-name" "present-thread-name" "neq?" "do" "top-threads" "in" "thread" "for" "loop" "function" "continuation-capture" "current-thread" "print-thread" "if" "print-threads" "exception-reason" "print-exception" "when" "current-date" "present-date" "current-process-present" "either" "format" "print-process" "define" "exception" "exception:" "reason" "reason:" "continuation" "continuation:" "printer")}
-      {Lisp-Entry "snapshot-exception-debugger" #f 1940 20 1940 47 ("1" "exit" "when" "exception:" "continuation:" "snapshot-process" "snapshot" "let" "continuation" "continuation-capture" "with-system-exception-debugger" "exception" "function" "feedback" "feedback:")}
-      {Lisp-Entry "application-exception-debugger" #f 1952 20 1952 50 ("application-exception-feedback" "feedback:" "snapshot-exception-debugger")}
-      {Lisp-Entry "application-exception-feedback" #f 1957 13 1957 43 ("problem" "'problem" "type:" "title:" "process-email" "email" "if" "parse" "current-process-present" "french:" "english:" "Locales" "localize" "format" "system-message" "get-process" "process" "let" "snapshot" "exception")}}})
+      {Lisp-Entry "Logs" #f 493 19 493 23 ("List-Factory" "new")}
+      {Lisp-Entry "get-logs" #f 497 20 497 28 ("Logs" "get-list")}
+      {Lisp-Entry "Add-Log-Lock" #f 501 19 501 31 ("Lock" "new")}
+      {Lisp-Entry "add-log" #f 505 20 505 27 ("Logs" "put" "get-logs" "memq?" "unless" "Add-Log-Lock" "synchronize" "add-log" "'add-log" "unimplemented" "log")}
+      {Lisp-Entry "current-log" #f 513 20 513 31 ("add-log" "set-current-log" "default-log" "log" "let" "get-current-log" "either")}
+      {Lisp-Entry "default-log" #f 521 13 521 24 ("name:" "Log" "new" "default-log" "'default-log" "unimplemented")}
+      {Lisp-Entry "get-current-log" #f 527 20 527 35 ("current-log" "'current-log" "get-parameter" "get-current-log" "'get-current-log" "unimplemented")}
+      {Lisp-Entry "set-current-log" #f 533 20 533 35 ("current-log" "'current-log" "set-parameter" "set-current-log" "'set-current-log" "unimplemented" "log")}
+      {Lisp-Entry "with-log" #f 539 20 539 28 ("add-log" "not" "and" "when" "get-name" "set-current-log" "begin" "unwind-protect" "get-current-log" "preserved" "let" "with-log" "'with-log" "unimplemented" "file" "file:" "name" "name:" "proc" "log")}
+      {Lisp-Entry "with-node" #f 553 20 553 29 ("with-node" "new-entry" "either" "let" "current-log" "log" "log:" "data" "data:" "message" "message:" "name" "name:" "tag" "tag:" "node" "node:" "proc")}
+      {Lisp-Entry "log-node" #f 558 20 558 28 ("log-node" "current-log" "log" "log:" "node")}
+      {Lisp-Entry "log-entry" #f 562 20 562 29 ("log-entry" "current-log" "log" "log:" "data" "data:" "message" "message:" "name" "name:" "tag" "tag:")}
+      {Lisp-Entry "log-properties" #f 566 20 566 34 ("log-entry" "get-output-string" "keyword->symbol" "format" "set!" "if" "value" "property" "function" "for-each-property" "first?" "open-output-string" "printer" "let" "current-log" "log" "log:" "data" "data:" "message" "message:" "name" "name:" "tag" "tag:" "properties")}
+      {Lisp-Entry "new-log-node" #f 579 20 579 32 ("new-entry" "current-log" "log" "log:" "data" "data:" "message" "message:" "name" "name:" "tag" "tag:")}
+      {Lisp-Entry "with-profile" #f 588 20 588 32 ("new-entry" "either" "after" "'after" "set!" "before" "'before" "log-profile" "result" "let" "function" "with-node" "with-profile" "'with-profile" "unimplemented" "current-log" "log" "log:" "data" "data:" "message" "message:" "name" "name:" "tag" "tag:" "node" "node:" "proc")}
+      {Lisp-Entry "log-profile" #f 602 20 602 31 ("Performance" "resources-snapshot" "log-node" "gc" "log-profile" "'log-profile" "unimplemented" "current-log" "log" "log:" "name" "name:")}
+      {Lisp-Entry "log-stack" #f 609 20 609 29 ("data:" "log-entry" "Stack-Snapshot" "new" "data" "let" "log-stack" "'log-stack" "unimplemented" "current-log" "log" "log:" "message" "message:" "name" "name:" "tag" "tag:")}
+      {Lisp-Entry "profiles->jml" #f 616 20 616 33 ("'name" "get-property" "node" "key:" "<" "sort" "profile->jml" "cons" "set!" "profile-parent" "not" "when" "profile" "name" "function" "get-profiles" "iterate-table" "nodes" "let" "profiles->jml" "'profiles->jml" "unimplemented" "profiles")}
+      {Lisp-Entry "profile->jml" #f 627 13 627 25 ("insert-profile-children" "profile-content" "node" "let" "profile->jml" "'profile->jml" "unimplemented" "profile" "parent")}
+      {Lisp-Entry "profile-content" #f 635 13 635 28 ("'total" "'count" "'name" "list" "properties:" "'profile" "JML-Element" "new" "profile-total" "total" "0" "profile-count" "count" "profile-name" "name" "let" "profile-content" "'profile-content" "unimplemented" "profile" "parent")}
+      {Lisp-Entry "insert-profile-children" #f 644 13 644 36 ("collect-profile-children" "profile->jml" "child" "function" "map" "insert-profile-children" "'insert-profile-children" "unimplemented" "profile" "parent")}
+      {Lisp-Entry "collect-profile-children" #f 652 13 652 37 ("profile-previous-brother" "cons" "set!" "while" "profile-last-child" "child" "children" "let" "collect-profile-children" "'collect-profile-children" "unimplemented" "profile")}
+      {Lisp-Entry "Active-Locales" #f 668 19 668 33 ("english:")}
+      {Lisp-Entry "Active-Locale" #f 671 19 671 32 ("english:")}
+      {Lisp-Entry "get-locales" #f 675 20 675 31 ("Active-Locales")}
+      {Lisp-Entry "get-locale" #f 679 20 679 30 ("Active-Locale")}
+      {Lisp-Entry "set-locale" #f 683 20 683 30 ("locale-update" "select-locale" "get-application" "appl" "set!" "Active-Locale" "neq?" "when" "standardize-locale" "let" "update?" "update?:" "loc")}
+      {Lisp-Entry "standardize-locale" #f 693 13 693 31 ("error" "else" "symbol?" "enumerator->symbol" "symbol->keyword" "enumerator?" "keyword?" "cond" "loc")}
+      {Lisp-Entry "localize" #f 700 20 700 28 ("Active-Locale" "localize" "Locales" "is?" "if" "object")}
+      {Lisp-Entry "localize-to" #f 706 20 706 31 ("localize" "Locales" "is?" "if" "locale" "object")}
+      {Lisp-Entry "present-locale" #f 712 20 712 34 ("english:" "case" "locale")}
+      {Lisp-Entry "Scheme-Extensions" #f 722 19 722 36 ()}
+      {Lisp-Entry "CommonLisp-Extensions" #f 725 19 725 40 ()}
+      {Lisp-Entry "Jazz-Extensions" #f 728 19 728 34 ()}
+      {Lisp-Entry "C-Extensions" #f 731 19 731 31 ()}
+      {Lisp-Entry "Textual-Extensions" #f 734 19 734 37 ()}
+      {Lisp-Entry "Text-Extensions" #f 737 19 737 34 ("Textual-Extensions" "C-Extensions" "Jazz-Extensions" "CommonLisp-Extensions" "Scheme-Extensions" "append")}
+      {Lisp-Entry "effective-extensions" #f 745 20 745 40 ("else" "Text-Extensions" ":text" "C-Extensions" ":c" "Jazz-Extensions" ":jazz" "CommonLisp-Extensions" ":commonlisp" "Scheme-Extensions" ":scheme" "case" "extensions")}
+      {Lisp-Entry "Scheme-Include-Extensions" #f 755 19 755 44 ("Scheme-Extensions")}
+      {Lisp-Entry "CommonLisp-Include-Extensions" #f 758 19 758 48 ("CommonLisp-Extensions")}
+      {Lisp-Entry "Jazz-Include-Extensions" #f 761 19 761 42 ("Scheme-Include-Extensions" "append")}
+      {Lisp-Entry "C-Include-Extensions" #f 765 19 765 39 ("C-Extensions")}
+      {Lisp-Entry "Textual-Include-Extensions" #f 768 19 768 45 ("Textual-Extensions")}
+      {Lisp-Entry "Text-Include-Extensions" #f 771 19 771 42 ("Textual-Include-Extensions" "C-Include-Extensions" "Jazz-Include-Extensions" "CommonLisp-Include-Extensions" "Scheme-Include-Extensions" "append")}
+      {Lisp-Entry "effective-include-extensions" #f 779 13 779 41 ("else" "Text-Include-Extensions" ":text" "C-Include-Extensions" ":c" "Jazz-Include-Extensions" ":jazz" "CommonLisp-Include-Extensions" ":commonlisp" "Scheme-Include-Extensions" ":scheme" "case" "extensions")}
+      {Lisp-Entry "Scheme-Catalog-Extensions" #f 789 19 789 44 ("Scheme-Extensions")}
+      {Lisp-Entry "CommonLisp-Catalog-Extensions" #f 792 19 792 48 ("CommonLisp-Extensions")}
+      {Lisp-Entry "Jazz-Catalog-Extensions" #f 795 19 795 42 ("Scheme-Catalog-Extensions" "append")}
+      {Lisp-Entry "C-Catalog-Extensions" #f 799 19 799 39 ("C-Extensions")}
+      {Lisp-Entry "Textual-Catalog-Extensions" #f 802 19 802 45 ("Textual-Extensions")}
+      {Lisp-Entry "Text-Catalog-Extensions" #f 805 19 805 42 ("Textual-Catalog-Extensions" "C-Catalog-Extensions" "Jazz-Catalog-Extensions" "CommonLisp-Catalog-Extensions" "Scheme-Catalog-Extensions" "append")}
+      {Lisp-Entry "effective-catalog-extensions" #f 813 20 813 48 ("else" "Text-Catalog-Extensions" ":text" "C-Catalog-Extensions" ":c" "Jazz-Catalog-Extensions" ":jazz" "CommonLisp-Catalog-Extensions" ":commonlisp" "Scheme-Catalog-Extensions" ":scheme" "case" "extensions")}
+      {Lisp-Entry "make-filename" #f 828 20 828 33 ("format" "extension" "base")}
+      {Lisp-Entry "ensure-read/write" #f 832 20 832 37 ("throw-cancel" "read/write" "'read/write" "cancel" "'cancel" "no" "set-read/write" "'set-read/write" "yes" "process-keys?:" "question" "'question" "type:" "title:" "get-name" "format" "message-box" "case" "code" "no-action" "'no-action" "read/write?" "exists?" "not" "or" "if" "get-file" "file" "let" "throw" "'throw" "cancel-action" "cancel-action:" "moniker")}
+      {Lisp-Entry "convert-extension" #f 851 20 851 37 ("else" "directory?" "convert-file-extension" "file?" "convert-path-extension" "pair?" "convert-name-extension" "string?" "not" "cond" "convert-extension" "'convert-extension" "unimplemented" "to" "from" "object")}
+      {Lisp-Entry "convert-name-extension" #f 862 13 862 35 ("extract-base" "make-filename" "extract-extension" "ci=?" "if" "convert-name-extension" "'convert-name-extension" "unimplemented" "to" "from" "name")}
+      {Lisp-Entry "convert-path-extension" #f 870 13 870 35 ("convert-name-extension" "list" "butlast" "append" "extract-extension" "ci=?" "if" "last" "name" "let" "convert-path-extension" "'convert-path-extension" "unimplemented" "to" "from" "path")}
+      {Lisp-Entry "convert-file-extension" #f 879 13 879 35 ("get-base" "make-filename" "new-brother" "get-extension" "ci=?" "if" "to" "from" "file")}
+      {Lisp-Entry "resource?" #f 890 27 890 36 ("Resource" "is?" "object")}
+      {Lisp-Entry "sleep" #f 899 20 899 25 ("thread-sleep!" "delay")}
+      {Lisp-Entry "warn" #f 903 20 903 24 ("apply" ":console" "format" "rest" "string")}
+      {Lisp-Entry "warn-unimplemented" #f 908 20 908 38 (":console" "format" "name")}
+      {Lisp-Entry "bits->symbolic" #f 912 20 912 34 ("get-output" "put" "mask-bit-set?" "when" "value" "name" "bind" "entry" "function" "for-each" "List-Factory" "new" "fact" "get-entries" "entries" "let" "enumeration" "bits")}
+      {Lisp-Entry "copy-into!" #f 923 20 923 30 ("cardinality" "0" "naturals" "set-element!" "rank" "element" "function" "for-each" "seq2" "seq1")}
+      {Lisp-Entry "present-context-actions" #f 935 20 935 43 (":hyperlink" "image:" "list" "self" "invoke" "when" "get-handler" "handler" "get-title" "get-image" "image" "let*" "action" "function" "map" "present-context-text" "present-context-actions" "'present-context-actions" "unimplemented" "actions" "title")}
+      {Lisp-Entry "present-context-text" #f 951 20 951 40 ("list" "set-text" "Context-Text-View" "new" "text-view" "let" "present-context-text" "'present-context-text" "unimplemented" "text" "title")}
+      {Lisp-Entry "display-tabulated" #f 964 20 964 37 ("print-to" "newline" "->string" "output" "column" "object" "row" "function" "for-each" "add-columns" "left" "'left" "alignment:" "border-after:" "Aligned-Column" "Display-Column" "=" "if" "collect" "0" "from" "n" "in" "ignore" "for" "loop" "columns" "1" "length" "-" "last" "car" "sample" "Columns-Display" "new" "display" "let*" "display-tabulated" "'display-tabulated" "unimplemented" "printer" "data")}
+      {Lisp-Entry "size-rect" #f 996 20 996 29 ("get-height" "get-width" "0" "Rect" "new" "size")}
+      {Lisp-Entry "position/size->rect" #f 1000 20 1000 39 ("get-v" "get-h" "h/v/size->rect" "size" "position")}
+      {Lisp-Entry "h/v/size->rect" #f 1004 20 1004 34 ("get-height" "get-width" "+" "Rect" "new" "size" "v" "h")}
+      {Lisp-Entry "h/v/width/height" #f 1008 20 1008 36 ("+" "Rect" "new" "height" "width" "v" "h")}
+      {Lisp-Entry "corners->rect" #f 1012 20 1012 33 ("get-v" "get-h" "Rect" "new" "bottom-right" "top-left")}
+      {Lisp-Entry "normalize-rect" #f 1016 20 1016 34 ("<=" "if" "Rect" "new" "get-bottom" "b" "get-right" "r" "get-top" "t" "get-left" "l" "let" "rect")}
+      {Lisp-Entry "rect-position" #f 1028 20 1028 33 ("get-top" "get-left" "Point" "new" "rect")}
+      {Lisp-Entry "rect-size" #f 1032 20 1032 29 ("rect-height" "rect-width" "Dimension" "new" "rect")}
+      {Lisp-Entry "rect-width" #f 1038 20 1038 30 ("get-left" "get-right" "-" "rect")}
+      {Lisp-Entry "rect-height" #f 1042 20 1042 31 ("get-top" "get-bottom" "-" "rect")}
+      {Lisp-Entry "offset-rect" #f 1046 20 1046 31 ("get-bottom" "get-right" "get-top" "get-left" "+" "Rect" "new" "v" "h" "rect")}
+      {Lisp-Entry "inflate-rect" #f 1054 20 1054 32 ("get-bottom" "get-right" "+" "get-top" "get-left" "-" "Rect" "new" "h" "w" "rect")}
+      {Lisp-Entry "inflate-rect" #f 1062 13 1062 25 ("get-bottom" "get-right" "+" "get-top" "get-left" "-" "Rect" "new" "h" "w" "rect")}
+      {Lisp-Entry "expand-rect" #f 1070 20 1070 31 ("get-bottom" "get-right" "get-top" "get-left" "+" "Rect" "new" "b" "r" "t" "l" "rect")}
+      {Lisp-Entry "base-rect" #f 1078 20 1078 29 ("get-top" "get-left" "-" "offset-rect" "rect")}
+      {Lisp-Entry "fit-rects" #f 1082 20 1082 29 (">" "if" "both" "height" "width" "case" "rh" "/" "rw" "sh" "sw" "rect-height" "dh" "rect-width" "dw" "let*" "mode" "dst" "src")}
+      {Lisp-Entry "fit-within" #f 1095 20 1095 30 ("values" "get-v" "get-h" "between" "new-position" "max-position" "Point" "min-position" "new" "new-size" "get-height" "height" "-" "min" "get-width" "max" "width" "rect-position" "position" "rect-size" "size" "let*" "padding" "padding:" "0" "Dimension" "minimum-size" "minimum-size:" "rect" "outer")}
+      {Lisp-Entry "rect-union" #f 1107 20 1107 30 ("get-bottom" "get-right" ">" "get-top" "get-left" "<" "if" "Rect" "new" "y" "x")}
+      {Lisp-Entry "rect-intersection" #f 1115 20 1115 37 ("0" "get-bottom" "get-right" "<" "get-top" "get-left" ">" "Rect" "new" "rect-intersect?" "if" "y" "x")}
+      {Lisp-Entry "rect-intersect?" #f 1125 20 1125 35 (">" "get-bottom" "get-top" "get-right" "get-left" "<" "and" "y" "x")}
+      {Lisp-Entry "rects-intersect?" #f 1132 20 1132 36 ("get-bottom" "get-right" ">" "get-height" "get-v" "get-top" "get-width" "get-h" "+" "get-left" "<" "and" "size" "position" "rect")}
+      {Lisp-Entry "in-rect?" #f 1139 20 1139 28 ("get-bottom" "get-right" "<" "get-top" "get-v" "get-left" "get-h" ">=" "and" "rect" "pt")}
+      {Lisp-Entry "rect-in-rect?" #f 1146 20 1146 33 ("get-bottom" "get-right" "<=" "get-top" "get-left" ">=" "and" "rect" "r")}
+      {Lisp-Entry "in-size?" #f 1153 20 1153 28 ("get-height" "get-width" "<" "get-v" "0" "get-h" ">=" "and" "size" "pt")}
+      {Lisp-Entry "add-rects" #f 1160 20 1160 29 ("get-bottom" "get-right" "get-top" "get-left" "+" "Rect" "new" "r2" "r1")}
+      {Lisp-Entry "subtract-rects" #f 1168 20 1168 34 ("get-bottom" "get-right" "get-top" "get-left" "-" "Rect" "new" "r2" "r1")}
+      {Lisp-Entry "inverse-rect" #f 1176 20 1176 32 ("get-right" "get-bottom" "get-left" "get-top" "Rect" "new" "rect")}
+      {Lisp-Entry "positive-rect?" #f 1184 20 1184 34 ("get-right" "get-bottom" "get-left" "0" "get-top" ">=" "and" "rect")}
+      {Lisp-Entry "center" #f 1191 20 1191 26 ("center" "'center" "justify" "outer" "inner")}
+      {Lisp-Entry "justify" #f 1195 20 1195 27 ("class-of" "type-name" "number?" "second" "get-height" "first" "pair?" "get-width" "Point" "new" "Dimension" "is?" "and" "cond" "error" "else" "tail" "2" "-" "quotient" "center" "head" "case" "+" "0" ">=" "integer?" "if" "j" "o" "i" "function" "proc" "let" "justification" "outer" "inner")}
+      {Lisp-Entry "cycle-naturals" #f 1219 20 1219 34 ("get-output" "+" "put" "by" "m" "do" "below" "0" "from" "n" "for" "loop" "quotient" "inc" "*" "cardinality" "List-Factory" "new" "fact" "let*" "subcycle" "cycle")}
+      {Lisp-Entry "fit" #f 1229 20 1229 23 ("else" "-" ">=" "and" "+" "<=" "0" ">" "cond" "padding" "max" "size" "alternate" "pos")}
+      {Lisp-Entry "fit-point" #f 1238 20 1238 29 ("get-height" "get-v" "get-width" "essay" "get-h" "fit" "Point" "new" "padding" "max" "size" "alternate" "pos")}
+      {Lisp-Entry "scalar-product" #f 1244 20 1244 34 ("get-v" "get-h" "*" "+" "b" "a")}
+      {Lisp-Entry "line-distance" #f 1248 20 1248 33 ("Point" "new" "scalar-product" "/" "abs" "0" "=" "if" "get-v" "get-h" "-" "sqr" "+" "sqrt" "divider" "let" "end" "start" "point")}
+      {Lisp-Entry "resize-parts" #f 1269 20 1269 32 ("naturals" "1" "<=" "between?" "or" "n" "function" "map" "end2" "-1" "end" "start" "parity" "modulo" "+" "extra" "-" "quotient" "base" "0" "<" "if" "offset" "let*" "count" "delta" "size")}
+      {Lisp-Entry "scale" #f 1282 20 1282 25 ("Number" "get-bottom" "bottom" "get-right" "right" "get-top" "top" "get-left" "left" "Rect" "get-height" "height" "get-width" "width" "Dimension" "*" "fxround" "new" "get-v" "v" "get-h" "h" "Point" "typecase" "exact->inexact" "let" "sc" "shape")}
+      {Lisp-Entry "scale-factor" #f 1311 20 1311 32 ("/" "inner" "outer")}
+      {Lisp-Entry "get-area" #f 1315 20 1315 28 ("get-height" "get-width" "*" "size")}
+      {Lisp-Entry "iterate-cells" #f 1324 20 1324 33 ("set!" "while" "either" "horizontal" "'horizontal" "cell" "function" "advance" "previous-cell" "backward" "next-cell" "forward" "case" "next" "let*" "proc" "direction" "start" "bottom-right" "top-left")}
+      {Lisp-Entry "previous-cell" #f 1337 13 1337 26 ("horizontal" "Cell" "new" "minor" "major" "receive" "when" ">" "-1" "get-row" "get-col" "loop-cell" "info" "let" "vertical" "case" "direction" "max-cell" "min-cell" "cell")}
+      {Lisp-Entry "next-cell" #f 1349 13 1349 22 ("horizontal" "Cell" "new" "minor" "major" "receive" "when" "<" "1" "get-row" "get-col" "loop-cell" "info" "let" "vertical" "case" "direction" "max-cell" "min-cell" "cell")}
+      {Lisp-Entry "loop-cell" #f 1362 13 1362 22 ("else" "+" "values" "cond" "test" "step" "end-minor" "end-major" "start-minor" "start-major" "minor" "major")}
+      {Lisp-Entry "output-header" #f 1376 20 1376 33 ("when" "contributor" "for-each" "jazzscheme" "format" "toplevel-comment" "c" "case" "comment" "string-length" "make-string" "system-padding" "get-process" "system-title" "either" "let*" "function" "with-printer" "end-proper?" "end-proper?:" "contributors" "contributors:" "copyright" "copyright:" "author" "author:" "license" "license:" "system" "system:" "jazz" "'jazz" "language" "language:" "printer" "title")}
+      {Lisp-Entry "output-section" #f 1428 20 1428 34 ("2" "*" "format" "4" "string-length" "+" "make-string" "extra" "toplevel" "c" "case" "comment" "let" "0" "level" "level:" "jazz" "'jazz" "language" "language:" "printer" "title")}
+      {Lisp-Entry "get-preferences" #f 1444 20 1444 35 ("find-component" "either" "error" "when" "not" "if" "get-preferences-root" "root" "get-process" "process" "let*" "error?" "error?:" "name")}
+      {Lisp-Entry "set-preference" #f 1457 20 1457 34 ("set-property" "get-process" "get-preferences-designer" "designer" "let" "value" "property" "preferences")}
+      {Lisp-Entry "sort-case-sensitive?" #f 1462 20 1462 40 ("get-sort-case-sensitive?" "and" "error?:" "tree" "interface" "get-preferences" "pref" "let")}
+      {Lisp-Entry "sort-predicates" #f 1467 20 1467 35 ("ci>?" "ci<?" "ci=?" "nu>?" "nu<?" "nu=?" "values" "sort-case-sensitive?" "if")}
+      {Lisp-Entry "sort-predicate" #f 1473 20 1473 34 ("error" "else" "ci-compare" "compare" "ci>=?" "nu>=?" "greater/equal" "ci>?" "nu>?" "greater" "ci<=?" "nu<=?" "smaller/equal" "ci<?" "nu<?" "smaller" "ci=?" "nu=?" "if" "equal" "case" "sort-case-sensitive?" "case-sensitive?" "let" "name")}
+      {Lisp-Entry "backup-file" #f 1490 20 1490 31 ("separator:" "get-extension" "get-base" "format" "get-parent" "new-unique-file" "file")}
+      {Lisp-Entry "fail-safe-save" #f 1494 20 1494 34 ("else" "move-pathname" "exists?" "error?:" "delete-file" "not" "cond" "set!" "begin" "unwind-protect" "completed?" "backup-file" "back" "clone-file" "temp" "let" "fail-safe-save" "'fail-safe-save" "unimplemented" "proc" "file")}
+      {Lisp-Entry "read-tab-delimited" #f 1519 20 1519 38 ("get-output" "patch-for-excel" "map" "put" "split" "values" "set!" "if" "read-line" "line" "not" "while" "done?" "List-Factory" "new" "fact" "string" "tab" "let" "reader" "function" "cr-lf" "'cr-lf" "eol-encoding:" "parse" "path:" "list" "call-with-input-file" "file")}
+      {Lisp-Entry "patch-for-excel" #f 1534 13 1534 28 ("string-length" "-" "1" "subseq" "ends-with?" "starts-with?" "and" "if" "line")}
+      {Lisp-Entry "convert-tab-delimited->jml" #f 1541 20 1541 46 ("verify-reload" "get-application" "appl" "let" "get-name" "user-message" "pretty-print" "printer" "function" "UTF-8" "'UTF-8" "char-encoding:" "path:" "list" "call-with-output-file" "parse" "preferences:" "JML-Parser" "JML-Preferences" "new" "pref" "jml" "read-tab-delimited" "content" "get-base" "format" "get-parent" "new-file" "output" "let*" "convert-tab-delimited->jml" "'convert-tab-delimited->jml" "unimplemented" "parser" "input")}
+      {Lisp-Entry "save-tab-delimited" #f 1558 20 1558 38 ("format" "set!" "if" "text" "first?" "let" "line" "for-each" "printer" "function" "parse" "call-with-output-file" "save-tab-delimited" "'save-tab-delimited" "unimplemented" "file" "content")}
+      {Lisp-Entry "user-message" #f 1580 20 1580 32 ("format" "apply" "Locales" "is?" "if" "set-status-message" "when" "get-application" "appl" "let" "rest" "obj")}
+      {Lisp-Entry "clear-user-message" #f 1586 20 1586 38 ("user-message")}
+      {Lisp-Entry "make-directory-feedback" #f 1590 20 1590 43 ("set!" "3" "-" "0" "max" "subseq" "user-message" "length" "len" "expand" "expanded" "pathname=?" "not" "or" "when" "get-parent" "dir" "file" "function" "directory" "let")}
+      {Lisp-Entry "disabled-functionnality" #f 1606 20 1606 43 ("error")}
+      {Lisp-Entry "must-implement" #f 1610 20 1610 34 ("either" "error" "what" "definition-name")}
+      {Lisp-Entry "sequence->string" #f 1621 20 1621 36 ("0" "naturals" "set-element!" "+" "element" "make-word" "c" "*" "n" "i" "function" "for-each" "make-string" "string" "1" "2" "quotient" "-" "len" "cardinality" "size" "let*" "seq")}
+      {Lisp-Entry "string->sequence" #f 1633 20 1633 36 ("-" "0" "naturals" "hibyte" "lobyte" "set-element!" "element" "char->integer" "c" "n" "let" "i" "function" "for-each" "size:" "new" "seq" "2" "1" "+" "*" "size" "cardinality" "len" "let*" "type" "string")}
+      {Lisp-Entry "iterate-hierarchical-data" #f 1653 20 1653 45 ("increase!" "0" "set!" "/=" "when" "scan-id" "scan-row" "<" "while" "scan-count" "cdr" "scan" "1" "id-size" "id-data" "id" "car" "id-row" "let*" "not" "unless" "key" "size" "data" "proc")}
+      {Lisp-Entry "collect-hierarchical-data" #f 1676 20 1676 45 ("get-output" "put" "when" "object" "row" "function" "iterate-hierarchical-data" "List-Factory" "new" "fact" "let" "key" "size" "data" "proc")}
+      {Lisp-Entry "sorted-hierarchical-data" #f 1690 20 1690 44 ("key:" "list" "collect-hierarchical-data" "sort" "third" "second" "first" "function" "collect" "sort-key" "sort-test" "key" "size" "data" "proc")}
+      {Lisp-Entry "request-data-source" #f 1704 20 1704 39 ("process-modal" "external-name" "set-provider" "when" "get-guest" "manager" "let" "host-visible?:" "Data-Source-Chooser" "'Data-Source-Chooser" "autoload" "new-dialog" "dialog" "process?" "receive" "provider" "provider:")}
+      {Lisp-Entry "2-Seconds-Tolerance" #f 1717 19 1717 38 ("2")}
+      {Lisp-Entry "different-times?" #f 1721 13 1721 29 ("time->seconds" "-" "abs" ">" "2-Seconds-Tolerance" "tolerance" "tolerance:" "time2" "time1")}
+      {Lisp-Entry "different-file-content?" #f 1726 13 1726 36 ("else" "eqv?" "eof-object?" "cond" "u2" "read-u8" "u1" "iterate" "let" "get-size" "/=" "or" "input2" "input1" "function" "parse" "call-with-input-file" "different-text-file-content?" "ci=?" "test:" "Text-Extensions" "get-extension" "member?" "and" "if" "file2" "file1")}
+      {Lisp-Entry "different-text-file-content?" #f 1749 13 1749 41 ("char-encoding-errors:" "load-lines" "equal?" "not" "file2" "file1")}
+      {Lisp-Entry "different-file-content-no-whitespace?" #f 1754 13 1754 50 ("read-content-string" "wi=" "not" "input2" "input1" "function" "char-encoding-errors:" "UTF" "'UTF" "char-encoding:" "parse" "path:" "list" "call-with-input-file" "file2" "file1")}
+      {Lisp-Entry "present-hour/minutes" #f 1763 20 1763 40 ("format" "minutes" "hour")}
+      {Lisp-Entry "get-class-actions" #f 1774 20 1774 37 ("class-actions" "object")}
+      {Lisp-Entry "get-guest-actions" #f 1778 20 1778 37 ("guest-actions" "view")}
+      {Lisp-Entry "extract-actions" #f 1782 20 1782 35 ("get-output" "get-children" "put" "when" "get-shortcut" "shortcut" "action-name" "let*" "action-item" "get-name" "context-name" "action-list" "function" "for-each" "List-Factory" "new" "fact" "let" "actions-list")}
+      {Lisp-Entry "*logger-directory*" #f 1801 12 1801 30 ("Home" "Directory")}
+      {Lisp-Entry "*logger-file*" #f 1804 12 1804 25 ()}
+      {Lisp-Entry "logger-file" #f 1808 13 1808 24 ("*logger-directory*" "timestamped-file" "set!" "*logger-file*" "not" "when")}
+      {Lisp-Entry "with-logger-output" #f 1814 13 1814 31 ("port" "function" "get-eol-encoding" "eol-encoding:" "append:" "logger-file" "parse" "path:" "list" "call-with-output-file" "proc")}
+      {Lisp-Entry "logger-log" #f 1820 13 1820 23 ("format" "apply" "port" "function" "with-logger-output" "rest")}
+      {Lisp-Entry "logger-line" #f 1826 13 1826 24 ("logger-log" "line")}
+      {Lisp-Entry "logger-debug" #f 1830 13 1830 25 ("logger-log" "rest")}
+      {Lisp-Entry "logger-exception" #f 1834 13 1834 29 ("display-exception" "port" "function" "with-logger-output" "exc")}
+      {Lisp-Entry "logger-backtrace" #f 1840 13 1840 29 ("display-continuation-backtrace" "port" "function" "with-logger-output" "cont")}
+      {Lisp-Entry "*snapshots-directory*" #f 1851 12 1851 33 ("Home" "Directory")}
+      {Lisp-Entry "snapshot-process" #f 1855 20 1855 36 ("print-process-snapshot" "apply" "printer" "function" "get-eol-encoding" "eol-encoding:" "parse" "path:" "list" "call-with-output-file" "create-directories" "*snapshots-directory*" "timestamped-file" "file" "let" "rest")}
+      {Lisp-Entry "print-process-snapshot" #f 1864 20 1864 42 ("present-object" "value" "bind" "variable" "get-continuation-lexical-environment" "variables" "get-continuation-name" "name" "not" "cont" "then" "first" "first?" "get-continuation-stack" "stack" "let" "print-stack" "thread-state" "present-thread-state" "thread-name" "present-thread-name" "neq?" "do" "top-threads" "in" "thread" "for" "loop" "function" "continuation-capture" "current-thread" "print-thread" "if" "print-threads" "exception-reason" "print-exception" "when" "current-date" "present-date" "current-process-present" "either" "format" "print-process" "define" "exception" "exception:" "reason" "reason:" "continuation" "continuation:" "printer")}
+      {Lisp-Entry "snapshot-exception-debugger" #f 1936 20 1936 47 ("1" "exit" "when" "exception:" "continuation:" "snapshot-process" "snapshot" "let" "continuation" "continuation-capture" "with-system-exception-debugger" "exception" "function" "feedback" "feedback:")}
+      {Lisp-Entry "application-exception-debugger" #f 1948 20 1948 50 ("application-exception-feedback" "feedback:" "snapshot-exception-debugger")}
+      {Lisp-Entry "application-exception-feedback" #f 1953 13 1953 43 ("problem" "'problem" "type:" "title:" "process-email" "email" "if" "parse" "current-process-present" "french:" "english:" "Locales" "localize" "format" "system-message" "get-process" "process" "let" "snapshot" "exception")}}})
 "autoload"
- ({Lisp-File-Entry {File jazz.library "src" "jazz" "library" "autoload.jazz"} 1245732655
+ ({Lisp-File-Entry {File jazz.library "src" "jazz" "library" "autoload.jazz"} 1246940598
     {Lisp-Entry "jazz.library.autoload" #f 37 19 37 40 ("jazz")}})

@@ -12,10 +12,10 @@
       {Lisp-Entry "jazz.Scheme-Dialect" #f 65 19 65 38 ("jazz.allocate-scheme-dialect" "jazz.Object-Class" "jazz.Dialect")}
       {Lisp-Entry "jazz.Scheme-Walker" #f 74 19 74 37 ("jazz.allocate-scheme-walker" "jazz.Object-Class" "errors" "warnings" "jazz.Walker")}}})
 "dialect"
- ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "dialect" "dialect.scm"} 1245732655
+ ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "dialect" "dialect.scm"} 1246908056
     {Lisp-Entry "scheme.dialect.dialect" #f 37 18 37 40 ("jazz.new-scheme-dialect" "scheme" "'scheme" "jazz.register-dialect" "jazz.Scheme-Walker" "jazz.Scheme-Dialect" "jazz.Define-Macro-Declaration" "jazz.Define-Declaration" "jazz.encapsulate-class")
       {Lisp-Entry "jazz.Define-Declaration" #f 45 27 45 50 ()}
-      {Lisp-Entry "jazz.new-define-declaration" #f 48 9 48 36 ("jazz.setup-declaration" "uptodate" "'uptodate" "public" "'public" "jazz.Define-Declaration" "jazz.allocate-define-declaration" "new-declaration" "let" "signature" "parent" "type" "name")}
+      {Lisp-Entry "jazz.new-define-declaration" #f 48 9 48 36 ("jazz.setup-declaration" "uptodate" "'uptodate" "private" "'private" "jazz.Define-Declaration" "jazz.allocate-define-declaration" "new-declaration" "let" "signature" "parent" "type" "name")}
       {Lisp-Entry "jazz.walk-binding-validate-call" ("jazz.Define-Declaration") 55 21 55 52 ("jazz.validate-arguments" "if" "declaration" "%%get-define-declaration-signature" "signature" "let" "arguments" "operator" "source-declaration" "resume" "walker")}
       {Lisp-Entry "jazz.emit-declaration" ("jazz.Define-Declaration") 61 21 61 42 ("%%get-declaration-source" "%%get-lexical-binding-type" "jazz.emit-expression" "jazz.emit-type-cast" ",locator" "define" "jazz.sourcify-if" "%%get-define-declaration-value" "value" "declaration" "%%get-declaration-locator" "locator" "let" "environment")}
       {Lisp-Entry "jazz.emit-binding-reference" ("jazz.Define-Declaration") 70 21 70 48 ("jazz.Any" "declaration" "%%get-declaration-locator" "jazz.new-code" "environment" "source-declaration")}
@@ -23,7 +23,7 @@
       {Lisp-Entry "jazz.walk-binding-assignable?" ("jazz.Define-Declaration") 83 21 83 50 ()}
       {Lisp-Entry "jazz.emit-binding-assignment" ("jazz.Define-Declaration") 87 21 87 49 ("jazz.Any" "jazz.emit-expression" "jazz.sourcified-form" ",locator" "set!" "jazz.new-code" "declaration" "%%get-declaration-locator" "locator" "let" "environment" "source-declaration" "value")}
       {Lisp-Entry "jazz.Define-Macro-Declaration" #f 103 27 103 56 ()}
-      {Lisp-Entry "jazz.new-define-macro-declaration" #f 106 9 106 42 ("jazz.setup-declaration" "uptodate" "'uptodate" "public" "'public" "jazz.Define-Macro-Declaration" "jazz.allocate-define-macro-declaration" "new-declaration" "let" "signature" "parent" "type" "name")}
+      {Lisp-Entry "jazz.new-define-macro-declaration" #f 106 9 106 42 ("jazz.setup-declaration" "uptodate" "'uptodate" "private" "'private" "jazz.Define-Macro-Declaration" "jazz.allocate-define-macro-declaration" "new-declaration" "let" "signature" "parent" "type" "name")}
       {Lisp-Entry "jazz.walk-binding-expandable?" ("jazz.Define-Macro-Declaration") 112 21 112 50 ()}
       {Lisp-Entry "jazz.walk-binding-expand-form" ("jazz.Define-Macro-Declaration") 116 21 116 50 ("%%cdr" "%%apply" "jazz.need-macro" "expander" "jazz.load-module" "%%get-declaration-parent" "parent-declaration" "jazz.walk-error" "%%get-declaration-toplevel" "%%eq?" "if" "binding" "%%get-declaration-locator" "locator" "%%desourcify" "form" "let" "form-src" "environment" "declaration" "resume" "walker")}
       {Lisp-Entry "jazz.emit-declaration" ("jazz.Define-Macro-Declaration") 127 21 127 42 ("%%get-declaration-source" "jazz.emit-expression" "jazz.sourcified-form" "jazz.emit-signature" "%%cons" "jazz.define-macro" "jazz.sourcify-if" "cons" "augmented-environment" "frame" "lambda" "jazz.annotate-signature" "jazz.with-annotated-frame" "%%get-define-macro-body" "body" "%%get-define-macro-signature" "signature" "declaration" "%%get-declaration-locator" "locator" "let" "environment")}

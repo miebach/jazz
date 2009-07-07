@@ -39,7 +39,7 @@
         {Lisp-Entry "get-variable-name" #f 73 18 73 35 ("reference" "process" "debugger" "frame-variable-name" "variable")}
         {Lisp-Entry "get-variable-value" #f 77 18 77 36 ("reference" "process" "debugger" "frame-variable-value" "variable")}}}})
 "Debugged-Process"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugged" "Debugged-Process.jazz"} 1244896779
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugged" "Debugged-Process.jazz"} 1246650283
     {Lisp-Entry "jazz.debugger.debugged.Debugged-Process" #f 37 19 37 58 ("jazz")
       {Lisp-Entry "Debugged-Process" #f 44 7 44 23 ("Debugged")
         {Lisp-Entry "same?" #f 52 11 52 16 ("get-reference" "reference" "debugger" "process=?" "Debugged-Process" "is?" "and" "debugged")}
@@ -48,11 +48,12 @@
         {Lisp-Entry "get-icon" #f 71 18 71 26 ("reference" "debugger" "process-icon" "either" "Bitmap-Resource" "new")}
         {Lisp-Entry "get-threads" #f 77 18 77 29 ("reference" "debugger" "process-threads")}
         {Lisp-Entry "present" #f 81 18 81 25 ("reference" "debugger" "present-process")}
-        {Lisp-Entry "restart-stop" #f 85 18 85 30 ("reference" "debugger" "restart-stop" "restart")}
-        {Lisp-Entry "break-thread" #f 89 18 89 30 ("reference" "debugger" "break-thread" "thread")}
-        {Lisp-Entry "continue-stop" #f 93 18 93 31 ("reference" "debugger" "continue-stop" "stop")}
-        {Lisp-Entry "evaluate-expressions" #f 97 18 97 38 ("reference" "debugger" "evaluate-expressions" "expressions")}
-        {Lisp-Entry "exit" #f 101 18 101 22 ("reference" "debugger" "process-exit")}}}})
+        {Lisp-Entry "reload-process" #f 85 18 85 32 ("reference" "debugger" "reload-process")}
+        {Lisp-Entry "restart-stop" #f 89 18 89 30 ("reference" "debugger" "restart-stop" "restart")}
+        {Lisp-Entry "break-thread" #f 93 18 93 30 ("reference" "debugger" "break-thread" "thread")}
+        {Lisp-Entry "continue-stop" #f 97 18 97 31 ("reference" "debugger" "continue-stop" "stop")}
+        {Lisp-Entry "evaluate-expressions" #f 101 18 101 38 ("reference" "debugger" "evaluate-expressions" "expressions")}
+        {Lisp-Entry "exit" #f 105 18 105 22 ("reference" "debugger" "process-exit")}}}})
 "Debugged-Restart"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugged" "Debugged-Restart.jazz"} 1238328024
     {Lisp-Entry "jazz.debugger.debugged.Debugged-Restart" #f 37 19 37 58 ("jazz")
@@ -81,7 +82,7 @@
         {Lisp-Entry "get-active-stop" #f 73 18 73 33 ("reference" "process" "debugger" "thread-active-stop")}
         {Lisp-Entry "set-repl-frame" #f 77 18 77 32 ("reference" "process" "debugger" "set-repl-frame" "frame")}}}})
 "Debugger"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugger" "Debugger.jazz"} 1244896779
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugger" "Debugger.jazz"} 1246650283
     {Lisp-Entry "jazz.debugger.debugger.Debugger" #f 37 19 37 50 ("jazz")
       {Lisp-Entry "Debugger" #f 43 7 43 15 ("Object")
         {Lisp-Entry "start-debugger" #f 51 26 51 40 ()}
@@ -94,33 +95,34 @@
         {Lisp-Entry "process-icon" #f 65 26 65 38 ("process")}
         {Lisp-Entry "process-threads" #f 66 26 66 41 ("process")}
         {Lisp-Entry "present-process" #f 67 26 67 41 ("process")}
-        {Lisp-Entry "evaluate-expressions" #f 68 26 68 46 ("expressions" "process")}
-        {Lisp-Entry "process-detach" #f 69 26 69 40 ("process")}
-        {Lisp-Entry "process-exit" #f 70 26 70 38 ("process")}
-        {Lisp-Entry "thread=?" #f 78 26 78 34 ("y-thread" "y-process" "x-thread" "x-process")}
-        {Lisp-Entry "thread-name" #f 79 26 79 37 ("thread" "process")}
-        {Lisp-Entry "thread-state" #f 80 26 80 38 ("thread" "process")}
-        {Lisp-Entry "thread-stops" #f 81 26 81 38 ("thread" "process")}
-        {Lisp-Entry "thread-active-stop" #f 82 26 82 44 ("thread" "process")}
-        {Lisp-Entry "break-thread" #f 83 26 83 38 ("thread" "process")}
-        {Lisp-Entry "set-repl-frame" #f 84 26 84 40 ("frame" "thread" "process")}
-        {Lisp-Entry "restart=?" #f 92 26 92 35 ("y-restart" "y-process" "x-restart" "x-process")}
-        {Lisp-Entry "restart-name" #f 93 26 93 38 ("restart" "process")}
-        {Lisp-Entry "restart-message" #f 94 26 94 41 ("restart" "process")}
-        {Lisp-Entry "restart-stop" #f 95 26 95 38 ("restart" "process")}
-        {Lisp-Entry "stop=?" #f 103 26 103 32 ("y" "y-process" "x" "x-process")}
-        {Lisp-Entry "stop-kind" #f 104 26 104 35 ("stop" "process")}
-        {Lisp-Entry "stop-reason" #f 105 26 105 37 ("stop" "process")}
-        {Lisp-Entry "stop-detail" #f 106 26 106 37 ("stop" "process")}
-        {Lisp-Entry "stop-restarts" #f 107 26 107 39 ("stop" "process")}
-        {Lisp-Entry "stop-frames" #f 108 26 108 37 ("stop" "process")}
-        {Lisp-Entry "continue-stop" #f 109 26 109 39 ("stop" "process")}
-        {Lisp-Entry "frame=?" #f 117 26 117 33 ("y-frame" "y-process" "x-frame" "x-process")}
-        {Lisp-Entry "frame-name" #f 118 26 118 36 ("frame" "process")}
-        {Lisp-Entry "frame-location" #f 119 26 119 40 ("frame" "process")}
-        {Lisp-Entry "frame-variables" #f 120 26 120 41 ("frame" "process")}
-        {Lisp-Entry "frame-variable-name" #f 121 26 121 45 ("variable" "frame" "process")}
-        {Lisp-Entry "frame-variable-value" #f 122 26 122 46 ("variable" "frame" "process")}}}})
+        {Lisp-Entry "reload-process" #f 68 26 68 40 ("process")}
+        {Lisp-Entry "evaluate-expressions" #f 69 26 69 46 ("expressions" "process")}
+        {Lisp-Entry "process-detach" #f 70 26 70 40 ("process")}
+        {Lisp-Entry "process-exit" #f 71 26 71 38 ("process")}
+        {Lisp-Entry "thread=?" #f 79 26 79 34 ("y-thread" "y-process" "x-thread" "x-process")}
+        {Lisp-Entry "thread-name" #f 80 26 80 37 ("thread" "process")}
+        {Lisp-Entry "thread-state" #f 81 26 81 38 ("thread" "process")}
+        {Lisp-Entry "thread-stops" #f 82 26 82 38 ("thread" "process")}
+        {Lisp-Entry "thread-active-stop" #f 83 26 83 44 ("thread" "process")}
+        {Lisp-Entry "break-thread" #f 84 26 84 38 ("thread" "process")}
+        {Lisp-Entry "set-repl-frame" #f 85 26 85 40 ("frame" "thread" "process")}
+        {Lisp-Entry "restart=?" #f 93 26 93 35 ("y-restart" "y-process" "x-restart" "x-process")}
+        {Lisp-Entry "restart-name" #f 94 26 94 38 ("restart" "process")}
+        {Lisp-Entry "restart-message" #f 95 26 95 41 ("restart" "process")}
+        {Lisp-Entry "restart-stop" #f 96 26 96 38 ("restart" "process")}
+        {Lisp-Entry "stop=?" #f 104 26 104 32 ("y" "y-process" "x" "x-process")}
+        {Lisp-Entry "stop-kind" #f 105 26 105 35 ("stop" "process")}
+        {Lisp-Entry "stop-reason" #f 106 26 106 37 ("stop" "process")}
+        {Lisp-Entry "stop-detail" #f 107 26 107 37 ("stop" "process")}
+        {Lisp-Entry "stop-restarts" #f 108 26 108 39 ("stop" "process")}
+        {Lisp-Entry "stop-frames" #f 109 26 109 37 ("stop" "process")}
+        {Lisp-Entry "continue-stop" #f 110 26 110 39 ("stop" "process")}
+        {Lisp-Entry "frame=?" #f 118 26 118 33 ("y-frame" "y-process" "x-frame" "x-process")}
+        {Lisp-Entry "frame-name" #f 119 26 119 36 ("frame" "process")}
+        {Lisp-Entry "frame-location" #f 120 26 120 40 ("frame" "process")}
+        {Lisp-Entry "frame-variables" #f 121 26 121 41 ("frame" "process")}
+        {Lisp-Entry "frame-variable-name" #f 122 26 122 45 ("variable" "frame" "process")}
+        {Lisp-Entry "frame-variable-value" #f 123 26 123 46 ("variable" "frame" "process")}}}})
 "Debugger-Event"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugger" "Debugger-Event.jazz"} 1238328024
     {Lisp-Entry "jazz.debugger.debugger.Debugger-Event" #f 37 19 37 56 ("jazz")
@@ -158,7 +160,7 @@
         {Lisp-Entry "construct-literal" #f 54 16 54 33 ("self" "new" "apply" "rest" "context")}
         {Lisp-Entry "print" #f 58 11 58 16 ("description" "description:" "code" "code:" "address" "address:" "list" "self" "class-of" "type-name" "identifier-name" "format" "readably" "printer")}}}})
 "Exception-View"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugger" "Exception-View.jazz"} 1238328024
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugger" "Exception-View.jazz"} 1246976242
     {Lisp-Entry "jazz.debugger.debugger.Exception-View" #f 37 19 37 56 ("Detail-Tree" "register-autoclass" "jazz")
       {Lisp-Entry "Exception-View" #f 59 7 59 21 ("on-edit-detail" ":form" "Selection-Handler" "selection-handler:" "row" "selection-mode:" "multiple-selection?:" "detail" "shown?:" "header" "fill" "content" "flat?:" "vscroll?:" "center" "location:" "scroller" "tools" "name:" "border" "layout-type:" "Layout-View")
         {Lisp-Entry "thread" #f 62 12 62 18 ()}
@@ -212,7 +214,7 @@
         {Lisp-Entry "get-image" #f 89 26 89 35 ()}
         {Lisp-Entry "edit" #f 98 26 98 30 ()}}}})
 "Frames-View"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugger" "Frames-View.jazz"} 1238328024
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugger" "Frames-View.jazz"} 1246976242
     {Lisp-Entry "jazz.debugger.debugger.Frames-View" #f 37 19 37 53 ("Frames-Tree" "register-autoclass" "jazz")
       {Lisp-Entry "Frames-View" #f 60 7 60 18 ("on-context-menu" "Event-Handler" "context-menu-handler:" "on-select-frame" ":form" "Selection-Handler" "selection-handler:" "row" "selection-mode:" "multiple-selection?:" "frames" "shown?:" "header" "fill" "content" "flat?:" "vscroll?:" "center" "location:" "scroller" "tools" "name:" "border" "layout-type:" "Layout-View")
         {Lisp-Entry "process" #f 63 12 63 19 ("generate")}
@@ -254,7 +256,7 @@
         {Lisp-Entry "construct-literal" #f 59 16 59 33 ("self" "new" "apply" "rest" "context")}
         {Lisp-Entry "print" #f 63 11 63 16 ("threads" "threads:" "collector" "collector:" "memory" "memory:" "exception" "exception:" "computer" "computer:" "date" "date:" "process" "process:" "list" "self" "class-of" "type-name" "identifier-name" "format" "readably" "printer")}}}})
 "Processes-View"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugger" "Processes-View.jazz"} 1238328024
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugger" "Processes-View.jazz"} 1246976740
     {Lisp-Entry "jazz.debugger.debugger.Processes-View" #f 37 19 37 56 ("Processes-Tree" "register-autoclass" "jazz")
       {Lisp-Entry "Processes-View" #f 58 7 58 21 ("on-double-click" "double-click-handler:" "on-context-menu" "context-menu-handler:" "on-select-process" "Selection-Handler" "selection-handler:" "row" "selection-mode:" "multiple-selection?:" "processes" "shown?:" "header" "fill" "content" "flat?:" "vscroll?:" "center" "scroller" "on-update" "update" "on-focus" "tail" "location:" "focus" "0" "2" "on-open-snapshot" ":form" "Event-Handler" "action-handler:" ":icons" "portfolio:" "Bitmap-Resource" "image-name:" "tooltip-text:" "tooltip?:" "22" "Dimension" "size:" "open" "tools" "name:" "border" "layout-type:" "Layout-View")
         {Lisp-Entry "snapshots" #f 61 12 61 21 ("generate")}
@@ -315,7 +317,7 @@
         {Lisp-Entry "construct-literal" #f 63 16 63 33 ("self" "new" "apply" "rest" "context")}
         {Lisp-Entry "print" #f 67 11 67 16 ("call-stack" "call-stack:" "data-stack" "data-stack:" "system-stack" "system-stack:" "state" "state:" "label" "label:" "model" "model:" "list" "self" "class-of" "type-name" "identifier-name" "format" "readably" "printer")}}}})
 "Threads-View"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugger" "Threads-View.jazz"} 1238328024
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugger" "Threads-View.jazz"} 1246976944
     {Lisp-Entry "jazz.debugger.debugger.Threads-View" #f 37 19 37 54 ("Threads-Tree" "register-autoclass" "jazz")
       {Lisp-Entry "Threads-View" #f 58 7 58 19 ("on-double-click" "double-click-handler:" "on-context-menu" "context-menu-handler:" "on-select-thread" "Selection-Handler" "selection-handler:" "row" "selection-mode:" "multiple-selection?:" "threads" "shown?:" "header" "fill" "content" "flat?:" "vscroll?:" "center" "scroller" "on-update" "update" "2" "on-toggle-detailed" "tail" "location:" "detailed" "0" "5" "on-continue" "continue" "on-break" "break" "on-restart" ":form" "Event-Handler" "action-handler:" ":icons" "portfolio:" "Bitmap-Resource" "image-name:" "tooltip-text:" "tooltip?:" "22" "Dimension" "size:" "restart" "tools" "name:" "border" "layout-type:" "Layout-View")
         {Lisp-Entry "process" #f 61 12 61 19 ("set-process" "get-process")}
@@ -356,7 +358,7 @@
       {Lisp-Entry "Threads-Tree" #f 434 7 434 19 ("toplevel-controls?:" "431" "width:" "title:" ":icons" "portfolio:" "Tree-View")}
       {Lisp-Entry "Thread-Menu" #f 450 7 450 18 ("Context-Menu")}}})
 "Variables-View"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugger" "Variables-View.jazz"} 1238328024
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugger" "Variables-View.jazz"} 1246976944
     {Lisp-Entry "jazz.debugger.debugger.Variables-View" #f 37 19 37 56 ("jazz")
       {Lisp-Entry "Variables-View" #f 50 7 50 21 ("303" "value" "toplevel-controls?:" "130" "width:" "name" "row" "selection-mode:" "multiple-selection?:" "variables" "content" "flat?:" "hscroll?:" "vscroll?:" "scroller" "name:" "fill" "layout-type:" "Layout-View")
         {Lisp-Entry "process" #f 53 12 53 19 ("set-process" "get-process")}
@@ -377,7 +379,7 @@
         {Lisp-Entry "inspect" #f 173 11 173 18 ("nextmethod" "else" "inspect-slots" "context:" "inspect-frame" "frame:" "case" "get-variables" "list" "get-variable-value" "value" "get-variable-name" "name" "let" "variable" "function" "map" "Debugged-Frame" "is?" "if" "kind" "data")}
         {Lisp-Entry "inspect-frame" #f 186 11 186 24 ("length" "naturals" "0" "list" "value" "name" "bind" "pair?" "if" "rank" "parameter" "function" "map" "get-parameters" "parameters" "let" "Frame-Snapshot" "typecase" "frame")}}}})
 "_debugger"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "_debugger.jazz"} 1244896779
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "_debugger.jazz"} 1246976943
     {Lisp-Entry "jazz.debugger" #f 37 9 37 22 ("jazz")
       {Lisp-Entry "*debuggers*" #f 63 12 63 23 ()}
       {Lisp-Entry "*current-debugger*" #f 66 12 66 30 ()}

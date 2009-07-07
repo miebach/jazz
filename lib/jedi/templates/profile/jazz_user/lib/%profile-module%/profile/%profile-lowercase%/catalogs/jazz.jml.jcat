@@ -52,7 +52,7 @@
         {Lisp-Entry "pretty-print" #f 118 18 118 30 ("child" "for-each" "car" "null?" "1" "=" "get-children" "children" "table-ref" "max" "neq?" "property" "for-each-property" "length" ">" "pres" "get-property" "value" "7" "+" "'name" "has-property?" "cardinality" "-" "pad" "not-null?" "and" ":human" "case" "get-properties" "properties" "cons" "symbol->string" "name" "get-tag" "tag" "let*" "single-line?" "get-text" "text" "JML-Text" "is?" "if" "set!" "2" "*" "or" "format" "not" "when" "level" "path" "node" "iter" "letrec" "self" "compute-maxes" "maxes" "max-name" "max-tag" "receive" "first?" "let" "function" "with-printer" ":reader" "readably" "readably:" "align-properties?" "align-properties?:" "align-name?" "align-name?:" "space-properties?" "space-properties?:" "0" "base" "base:" "indent-first?" "indent-first?:" "form?" "form?:" "printer")}
         {Lisp-Entry "compute-maxes" #f 190 11 190 24 ("values" "get-children" "1" "child" "for-each" "get-properties" "table-set!" "table-ref" "max" "'name" "eq?" "format" "cast" "value" "property" "for-each-property" "set!" ">" "not" "or" "2" "*" "cardinality" "+" "width" "cons" "symbol->string" "name" "get-tag" "tag" "let*" "JML-Element" "is?" "when" "level" "path" "function" "iter" "letrec" "equal?" "test:" "make-table" "essay" "maxes" "max-name" "max-tag" "let" "align-properties?" "base" "node")}}}})
 "JML-Parser"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "parser" "JML-Parser.jazz"} 1238328024
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "parser" "JML-Parser.jazz"} 1246940598
     {Lisp-Entry "jazz.jml.parser.JML-Parser" #f 37 19 37 45 ("jazz")
       {Lisp-Entry "JML-Parser" #f 45 7 45 17 ("Object")
         {Lisp-Entry "preferences" #f 53 8 53 19 ()}
@@ -65,23 +65,19 @@
         {Lisp-Entry "parse-noexpand" #f 95 11 95 25 ("error" "else" "parse-expr" "sub" "function" "map" "parse-new-node" "car" "symbol?" "pair?" "and" "parse-node" "tagged-expr?" "set-parent" "JML-Node" "is?" "not" "cond" "object" "parent")}
         {Lisp-Entry "parse-pattern" #f 113 11 113 24 ("parse-any" "parse-noexpand" "eq?" "pair?" "and" "if" "expand-pattern" "expansion" "tag->name" "tag" "car" "first" "let*" "pattern" "parent")}
         {Lisp-Entry "parse-node" #f 122 11 122 21 ("parse-new-node" "parse-jml-node" "tag?" "if" "car" "first" "let" "expr" "parent")}
-        {Lisp-Entry "parse-new-node" #f 129 11 129 25 ("set-children" "when" "parse-children" "children" "new" "apply" "node" "let*" "keywords?:" "parse-jml-properties/children" "children-list" "properties-list" "receive" "autoload" "class" "let" "rest" "model" "bind" "expr" "parent")}
-        {Lisp-Entry "parse-jml-expr" #f 140 11 140 25 ("values" "parse-jml-properties/children" "children-list" "properties-list" "receive" "tag->name" "tag" "let" "rest" "first" "bind" "expr")}
-        {Lisp-Entry "parse-jml-node" #f 147 11 147 25 ("set-properties" "parse-children" "children" "parse-properties" "properties" "JML-Element" "new" "node" "let*" "parse-jml-properties/children" "children-list" "properties-list" "receive" "tag->name" "tag" "let" "rest" "first" "bind" "expr" "parent")}
-        {Lisp-Entry "parse-properties" #f 158 11 158 27 ("get-output" "put" "validate-property" "parse-property" "error" "ends-with?" "starts-with?" "or" "if" "symbol->string" "name" "value" "property" "function" "for-each-property" "List-Factory" "new" "fact" "let" "properties")}
-        {Lisp-Entry "parse-children" #f 172 11 172 25 ("get-output" "add-nodes" "parse-expr" "jml" "JML-Text" "put" "string?" "if" "element" "function" "for-each" "List-Factory" "new" "fact" "let" "children" "parent")}
-        {Lisp-Entry "add-nodes" #f 183 11 183 20 ("put" "add-nodes" "node" "function" "for-each" "null/pair?" "if" "nodes" "fact")}
-        {Lisp-Entry "parse-property" #f 191 11 191 25 ("parse-value" "parse-property" "map" ":string" "car" "eq?" "pair?" "and" "if" "value")}
-        {Lisp-Entry "parse-value" #f 197 11 197 22 ("parse-path" "Path" "is?" "if" "value")}
-        {Lisp-Entry "parse-path" #f 203 11 203 21 ("get-alias" "cons" "append" "apply" "get-path" "path" "alias" "bind" "use-generator?" "use-generator?:" "value")}
-        {Lisp-Entry "tag-valid?" #f 208 29 208 39 ("tag")}
-        {Lisp-Entry "validate-tag" #f 212 29 212 41 ("error" "tag-valid?" "unless" "tag")}
-        {Lisp-Entry "validate-property" #f 217 29 217 46 ("value" "property")}
-        {Lisp-Entry "parse-result" #f 226 11 226 23 ("parse-noexpand" "expr")}
-        {Lisp-Entry "tagged-expr?" #f 232 11 232 23 ("tag?" "car" "first" "let" "pair?" "and" "expr")}
-        {Lisp-Entry "pattern-expr?" #f 238 11 238 24 ("self" "find-dispatch" "tag->name" "tag" "tag?" "car" "first" "let" "pair?" "and" "expr")}
-        {Lisp-Entry "expand-pattern" #f 246 11 246 25 ("self" "find-dispatch" "pattern" "let" "tag" "tree")}
-        {Lisp-Entry "get-alias" #f 256 29 256 38 ("error" "rest" "name")}}}})
+        {Lisp-Entry "parse-new-node" #f 129 11 129 25 ("set-children" "when" "parse-children" "children" "new" "apply" "node" "let*" "parse-jml-properties/children" "children-list" "properties-list" "receive" "autoload" "class" "let" "rest" "model" "bind" "expr" "parent")}
+        {Lisp-Entry "parse-jml-node" #f 140 11 140 25 ("set-properties" "parse-children" "children" "parse-properties" "properties" "JML-Element" "new" "node" "let*" "parse-jml-properties/children" "children-list" "properties-list" "receive" "tag->name" "tag" "let" "rest" "first" "bind" "expr" "parent")}
+        {Lisp-Entry "parse-properties" #f 151 11 151 27 ("queue-list" "parse-property" "keyword->symbol" "enqueue" "value" "property" "function" "for-each-property" "new-queue" "queue" "let" "properties")}
+        {Lisp-Entry "parse-children" #f 160 11 160 25 ("queue-list" "parse-expr" "jml" "JML-Text" "new" "string?" "element" "function" "enqueue" "for-each" "null/pair?" "if" "nodes" "add-nodes" "define" "new-queue" "queue" "let" "children" "parent")}
+        {Lisp-Entry "parse-property" #f 176 11 176 25 ("parse-value" "parse-property" "map" ":string" "car" "eq?" "pair?" "and" "if" "value")}
+        {Lisp-Entry "parse-value" #f 182 11 182 22 ("parse-path" "Path" "is?" "if" "value")}
+        {Lisp-Entry "parse-path" #f 188 11 188 21 ("get-alias" "cons" "append" "apply" "get-path" "path" "alias" "bind" "use-generator?" "use-generator?:" "value")}
+        {Lisp-Entry "tag-valid?" #f 193 29 193 39 ("tag")}
+        {Lisp-Entry "validate-tag" #f 197 29 197 41 ("error" "tag-valid?" "unless" "tag")}
+        {Lisp-Entry "tagged-expr?" #f 207 11 207 23 ("car" "tag?" "pair?" "and" "expr")}
+        {Lisp-Entry "pattern-expr?" #f 212 11 212 24 ("self" "find-dispatch" "tag->name" "tag" "tag?" "car" "first" "let" "pair?" "and" "expr")}
+        {Lisp-Entry "expand-pattern" #f 220 11 220 25 ("self" "find-dispatch" "pattern" "let" "tag" "tree")}
+        {Lisp-Entry "get-alias" #f 230 29 230 38 ("error" "rest" "name")}}}})
 "JML-Preferences"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "preference" "JML-Preferences.jazz"} 1238328024
     {Lisp-Entry "jazz.jml.preference.JML-Preferences" #f 37 19 37 54 ("jazz")
@@ -135,7 +131,7 @@
         {Lisp-Entry "Valid-Tags" #f 53 14 53 24 ("var" "ul" "u" "tt" "tr" "title" "thead" "th" "tfoot" "textarea" "td" "tbody" "table" "sup" "sub" "style" "strong" "strike" "span" "small" "select" "script" "samp" "s" "q" "pre" "param" "p" "option" "optgroup" "ol" "object" "noscript" "noframes" "meta" "menu" "map" "link" "li" "legend" "label" "kbd" "isindex" "ins" "input" "img" "iframe" "i" "html" "hr" "head" "h6" "h5" "h4" "h3" "h2" "h1" "frameset" "frame" "form" "font" "fieldset" "em" "dt" "dl" "div" "dir" "dfn" "del" "dd" "colgroup" "col" "code" "cite" "center" "caption" "button" "br" "body" "blockquote" "big" "bdo" "basefont" "base" "b" "area" "applet" "address" "acronym" "abbr" "a")}
         {Lisp-Entry "tag-valid?" #f 147 11 147 21 ("Valid-Tags" "memq?" "tag")}}}})
 "XHTML-Renderer"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "xhtml" "XHTML-Renderer.jazz"} 1238328024
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "xhtml" "XHTML-Renderer.jazz"} 1246925448
     {Lisp-Entry "jazz.jml.xhtml.XHTML-Renderer" #f 40 19 40 48 ("jazz")
       {Lisp-Entry "XHTML-Renderer" #f 48 7 48 21 ("JML-Renderer")
         {Lisp-Entry "Empty-Tags" #f 56 14 56 24 ("param" "meta" "link" "input" "img" "hr" "frame" "col" "br" "basefont" "base" "area")}
@@ -156,7 +152,7 @@
         {Lisp-Entry "output-to" #f 170 11 170 20 ("format" "when" "text" "printer")}
         {Lisp-Entry "end-tag" #f 175 11 175 18 ("format" "tag")}}}})
 "_jml"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "_jml.jazz"} 1237033581
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "_jml.jazz"} 1246940598
     {Lisp-Entry "jazz.jml" #f 37 9 37 17 ("jazz")
       {Lisp-Entry "Autoclasses" #f 53 12 53 23 ("eq?" "test:" "make-table")}
       {Lisp-Entry "get-autoclass" #f 57 20 57 33 ("Autoclasses" "table-ref" "name")}
@@ -167,24 +163,23 @@
       {Lisp-Entry "parse-jml" #f 85 20 85 29 ("parse" "preferences:" "JML-Parser" "parser" "JML-Preferences" "either" "new" "pref" "let*" "parser-class" "parser-class:" "preferences-class" "preferences-class:" "jml")}
       {Lisp-Entry "transform-jml" #f 96 20 96 33 ("transform" "transformation" "node")}
       {Lisp-Entry "render-jml" #f 105 20 105 30 ("render" "JML-Renderer" "renderer" "JML-Preferences" "either" "new" "pref" "let*" "renderer-class" "renderer-class:" "preferences-class" "preferences-class:" "printer" "node")}
-      {Lisp-Entry "parse-jml-properties/children" #f 116 20 116 49 ("get-output" "values" "when" "cdr" "cddr" "set!" "cadr" "extract-jml-property" "begin" "value" "property" "function" "put" "jml-keyword?" "or" "keyword?" "not" "and" "if" "car" "element" "not-null?" "while" "content" "List-Factory" "new" "properties" "scan" "let" "proper?" "proper?:" "keywords?" "keywords?:" "list")}
-      {Lisp-Entry "extract-jml-property" #f 141 13 141 33 ("symbol->keyword" "not" "if" "keyword->string" "string->symbol" "symbol" "let" "keywords?" "keyword")}
-      {Lisp-Entry "get-jml-property" #f 148 20 148 36 ("cddr" "set!" "cadr" "continuation-return" "car" "eqv?" "when" "not-null?" "while" "return" "function" "continuation-capture" "scan" "let" "not-found" "not-found:" "property" "list")}
-      {Lisp-Entry "jml->form" #f 167 20 167 29 ("node->form" "parse" "node" "JML-Parser" "new" "parser" "let*" "expr")}
-      {Lisp-Entry "jml->form>>" #f 173 20 173 31 ("setup-toplevel-context" "jml->form" "form" "let" "class" "expr")}
-      {Lisp-Entry "read-jml" #f 179 20 179 28 ("read" "jazz-readtable" "readtable:" "cr-lf" "'cr-lf" "eol-encoding:" "parse" "path:" "list" "call-with-input-file" "file")}
-      {Lisp-Entry "node->form" #f 184 20 184 30 ("cdr" "car" "set-children" "install" "'install" "client-form" "'client-form" "set-property" "begin" "null?" "branch-model?" "set-parent-value" "get-children" "map" "children" "extract-node-properties" "properties:" "tag-module" "'tag-module" "tag-module:" "tag-symbolic?:" "name:" "model-name:" "action:" "textual?:" "Form" "form" "'name" "get-property" "butlast" "string->symbol" "name" "memq?" "model-name" "new" "'new" "else" "locate" "'locate" "modify" "'modify" "eq?" "cond" "action" "or" "tag-symbolic?" "" "'" "tag-locate?" "ends-with?" "!" "'!" "neq?" "and" "tag-modify?" "symbol->string" "tag-name" "get-tag" "tag" "let*" "JML-Text" "is?" "if" "parent" "function" "node->form" "letrec" "node")}
-      {Lisp-Entry "extract-node-properties" #f 217 13 217 36 ("get-output" "get-properties" "put" "tag-module" "tag-symbolic?" "name" "memq?" "not" "when" "value" "property" "function" "for-each-property" "List-Factory" "new" "fact" "let" "node")}
-      {Lisp-Entry "form->node" #f 227 20 227 30 ("add-client-form" "branch-model?" "set-children" "set-properties" "get-children" "map" "children" "extract-form-properties" "properties" "JML-Element" "element" "" "'" "!" "'!" "new" "'install" "install" "locate" "modify" "case" "symbol->string" "string-append" "string->symbol" "tag" "get-tag-symbolic?" "symbolic?" "get-name" "name" "get-model-name" "model-name" "get-action" "action" "let*" "JML-Text" "is?" "if" "parent" "function" "form->node" "letrec" "form")}
-      {Lisp-Entry "branch-model?" #f 250 13 250 26 ("Test-Model" "Test-Branch-Aux" "Test-Branch" "Heading-Slide" "Concept-Slide" "Documentation-Slide" "Basic-Slide" "Slide" "Design-Model" "Design-Diagram" "Branch" "memq?" "model-name")}
-      {Lisp-Entry "add-client-form" #f 254 13 254 28 ("form->node" "cons" "not" "if" "'client-form" "get-property" "client-form" "let" "children" "form")}
-      {Lisp-Entry "extract-form-properties" #f 261 13 261 36 ("get-output" "get-properties" "client-form" "'client-form" "neq?" "field-name" "property?" "if" "value" "property" "function" "for-each-property" "'tag-module" "'name" "put" "not" "and" "when" "get-tag-module" "tag-module" "get-name" "name" "List-Factory" "new" "fact" "let" "symbolic?" "form")}
-      {Lisp-Entry "load-jml" #f 285 20 285 28 ("preferences:" "JML-Parser" "parser" "JML-Preferences" "new" "pref" "let*" "reader" "function" "jazz-readtable" "readtable:" "cr-lf" "'cr-lf" "eol-encoding:" "parse" "path:" "list" "call-with-input-file" "file")}
-      {Lisp-Entry "save-jml-to-clipboard" #f 293 20 293 41 ("set-clipboard-text" "get-output-string" "output" "pretty-print" "open-output-string" "printer" "let" "jml")}}})
+      {Lisp-Entry "parse-jml-properties/children" #f 116 20 116 49 ("cdr" "cddr" "cadr" "enqueue" "new-queue" "set!" "when" "begin" "keyword?" "not" "and" "car" "element" "queue-list" "values" "null?" "if" "scan" "iterate" "content" "properties" "let" "list")}
+      {Lisp-Entry "get-jml-property" #f 137 20 137 36 ("cddr" "set!" "cadr" "continuation-return" "car" "eqv?" "when" "not-null?" "while" "return" "function" "continuation-capture" "scan" "let" "not-found" "not-found:" "property" "list")}
+      {Lisp-Entry "jml->form" #f 156 20 156 29 ("node->form" "parse" "node" "JML-Parser" "new" "parser" "let*" "expr")}
+      {Lisp-Entry "jml->form>>" #f 162 20 162 31 ("setup-toplevel-context" "jml->form" "form" "let" "class" "expr")}
+      {Lisp-Entry "read-jml" #f 168 20 168 28 ("read" "jazz-readtable" "readtable:" "cr-lf" "'cr-lf" "eol-encoding:" "parse" "path:" "list" "call-with-input-file" "file")}
+      {Lisp-Entry "node->form" #f 173 20 173 30 ("cdr" "car" "set-children" "install" "'install" "client-form" "'client-form" "set-property" "begin" "null?" "branch-model?" "set-parent-value" "get-children" "map" "children" "extract-node-properties" "properties:" "tag-module" "'tag-module" "tag-module:" "tag-symbolic?:" "name:" "model-name:" "action:" "textual?:" "Form" "form" "'name" "get-property" "butlast" "string->symbol" "name" "memq?" "model-name" "new" "'new" "else" "locate" "'locate" "modify" "'modify" "eq?" "cond" "action" "or" "tag-symbolic?" "" "'" "tag-locate?" "ends-with?" "!" "'!" "neq?" "and" "tag-modify?" "symbol->string" "tag-name" "get-tag" "tag" "let*" "JML-Text" "is?" "if" "parent" "function" "node->form" "letrec" "node")}
+      {Lisp-Entry "extract-node-properties" #f 206 13 206 36 ("get-output" "get-properties" "put" "tag-module" "tag-symbolic?" "name" "memq?" "not" "when" "value" "property" "function" "for-each-property" "List-Factory" "new" "fact" "let" "node")}
+      {Lisp-Entry "form->node" #f 216 20 216 30 ("add-client-form" "branch-model?" "set-children" "set-properties" "get-children" "map" "children" "extract-form-properties" "properties" "JML-Element" "element" "" "'" "!" "'!" "new" "'install" "install" "locate" "modify" "case" "symbol->string" "string-append" "string->symbol" "tag" "get-tag-symbolic?" "symbolic?" "get-name" "name" "get-model-name" "model-name" "get-action" "action" "let*" "JML-Text" "is?" "if" "parent" "function" "form->node" "letrec" "form")}
+      {Lisp-Entry "branch-model?" #f 239 13 239 26 ("Test-Model" "Test-Branch-Aux" "Test-Branch" "Heading-Slide" "Concept-Slide" "Documentation-Slide" "Basic-Slide" "Slide" "Design-Model" "Design-Diagram" "Branch" "memq?" "model-name")}
+      {Lisp-Entry "add-client-form" #f 243 13 243 28 ("form->node" "cons" "not" "if" "'client-form" "get-property" "client-form" "let" "children" "form")}
+      {Lisp-Entry "extract-form-properties" #f 250 13 250 36 ("get-output" "get-properties" "client-form" "'client-form" "neq?" "field-name" "property?" "if" "value" "property" "function" "for-each-property" "'tag-module" "'name" "put" "not" "and" "when" "get-tag-module" "tag-module" "get-name" "name" "List-Factory" "new" "fact" "let" "symbolic?" "form")}
+      {Lisp-Entry "load-jml" #f 274 20 274 28 ("preferences:" "JML-Parser" "parser" "JML-Preferences" "new" "pref" "let*" "reader" "function" "jazz-readtable" "readtable:" "cr-lf" "'cr-lf" "eol-encoding:" "parse" "path:" "list" "call-with-input-file" "file")}
+      {Lisp-Entry "save-jml-to-clipboard" #f 282 20 282 41 ("set-clipboard-text" "get-output-string" "output" "pretty-print" "open-output-string" "printer" "let" "jml")}}})
 "_syntax"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "syntax" "_syntax.jazz"} 1238328024
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "syntax" "_syntax.jazz"} 1246650283
     {Lisp-Entry "jazz.jml.syntax" #f 37 19 37 34 ("jazz")
-      {Lisp-Entry "pattern" #f 45 8 45 15 (",@rest" "method" "rest")}}})
+      {Lisp-Entry "pattern" #f 45 15 45 22 (",@rest" "method" "rest")}}})
 "autoload"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "autoload.jazz"} 1238328024
     {Lisp-Entry "jazz.jml.autoload" #f 37 19 37 36 ("jazz")}})

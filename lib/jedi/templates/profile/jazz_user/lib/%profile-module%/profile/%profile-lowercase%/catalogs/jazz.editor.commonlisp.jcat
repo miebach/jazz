@@ -1,0 +1,48 @@
+"CommonLisp-Explorer"
+ ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "text" "CommonLisp-Explorer.jazz"} 1246976242
+    {Lisp-Entry "jazz.editor.commonlisp.text.CommonLisp-Explorer" #f 37 19 37 66 ("jazz")
+      {Lisp-Entry "CommonLisp-Explorer" #f 46 7 46 26 ("Lisp-Explorer")
+        {Lisp-Entry "Modifiers" #f 49 14 49 23 ()}
+        {Lisp-Entry "get-modifiers" #f 53 11 53 24 ("Modifiers")}
+        {Lisp-Entry "Toplevels" #f 62 14 62 23 ("defstruct" "defparameter" "defvar" "defmacro" "defun")}
+        {Lisp-Entry "definition-name?" #f 66 11 66 27 ("Toplevels" "memq?" "name")}
+        {Lisp-Entry "walk-declaration" #f 75 11 75 27 ("exit-list" "walk-unknown" "else" "walk-define-variable" "define-modify-macro" "define-condition" "defpackage" "defclass" "defstruct" "defparameter" "defvar" "walk-define-macro" "defmacro" "walk-define" "defgeneric" "defmethod" "defun" "walk-eval-when" "eval-when" "case" "find-marked-symbol" "symbol" "'symbol" "eq?" "and" "kind" "code" "'code" "end" "start" "forward-expr" "when" "not" "if" "enter-list" "list?" "let" "walk-expressions?" "doc" "expression" "keyword" "declaration" "context")}
+        {Lisp-Entry "walk-eval-when" #f 98 11 98 25 ("walk-declarations" "walk-expressions?" "doc" "expression" "keyword" "declaration" "context")}
+        {Lisp-Entry "walk-define" #f 102 11 102 22 ("walk-declarations" "exit-list" "walk-parameters" "get-marked" "set!" "symbol" "'symbol" "kind" "eq?" "forward-expr" "and" "enter-list" "when" "0" "char-forward" "eqv?" "list?" "forward-whites" "end" "start" "entry" "let" "walk-expressions?" "doc" "expression" "keyword" "declaration" "context")}
+        {Lisp-Entry "walk-define-macro" #f 120 11 120 28 ("walk-declarations" "exit-list" "code" "'code" "walk-expressions" "get-marked" "set!" "symbol" "'symbol" "kind" "eq?" "forward-expr" "and" "enter-list" "when" "0" "char-forward" "eqv?" "list?" "forward-whites" "end" "start" "entry" "let" "walk-expressions?" "doc" "expression" "keyword" "declaration" "context")}
+        {Lisp-Entry "walk-define-variable" #f 138 11 138 31 ("walk-declarations" "exit-list" "walk-parameters" "get-marked" "set!" "symbol" "'symbol" "kind" "eq?" "forward-expr" "and" "enter-list" "when" "0" "char-forward" "eqv?" "list?" "forward-whites" "end" "start" "entry" "let" "walk-expressions?" "doc" "expression" "keyword" "declaration" "context")}
+        {Lisp-Entry "walk-unknown" #f 156 11 156 23 ("walk-expressions" "code" "'code" "walk-expression" "when" "walk-expressions?" "doc" "expression" "keyword" "declaration" "context")}}}})
+"CommonLisp-Parser"
+ ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "parser" "CommonLisp-Parser.jazz"} 1246976242
+    {Lisp-Entry "jazz.editor.commonlisp.parser.CommonLisp-Parser" #f 37 19 37 66 ("jazz")
+      {Lisp-Entry "CommonLisp-Parser" #f 47 7 47 24 ("Lisp-Parser")
+        {Lisp-Entry "explorer-class" #f 50 11 50 25 ("CommonLisp-Explorer" "file")}
+        {Lisp-Entry "text-view-class" #f 54 11 54 26 ("CommonLisp-Text-View")}}}})
+"CommonLisp-Text-Preferences"
+ ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "text" "CommonLisp-Text-Preferences.jazz"} 1246976242
+    {Lisp-Entry "jazz.editor.commonlisp.text.CommonLisp-Text-Preferences" #f 37 19 37 74 ("jazz")
+      {Lisp-Entry "CommonLisp-Text-Preferences" #f 51 7 51 34 ("completions:" "quotation-color:" "named-string-color:" "string-color:" "boolean-color:" "number-color:" "Ochre" "char-color:" "keyword-color:" "Dark-Green" "declaration-color:" "Dark-Blue" "declaration-keyword-color:" "Text-Gray" "expr-comment-color:" "Purple" "comment-color:" "Dark-Red" "name:" "Color" "title-color:" "title:" "Lisp-Text-Preferences")
+        {Lisp-Entry "get-categorized-properties" #f 87 11 87 37 ("translate-keys?" "keyword-color" "declaration-color" "expr-comment-color" "comment-color" "title-color" "completions")}
+        {Lisp-Entry "get-row-instance" #f 91 11 91 27 ("nextmethod" "else" "Boolean-Row" "translate-keys?" "Completion-List-Row" "completions" "Color-Row" "new" "keyword-color" "declaration-color" "expr-comment-color" "comment-color" "title-color" "field-name" "case" "property")}}}})
+"CommonLisp-Text-View"
+ ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "text" "CommonLisp-Text-View.jazz"} 1246976242
+    {Lisp-Entry "jazz.editor.commonlisp.text.CommonLisp-Text-View" #f 37 19 37 67 ("jazz")
+      {Lisp-Entry "CommonLisp-Text-View" #f 50 7 50 27 ("tooltip?:" "Lisp-Text-View")
+        {Lisp-Entry "install" #f 57 11 57 18 ("Red" "Color" "frame:" "Reference" "'Reference" "get-quotation-color" "Quotation" "'Quotation" "get-named-string-color" "Named-String" "'Named-String" "get-delimited-string-color" "Delimited-String" "'Delimited-String" "get-string-color" "String" "'String" "get-boolean-color" "Boolean" "'Boolean" "get-char-color" "Char" "'Char" "get-keyword-color" "Keyword" "'Keyword" "get-declaration-color" "Declaration" "'Declaration" "get-declaration-keyword-color" "Declaration-Keyword" "'Declaration-Keyword" "get-expr-comment-color" "Expr-Comment" "'Expr-Comment" "get-comment-color" "Comment" "'Comment" "get-title-color" "color:" "Default" "'Default" "base:" "Title" "'Title" "name:" "Text-Style" "new" "add-style" "preferences" "pref" "let" "nextmethod" "rest")}
+        {Lisp-Entry "external-name" #f 75 16 75 29 ("commonlisp-text" "'commonlisp-text" "rest")}
+        {Lisp-Entry "default-extension" #f 79 11 79 28 ()}
+        {Lisp-Entry "extensions" #f 83 11 83 21 ()}
+        {Lisp-Entry "get-context-menu" #f 92 11 92 27 ("CommonLisp-Text-Menu" "new")}
+        {Lisp-Entry "default-preferences" #f 101 14 101 33 ("completions:" "Dark-Blue" "keyword-color:" "Dark-Green" "declaration-color:" "Dark-Orange" "expr-comment-color:" "Purple" "comment-color:" "Dark-Red" "name:" "Color" "title-color:" "form>>")}
+        {Lisp-Entry "preferences" #f 106 11 106 22 ("commonlisp-text" "documents" "get-preferences")}
+        {Lisp-Entry "declaration-style" #f 110 11 110 28 ("Declaration" "'Declaration" "documented?")}
+        {Lisp-Entry "Specials" #f 119 12 119 20 ("receive" "prog1" "parameterize" "letrec" "let*" "let" "lambda" "if" "2" "do" "define-macro" "define" "cond" "1" "case" "call/cc" "0" "begin")}
+        {Lisp-Entry "get-specials" #f 137 11 137 23 ("Specials")}
+        {Lisp-Entry "explorer-class" #f 146 11 146 25 ("CommonLisp-Explorer")}}
+      {Lisp-Entry "CommonLisp-Text-Menu" #f 155 7 155 27 ("paste" "copy" "view" "french:" "english:" "Locales" "cut" "edit-references" "code-text" "Action" "action:" "Bitmap-Resource" "icon:" "title:" "edit-definitions" "name:" "Context-Menu")}}})
+"_commonlisp"
+ ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "_commonlisp.jazz"} 1246976943
+    {Lisp-Entry "jazz.editor.commonlisp" #f 37 9 37 31 ("jazz")}})
+"autoload"
+ ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "autoload.jazz"} 1246976939
+    {Lisp-Entry "jazz.editor.commonlisp.autoload" #f 37 19 37 50 ("jazz")}})

@@ -39,17 +39,25 @@
         {Lisp-Entry "initialize" #f 238 11 238 21 ("move~self" "set!" "nextmethod" "move")}
         {Lisp-Entry "print" #f 243 11 243 16 ("move" "format" "function" "self" "print-unreadable" "readably" "printer")}}}})
 "minimax"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.game" "src" "jazz" "sample" "game" "minimax.jazz"} 1246942336
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.game" "src" "jazz" "sample" "game" "minimax.jazz"} 1248797036
     {Lisp-Entry "jazz.sample.game.minimax" #f 37 9 37 33 ("jazz")
-      {Lisp-Entry "Minimax-Statistics" #f 52 7 52 25 ("Object")
-        {Lisp-Entry "last-eval" #f 55 8 55 17 ("generate")}
-        {Lisp-Entry "last-evaluations" #f 56 8 56 24 ("generate")}
-        {Lisp-Entry "last-evaluations-count" #f 57 8 57 30 ("generate" "0")}
-        {Lisp-Entry "last-time" #f 58 8 58 17 ("generate")}
-        {Lisp-Entry "increase-last-evaluations-count" #f 61 11 61 42 ("last-evaluations-count" "increase!")}}
-      {Lisp-Entry "Default-Search-Depth" #f 70 12 70 32 ("4")}
-      {Lisp-Entry "minimax" #f 74 13 74 20 ("cast" "normalized-eval" "-1" "10000000" "evaluate-best" "evaluate" "900000" "*" "error" "/=" "when" "position-eval" "new-eval" "delta" "increase-last-evaluations-count" "depth" "min" "cdr" "key:" "sort" "subseq" "car" "map" "+" "nb" "all" "max-candidates" "iterate-moves" "token" "random-element" "reverse" "set-last-evaluations" "set-last-eval" "list" "not" "or" "and" "cond" "cons" "set!" "evaluate-move" "eval" "move" "function" "gather-candidates" "evals" "<" ">" "1" "=" "if" "best-test" "best-eval" "best" "best-move" "define" "Minimax-Statistics" "new" "statistics" "let" "Default-Search-Depth" "search-depth" "search-depth:" "0" "current-eval" "current-eval:" "evaluate-move-delta" "evaluate-position" "unplay" "play" "iterate-candidates" "me")}
-      {Lisp-Entry "minimax-interpreted-message" #f 161 13 161 40 ("format" "title")}
-      {Lisp-Entry "minimax-interpreted?" #f 165 20 165 40 ("jazz.sample.game.minimax" "'jazz.sample.game.minimax" "module-uptodate-binary?" "not" "or" "ai-module")}
-      {Lisp-Entry "minimax-interpreted-warner" #f 170 20 170 46 ("set!" "format" "system-message" "minimax-interpreted?" "not" "and" "when" "lambda" "warned?" "let" "title" "ai-module")}
-      {Lisp-Entry "warn-minimax-interpreted" #f 178 20 178 44 ("minimax-interpreted-warner" "title" "ai-module")}}})
+      {Lisp-Entry "Minimax-Statistics" #f 51 7 51 25 ("0" "initialize")
+        {Lisp-Entry "last-eval" #f 54 8 54 17 ()}
+        {Lisp-Entry "get-last-eval" #f 54 60 54 68 ()}
+        {Lisp-Entry "set-last-eval" #f 54 60 54 68 ()}
+        {Lisp-Entry "last-evaluations" #f 55 8 55 24 ()}
+        {Lisp-Entry "get-last-evaluations" #f 55 60 55 68 ()}
+        {Lisp-Entry "set-last-evaluations" #f 55 60 55 68 ()}
+        {Lisp-Entry "last-evaluations-count" #f 56 8 56 30 ()}
+        {Lisp-Entry "get-last-evaluations-count" #f 56 60 56 68 ()}
+        {Lisp-Entry "set-last-evaluations-count" #f 56 60 56 68 ()}
+        {Lisp-Entry "last-time" #f 57 8 57 17 ()}
+        {Lisp-Entry "get-last-time" #f 57 60 57 68 ()}
+        {Lisp-Entry "set-last-time" #f 57 60 57 68 ()}
+        {Lisp-Entry "increase-last-evaluations-count" #f 60 11 60 42 ("last-evaluations-count" "increase!")}}
+      {Lisp-Entry "Default-Search-Depth" #f 69 12 69 32 ("4")}
+      {Lisp-Entry "minimax" #f 73 20 73 27 ("cast" "normalized-eval" "-1" "10000000" "evaluate-best" "evaluate" "900000" "*" "error" "/=" "when" "position-eval" "new-eval" "delta" "increase-last-evaluations-count" "depth" "min" "cdr" "key:" "sort" "subseq" "car" "map" "+" "nb" "all" "max-candidates" "iterate-moves" "token" "random-element" "reverse" "set-last-evaluations" "set-last-eval" "list" "not" "or" "and" "cond" "cons" "set!" "evaluate-move" "eval" "move" "function" "gather-candidates" "evals" "<" ">" "1" "=" "if" "best-test" "best-eval" "best" "best-move" "define" "Minimax-Statistics" "new" "statistics" "let" "Default-Search-Depth" "search-depth" "search-depth:" "0" "current-eval" "current-eval:" "evaluate-move-delta" "evaluate-position" "unplay" "play" "iterate-candidates" "me")}
+      {Lisp-Entry "minimax-interpreted-message" #f 160 13 160 40 ("format" "title")}
+      {Lisp-Entry "minimax-interpreted?" #f 164 20 164 40 ("jazz.sample.game.minimax" "'jazz.sample.game.minimax" "module-uptodate-binary?" "not" "or" "ai-module")}
+      {Lisp-Entry "minimax-interpreted-warner" #f 169 20 169 46 ("set!" "format" "system-message" "minimax-interpreted?" "not" "and" "when" "lambda" "warned?" "let" "title" "ai-module")}
+      {Lisp-Entry "warn-minimax-interpreted" #f 177 20 177 44 ("minimax-interpreted-warner" "title" "ai-module")}}})

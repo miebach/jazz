@@ -8,23 +8,29 @@
         {Lisp-Entry "register-constraints" #f 53 16 53 36 ("Design-Constraint" "self" "new" "register-constraint" "manager")}
         {Lisp-Entry "validate" #f 63 11 63 19 ("message:" "Integrity-Violation" "new" "add-violation" "when" "manager" "context" "client" "architecture" "constraint")}}}})
 "SQLServer-Data-Source"
- ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "SQLServer-Data-Source.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "SQLServer-Data-Source.jazz"} 1248797036
     {Lisp-Entry "jazz.database.sqlserver.SQLServer-Data-Source" #f 37 19 37 64 ("jazz")
-      {Lisp-Entry "SQLServer-Data-Source" #f 48 7 48 28 ("Data-Source")
-        {Lisp-Entry "server" #f 51 12 51 18 ("generate")}
-        {Lisp-Entry "database" #f 52 12 52 20 ("generate")}
-        {Lisp-Entry "dsn" #f 53 12 53 15 ("generate")}
-        {Lisp-Entry "external-name" #f 56 16 56 29 ("sqlserver" "'sqlserver" "rest")}
-        {Lisp-Entry "new-inventory" #f 66 11 66 24 ("database" "password" "username" "server" "SQLServer-Inventory" "new" "rest" "connection")}
-        {Lisp-Entry "new-connection" #f 75 11 75 25 ("self" "ADO-Connection" "new")}
-        {Lisp-Entry "get-connection-string" #f 79 11 79 32 ("password" "username" "either" "database" "server" "format" "dsn" "if")}
-        {Lisp-Entry "get-connection-properties" #f 89 11 89 36 ("password" "password:" "username" "username:" "database" "database:" "server" "server:" "list")}
-        {Lisp-Entry "present" #f 101 11 101 18 ("database" "server" "format" "dsn" "if")}
-        {Lisp-Entry "present-detailed" #f 107 11 107 27 ("database" "server" "format" ":bulleted" "list")}
-        {Lisp-Entry "get-class-presentation" #f 120 16 120 38 ()}
-        {Lisp-Entry "property-presentation" #f 125 16 125 37 ("nextmethod" "else" "dsn" "database" "server" "field-name" "case" "property")}
-        {Lisp-Entry "get-row-instance" #f 134 11 134 27 ("nextmethod" "else" "String-Row" "dsn" "condensed?:" "SQLServer-Database-Row" "database" "limit-to-list?:" "nullable?:" "SQLServer-Server-Row" "new" "server" "field-name" "case" "property")}
-        {Lisp-Entry "get-categorized-properties" #f 143 11 143 37 ("database" "password" "username" "server" "dsn" "class-info")}}}})
+      {Lisp-Entry "SQLServer-Data-Source" #f 44 7 44 28 ("initialize")
+        {Lisp-Entry "server" #f 47 12 47 18 ()}
+        {Lisp-Entry "get-server" #f 47 45 47 53 ()}
+        {Lisp-Entry "set-server" #f 47 45 47 53 ()}
+        {Lisp-Entry "database" #f 48 12 48 20 ()}
+        {Lisp-Entry "get-database" #f 48 45 48 53 ()}
+        {Lisp-Entry "set-database" #f 48 45 48 53 ()}
+        {Lisp-Entry "dsn" #f 49 12 49 15 ()}
+        {Lisp-Entry "get-dsn" #f 49 45 49 53 ()}
+        {Lisp-Entry "set-dsn" #f 49 45 49 53 ()}
+        {Lisp-Entry "external-name" #f 52 16 52 29 ("sqlserver" "'sqlserver" "rest")}
+        {Lisp-Entry "new-inventory" #f 62 11 62 24 ("database" "password" "username" "server" "SQLServer-Inventory" "new" "rest" "connection")}
+        {Lisp-Entry "new-connection" #f 71 11 71 25 ("self" "ADO-Connection" "new")}
+        {Lisp-Entry "get-connection-string" #f 75 11 75 32 ("password" "username" "either" "database" "server" "format" "dsn" "if")}
+        {Lisp-Entry "get-connection-properties" #f 85 11 85 36 ("password" "password:" "username" "username:" "database" "database:" "server" "server:" "list")}
+        {Lisp-Entry "present" #f 97 11 97 18 ("database" "server" "format" "dsn" "if")}
+        {Lisp-Entry "present-detailed" #f 103 11 103 27 ("database" "server" "format" ":bulleted" "list")}
+        {Lisp-Entry "get-class-presentation" #f 116 16 116 38 ()}
+        {Lisp-Entry "property-presentation" #f 121 16 121 37 ("nextmethod" "else" "dsn" "database" "server" "field-name" "case" "property")}
+        {Lisp-Entry "get-row-instance" #f 130 11 130 27 ("nextmethod" "else" "String-Row" "dsn" "condensed?:" "SQLServer-Database-Row" "database" "limit-to-list?:" "nullable?:" "SQLServer-Server-Row" "new" "server" "field-name" "case" "property")}
+        {Lisp-Entry "get-categorized-properties" #f 139 11 139 37 ("database" "password" "username" "server" "dsn" "class-info")}}}})
 "SQLServer-Database-Browser"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Database-Browser.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Database-Browser" #f 37 19 37 79 ("jazz")
@@ -314,19 +320,19 @@
         {Lisp-Entry "ends-with-go?" #f 63 11 63 24 ("+" "-" "subseq" "ci=?" "1" ">=" "and" "position" "'position" "return:" "reversed?:" "whitespace?" "not" "c" "function" "find-if" "last-non-white" "let" "text")}
         {Lisp-Entry "validate" #f 70 11 70 19 ("stop-descent" "'stop-descent" "'text" "property:" "message:" "Integrity-Violation" "new" "add-violation" "ends-with-go?" "SQLServer-Design-Schema" "is?" "and" "when" "get-schema" "schema" "Design-Architecture" "find-ascendant" "get-text" "text" "get-name" "name" "let*" "manager" "context" "client" "architecture" "procedure")}}}})
 "SQLServer-Provider"
- ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Provider.jazz"} 1244915305
+ ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Provider.jazz"} 1248797036
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Provider" #f 37 19 37 71 ("jazz")
-      {Lisp-Entry "SQLServer-Provider" #f 47 7 47 25 ("Provider")
-        {Lisp-Entry "external-name" #f 50 11 50 24 ("sqlserver" "'sqlserver")}
-        {Lisp-Entry "get-datatype" #f 60 11 60 23 ("SQLServer-Datatype")}
-        {Lisp-Entry "supports-multirequests?" #f 70 11 70 34 ()}
-        {Lisp-Entry "format-variable" #f 80 11 80 26 ("format" "variable")}
-        {Lisp-Entry "present" #f 89 11 89 18 ()}
-        {Lisp-Entry "get-server-names" #f 99 18 99 34 ("Item" "collect" "get-Count" "to" "1" "from" "n" "for" "loop" "ListAvailableSQLServers" "essay" "name-list" "message-box" "begin" "null?" "if" "error?:" "SQLDMO.Application" "com-create" "application" "with-closed" "function" ":wait" "with-cursor")}
-        {Lisp-Entry "server-names-for-combo" #f 113 18 113 40 ("equal?" "test:" "remove" "map" "list" "cons" "get-server-names" "names" "let")}
-        {Lisp-Entry "server-names-choices-updater" #f 119 18 119 46 ("server-names-for-combo" "set-choices" "combo")}
-        {Lisp-Entry "browser-class" #f 130 11 130 24 ("SQLServer-Widget")}
-        {Lisp-Entry "new-updater" #f 140 11 140 22 ("SQLServer-Inventory-Updater" "new" "connection")}}}})
+      {Lisp-Entry "SQLServer-Provider" #f 43 7 43 25 ()
+        {Lisp-Entry "external-name" #f 46 11 46 24 ("sqlserver" "'sqlserver")}
+        {Lisp-Entry "get-datatype" #f 56 11 56 23 ("SQLServer-Datatype")}
+        {Lisp-Entry "supports-multirequests?" #f 66 11 66 34 ()}
+        {Lisp-Entry "format-variable" #f 76 11 76 26 ("format" "variable")}
+        {Lisp-Entry "present" #f 85 11 85 18 ()}
+        {Lisp-Entry "get-server-names" #f 95 18 95 34 ("Item" "collect" "get-Count" "to" "1" "from" "n" "for" "loop" "ListAvailableSQLServers" "essay" "name-list" "message-box" "begin" "null?" "if" "error?:" "SQLDMO.Application" "com-create" "application" "with-closed" "function" ":wait" "with-cursor")}
+        {Lisp-Entry "server-names-for-combo" #f 109 18 109 40 ("equal?" "test:" "remove" "map" "list" "cons" "get-server-names" "names" "let")}
+        {Lisp-Entry "server-names-choices-updater" #f 115 18 115 46 ("server-names-for-combo" "set-choices" "combo")}
+        {Lisp-Entry "browser-class" #f 126 11 126 24 ("SQLServer-Widget")}
+        {Lisp-Entry "new-updater" #f 136 11 136 22 ("SQLServer-Inventory-Updater" "new" "connection")}}}})
 "SQLServer-Server-Browser"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Server-Browser.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Server-Browser" #f 37 19 37 77 ("jazz")
@@ -342,9 +348,9 @@
         {Lisp-Entry "edit-in-cell" #f 59 11 59 23 ("update-server-names" "nextmethod")}
         {Lisp-Entry "close-editor" #f 64 11 64 23 ("self" "get-tree" "collapse" "nextmethod")}}}})
 "SQLServer-Text-View"
- ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Text-View.jazz"} 1246976762
+ ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Text-View.jazz"} 1246978515
     {Lisp-Entry "jazz.database.inventory.sqlserver.SQLServer-Text-View" #f 37 19 37 72 ("jazz")
-      {Lisp-Entry "SQLServer-Text-View" #f 47 7 47 26 ("SQL-Text-View")
+      {Lisp-Entry "SQLServer-Text-View" #f 47 7 47 26 ()
         {Lisp-Entry "host-workspaces" #f 55 11 55 26 ("text")}
         {Lisp-Entry "TransactSQL-Keywords" #f 64 12 64 32 ()}
         {Lisp-Entry "get-keywords" #f 82 11 82 23 ("TransactSQL-Keywords" "nextmethod" "append")}
@@ -359,20 +365,20 @@
         {Lisp-Entry "register-constraints" #f 53 16 53 36 ("Design-Trigger" "self" "new" "register-constraint" "manager")}
         {Lisp-Entry "validate" #f 63 11 63 19 ("message:" "Integrity-Violation" "new" "add-violation" "when" "manager" "context" "client" "architecture" "trigger")}}}})
 "SQLServer-Widget"
- ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Widget.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Widget.jazz"} 1248797036
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Widget" #f 37 19 37 69 ("jazz")
-      {Lisp-Entry "SQLServer-Widget" #f 49 7 49 23 ("database" "79" "database-border" "81" "database-label" "password" "49" "password-border" "56" "52" "password-label" "on-return-press" "return-press-handler:" "username" "fill" "layout-type:" "vscroll?:" "hscroll?:" "21" "26" "username-border" "29" "username-label" "top-padding:" "2" "left-padding:" "body" "content" "scroller" "on-server-change" ":form" "Event-Handler" "content-change-handler:" "server" "style:" "edge" "border-type:" "19" "203" "1" "67" "server-border" "16" "59" "3" "0" "Point" "position:" "title:" "server-label" "name:" "129" "278" "Dimension" "size:" "Data-Source-Widget")
-        {Lisp-Entry "install" #f 78 11 78 18 ("database-choices-updater" "database" "'database" "locate" "set-choices-updater" "nextmethod" "rest")}
-        {Lisp-Entry "database-choices-updater" #f 83 11 83 35 ("get-data-source" "set-data-source" "combo-box")}
-        {Lisp-Entry "get-data-source" #f 93 11 93 26 ("database" "'database" "database:" "password" "'password" "password:" "username" "'username" "get-string-content" "username:" "server" "'server" "locate" "get-entry" "server:" "SQLServer-Data-Source" "new")}
-        {Lisp-Entry "set-data-source" #f 101 11 101 26 ("get-database" "database" "'database" "get-password" "password" "'password" "get-username" "username" "'username" "set-string-content" "get-server" "server" "'server" "locate" "set-entry" "source")}
-        {Lisp-Entry "setup-username/password-mode" #f 108 11 108 39 ("select-all" "username" "'username" "acquire-focus" "database" "'database" "server" "'server" "locate" "set-enabled?")}
-        {Lisp-Entry "set-enabled?" #f 120 11 120 23 ("invalidate-view" "database" "'database" "password" "'password" "username" "'username" "server" "'server" "locate" "set-enabled?" "enabled?" "set!" "flag")}
-        {Lisp-Entry "get-tab-stops" #f 134 11 134 24 ("database" "'database" "password" "'password" "username" "'username" "server" "'server" "locate" "list")}
-        {Lisp-Entry "set-default-focus" #f 142 18 142 35 ("server" "'server" "locate" "set-focus")}
-        {Lisp-Entry "on-server-change" #f 146 11 146 27 ("database" "'database" "locate" "set-data-source" "evt")}
-        {Lisp-Entry "on-return-press" #f 150 11 150 26 ("self" "invoke" "return-press-handler" "when" "evt")}
-        {Lisp-Entry "validate-content" #f 160 11 160 27 ("database" "'database" "server" "'server" "locate" "validate-content")}}}})
+      {Lisp-Entry "SQLServer-Widget" #f 48 7 48 23 ("database" "79" "database-border" "81" "database-label" "password" "49" "password-border" "56" "52" "password-label" "on-return-press" "return-press-handler:" "username" "fill" "layout-type:" "vscroll?:" "hscroll?:" "21" "26" "username-border" "29" "username-label" "top-padding:" "2" "left-padding:" "body" "content" "scroller" "on-server-change" ":form" "Event-Handler" "content-change-handler:" "server" "style:" "edge" "border-type:" "19" "203" "1" "67" "server-border" "16" "59" "3" "0" "Point" "position:" "title:" "server-label" "name:" "129" "278" "Dimension" "size:")
+        {Lisp-Entry "install" #f 77 11 77 18 ("database-choices-updater" "database" "'database" "locate" "set-choices-updater" "nextmethod" "rest")}
+        {Lisp-Entry "database-choices-updater" #f 82 11 82 35 ("get-data-source" "set-data-source" "combo-box")}
+        {Lisp-Entry "get-data-source" #f 92 11 92 26 ("database" "'database" "database:" "password" "'password" "password:" "username" "'username" "get-string-content" "username:" "server" "'server" "locate" "get-entry" "server:" "SQLServer-Data-Source" "new")}
+        {Lisp-Entry "set-data-source" #f 100 11 100 26 ("get-database" "database" "'database" "get-password" "password" "'password" "get-username" "username" "'username" "set-string-content" "get-server" "server" "'server" "locate" "set-entry" "source")}
+        {Lisp-Entry "setup-username/password-mode" #f 107 11 107 39 ("select-all" "username" "'username" "acquire-focus" "database" "'database" "server" "'server" "locate" "set-enabled?")}
+        {Lisp-Entry "set-enabled?" #f 119 11 119 23 ("invalidate-view" "database" "'database" "password" "'password" "username" "'username" "server" "'server" "locate" "set-enabled?" "enabled?" "set!" "flag")}
+        {Lisp-Entry "get-tab-stops" #f 133 11 133 24 ("database" "'database" "password" "'password" "username" "'username" "server" "'server" "locate" "list")}
+        {Lisp-Entry "set-default-focus" #f 141 18 141 35 ("server" "'server" "locate" "set-focus")}
+        {Lisp-Entry "on-server-change" #f 145 11 145 27 ("database" "'database" "locate" "set-data-source" "evt")}
+        {Lisp-Entry "on-return-press" #f 149 11 149 26 ("self" "invoke" "return-press-handler" "when" "evt")}
+        {Lisp-Entry "validate-content" #f 159 11 159 27 ("database" "'database" "server" "'server" "locate" "validate-content")}}}})
 "_sqlserver"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "_sqlserver.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver" #f 37 9 37 32 ("jazz")}})

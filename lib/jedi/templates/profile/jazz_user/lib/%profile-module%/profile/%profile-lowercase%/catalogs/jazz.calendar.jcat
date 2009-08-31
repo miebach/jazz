@@ -1,53 +1,65 @@
 "Calendar-Actions"
- ({Lisp-File-Entry {File jazz.calendar "src" "jazz" "calendar" "Calendar-Actions.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.calendar "src" "jazz" "calendar" "Calendar-Actions.jazz"} 1248797035
     {Lisp-Entry "jazz.calendar.Calendar-Actions" #f 37 19 37 49 ("jazz")
-      {Lisp-Entry "Calendar-Actions" #f 46 7 46 23 ("Next" "on-next" "next" "Prior" "Shortcut" "shortcut:" "on-prior" ":focus" "Event-Handler" "action-handler:" "prior" "name:" "Actions")}}})
+      {Lisp-Entry "Calendar-Actions" #f 45 7 45 23 ("Next" "on-next" "next" "Prior" "Shortcut" "shortcut:" "on-prior" ":focus" "Event-Handler" "action-handler:" "prior" "name:")}}})
 "Calendar-Day"
- ({Lisp-File-Entry {File jazz.calendar "src" "jazz" "calendar" "Calendar-Day.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.calendar "src" "jazz" "calendar" "Calendar-Day.jazz"} 1249298137
     {Lisp-Entry "jazz.calendar.Calendar-Day" #f 37 19 37 45 ("jazz")
-      {Lisp-Entry "Calendar-Day" #f 49 7 49 19 ("View")
-        {Lisp-Entry "week" #f 52 12 52 16 ("generate")}
-        {Lisp-Entry "day" #f 53 12 53 15 ("generate")}
-        {Lisp-Entry "date" #f 54 12 54 16 ("generate")}
-        {Lisp-Entry "selected?" #f 57 8 57 17 ()}
-        {Lisp-Entry "print" #f 60 11 60 16 ("date" "format" "function" "self" "print-unreadable" "readably" "printer")}
-        {Lisp-Entry "get-manager" #f 71 11 71 22 ("get-calendar" "get-manager")}
-        {Lisp-Entry "get-calendar" #f 80 18 80 30 ("parent")}
-        {Lisp-Entry "same-day?" #f 84 11 84 20 ("get-calendar" "get-date" "date" "=")}
-        {Lisp-Entry "same-month?" #f 88 11 88 22 ("get-calendar" "get-date" "date" "get-month" "=")}
-        {Lisp-Entry "get-selected?" #f 97 18 97 31 ("selected?")}
-        {Lisp-Entry "set-selected?" #f 101 18 101 31 ("invalidate-view" "selected?" "set!" "flag")}
-        {Lisp-Entry "mouse-down" #f 111 11 111 21 ("self" "set-selection" "acquire-focus" "get-calendar" "calendar" "let" "pos")}
-        {Lisp-Entry "double-click" #f 122 11 122 23 ("self" "get-manager" "double-click-day" "pos")}
-        {Lisp-Entry "Current-Day-Font" #f 131 14 131 30 ("bold?:" "8" "point-size:" "font-name:" "Text" "name:" "Font")}
-        {Lisp-Entry "draw" #f 137 11 137 15 ("draw-header" "draw-day" "self" "day-color" "either" "fill-rect" "get-calendar" "calendar" "get-bounds" "bounds" "let" "lv" "lh" "context" "surface")}
-        {Lisp-Entry "draw-day" #f 145 29 145 37 ("surface")}
-        {Lisp-Entry "draw-header" #f 149 29 149 40 ("draw-text" "Black" "else" "White" "Color" "not" "cond" "set-text-color" "day-label" "same-month?" "let*" "Label" "name:" "Font" "Current-Day-Font" "current-day?" "if" "set-font" "selection-color" "fill-rect" "14" "get-right" "0" "Rect" "new" "header" "selected?" "when" "get-bounds" "bounds" "let" "context" "surface")}
-        {Lisp-Entry "selection-color" #f 161 11 161 26 ("Unfocused-Selection" "Focused-Selection" "name:" "Color" "focused?" "if")}
-        {Lisp-Entry "day-color" #f 167 11 167 20 ("Light-Purple" "White" "name:" "Color" "same-month?" "if")}
-        {Lisp-Entry "current-day?" #f 173 11 173 23 ("local-date" "date" "day-date" "=")}
-        {Lisp-Entry "day-label" #f 178 11 178 20 ("->string" "month-abbrev" "localize" "format" "1" "=" "and" "if" "date" "get-day" "day" "let" "same-month?")}
-        {Lisp-Entry "draw-day" #f 186 11 186 19 ("set!" "11" "3" "<=" "if" "increase!" "10" "+" "Rect" "new" "get-color" "color" "event" "for-each" "get-client" "get-holiday-color" "fill-rect" "get-bounds" "bounds" "let" "when" "col" "0" "row" "15" "v" "1" "h" "get-date" "time" "function" "key:" "append" "<" "sort" "displayed" "collect-events" "events" "collect-holidays" "holidays" "collect-recurring" "recurring" "get-editor" "editor" "get-calendar" "calendar" "let*" "nextmethod" "surface")}
-        {Lisp-Entry "focused?" #f 219 29 219 37 ("parent" "get-focus" "eq?")}}}})
+      {Lisp-Entry "Calendar-Day" #f 47 7 47 19 ("initialize")
+        {Lisp-Entry "week" #f 50 12 50 16 ()}
+        {Lisp-Entry "get-week" #f 50 41 50 49 ()}
+        {Lisp-Entry "set-week" #f 50 41 50 49 ()}
+        {Lisp-Entry "day" #f 51 12 51 15 ()}
+        {Lisp-Entry "get-day" #f 51 41 51 49 ()}
+        {Lisp-Entry "set-day" #f 51 41 51 49 ()}
+        {Lisp-Entry "date" #f 52 12 52 16 ()}
+        {Lisp-Entry "get-date" #f 52 41 52 49 ()}
+        {Lisp-Entry "set-date" #f 52 41 52 49 ()}
+        {Lisp-Entry "selected?" #f 55 8 55 17 ()}
+        {Lisp-Entry "print" #f 58 11 58 16 ("date" "format" "function" "self" "print-unreadable" "readably" "printer")}
+        {Lisp-Entry "get-manager" #f 69 11 69 22 ("get-calendar" "get-manager")}
+        {Lisp-Entry "get-calendar" #f 78 18 78 30 ("parent")}
+        {Lisp-Entry "same-day?" #f 82 11 82 20 ("get-calendar" "get-date" "date" "=")}
+        {Lisp-Entry "same-month?" #f 86 11 86 22 ("get-calendar" "get-date" "date" "get-month" "=")}
+        {Lisp-Entry "get-selected?" #f 95 18 95 31 ("selected?")}
+        {Lisp-Entry "set-selected?" #f 99 18 99 31 ("invalidate-view" "selected?" "set!" "flag")}
+        {Lisp-Entry "mouse-down" #f 109 11 109 21 ("self" "set-selection" "acquire-focus" "get-calendar" "calendar" "let" "pos")}
+        {Lisp-Entry "double-click" #f 120 11 120 23 ("self" "get-manager" "double-click-day" "pos")}
+        {Lisp-Entry "Current-Day-Font" #f 129 14 129 30 ("bold?:" "8" "point-size:" "font-name:" "Text" "name:" "Font")}
+        {Lisp-Entry "draw" #f 135 11 135 15 ("draw-header" "draw-day" "self" "day-color" "either" "fill-rect" "get-calendar" "calendar" "get-bounds" "bounds" "let" "lv" "lh" "context" "surface")}
+        {Lisp-Entry "draw-day" #f 143 29 143 37 ("surface")}
+        {Lisp-Entry "draw-header" #f 147 29 147 40 ("draw-text" "Black" "else" "White" "Color" "not" "cond" "set-text-color" "day-label" "same-month?" "let*" "Label" "name:" "Font" "Current-Day-Font" "current-day?" "if" "set-font" "selection-color" "fill-rect" "14" "get-right" "0" "Rect" "new" "header" "selected?" "when" "get-bounds" "bounds" "let" "context" "surface")}
+        {Lisp-Entry "selection-color" #f 159 11 159 26 ("Unfocused-Selection" "Focused-Selection" "name:" "Color" "focused?" "if")}
+        {Lisp-Entry "day-color" #f 165 11 165 20 ("Light-Purple" "White" "name:" "Color" "same-month?" "if")}
+        {Lisp-Entry "current-day?" #f 171 11 171 23 ("local-date" "date" "day-date" "=")}
+        {Lisp-Entry "day-label" #f 176 11 176 20 ("->string" "month-abbrev" "localize" "format" "1" "=" "and" "if" "date" "get-day" "day" "let" "same-month?")}
+        {Lisp-Entry "draw-day" #f 184 11 184 19 ("set!" "11" "3" "<=" "if" "increase!" "10" "+" "Rect" "new" "get-color" "color" "event" "for-each" "get-client" "get-holiday-color" "fill-rect" "get-bounds" "bounds" "let" "when" "col" "0" "row" "15" "v" "1" "h" "get-date" "time" "function" "key:" "append" "<" "sort" "displayed" "collect-events" "events" "collect-holidays" "holidays" "collect-recurring" "recurring" "get-editor" "editor" "get-calendar" "calendar" "let*" "nextmethod" "surface")}
+        {Lisp-Entry "focused?" #f 217 29 217 37 ("parent" "get-focus" "eq?")}}}})
 "Calendar-Dialog"
- ({Lisp-File-Entry {File jazz.calendar "src" "jazz" "calendar" "Calendar-Dialog.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.calendar "src" "jazz" "calendar" "Calendar-Dialog.jazz"} 1248797035
     {Lisp-Entry "jazz.calendar.Calendar-Dialog" #f 37 19 37 48 ("jazz")
-      {Lisp-Entry "Calendar-Dialog" #f 49 7 49 22 ("on-cancel" "222" "cancel" "default?:" "on-ok" ":host" "action-handler:" "24" "80" "262" "138" "title:" "ok" "on-escape-press" "escape-press-handler:" "on-return-press" ":form" "Event-Handler" "return-press-handler:" "calendar" "calendar-border" "247" "391" "Dimension" "size:" "5" "9" "Point" "position:" "navigator" "name:" "Layout-View")
-        {Lisp-Entry "host-title" #f 52 12 52 22 ("generate")}
-        {Lisp-Entry "initial-date" #f 53 12 53 24 ("generate")}
-        {Lisp-Entry "multiple-selection?" #f 54 12 54 31 ("generate")}
-        {Lisp-Entry "finish" #f 66 11 66 17 ("set-selection" "find-calendar-day" "day" "initial-date" "set-date" "multiple-selection?" "set-multiple-selection?" "navigator" "'navigator" "locate" "get-calendar" "calendar" "let" "nextmethod" "rest")}
-        {Lisp-Entry "install-in-host" #f 75 11 75 26 ("navigator" "'navigator" "locate" "get-calendar" "acquire-focus" "set-title" "host-title" "when" "nextmethod" "host")}
-        {Lisp-Entry "host-title" #f 87 16 87 26 ()}
-        {Lisp-Entry "host-size" #f 91 16 91 25 ("297" "408" "Dimension")}
-        {Lisp-Entry "double-click-day" #f 100 18 100 34 ("get-modal-result" "get-host" "end-modal" "day")}
-        {Lisp-Entry "on-return-press" #f 105 11 105 26 ("get-modal-result" "end-modal" "get-host" "dialog" "let" "evt")}
-        {Lisp-Entry "on-escape-press" #f 111 11 111 26 ("cancel-modal" "get-host" "dialog" "let" "evt")}
-        {Lisp-Entry "get-modal-result" #f 121 11 121 27 ("get-selection" "get-date" "get-calendar" "calendar" "'navigator" "locate" "navigator" "let*")}}}})
+      {Lisp-Entry "Calendar-Dialog" #f 46 7 46 22 ("on-cancel" "222" "cancel" "default?:" "on-ok" ":host" "action-handler:" "24" "80" "262" "138" "title:" "ok" "on-escape-press" "escape-press-handler:" "on-return-press" ":form" "Event-Handler" "return-press-handler:" "calendar" "calendar-border" "247" "391" "Dimension" "size:" "5" "9" "Point" "position:" "navigator" "name:" "initialize")
+        {Lisp-Entry "host-title" #f 49 12 49 22 ()}
+        {Lisp-Entry "get-host-title" #f 49 56 49 64 ()}
+        {Lisp-Entry "set-host-title" #f 49 56 49 64 ()}
+        {Lisp-Entry "initial-date" #f 50 12 50 24 ()}
+        {Lisp-Entry "get-initial-date" #f 50 56 50 64 ()}
+        {Lisp-Entry "set-initial-date" #f 50 56 50 64 ()}
+        {Lisp-Entry "multiple-selection?" #f 51 12 51 31 ()}
+        {Lisp-Entry "get-multiple-selection?" #f 51 56 51 64 ()}
+        {Lisp-Entry "set-multiple-selection?" #f 51 56 51 64 ()}
+        {Lisp-Entry "finish" #f 63 11 63 17 ("set-selection" "find-calendar-day" "day" "initial-date" "set-date" "multiple-selection?" "set-multiple-selection?" "navigator" "'navigator" "locate" "get-calendar" "calendar" "let" "nextmethod" "rest")}
+        {Lisp-Entry "install-in-host" #f 72 11 72 26 ("navigator" "'navigator" "locate" "get-calendar" "acquire-focus" "set-title" "host-title" "when" "nextmethod" "host")}
+        {Lisp-Entry "host-title" #f 84 16 84 26 ()}
+        {Lisp-Entry "host-size" #f 88 16 88 25 ("297" "408" "Dimension")}
+        {Lisp-Entry "double-click-day" #f 97 18 97 34 ("get-modal-result" "get-host" "end-modal" "day")}
+        {Lisp-Entry "on-return-press" #f 102 11 102 26 ("get-modal-result" "end-modal" "get-host" "dialog" "let" "evt")}
+        {Lisp-Entry "on-escape-press" #f 108 11 108 26 ("cancel-modal" "get-host" "dialog" "let" "evt")}
+        {Lisp-Entry "get-modal-result" #f 118 11 118 27 ("get-selection" "get-date" "get-calendar" "calendar" "'navigator" "locate" "navigator" "let*")}}}})
 "Calendar-Navigator"
- ({Lisp-File-Entry {File jazz.calendar "src" "jazz" "calendar" "Calendar-Navigator.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.calendar "src" "jazz" "calendar" "Calendar-Navigator.jazz"} 1249298137
     {Lisp-Entry "jazz.calendar.Calendar-Navigator" #f 37 19 37 51 ("jazz")
-      {Lisp-Entry "Calendar-Navigator" #f 49 7 49 25 ("calendar" "entry" "style:" "edge" "border-type:" "240" "320" "calendar-border" "on-next-month" "next-month" "on-double-click" "double-click-handler:" "Heading4" "Font" "font:" "justification:" "month" "2" "0" "Rect" "layout-insets:" "120" "month-header" "on-previous-month" ":form" "Event-Handler" "action-handler:" ":icons" "portfolio:" "Bitmap-Resource" "image-name:" "tooltip-text:" "tooltip?:" "22" "previous-month" "flow" "164" "centered" "center" "north" "location:" "24" "300" "Dimension" "size:" "tools" "name:" "border" "layout-type:" "Layout-View")
+      {Lisp-Entry "Calendar-Navigator" #f 49 7 49 25 ("calendar" "entry" "style:" "edge" "border-type:" "240" "320" "calendar-border" "on-next-month" "next-month" "on-double-click" "double-click-handler:" "Heading4" "Font" "font:" "justification:" "month" "2" "0" "Rect" "layout-insets:" "120" "month-header" "on-previous-month" ":form" "Event-Handler" "action-handler:" ":icons" "portfolio:" "Bitmap-Resource" "image-name:" "tooltip-text:" "tooltip?:" "22" "previous-month" "flow" "164" "centered" "center" "north" "location:" "24" "300" "Dimension" "size:" "tools" "name:" "border" "layout-type:")
         {Lisp-Entry "finish" #f 69 11 69 17 ("get-calendar" "get-date" "update-month" "tools" "'tools" "centered" "'centered" "month-header" "'month-header" "locate" "layout-view" "nextmethod" "host")}
         {Lisp-Entry "get-tree" #f 82 18 82 26 ("tree" "'tree" "locate")}
         {Lisp-Entry "get-calendar" #f 86 18 86 30 ("calendar" "'calendar" "locate")}
@@ -55,106 +67,106 @@
         {Lisp-Entry "on-previous-month" #f 106 11 106 28 ("goto-previous-month" "get-calendar" "calendar" "let" "evt")}
         {Lisp-Entry "on-next-month" #f 111 11 111 24 ("goto-next-month" "get-calendar" "calendar" "let" "evt")}
         {Lisp-Entry "update-month" #f 121 18 121 30 ("get-year" "month-name" "localize" "format" "month" "'month" "locate" "set-title" "date")}}
-      {Lisp-Entry "Navigator-Calendar" #f 130 7 130 25 ("Calendar-View")
+      {Lisp-Entry "Navigator-Calendar" #f 130 7 130 25 ()
         {Lisp-Entry "date-update" #f 133 11 133 22 ("date" "parent" "get-parent" "update-month" "nextmethod")}}}})
 "Calendar-View"
- ({Lisp-File-Entry {File jazz.calendar "src" "jazz" "calendar" "Calendar-View.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.calendar "src" "jazz" "calendar" "Calendar-View.jazz"} 1248797035
     {Lisp-Entry "jazz.calendar.Calendar-View" #f 37 19 37 46 ("jazz")
-      {Lisp-Entry "Calendar-View" #f 47 7 47 20 ("View")
-        {Lisp-Entry "date" #f 50 12 50 16 ("set-date" "get-date")}
-        {Lisp-Entry "spacing" #f 51 12 51 19 ("set-spacing" "get-spacing" "1")}
-        {Lisp-Entry "multiple-selection?" #f 52 12 52 31 ("set-multiple-selection?" "get-multiple-selection?")}
-        {Lisp-Entry "selection" #f 55 8 55 17 ()}
-        {Lisp-Entry "finish" #f 58 11 58 17 ("date" "find-calendar-day" "set-selection" "install-days" "set-date" "nextmethod" "rest")}
-        {Lisp-Entry "get-date" #f 70 18 70 26 ("date")}
-        {Lisp-Entry "set-date" #f 74 18 74 26 ("date-update" "get-finished?" "when" "local-date" "day-date" "either" "date" "set!" "value")}
-        {Lisp-Entry "date-update" #f 81 29 81 40 ("invalidate-view" "update-days")}
-        {Lisp-Entry "get-spacing" #f 86 18 86 29 ("spacing")}
-        {Lisp-Entry "set-spacing" #f 90 18 90 29 ("spacing" "set!" "value")}
-        {Lisp-Entry "get-multiple-selection?" #f 94 18 94 41 ("multiple-selection?")}
-        {Lisp-Entry "set-multiple-selection?" #f 98 18 98 41 ("multiple-selection?" "set!" "value")}
-        {Lisp-Entry "get-manager" #f 102 26 102 37 ("Calendar-Dialog" "find-ascendant")}
-        {Lisp-Entry "guest-actions" #f 111 11 111 24 ("nextmethod" "calendar" "'calendar" "find-actions" "cons")}
-        {Lisp-Entry "on-prior" #f 121 11 121 19 ("prior-press" "evt")}
-        {Lisp-Entry "on-next" #f 125 11 125 18 ("next-press" "evt")}
-        {Lisp-Entry "focus-gain" #f 134 11 134 21 ("invalidate-view" "selection" "when" "old")}
-        {Lisp-Entry "focus-lose" #f 139 11 139 21 ("invalidate-view" "selection" "when" "view")}
-        {Lisp-Entry "left-arrow-press" #f 149 11 149 27 ("0" "-1" "move-selection" "modifiers")}
-        {Lisp-Entry "up-arrow-press" #f 153 11 153 25 ("-1" "0" "move-selection" "modifiers")}
-        {Lisp-Entry "right-arrow-press" #f 157 11 157 28 ("0" "1" "move-selection" "modifiers")}
-        {Lisp-Entry "down-arrow-press" #f 161 11 161 27 ("1" "0" "move-selection" "modifiers")}
-        {Lisp-Entry "prior-press" #f 165 26 165 37 ("goto-previous-month")}
-        {Lisp-Entry "next-press" #f 169 26 169 36 ("goto-next-month")}
-        {Lisp-Entry "move-selection" #f 173 11 173 25 ("find-calendar-cell" "set-selection" "get-week" "4" "ny" "get-day" "+" "6" "min" "0" "max" "nx" "let" "bell" "selection" "null?" "if" "dy" "dx")}
-        {Lisp-Entry "install-days" #f 186 11 186 23 ("6" "7" "0" "naturals" "1" "'day" "add" "set!" "install-day" "day" "week" "function" "for-each" "calendar-base" "let" "date" "when")}
-        {Lisp-Entry "install-day" #f 197 11 197 22 ("date:" "day:" "week:" "self" "parent:" "calendar-day-class" "new" "date" "day" "week")}
-        {Lisp-Entry "calendar-day-class" #f 201 29 201 47 ("Calendar-Day")}
-        {Lisp-Entry "calendar-base" #f 205 11 205 24 ("date" "first-day-of-month" "first-day-of-week")}
-        {Lisp-Entry "update-days" #f 214 11 214 22 ("6" "7" "0" "naturals" "cdr" "1" "'day" "add" "set!" "set-date" "car" "calendar-day" "day" "week" "function" "for-each" "children" "scan" "calendar-base" "date" "let")}
-        {Lisp-Entry "layout" #f 232 11 232 17 ("children" "Dimension" "set-size" "spacing" "*" "1" "+" "Point" "new" "set-position" "get-day" "col" "get-week" "row" "Calendar-Day" "is?" "when" "view" "function" "for-each" "6" "get-height" "height" "7" "get-width" "quotient" "width" "let")}
-        {Lisp-Entry "day-color" #f 249 26 249 35 ("day")}
-        {Lisp-Entry "find-calendar-day" #f 258 18 258 35 ("children" "get-date" "=" "Calendar-Day" "is?" "and" "view" "function" "find-if" "date")}
-        {Lisp-Entry "find-calendar-cell" #f 265 18 265 36 ("children" "get-week" "get-day" "=" "Calendar-Day" "is?" "and" "view" "function" "find-if" "y" "x")}
-        {Lisp-Entry "get-selection" #f 278 18 278 31 ("selection")}
-        {Lisp-Entry "set-selection" #f 282 18 282 31 ("selection-update" "set!" "set-selected?" "selection" "neq?" "when" "day")}
-        {Lisp-Entry "selection-update" #f 292 29 292 45 ()}
-        {Lisp-Entry "goto-previous-month" #f 301 18 301 37 ("date" "previous-month" "goto-month")}
-        {Lisp-Entry "goto-next-month" #f 305 18 305 33 ("date" "next-month" "goto-month")}
-        {Lisp-Entry "goto-month" #f 309 11 309 21 ("find-calendar-day" "set-selection" "set-date" "month")}}}})
+      {Lisp-Entry "Calendar-View" #f 46 7 46 20 ("set-multiple-selection?" "get-multiple-selection?" "set-spacing" "get-spacing" "1" "set-date" "get-date" "initialize")
+        {Lisp-Entry "date" #f 49 12 49 16 ()}
+        {Lisp-Entry "spacing" #f 50 12 50 19 ()}
+        {Lisp-Entry "multiple-selection?" #f 51 12 51 31 ()}
+        {Lisp-Entry "selection" #f 54 8 54 17 ()}
+        {Lisp-Entry "finish" #f 57 11 57 17 ("date" "find-calendar-day" "set-selection" "install-days" "set-date" "nextmethod" "rest")}
+        {Lisp-Entry "get-date" #f 69 18 69 26 ("date")}
+        {Lisp-Entry "set-date" #f 73 18 73 26 ("date-update" "get-finished?" "when" "local-date" "day-date" "either" "date" "set!" "value")}
+        {Lisp-Entry "date-update" #f 80 29 80 40 ("invalidate-view" "update-days")}
+        {Lisp-Entry "get-spacing" #f 85 18 85 29 ("spacing")}
+        {Lisp-Entry "set-spacing" #f 89 18 89 29 ("spacing" "set!" "value")}
+        {Lisp-Entry "get-multiple-selection?" #f 93 18 93 41 ("multiple-selection?")}
+        {Lisp-Entry "set-multiple-selection?" #f 97 18 97 41 ("multiple-selection?" "set!" "value")}
+        {Lisp-Entry "get-manager" #f 101 26 101 37 ("Calendar-Dialog" "find-ascendant")}
+        {Lisp-Entry "guest-actions" #f 110 11 110 24 ("nextmethod" "calendar" "'calendar" "find-actions" "cons")}
+        {Lisp-Entry "on-prior" #f 120 11 120 19 ("prior-press" "evt")}
+        {Lisp-Entry "on-next" #f 124 11 124 18 ("next-press" "evt")}
+        {Lisp-Entry "focus-gain" #f 133 11 133 21 ("invalidate-view" "selection" "when" "old")}
+        {Lisp-Entry "focus-lose" #f 138 11 138 21 ("invalidate-view" "selection" "when" "view")}
+        {Lisp-Entry "left-arrow-press" #f 148 11 148 27 ("0" "-1" "move-selection" "modifiers")}
+        {Lisp-Entry "up-arrow-press" #f 152 11 152 25 ("-1" "0" "move-selection" "modifiers")}
+        {Lisp-Entry "right-arrow-press" #f 156 11 156 28 ("0" "1" "move-selection" "modifiers")}
+        {Lisp-Entry "down-arrow-press" #f 160 11 160 27 ("1" "0" "move-selection" "modifiers")}
+        {Lisp-Entry "prior-press" #f 164 26 164 37 ("goto-previous-month")}
+        {Lisp-Entry "next-press" #f 168 26 168 36 ("goto-next-month")}
+        {Lisp-Entry "move-selection" #f 172 11 172 25 ("find-calendar-cell" "set-selection" "get-week" "4" "ny" "get-day" "+" "6" "min" "0" "max" "nx" "let" "bell" "selection" "null?" "if" "dy" "dx")}
+        {Lisp-Entry "install-days" #f 185 11 185 23 ("6" "7" "0" "naturals" "1" "'day" "add" "set!" "install-day" "day" "week" "function" "for-each" "calendar-base" "let" "date" "when")}
+        {Lisp-Entry "install-day" #f 196 11 196 22 ("date:" "day:" "week:" "self" "parent:" "calendar-day-class" "new" "date" "day" "week")}
+        {Lisp-Entry "calendar-day-class" #f 200 29 200 47 ("Calendar-Day")}
+        {Lisp-Entry "calendar-base" #f 204 11 204 24 ("date" "first-day-of-month" "first-day-of-week")}
+        {Lisp-Entry "update-days" #f 213 11 213 22 ("6" "7" "0" "naturals" "cdr" "1" "'day" "add" "set!" "set-date" "car" "calendar-day" "day" "week" "function" "for-each" "children" "scan" "calendar-base" "date" "let")}
+        {Lisp-Entry "layout" #f 231 11 231 17 ("children" "Dimension" "set-size" "spacing" "*" "1" "+" "Point" "new" "set-position" "get-day" "col" "get-week" "row" "Calendar-Day" "is?" "when" "view" "function" "for-each" "6" "get-height" "height" "7" "get-width" "quotient" "width" "let")}
+        {Lisp-Entry "day-color" #f 248 26 248 35 ("day")}
+        {Lisp-Entry "find-calendar-day" #f 257 18 257 35 ("children" "get-date" "=" "Calendar-Day" "is?" "and" "view" "function" "find-if" "date")}
+        {Lisp-Entry "find-calendar-cell" #f 264 18 264 36 ("children" "get-week" "get-day" "=" "Calendar-Day" "is?" "and" "view" "function" "find-if" "y" "x")}
+        {Lisp-Entry "get-selection" #f 277 18 277 31 ("selection")}
+        {Lisp-Entry "set-selection" #f 281 18 281 31 ("selection-update" "set!" "set-selected?" "selection" "neq?" "when" "day")}
+        {Lisp-Entry "selection-update" #f 291 29 291 45 ()}
+        {Lisp-Entry "goto-previous-month" #f 300 18 300 37 ("date" "previous-month" "goto-month")}
+        {Lisp-Entry "goto-next-month" #f 304 18 304 33 ("date" "next-month" "goto-month")}
+        {Lisp-Entry "goto-month" #f 308 11 308 21 ("find-calendar-day" "set-selection" "set-date" "month")}}}})
 "Date-Domain"
- ({Lisp-File-Entry {File jazz.calendar "src" "jazz" "calendar" "Date-Domain.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.calendar "src" "jazz" "calendar" "Date-Domain.jazz"} 1248797035
     {Lisp-Entry "jazz.calendar.Date-Domain" #f 37 19 37 44 ("jazz")
-      {Lisp-Entry "Date-Domain" #f 48 7 48 18 ("Domain")
-        {Lisp-Entry "validate-value" #f 56 11 56 25 ("property:" "format" "message:" "Integrity-Violation" "new" "add-violation" "date?" "not" "when" "manager" "context" "client" "root" "component" "value" "property")}
-        {Lisp-Entry "present" #f 66 11 66 18 ("present-date-day" "not" "if" "value")}
-        {Lisp-Entry "setup-entry" #f 77 11 77 22 ("self" "domain:" "parent:" "Date-Entry" "new" "client" "view")}}}})
+      {Lisp-Entry "Date-Domain" #f 46 7 46 18 ()
+        {Lisp-Entry "validate-value" #f 54 11 54 25 ("property:" "format" "message:" "Integrity-Violation" "new" "add-violation" "date?" "not" "when" "manager" "context" "client" "root" "component" "value" "property")}
+        {Lisp-Entry "present" #f 64 11 64 18 ("present-date-day" "not" "if" "value")}
+        {Lisp-Entry "setup-entry" #f 75 11 75 22 ("self" "domain:" "parent:" "Date-Entry" "new" "client" "view")}}}})
 "Date-Entry"
- ({Lisp-File-Entry {File jazz.calendar "src" "jazz" "calendar" "Date-Entry.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.calendar "src" "jazz" "calendar" "Date-Entry.jazz"} 1249298137
     {Lisp-Entry "jazz.calendar.Date-Entry" #f 37 19 37 43 ("jazz")
-      {Lisp-Entry "Date-Entry" #f 52 7 52 17 ("on-choose-date" ":form" "Event-Handler" "action-handler:" "tooltip-text:" "Bitmap-Resource" "image-name:" "22" "Dimension" "size:" "action" "name:" "Text-Entry")
-        {Lisp-Entry "validate" #f 65 11 65 19 ("french:" "english:" "Locales" "message:" "Property-Violation" "new" "parse-date-day" "exception" "function" "with-exception-filter" "empty-string?" "if" "text" "'text" "locate" "get-string-content" "content" "let" "nextmethod" "or" "domain")}
-        {Lisp-Entry "get-value" #f 82 11 82 20 ("parse-date-day" "nil" "string=?" "empty-string?" "or" "if" "text" "'text" "locate" "get-string-content" "content" "let")}
-        {Lisp-Entry "set-value" #f 89 11 89 20 ("present-date-day" "nil?" "if" "text" "'text" "locate" "set-string-content" "value")}
-        {Lisp-Entry "layout" #f 101 11 101 17 ("22" "get-width" "Point" "new" "action" "'action" "set-position" "0" "24" "Dimension" "-" "border" "'border" "locate" "set-size" "get-size" "size" "let")}
-        {Lisp-Entry "on-choose-date" #f 112 11 112 25 ("set-modified?" "get-value" "initial-date:" "Calendar-Dialog" "get-modal" "set-value" "evt")}}}})
+      {Lisp-Entry "Date-Entry" #f 49 7 49 17 ("on-choose-date" ":form" "Event-Handler" "action-handler:" "tooltip-text:" "Bitmap-Resource" "image-name:" "22" "Dimension" "size:" "action" "name:")
+        {Lisp-Entry "validate" #f 62 11 62 19 ("french:" "english:" "Locales" "message:" "Property-Violation" "new" "parse-date-day" "exception" "function" "with-exception-filter" "empty-string?" "if" "text" "'text" "locate" "get-string-content" "content" "let" "nextmethod" "or" "domain")}
+        {Lisp-Entry "get-value" #f 79 11 79 20 ("parse-date-day" "nil" "string=?" "empty-string?" "or" "if" "text" "'text" "locate" "get-string-content" "content" "let")}
+        {Lisp-Entry "set-value" #f 86 11 86 20 ("present-date-day" "nil?" "if" "text" "'text" "locate" "set-string-content" "value")}
+        {Lisp-Entry "layout" #f 98 11 98 17 ("22" "get-width" "Point" "new" "action" "'action" "set-position" "0" "24" "Dimension" "-" "border" "'border" "locate" "set-size" "get-size" "size" "let")}
+        {Lisp-Entry "on-choose-date" #f 109 11 109 25 ("set-modified?" "get-value" "initial-date:" "Calendar-Dialog" "get-modal" "set-value" "evt")}}}})
 "Date-Row"
- ({Lisp-File-Entry {File jazz.calendar "src" "jazz" "calendar" "Date-Row.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.calendar "src" "jazz" "calendar" "Date-Row.jazz"} 1248797035
     {Lisp-Entry "jazz.calendar.Date-Row" #f 37 19 37 41 ("jazz")
-      {Lisp-Entry "Date-Row" #f 49 7 49 15 ("Combo-Row")}
-      {Lisp-Entry "Date-Row" #f 55 7 55 15 ("Combo-Row")
-        {Lisp-Entry "multiple-selection?" #f 58 8 58 27 ()}
-        {Lisp-Entry "initialize" #f 66 11 66 21 ("choose" "'choose" "set-kind" "set-multiple-selection?" "nextmethod" "apply" "others" "multiple-selection?" "bind-keywords" "rest")}
-        {Lisp-Entry "get-multiple-selection?" #f 78 18 78 41 ("multiple-selection?")}
-        {Lisp-Entry "set-multiple-selection?" #f 82 18 82 41 ("multiple-selection?" "set!" "value")}
-        {Lisp-Entry "combo-choose" #f 91 11 91 23 ("focus-editor" "enter-edited-value" "set-edited-value" "multiple-selection?" "multiple-selection?:" "get-edited-value" "initial-date:" "Calendar-Dialog" "get-modal" "date" "let")}
-        {Lisp-Entry "present" #f 104 11 104 18 ("present-date-day" "not" "if" "date")}
-        {Lisp-Entry "get-edited-value" #f 115 11 115 27 ("Date" "parse-date" "=" "empty-string?" "or" "if" "editor" "get-body" "get-string-content" "string" "let")}
-        {Lisp-Entry "set-edited-value" #f 122 11 122 27 ("present" "editor" "get-body" "set-string-content" "value")}}}})
+      {Lisp-Entry "Date-Row" #f 43 7 43 15 ()}
+      {Lisp-Entry "Date-Row" #f 49 7 49 15 ()
+        {Lisp-Entry "multiple-selection?" #f 52 8 52 27 ()}
+        {Lisp-Entry "initialize" #f 60 11 60 21 ("choose" "'choose" "set-kind" "set-multiple-selection?" "nextmethod" "apply" "others" "multiple-selection?" "bind-keywords" "rest")}
+        {Lisp-Entry "get-multiple-selection?" #f 72 18 72 41 ("multiple-selection?")}
+        {Lisp-Entry "set-multiple-selection?" #f 76 18 76 41 ("multiple-selection?" "set!" "value")}
+        {Lisp-Entry "combo-choose" #f 85 11 85 23 ("focus-editor" "enter-edited-value" "set-edited-value" "multiple-selection?" "multiple-selection?:" "get-edited-value" "initial-date:" "Calendar-Dialog" "get-modal" "date" "let")}
+        {Lisp-Entry "present" #f 98 11 98 18 ("present-date-day" "not" "if" "date")}
+        {Lisp-Entry "get-edited-value" #f 109 11 109 27 ("Date" "parse-date" "=" "empty-string?" "or" "if" "editor" "get-body" "get-string-content" "string" "let")}
+        {Lisp-Entry "set-edited-value" #f 116 11 116 27 ("present" "editor" "get-body" "set-string-content" "value")}}}})
 "Periods-Chooser"
- ({Lisp-File-Entry {File jazz.calendar "src" "jazz" "calendar" "Periods-Chooser.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.calendar "src" "jazz" "calendar" "Periods-Chooser.jazz"} 1248797036
     {Lisp-Entry "jazz.calendar.Periods-Chooser" #f 37 19 37 48 ("jazz")
-      {Lisp-Entry "Periods-Chooser" #f 51 7 51 22 ("on-cancel" "194" "cancel" "default?:" "on-ok" ":host" "315" "110" "ok" "8" "270" "300" "6" "on-remove-period" "123" "remove-period" "on-add-period" "95" "add-period" "on-edit-end" "61" "edit-end" "on-edit-start" "24" "80" "192" "edit-start" "end" "84" "width:" "display-images?:" "toplevel-controls?:" "start" "on-escape-press" "escape-press-handler:" "on-return-press" "return-press-handler:" "on-selection-change" "selection-handler:" "on-action" ":form" "Event-Handler" "action-handler:" ":icons" "portfolio:" "filled-column:" "periods-tree" "fill" "layout-type:" "content" "vscroll?:" "hscroll?:" "edge" "border-type:" "254" "172" "33" "periods-border" "Label" "name:" "Font" "font:" "16" "191" "9" "10" "Point" "position:" "title:" "352" "283" "Dimension" "size:" "View")
-        {Lisp-Entry "periods" #f 54 12 54 19 ("set-periods" "get-periods")}
-        {Lisp-Entry "finish" #f 77 11 77 17 ("acquire-focus" "update-buttons" "setup-selection" "setup-periods" "get-tree" "tree" "let" "nextmethod" "rest")}
-        {Lisp-Entry "get-periods" #f 91 18 91 29 ("periods")}
-        {Lisp-Entry "set-periods" #f 95 18 95 29 ("periods" "set!" "value")}
-        {Lisp-Entry "get-tree" #f 99 11 99 19 ("periods-tree" "'periods-tree" "locate")}
-        {Lisp-Entry "host-title" #f 108 16 108 26 ()}
-        {Lisp-Entry "host-position" #f 112 16 112 29 ("300" "450" "Point")}
-        {Lisp-Entry "host-size" #f 116 16 116 25 ("120" "302" "Dimension")}
-        {Lisp-Entry "on-action" #f 125 11 125 20 ("update-buttons" "evt")}
-        {Lisp-Entry "on-selection-change" #f 129 11 129 30 ("update-buttons" "get-single-selection" "selection" "get-tree" "tree" "let*" "evt")}
-        {Lisp-Entry "on-edit-start" #f 135 11 135 24 ("update" "set-start" "get-start" "initial-date:" "host-title:" "Calendar-Dialog" "get-modal" "date" "periods" "element" "period" "get-single-selection" "selection" "get-tree" "tree" "let*" "evt")}
-        {Lisp-Entry "on-edit-end" #f 144 11 144 22 ("update" "set-end" "get-end" "initial-date:" "host-title:" "Calendar-Dialog" "get-modal" "date" "periods" "element" "period" "get-single-selection" "selection" "get-tree" "tree" "let*" "evt")}
-        {Lisp-Entry "on-add-period" #f 153 11 153 24 ("update" "append" "periods" "set!" "Period" "new" "list" "period" "1" "week" "'week" "add" "initial-date:" "end" "host-title:" "Calendar-Dialog" "get-modal" "start" "get-tree" "tree" "let*" "evt")}
-        {Lisp-Entry "on-remove-period" #f 162 11 162 27 ("set-single-selection" "get-visible-count" "<" "when" "update" "remove" "set!" "periods" "element" "period" "get-single-selection" "selection" "get-tree" "tree" "let*" "evt")}
-        {Lisp-Entry "on-return-press" #f 173 11 173 26 ("get-modal-result" "end-modal" "get-host" "dialog" "let" "evt")}
-        {Lisp-Entry "on-escape-press" #f 179 11 179 26 ("cancel-modal" "get-host" "dialog" "let" "evt")}
-        {Lisp-Entry "update" #f 189 11 189 17 ("get-tree" "setup-periods")}
-        {Lisp-Entry "setup-periods" #f 193 11 193 24 ("periods" "user-data:" "get-end" "Tree-Label" "get-start" "present-date-day" "title:" "Bitmap-Resource" "image:" "Tree-Node" "new" "list" "children:" "add-row" "period" "for-each" "remove-every-row" "function" "with-update-locked" "tree")}
-        {Lisp-Entry "setup-selection" #f 202 11 202 26 ("0" "list" "set-selection" "periods" "when" "tree")}
-        {Lisp-Entry "update-buttons" #f 212 11 212 25 ("remove-period" "'remove-period" "add-period" "'add-period" "edit-end" "'edit-end" "edit-start" "'edit-start" "locate" "set-enabled?" "begin" "null?" "if" "get-single-selection" "selection" "get-tree" "tree" "let*")}
-        {Lisp-Entry "get-modal-result" #f 232 11 232 27 ("get-output" "put" "get-user-data" "period" "rank" "row" "function" "for-each-visible-row" "List-Factory" "new" "periods" "get-tree" "tree" "let")}}}})
+      {Lisp-Entry "Periods-Chooser" #f 49 7 49 22 ("on-cancel" "194" "cancel" "default?:" "on-ok" ":host" "315" "110" "ok" "8" "270" "300" "6" "on-remove-period" "123" "remove-period" "on-add-period" "95" "add-period" "on-edit-end" "61" "edit-end" "on-edit-start" "24" "80" "192" "edit-start" "end" "84" "width:" "display-images?:" "toplevel-controls?:" "start" "on-escape-press" "escape-press-handler:" "on-return-press" "return-press-handler:" "on-selection-change" "selection-handler:" "on-action" ":form" "Event-Handler" "action-handler:" ":icons" "portfolio:" "filled-column:" "periods-tree" "fill" "layout-type:" "content" "vscroll?:" "hscroll?:" "edge" "border-type:" "254" "172" "33" "periods-border" "Label" "name:" "Font" "font:" "16" "191" "9" "10" "Point" "position:" "title:" "352" "283" "Dimension" "size:" "set-periods" "get-periods" "initialize")
+        {Lisp-Entry "periods" #f 52 12 52 19 ()}
+        {Lisp-Entry "finish" #f 75 11 75 17 ("acquire-focus" "update-buttons" "setup-selection" "setup-periods" "get-tree" "tree" "let" "nextmethod" "rest")}
+        {Lisp-Entry "get-periods" #f 89 18 89 29 ("periods")}
+        {Lisp-Entry "set-periods" #f 93 18 93 29 ("periods" "set!" "value")}
+        {Lisp-Entry "get-tree" #f 97 11 97 19 ("periods-tree" "'periods-tree" "locate")}
+        {Lisp-Entry "host-title" #f 106 16 106 26 ()}
+        {Lisp-Entry "host-position" #f 110 16 110 29 ("300" "450" "Point")}
+        {Lisp-Entry "host-size" #f 114 16 114 25 ("120" "302" "Dimension")}
+        {Lisp-Entry "on-action" #f 123 11 123 20 ("update-buttons" "evt")}
+        {Lisp-Entry "on-selection-change" #f 127 11 127 30 ("update-buttons" "get-single-selection" "selection" "get-tree" "tree" "let*" "evt")}
+        {Lisp-Entry "on-edit-start" #f 133 11 133 24 ("update" "set-start" "get-start" "initial-date:" "host-title:" "Calendar-Dialog" "get-modal" "date" "periods" "element" "period" "get-single-selection" "selection" "get-tree" "tree" "let*" "evt")}
+        {Lisp-Entry "on-edit-end" #f 142 11 142 22 ("update" "set-end" "get-end" "initial-date:" "host-title:" "Calendar-Dialog" "get-modal" "date" "periods" "element" "period" "get-single-selection" "selection" "get-tree" "tree" "let*" "evt")}
+        {Lisp-Entry "on-add-period" #f 151 11 151 24 ("update" "append" "periods" "set!" "Period" "new" "list" "period" "1" "week" "'week" "add" "initial-date:" "end" "host-title:" "Calendar-Dialog" "get-modal" "start" "get-tree" "tree" "let*" "evt")}
+        {Lisp-Entry "on-remove-period" #f 160 11 160 27 ("set-single-selection" "get-visible-count" "<" "when" "update" "remove" "set!" "periods" "element" "period" "get-single-selection" "selection" "get-tree" "tree" "let*" "evt")}
+        {Lisp-Entry "on-return-press" #f 171 11 171 26 ("get-modal-result" "end-modal" "get-host" "dialog" "let" "evt")}
+        {Lisp-Entry "on-escape-press" #f 177 11 177 26 ("cancel-modal" "get-host" "dialog" "let" "evt")}
+        {Lisp-Entry "update" #f 187 11 187 17 ("get-tree" "setup-periods")}
+        {Lisp-Entry "setup-periods" #f 191 11 191 24 ("periods" "user-data:" "get-end" "Tree-Label" "get-start" "present-date-day" "title:" "Bitmap-Resource" "image:" "Tree-Node" "new" "list" "children:" "add-row" "period" "for-each" "remove-every-row" "function" "with-update-locked" "tree")}
+        {Lisp-Entry "setup-selection" #f 200 11 200 26 ("0" "list" "set-selection" "periods" "when" "tree")}
+        {Lisp-Entry "update-buttons" #f 210 11 210 25 ("remove-period" "'remove-period" "add-period" "'add-period" "edit-end" "'edit-end" "edit-start" "'edit-start" "locate" "set-enabled?" "begin" "null?" "if" "get-single-selection" "selection" "get-tree" "tree" "let*")}
+        {Lisp-Entry "get-modal-result" #f 230 11 230 27 ("get-output" "put" "get-user-data" "period" "rank" "row" "function" "for-each-visible-row" "List-Factory" "new" "periods" "get-tree" "tree" "let")}}}})
 "_calendar"
  ({Lisp-File-Entry {File jazz.calendar "src" "jazz" "calendar" "_calendar.jazz"} 1244896779
     {Lisp-Entry "jazz.calendar" #f 37 9 37 22 ("jazz")}})

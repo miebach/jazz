@@ -1,28 +1,52 @@
 "CLike-Text-Preferences"
- ({Lisp-File-Entry {File jazz.editor.clike "src" "jazz" "editor" "clike" "text" "CLike-Text-Preferences.jazz"} 1246976242
+ ({Lisp-File-Entry {File jazz.editor.clike "src" "jazz" "editor" "clike" "text" "CLike-Text-Preferences.jazz"} 1248802932
     {Lisp-Entry "jazz.editor.clike.text.CLike-Text-Preferences" #f 37 19 37 64 ("jazz")
-      {Lisp-Entry "CLike-Text-Preferences" #f 47 7 47 29 ("title:" "Code-Text-Preferences")
-        {Lisp-Entry "title-color" #f 50 12 50 23 ("generate")}
-        {Lisp-Entry "definition-color" #f 51 12 51 28 ("generate")}
-        {Lisp-Entry "line-comment-color" #f 52 12 52 30 ("generate")}
-        {Lisp-Entry "balanced-comment-color" #f 53 12 53 34 ("generate")}
-        {Lisp-Entry "keyword-color" #f 54 12 54 25 ("generate")}
-        {Lisp-Entry "profile-macro-color" #f 55 12 55 31 ("generate")}
-        {Lisp-Entry "profile-keyword-color" #f 56 12 56 33 ("generate")}
-        {Lisp-Entry "profile-type-color" #f 57 12 57 30 ("generate")}
-        {Lisp-Entry "macros" #f 58 12 58 18 ("generate")}
-        {Lisp-Entry "keywords" #f 59 12 59 20 ("generate")}
-        {Lisp-Entry "types" #f 60 12 60 17 ("generate")}
-        {Lisp-Entry "completions" #f 61 12 61 23 ("generate")}
-        {Lisp-Entry "get-categorized-properties" #f 73 11 73 37 ("profile-type-color" "profile-macro-color" "profile-keyword-color" "keyword-color" "balanced-comment-color" "line-comment-color" "definition-color" "title-color" "completions" "types" "keywords" "macros")}
-        {Lisp-Entry "get-row-instance" #f 78 11 78 27 ("nextmethod" "else" "Completion-List-Row" "completions" "Macro/Keyword/Type-List-Row" "types" "keywords" "macros" "Color-Row" "new" "profile-type-color" "profile-macro-color" "profile-keyword-color" "keyword-color" "balanced-comment-color" "line-comment-color" "definition-color" "title-color" "field-name" "case" "property")}}
-      {Lisp-Entry "Macro/Keyword/Type-List-Row" #f 91 7 91 34 ("List-Row")
-        {Lisp-Entry "get-subrow-class" #f 94 11 94 27 ("Macro/Keyword/Type-Row")}}
-      {Lisp-Entry "Macro/Keyword/Type-Row" #f 103 7 103 29 ("Value-Row")}}})
+      {Lisp-Entry "CLike-Text-Preferences" #f 45 7 45 29 ("title:" "initialize")
+        {Lisp-Entry "title-color" #f 48 12 48 23 ()}
+        {Lisp-Entry "get-title-color" #f 48 60 48 68 ()}
+        {Lisp-Entry "set-title-color" #f 48 60 48 68 ()}
+        {Lisp-Entry "definition-color" #f 49 12 49 28 ()}
+        {Lisp-Entry "get-definition-color" #f 49 60 49 68 ()}
+        {Lisp-Entry "set-definition-color" #f 49 60 49 68 ()}
+        {Lisp-Entry "line-comment-color" #f 50 12 50 30 ()}
+        {Lisp-Entry "get-line-comment-color" #f 50 60 50 68 ()}
+        {Lisp-Entry "set-line-comment-color" #f 50 60 50 68 ()}
+        {Lisp-Entry "balanced-comment-color" #f 51 12 51 34 ()}
+        {Lisp-Entry "get-balanced-comment-color" #f 51 60 51 68 ()}
+        {Lisp-Entry "set-balanced-comment-color" #f 51 60 51 68 ()}
+        {Lisp-Entry "keyword-color" #f 52 12 52 25 ()}
+        {Lisp-Entry "get-keyword-color" #f 52 60 52 68 ()}
+        {Lisp-Entry "set-keyword-color" #f 52 60 52 68 ()}
+        {Lisp-Entry "profile-macro-color" #f 53 12 53 31 ()}
+        {Lisp-Entry "get-profile-macro-color" #f 53 60 53 68 ()}
+        {Lisp-Entry "set-profile-macro-color" #f 53 60 53 68 ()}
+        {Lisp-Entry "profile-keyword-color" #f 54 12 54 33 ()}
+        {Lisp-Entry "get-profile-keyword-color" #f 54 60 54 68 ()}
+        {Lisp-Entry "set-profile-keyword-color" #f 54 60 54 68 ()}
+        {Lisp-Entry "profile-type-color" #f 55 12 55 30 ()}
+        {Lisp-Entry "get-profile-type-color" #f 55 60 55 68 ()}
+        {Lisp-Entry "set-profile-type-color" #f 55 60 55 68 ()}
+        {Lisp-Entry "macros" #f 56 12 56 18 ()}
+        {Lisp-Entry "get-macros" #f 56 60 56 68 ()}
+        {Lisp-Entry "set-macros" #f 56 60 56 68 ()}
+        {Lisp-Entry "keywords" #f 57 12 57 20 ()}
+        {Lisp-Entry "get-keywords" #f 57 60 57 68 ()}
+        {Lisp-Entry "set-keywords" #f 57 60 57 68 ()}
+        {Lisp-Entry "types" #f 58 12 58 17 ()}
+        {Lisp-Entry "get-types" #f 58 60 58 68 ()}
+        {Lisp-Entry "set-types" #f 58 60 58 68 ()}
+        {Lisp-Entry "completions" #f 59 12 59 23 ()}
+        {Lisp-Entry "get-completions" #f 59 60 59 68 ()}
+        {Lisp-Entry "set-completions" #f 59 60 59 68 ()}
+        {Lisp-Entry "get-categorized-properties" #f 71 11 71 37 ("profile-type-color" "profile-macro-color" "profile-keyword-color" "keyword-color" "balanced-comment-color" "line-comment-color" "definition-color" "title-color" "completions" "types" "keywords" "macros")}
+        {Lisp-Entry "get-row-instance" #f 76 11 76 27 ("nextmethod" "else" "Completion-List-Row" "completions" "Macro/Keyword/Type-List-Row" "types" "keywords" "macros" "Color-Row" "new" "profile-type-color" "profile-macro-color" "profile-keyword-color" "keyword-color" "balanced-comment-color" "line-comment-color" "definition-color" "title-color" "field-name" "case" "property")}}
+      {Lisp-Entry "Macro/Keyword/Type-List-Row" #f 89 7 89 34 ()
+        {Lisp-Entry "get-subrow-class" #f 92 11 92 27 ("Macro/Keyword/Type-Row")}}
+      {Lisp-Entry "Macro/Keyword/Type-Row" #f 101 7 101 29 ()}}})
 "CLike-Text-View"
- ({Lisp-File-Entry {File jazz.editor.clike "src" "jazz" "editor" "clike" "text" "CLike-Text-View.jazz"} 1246976242
+ ({Lisp-File-Entry {File jazz.editor.clike "src" "jazz" "editor" "clike" "text" "CLike-Text-View.jazz"} 1249131494
     {Lisp-Entry "jazz.editor.clike.text.CLike-Text-View" #f 37 19 37 57 ("jazz")
-      {Lisp-Entry "CLike-Text-View" #f 46 7 46 22 ("Code-Text-View")
+      {Lisp-Entry "CLike-Text-View" #f 46 7 46 22 ()
         {Lisp-Entry "install" #f 49 11 49 18 ("get-profile-type-color" "Profile-Type" "'Profile-Type" "get-profile-keyword-color" "Profile-Keyword" "'Profile-Keyword" "get-profile-macro-color" "Profile-Macro" "'Profile-Macro" "get-keyword-color" "Keyword" "'Keyword" "get-balanced-comment-color" "Balanced-Comment" "'Balanced-Comment" "get-line-comment-color" "Line-Comment" "'Line-Comment" "get-definition-color" "Definition" "'Definition" "get-title-color" "color:" "Default" "'Default" "base:" "Title" "'Title" "name:" "Text-Style" "new" "add-style" "preferences" "pref" "let" "nextmethod" "rest")}
         {Lisp-Entry "new-syntax" #f 62 11 62 21 ("C-Syntax" "new")}
         {Lisp-Entry "flash-character?" #f 72 11 72 27 ("char")}
@@ -34,7 +58,7 @@
         {Lisp-Entry "get-profile-types" #f 121 29 121 46 ("profile")}
         {Lisp-Entry "mouse-insert" #f 130 11 130 23 ("insert-string" "function" "with-update-locked" "last" "text-ending" "concatenate" "set!" "memq?" "not" "0" "element" "syntax" "text-constituent?" "and" "previous-cell" "get-char" "sc" "text-beginning" "/=" "when" "get-end" "end" "get-start" "start" "let" "copy")}
         {Lisp-Entry "compute-syntax-targets" #f 151 11 151 33 ("get-profile-types" "profile-type" "'profile-type" "get-profile-keywords" "profile-keyword" "'profile-keyword" "get-profile-macros" "profile-macro" "'profile-macro" "get-keywords" "keyword" "'keyword" "str" "function" "map" "line-comment" "'line-comment" "balanced-comment-backward" "'balanced-comment-backward" "balanced-comment" "'balanced-comment" "list" "append" "get-application" "get-profile" "profile" "let")}
-        {Lisp-Entry "compute-syntax-automata" #f 162 11 162 34 ("c-constituent?" "self" "syntax-targets" "build-search-automata")}
+        {Lisp-Entry "compute-syntax-automata" #f 162 11 162 34 ("c-constituent?" "syntax-targets" "build-search-automata")}
         {Lisp-Entry "colorize-type" #f 166 11 166 24 ("Profile-Type" "'Profile-Type" "profile-type" "Profile-Keyword" "'Profile-Keyword" "profile-keyword" "Profile-Macro" "'Profile-Macro" "profile-macro" "Keyword" "'Keyword" "colorize-keyword" "keyword" "Title" "'Title" "Line-Comment" "'Line-Comment" "colorize-line-comment" "line-comment" "colorize-balanced-comment-backward" "balanced-comment-backward" "Balanced-Comment" "'Balanced-Comment" "colorize-balanced-comment" "balanced-comment" "case" "recolorize?" "colorizer" "end" "start" "type" "found")}
         {Lisp-Entry "explorer-class" #f 182 11 182 25 ("C-Explorer")}
         {Lisp-Entry "get-context" #f 191 11 191 22 ("c")}
@@ -42,13 +66,12 @@
         {Lisp-Entry "name-at" #f 199 11 199 18 ("read-string-element" "0" "element" "eqv?" "if" "get-string" "name" "let" "when" "range")}
         {Lisp-Entry "current-expr" #f 207 11 207 23 ("current-name")}
         {Lisp-Entry "current-expr-range" #f 211 11 211 29 ("get-end" "expr-range" "get-selection" "has-selection?" "completion-active?" "not" "and" "if")}
-        {Lisp-Entry "expr-range" #f 217 11 217 21 ("get-range" "outer-expr" "end:" "start:" "self" "C-Explorer" "new" "expl" "let" "pos")}
-        {Lisp-Entry "expr-at" #f 223 11 223 18 ("expr-range" "name-at" "pos")}
-        {Lisp-Entry "headers" #f 232 12 232 19 ("string" "concatenate" "list")}
-        {Lisp-Entry "get-headers" #f 238 11 238 22 ("headers")}}}})
+        {Lisp-Entry "expr-at" #f 217 11 217 18 ("expr-range" "name-at" "pos")}
+        {Lisp-Entry "headers" #f 226 12 226 19 ("string" "concatenate" "list")}
+        {Lisp-Entry "get-headers" #f 232 11 232 22 ("headers")}}}})
 "_clike"
- ({Lisp-File-Entry {File jazz.editor.clike "src" "jazz" "editor" "clike" "_clike.jazz"} 1246976943
+ ({Lisp-File-Entry {File jazz.editor.clike "src" "jazz" "editor" "clike" "_clike.jazz"} 1246978516
     {Lisp-Entry "jazz.editor.clike" #f 37 9 37 26 ("jazz")}})
 "autoload"
- ({Lisp-File-Entry {File jazz.editor.clike "src" "jazz" "editor" "clike" "autoload.jazz"} 1246976940
+ ({Lisp-File-Entry {File jazz.editor.clike "src" "jazz" "editor" "clike" "autoload.jazz"} 1249913822
     {Lisp-Entry "jazz.editor.clike.autoload" #f 37 19 37 45 ("jazz")}})

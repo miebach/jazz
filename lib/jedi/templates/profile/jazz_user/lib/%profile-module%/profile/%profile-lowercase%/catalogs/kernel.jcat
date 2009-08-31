@@ -1,5 +1,5 @@
 "base"
- ({Lisp-File-Entry {File Jazz "kernel" "runtime" "base.scm"} 1244896779
+ ({Lisp-File-Entry {File Jazz "kernel" "runtime" "base.scm"} 1251729947
     {Lisp-Entry "jazz.make-version" #f 42 9 42 26 ("version" "'version" "vector" "description" "recompile" "rebuild" "gambit-stamp" "gambit-version" "number")}
     {Lisp-Entry "jazz.version-number" #f 45 9 45 28 ("1" "vector-ref" "version")}
     {Lisp-Entry "jazz.version-gambit-version" #f 48 9 48 36 ("2" "vector-ref" "version")}
@@ -35,203 +35,212 @@
     {Lisp-Entry "jazz.pathname-normalize" #f 298 9 298 32 ("string-append" "and" "jazz.pathname-standardize" "standardized" "1" "-" "0" "substring" "path-normalize" "normalized" "jazz.string-ends-with?" "dir?" "string-length" "len" "let" "jazz.error" "jazz.pathname-exists?" "not" "if" "error?" "#!optional" "path")}
     {Lisp-Entry "jazz.create-directory" #f 312 9 312 30 ("create-directory" "begin" "file-exists?" "not" "if" "feedback" "#!key" "dir")}
     {Lisp-Entry "jazz.create-directories" #f 320 9 320 32 ("feedback:" "jazz.create-directory" "file-exists?" "jazz.join-strings" "subdir" "begin" "null?" "not" "cdr" "car" "equal?" "if" "scan" "iter" "jazz.split-string" "reverse" "path" "let" "feedback" "#!key" "dir")}
-    {Lisp-Entry "jazz.directory-content" #f 331 8 331 30 ("directory-files")}
-    {Lisp-Entry "jazz.directory-files" #f 335 9 335 29 ("dot-and-dot-dot" "'dot-and-dot-dot" "ignore-hidden:" "path:" "list" "jazz.directory-content" "regular" "'regular" "string-append" "jazz.pathname-type" "eq?" "name" "lambda" "jazz.collect-if" "directory")}
-    {Lisp-Entry "jazz.directory-directories" #f 341 9 341 35 ("dot-and-dot-dot" "'dot-and-dot-dot" "ignore-hidden:" "path:" "list" "jazz.directory-content" "'directory" "string-append" "jazz.pathname-type" "eq?" "name" "lambda" "jazz.collect-if" "directory")}
-    {Lisp-Entry "jazz.option?" #f 352 9 352 21 ("string-ref" "char=?" "or" "string-length" "0" "<" "and" "arg")}
-    {Lisp-Entry "jazz.convert-option" #f 358 9 358 28 ("string-length" "1" "substring" "arg")}
-    {Lisp-Entry "jazz.option=?" #f 362 9 362 22 ("jazz.convert-option" "equal?" "jazz.option?" "and" "option" "arg")}
-    {Lisp-Entry "jazz.get-option" #f 367 9 367 24 ("cdr" "if" "assoc" "pair" "let" "options" "name")}
-    {Lisp-Entry "jazz.split-command-line" #f 374 9 374 32 ("reverse" "else" "begin" "cons" "member" "cond" "cdr" "rest" "jazz.convert-option" "opt" "car" "jazz.option?" "pair?" "and" "if" "rev-options" "args" "loop" "let" "cont" "missing-argument-for-option" "options-with-args" "options-with-no-args" "arguments")}
-    {Lisp-Entry "jazz.call-process" #f 401 9 401 26 ("jazz.error" "0" "=" "not" "if" "process-status" "code" "stderr-redirection:" "stdout-redirection:" "stdin-redirection:" "current-directory" "or" "directory:" "arguments:" "path:" "list" "open-process" "port" "let" "directory" "#!optional" "arguments" "path")}
-    {Lisp-Entry "jazz.feedback" #f 420 9 420 22 ("force-output" "newline" "jazz.format" "apply" "display" "rest" "fmt-string")}
-    {Lisp-Entry "jazz.debug-exception" #f 431 9 431 29 ("30" "0" "display-continuation-backtrace" "cont" "lambda" "continuation-capture" "display-exception" "if" "display-backtrace?" "display-exception?" "console" "exc")}})
+    {Lisp-Entry "jazz.directory-content" #f 331 9 331 31 ("dot-and-dot-dot" "'dot-and-dot-dot" "ignore-hidden:" "path:" "list" "string?" "if" "directory-files" "directory")}
+    {Lisp-Entry "jazz.directory-files" #f 337 9 337 29 ("jazz.directory-content" "regular" "'regular" "string-append" "jazz.pathname-type" "eq?" "name" "lambda" "jazz.collect-if" "directory")}
+    {Lisp-Entry "jazz.directory-directories" #f 343 9 343 35 ("jazz.directory-content" "'directory" "string-append" "jazz.pathname-type" "eq?" "name" "lambda" "jazz.collect-if" "directory")}
+    {Lisp-Entry "jazz.option?" #f 354 9 354 21 ("string-ref" "char=?" "or" "string-length" "0" "<" "and" "arg")}
+    {Lisp-Entry "jazz.convert-option" #f 360 9 360 28 ("string-length" "1" "substring" "arg")}
+    {Lisp-Entry "jazz.option=?" #f 364 9 364 22 ("jazz.convert-option" "equal?" "jazz.option?" "and" "option" "arg")}
+    {Lisp-Entry "jazz.get-option" #f 369 9 369 24 ("cdr" "if" "assoc" "pair" "let" "options" "name")}
+    {Lisp-Entry "jazz.split-command-line" #f 376 9 376 32 ("reverse" "else" "begin" "cons" "member" "cond" "cdr" "rest" "jazz.convert-option" "opt" "car" "jazz.option?" "pair?" "and" "if" "rev-options" "args" "loop" "let" "cont" "missing-argument-for-option" "options-with-args" "options-with-no-args" "arguments")}
+    {Lisp-Entry "jazz.call-process" #f 403 9 403 26 ("jazz.error" "0" "=" "not" "if" "process-status" "code" "stderr-redirection:" "stdout-redirection:" "stdin-redirection:" "current-directory" "or" "directory:" "arguments:" "path:" "list" "open-process" "port" "let" "directory" "#!optional" "arguments" "path")}
+    {Lisp-Entry "jazz.feedback" #f 422 9 422 22 ("force-output" "newline" "jazz.format" "apply" "display" "rest" "fmt-string")}
+    {Lisp-Entry "jazz.debug-exception" #f 433 9 433 29 ("1000" "0" "display-continuation-backtrace" "cont" "lambda" "continuation-capture" "display-exception" "if" "display-backtrace?" "display-exception?" "console" "exc")}})
 "boot"
- ({Lisp-File-Entry {File Jazz "kernel" "boot.scm"} 1236190768
+ ({Lisp-File-Entry {File Jazz "kernel" "boot.scm"} 1250872130
     {Lisp-Entry "jazz.Kernel" #f 37 8 37 19 ("list")}
     {Lisp-Entry "jazz.load-kernel" #f 56 8 56 24 ("set!" "jazz.Kernel" "jazz.source" "string-append" "load" "path" "for-each" "begin" "not" "if" "lambda" "loaded?" "let")}})
 "build"
- ({Lisp-File-Entry {File Jazz "kernel" "build.scm"} 1246650265
-    {Lisp-Entry "jazz.setup-versions" #f 42 9 42 28 ("jazz.validate-gambit-version" "jazz.source-versions-file" "set!")}
-    {Lisp-Entry "jazz.validate-gambit-version" #f 47 9 47 37 ("wrong-version" "jazz.format" "stamp" "jazz.get-gambit-stamp" "gambit-stamp" "jazz.get-gambit-version" "gambit-version" "let" "system-stamp" "system-version" "jazz.gambit-uptodate?" "not" "if")
-      {Lisp-Entry "wrong-version" #f 48 11 48 24 ("1" "exit" "newline" "display" "message")}}
-    {Lisp-Entry "jazz.make-configuration" #f 69 9 69 32 ("configuration" "'configuration" "vector" "destination" "source-access?" "interpret-kernel?" "debug-source?" "debug-location?" "debug-environments?" "optimize?" "safety" "windowing" "platform" "system" "name")}
-    {Lisp-Entry "jazz.configuration-name" #f 72 9 72 32 ("1" "vector-ref" "configuration")}
-    {Lisp-Entry "jazz.configuration-system" #f 75 9 75 34 ("2" "vector-ref" "configuration")}
-    {Lisp-Entry "jazz.configuration-platform" #f 78 9 78 36 ("3" "vector-ref" "configuration")}
-    {Lisp-Entry "jazz.configuration-windowing" #f 81 9 81 37 ("4" "vector-ref" "configuration")}
-    {Lisp-Entry "jazz.configuration-safety" #f 84 9 84 34 ("5" "vector-ref" "configuration")}
-    {Lisp-Entry "jazz.configuration-optimize?" #f 87 9 87 37 ("6" "vector-ref" "configuration")}
-    {Lisp-Entry "jazz.configuration-debug-environments?" #f 90 9 90 47 ("7" "vector-ref" "configuration")}
-    {Lisp-Entry "jazz.configuration-debug-location?" #f 93 9 93 43 ("8" "vector-ref" "configuration")}
-    {Lisp-Entry "jazz.configuration-debug-source?" #f 96 9 96 41 ("9" "vector-ref" "configuration")}
-    {Lisp-Entry "jazz.configuration-interpret-kernel?" #f 99 9 99 45 ("10" "vector-ref" "configuration")}
-    {Lisp-Entry "jazz.configuration-source-access?" #f 102 9 102 42 ("11" "vector-ref" "configuration")}
-    {Lisp-Entry "jazz.configuration-destination" #f 105 9 105 39 ("12" "vector-ref" "configuration")}
-    {Lisp-Entry "jazz.new-configuration" #f 109 9 109 31 ("jazz.validate-destination" "jazz.validate-source-access?" "jazz.validate-interpret-kernel?" "jazz.validate-debug-source?" "jazz.validate-debug-location?" "jazz.validate-debug-environments?" "jazz.validate-optimize?" "jazz.validate-safety" "jazz.validate-windowing" "jazz.validate-platform" "jazz.validate-system" "jazz.validate-name" "jazz.make-configuration" "destination" "source-access?" "interpret-kernel?" "debug-source?" "debug-location?" "debug-environments?" "optimize?" "safety" "windowing" "platform" "system" "name" "#!key")}
-    {Lisp-Entry "jazz.anonymous-configuration-file" #f 143 8 143 41 ()}
-    {Lisp-Entry "jazz.named-configurations-file" #f 146 8 146 38 ()}
-    {Lisp-Entry "jazz.configurations" #f 149 8 149 27 ()}
-    {Lisp-Entry "jazz.list-configurations" #f 153 9 153 33 ("jazz.configurations" "jazz.sort-configurations" "jazz.describe-configuration" "for-each")}
-    {Lisp-Entry "jazz.require-configuration" #f 157 9 157 35 ("jazz.error" "not" "if" "jazz.find-configuration" "or" "name")}
-    {Lisp-Entry "jazz.require-default-configuration" #f 163 9 163 43 ("jazz.require-configuration")}
-    {Lisp-Entry "jazz.find-configuration" #f 167 9 167 32 ("jazz.load-configuration-file" "file-exists?" "string-append" "configuration-file" "jazz.destination-directory" "configuration-dir" "and" "car" "not" "if" "jazz.find-configuration-pair" "pair" "configuration" "let" "name")}
-    {Lisp-Entry "jazz.find-configuration-pair" #f 182 9 182 37 ("cdr" "jazz.configuration-name" "eq?" "car" "configuration" "null?" "if" "jazz.configurations" "configurations" "iter" "let" "name")}
-    {Lisp-Entry "jazz.sort-configurations" #f 192 9 192 33 ("symbol->string" "string-ci<?" "else" "not" "cond" "n2" "jazz.configuration-name" "n1" "let" "c2" "c1" "lambda" "jazz.sort" "configurations")}
-    {Lisp-Entry "jazz.split-configurations" #f 205 9 205 34 ("cons" "cdr" "jazz.configuration-name" "not" "car" "configuration" "values" "null?" "if" "named" "anonymous" "split" "let" "configurations")}
-    {Lisp-Entry "jazz.register-configuration" #f 215 9 215 36 ("jazz.save-configurations" "list" "append" "jazz.configurations" "set!" "set-car!" "if" "jazz.find-configuration-pair" "pair" "jazz.configuration-name" "name" "let" "configuration")}
-    {Lisp-Entry "jazz.delete-configuration" #f 224 9 224 34 ("jazz.save-configurations" "jazz.configuration-name" "eq?" "c2" "c1" "lambda" "jazz.delete" "jazz.configurations" "set!" "name")}
-    {Lisp-Entry "jazz.load-configurations" #f 233 9 233 33 ("jazz.load-configuration-file" "jazz.register-configuration" "jazz.anonymous-configuration-file" "read-all" "jazz.configurations" "set!" "jazz.new-configuration" "apply" "eof-object?" "read" "let" "read-configuration" "define" "input" "lambda" "cr-lf" "'cr-lf" "eol-encoding:" "path:" "list" "call-with-input-file" "jazz.named-configurations-file" "file-exists?" "if")}
-    {Lisp-Entry "jazz.load-configuration-file" #f 248 9 248 37 ("read" "jazz.new-configuration" "apply" "input" "lambda" "cr-lf" "'cr-lf" "eol-encoding:" "path:" "list" "call-with-input-file" "file")}
-    {Lisp-Entry "jazz.save-configurations" #f 254 9 254 33 ("configuration" "for-each" "jazz.named-configurations-file" "jazz.feedback" "feedback:" "jazz.create-directories" "begin" "null?" "not" "jazz.sort-configurations" "configurations" "let" "delete-file" "file-exists?" "print-configuration" "output" "lambda" "jazz.anonymous-configuration-file" "call-with-output-file" "if" "jazz.configurations" "jazz.split-configurations" "named" "anonymous" "receive")
-      {Lisp-Entry "print-configuration" #f 255 11 255 30 ("jazz.configuration-destination" "jazz.configuration-source-access?" "jazz.configuration-interpret-kernel?" "jazz.configuration-debug-source?" "jazz.configuration-debug-location?" "jazz.configuration-debug-environments?" "jazz.configuration-optimize?" "jazz.configuration-safety" "jazz.configuration-windowing" "jazz.configuration-platform" "jazz.configuration-system" "jazz.configuration-name" "jazz.print-configuration" "output" "configuration")}}
-    {Lisp-Entry "jazz.describe-configuration" #f 289 9 289 36 ("eqv?" "not" "if" "or" "jazz.feedback" "jazz.configuration-destination" "destination" "jazz.configuration-source-access?" "source-access?" "jazz.configuration-interpret-kernel?" "interpret-kernel?" "jazz.configuration-debug-source?" "debug-source?" "jazz.configuration-debug-location?" "debug-location?" "jazz.configuration-debug-environments?" "debug-environments?" "jazz.configuration-optimize?" "optimize?" "jazz.configuration-safety" "safety" "jazz.configuration-windowing" "windowing" "jazz.configuration-platform" "platform" "jazz.configuration-system" "system" "jazz.configuration-name" "name" "let" "configuration")}
-    {Lisp-Entry "jazz.configure" #f 329 9 329 23 ("jazz.describe-configuration" "jazz.register-configuration" "destination:" "source-access?:" "interpret-kernel?:" "debug-source?:" "debug-location?:" "debug-environments?:" "optimize?:" "safety:" "windowing:" "platform:" "system:" "name:" "jazz.new-configuration" "configuration" "let" "jazz.require-destination" "jazz.require-source-access?" "jazz.require-interpret-kernel?" "jazz.require-debug-source?" "jazz.require-debug-location?" "jazz.require-debug-environments?" "jazz.require-optimize?" "jazz.require-safety" "jazz.require-windowing" "jazz.require-platform" "jazz.require-system" "jazz.require-name" "let*" "destination" "source-access?" "interpret-kernel?" "debug-source?" "debug-location?" "debug-environments?" "optimize?" "safety" "windowing" "platform" "system" "name" "#!key")}
-    {Lisp-Entry "jazz.require-name" #f 378 9 378 26 ("name")}
-    {Lisp-Entry "jazz.validate-name" #f 382 9 382 27 ("jazz.error" "symbol->string" "jazz.valid-filename?" "symbol?" "and" "not" "or" "if" "name")}
-    {Lisp-Entry "jazz.default-system" #f 395 12 395 31 ("'gambit")}
-    {Lisp-Entry "jazz.default-system" #f 398 12 398 31 ()}
-    {Lisp-Entry "jazz.valid-systems" #f 401 8 401 26 ()}
-    {Lisp-Entry "jazz.require-system" #f 405 9 405 28 ("jazz.unspecified-feature" "jazz.default-system" "or" "system")}
-    {Lisp-Entry "jazz.validate-system" #f 409 9 409 29 ("jazz.error" "jazz.valid-systems" "memq" "if" "system")}
-    {Lisp-Entry "jazz.valid-platforms" #f 420 8 420 28 ()}
-    {Lisp-Entry "jazz.require-platform" #f 426 9 426 30 ("jazz.guess-platform" "or" "platform")}
-    {Lisp-Entry "jazz.guess-platform" #f 430 9 430 28 ("windows" "'windows" "else" "unix" "'unix" "linux-gnu" "'linux-gnu" "mac" "'mac" "apple" "'apple" "eq?" "cond" "caddr" "os" "system-type" "cadr" "system" "let")}
-    {Lisp-Entry "jazz.validate-platform" #f 438 9 438 31 ("jazz.error" "jazz.valid-platforms" "memq" "if" "platform")}
-    {Lisp-Entry "jazz.valid-windowings" #f 449 8 449 29 ()}
-    {Lisp-Entry "jazz.require-windowing" #f 455 9 455 31 ("jazz.guess-windowing" "or" "windowing" "platform")}
-    {Lisp-Entry "jazz.guess-windowing" #f 459 9 459 29 ("unix" "windows" "x11" "'x11" "mac" "case" "platform")}
-    {Lisp-Entry "jazz.validate-windowing" #f 466 9 466 32 ("jazz.error" "jazz.valid-windowings" "memq" "if" "windowing")}
-    {Lisp-Entry "jazz.default-safety" #f 477 8 477 27 ("'release")}
-    {Lisp-Entry "jazz.valid-safeties" #f 480 8 480 27 ()}
-    {Lisp-Entry "jazz.require-safety" #f 486 9 486 28 ("jazz.unspecified-feature" "jazz.default-safety" "or" "safety")}
-    {Lisp-Entry "jazz.validate-safety" #f 490 9 490 29 ("jazz.error" "jazz.valid-safeties" "memq" "if" "safety")}
-    {Lisp-Entry "jazz.valid-optimize" #f 501 8 501 27 ()}
-    {Lisp-Entry "jazz.require-optimize?" #f 506 9 506 31 ("optimize")}
-    {Lisp-Entry "jazz.validate-optimize?" #f 510 9 510 32 ("jazz.error" "jazz.valid-optimize" "memq" "if" "optimize")}
-    {Lisp-Entry "jazz.valid-debug-environments" #f 521 8 521 37 ()}
-    {Lisp-Entry "jazz.require-debug-environments?" #f 526 9 526 41 ("debug-environments")}
-    {Lisp-Entry "jazz.validate-debug-environments?" #f 530 9 530 42 ("jazz.error" "jazz.valid-debug-environments" "memq" "if" "debug-environments")}
-    {Lisp-Entry "jazz.valid-debug-location" #f 541 8 541 33 ()}
-    {Lisp-Entry "jazz.require-debug-location?" #f 546 9 546 37 ("debug-location")}
-    {Lisp-Entry "jazz.validate-debug-location?" #f 550 9 550 38 ("jazz.error" "jazz.valid-debug-location" "memq" "if" "debug-location")}
-    {Lisp-Entry "jazz.valid-debug-source" #f 561 8 561 31 ()}
-    {Lisp-Entry "jazz.require-debug-source?" #f 566 9 566 35 ("debug-source")}
-    {Lisp-Entry "jazz.validate-debug-source?" #f 570 9 570 36 ("jazz.error" "jazz.valid-debug-source" "memq" "if" "debug-source")}
-    {Lisp-Entry "jazz.valid-interpret-kernel" #f 581 8 581 35 ()}
-    {Lisp-Entry "jazz.require-interpret-kernel?" #f 586 9 586 39 ("interpret-kernel")}
-    {Lisp-Entry "jazz.validate-interpret-kernel?" #f 590 9 590 40 ("jazz.error" "jazz.valid-interpret-kernel" "memq" "if" "interpret-kernel")}
-    {Lisp-Entry "jazz.require-source-access?" #f 601 9 601 36 ("source-access")}
-    {Lisp-Entry "jazz.validate-source-access?" #f 605 9 605 37 ("jazz.error" "eqv?" "or" "if" "source-access")}
-    {Lisp-Entry "jazz.require-destination" #f 617 9 617 33 ("destination")}
-    {Lisp-Entry "jazz.validate-destination" #f 621 9 621 34 ("jazz.error" "jazz.valid-filename?" "'bin" "eq?" "bin" "jazz" "user" "memq" "title" "alias" "lambda" "jazz.parse-destination" "string?" "and" "not" "or" "if" "destination")}
-    {Lisp-Entry "jazz.configuration-directory" #f 633 9 633 37 ("jazz.configuration-destination" "jazz.configuration-name" "jazz.destination-directory" "configuration")}
-    {Lisp-Entry "jazz.configuration-file" #f 640 9 640 32 ("string-append" "jazz.configuration-directory" "dir" "let" "configuration")}
-    {Lisp-Entry "jazz.unspecified-feature" #f 650 9 650 33 ("jazz.error" "feature")}
-    {Lisp-Entry "jazz.default-target" #f 659 8 659 27 ("'jazz")}
-    {Lisp-Entry "jazz.parse-target/configuration" #f 663 9 663 40 ("jazz.require-configuration" "string-length" "1" "+" "configuration" "substring" "jazz.default-target" "0" "=" "target" "jazz.require-default-configuration" "string->symbol" "values" "not" "if" "jazz.string-find" "pos" "let" "str")}
-    {Lisp-Entry "jazz.make" #f 678 9 678 18 ("console-port" "newline" "cdr" "tail" "make-symbol" "car" "symbol" "not" "jazz.default-target" "list" "null?" "if" "scan" "iter" "reverse" "let" "jobs" "syms" "lambda" "parse-symbols" "local?" "symbols")
-      {Lisp-Entry "parse-symbols" #f 679 11 679 24 ("cons" "cdr" "cadr" "cddr" "jobs:" "eqv?" "car" "obj" "null?" "if" "jobs" "syms" "symbols" "scan" "iter" "let" "proc")}
-      {Lisp-Entry "make-symbol" #f 690 11 690 22 ("local?" "jazz.make-target" "jazz.parse-target/configuration" "configuration" "target" "receive" "symbol->string" "name" "let" "jobs" "symbol")}}
-    {Lisp-Entry "jazz.make-target" #f 710 9 710 25 ("jazz.make-product" "else" "jazz.make-install" "install" "jazz.make-kernel" "kernel" "jazz.make-cleankernel" "cleankernel" "jazz.make-clean" "clean" "case" "local?" "jobs" "configuration" "target")}
-    {Lisp-Entry "jazz.build-recursive" #f 724 9 724 29 (",argument" "jazz.call-process" "windows" "'windows" "jazz.configuration-platform" "eq?" "gsc-path" "symbol->string" "jazz.format" "if" "argument" "jazz.configuration-name" "configuration-name" "let" "configuration" "target")}
-    {Lisp-Entry "jazz.make-clean" #f 740 9 740 24 ("jazz.configuration-directory" "jazz.delete-directory" "jazz.feedback" "configuration")}
-    {Lisp-Entry "jazz.make-cleankernel" #f 745 9 745 30 ("jazz.empty-directory" "file-exists?" "if" "jazz.configuration-directory" "dir" "let" "jazz.feedback" "configuration")}
-    {Lisp-Entry "jazz.make-install" #f 757 9 757 26 ("jazz.error" "configuration")}
-    {Lisp-Entry "jazz.make-kernel" #f 766 9 766 25 ("kernel" "'kernel" "jazz.build-recursive" "jazz.build-kernel" "if" "local?" "configuration")}
-    {Lisp-Entry "jazz.build-kernel" #f 772 9 772 26 ("jazz.load-configuration-file" "build" "file-exists?" "if" "jazz.configuration-file" "configuration-file" "jazz.require-default-configuration" "or" "let" "jazz.feedback" "configuration" "#!optional")
-      {Lisp-Entry "build" #f 773 11 773 16 ("console?:" "kernel?:" "destination-directory:" "destination:" "source-access?:" "source:" "interpret-kernel?:" "include-compiler?:" "debug-source?:" "debug-location?:" "debug-environments?:" "optimize?:" "safety:" "windowing:" "platform:" "system:" "jazz.build-executable" "jazz.configuration-directory" "destination-directory" "jazz.configuration-destination" "destination" "jazz.configuration-source-access?" "source-access?" "source" "jazz.configuration-interpret-kernel?" "interpret-kernel?" "jazz.configuration-debug-source?" "debug-source?" "jazz.configuration-debug-location?" "debug-location?" "jazz.configuration-debug-environments?" "debug-environments?" "jazz.configuration-optimize?" "optimize?" "jazz.configuration-safety" "safety" "jazz.configuration-windowing" "windowing" "jazz.configuration-platform" "platform" "jazz.configuration-system" "system" "jazz.configuration-name" "name" "let" "configuration")}}
-    {Lisp-Entry "jazz.time-make-product?" #f 819 8 819 31 ()}
-    {Lisp-Entry "jazz.make-product" #f 823 9 823 26 ("make" "time" "jazz.time-make-product?" "if" "jobs" "configuration" "product")
-      {Lisp-Entry "make" #f 824 11 824 15 ("jobs" "product" "jazz.product-make" "configuration" "jazz.make-kernel")}}
-    {Lisp-Entry "jazz.product-make" #f 833 9 833 26 ("number->string" "if" "symbol->string" "jazz.call-process" "else" "windows" "case" "jazz-path" "string-append" "path" "build-file" "define" "jazz.configuration-platform" "platform" "jazz.configuration-directory" "destdir" "let" "jobs" "configuration" "product")}
-    {Lisp-Entry "jazz.print" #f 854 9 854 19 ("newline" "display" "output" "line")}
-    {Lisp-Entry "jazz.debug" #f 859 9 859 19 ("console-port" "jazz.print" "rest")}
-    {Lisp-Entry "jazz.format" #f 868 9 868 20 ("get-output-string" "jazz.format-to" "open-output-string" "output" "let" "arguments" "fmt-string")}
-    {Lisp-Entry "jazz.format-to" #f 874 9 874 23 ("else" "write-char" "eqv?" "cond" "begin" "eof-object?" "not" "if" "c" "iter" "newline" "%" "write" "s" "cdr" "set!" "car" "display" "a" "case" "read-char" "read" "directive" "format-directive" "define" "done?" "open-input-string" "control" "let" "arguments" "fmt-string" "output")}
-    {Lisp-Entry "jazz.collect-if" #f 908 9 908 24 ("cdr" "cons" "car" "value" "null?" "not" "if" "scan" "iter" "let" "lst" "predicate")}
-    {Lisp-Entry "jazz.filter" #f 918 9 918 20 ("cons" "eq?" "new-tail" "cdr" "tail" "car" "head" "null?" "if" "recur" "let" "lis" "pred")}
-    {Lisp-Entry "jazz.delete" #f 930 9 930 20 ("not" "y" "lambda" "jazz.filter" "test" "lis" "x")}
-    {Lisp-Entry "jazz.sort" #f 934 9 934 18 ("merge-sort" "smaller" "l")
-      {Lisp-Entry "merge-sort" #f 935 11 935 21 ("merge" "l2" "split" "merge-sort" "l1" "let*" "cdr" "null?" "or" "if" "l")
-        {Lisp-Entry "merge" #f 936 13 936 18 ("cdr" "merge" "cons" "smaller" "if" "e2" "car" "e1" "let" "else" "null?" "cond" "l2" "l1")}
-        {Lisp-Entry "split" #f 945 13 945 18 ("cddr" "split" "car" "cons" "cdr" "null?" "or" "if" "l")}}}
-    {Lisp-Entry "jazz.string-find" #f 964 9 964 25 ("1" "+" "else" "string-ref" "char=?" ">=" "cond" "0" "n" "iter" "string-length" "len" "let" "c" "str")}
-    {Lisp-Entry "jazz.string-replace" #f 975 9 975 28 ("string-set!" "string-ref" "eqv?" "begin" "0" ">=" "if" "1" "string-length" "-" "n" "iter" "string-copy" "cpy" "let" "new" "old" "str")}
-    {Lisp-Entry "jazz.string-ends-with?" #f 986 9 986 31 ("-" "substring" "string=?" ">=" "and" "tl" "string-length" "sl" "let" "target" "str")}
-    {Lisp-Entry "jazz.split-string" #f 993 9 993 26 ("+" "substring" "cons" "set!" "string-ref" "eqv?" "begin" "0" ">" "if" "1" "-" "pos" "iter" "string-length" "end" "lst" "let" "separator" "str")}
-    {Lisp-Entry "jazz.join-strings" #f 1007 9 1007 26 ("get-output-string" "cdr" "string" "lambda" "for-each" "car" "display" "open-output-string" "output" "let" "separator" "strings")}
-    {Lisp-Entry "jazz.valid-filename?" #f 1022 9 1022 29 ("memv" "char-numeric?" "char-alphabetic?" "or" "string-ref" "c" "0" "<" "if" "1" "string-length" "-" "n" "iter" "let" "str")}
-    {Lisp-Entry "jazz.delete-directory" #f 1034 9 1034 30 ("delete-directory" "jazz.empty-directory" "begin" "file-exists?" "if" "0" "level" "#!optional" "dir")}
-    {Lisp-Entry "jazz.empty-directory" #f 1041 9 1041 29 ("jazz.directory-directories" "1" "+" "jazz.delete-directory" "jazz.directory-files" "delete-file" "jazz.feedback" "2" "<" "string-append" "path" "let" "member" "not" "or" "if" "name" "lambda" "for-each" "0" "level" "ignored" "#!optional" "dir")}
-    {Lisp-Entry "jazz.error" #f 1063 9 1063 19 ("error" "jazz.format" "apply" "error-string" "let" "rest" "fmt-string")}
-    {Lisp-Entry "jazz.prompt" #f 1073 8 1073 19 ()}
-    {Lisp-Entry "jazz.display-exception?" #f 1076 8 1076 31 ()}
-    {Lisp-Entry "jazz.display-backtrace?" #f 1079 8 1079 31 ()}
-    {Lisp-Entry "jazz.build-system-repl" #f 1083 9 1083 31 ("jazz.process-command" "set!" "continuation-return" "jazz.display-backtrace?" "jazz.display-exception?" "jazz.debug-exception" "exc" "with-exception-handler" "stop" "lambda" "continuation-capture" "processed?" "read-line" "command" "jazz.prompt" "display" "newline" "if" "newline?" "loop" "force-output" "jazz.get-source-version-number" "jazz.present-version" "jazz.format" "jazz.print" "console-port" "console" "let")}
-    {Lisp-Entry "jazz.process-command" #f 1105 9 1105 29 ("jazz.error" "else" "quit" "jazz.help-command" "?" "help" "jazz.make-command" "make" "jazz.configure-command" "configure" "jazz.delete-command" "delete" "jazz.list-command" "list" "case" "read-all" "arguments" "begin" "read" "let" "input" "lambda" "call-with-input-string" "jazz.quit-command" "eof-object?" "if" "output" "command")}
-    {Lisp-Entry "jazz.list-command" #f 1126 9 1126 26 ("jazz.list-configurations" "output" "arguments")}
-    {Lisp-Entry "jazz.delete-command" #f 1130 9 1130 28 ("jazz.list-configurations" "jazz.require-configuration" "jazz.delete-configuration" "car" "null?" "if" "name" "let" "output" "arguments")}
-    {Lisp-Entry "jazz.configure-command" #f 1136 9 1136 31 ("jazz.configure" "apply" "output" "arguments")}
-    {Lisp-Entry "jazz.make-command" #f 1140 9 1140 26 ("jazz.make" "output" "arguments")}
-    {Lisp-Entry "jazz.help-command" #f 1144 9 1144 26 ("jazz.print" "output" "arguments")}
-    {Lisp-Entry "jazz.quit-command" #f 1154 9 1154 26 ("exit" "output" "arguments")}
-    {Lisp-Entry "jazz.build-system-boot" #f 1163 9 1163 31 ("fatal" "else" "jazz.get-source-version-number" "jazz.present-version" "jazz.format" "jazz.print" "console-port" "console" "##repl-debug-main" "jazz.option=?" "read-argument" "map" "jazz.make" "jazz.load-kernel-build" "unknown-option" "exit" "safety:" "windowing:" "platform:" "system:" "jazz.configure" "safety" "windowing" "platform" "system" "string->symbol" "not" "jazz.get-option" "opt" "name" "symbol-option" "define" "remaining" "options" "lambda" "missing-argument-for-option" "jazz.split-command-line" "equal?" "cond" "car" "action" "jazz.build-system-repl" "null?" "if" "command-line" "cdr" "command-arguments" "let")
-      {Lisp-Entry "fatal" #f 1164 11 1164 16 ("1" "exit" "force-output" "newline" "display" "message")}
-      {Lisp-Entry "unknown-option" #f 1170 11 1170 25 ("jazz.format" "fatal" "opt")}
-      {Lisp-Entry "missing-argument-for-option" #f 1173 11 1173 38 ("jazz.format" "fatal" "opt")}
-      {Lisp-Entry "read-argument" #f 1176 11 1176 24 ("read" "init:" "list" "call-with-input-string" "arg")}}
-    {Lisp-Entry "jazz.kernel-system" #f 1227 8 1227 26 ("'gambit")}
-    {Lisp-Entry "jazz.kernel-platform" #f 1230 8 1230 28 ()}
-    {Lisp-Entry "jazz.kernel-windowing" #f 1233 8 1233 29 ()}
-    {Lisp-Entry "jazz.kernel-safety" #f 1236 8 1236 26 ("'debug")}
-    {Lisp-Entry "jazz.kernel-optimize?" #f 1239 8 1239 29 ()}
-    {Lisp-Entry "jazz.kernel-debug-environments?" #f 1242 8 1242 39 ()}
-    {Lisp-Entry "jazz.kernel-debug-location?" #f 1245 8 1245 35 ()}
-    {Lisp-Entry "jazz.kernel-debug-source?" #f 1248 8 1248 33 ()}
-    {Lisp-Entry "jazz.kernel-destination" #f 1251 8 1251 31 ()}
-    {Lisp-Entry "jazz.load-kernel-base" #f 1255 9 1255 30 ("load")}
-    {Lisp-Entry "jazz.load-kernel-build" #f 1259 9 1259 31 ("load")}}
-  {Lisp-File-Entry {File Jazz "kernel" "runtime" "build.scm"} 1246650265
-    {Lisp-Entry "jazz.for-each-source-version" #f 42 9 42 37 ("jazz.get-source-versions" "for-each" "proc")}
-    {Lisp-Entry "jazz.for-each-higher-source-version" #f 46 9 46 44 ("cdr" "begin" "jazz.version-number" ">" "car" "source-version" "null?" "not" "if" "jazz.get-source-versions" "source-versions" "iter" "let" "proc" "version")}
-    {Lisp-Entry "jazz.kernel/product-needs-rebuild?" #f 56 9 56 43 ("set!" "all" "kernel" "jazz.version-rebuild" "memq" "source-version" "lambda" "jazz.for-each-higher-source-version" "rebuild?" "let" "jazz.gambit-uptodate?" "or" "not" "if" "jazz.load-version-file" "gambit-stamp" "gambit-version" "version" "receive" "version-file")}
-    {Lisp-Entry "jazz.kernel/product-architecture-needs-rebuild?" #f 69 9 69 56 ("set!" "jazz.version-recompile" "all" "kernel" "jazz.version-rebuild" "memq" "source-version" "lambda" "jazz.for-each-higher-source-version" "rebuild-architecture?" "let" "jazz.gambit-uptodate?" "or" "not" "if" "jazz.load-version-file" "gambit-stamp" "gambit-version" "version" "receive" "version-file")}
-    {Lisp-Entry "jazz.load-version-file" #f 83 9 83 31 ("values" "gambit-stamp" "gambit-version" "read" "version" "let" "input" "lambda" "cr-lf" "'cr-lf" "eol-encoding:" "path:" "list" "call-with-input-file" "file-exists?" "if" "version-file")}
-    {Lisp-Entry "jazz.manifest-needs-rebuild?-impl" #f 94 9 94 42 ("set!" "memq" "and" "all" "'all" "eq?" "or" "if" "jazz.version-recompile" "recompile" "jazz.version-rebuild" "rebuild" "source-version" "lambda" "jazz.for-each-higher-source-version" "rebuild?" "%%manifest-version" "version" "%%manifest-name" "name" "let" "manifest")}
-    {Lisp-Entry "jazz.build-executable-impl" #f 113 9 113 35 ("jazz.create-directories" "generate-gambcini" "jazz.print-configuration" "generate-configuration" "jazz.executable-extension" "path-expand" "path-strip-trailing-directory-separator" "jazz.call-process" "link-options" "unix" "link-libraries" "jazz.quote-gcc-pathname" "list" "resource-file" "resource-files" "else" "feedback:" "jazz.copy-file" "windows" "case" "'jazz.source-access?" "jazz.relativise-directory" "'jazz.source" "jazz.source-built" "'jazz.source-built" "jazz.pathname-normalize" "jazz.built" "'jazz.built" "jazz.product" "'jazz.product" "jazz.print-variable" "link-executable" "executable-name" "base:" "link-incremental" "<" "link-file" "generate-resources" "compile-product-file" "generate-main" "main?" "generate-product" "product?" "compile-product" "build-product" "jazz.print-architecture" "file" "load" "begin" "compile-source-file" "compile-kernel-file" "generate-architecture" "architecture?" "compile-kernel" "build-kernel" "jazz.file-modification-time" "kernel-time" "system-stamp" "system-version" "jazz.get-source-version-number" "write" "lambda" "call-with-output-file" "touched?" "set!" "delete-file" "file-exists?" "touch" "was-touched?" "jazz.kernel/product-architecture-needs-rebuild?" "rebuild-architecture?" "jazz.kernel/product-needs-rebuild?" "proc" "version-file" "with-version-file" "jazz.update-manifest-compile-time" "output:" "options:" "compile-file-to-c" "path-normalize" "jazz.pathname-standardize" "standardized-path" "debug-source" "debug-location" "debug-environments" "options" "jazz.file-exists?" "or" "jazz.cache-manifest-uptodate?" "hash-changed?" "jazz.Manifest-Extension" "mnf" "dst" "src" "dir" "name" "rebuild?" "compile-file" "apply" "rest" "fmt-string" "feedback-message" "newline" "display" "output" "line" "print" "product-file" "kernel-file" "build-file" "path" "source-file" "define" "product-dir" "string-append" "kernel-dir" "gambit-library" "symbol->string" "not" "if" "product-name" "let" "jazz.feedback" "feedback" "maximum-heap" "minimum-heap" "console?" "kernel?" "jazz.kernel-install" "destination-directory" "jazz.kernel-destination" "destination" "jazz.source-access?" "source-access?" "jazz.source" "source" "interpret-kernel?" "include-compiler?" "jazz.kernel-debug-source?" "debug-source?" "jazz.kernel-debug-location?" "debug-location?" "jazz.kernel-debug-environments?" "debug-environments?" "jazz.kernel-optimize?" "optimize?" "jazz.kernel-safety" "safety" "jazz.kernel-windowing" "windowing" "jazz.kernel-platform" "platform" "jazz.kernel-system" "system" "#!key" "product")}
-    {Lisp-Entry "jazz.executable-extension" #f 534 9 534 34 ("else" "windows" "case" "platform")}
-    {Lisp-Entry "jazz.print-architecture" #f 542 9 542 32 ("jazz.get-source-version-number" "jazz.kernel-version" "'jazz.kernel-version" "jazz.kernel-destination" "'jazz.kernel-destination" "jazz.kernel-debug-source?" "'jazz.kernel-debug-source?" "jazz.kernel-debug-location?" "'jazz.kernel-debug-location?" "jazz.kernel-debug-environments?" "'jazz.kernel-debug-environments?" "jazz.kernel-optimize?" "'jazz.kernel-optimize?" "jazz.kernel-safety" "'jazz.kernel-safety" "jazz.kernel-windowing" "'jazz.kernel-windowing" "jazz.kernel-platform" "'jazz.kernel-platform" "newline" "jazz.kernel-system" "'jazz.kernel-system" "jazz.print-variable" "output" "destination" "debug-source?" "debug-location?" "debug-environments?" "optimize?" "safety" "windowing" "platform" "system")}
-    {Lisp-Entry "jazz.print-variable" #f 564 9 564 28 ("write" "list?" "symbol?" "or" "if" "newline" "display" "output" "value" "variable")}})
+ ({Lisp-File-Entry {File Jazz "kernel" "build.scm"} 1251729947
+    {Lisp-Entry "jazz.setup-versions" #f 42 9 42 28 ("validate-gambit-version" "jazz.source-versions-file" "set!")
+      {Lisp-Entry "validate-gambit-version" #f 43 11 43 34 ("wrong-version" "jazz.format" "stamp" "jazz.get-gambit-stamp" "gambit-stamp" "jazz.get-gambit-version" "gambit-version" "let" "system-stamp" "system-version" "jazz.gambit-uptodate?" "not" "if")
+        {Lisp-Entry "wrong-version" #f 44 13 44 26 ("1" "exit" "newline" "display" "message")}}}
+    {Lisp-Entry "jazz.make-configuration" #f 68 9 68 32 ("configuration" "'configuration" "vector" "destination" "source-access?" "interpret-kernel?" "debug-source?" "debug-location?" "debug-environments?" "optimize?" "safety" "windowing" "platform" "system" "name")}
+    {Lisp-Entry "jazz.configuration-name" #f 71 9 71 32 ("1" "vector-ref" "configuration")}
+    {Lisp-Entry "jazz.configuration-system" #f 74 9 74 34 ("2" "vector-ref" "configuration")}
+    {Lisp-Entry "jazz.configuration-platform" #f 77 9 77 36 ("3" "vector-ref" "configuration")}
+    {Lisp-Entry "jazz.configuration-windowing" #f 80 9 80 37 ("4" "vector-ref" "configuration")}
+    {Lisp-Entry "jazz.configuration-safety" #f 83 9 83 34 ("5" "vector-ref" "configuration")}
+    {Lisp-Entry "jazz.configuration-optimize?" #f 86 9 86 37 ("6" "vector-ref" "configuration")}
+    {Lisp-Entry "jazz.configuration-debug-environments?" #f 89 9 89 47 ("7" "vector-ref" "configuration")}
+    {Lisp-Entry "jazz.configuration-debug-location?" #f 92 9 92 43 ("8" "vector-ref" "configuration")}
+    {Lisp-Entry "jazz.configuration-debug-source?" #f 95 9 95 41 ("9" "vector-ref" "configuration")}
+    {Lisp-Entry "jazz.configuration-interpret-kernel?" #f 98 9 98 45 ("10" "vector-ref" "configuration")}
+    {Lisp-Entry "jazz.configuration-source-access?" #f 101 9 101 42 ("11" "vector-ref" "configuration")}
+    {Lisp-Entry "jazz.configuration-destination" #f 104 9 104 39 ("12" "vector-ref" "configuration")}
+    {Lisp-Entry "jazz.new-configuration" #f 108 9 108 31 ("jazz.validate-destination" "jazz.validate-source-access?" "jazz.validate-interpret-kernel?" "jazz.validate-debug-source?" "jazz.validate-debug-location?" "jazz.validate-debug-environments?" "jazz.validate-optimize?" "jazz.validate-safety" "jazz.validate-windowing" "jazz.validate-platform" "jazz.validate-system" "jazz.validate-name" "jazz.make-configuration" "destination" "source-access?" "interpret-kernel?" "debug-source?" "debug-location?" "debug-environments?" "optimize?" "safety" "windowing" "platform" "system" "name" "#!key")}
+    {Lisp-Entry "jazz.anonymous-configuration-file" #f 142 8 142 41 ()}
+    {Lisp-Entry "jazz.named-configurations-file" #f 145 8 145 38 ()}
+    {Lisp-Entry "jazz.configurations" #f 148 8 148 27 ()}
+    {Lisp-Entry "jazz.list-configurations" #f 152 9 152 33 ("jazz.configurations" "jazz.sort-configurations" "jazz.describe-configuration" "for-each")}
+    {Lisp-Entry "jazz.require-configuration" #f 156 9 156 35 ("jazz.error" "not" "if" "jazz.find-configuration" "or" "name")}
+    {Lisp-Entry "jazz.require-default-configuration" #f 162 9 162 43 ("jazz.require-configuration")}
+    {Lisp-Entry "jazz.find-configuration" #f 166 9 166 32 ("jazz.load-configuration-file" "file-exists?" "string-append" "configuration-file" "jazz.destination-directory" "configuration-dir" "and" "car" "not" "if" "jazz.find-configuration-pair" "pair" "configuration" "let" "name")}
+    {Lisp-Entry "jazz.find-configuration-pair" #f 181 9 181 37 ("cdr" "jazz.configuration-name" "eq?" "car" "configuration" "null?" "if" "jazz.configurations" "configurations" "iter" "let" "name")}
+    {Lisp-Entry "jazz.sort-configurations" #f 191 9 191 33 ("symbol->string" "string-ci<?" "else" "not" "cond" "n2" "jazz.configuration-name" "n1" "let" "c2" "c1" "lambda" "jazz.sort" "configurations")}
+    {Lisp-Entry "jazz.split-configurations" #f 204 9 204 34 ("cons" "cdr" "jazz.configuration-name" "not" "car" "configuration" "values" "null?" "if" "named" "anonymous" "split" "let" "configurations")}
+    {Lisp-Entry "jazz.register-configuration" #f 214 9 214 36 ("jazz.save-configurations" "list" "append" "jazz.configurations" "set!" "set-car!" "if" "jazz.find-configuration-pair" "pair" "jazz.configuration-name" "name" "let" "configuration")}
+    {Lisp-Entry "jazz.delete-configuration" #f 223 9 223 34 ("jazz.save-configurations" "jazz.configuration-name" "eq?" "c2" "c1" "lambda" "jazz.delete" "jazz.configurations" "set!" "name")}
+    {Lisp-Entry "jazz.load-configurations" #f 232 9 232 33 ("jazz.load-configuration-file" "jazz.register-configuration" "jazz.anonymous-configuration-file" "read-all" "jazz.configurations" "set!" "jazz.new-configuration" "apply" "eof-object?" "read" "let" "read-configuration" "define" "input" "lambda" "cr-lf" "'cr-lf" "eol-encoding:" "path:" "list" "call-with-input-file" "jazz.named-configurations-file" "file-exists?" "if")}
+    {Lisp-Entry "jazz.load-configuration-file" #f 247 9 247 37 ("read" "jazz.new-configuration" "apply" "input" "lambda" "cr-lf" "'cr-lf" "eol-encoding:" "path:" "list" "call-with-input-file" "file")}
+    {Lisp-Entry "jazz.save-configurations" #f 253 9 253 33 ("configuration" "for-each" "jazz.named-configurations-file" "jazz.feedback" "feedback:" "jazz.create-directories" "begin" "null?" "not" "jazz.sort-configurations" "configurations" "let" "delete-file" "file-exists?" "print-configuration" "output" "lambda" "jazz.anonymous-configuration-file" "call-with-output-file" "if" "jazz.configurations" "jazz.split-configurations" "named" "anonymous" "receive")
+      {Lisp-Entry "print-configuration" #f 254 11 254 30 ("jazz.configuration-destination" "jazz.configuration-source-access?" "jazz.configuration-interpret-kernel?" "jazz.configuration-debug-source?" "jazz.configuration-debug-location?" "jazz.configuration-debug-environments?" "jazz.configuration-optimize?" "jazz.configuration-safety" "jazz.configuration-windowing" "jazz.configuration-platform" "jazz.configuration-system" "jazz.configuration-name" "jazz.print-configuration" "output" "configuration")}}
+    {Lisp-Entry "jazz.describe-configuration" #f 288 9 288 36 ("eqv?" "not" "if" "or" "jazz.feedback" "jazz.configuration-destination" "destination" "jazz.configuration-source-access?" "source-access?" "jazz.configuration-interpret-kernel?" "interpret-kernel?" "jazz.configuration-debug-source?" "debug-source?" "jazz.configuration-debug-location?" "debug-location?" "jazz.configuration-debug-environments?" "debug-environments?" "jazz.configuration-optimize?" "optimize?" "jazz.configuration-safety" "safety" "jazz.configuration-windowing" "windowing" "jazz.configuration-platform" "platform" "jazz.configuration-system" "system" "jazz.configuration-name" "name" "let" "configuration")}
+    {Lisp-Entry "jazz.configure" #f 328 9 328 23 ("jazz.describe-configuration" "jazz.register-configuration" "destination:" "source-access?:" "interpret-kernel?:" "debug-source?:" "debug-location?:" "debug-environments?:" "optimize?:" "safety:" "windowing:" "platform:" "system:" "name:" "jazz.new-configuration" "configuration" "let" "jazz.require-destination" "jazz.require-source-access?" "jazz.require-interpret-kernel?" "jazz.require-debug-source?" "jazz.require-debug-location?" "jazz.require-debug-environments?" "jazz.require-optimize?" "jazz.require-safety" "jazz.require-windowing" "jazz.require-platform" "jazz.require-system" "jazz.require-name" "let*" "destination" "source-access?" "interpret-kernel?" "debug-source?" "debug-location?" "debug-environments?" "optimize?" "safety" "windowing" "platform" "system" "name" "#!key")}
+    {Lisp-Entry "jazz.require-name" #f 377 9 377 26 ("name")}
+    {Lisp-Entry "jazz.validate-name" #f 381 9 381 27 ("jazz.error" "symbol->string" "jazz.valid-filename?" "symbol?" "and" "not" "or" "if" "name")}
+    {Lisp-Entry "jazz.default-system" #f 394 12 394 31 ("'gambit")}
+    {Lisp-Entry "jazz.default-system" #f 397 12 397 31 ()}
+    {Lisp-Entry "jazz.valid-systems" #f 400 8 400 26 ()}
+    {Lisp-Entry "jazz.require-system" #f 404 9 404 28 ("jazz.unspecified-feature" "jazz.default-system" "or" "system")}
+    {Lisp-Entry "jazz.validate-system" #f 408 9 408 29 ("jazz.error" "jazz.valid-systems" "memq" "if" "system")}
+    {Lisp-Entry "jazz.valid-platforms" #f 419 8 419 28 ()}
+    {Lisp-Entry "jazz.require-platform" #f 425 9 425 30 ("jazz.guess-platform" "or" "platform")}
+    {Lisp-Entry "jazz.guess-platform" #f 429 9 429 28 ("windows" "'windows" "else" "unix" "'unix" "linux-gnu" "'linux-gnu" "mac" "'mac" "apple" "'apple" "eq?" "cond" "caddr" "os" "system-type" "cadr" "system" "let")}
+    {Lisp-Entry "jazz.validate-platform" #f 437 9 437 31 ("jazz.error" "jazz.valid-platforms" "memq" "if" "platform")}
+    {Lisp-Entry "jazz.valid-windowings" #f 448 8 448 29 ()}
+    {Lisp-Entry "jazz.require-windowing" #f 454 9 454 31 ("jazz.guess-windowing" "or" "windowing" "platform")}
+    {Lisp-Entry "jazz.guess-windowing" #f 458 9 458 29 ("unix" "windows" "x11" "'x11" "mac" "case" "platform")}
+    {Lisp-Entry "jazz.validate-windowing" #f 465 9 465 32 ("jazz.error" "jazz.valid-windowings" "memq" "if" "windowing")}
+    {Lisp-Entry "jazz.default-safety" #f 476 8 476 27 ("'release")}
+    {Lisp-Entry "jazz.valid-safeties" #f 479 8 479 27 ()}
+    {Lisp-Entry "jazz.require-safety" #f 485 9 485 28 ("jazz.unspecified-feature" "jazz.default-safety" "or" "safety")}
+    {Lisp-Entry "jazz.validate-safety" #f 489 9 489 29 ("jazz.error" "jazz.valid-safeties" "memq" "if" "safety")}
+    {Lisp-Entry "jazz.valid-optimize" #f 500 8 500 27 ()}
+    {Lisp-Entry "jazz.require-optimize?" #f 505 9 505 31 ("optimize")}
+    {Lisp-Entry "jazz.validate-optimize?" #f 509 9 509 32 ("jazz.error" "jazz.valid-optimize" "memq" "if" "optimize")}
+    {Lisp-Entry "jazz.valid-debug-environments" #f 520 8 520 37 ()}
+    {Lisp-Entry "jazz.require-debug-environments?" #f 525 9 525 41 ("debug-environments")}
+    {Lisp-Entry "jazz.validate-debug-environments?" #f 529 9 529 42 ("jazz.error" "jazz.valid-debug-environments" "memq" "if" "debug-environments")}
+    {Lisp-Entry "jazz.valid-debug-location" #f 540 8 540 33 ()}
+    {Lisp-Entry "jazz.require-debug-location?" #f 545 9 545 37 ("debug-location")}
+    {Lisp-Entry "jazz.validate-debug-location?" #f 549 9 549 38 ("jazz.error" "jazz.valid-debug-location" "memq" "if" "debug-location")}
+    {Lisp-Entry "jazz.valid-debug-source" #f 560 8 560 31 ()}
+    {Lisp-Entry "jazz.require-debug-source?" #f 565 9 565 35 ("debug-source")}
+    {Lisp-Entry "jazz.validate-debug-source?" #f 569 9 569 36 ("jazz.error" "jazz.valid-debug-source" "memq" "if" "debug-source")}
+    {Lisp-Entry "jazz.valid-interpret-kernel" #f 580 8 580 35 ()}
+    {Lisp-Entry "jazz.require-interpret-kernel?" #f 585 9 585 39 ("interpret-kernel")}
+    {Lisp-Entry "jazz.validate-interpret-kernel?" #f 589 9 589 40 ("jazz.error" "jazz.valid-interpret-kernel" "memq" "if" "interpret-kernel")}
+    {Lisp-Entry "jazz.require-source-access?" #f 600 9 600 36 ("source-access")}
+    {Lisp-Entry "jazz.validate-source-access?" #f 604 9 604 37 ("jazz.error" "eqv?" "or" "if" "source-access")}
+    {Lisp-Entry "jazz.require-destination" #f 616 9 616 33 ("destination")}
+    {Lisp-Entry "jazz.validate-destination" #f 620 9 620 34 ("jazz.error" "jazz.valid-filename?" "'bin" "eq?" "bin" "jazz" "user" "memq" "title" "alias" "lambda" "jazz.parse-destination" "string?" "and" "not" "or" "if" "destination")}
+    {Lisp-Entry "jazz.configuration-directory" #f 632 9 632 37 ("jazz.configuration-destination" "jazz.configuration-name" "jazz.destination-directory" "configuration")}
+    {Lisp-Entry "jazz.configuration-file" #f 639 9 639 32 ("string-append" "jazz.configuration-directory" "dir" "let" "configuration")}
+    {Lisp-Entry "jazz.unspecified-feature" #f 649 9 649 33 ("jazz.error" "feature")}
+    {Lisp-Entry "jazz.default-target" #f 658 8 658 27 ("'jazz")}
+    {Lisp-Entry "jazz.make-symbols" #f 662 9 662 26 ("console-port" "newline" "tail" "make-symbol" "symbol" "not" "jazz.default-target" "list" "null?" "if" "scan" "iter" "jazz.error" "else" "cdr" "set!" "-jobs" "-j" "jobs:" "j:" "car" "case" "option" "for-each" "jobs" "let" "options" "lambda" "parse-symbols" "local?" "symbols")
+      {Lisp-Entry "parse-target/configuration/image" #f 663 11 663 43 ("0" "substring" "string->symbol" "standardize-image" "string-length" "1" "+" "=" "image" "configuration" "target" "lambda" "parse-target/configuration" "not" "if" "jazz.string-find" "colon" "let" "proc" "str")}
+      {Lisp-Entry "parse-target/configuration" #f 677 11 677 37 ("jazz.require-configuration" "string-length" "1" "+" "configuration" "substring" "0" "=" "target" "jazz.require-default-configuration" "string->symbol" "jazz.default-target" "string=?" "not" "if" "jazz.string-find" "at" "let" "proc" "str")}
+      {Lisp-Entry "standardize-image" #f 691 11 691 28 ("jazz.error" "else" "'executable" "executable" "exe" "'library" "library" "lib" "memv" "cond" "image")}
+      {Lisp-Entry "parse-symbols" #f 696 11 696 24 ("else" "cadr" "cons" "cddr" "cdr" "pair?" "0" "symbol->string" "string-ref" "eqv?" "and" "jazz.error" "keyword?" "symbol?" "or" "not" "cond" "car" "obj" "reverse" "null?" "if" "options" "syms" "symbols" "scan" "iter" "let" "proc")}
+      {Lisp-Entry "make-symbol" #f 712 11 712 22 ("local?" "make-target" "image" "configuration" "target" "lambda" "parse-target/configuration/image" "symbol->string" "name" "let" "jobs" "symbol")}
+      {Lisp-Entry "make-target" #f 718 11 718 22 ("jazz.make-product" "else" "jazz.make-install" "install" "jazz.make-kernel" "kernel" "jazz.make-cleankernel" "cleankernel" "jazz.make-clean" "clean" "case" "local?" "jobs" "image" "configuration" "target")}}
+    {Lisp-Entry "jazz.make" #f 748 9 748 18 ("list" "jazz.make-symbols" "symbol")}
+    {Lisp-Entry "jazz.build-recursive" #f 757 9 757 29 (",argument" "jazz.call-process" "windows" "'windows" "jazz.configuration-platform" "eq?" "gsc-path" "symbol->string" "jazz.format" "if" "string-append" "argument" "jazz.configuration-name" "configuration-name" "let" "image" "configuration" "target")}
+    {Lisp-Entry "jazz.make-clean" #f 776 9 776 24 ("jazz.configuration-directory" "jazz.delete-directory" "jazz.feedback" "configuration")}
+    {Lisp-Entry "jazz.make-cleankernel" #f 781 9 781 30 ("jazz.empty-directory" "file-exists?" "if" "jazz.configuration-directory" "dir" "let" "jazz.feedback" "configuration")}
+    {Lisp-Entry "jazz.make-install" #f 793 9 793 26 ("jazz.error" "configuration")}
+    {Lisp-Entry "jazz.make-kernel" #f 802 9 802 25 ("kernel" "'kernel" "jazz.build-recursive" "jazz.build-kernel" "if" "local?" "image" "configuration")}
+    {Lisp-Entry "jazz.build-kernel" #f 808 9 808 26 ("jazz.load-configuration-file" "build" "file-exists?" "if" "jazz.configuration-file" "configuration-file" "jazz.require-default-configuration" "or" "let" "jazz.feedback" "image" "configuration")
+      {Lisp-Entry "build" #f 809 11 809 16 ("console?:" "kernel?:" "image" "image:" "destination-directory:" "destination:" "source-access?:" "source:" "interpret-kernel?:" "include-compiler?:" "debug-source?:" "debug-location?:" "debug-environments?:" "optimize?:" "safety:" "windowing:" "platform:" "system:" "jazz.build-image" "jazz.configuration-directory" "destination-directory" "jazz.configuration-destination" "destination" "jazz.configuration-source-access?" "source-access?" "source" "jazz.configuration-interpret-kernel?" "interpret-kernel?" "jazz.configuration-debug-source?" "debug-source?" "jazz.configuration-debug-location?" "debug-location?" "jazz.configuration-debug-environments?" "debug-environments?" "jazz.configuration-optimize?" "optimize?" "jazz.configuration-safety" "safety" "jazz.configuration-windowing" "windowing" "jazz.configuration-platform" "platform" "jazz.configuration-system" "system" "jazz.configuration-name" "name" "let" "configuration")}}
+    {Lisp-Entry "jazz.make-product" #f 856 9 856 26 ("product-make" "jazz.make-kernel" "jobs" "configuration" "product")
+      {Lisp-Entry "product-make" #f 857 11 857 23 ("number->string" "if" "symbol->string" "jazz.call-process" "else" "windows" "case" "kernel-path" "string-append" "path" "build-file" "define" "jazz.configuration-platform" "platform" "jazz.configuration-directory" "destdir" "let" "jobs" "configuration" "product")}}
+    {Lisp-Entry "jazz.print" #f 881 9 881 19 ("newline" "display" "output" "line")}
+    {Lisp-Entry "jazz.debug" #f 886 9 886 19 ("console-port" "jazz.print" "rest")}
+    {Lisp-Entry "jazz.format" #f 895 9 895 20 ("get-output-string" "format-to" "open-output-string" "output" "let" "arguments" "fmt-string")
+      {Lisp-Entry "format-to" #f 896 11 896 20 ("else" "write-char" "eqv?" "cond" "begin" "eof-object?" "not" "if" "c" "iter" "newline" "%" "write" "s" "cdr" "set!" "car" "display" "a" "case" "read-char" "read" "directive" "format-directive" "define" "done?" "open-input-string" "control" "let" "arguments" "fmt-string" "output")}}
+    {Lisp-Entry "jazz.collect-if" #f 934 9 934 24 ("cdr" "cons" "car" "value" "null?" "not" "if" "scan" "iter" "let" "lst" "predicate")}
+    {Lisp-Entry "jazz.filter" #f 944 9 944 20 ("cons" "eq?" "new-tail" "cdr" "tail" "car" "head" "null?" "if" "recur" "let" "lis" "pred")}
+    {Lisp-Entry "jazz.delete" #f 956 9 956 20 ("not" "y" "lambda" "jazz.filter" "test" "lis" "x")}
+    {Lisp-Entry "jazz.sort" #f 960 9 960 18 ("merge-sort" "smaller" "l")
+      {Lisp-Entry "merge-sort" #f 961 11 961 21 ("merge" "l2" "split" "merge-sort" "l1" "let*" "cdr" "null?" "or" "if" "l")
+        {Lisp-Entry "merge" #f 962 13 962 18 ("cdr" "merge" "cons" "smaller" "if" "e2" "car" "e1" "let" "else" "null?" "cond" "l2" "l1")}
+        {Lisp-Entry "split" #f 971 13 971 18 ("cddr" "split" "car" "cons" "cdr" "null?" "or" "if" "l")}}}
+    {Lisp-Entry "jazz.string-find" #f 990 9 990 25 ("1" "+" "else" "string-ref" "char=?" ">=" "cond" "0" "n" "iter" "string-length" "len" "let" "c" "str")}
+    {Lisp-Entry "jazz.string-replace" #f 1001 9 1001 28 ("string-set!" "string-ref" "eqv?" "begin" "0" ">=" "if" "1" "string-length" "-" "n" "iter" "string-copy" "cpy" "let" "new" "old" "str")}
+    {Lisp-Entry "jazz.string-ends-with?" #f 1012 9 1012 31 ("-" "substring" "string=?" ">=" "and" "tl" "string-length" "sl" "let" "target" "str")}
+    {Lisp-Entry "jazz.split-string" #f 1019 9 1019 26 ("+" "substring" "cons" "set!" "string-ref" "eqv?" "begin" "0" ">" "if" "1" "-" "pos" "iter" "string-length" "end" "lst" "let" "separator" "str")}
+    {Lisp-Entry "jazz.join-strings" #f 1033 9 1033 26 ("get-output-string" "cdr" "string" "lambda" "for-each" "car" "display" "open-output-string" "output" "let" "separator" "strings")}
+    {Lisp-Entry "jazz.valid-filename?" #f 1048 9 1048 29 ("memv" "char-numeric?" "char-alphabetic?" "or" "string-ref" "c" "0" "<" "if" "1" "string-length" "-" "n" "iter" "let" "str")}
+    {Lisp-Entry "jazz.delete-directory" #f 1060 9 1060 30 ("delete-directory" "jazz.empty-directory" "begin" "file-exists?" "if" "0" "level" "#!optional" "dir")}
+    {Lisp-Entry "jazz.empty-directory" #f 1067 9 1067 29 ("jazz.directory-directories" "1" "+" "jazz.delete-directory" "jazz.directory-files" "delete-file" "jazz.feedback" "2" "<" "string-append" "path" "let" "member" "not" "or" "if" "name" "lambda" "for-each" "0" "level" "ignored" "#!optional" "dir")}
+    {Lisp-Entry "jazz.error" #f 1089 9 1089 19 ("error" "jazz.format" "apply" "error-string" "let" "rest" "fmt-string")}
+    {Lisp-Entry "jazz.prompt" #f 1099 8 1099 19 ()}
+    {Lisp-Entry "jazz.display-exception?" #f 1102 8 1102 31 ()}
+    {Lisp-Entry "jazz.display-backtrace?" #f 1105 8 1105 31 ()}
+    {Lisp-Entry "jazz.build-system-repl" #f 1109 9 1109 31 ("process-command" "set!" "continuation-return" "jazz.display-backtrace?" "jazz.display-exception?" "jazz.debug-exception" "exc" "with-exception-handler" "stop" "lambda" "continuation-capture" "processed?" "read-line" "command" "jazz.prompt" "display" "newline" "if" "newline?" "loop" "force-output" "jazz.get-source-version-number" "jazz.present-version" "jazz.format" "jazz.print" "console-port" "console" "let")
+      {Lisp-Entry "process-command" #f 1110 11 1110 26 ("jazz.error" "else" "quit" "help-command" "?" "help" "make-command" "make" "configure-command" "configure" "delete-command" "delete" "list-command" "list" "case" "read-all" "arguments" "begin" "read" "let" "input" "lambda" "call-with-input-string" "quit-command" "eof-object?" "if" "output" "command")}
+      {Lisp-Entry "list-command" #f 1130 11 1130 23 ("jazz.list-configurations" "output" "arguments")}
+      {Lisp-Entry "delete-command" #f 1133 11 1133 25 ("jazz.list-configurations" "jazz.require-configuration" "jazz.delete-configuration" "car" "null?" "if" "name" "let" "output" "arguments")}
+      {Lisp-Entry "configure-command" #f 1138 11 1138 28 ("jazz.configure" "apply" "output" "arguments")}
+      {Lisp-Entry "make-command" #f 1141 11 1141 23 ("jazz.make-symbols" "output" "arguments")}
+      {Lisp-Entry "help-command" #f 1144 11 1144 23 ("jazz.print" "output" "arguments")}
+      {Lisp-Entry "quit-command" #f 1153 11 1153 23 ("exit" "output" "arguments")}}
+    {Lisp-Entry "jazz.build-system-boot" #f 1182 9 1182 31 ("jazz.format" "fatal" "else" "##repl-debug-main" "jazz.print" "console-port" "console" "or" "map" "jazz.make-symbols" "jazz.load-kernel-build" "unknown-option" "destination:" "interpret-kernel?:" "debug-source?:" "debug-location?:" "debug-environments?:" "optimize?:" "safety:" "windowing:" "platform:" "system:" "name:" "jazz.configure" "string-option" "destination" "interpret-kernel" "debug-source" "debug-location" "debug-environments" "boolean-option" "optimize" "safety" "windowing" "platform" "system" "symbol-option" "remaining" "options" "lambda" "missing-argument-for-option" "jazz.split-command-line" "jazz.require-configuration" "jazz.delete-configuration" "read-argument" "name" "exit" "jazz.list-configurations" "equal?" "cond" "arguments" "car" "action" "jazz.build-system-repl" "null?" "if" "command-line" "cdr" "command-arguments" "let")
+      {Lisp-Entry "fatal" #f 1183 11 1183 16 ("1" "exit" "force-output" "newline" "display" "message")}
+      {Lisp-Entry "missing-argument-for-option" #f 1189 11 1189 38 ("jazz.format" "fatal" "opt")}
+      {Lisp-Entry "read-argument" #f 1192 11 1192 24 ("read" "init:" "list" "call-with-input-string" "arg")}
+      {Lisp-Entry "string-option" #f 1196 11 1196 24 ("not" "if" "jazz.get-option" "opt" "let" "options" "name")}
+      {Lisp-Entry "symbol-option" #f 1202 11 1202 24 ("string->symbol" "not" "if" "jazz.get-option" "opt" "let" "options" "name")}
+      {Lisp-Entry "boolean-option" #f 1208 11 1208 25 ("jazz.format" "fatal" "else" "string-ci=?" "not" "cond" "jazz.get-option" "opt" "let" "default" "options" "name")}
+      {Lisp-Entry "unknown-option" #f 1219 11 1219 25 ("jazz.format" "fatal" "opt")}}
+    {Lisp-Entry "jazz.kernel-system" #f 1279 8 1279 26 ("'gambit")}
+    {Lisp-Entry "jazz.kernel-platform" #f 1282 8 1282 28 ()}
+    {Lisp-Entry "jazz.kernel-windowing" #f 1285 8 1285 29 ()}
+    {Lisp-Entry "jazz.kernel-safety" #f 1288 8 1288 26 ("'debug")}
+    {Lisp-Entry "jazz.kernel-optimize?" #f 1291 8 1291 29 ()}
+    {Lisp-Entry "jazz.kernel-debug-environments?" #f 1294 8 1294 39 ()}
+    {Lisp-Entry "jazz.kernel-debug-location?" #f 1297 8 1297 35 ()}
+    {Lisp-Entry "jazz.kernel-debug-source?" #f 1300 8 1300 33 ()}
+    {Lisp-Entry "jazz.kernel-destination" #f 1303 8 1303 31 ()}
+    {Lisp-Entry "jazz.load-kernel-base" #f 1307 9 1307 30 ("load")}
+    {Lisp-Entry "jazz.load-kernel-build" #f 1311 9 1311 31 ("load")}}
+  {Lisp-File-Entry {File Jazz "kernel" "runtime" "build.scm"} 1251729947
+    {Lisp-Entry "jazz.for-each-source-version" #f 45 9 45 37 ("jazz.get-source-versions" "for-each" "proc")}
+    {Lisp-Entry "jazz.for-each-higher-source-version" #f 49 9 49 44 ("cdr" "begin" "jazz.version-number" ">" "car" "source-version" "null?" "not" "if" "jazz.get-source-versions" "source-versions" "iter" "let" "proc" "version")}
+    {Lisp-Entry "jazz.kernel/product-needs-rebuild?" #f 59 9 59 43 ("set!" "all" "kernel" "jazz.version-rebuild" "memq" "source-version" "lambda" "jazz.for-each-higher-source-version" "rebuild?" "let" "jazz.gambit-uptodate?" "or" "not" "if" "jazz.load-version-file" "gambit-stamp" "gambit-version" "version" "receive" "version-file")}
+    {Lisp-Entry "jazz.kernel/product-architecture-needs-rebuild?" #f 72 9 72 56 ("set!" "jazz.version-recompile" "all" "kernel" "jazz.version-rebuild" "memq" "source-version" "lambda" "jazz.for-each-higher-source-version" "rebuild-architecture?" "let" "jazz.gambit-uptodate?" "or" "not" "if" "jazz.load-version-file" "gambit-stamp" "gambit-version" "version" "receive" "version-file")}
+    {Lisp-Entry "jazz.load-version-file" #f 86 9 86 31 ("values" "gambit-stamp" "gambit-version" "read" "version" "let" "input" "lambda" "cr-lf" "'cr-lf" "eol-encoding:" "path:" "list" "call-with-input-file" "file-exists?" "if" "version-file")}
+    {Lisp-Entry "jazz.manifest-needs-rebuild?-impl" #f 97 9 97 42 ("set!" "memq" "and" "all" "'all" "eq?" "or" "if" "jazz.version-recompile" "recompile" "jazz.version-rebuild" "rebuild" "source-version" "lambda" "jazz.for-each-higher-source-version" "rebuild?" "%%manifest-version" "version" "%%manifest-name" "name" "let" "manifest")}
+    {Lisp-Entry "jazz.build-image-impl" #f 116 9 116 30 ("jazz.create-directories" "generate-gambcini" "jazz.print-configuration" "generate-configuration" "jazz.executable-extension" "path-expand" "path-strip-trailing-directory-separator" "jazz.call-process" "link-options" "unix" "link-libraries" "gambit-link-libraries" "jazz.quote-gcc-pathname" "list" "resource-file" "resource-files" "feedback:" "jazz.copy-file" "windows" "case" "else" "cond" "'jazz.source-access?" "jazz.relativise-directory" "jazz.source" "'jazz.source" "jazz.source-built" "'jazz.source-built" "jazz.pathname-normalize" "jazz.built" "'jazz.built" "executable" "'executable" "jazz.image" "'jazz.image" "jazz.product" "'jazz.product" "jazz.print-variable" "link-image" "image-file" "base:" "link-incremental" "link-flat" "files" "<" "link-file" "generate-resources" "main-filename" "product-filename" "compile-product-file" "generate-main" "main?" "generate-product" "product?" "compile-product" "build-product" "jazz.print-architecture" "file" "load" "begin" "compile-source-file" "compile-kernel-file" "generate-architecture" "architecture?" "compile-kernel" "build-kernel" "jazz.file-modification-time" "kernel-time" "system-stamp" "system-version" "jazz.get-source-version-number" "write" "lambda" "call-with-output-file" "touched?" "set!" "delete-file" "file-exists?" "touch" "was-touched?" "jazz.kernel/product-architecture-needs-rebuild?" "rebuild-architecture?" "jazz.kernel/product-needs-rebuild?" "proc" "version-file" "with-version-file" "jazz.update-manifest-compile-time" "output:" "options:" "compile-file-to-c" "path-normalize" "jazz.pathname-standardize" "standardized-path" "debug-source" "debug-location" "debug-environments" "options" "jazz.file-exists?" "or" "jazz.load-updated-manifest" "jazz.manifest-uptodate?" "hash-changed?" "jazz.Manifest-Extension" "mnf" "dst" "src" "dir" "name" "rebuild?" "compile-file" "apply" "rest" "fmt-string" "feedback-message" "newline" "display" "output" "line" "print" "product-file" "kernel-file" "build-file" "path" "source-file" "define" "product-dir" "string-append" "kernel-dir" "library" "'library" "eq?" "library-image?" "gambit-library" "symbol->string" "not" "if" "product-name" "let" "jazz.feedback" "feedback" "maximum-heap" "minimum-heap" "console?" "kernel?" "image" "jazz.kernel-install" "destination-directory" "jazz.kernel-destination" "destination" "jazz.source-access?" "source-access?" "jazz.kernel-source" "source" "interpret-kernel?" "include-compiler?" "jazz.kernel-debug-source?" "debug-source?" "jazz.kernel-debug-location?" "debug-location?" "jazz.kernel-debug-environments?" "debug-environments?" "jazz.kernel-optimize?" "optimize?" "jazz.kernel-safety" "safety" "jazz.kernel-windowing" "windowing" "jazz.kernel-platform" "platform" "jazz.kernel-system" "system" "#!key" "product")}
+    {Lisp-Entry "jazz.executable-extension" #f 574 9 574 34 ("else" "windows" "case" "platform")}
+    {Lisp-Entry "jazz.print-architecture" #f 582 9 582 32 ("jazz.get-source-version-number" "jazz.kernel-version" "'jazz.kernel-version" "jazz.kernel-destination" "'jazz.kernel-destination" "jazz.kernel-debug-source?" "'jazz.kernel-debug-source?" "jazz.kernel-debug-location?" "'jazz.kernel-debug-location?" "jazz.kernel-debug-environments?" "'jazz.kernel-debug-environments?" "jazz.kernel-optimize?" "'jazz.kernel-optimize?" "jazz.kernel-safety" "'jazz.kernel-safety" "jazz.kernel-windowing" "'jazz.kernel-windowing" "jazz.kernel-platform" "'jazz.kernel-platform" "newline" "jazz.kernel-system" "'jazz.kernel-system" "jazz.print-variable" "output" "destination" "debug-source?" "debug-location?" "debug-environments?" "optimize?" "safety" "windowing" "platform" "system")}
+    {Lisp-Entry "jazz.print-variable" #f 604 9 604 28 ("write" "list?" "symbol?" "or" "if" "newline" "display" "output" "value" "variable")}})
 "common"
- ({Lisp-File-Entry {File Jazz "kernel" "runtime" "common.scm"} 1246651458
-    {Lisp-Entry "jazz.manifest-needs-rebuild?" #f 42 8 42 36 ()}
-    {Lisp-Entry "jazz.build-executable" #f 47 8 47 29 ()}
-    {Lisp-Entry "jazz.build-feedback" #f 56 8 56 27 ("jazz.feedback")}
-    {Lisp-Entry "jazz.collect-if" #f 65 9 65 24 ("%%cdr" "%%cons" "%%car" "value" "%%null?" "%%not" "if" "scan" "iter" "let" "lst" "predicate")}
-    {Lisp-Entry "jazz.string-find" #f 80 9 80 25 ("1" "%%fx+" "else" "%%string-ref" "%%char=?" "%%fx>=" "cond" "0" "n" "iter" "%%string-length" "len" "let" "c" "str")}
-    {Lisp-Entry "jazz.string-replace" #f 91 9 91 28 ("%%string-set!" "%%string-ref" "%%eqv?" "begin" "0" "%%fx>=" "if" "1" "%%string-length" "%%fx-" "n" "iter" "string-copy" "cpy" "let" "new" "old" "str")}
-    {Lisp-Entry "jazz.string-starts-with?" #f 102 9 102 33 ("0" "%%substring" "%%string=?" "%%fx>=" "and" "tl" "%%string-length" "sl" "let" "target" "str")}
-    {Lisp-Entry "jazz.string-ends-with?" #f 109 9 109 31 ("%%fx-" "%%substring" "%%string=?" "%%fx>=" "and" "tl" "%%string-length" "sl" "let" "target" "str")}
-    {Lisp-Entry "jazz.split-string" #f 116 9 116 26 ("%%fx+" "%%substring" "%%cons" "set!" "%%string-ref" "%%eqv?" "begin" "0" "%%fx>" "if" "1" "%%fx-" "pos" "iter" "%%string-length" "end" "lst" "let" "separator" "str")}
-    {Lisp-Entry "jazz.join-strings" #f 130 9 130 26 ("get-output-string" "%%cdr" "string" "lambda" "for-each" "%%car" "display" "open-output-string" "output" "let" "separator" "strings")}
-    {Lisp-Entry "jazz.executable-directory" #f 145 8 145 33 ()}
-    {Lisp-Entry "jazz.file-modification-time" #f 149 9 149 36 ("file-last-modification-time" "time->seconds" "pathname")}
-    {Lisp-Entry "jazz.copy-file" #f 153 9 153 23 ("copy-file" "delete-file" "file-exists?" "begin" "jazz.file-needs-update?" "if" "feedback" "#!key" "dst" "src")}
-    {Lisp-Entry "jazz.file-needs-update?" #f 163 9 163 32 ("jazz.file-modification-time" ">" "file-exists?" "%%not" "or" "dst" "src")}
-    {Lisp-Entry "jazz.relativise-directory" #f 169 9 169 34 ("%%string-append" "set!" "%%string-ref" "%%eqv?" "begin" "1" "%%fx-" "n" "iter" "relative-dir" "suffix" "0" "%%substring" "%%string=?" "%%fx>=" "and" "if" "baselen" "%%string-length" "len" "jazz.pathname-normalize" "let" "basedir" "dir")}
-    {Lisp-Entry "jazz.quote-gcc-pathname" #f 188 9 188 32 ("else" "string-append" "windows" "case" "platform" "pathname")}
-    {Lisp-Entry "jazz.file-exists?" #f 199 12 199 29 ("file-exists?")}
-    {Lisp-Entry "jazz.updated-digest-source?" #f 210 9 210 36 ("sha-1" "'sha-1" "digest-file" "%%digest-source-hash-set!" "%%digest-source-time-set!" "begin" "%%digest-source-time" "=" "if" "jazz.file-modification-time" "time" "let" "src-filepath" "digest")}
-    {Lisp-Entry "jazz.Manifest-Extension" #f 225 8 225 31 ()}
-    {Lisp-Entry "jazz.load-manifest" #f 229 9 229 27 ("%%make-digest" "%%make-manifest" "boolean?" "source-time" "%%car" "source-hash" "compile-time-hash" "digest" "'digest" "digest-form" "%%cddr" "version" "'version" "%%assq" "version-form" "%%cadr" "name" "read" "form" "input" "lambda" "cr-lf" "'cr-lf" "eol-encoding:" "path:" "list" "call-with-input-file" "jazz.file-exists?" "if" "pathname" "let" "filepath")}
-    {Lisp-Entry "jazz.save-manifest" #f 249 9 249 27 ("%%digest-source-time" "%%digest-source-hash" "%%digest-compile-time-hash" "write" "newline" "display" "output" "lambda" "call-with-output-file" "%%manifest-digest" "digest" "%%manifest-version" "version" "%%manifest-name" "name" "let" "manifest" "filepath")}
-    {Lisp-Entry "jazz.cache-manifest-uptodate?" #f 273 9 273 38 ("%%digest-compile-time-hash" "%%digest-source-hash" "string=?" "jazz.save-manifest" "jazz.updated-digest-source?" "if" "%%manifest-digest" "digest" "0" "%%make-digest" "jazz.kernel-version" "%%make-manifest" "jazz.load-manifest" "or" "manifest" "let" "src-filepath" "manifest-filepath" "name")}
-    {Lisp-Entry "jazz.update-manifest-compile-time" #f 282 9 282 42 ("jazz.save-manifest" "%%digest-source-hash" "%%digest-compile-time-hash-set!" "jazz.updated-digest-source?" "%%manifest-digest" "digest" "0" "%%make-digest" "jazz.kernel-version" "%%make-manifest" "jazz.load-manifest" "or" "manifest" "let" "src-filepath" "manifest-filepath" "name")}})
+ ({Lisp-File-Entry {File Jazz "kernel" "runtime" "common.scm"} 1251729947
+    {Lisp-Entry "jazz.manifest-needs-rebuild?" #f 45 8 45 36 ()}
+    {Lisp-Entry "jazz.build-image" #f 50 8 50 24 ()}
+    {Lisp-Entry "jazz.build-feedback" #f 59 8 59 27 ("jazz.feedback")}
+    {Lisp-Entry "jazz.listify" #f 68 9 68 21 ("%%list" "%%pair?" "%%null?" "or" "if" "obj")}
+    {Lisp-Entry "jazz.collect-if" #f 74 9 74 24 ("%%cdr" "%%cons" "%%car" "value" "%%null?" "%%not" "if" "scan" "iter" "let" "lst" "predicate")}
+    {Lisp-Entry "jazz.remove" #f 85 9 85 20 ("%%cons" "%%cdr" "%%eq?" "%%car" "value" "%%null?" "%%not" "if" "scan" "iter" "let" "lst" "item")}
+    {Lisp-Entry "jazz.string-find" #f 101 9 101 25 ("1" "%%fx+" "else" "%%string-ref" "%%char=?" "%%fx>=" "cond" "n" "iter" "%%string-length" "len" "let" "0" "start" "#!optional" "c" "str")}
+    {Lisp-Entry "jazz.string-replace" #f 113 9 113 28 ("%%string-set!" "%%string-ref" "%%eqv?" "begin" "0" "%%fx>=" "if" "1" "%%string-length" "%%fx-" "n" "iter" "string-copy" "cpy" "let" "new" "old" "str")}
+    {Lisp-Entry "jazz.string-starts-with?" #f 125 9 125 33 ("0" "%%substring" "%%string=?" "%%fx>=" "and" "tl" "%%string-length" "sl" "let" "target" "str")}
+    {Lisp-Entry "jazz.string-ends-with?" #f 132 9 132 31 ("%%fx-" "%%substring" "%%string=?" "%%fx>=" "and" "tl" "%%string-length" "sl" "let" "target" "str")}
+    {Lisp-Entry "jazz.split-string" #f 139 9 139 26 ("%%fx+" "%%substring" "%%cons" "set!" "%%string-ref" "%%eqv?" "begin" "0" "%%fx>" "if" "1" "%%fx-" "pos" "iter" "%%string-length" "end" "lst" "let" "separator" "str")}
+    {Lisp-Entry "jazz.join-strings" #f 154 9 154 26 ("get-output-string" "%%cdr" "string" "lambda" "for-each" "%%car" "display" "open-output-string" "output" "let" "separator" "strings")}
+    {Lisp-Entry "jazz.split-composite" #f 169 9 169 29 ("%%string-length" "1" "%%fx+" "0" "%%substring" "%%string->symbol" "values" "%%not" "if" "jazz.string-find-reversed" "n" "%%symbol->string" "str" "let" "identifier")}
+    {Lisp-Entry "jazz.executable-directory" #f 183 8 183 33 ()}
+    {Lisp-Entry "jazz.file-modification-time" #f 187 9 187 36 ("file-last-modification-time" "time->seconds" "pathname")}
+    {Lisp-Entry "jazz.copy-file" #f 191 9 191 23 ("copy-file" "delete-file" "file-exists?" "begin" "jazz.file-needs-update?" "if" "feedback" "#!key" "dst" "src")}
+    {Lisp-Entry "jazz.file-needs-update?" #f 201 9 201 32 ("jazz.file-modification-time" ">" "file-exists?" "%%not" "or" "dst" "src")}
+    {Lisp-Entry "jazz.relativise-directory" #f 207 9 207 34 ("%%string-append" "set!" "%%string-ref" "%%eqv?" "begin" "1" "%%fx-" "n" "iter" "relative-dir" "suffix" "0" "%%substring" "%%string=?" "%%fx>=" "and" "if" "baselen" "%%string-length" "len" "jazz.pathname-normalize" "let" "basedir" "dir")}
+    {Lisp-Entry "jazz.quote-gcc-pathname" #f 226 9 226 32 ("else" "string-append" "windows" "case" "platform" "pathname")}
+    {Lisp-Entry "jazz.file-exists?" #f 237 12 237 29 ("file-exists?")}
+    {Lisp-Entry "jazz.updated-digest-source?" #f 248 9 248 36 ("sha-1" "'sha-1" "digest-file" "%%digest-source-hash-set!" "%%digest-source-time-set!" "begin" "%%digest-source-time" "=" "if" "jazz.file-modification-time" "time" "let" "src-filepath" "digest")}
+    {Lisp-Entry "jazz.Manifest-Extension" #f 263 8 263 31 ()}
+    {Lisp-Entry "jazz.load-manifest" #f 267 9 267 27 ("%%make-digest" "%%make-manifest" "%%boolean?" "%%cdr" "source-time" "%%car" "source-hash" "compile-time-hash" "references" "'references" "references-form" "digest" "'digest" "digest-form" "%%cddr" "version" "'version" "%%assq" "version-form" "%%cadr" "name" "read" "form" "input" "lambda" "cr-lf" "'cr-lf" "eol-encoding:" "path:" "%%list" "call-with-input-file" "jazz.file-exists?" "if" "pathname" "let" "filepath")}
+    {Lisp-Entry "jazz.save-manifest" #f 289 9 289 27 ("%%cdr" "library-references" "for-each" "%%car" "%%pair?" "begin" "if" "%%digest-source-time" "%%digest-source-hash" "%%digest-compile-time-hash" "write" "newline" "display" "output" "lambda" "call-with-output-file" "%%manifest-references" "references" "%%manifest-digest" "digest" "%%manifest-version" "version" "%%manifest-name" "name" "let" "manifest" "filepath")}
+    {Lisp-Entry "jazz.manifest-uptodate?" #f 328 9 328 32 ("%%digest-compile-time-hash" "%%digest-source-hash" "%%string=?" "%%manifest-digest" "digest" "let" "manifest")}
+    {Lisp-Entry "jazz.load/create-manifest" #f 333 9 333 34 ("0" "%%make-digest" "jazz.kernel-version" "%%make-manifest" "jazz.load-manifest" "or" "manifest-filepath" "name")}
+    {Lisp-Entry "jazz.load-updated-manifest" #f 338 9 338 35 ("jazz.save-manifest" "jazz.updated-digest-source?" "if" "%%manifest-digest" "digest" "jazz.load/create-manifest" "manifest" "let" "src-filepath" "manifest-filepath" "name")}
+    {Lisp-Entry "jazz.update-manifest-compile-time" #f 346 9 346 42 ("jazz.save-manifest" "%%digest-source-hash" "%%digest-compile-time-hash-set!" "%%manifest-references-set!" "if" "jazz.updated-digest-source?" "%%manifest-digest" "digest" "jazz.kernel-version" "%%manifest-version-set!" "jazz.load/create-manifest" "manifest" "let" "updated-references" "src-filepath" "manifest-filepath" "name")}})
 "declares"
- ({Lisp-File-Entry {File Jazz "kernel" "syntax" "declares.scm"} 1246630338
+ ({Lisp-File-Entry {File Jazz "kernel" "syntax" "declares.scm"} 1251729947
     {Lisp-Entry "jazz.kernel-declares" #f 39 24 39 44 ()}
-    {Lisp-Entry "jazz.declares" #f 62 13 62 26 ("kind")}})
+    {Lisp-Entry "jazz.declares" #f 63 13 63 26 ("kind")}})
 "digest"
  ({Lisp-File-Entry {File Jazz "kernel" "runtime" "digest.scm"} 1236190768
     {Lisp-Entry "fx+" #f 18 15 18 18 ("args")}
@@ -321,12 +330,12 @@
     {Lisp-Entry "%%check-string" #f 132 25 132 39 ("##string?")}
     {Lisp-Entry "%%check-symbol" #f 136 25 136 39 ("##symbol?")}})
 "features"
- ({Lisp-File-Entry {File Jazz "kernel" "syntax" "features.scm"} 1236190768
+ ({Lisp-File-Entry {File Jazz "kernel" "syntax" "features.scm"} 1248276005
     {Lisp-Entry "jazz.install-features" #f 42 15 42 36 (",features" "',features" "cons" "##cond-expand-features" "set!" "if" "feature" "lambda" "for-each" "jazz.kernel-safety" "jazz.kernel-windowing" "jazz.kernel-platform" "jazz.kernel-system" "list" "features" "let")}
     {Lisp-Entry "jazz.debug-core?" #f 62 8 62 24 ("core" "'core" "jazz.kernel-safety" "eq?")}
     {Lisp-Entry "jazz.debug-user?" #f 65 8 65 24 ("release" "'release" "jazz.kernel-safety" "eq?" "not")}})
 "header"
- ({Lisp-File-Entry {File Jazz "kernel" "syntax" "header.scm"} 1236190768
+ ({Lisp-File-Entry {File Jazz "kernel" "syntax" "header.scm"} 1250351976
     {Lisp-Entry "jazz.define-macro" #f 45 23 45 40 ("jazz.register-macro" ",src" "form-size" "##make-macro-descr" "car" "##interaction-cte" "##top-cte-add-macro!" ",pattern" "##define-macro" "begin" ",@rest" "cdr" "lambda" "src" "let" "rest" "pattern")
       {Lisp-Entry "form-size" #f 47 11 47 20 ("else" "null?" "+" "cdr" "-" "#!rest" "#!key" "#!optional" "memq" "if" "car" "parm" "pair?" "cond" "1" "n" "lst" "loop" "let" "parms")}}
     {Lisp-Entry "jazz.define-syntax" #f 81 23 81 41 ("expander" "name")}
@@ -342,213 +351,42 @@
     {Lisp-Entry "jazz.subtype-flonum" #f 111 8 111 27 ("macro-subtype-flonum")}
     {Lisp-Entry "jazz.subtype-bignum" #f 112 8 112 27 ("macro-subtype-bignum")}
     {Lisp-Entry "jazz.subtype-foreign" #f 113 8 113 28 ("macro-subtype-foreign")}
-    {Lisp-Entry "jazz.subtype-u8vector" #f 114 8 114 29 ("macro-subtype-u8vector")}
-    {Lisp-Entry "jazz.subtype-boxvalues" #f 115 8 115 30 ("macro-subtype-boxvalues")}
-    {Lisp-Entry "macro-code-run-fixed" #f 123 17 123 37 ("rte" "c")}
-    {Lisp-Entry "jazz.code-cte" #f 128 9 128 22 ("macro-code-cte" "c")}
-    {Lisp-Entry "jazz.code-run" #f 131 9 131 22 ("macro-code-run-fixed" "rte" "c")}
-    {Lisp-Entry "jazz.rte-up" #f 140 9 140 20 ("macro-rte-up" "r")}
-    {Lisp-Entry "jazz.repl-context-bind" #f 149 9 149 31 ("repl-context" "macro-dynamic-bind" "thunk" "val")}
-    {Lisp-Entry "jazz.continuation-denv" #f 158 9 158 31 ("macro-continuation-denv" "cont")}
-    {Lisp-Entry "jazz.current-repl-context" #f 167 9 167 34 ("macro-current-repl-context")}
-    {Lisp-Entry "jazz.repl-context-level" #f 170 9 170 32 ("macro-repl-context-level" "context")}
-    {Lisp-Entry "jazz.repl-context-depth" #f 173 9 173 32 ("macro-repl-context-depth" "context")}
-    {Lisp-Entry "jazz.repl-context-cont" #f 176 9 176 31 ("macro-repl-context-cont" "context")}
-    {Lisp-Entry "jazz.repl-context-initial-cont" #f 179 9 179 39 ("macro-repl-context-initial-cont" "context")}
-    {Lisp-Entry "jazz.repl-context-prev-level" #f 182 9 182 37 ("macro-repl-context-prev-level" "context")}
-    {Lisp-Entry "jazz.repl-context-prev-depth" #f 185 9 185 37 ("macro-repl-context-prev-depth" "context")}
-    {Lisp-Entry "jazz.make-repl-context" #f 188 9 188 31 ("macro-make-repl-context" "prev-depth" "prev-level" "reason" "initial-cont" "cont" "depth" "level")}
-    {Lisp-Entry "jazz.readtable-named-char-table" #f 197 9 197 40 ("macro-readtable-named-char-table" "rt")}
-    {Lisp-Entry "jazz.readtable-named-char-table-set!" #f 200 9 200 45 ("macro-readtable-named-char-table-set!" "nc" "rt")}
-    {Lisp-Entry "jazz.readtable-start-syntax" #f 203 9 203 36 ("macro-readtable-start-syntax" "rt")}
-    {Lisp-Entry "jazz.readenv?" #f 212 9 212 22 ("macro-readenv?" "obj")}
-    {Lisp-Entry "jazz.readenv-port" #f 215 9 215 26 ("macro-readenv-port" "re")}
-    {Lisp-Entry "jazz.readenv-wrap" #f 218 9 218 26 ("macro-readenv-wrap" "x" "re")}
-    {Lisp-Entry "jazz.writeenv-port" #f 227 9 227 27 ("macro-writeenv-port" "we")}
-    {Lisp-Entry "jazz.btq-owner" #f 236 9 236 23 ("macro-btq-owner" "mutex")}})
+    {Lisp-Entry "jazz.subtype-s8vector" #f 114 8 114 29 ("macro-subtype-s8vector")}
+    {Lisp-Entry "jazz.subtype-u8vector" #f 115 8 115 29 ("macro-subtype-u8vector")}
+    {Lisp-Entry "jazz.subtype-s16vector" #f 116 8 116 30 ("macro-subtype-s16vector")}
+    {Lisp-Entry "jazz.subtype-u16vector" #f 117 8 117 30 ("macro-subtype-u16vector")}
+    {Lisp-Entry "jazz.subtype-s32vector" #f 118 8 118 30 ("macro-subtype-s32vector")}
+    {Lisp-Entry "jazz.subtype-u32vector" #f 119 8 119 30 ("macro-subtype-u32vector")}
+    {Lisp-Entry "jazz.subtype-s64vector" #f 120 8 120 30 ("macro-subtype-s64vector")}
+    {Lisp-Entry "jazz.subtype-u64vector" #f 121 8 121 30 ("macro-subtype-u64vector")}
+    {Lisp-Entry "jazz.subtype-f32vector" #f 122 8 122 30 ("macro-subtype-f32vector")}
+    {Lisp-Entry "jazz.subtype-f64vector" #f 123 8 123 30 ("macro-subtype-f64vector")}
+    {Lisp-Entry "jazz.subtype-boxvalues" #f 124 8 124 30 ("macro-subtype-boxvalues")}
+    {Lisp-Entry "macro-code-run-fixed" #f 132 17 132 37 ("rte" "c")}
+    {Lisp-Entry "jazz.code-cte" #f 137 9 137 22 ("macro-code-cte" "c")}
+    {Lisp-Entry "jazz.code-run" #f 140 9 140 22 ("macro-code-run-fixed" "rte" "c")}
+    {Lisp-Entry "jazz.rte-up" #f 149 9 149 20 ("macro-rte-up" "r")}
+    {Lisp-Entry "jazz.repl-context-bind" #f 158 9 158 31 ("repl-context" "macro-dynamic-bind" "thunk" "val")}
+    {Lisp-Entry "jazz.continuation-denv" #f 167 9 167 31 ("macro-continuation-denv" "cont")}
+    {Lisp-Entry "jazz.current-repl-context" #f 176 9 176 34 ("macro-current-repl-context")}
+    {Lisp-Entry "jazz.repl-context-level" #f 179 9 179 32 ("macro-repl-context-level" "context")}
+    {Lisp-Entry "jazz.repl-context-depth" #f 182 9 182 32 ("macro-repl-context-depth" "context")}
+    {Lisp-Entry "jazz.repl-context-cont" #f 185 9 185 31 ("macro-repl-context-cont" "context")}
+    {Lisp-Entry "jazz.repl-context-initial-cont" #f 188 9 188 39 ("macro-repl-context-initial-cont" "context")}
+    {Lisp-Entry "jazz.repl-context-prev-level" #f 191 9 191 37 ("macro-repl-context-prev-level" "context")}
+    {Lisp-Entry "jazz.repl-context-prev-depth" #f 194 9 194 37 ("macro-repl-context-prev-depth" "context")}
+    {Lisp-Entry "jazz.make-repl-context" #f 197 9 197 31 ("macro-make-repl-context" "prev-depth" "prev-level" "reason" "initial-cont" "cont" "depth" "level")}
+    {Lisp-Entry "jazz.readtable-named-char-table" #f 206 9 206 40 ("macro-readtable-named-char-table" "rt")}
+    {Lisp-Entry "jazz.readtable-named-char-table-set!" #f 209 9 209 45 ("macro-readtable-named-char-table-set!" "nc" "rt")}
+    {Lisp-Entry "jazz.readtable-start-syntax" #f 212 9 212 36 ("macro-readtable-start-syntax" "rt")}
+    {Lisp-Entry "jazz.readenv?" #f 221 9 221 22 ("macro-readenv?" "obj")}
+    {Lisp-Entry "jazz.readenv-port" #f 224 9 224 26 ("macro-readenv-port" "re")}
+    {Lisp-Entry "jazz.readenv-wrap" #f 227 9 227 26 ("macro-readenv-wrap" "x" "re")}
+    {Lisp-Entry "jazz.writeenv-port" #f 236 9 236 27 ("macro-writeenv-port" "we")}
+    {Lisp-Entry "jazz.btq-owner" #f 245 9 245 23 ("macro-btq-owner" "mutex")}})
 "install"
  ({Lisp-File-Entry {File Jazz "kernel" "runtime" "install.scm"} 1236190768
     {Lisp-Entry "platform-executable-path" #f 49 8 49 32 ()}})
-"kernel"
- ({Lisp-File-Entry {File Jazz "kernel" "runtime" "kernel.scm"} 1246650265
-    {Lisp-Entry "jazz.display" #f 46 22 46 34 ("display")}
-    {Lisp-Entry "jazz.write" #f 47 22 47 32 ("write")}
-    {Lisp-Entry "jazz.format" #f 55 9 55 20 ("else" "get-output-string" "jazz.format-to" "open-output-string" "output" "let" ":string" "case" "arguments" "fmt-string" "port" "lambda" "jazz.parse-format" "rest")}
-    {Lisp-Entry "jazz.parse-format" #f 67 9 67 26 ("%%cddr" "%%cadr" "%%cdr" ":string" "':string" "%%car" "string?" "if" "proc" "rest")}
-    {Lisp-Entry "jazz.format-to" #f 73 9 73 23 ("write-char" "%%eqv?" "cond" "begin" "%%eof-object?" "%%not" "c" "iter" "jazz.kernel-error" "else" "newline" "%" "display" "if" "element" "lambda" "for-each" "first?" "l" "t" "jazz.write" "s" "%%cdr" "set!" "%%car" "jazz.display" "a" "case" "read-char" "read" "directive" "format-directive" "define" "done?" "open-input-string" "control" "let" "arguments" "fmt-string" "output")}
-    {Lisp-Entry "jazz.pristine-thread-continuation" #f 121 8 121 41 ("cont" "continuation-capture" "lambda" "make-thread" "thread-start!" "thread-join!")}
-    {Lisp-Entry "jazz.kernel-error" #f 136 9 136 26 ("error" "apply" "rest")}
-    {Lisp-Entry "jazz.raise-system-error" #f 140 9 140 32 ("error" "jazz.format" "apply" "error-string" "let" "rest" "fmt-string")}
-    {Lisp-Entry "jazz.error" #f 145 8 145 18 ()}
-    {Lisp-Entry "jazz.primitive-type-error" #f 149 9 149 34 ("cons" "jazz.format" "error" "args" "proc" "type" "num")}
-    {Lisp-Entry "jazz.some?" #f 158 9 158 19 ("%%cdr" "%%car" "or" "%%null?" "if" "scan" "iter" "let" "lst" "predicate")}
-    {Lisp-Entry "jazz.every?" #f 166 9 166 20 ("%%cdr" "%%car" "and" "%%null?" "or" "scan" "iter" "let" "lst" "predicate")}
-    {Lisp-Entry "jazz.string-find-reversed" #f 178 9 178 34 ("else" "%%string-ref" "%%char=?" "0" "%%fx<" "cond" "1" "%%string-length" "%%fx-" "n" "iter" "let" "c" "str")}
-    {Lisp-Entry "jazz.global-variable?" #f 197 13 197 34 ("global-bound?" "symbol")}
-    {Lisp-Entry "jazz.global-value" #f 200 13 200 30 ("global-ref" "symbol")}
-    {Lisp-Entry "jazz.global-variable?" #f 204 13 204 34 ("%%global-var-ref" "%%unbound?" "%%not" "%%global-var?" "and" "symbol")}
-    {Lisp-Entry "jazz.global-value" #f 208 13 208 30 ("%%global-var-ref" "symbol")}
-    {Lisp-Entry "jazz.pathname-dir" #f 219 9 219 26 ("1" "%%fx+" "0" "%%substring" "%%not" "if" "jazz.string-find-reversed" "pos" "let" "pathname")}
-    {Lisp-Entry "jazz.pathname-name" #f 226 9 226 27 ("%%string-length" "1" "%%fx+" "%%substring" "%%not" "if" "jazz.string-find-reversed" "pos" "let" "pathname")}
-    {Lisp-Entry "jazz.pathname-base" #f 233 9 233 27 ("0" "%%substring" "if" "jazz.string-find-reversed" "pos" "jazz.pathname-name" "name" "let" "pathname")}
-    {Lisp-Entry "jazz.pathname-extension" #f 241 9 241 32 ("%%string-length" "1" "%%fx+" "%%substring" "if" "jazz.string-find-reversed" "pos" "let" "pathname")}
-    {Lisp-Entry "jazz.file-delete" #f 250 12 250 28 ("delete-file")}
-    {Lisp-Entry "jazz.file-copy" #f 253 12 253 26 ("copy-file")}
-    {Lisp-Entry "jazz.directory-exists?" #f 256 12 256 34 ("file-exists?")}
-    {Lisp-Entry "jazz.directory-create" #f 259 12 259 33 ("create-directory")}
-    {Lisp-Entry "jazz.kernel-built" #f 270 8 270 25 ("jazz.built")}
-    {Lisp-Entry "jazz.kernel-install" #f 274 8 274 27 ("jazz.built" "jazz.pathname-normalize" "jazz.executable-directory" "and" "or")}
-    {Lisp-Entry "jazz.kernel-source-built" #f 279 8 279 32 ("jazz.source-built")}
-    {Lisp-Entry "jazz.kernel-source" #f 283 8 283 26 ("jazz.kernel-install" "%%string-append" "jazz.pathname-normalize" "jazz.source" "jazz.string-starts-with?" "jazz.product" "not" "jazz.source-access?" "or" "if")}
-    {Lisp-Entry "jazz.jazz-product" #f 293 9 293 26 ("jazz.product")}
-    {Lisp-Entry "jazz.jazz-profile" #f 297 9 297 26 ("jazz.profile")}
-    {Lisp-Entry "jazz.profile" #f 301 8 301 20 ("make-parameter")}
-    {Lisp-Entry "jazz.run-loop?" #f 306 8 306 22 ("make-parameter")}
-    {Lisp-Entry "jazz.Repository-Filename" #f 315 8 315 32 ()}
-    {Lisp-Entry "jazz.repository?" #f 319 9 319 25 ("repository" "'repository" "%%vector-ref" "%%eq?" "0" "%%vector-length" "%%fx>" "%%vector?" "and" "obj")}
-    {Lisp-Entry "jazz.make-repository" #f 325 9 325 29 ("jazz.error" "%%make-repository" "library-directory" "write" "newline" "display" "output" "lambda" "jazz.Repository-Filename" "call-with-output-file" "begin" "or" "jazz.pathname-normalize" "%%string-append" "directory" "let" "jazz.create-directories" "jazz.directory-exists?" "%%not" "and" "if" "error?" "binary?" "#!key" "library-root" "subdir" "dir" "dirname" "name")}
-    {Lisp-Entry "jazz.Bin-Repository" #f 350 8 350 27 ("binary?:" "jazz.kernel-install" "Bin" "'Bin" "jazz.make-repository")}
-    {Lisp-Entry "jazz.Jazz-Repository" #f 353 8 353 28 ("error?:" "jazz.kernel-source" "Jazz" "'Jazz" "jazz.make-repository")}
-    {Lisp-Entry "jazz.User-Repository" #f 356 8 356 28 ("User" "'User" "jazz.make-repository")}
-    {Lisp-Entry "jazz.all-repositories" #f 360 9 360 30 ()
-      {Lisp-Entry "listify" #f 361 11 361 18 ("%%list" "if" "repository")}}
-    {Lisp-Entry "jazz.Repositories" #f 371 8 371 25 ("jazz.all-repositories")}
-    {Lisp-Entry "jazz.get-repositories" #f 375 9 375 30 ("jazz.Repositories")}
-    {Lisp-Entry "jazz.load-repository" #f 379 9 379 29 ("%%make-repository" "%%not" "library-directory" "if" "library-root" "library" "'library" "assq" "library-pair" "jazz.pathname-normalize" "%%cddr" "alist" "%%cadr" "name" "read" "form" "input" "lambda" "cr-lf" "'cr-lf" "eol-encoding:" "path:" "list" "call-with-input-file" "jazz.Repository-Filename" "%%string-append" "repository-file" "let" "directory")}
-    {Lisp-Entry "jazz.install-repository" #f 393 9 393 32 ("jazz.setup-repository" "%%list" "%%append" "jazz.Repositories" "set!" "jazz.load-repository" "repository" "let" "directory")}
-    {Lisp-Entry "jazz.uninstall-repository" #f 400 9 400 34 ("%%remove" "jazz.Repositories" "set!" "repository")}
-    {Lisp-Entry "jazz.find-repository" #f 404 9 404 29 ("%%cdr" "%%repository-name" "eq?" "%%car" "repository" "%%null?" "if" "jazz.Repositories" "repositories" "iter" "let" "name")}
-    {Lisp-Entry "jazz.find-package" #f 414 9 414 26 ("jazz.repository-find-package" "package" "%%cdr" "%%repository-binary?" "%%car" "repository" "%%null?" "if" "jazz.Repositories" "repositories" "iter" "let" "package-name")}
-    {Lisp-Entry "jazz.repository-pathname" #f 427 9 427 33 ("%%repository-library-directory" "%%string-append" "path" "repository")}
-    {Lisp-Entry "jazz.repository-packages-table" #f 432 9 432 39 ("jazz.repository-install-packages" "%%repository-packages-table-set!" "eq?" "test:" "%%make-table" "table" "let" "%%repository-packages-table" "or" "repository")}
-    {Lisp-Entry "jazz.setup-repositories" #f 440 9 440 32 ("jazz.Repositories" "jazz.setup-repository" "for-each")}
-    {Lisp-Entry "jazz.setup-repository" #f 444 9 444 30 ("jazz.setup-package" "package" "name" "lambda" "%%iterate-table" "jazz.repository-packages-table" "table" "let" "repository")}
-    {Lisp-Entry "jazz.repository-packages" #f 451 9 451 33 ("%%cons" "set!" "package" "name" "lambda" "%%iterate-table" "packages" "jazz.repository-packages-table" "table" "let" "repository")}
-    {Lisp-Entry "jazz.repository-find-package" #f 460 9 460 37 ("jazz.repository-packages-table" "%%table-ref" "package-name" "repository")}
-    {Lisp-Entry "jazz.repository-install-packages" #f 464 9 464 41 ("%%package-name" "%%table-set!" "package" "lambda" "for-each" "jazz.repository-discover-packages" "packages" "%%repository-packages-table" "table" "let" "repository")}
-    {Lisp-Entry "jazz.repository-discover-packages" #f 473 9 473 42 ("%%repository-library-directory" "%%package-repository" "jazz.repository-pathname" "%%package-library-path" "library-path" "%%cons" "jazz.load-package" "package" "%%cdr" "%%table-ref" "%%string->symbol" "package-name" "jazz.file-exists?" "jazz.Package-Filename" "package-pathname" "%%string-append" "directory" "%%car" "dirname" "%%null?" "jazz.directory-directories" "dirnames" "iter" "jazz.directory-exists?" "if" "packages" "library-directory" "parent" "discover-packages" "define" "%%repository-packages-table" "table" "let" "repository")}
-    {Lisp-Entry "jazz.repository-add-package" #f 500 9 500 36 ("%%package-name" "%%table-set!" "jazz.repository-packages-table" "table" "let" "package" "repository")}
-    {Lisp-Entry "jazz.repository-remove-package" #f 505 9 505 39 ("%%package-name" "%%table-clear" "jazz.repository-packages-table" "table" "let" "package" "repository")}
-    {Lisp-Entry "jazz.load-package" #f 510 9 510 26 ("jazz.error" "%%cdr" "jazz.make-package" "'project" "project" "'profiles" "profiles" "'products" "products" "'install" "install" "'root" "root" "'library" "assq" "library" "%%eq?" "if" "%%cddr" "alist" "%%cadr" "name" "read" "form" "let" "input" "lambda" "cr-lf" "'cr-lf" "eol-encoding:" "path:" "list" "call-with-input-file" "package-pathname" "package-name" "parent" "repository")}
-    {Lisp-Entry "jazz.setup-package" #f 533 9 533 27 ("jazz.load-module" "if" "%%package-install" "install" "let" "package")}
-    {Lisp-Entry "jazz.inspect-install" #f 539 9 539 29 ()
-      {Lisp-Entry "inspect-path" #f 540 11 540 23 ("path")}
-      {Lisp-Entry "inspect-repository" #f 543 11 543 29 ("repository")}
-      {Lisp-Entry "inspect-package" #f 549 11 549 26 ("package")}}
-    {Lisp-Entry "jazz.Package-Filename" #f 565 8 565 29 ()}
-    {Lisp-Entry "jazz.package?" #f 569 9 569 22 ("package" "'package" "%%vector-ref" "%%eq?" "0" "%%vector-length" "%%fx>" "%%vector?" "and" "obj")}
-    {Lisp-Entry "jazz.make-package" #f 575 9 575 26 ("%%make-package" "modules-path" "%%symbol->string" "%%string-append" "%%not" "if" "library-path" "let" "project" "profiles" "products" "install" "modules-root" "library-root" "parent" "name" "repository")}
-    {Lisp-Entry "jazz.package-pathname" #f 585 9 585 30 ("%%package-modules-path" "%%package-library-path" "if" "%%string-append" "%%package-repository" "jazz.repository-pathname" "%%package-parent" "parent" "let" "path" "package")}
-    {Lisp-Entry "jazz.iterate-resources" #f 594 9 594 31 ("package" "%%cdr" "%%car" "jazz.repository-packages" "packages" "iter" "%%null?" "%%not" "if" "jazz.Repositories" "repositories" "iter-repo" "jazz.name->path" "path" "let" "proc" "module-name")}
-    {Lisp-Entry "jazz.get-package-autoload" #f 606 9 606 34 ("%%package-autoloads" "%%table-ref" "name" "package")}
-    {Lisp-Entry "jazz.set-package-autoload" #f 610 9 610 34 ("%%cons" "%%package-autoloads" "%%table-set!" "loader" "module-name" "name" "package")}
-    {Lisp-Entry "jazz.register-package-autoload" #f 614 9 614 39 ("%%package-name" "jazz.error" "jazz.set-package-autoload" "%%car" "%%eq?" "%%not" "or" "if" "jazz.get-package-autoload" "actual" "let" "loader" "module-name" "name" "package")}
-    {Lisp-Entry "jazz.module-autoload" #f 621 9 621 29 ("jazz.error" "else" "cond" "bin-autoload" "find-autoload" "src-autoload" "let" "bin-uptodate?" "bin" "src" "lambda" "jazz.with-module-src/bin" "jazz.load-module" "name" "module-name")
-      {Lisp-Entry "find-autoload" #f 622 11 622 24 ("%%cdr" "name" "jazz.get-package-autoload" "autoload" "%%resource-package" "package" "let" "%%not" "if" "resource")}}
-    {Lisp-Entry "jazz.find-resource" #f 643 9 643 27 ("%%make-resource" "%%fx>=" "previous-pos" "name-length" "name" "%%string-ref" "%%eqv?" "%%fx<" "2" "name-pos" "jazz.string-find-reversed" "pos" "len" "1" "%%fx+" "%%fx-" "set!" "jazz.pathname-extension" "extension" "path" "let*" "0" "%%substring" "%%string=?" "%%fx<=" "and" "package-length" "%%string-length" "pathname-length" "jazz.package-pathname" "package-pathname" "package" "%%cdr" "%%car" "jazz.repository-packages" "packages" "iter" "%%null?" "if" "jazz.Repositories" "repositories" "iter-repo" "let" "pathname")}
-    {Lisp-Entry "jazz.descendant-module?" #f 676 9 676 32 ("%%string-ref" "%%eqv?" "0" "%%substring" "%%string=?" "%%fx>" "and" "descendant-length" "%%string-length" "module-length" "descendant" "%%symbol->string" "module" "let" "descendant-name" "module-name")}
-    {Lisp-Entry "jazz.find-pathname-module" #f 686 9 686 34 ("%%resource-path" "jazz.path->name" "if" "jazz.find-resource" "resource" "let" "pathname")}
-    {Lisp-Entry "jazz.gather-profiles" #f 698 9 698 29 ("%%append" "%%package-profiles" "package-profiles" "%%cdr" "%%car" "jazz.repository-packages" "packages" "iter" "%%null?" "if" "profiles" "jazz.Repositories" "repositories" "iter-repo" "let")}
-    {Lisp-Entry "jazz.make-profile" #f 709 9 709 26 ("module-name" "name")}
-    {Lisp-Entry "jazz.profile-name" #f 713 9 713 26 ("%%car" "profile")}
-    {Lisp-Entry "jazz.profile-title" #f 716 9 716 27 ("jazz.profile-name" "symbol->string" "profile")}
-    {Lisp-Entry "jazz.profile-module" #f 719 9 719 28 ("%%cdr" "module" "'module" "%%assq" "%%cadr" "profile")}
-    {Lisp-Entry "jazz.package-find-src" #f 728 9 728 30 ("jazz.pathname-name" "%%string-append" "try" "jazz.package-pathname" "jazz.directory-exists?" "if" "extensions" "path" "package")
-      {Lisp-Entry "try" #f 729 11 729 14 ("%%cdr" "%%car" "try-extension" "%%null?" "if" "or" "extensions" "iter" "let" "path")
-        {Lisp-Entry "try-extension" #f 730 13 730 26 ("%%make-resource" "path" "%%string-append" "package" "jazz.package-pathname" "jazz.file-exists?" "if" "extension")}}}
-    {Lisp-Entry "jazz.package-find-bin" #f 746 9 746 30 ("jazz.pathname-name" "%%string-append" "try" "jazz.package-pathname" "jazz.directory-exists?" "if" "path" "package")
-      {Lisp-Entry "try" #f 747 11 747 14 ("package" "%%make-resource" "%%fx+" "next-extension" "previous-extension" "2" "next" "iter" "exists?" "%%not" "if" "1" "extension" "o1" "let" "path")
-        {Lisp-Entry "extension" #f 748 13 748 22 ("number->string" "%%string-append" "n")}
-        {Lisp-Entry "exists?" #f 751 13 751 20 ("path" "%%string-append" "package" "jazz.package-pathname" "jazz.file-exists?" "extension")}}}
-    {Lisp-Entry "jazz.find-module-src" #f 769 9 769 29 ("jazz.error" "continuation-return" "begin" "jazz.package-find-src" "src" "path" "package" "jazz.iterate-resources" "return" "lambda" "continuation-capture" "%%car" "%%null?" "if" "error?" "let" "rest" "extensions" "module-name")}
-    {Lisp-Entry "jazz.with-module-src/bin" #f 789 9 789 33 ("jazz.load-manifest" "jazz.manifest-needs-rebuild?" "not" "jazz.cache-manifest-uptodate?" "jazz.resource-pathname" "src-filepath" "%%resource-package" "jazz.manifest-pathname" "manifest-filepath" "and" "bin-uptodate?" "jazz.error" "continuation-return" "jazz.package-find-src" "jazz.package-find-bin" "set!" "%%not" "if" "path" "package" "jazz.iterate-resources" "return" "lambda" "continuation-capture" "src" "bin" "let" "proc" "extensions" "module-name")}
-    {Lisp-Entry "jazz.module-uptodate-binary?" #f 827 9 827 37 ("bin-uptodate?" "bin" "src" "lambda" "jazz.with-module-src/bin" "module-name")}
-    {Lisp-Entry "jazz.validate-repository-unicity" #f 833 9 833 41 ("%%repository-name" "or" "jazz.error" "jazz.repository-unique?" "%%not" "if" "proc" "module-name" "repository")}
-    {Lisp-Entry "jazz.repository-unique?" #f 840 9 840 32 ("%%cdr" "%%car" "package" "%%null?" "if" "found?" "jazz.repository-packages" "packages" "iter" "let" "proc" "repository")}
-    {Lisp-Entry "jazz.setup-debuggee" #f 858 9 858 28 ("jazz.debuggee.setup" "'jazz.debuggee.setup" "jazz.debugger.jazz.stub-autoload" "'jazz.debugger.jazz.stub-autoload" "jazz.debugger.jazz.stub" "'jazz.debugger.jazz.stub" "jazz.debuggee.stub" "'jazz.debuggee.stub" "jazz.debuggee.Debuggee-Thread" "'jazz.debuggee.Debuggee-Thread" "jazz.debuggee.Debuggee-Stop" "'jazz.debuggee.Debuggee-Stop" "jazz.debuggee.Debuggee-Process" "'jazz.debuggee.Debuggee-Process" "jazz.debuggee.Debuggee-Frame" "'jazz.debuggee.Debuggee-Frame" "jazz.debuggee" "'jazz.debuggee" "jazz" "'jazz" "core.library" "'core.library" "jazz.load-module")}
-    {Lisp-Entry "jazz.find-product-descriptor" #f 877 9 877 37 ("set!" "begin" "%%repository-binary?" "%%package-products" "%%assq" "pair" "package" "%%cdr" "jazz.repository-packages" "packages" "iter" "%%car" "repository" "%%null?" "if" "jazz.Repositories" "repositories" "iter-repo" "binary-descriptor" "let" "name")}
-    {Lisp-Entry "jazz.product-descriptor-name" #f 897 9 897 37 ("%%car" "descriptor")}
-    {Lisp-Entry "jazz.product-descriptor-module" #f 900 9 900 39 ("%%cadr" "if" "%%cdr" "module" "'module" "%%assq" "pair" "let" "descriptor")}
-    {Lisp-Entry "jazz.product-descriptor-title" #f 906 9 906 38 ("%%cadr" "if" "%%cdr" "title" "'title" "%%assq" "pair" "let" "descriptor")}
-    {Lisp-Entry "jazz.product-descriptor-icon" #f 912 9 912 37 ("%%cadr" "if" "%%cdr" "icon" "'icon" "%%assq" "pair" "let" "descriptor")}
-    {Lisp-Entry "jazz.product-descriptor-run" #f 918 9 918 36 ("if" "%%cdr" "run" "'run" "%%assq" "pair" "let" "descriptor")}
-    {Lisp-Entry "jazz.product-descriptor-update" #f 924 9 924 39 ("if" "%%cdr" "update" "'update" "%%assq" "pair" "let" "descriptor")}
-    {Lisp-Entry "jazz.product-descriptor-build" #f 930 9 930 38 ("if" "%%cdr" "build" "'build" "%%assq" "pair" "let" "descriptor")}
-    {Lisp-Entry "jazz.product-descriptor-dependencies" #f 936 9 936 45 ("if" "%%cdr" "dependencies" "'dependencies" "%%assq" "pair" "let" "descriptor")}
-    {Lisp-Entry "jazz.Products-Table" #f 943 8 943 27 ("eq?" "test:" "make-table")}
-    {Lisp-Entry "jazz.Products-Run-Table" #f 946 8 946 31 ("eq?" "test:" "make-table")}
-    {Lisp-Entry "jazz.process-name" #f 950 8 950 25 ()}
-    {Lisp-Entry "jazz.process-title" #f 953 8 953 26 ()}
-    {Lisp-Entry "jazz.process-icon" #f 956 8 956 25 ()}
-    {Lisp-Entry "jazz.process-version" #f 959 8 959 28 ()}
-    {Lisp-Entry "jazz.current-process-name" #f 963 9 963 34 ("jazz.process-name")}
-    {Lisp-Entry "jazz.current-process-name-set!" #f 966 9 966 39 ("jazz.process-name" "set!" "name")}
-    {Lisp-Entry "jazz.current-process-title" #f 969 9 969 35 ("jazz.process-title")}
-    {Lisp-Entry "jazz.current-process-title-set!" #f 972 9 972 40 ("jazz.process-title" "set!" "title")}
-    {Lisp-Entry "jazz.current-process-icon" #f 975 9 975 34 ("jazz.process-icon")}
-    {Lisp-Entry "jazz.current-process-icon-set!" #f 978 9 978 39 ("jazz.process-icon" "set!" "icon")}
-    {Lisp-Entry "jazz.current-process-version" #f 981 9 981 37 ("jazz.process-version")}
-    {Lisp-Entry "jazz.current-process-version-set!" #f 984 9 984 42 ("jazz.process-version" "set!" "version")}
-    {Lisp-Entry "jazz.current-process-present" #f 988 9 988 37 ("symbol->string" "if" "jazz.current-process-name" "name" "let" "jazz.current-process-title" "or")}
-    {Lisp-Entry "jazz.register-product" #f 996 9 996 30 ("jazz.find-product-descriptor" "%%make-product" "jazz.Products-Table" "table-set!" "build" "update" "run" "icon" "title" "#!key" "name")}
-    {Lisp-Entry "jazz.get-registered-product" #f 1000 9 1000 36 ("jazz.error" "jazz.Products-Table" "table-ref" "or" "name")}
-    {Lisp-Entry "jazz.get-product-descriptor" #f 1005 9 1005 36 ("jazz.error" "if" "jazz.find-product-descriptor" "descriptor" "let" "name")}
-    {Lisp-Entry "jazz.get-product" #f 1012 9 1012 25 ("jazz.build-product-descriptor" "jazz.update-product-descriptor" "%%make-product" "jazz.product-descriptor-icon" "icon" "jazz.product-descriptor-title" "title" "jazz.get-registered-product" "jazz.load-module" "begin" "if" "jazz.product-descriptor-module" "module" "jazz.get-product-descriptor" "descriptor" "let" "name")}
-    {Lisp-Entry "jazz.setup-product" #f 1028 9 1028 27 ("jazz.debuggee.update" "'jazz.debuggee.update" "jazz.load-module" "jazz.product-descriptor-icon" "%%product-icon" "jazz.process-icon" "jazz.product-descriptor-title" "%%product-title" "or" "jazz.process-title" "%%product-descriptor" "descriptor" "product" "let" "jazz.setup-debuggee" "jazz.process-name" "set!" "begin" "jazz.get-product" "jazz.debugger" "not" "if" "name")}
-    {Lisp-Entry "jazz.register-product-run" #f 1043 9 1043 34 ("jazz.Products-Run-Table" "table-set!" "proc" "name")}
-    {Lisp-Entry "jazz.get-registered-run" #f 1047 9 1047 32 ("jazz.error" "jazz.Products-Run-Table" "table-ref" "or" "name")}
-    {Lisp-Entry "jazz.run-product" #f 1052 9 1052 25 ("jazz.run-product-descriptor" "if" "%%product-descriptor" "descriptor" "%%product-run" "run" "jazz.setup-product" "product" "let" "name")}
-    {Lisp-Entry "jazz.run-product-descriptor" #f 1061 9 1061 36 ("jazz.error" "jazz.get-registered-run" "proc" "jazz.load-module" "for-each" "begin" "if" "jazz.product-descriptor-run" "run" "jazz.product-descriptor-name" "name" "let" "descriptor")}
-    {Lisp-Entry "jazz.update-product" #f 1072 9 1072 28 ("jazz.update-product-descriptor" "if" "%%product-descriptor" "descriptor" "%%product-update" "update" "jazz.setup-product" "product" "let" "name")}
-    {Lisp-Entry "jazz.update-product-descriptor" #f 1081 9 1081 39 ("jazz.product-descriptor-name" "jazz.error" "jazz.build-module" "for-each" "if" "jazz.product-descriptor-update" "update" "let" "descriptor")}
-    {Lisp-Entry "jazz.build-product" #f 1088 9 1088 27 ("jazz.build-product-descriptor" "if" "core.module.builder" "'core.module.builder" "core.library" "'core.library" "jazz.load-module" "jazz.feedback" "%%product-descriptor" "descriptor" "%%product-build" "build" "jazz.setup-product" "product" "let" "name")}
-    {Lisp-Entry "jazz.build-product-descriptor" #f 1100 9 1100 38 ("apply" "jazz.build-executable" "%%symbol?" "obj" "lambda" "for-each" "if" "jazz.product-descriptor-build" "build" "let" "jazz.update-product-descriptor" "descriptor")}
-    {Lisp-Entry "jazz.make-product" #f 1111 9 1111 26 ("thread-join!" "threads" "write" "input-port-timeout-set!" "1" "%%fx-" "begin" "%%eof-object?" "read" "iter" "make-thread" "thread-start!" "0" "%%fx<=" "count" "start-threads" "open-vector" "port" "names" "%%cons" "make-parallel" "make-dependencies" "for-each" "jazz.product-descriptor-dependencies" "dependencies" "jazz.get-product-descriptor" "descriptor" "%%memq" "%%not" "if" "make" "%%number->string" "%%symbol->string" "%%list" "jazz.call-process" "build" "set!" "lst" "set-made" "lambda" "get-made" "mutex-unlock!" "result" "mutex-lock!" "proc" "with-made-mutex" "else" "windows" "case" "jazz-path" "%%string-append" "path" "install-file" "define" "made" "make-product" "'make-product" "make-mutex" "made-mutex" "jazz.build-jobs" "jazz.jobs" "or" "jobs" "jazz.kernel-platform" "platform" "jazz.kernel-install" "install" "let" "name")}
-    {Lisp-Entry "jazz.resource-pathname" #f 1306 9 1306 31 ("jazz.resource-package-pathname" "%%resource-package" "jazz.package-pathname" "resource")}
-    {Lisp-Entry "jazz.resource-package-pathname" #f 1311 9 1311 39 ("%%resource-extension" "%%resource-path" "%%string-append" "resource")}
-    {Lisp-Entry "jazz.name->path" #f 1317 9 1317 24 ("%%symbol->string" "jazz.string-replace" "resource-name")}
-    {Lisp-Entry "jazz.path->name" #f 1321 9 1321 24 ("jazz.string-replace" "%%string->symbol" "resource-name")}
-    {Lisp-Entry "jazz.manifest-pathname" #f 1330 9 1330 31 ("jazz.Manifest-Extension" "%%resource-path" "%%string-append" "jazz.package-pathname" "resource" "package")}
-    {Lisp-Entry "jazz.load" #f 1343 13 1343 22 ("void" "lambda" "%%load" "car" "null?" "if" "quiet?" "let" "rest" "pathname")}
-    {Lisp-Entry "jazz.load" #f 1349 13 1349 22 ("load" "rest" "pathname")}
-    {Lisp-Entry "jazz.load-indent" #f 1353 8 1353 24 ("0" "make-parameter")}
-    {Lisp-Entry "jazz.load-resource" #f 1357 9 1357 27 ("jazz.resource-pathname" "jazz.load" "lambda" "jazz.resource-package-pathname" "jazz.load-verbose?" "jazz.with-verbose" "car" "null?" "if" "quiet?" "let" "rest" "resource")}
-    {Lisp-Entry "jazz.with-verbose" #f 1364 9 1364 26 ("verbose-done" "jazz.done-verbose?" "2" "+" "jazz.load-indent" "parameterize" "result" "let" "verbose-load" "begin" "if" "proc" "path" "action" "flag")
-      {Lisp-Entry "verbose-load" #f 1365 11 1365 23 ("force-output" "newline" "path" "action" "jazz.load-indent" "make-string" "display")}
-      {Lisp-Entry "verbose-done" #f 1375 11 1375 23 ("force-output" "newline" "jazz.load-indent" "make-string" "display")}}
-    {Lisp-Entry "jazz.walk-for" #f 1394 8 1394 21 ("make-parameter")}
-    {Lisp-Entry "jazz.load-module-src/bin" #f 1398 9 1398 33 ("jazz.error" "else" "jazz.with-extension-reader" "jazz.feedback" "jazz.warn-interpreted?" "jazz.load-resource" "%%resource-extension" "%%string=?" "%%not" "or" "quiet?" "let" "cond" "load" "'load" "jazz.walk-for" "if" "jazz.requested-module-resource" "jazz.requested-module-name" "parameterize" "bin-uptodate?" "bin" "src" "lambda" "jazz.with-module-src/bin" "module-name")}
-    {Lisp-Entry "jazz.resource-build-dir" #f 1422 9 1422 32 ("%%package-modules-path" "%%package-library-path" "if" "%%string-append" "jazz.Bin-Repository" "jazz.repository-pathname" "%%package-parent" "parent" "%%resource-path" "jazz.pathname-dir" "dir" "%%resource-package" "package" "let" "resource")}
-    {Lisp-Entry "jazz.Unloaded-State" #f 1438 8 1438 27 ()}
-    {Lisp-Entry "jazz.Loading-State" #f 1441 8 1441 26 ()}
-    {Lisp-Entry "jazz.Loaded-State" #f 1444 8 1444 25 ()}
-    {Lisp-Entry "jazz.Environment" #f 1453 8 1453 24 ("eq?" "test:" "%%make-table")}
-    {Lisp-Entry "jazz.get-environment" #f 1457 9 1457 29 ("jazz.Environment")}
-    {Lisp-Entry "jazz.get-environment-module" #f 1461 9 1461 36 ("jazz.Unloaded-State" "jazz.Environment" "%%table-ref" "name")}
-    {Lisp-Entry "jazz.set-environment-module" #f 1465 9 1465 36 ("jazz.Environment" "%%table-set!" "module" "name")}
-    {Lisp-Entry "jazz.Load-Mutex" #f 1474 8 1474 23 ("load" "'load" "make-mutex")}
-    {Lisp-Entry "jazz.Load-Thread" #f 1477 8 1477 24 ()}
-    {Lisp-Entry "jazz.Load-Stack" #f 1480 8 1480 23 ()}
-    {Lisp-Entry "jazz.requested-module-name" #f 1484 8 1484 34 ("make-parameter")}
-    {Lisp-Entry "jazz.requested-module-resource" #f 1487 8 1487 38 ("make-parameter")}
-    {Lisp-Entry "jazz.get-load-mutex" #f 1491 9 1491 28 ("jazz.Load-Mutex")}
-    {Lisp-Entry "jazz.get-load-stack" #f 1494 9 1494 28 ("jazz.Load-Stack")}
-    {Lisp-Entry "jazz.push-load-stack" #f 1498 9 1498 29 ("cons" "jazz.Load-Stack" "set!" "module-name" "mode")}
-    {Lisp-Entry "jazz.pop-load-stack" #f 1502 9 1502 28 ("cdr" "jazz.Load-Stack" "set!")}
-    {Lisp-Entry "jazz.call-with-load-lock" #f 1506 9 1506 33 ("mutex-unlock!" "set!" "jazz.Load-Mutex" "mutex-lock!" "lambda" "dynamic-wind" "current-thread" "jazz.Load-Thread" "%%eq?" "if" "thunk")}
-    {Lisp-Entry "jazz.module-loaded?" #f 1519 9 1519 28 ("jazz.Loaded-State" "jazz.get-environment-module" "%%eq?" "module-name")}
-    {Lisp-Entry "jazz.load-module" #f 1523 9 1523 25 ("jazz.pop-load-stack" "jazz.load-module-src/bin" ":load" "':load" "jazz.push-load-stack" "jazz.set-environment-module" "dynamic-wind" "jazz.Unloaded-State" "jazz.error" "jazz.Loading-State" "cond" "lambda" "jazz.call-with-load-lock" "jazz.Loaded-State" "%%eq?" "not" "if" "jazz.get-environment-module" "module-state" "let" "module-name")}
-    {Lisp-Entry "jazz.unload-module" #f 1545 9 1545 27 ("jazz.unload-module" "mutex-unlock!" "jazz.Unloaded-State" "jazz.set-environment-module" "begin" "jazz.Load-Mutex" "mutex-lock!" "if" "module-name")}
-    {Lisp-Entry "jazz.reload-module" #f 1554 9 1554 27 ("jazz.load-module" "jazz.unload-module" "module-name")}
-    {Lisp-Entry "jazz.Services" #f 1564 8 1564 21 ("eq?" "test:" "%%make-table")}
-    {Lisp-Entry "jazz.register-service" #f 1568 9 1568 30 ("jazz.Services" "%%table-set!" "thunk" "name")}
-    {Lisp-Entry "jazz.get-service" #f 1572 9 1572 25 ("set!" "jazz.load-module" "begin" "%%symbol?" "if" "jazz.Services" "%%table-ref" "symbol/proc" "let" "name")}
-    {Lisp-Entry "jazz.require-service" #f 1583 9 1583 29 ("error" "jazz.get-service" "or" "name")}
-    {Lisp-Entry "jazz.Extension-Readers" #f 1593 8 1593 30 ("equal?" "test:" "%%make-table")}
-    {Lisp-Entry "jazz.get-extension-reader" #f 1597 9 1597 34 ("jazz.Extension-Readers" "%%table-ref" "extension")}
-    {Lisp-Entry "jazz.with-extension-reader" #f 1601 9 1601 35 ("current-readtable" "parameterize" "if" "jazz.get-extension-reader" "readtable-getter" "let" "thunk" "extension")}
-    {Lisp-Entry "jazz.register-reader-extension" #f 1609 9 1609 39 ("jazz.Extension-Readers" "%%table-set!" "readtable-getter" "extension")}
-    {Lisp-Entry "jazz.scheme-readtable" #f 1618 8 1618 29 ("%%current-readtable")}})
 "macros"
  ({Lisp-File-Entry {File Jazz "kernel" "syntax" "macros.scm"} 1236190768
     {Lisp-Entry "jazz.Macros" #f 37 8 37 19 ("eq?" "test:" "make-table")}
@@ -556,12 +394,427 @@
     {Lisp-Entry "jazz.get-macro" #f 45 9 45 23 ("jazz.Macros" "table-ref" "name")}
     {Lisp-Entry "jazz.need-macro" #f 49 9 49 24 ("jazz.error" "jazz.get-macro" "or" "name")}
     {Lisp-Entry "jazz.expand-macro" #f 54 9 54 26 ("cdr" "car" "jazz.need-macro" "apply" "form")}})
-"main"
- ({Lisp-File-Entry {File Jazz "kernel" "runtime" "main.scm"} 1245586216
+"module"
+ ({Lisp-File-Entry {File Jazz "kernel" "runtime" "module.scm"} 1251729947
+    {Lisp-Entry "jazz.display" #f 46 22 46 34 ("display")}
+    {Lisp-Entry "jazz.write" #f 47 22 47 32 ("write")}
+    {Lisp-Entry "jazz.format" #f 55 9 55 20 ("else" "get-output-string" "format-to" "open-output-string" "output" "let" ":string" "case" "arguments" "fmt-string" "port" "lambda" "parse-format" "rest")
+      {Lisp-Entry "parse-format" #f 56 11 56 23 ("%%cddr" "%%cadr" "%%cdr" ":string" "':string" "%%car" "%%string?" "if" "proc" "rest")}
+      {Lisp-Entry "format-to" #f 61 11 61 20 ("write-char" "%%eqv?" "cond" "begin" "%%eof-object?" "%%not" "c" "iter" "jazz.kernel-error" "else" "newline" "%" "display" "if" "element" "lambda" "for-each" "first?" "l" "t" "jazz.write" "s" "%%cdr" "set!" "%%car" "jazz.display" "a" "case" "read-char" "read" "directive" "format-directive" "define" "done?" "open-input-string" "control" "let" "arguments" "fmt-string" "output")}}
+    {Lisp-Entry "jazz.pristine-thread-continuation" #f 119 8 119 41 ("cont" "continuation-capture" "lambda" "make-thread" "thread-start!" "thread-join!")}
+    {Lisp-Entry "jazz.kernel-error" #f 134 9 134 26 ("error" "%%apply" "rest")}
+    {Lisp-Entry "jazz.raise-system-error" #f 138 9 138 32 ("error" "jazz.format" "apply" "error-string" "let" "rest" "fmt-string")}
+    {Lisp-Entry "jazz.error" #f 143 8 143 18 ()}
+    {Lisp-Entry "jazz.primitive-type-error" #f 147 9 147 34 ("%%cons" "jazz.format" "error" "args" "proc" "type" "num")}
+    {Lisp-Entry "jazz.some?" #f 156 9 156 19 ("%%cdr" "%%car" "or" "%%null?" "if" "scan" "iter" "let" "lst" "predicate")}
+    {Lisp-Entry "jazz.every?" #f 165 9 165 20 ("%%cdr" "%%car" "and" "%%null?" "or" "scan" "iter" "let" "lst" "predicate")}
+    {Lisp-Entry "jazz.string-find-reversed" #f 178 9 178 34 ("else" "%%string-ref" "%%char=?" "0" "%%fx<" "cond" "1" "%%string-length" "%%fx-" "n" "iter" "let" "c" "str")}
+    {Lisp-Entry "jazz.global-variable?" #f 198 13 198 34 ("global-bound?" "symbol")}
+    {Lisp-Entry "jazz.global-value" #f 201 13 201 30 ("global-ref" "symbol")}
+    {Lisp-Entry "jazz.global-variable?" #f 205 13 205 34 ("%%global-var-ref" "%%unbound?" "%%not" "%%global-var?" "and" "symbol")}
+    {Lisp-Entry "jazz.global-value" #f 209 13 209 30 ("%%global-var-ref" "symbol")}
+    {Lisp-Entry "jazz.pathname-dir" #f 220 9 220 26 ("1" "%%fx+" "0" "%%substring" "%%not" "if" "jazz.string-find-reversed" "pos" "let" "pathname")}
+    {Lisp-Entry "jazz.pathname-name" #f 227 9 227 27 ("%%string-length" "1" "%%fx+" "%%substring" "%%not" "if" "jazz.string-find-reversed" "pos" "let" "pathname")}
+    {Lisp-Entry "jazz.pathname-base" #f 234 9 234 27 ("0" "%%substring" "if" "jazz.string-find-reversed" "pos" "jazz.pathname-name" "name" "let" "pathname")}
+    {Lisp-Entry "jazz.pathname-extension" #f 242 9 242 32 ("%%string-length" "1" "%%fx+" "%%substring" "if" "jazz.string-find-reversed" "pos" "let" "pathname")}
+    {Lisp-Entry "jazz.file-delete" #f 251 12 251 28 ("delete-file")}
+    {Lisp-Entry "jazz.file-copy" #f 254 12 254 26 ("copy-file")}
+    {Lisp-Entry "jazz.directory-exists?" #f 257 12 257 34 ("file-exists?")}
+    {Lisp-Entry "jazz.directory-create" #f 260 12 260 33 ("create-directory")}
+    {Lisp-Entry "jazz.kernel-built" #f 271 8 271 25 ("jazz.built")}
+    {Lisp-Entry "jazz.kernel-install" #f 275 8 275 27 ("jazz.built" "jazz.pathname-normalize" "jazz.executable-directory" "executable" "'executable" "jazz.image" "%%eq?" "and" "or")}
+    {Lisp-Entry "jazz.kernel-source-built" #f 280 8 280 32 ("jazz.source-built")}
+    {Lisp-Entry "jazz.kernel-source" #f 284 8 284 26 ("jazz.kernel-install" "%%string-append" "jazz.pathname-normalize" "jazz.source" "jazz.string-starts-with?" "jazz.product" "%%not" "jazz.source-access?" "or" "if")}
+    {Lisp-Entry "jazz.jazz-product" #f 294 9 294 26 ("jazz.product")}
+    {Lisp-Entry "jazz.jazz-profile" #f 298 9 298 26 ("jazz.profile")}
+    {Lisp-Entry "jazz.profile" #f 302 8 302 20 ("make-parameter")}
+    {Lisp-Entry "jazz.run-loop?" #f 307 8 307 22 ("make-parameter")}
+    {Lisp-Entry "jazz.Repository-Filename" #f 316 8 316 32 ()}
+    {Lisp-Entry "jazz.repository?" #f 320 9 320 25 ("repository" "'repository" "%%vector-ref" "%%eq?" "0" "%%vector-length" "%%fx>" "%%vector?" "and" "obj")}
+    {Lisp-Entry "jazz.make-repository" #f 326 9 326 29 ("jazz.error" "%%make-repository" "library-directory" "write" "newline" "display" "output" "lambda" "jazz.Repository-Filename" "call-with-output-file" "begin" "or" "jazz.pathname-normalize" "%%string-append" "directory" "let" "jazz.create-directories" "jazz.directory-exists?" "%%not" "and" "if" "error?" "binary?" "#!key" "library-root" "subdir" "dir" "dirname" "name")}
+    {Lisp-Entry "jazz.Bin-Repository" #f 351 8 351 27 ("binary?:" "jazz.kernel-install" "Bin" "'Bin" "jazz.make-repository")}
+    {Lisp-Entry "jazz.Jazz-Repository" #f 354 8 354 28 ("error?:" "jazz.kernel-source" "Jazz" "'Jazz" "jazz.make-repository")}
+    {Lisp-Entry "jazz.User-Repository" #f 357 8 357 28 ("User" "'User" "jazz.make-repository")}
+    {Lisp-Entry "jazz.all-repositories" #f 361 9 361 30 ()
+      {Lisp-Entry "listify" #f 362 11 362 18 ("%%list" "if" "repository")}}
+    {Lisp-Entry "jazz.Repositories" #f 372 8 372 25 ("jazz.all-repositories")}
+    {Lisp-Entry "jazz.get-repositories" #f 376 9 376 30 ("jazz.Repositories")}
+    {Lisp-Entry "jazz.load-repository" #f 380 9 380 29 ("%%make-repository" "%%not" "library-directory" "if" "library-root" "library" "'library" "%%assq" "library-pair" "jazz.pathname-normalize" "%%cddr" "alist" "%%cadr" "name" "read" "form" "input" "lambda" "cr-lf" "'cr-lf" "eol-encoding:" "path:" "%%list" "call-with-input-file" "jazz.Repository-Filename" "%%string-append" "repository-file" "let" "directory")}
+    {Lisp-Entry "jazz.install-repository" #f 394 9 394 32 ("jazz.setup-repository" "%%list" "%%append" "jazz.Repositories" "set!" "jazz.load-repository" "repository" "let" "directory")}
+    {Lisp-Entry "jazz.install-repository-if-exists" #f 401 9 401 42 ("jazz.install-repository" "jazz.directory-exists?" "if" "directory")}
+    {Lisp-Entry "jazz.uninstall-repository" #f 406 9 406 34 ("%%remove" "jazz.Repositories" "set!" "repository")}
+    {Lisp-Entry "jazz.find-repository" #f 410 9 410 29 ("%%cdr" "%%repository-name" "%%eq?" "%%car" "repository" "%%null?" "if" "jazz.Repositories" "repositories" "iter" "let" "name")}
+    {Lisp-Entry "jazz.find-package" #f 420 9 420 26 ("jazz.repository-find-package" "package" "%%cdr" "%%repository-binary?" "%%car" "repository" "%%null?" "if" "jazz.Repositories" "repositories" "iter" "let" "package-name")}
+    {Lisp-Entry "jazz.repository-pathname" #f 433 9 433 33 ("%%repository-library-directory" "%%string-append" "path" "repository")}
+    {Lisp-Entry "jazz.repository-packages-table" #f 438 9 438 39 ("jazz.repository-install-packages" "%%repository-packages-table-set!" "eq?" "test:" "%%make-table" "table" "let" "%%repository-packages-table" "or" "repository")}
+    {Lisp-Entry "jazz.setup-repositories" #f 446 9 446 32 ("jazz.Repositories" "jazz.setup-repository" "for-each")}
+    {Lisp-Entry "jazz.setup-repository" #f 450 9 450 30 ("jazz.setup-package" "package" "name" "lambda" "%%iterate-table" "jazz.repository-packages-table" "table" "let" "repository")}
+    {Lisp-Entry "jazz.setup-build" #f 457 9 457 25 ("jazz.Bin-Repository" "%%repository-packages-table-set!" "setup-build-packages")
+      {Lisp-Entry "setup-build-packages" #f 458 11 458 31 ("setup-build-package" "jazz.iterate-packages")}
+      {Lisp-Entry "setup-build-package" #f 462 11 462 30 ("jazz.file-copy" "jazz.file-delete" "jazz.create-directories" "begin" "jazz.file-modification-time" "<" "jazz.file-exists?" "%%not" "or" "jazz.Bin-Repository" "dst" "%%package-repository" "jazz.repository-pathname" "src" "jazz.Package-Filename" "path" "%%symbol->string" "%%package-library-path" "%%string-append" "dir" "setup-build-package" "if" "bin-parent" "%%package-parent" "parent" "%%package-name" "name" "let*" "package")}}
+    {Lisp-Entry "jazz.repository-packages" #f 482 9 482 33 ("%%cons" "set!" "package" "name" "lambda" "%%iterate-table" "packages" "jazz.repository-packages-table" "table" "let" "repository")}
+    {Lisp-Entry "jazz.repository-find-package" #f 491 9 491 37 ("jazz.repository-packages-table" "%%table-ref" "package-name" "repository")}
+    {Lisp-Entry "jazz.repository-install-packages" #f 495 9 495 41 ("%%package-name" "%%table-set!" "package" "lambda" "for-each" "jazz.repository-discover-packages" "packages" "%%repository-packages-table" "table" "let" "repository")}
+    {Lisp-Entry "jazz.repository-discover-packages" #f 504 9 504 42 ("%%repository-library-directory" "%%package-repository" "jazz.repository-pathname" "%%package-library-path" "library-path" "%%cons" "jazz.load-package" "package" "%%cdr" "%%table-ref" "%%string->symbol" "package-name" "jazz.file-exists?" "jazz.Package-Filename" "package-pathname" "%%string-append" "directory" "%%car" "dirname" "%%null?" "jazz.directory-directories" "dirnames" "iter" "jazz.directory-exists?" "if" "packages" "library-directory" "parent" "discover-packages" "define" "%%repository-packages-table" "table" "let" "repository")}
+    {Lisp-Entry "jazz.repository-add-package" #f 531 9 531 36 ("%%package-name" "%%table-set!" "jazz.repository-packages-table" "table" "let" "package" "repository")}
+    {Lisp-Entry "jazz.repository-remove-package" #f 536 9 536 39 ("%%package-name" "%%table-clear" "jazz.repository-packages-table" "table" "let" "package" "repository")}
+    {Lisp-Entry "jazz.load-package" #f 541 9 541 26 ("jazz.error" "jazz.cache-package-roots" "%%cdr" "jazz.make-package" "package" "'project" "project" "'profiles" "profiles" "'products" "products" "'install" "install" "'root" "root" "'library" "%%assq" "library" "%%eq?" "if" "%%cddr" "alist" "%%cadr" "name" "read" "form" "let" "input" "lambda" "cr-lf" "'cr-lf" "eol-encoding:" "path:" "%%list" "call-with-input-file" "package-pathname" "package-name" "parent" "repository")}
+    {Lisp-Entry "jazz.setup-package" #f 567 9 567 27 ("jazz.load-module" "if" "%%package-install" "install" "let" "package")}
+    {Lisp-Entry "jazz.inspect-install" #f 573 9 573 29 ()
+      {Lisp-Entry "inspect-path" #f 574 11 574 23 ("path")}
+      {Lisp-Entry "inspect-repository" #f 577 11 577 29 ("repository")}
+      {Lisp-Entry "inspect-package" #f 583 11 583 26 ("package")}}
+    {Lisp-Entry "jazz.Package-Filename" #f 599 8 599 29 ()}
+    {Lisp-Entry "jazz.package?" #f 603 9 603 22 ("package" "'package" "%%vector-ref" "%%eq?" "0" "%%vector-length" "%%fx>" "%%vector?" "and" "obj")}
+    {Lisp-Entry "jazz.make-package" #f 609 9 609 26 ("%%make-package" "modules-path" "%%symbol->string" "%%string-append" "%%not" "if" "library-path" "let" "project" "profiles" "products" "install" "modules-root" "library-root" "parent" "name" "repository")}
+    {Lisp-Entry "jazz.package-pathname" #f 619 9 619 30 ("%%package-modules-path" "%%package-library-path" "if" "%%string-append" "%%package-repository" "jazz.repository-pathname" "%%package-parent" "parent" "let" "path" "package")}
+    {Lisp-Entry "jazz.iterate-packages" #f 628 9 628 30 ("package" "jazz.repository-packages" "packages" "iter" "%%cdr" "%%repository-binary?" "%%neq?" "%%car" "repository" "%%null?" "%%not" "if" "jazz.Repositories" "repositories" "iter-repo" "let" "proc" "binary?")}
+    {Lisp-Entry "jazz.get-package-autoload" #f 642 9 642 34 ("%%package-autoloads" "%%table-ref" "name" "package")}
+    {Lisp-Entry "jazz.set-package-autoload" #f 646 9 646 34 ("%%cons" "%%package-autoloads" "%%table-set!" "loader" "module-name" "name" "package")}
+    {Lisp-Entry "jazz.register-package-autoload" #f 650 9 650 39 ("%%package-name" "jazz.error" "jazz.set-package-autoload" "%%car" "%%eq?" "%%not" "or" "if" "jazz.get-package-autoload" "actual" "let" "loader" "module-name" "name" "package")}
+    {Lisp-Entry "jazz.module-autoload" #f 657 9 657 29 ("jazz.error" "else" "cond" "bin-autoload" "find-autoload" "src-autoload" "let" "bin-uptodate?" "bin" "src" "lambda" "jazz.with-module-src/bin" "jazz.load-module" "name" "module-name")
+      {Lisp-Entry "find-autoload" #f 658 11 658 24 ("%%cdr" "name" "jazz.get-package-autoload" "autoload" "%%resource-package" "package" "let" "%%not" "if" "resource")}}
+    {Lisp-Entry "jazz.find-resource" #f 679 9 679 27 ("%%make-resource" "%%fx>=" "previous-pos" "name-length" "name" "%%string-ref" "%%eqv?" "%%fx<" "2" "name-pos" "jazz.string-find-reversed" "pos" "len" "1" "%%fx+" "%%fx-" "set!" "jazz.pathname-extension" "extension" "path" "let*" "0" "%%substring" "%%string=?" "%%fx<=" "and" "package-length" "%%string-length" "pathname-length" "jazz.package-pathname" "package-pathname" "package" "%%cdr" "%%car" "jazz.repository-packages" "packages" "iter" "%%null?" "if" "jazz.Repositories" "repositories" "iter-repo" "let" "pathname")}
+    {Lisp-Entry "jazz.descendant-module?" #f 712 9 712 32 ("%%string-ref" "%%eqv?" "0" "%%substring" "%%string=?" "%%fx>" "and" "descendant-length" "%%string-length" "module-length" "descendant" "%%symbol->string" "module" "let" "descendant-name" "module-name")}
+    {Lisp-Entry "jazz.find-pathname-module" #f 722 9 722 34 ("%%resource-path" "jazz.path->name" "if" "jazz.find-resource" "resource" "let" "pathname")}
+    {Lisp-Entry "jazz.gather-profiles" #f 734 9 734 29 ("%%append" "%%package-profiles" "package-profiles" "jazz.repository-packages" "packages" "iter" "%%cdr" "%%repository-binary?" "%%car" "repository" "%%null?" "if" "profiles" "jazz.Repositories" "repositories" "iter-repo" "let")}
+    {Lisp-Entry "jazz.make-profile" #f 748 9 748 26 ("module-name" "name")}
+    {Lisp-Entry "jazz.profile-name" #f 752 9 752 26 ("%%car" "profile")}
+    {Lisp-Entry "jazz.profile-title" #f 755 9 755 27 ("jazz.profile-name" "%%symbol->string" "profile")}
+    {Lisp-Entry "jazz.profile-module" #f 758 9 758 28 ("%%cdr" "module" "'module" "%%assq" "%%cadr" "profile")}
+    {Lisp-Entry "jazz.find-module-bin" #f 767 9 767 29 ("jazz.cache-package" "begin" "jazz.iterate-packages" "jazz.*binary-packages-cache*" "jazz.cached-packages" "continuation-return" "if" "find-bin" "bin" "package" "for-each" "jazz.name->path" "path" "let" "return" "lambda" "continuation-capture" "module-name")
+      {Lisp-Entry "find-bin" #f 768 11 768 19 ("jazz.pathname-name" "%%string-append" "try" "jazz.package-pathname" "jazz.directory-exists?" "if" "path" "package")
+        {Lisp-Entry "try" #f 769 13 769 16 ("%%make-resource" "%%string-append" "package" "jazz.package-pathname" "jazz.file-exists?" "if" "path")}}}
+    {Lisp-Entry "jazz.find-module-src" #f 803 9 803 29 ("jazz.error" "jazz.cache-package" "begin" "jazz.iterate-packages" "jazz.*source-packages-cache*" "jazz.cached-packages" "continuation-return" "find-src" "src" "package" "for-each" "jazz.name->path" "path" "return" "lambda" "continuation-capture" "%%car" "%%null?" "if" "error?" "let" "rest" "extensions" "module-name")
+      {Lisp-Entry "find-src" #f 804 11 804 19 ("jazz.pathname-name" "%%string-append" "try" "jazz.package-pathname" "jazz.directory-exists?" "if" "path" "package")
+        {Lisp-Entry "try" #f 805 13 805 16 ("%%cdr" "%%car" "try-extension" "%%null?" "if" "or" "extensions" "iter" "let" "path")
+          {Lisp-Entry "try-extension" #f 806 15 806 28 ("%%make-resource" "path" "%%string-append" "package" "jazz.package-pathname" "jazz.file-exists?" "if" "extension")}}}}
+    {Lisp-Entry "jazz.with-module-src/bin" #f 848 9 848 33 ("force-interpreted?" "jazz.manifest-needs-rebuild?" "%%not" "jazz.manifest-uptodate?" "jazz.resource-pathname" "%%resource-package" "jazz.manifest-pathname" "jazz.load-updated-manifest" "manifest" "and" "if" "bin-uptodate?" "jazz.find-module-src" "src" "jazz.find-module-bin" "bin" "let" "proc" "extensions" "module-name")
+      {Lisp-Entry "force-interpreted?" #f 849 11 849 29 ("module-name" "%%memv" "%%boolean?" "if" "jazz.force-interpreted?" "interpreted?" "let")}}
+    {Lisp-Entry "jazz.module-uptodate-binary?" #f 869 9 869 37 ("bin-uptodate?" "bin" "src" "lambda" "jazz.with-module-src/bin" "module-name")}
+    {Lisp-Entry "jazz.validate-repository-unicity" #f 875 9 875 41 ("%%repository-name" "or" "jazz.error" "jazz.repository-unique?" "%%not" "if" "proc" "module-name" "repository")}
+    {Lisp-Entry "jazz.repository-unique?" #f 882 9 882 32 ("%%cdr" "%%car" "package" "%%null?" "if" "found?" "jazz.repository-packages" "packages" "iter" "let" "proc" "repository")}
+    {Lisp-Entry "jazz.*binary-packages-cache*" #f 900 8 900 36 ("eq?" "test:" "%%make-table")}
+    {Lisp-Entry "jazz.*source-packages-cache*" #f 903 8 903 36 ("eq?" "test:" "%%make-table")}
+    {Lisp-Entry "jazz.cache-package" #f 907 9 907 27 ("%%cons" "%%table-set!" "%%memq" "%%not" "if" "%%table-ref" "packages" "let" "singleton-prefix" "prefix" "lambda" "jazz.with-cached-prefix" "package" "module-name" "cache")}
+    {Lisp-Entry "jazz.cached-packages" #f 915 9 915 29 ("if" "%%table-ref" "or" "singleton-prefix" "prefix" "lambda" "jazz.with-cached-prefix" "module-name" "cache")}
+    {Lisp-Entry "jazz.with-cached-prefix" #f 925 9 925 32 ("0" "%%substring" "%%string->symbol" "1" "%%fx+" "second-period" "if" "jazz.string-find" "first-period" "%%symbol->string" "name" "let" "proc" "module-name")}
+    {Lisp-Entry "jazz.cache-package-roots" #f 937 9 937 33 ("jazz.directory-directories" "jazz.directory-content" "jazz.cache-package" "%%string->symbol" "module-name" "directory" "set!" "regular" "jazz.pathname-type" "case" "%%string-append" "second-path" "second-part" "has-files?" "string-append" "first-dir" "first-part" "lambda" "for-each" "jazz.directory-exists?" "jazz.package-pathname" "toplevel-dir" "jazz.*source-packages-cache*" "jazz.*binary-packages-cache*" "%%package-repository" "%%repository-binary?" "if" "cache" "let" "package")}
+    {Lisp-Entry "jazz.setup-debuggee" #f 965 9 965 28 ("jazz.debuggee.setup" "'jazz.debuggee.setup" "jazz.debugger.jazz.stub-autoload" "'jazz.debugger.jazz.stub-autoload" "jazz.debugger.jazz.stub" "'jazz.debugger.jazz.stub" "jazz.debuggee.stub" "'jazz.debuggee.stub" "jazz.debuggee.Debuggee-Thread" "'jazz.debuggee.Debuggee-Thread" "jazz.debuggee.Debuggee-Stop" "'jazz.debuggee.Debuggee-Stop" "jazz.debuggee.Debuggee-Process" "'jazz.debuggee.Debuggee-Process" "jazz.debuggee.Debuggee-Frame" "'jazz.debuggee.Debuggee-Frame" "jazz.debuggee" "'jazz.debuggee" "jazz" "'jazz" "core.library" "'core.library" "jazz.load-module")}
+    {Lisp-Entry "jazz.find-product-descriptor" #f 984 9 984 37 ("else" "set!" "%%repository-binary?" "jazz.find-product-descriptor" "cond" "jazz.product-descriptor-alias" "alias" "%%package-products" "%%assq" "pair" "package" "%%cdr" "jazz.repository-packages" "packages" "iter" "%%car" "repository" "%%null?" "if" "jazz.Repositories" "repositories" "iter-repo" "binary-descriptor" "let" "name")}
+    {Lisp-Entry "jazz.product-descriptor-name" #f 1007 9 1007 37 ("%%car" "descriptor")}
+    {Lisp-Entry "jazz.product-descriptor-alias" #f 1010 9 1010 38 ("%%cadr" "if" "%%cdr" "alias" "'alias" "%%assq" "pair" "let" "descriptor")}
+    {Lisp-Entry "jazz.product-descriptor-module" #f 1016 9 1016 39 ("%%cadr" "if" "%%cdr" "module" "'module" "%%assq" "pair" "let" "descriptor")}
+    {Lisp-Entry "jazz.product-descriptor-title" #f 1022 9 1022 38 ("%%cadr" "if" "%%cdr" "title" "'title" "%%assq" "pair" "let" "descriptor")}
+    {Lisp-Entry "jazz.product-descriptor-icon" #f 1028 9 1028 37 ("%%cadr" "if" "%%cdr" "icon" "'icon" "%%assq" "pair" "let" "descriptor")}
+    {Lisp-Entry "jazz.product-descriptor-run" #f 1034 9 1034 36 ("if" "%%cdr" "run" "'run" "%%assq" "pair" "let" "descriptor")}
+    {Lisp-Entry "jazz.product-descriptor-update" #f 1040 9 1040 39 ("if" "%%cdr" "update" "'update" "%%assq" "pair" "let" "descriptor")}
+    {Lisp-Entry "jazz.product-descriptor-build" #f 1046 9 1046 38 ("if" "%%cdr" "build" "'build" "%%assq" "pair" "let" "descriptor")}
+    {Lisp-Entry "jazz.product-descriptor-dependencies" #f 1052 9 1052 45 ("if" "%%cdr" "dependencies" "'dependencies" "%%assq" "pair" "let" "descriptor")}
+    {Lisp-Entry "jazz.Products-Table" #f 1059 8 1059 27 ("eq?" "test:" "%%make-table")}
+    {Lisp-Entry "jazz.Products-Run-Table" #f 1062 8 1062 31 ("eq?" "test:" "%%make-table")}
+    {Lisp-Entry "jazz.process-name" #f 1066 8 1066 25 ()}
+    {Lisp-Entry "jazz.process-title" #f 1069 8 1069 26 ()}
+    {Lisp-Entry "jazz.process-icon" #f 1072 8 1072 25 ()}
+    {Lisp-Entry "jazz.process-version" #f 1075 8 1075 28 ()}
+    {Lisp-Entry "jazz.current-process-name" #f 1079 9 1079 34 ("jazz.process-name")}
+    {Lisp-Entry "jazz.current-process-name-set!" #f 1082 9 1082 39 ("jazz.process-name" "set!" "name")}
+    {Lisp-Entry "jazz.current-process-title" #f 1085 9 1085 35 ("jazz.process-title")}
+    {Lisp-Entry "jazz.current-process-title-set!" #f 1088 9 1088 40 ("jazz.process-title" "set!" "title")}
+    {Lisp-Entry "jazz.current-process-icon" #f 1091 9 1091 34 ("jazz.process-icon")}
+    {Lisp-Entry "jazz.current-process-icon-set!" #f 1094 9 1094 39 ("jazz.process-icon" "set!" "icon")}
+    {Lisp-Entry "jazz.current-process-version" #f 1097 9 1097 37 ("jazz.process-version")}
+    {Lisp-Entry "jazz.current-process-version-set!" #f 1100 9 1100 42 ("jazz.process-version" "set!" "version")}
+    {Lisp-Entry "jazz.current-process-present" #f 1104 9 1104 37 ("%%symbol->string" "if" "jazz.current-process-name" "name" "let" "jazz.current-process-title" "or")}
+    {Lisp-Entry "jazz.register-product" #f 1112 9 1112 30 ("jazz.find-product-descriptor" "%%make-product" "jazz.Products-Table" "%%table-set!" "build" "update" "run" "icon" "title" "#!key" "name")}
+    {Lisp-Entry "jazz.get-registered-product" #f 1116 9 1116 36 ("jazz.error" "jazz.Products-Table" "%%table-ref" "or" "name")}
+    {Lisp-Entry "jazz.get-product-descriptor" #f 1121 9 1121 36 ("jazz.error" "if" "jazz.find-product-descriptor" "descriptor" "let" "name")}
+    {Lisp-Entry "jazz.get-product" #f 1128 9 1128 25 ("jazz.build-product-descriptor" "jazz.update-product-descriptor" "%%make-product" "jazz.product-descriptor-icon" "icon" "jazz.product-descriptor-title" "title" "jazz.get-registered-product" "jazz.load-module" "begin" "if" "jazz.product-descriptor-module" "module" "jazz.product-descriptor-name" "jazz.get-product-descriptor" "descriptor" "let" "name")}
+    {Lisp-Entry "jazz.setup-product" #f 1145 9 1145 27 ("jazz.debuggee.update" "'jazz.debuggee.update" "jazz.load-module" "jazz.product-descriptor-icon" "%%product-icon" "jazz.process-icon" "jazz.product-descriptor-title" "%%product-title" "or" "jazz.process-title" "%%product-descriptor" "descriptor" "product" "let" "jazz.setup-debuggee" "jazz.process-name" "set!" "begin" "jazz.get-product" "jazz.debugger" "%%not" "if" "name")}
+    {Lisp-Entry "jazz.register-product-run" #f 1160 9 1160 34 ("jazz.Products-Run-Table" "%%table-set!" "proc" "name")}
+    {Lisp-Entry "jazz.get-registered-run" #f 1164 9 1164 32 ("jazz.error" "jazz.Products-Run-Table" "%%table-ref" "or" "name")}
+    {Lisp-Entry "jazz.run-product" #f 1169 9 1169 25 ("jazz.run-product-descriptor" "if" "%%product-descriptor" "descriptor" "%%product-run" "run" "jazz.setup-product" "product" "let" "name")}
+    {Lisp-Entry "jazz.run-product-descriptor" #f 1178 9 1178 36 ("jazz.error" "jazz.get-registered-run" "proc" "jazz.load-module" "for-each" "begin" "if" "jazz.product-descriptor-run" "run" "jazz.product-descriptor-name" "name" "let" "descriptor")}
+    {Lisp-Entry "jazz.update-product" #f 1189 9 1189 28 ("jazz.update-product-descriptor" "if" "%%product-descriptor" "descriptor" "%%product-update" "update" "jazz.setup-product" "product" "let" "name")}
+    {Lisp-Entry "jazz.update-product-descriptor" #f 1198 9 1198 39 ("jazz.product-descriptor-name" "jazz.error" "jazz.build-module" "for-each" "if" "jazz.product-descriptor-update" "update" "let" "descriptor")}
+    {Lisp-Entry "jazz.build-product" #f 1205 9 1205 27 ("jazz.build-product-descriptor" "if" "core.module.builder" "'core.module.builder" "core.library" "'core.library" "jazz.load-module" "jazz.feedback" "%%product-descriptor" "descriptor" "%%product-build" "build" "jazz.setup-product" "product" "let" "name")}
+    {Lisp-Entry "jazz.build-product-descriptor" #f 1217 9 1217 38 ("%%apply" "jazz.build-image" "%%symbol?" "obj" "lambda" "for-each" "if" "jazz.product-descriptor-build" "build" "let" "jazz.update-product-descriptor" "descriptor")}
+    {Lisp-Entry "jazz.end-make-marker" #f 1228 8 1228 28 ()}
+    {Lisp-Entry "jazz.make-product" #f 1232 9 1232 26 ("dynamic-wind" "current-user-interrupt-handler" "parameterize" "jazz.setup-build" "write" "jazz.debug-build?" "make-thread" "thread-start!" "thread" "map" "thread-join!" "remote-make" "jazz.build-product" "jazz.get-product-descriptor" "jazz.product-descriptor-dependencies" "%%table-set!" "make" "%%table-ref" "not" "subname" "lambda" "for-each" "local-make" "%%substring" "%%string=?" "11" "%%fx>=" "0" "%%fx>" "%%string-length" "count" "jazz.end-make-marker" "equal?" "eof-object?" "%%not" "read-line" "iter" "send-command" "memq" "begin" "and" "if" "jazz" "core" "%%memq" "key-product?" "product-modified?" "build-process-ended" "condition-variable-signal!" "jazz.remove" "build-process-died" "force-output" "newline" "display" "line" "atomic-output" "build" "%%cons" "stderr-redirection:" "stdout-redirection:" "stdin-redirection:" "directory:" "number->string" "arguments:" "path:" "list" "open-process" "%%fx<" "mutex-unlock!" "%%cdr" "set!" "%%car" "process" "%%pair?" "cond" "jazz.build-jobs" "jazz.jobs" "or" "jobs" "%%length" "active-count" "mutex-lock!" "else" "jazz.kernel-install" "%%string-append" "windows" "jazz.kernel-platform" "case" "kernel-path" "grab-build-process" "define" "stop-build?" "'output-mutex" "output-mutex" "'process-condition" "make-condition-variable" "process-condition" "'process-mutex" "process-mutex" "outdated-processes" "free-processes" "active-processes" "'subproduct-table-mutex" "make-mutex" "subproduct-table-mutex" "make-table" "subproduct-table" "let" "name")}
+    {Lisp-Entry "jazz.subprocess-build-products" #f 1367 9 1367 39 ("jazz.build-product" "begin" "if" "read" "product" "iter" "let" "force-output" "newline" "jazz.end-make-marker" "display" "lambda" "current-user-interrupt-handler" "parameterize")}
+    {Lisp-Entry "jazz.resource-pathname" #f 1389 9 1389 31 ("jazz.resource-package-pathname" "%%resource-package" "jazz.package-pathname" "resource")}
+    {Lisp-Entry "jazz.resource-package-pathname" #f 1394 9 1394 39 ("%%string-append" "%%resource-path" "%%not" "if" "%%resource-extension" "ext" "let" "resource")}
+    {Lisp-Entry "jazz.name->path" #f 1401 9 1401 24 ("%%symbol->string" "jazz.string-replace" "resource-name")}
+    {Lisp-Entry "jazz.path->name" #f 1405 9 1405 24 ("jazz.string-replace" "%%string->symbol" "resource-name")}
+    {Lisp-Entry "jazz.manifest-pathname" #f 1414 9 1414 31 ("jazz.Manifest-Extension" "%%resource-path" "%%string-append" "jazz.package-pathname" "resource" "package")}
+    {Lisp-Entry "jazz.load" #f 1428 13 1428 22 ("void" "lambda" "%%load" "%%car" "%%null?" "if" "quiet?" "let" "rest" "pathname")}
+    {Lisp-Entry "jazz.load" #f 1434 13 1434 22 ("load" "rest" "pathname")}
+    {Lisp-Entry "jazz.load-indent" #f 1438 8 1438 24 ("0" "make-parameter")}
+    {Lisp-Entry "jazz.load-resource" #f 1442 9 1442 27 ("jazz.resource-pathname" "jazz.load" "lambda" "jazz.resource-package-pathname" "jazz.load-verbose?" "jazz.with-verbose" "%%car" "%%null?" "if" "quiet?" "let" "rest" "resource")}
+    {Lisp-Entry "jazz.with-verbose" #f 1449 9 1449 26 ("verbose-done" "jazz.done-verbose?" "2" "%%fx+" "jazz.load-indent" "parameterize" "result" "let" "verbose-load" "begin" "if" "proc" "path" "action" "flag")
+      {Lisp-Entry "verbose-load" #f 1450 11 1450 23 ("force-output" "newline" "path" "action" "jazz.load-indent" "make-string" "display")}
+      {Lisp-Entry "verbose-done" #f 1460 11 1460 23 ("force-output" "newline" "jazz.load-indent" "make-string" "display")}}
+    {Lisp-Entry "jazz.walk-for" #f 1479 8 1479 21 ("make-parameter")}
+    {Lisp-Entry "jazz.load-module-src/bin" #f 1483 9 1483 33 ("jazz.error" "else" "jazz.with-extension-reader" "load" "'load" "jazz.walk-for" "jazz.Load-Stack" "pp" "%%memq" "%%pair?" "jazz.feedback" "begin" "jazz.warn-interpreted?" "warn" "jazz.load-resource" "%%string=?" "and" "%%resource-extension" "ext" "%%not" "or" "quiet?" "let" "cond" "if" "jazz.requested-module-resource" "jazz.requested-module-name" "parameterize" "bin-uptodate?" "bin" "src" "lambda" "jazz.with-module-src/bin" "module-name")}
+    {Lisp-Entry "jazz.resource-build-dir" #f 1512 9 1512 32 ("%%package-modules-path" "%%package-library-path" "if" "%%string-append" "jazz.Bin-Repository" "jazz.repository-pathname" "%%package-parent" "parent" "%%resource-path" "jazz.pathname-dir" "dir" "%%resource-package" "package" "let" "resource")}
+    {Lisp-Entry "jazz.Unloaded-State" #f 1528 8 1528 27 ()}
+    {Lisp-Entry "jazz.Loading-State" #f 1531 8 1531 26 ()}
+    {Lisp-Entry "jazz.Loaded-State" #f 1534 8 1534 25 ()}
+    {Lisp-Entry "jazz.Environment" #f 1543 8 1543 24 ("eq?" "test:" "%%make-table")}
+    {Lisp-Entry "jazz.get-environment" #f 1547 9 1547 29 ("jazz.Environment")}
+    {Lisp-Entry "jazz.get-environment-module" #f 1551 9 1551 36 ("jazz.Unloaded-State" "jazz.Environment" "%%table-ref" "name")}
+    {Lisp-Entry "jazz.set-environment-module" #f 1555 9 1555 36 ("jazz.Environment" "%%table-set!" "module" "name")}
+    {Lisp-Entry "jazz.Load-Mutex" #f 1564 8 1564 23 ("load" "'load" "make-mutex")}
+    {Lisp-Entry "jazz.Load-Thread" #f 1567 8 1567 24 ()}
+    {Lisp-Entry "jazz.Load-Stack" #f 1570 8 1570 23 ()}
+    {Lisp-Entry "jazz.requested-module-name" #f 1574 8 1574 34 ("make-parameter")}
+    {Lisp-Entry "jazz.requested-module-resource" #f 1577 8 1577 38 ("make-parameter")}
+    {Lisp-Entry "jazz.get-load-mutex" #f 1581 9 1581 28 ("jazz.Load-Mutex")}
+    {Lisp-Entry "jazz.get-load-stack" #f 1584 9 1584 28 ("jazz.Load-Stack")}
+    {Lisp-Entry "jazz.push-load-stack" #f 1588 9 1588 29 ("%%cons" "jazz.Load-Stack" "set!" "module-name" "mode")}
+    {Lisp-Entry "jazz.pop-load-stack" #f 1592 9 1592 28 ("%%cdr" "jazz.Load-Stack" "set!")}
+    {Lisp-Entry "jazz.call-with-load-lock" #f 1596 9 1596 33 ("mutex-unlock!" "set!" "jazz.Load-Mutex" "mutex-lock!" "lambda" "dynamic-wind" "current-thread" "jazz.Load-Thread" "%%eq?" "if" "thunk")}
+    {Lisp-Entry "jazz.module-loaded?" #f 1609 9 1609 28 ("jazz.Loaded-State" "jazz.get-environment-module" "%%eq?" "module-name")}
+    {Lisp-Entry "jazz.load-module" #f 1613 9 1613 25 ("jazz.pop-load-stack" "jazz.load-module-src/bin" ":load" "':load" "jazz.push-load-stack" "jazz.set-environment-module" "dynamic-wind" "jazz.Unloaded-State" "jazz.error" "jazz.Loading-State" "cond" "lambda" "jazz.call-with-load-lock" "jazz.Loaded-State" "%%eq?" "%%not" "if" "jazz.get-environment-module" "module-state" "let" "module-name")}
+    {Lisp-Entry "jazz.unload-module" #f 1635 9 1635 27 ("jazz.unload-module" "mutex-unlock!" "jazz.Unloaded-State" "jazz.set-environment-module" "begin" "jazz.Load-Mutex" "mutex-lock!" "if" "module-name")}
+    {Lisp-Entry "jazz.reload-module" #f 1644 9 1644 27 ("jazz.load-module" "jazz.unload-module" "module-name")}
+    {Lisp-Entry "jazz.Services" #f 1654 8 1654 21 ("eq?" "test:" "%%make-table")}
+    {Lisp-Entry "jazz.register-service" #f 1658 9 1658 30 ("jazz.Services" "%%table-set!" "thunk" "name")}
+    {Lisp-Entry "jazz.get-service" #f 1662 9 1662 25 ("set!" "jazz.load-module" "begin" "%%symbol?" "if" "jazz.Services" "%%table-ref" "symbol/proc" "let" "name")}
+    {Lisp-Entry "jazz.require-service" #f 1673 9 1673 29 ("error" "jazz.get-service" "or" "name")}
+    {Lisp-Entry "jazz.Literal-Constructors" #f 1683 8 1683 33 ("eq?" "test:" "%%make-table")}
+    {Lisp-Entry "jazz.register-literal-constructor" #f 1687 9 1687 42 ("%%cons" "jazz.Literal-Constructors" "%%table-set!" "constructor" "contructor-name" "name")}
+    {Lisp-Entry "jazz.require-literal-constructor" #f 1691 9 1691 41 ("jazz.error" "jazz.Literal-Constructors" "%%table-ref" "or" "name")}
+    {Lisp-Entry "jazz.define-literal" #f 1696 20 1696 39 ("jazz.global-value" "apply" ",contructor-library" "',contructor-library" "jazz.load-module" "arguments" "lambda" ",contructor-name" "',contructor-name" ",name" "',name" "jazz.register-literal-constructor" "jazz.split-composite" "ignore" "contructor-library" "receive" "contructor-name" "name")}
+    {Lisp-Entry "jazz.construct-literal" #f 1704 9 1704 31 ("jazz.require-literal-constructor" "%%cdr" "constructor" "let" "arguments" "name")}
+    {Lisp-Entry "jazz.Extension-Readers" #f 1714 8 1714 30 ("equal?" "test:" "%%make-table")}
+    {Lisp-Entry "jazz.get-extension-reader" #f 1718 9 1718 34 ("jazz.Extension-Readers" "%%table-ref" "extension")}
+    {Lisp-Entry "jazz.with-extension-reader" #f 1722 9 1722 35 ("current-readtable" "parameterize" "if" "jazz.get-extension-reader" "readtable-getter" "let" "thunk" "extension")}
+    {Lisp-Entry "jazz.register-reader-extension" #f 1730 9 1730 39 ("jazz.Extension-Readers" "%%table-set!" "readtable-getter" "extension")}
+    {Lisp-Entry "jazz.scheme-readtable" #f 1739 8 1739 29 ("%%current-readtable")}})
+"primitives"
+ ({Lisp-File-Entry {File Jazz "kernel" "syntax" "primitives.scm"} 1251388729
+    {Lisp-Entry "%%boolean?" #f 47 23 47 33 ("obj")}
+    {Lisp-Entry "%%not" #f 50 23 50 28 ("##not" ",expr" "not" "jazz.debug-core?" "if" "expr")}
+    {Lisp-Entry "%%box?" #f 65 23 65 29 ("##box?" ",obj" "box?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%box" #f 70 23 70 28 ("##box" ",obj" "box" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%unbox" #f 75 23 75 30 ("##unbox" ",box" "unbox" "jazz.debug-core?" "if" "box")}
+    {Lisp-Entry "%%char?" #f 90 24 90 31 ("##char?" ",obj" "char?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%char=?" #f 95 24 95 32 ("##char=?" ",c2" ",c1" "char=?" "jazz.debug-core?" "if" "c2" "c1")}
+    {Lisp-Entry "%%complex?" #f 110 24 110 34 ("##complex?" ",obj" "complex?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%continuation?" #f 125 23 125 38 ("##continuation?" ",obj" "continuation?" "jazz.debug-core?" "if" "##source-code" "##cadr" "obj" "let" "src" "lambda")}
+    {Lisp-Entry "%%continuation-capture" #f 132 23 132 45 ("##continuation-capture" ",proc" "continuation-capture" "jazz.debug-core?" "if" "##source-code" "##cadr" "proc" "let" "src" "lambda")}
+    {Lisp-Entry "%%continuation-graft" #f 139 23 139 43 ("##continuation-graft" ",proc" ",cont" "continuation-graft" "jazz.debug-core?" "if" "##cddr" "##car" "proc" "##source-code" "##cadr" "cont" "let" "src" "lambda")}
+    {Lisp-Entry "%%continuation-return" #f 147 23 147 44 ("##continuation-return" ",@values" ",cont" "continuation-return" "jazz.debug-core?" "if" "##cddr" "values" "##source-code" "##cadr" "cont" "let" "src" "lambda")}
+    {Lisp-Entry "%%continuation-graft-no-winding" #f 155 23 155 54 ("##continuation-graft-no-winding" ",values" "%%continuation-graft-no-winding" "1" ",cont" "%%check-continuation" "%%force-uniqueness" "values" "cont")}
+    {Lisp-Entry "%%continuation-return-no-winding" #f 160 23 160 55 ("##continuation-return-no-winding" ",values" "%%continuation-return-no-winding" "1" ",cont" "%%check-continuation" "%%force-uniqueness" "values" "cont")}
+    {Lisp-Entry "%%continuation-creator" #f 165 23 165 45 ("##continuation-creator" "%%continuation-creator" "1" ",cont" "%%check-continuation" "%%force-uniqueness" "cont")}
+    {Lisp-Entry "%%continuation-locat" #f 170 23 170 43 ("##continuation-locat" "%%continuation-locat" "1" ",cont" "%%check-continuation" "%%force-uniqueness" "cont")}
+    {Lisp-Entry "%%continuation-locals" #f 175 23 175 44 ("##continuation-locals" "%%continuation-locals" "1" ",cont" "%%check-continuation" "%%force-uniqueness" "cont")}
+    {Lisp-Entry "%%continuation-next" #f 180 23 180 42 ("##continuation-next" "%%continuation-next" "1" ",cont" "%%check-continuation" "%%force-uniqueness" "cont")}
+    {Lisp-Entry "%%continuation-first-frame" #f 185 23 185 49 ("##continuation-first-frame" ",all-frames?" "%%continuation-first-frame" "1" ",cont" "%%check-continuation" "%%force-uniqueness" "all-frames?" "cont")}
+    {Lisp-Entry "%%continuation-next-frame" #f 190 23 190 48 ("##continuation-next-frame" ",all-frames?" "%%continuation-next-frame" "1" ",cont" "%%check-continuation" "%%force-uniqueness" "all-frames?" "cont")}
+    {Lisp-Entry "%%interp-continuation?" #f 195 23 195 45 ("##interp-continuation?" "%%interp-continuation?" "1" ",cont" "%%check-continuation" "%%force-uniqueness" "cont")}
+    {Lisp-Entry "%%procedure?" #f 210 23 210 35 ("##procedure?" ",obj" "procedure?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%apply" #f 215 23 215 30 ("##apply" ",lst" ",proc" "apply" "jazz.debug-core?" "if" "lst" "proc")}
+    {Lisp-Entry "%%eq?" #f 230 23 230 28 ("##eq?" ",y" ",x" "eq?" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%neq?" #f 235 23 235 29 ("y" "x")}
+    {Lisp-Entry "%%eqv?" #f 238 23 238 29 ("##eqv?" ",y" ",x" "eqv?" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%equal?" #f 243 23 243 31 ("##equal?" ",y" ",x" "equal?" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%eq?" #f 249 23 249 28 ("y" "x")}
+    {Lisp-Entry "%%load" #f 260 23 260 29 ("##load" ",quiet?" ",raise-os-exception?" ",clone-cte?" ",script-callback" "%%load" "1" ",path" "%%check-string" "%%force-uniqueness" "quiet?" "raise-os-exception?" "clone-cte?" "script-callback" "path")}
+    {Lisp-Entry "%%fixnum?" #f 275 23 275 32 ("##fixnum?" ",obj" "fixnum?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%fixnum->flonum" #f 280 23 280 39 ("##fixnum->flonum" ",x" "fixnum->flonum" "jazz.debug-core?" "if" "x")}
+    {Lisp-Entry "%%fx=" #f 285 23 285 28 ("##fixnum.=" ",y" ",x" "=" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%fx<" #f 290 23 290 28 ("##fixnum.<" ",y" ",x" "<" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%fx<=" #f 295 23 295 29 ("##fixnum.<=" ",y" ",x" "<=" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%fx>" #f 300 23 300 28 ("##fixnum.>" ",y" ",x" ">" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%fx>=" #f 305 23 305 29 ("##fixnum.>=" ",y" ",x" ">=" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%fx+" #f 310 23 310 28 ("##fixnum.+" ",y" ",x" "+" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%fx-" #f 315 23 315 28 ("##fixnum.-" ",y" ",x" "-" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%fx*" #f 320 23 320 28 ("##fixnum.*" ",y" ",x" "*" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%fxquotient" #f 325 23 325 35 ("##fxquotient" ",y" ",x" "quotient" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%flonum?" #f 338 23 338 32 ("##flonum?" ",obj" "flonum?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%fl=" #f 343 23 343 28 ("##flonum.=" ",y" ",x" "=" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%fl<" #f 348 23 348 28 ("##flonum.<" ",y" ",x" "<" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%fl<=" #f 353 23 353 29 ("##flonum.<=" ",y" ",x" "<=" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%fl>" #f 358 23 358 28 ("##flonum.>" ",y" ",x" ">" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%fl>=" #f 363 23 363 29 ("##flonum.>=" ",y" ",x" ">=" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%fl+" #f 368 23 368 28 ("##flonum.+" ",y" ",x" "+" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%fl-" #f 373 23 373 28 ("##flonum.-" ",y" ",x" "-" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%fl*" #f 378 23 378 28 ("##flonum.*" ",y" ",x" "*" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%fl/" #f 383 23 383 28 ("##flonum./" ",y" ",x" "/" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%fl>" #f 389 23 389 28 ("y" "x")}
+    {Lisp-Entry "%%fl+" #f 392 23 392 28 ("y" "x")}
+    {Lisp-Entry "%%foreign?" #f 403 23 403 33 ("obj")}
+    {Lisp-Entry "%%still-obj-refcount-dec!" #f 406 23 406 48 ("##still-obj-refcount-dec!" "%%still-obj-refcount-dec!" "1" ",foreign" "%%check-foreign" "%%force-uniqueness" "foreign")}
+    {Lisp-Entry "%%still-obj-refcount-inc!" #f 411 23 411 48 ("##still-obj-refcount-inc!" "%%still-obj-refcount-inc!" "1" ",foreign" "%%check-foreign" "%%force-uniqueness" "foreign")}
+    {Lisp-Entry "%%interrupt-handler" #f 426 24 426 43 ("code")}
+    {Lisp-Entry "%%interrupt-vector-set!" #f 429 24 429 47 ("handler" "code")}
+    {Lisp-Entry "%%keyword?" #f 442 24 442 34 ("##keyword?" ",obj" "keyword?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%string->keyword" #f 447 24 447 41 ("##string->keyword" ",str" "string->keyword" "jazz.debug-core?" "if" "str")}
+    {Lisp-Entry "%%keyword->string" #f 452 23 452 40 ("##keyword->string" ",keyword" "keyword->string" "jazz.debug-core?" "if" "keyword")}
+    {Lisp-Entry "%%null?" #f 467 24 467 31 ("##null?" ",obj" "null?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%pair?" #f 472 24 472 31 ("##pair?" ",obj" "pair?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%car" #f 477 24 477 29 ("##car" ",pair" "car" "jazz.debug-core?" "if" "pair")}
+    {Lisp-Entry "%%cdr" #f 482 24 482 29 ("##cdr" ",pair" "cdr" "jazz.debug-core?" "if" "pair")}
+    {Lisp-Entry "%%set-car!" #f 487 24 487 34 ("##set-car!" ",val" ",pair" "set-car!" "jazz.debug-core?" "if" "val" "pair")}
+    {Lisp-Entry "%%set-cdr!" #f 492 24 492 34 ("##set-cdr!" ",val" ",pair" "set-cdr!" "jazz.debug-core?" "if" "val" "pair")}
+    {Lisp-Entry "%%caar" #f 497 24 497 30 ("##caar" ",pair" "caar" "jazz.debug-core?" "if" "pair")}
+    {Lisp-Entry "%%cadr" #f 502 24 502 30 ("##cadr" ",pair" "cadr" "jazz.debug-core?" "if" "pair")}
+    {Lisp-Entry "%%cdar" #f 507 24 507 30 ("##cdar" ",pair" "cdar" "jazz.debug-core?" "if" "pair")}
+    {Lisp-Entry "%%cddr" #f 512 24 512 30 ("##cddr" ",pair" "cddr" "jazz.debug-core?" "if" "pair")}
+    {Lisp-Entry "%%length" #f 517 24 517 32 ("##length" ",lst" "length" "jazz.debug-core?" "if" "lst")}
+    {Lisp-Entry "%%memq" #f 522 24 522 30 ("##memq" ",lst" ",obj" "memq" "jazz.debug-core?" "if" "lst" "obj")}
+    {Lisp-Entry "%%memv" #f 527 24 527 30 ("lst" "obj")}
+    {Lisp-Entry "%%member" #f 530 24 530 32 ("##member" ",lst" ",obj" "member" "jazz.debug-core?" "if" "lst" "obj")}
+    {Lisp-Entry "%%assq" #f 535 24 535 30 ("##assq" ",alist" ",obj" "assq" "jazz.debug-core?" "if" "alist" "obj")}
+    {Lisp-Entry "%%assv" #f 540 24 540 30 ("##assv" ",alist" ",obj" "assv" "jazz.debug-core?" "if" "alist" "obj")}
+    {Lisp-Entry "%%assoc" #f 545 24 545 31 ("##assoc" ",alist" ",obj" "assoc" "jazz.debug-core?" "if" "alist" "obj")}
+    {Lisp-Entry "%%cons" #f 550 24 550 30 ("##cons" ",y" ",x" "cons" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%list" #f 555 24 555 30 ("##list" ",@rest" "list" "jazz.debug-core?" "if" "rest")}
+    {Lisp-Entry "%%append" #f 560 24 560 32 ("##append" ",y" ",x" "append" "jazz.debug-core?" "if" "y" "x")}
+    {Lisp-Entry "%%remove" #f 565 24 565 32 ("##remove" ",elem" "%%remove" "2" ",lst" "%%check-list" "%%force-uniqueness" "lst" "elem")}
+    {Lisp-Entry "%%reverse" #f 570 24 570 33 ("##reverse" ",lst" "reverse" "jazz.debug-core?" "if" "lst")}
+    {Lisp-Entry "%%list->vector" #f 575 24 575 38 ("##list->vector" ",lst" "list->vector" "jazz.debug-core?" "if" "lst")}
+    {Lisp-Entry "%%memq" #f 581 23 581 29 ("lst" "obj")}
+    {Lisp-Entry "%%gc" #f 592 24 592 28 ()}
+    {Lisp-Entry "%%number?" #f 603 24 603 33 ("##number?" ",obj" "number?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%integer?" #f 608 24 608 34 ("##integer?" ",obj" "integer?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%real?" #f 613 24 613 31 ("##real?" ",obj" "real?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%number->string" #f 618 24 618 40 ("##number->string" ",n" "number->string" "jazz.debug-core?" "if" "n")}
+    {Lisp-Entry "%%string->number" #f 623 24 623 40 ("##string->number" ",str" "string->number" "jazz.debug-core?" "if" "str")}
+    {Lisp-Entry "%%port?" #f 638 24 638 31 ("##port?" ",obj" "port?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%eof-object?" #f 643 24 643 37 ("##eof-object?" ",obj" "eof-object?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%input-port-names-set!" #f 648 24 648 47 ("4" "##vector-set!" ",names" "%%input-port-names-set!" "1" ",port" "%%check-port" "%%force-uniqueness" "names" "port")}
+    {Lisp-Entry "%%input-port-line-set!" #f 654 24 654 46 ("##input-port-line-set!" ",line" "%%input-port-line-set!" "1" ",port" "%%check-port" "%%force-uniqueness" "line" "port")}
+    {Lisp-Entry "%%input-port-column-set!" #f 659 24 659 48 ("##input-port-column-set!" ",col" "%%input-port-column-set!" "1" ",port" "%%check-port" "%%force-uniqueness" "col" "port")}
+    {Lisp-Entry "%%read-all-as-a-begin-expr-from-port" #f 664 24 664 60 ("##read-all-as-a-begin-expr-from-port" "2" "%%check-readtable" ",close-port?" ",start-syntax" ",unwrap" ",wrap" ",readtable" "%%read-all-as-a-begin-expr-from-port" "1" ",port" "%%check-port" "%%force-uniqueness" "close-port?" "start-syntax" "unwrap" "wrap" "readtable" "port")}
+    {Lisp-Entry "%%write-string" #f 670 24 670 38 ("##write-string" "2" "%%check-port" ",port" "%%write-string" "1" ",str" "%%check-string" "%%force-uniqueness" "port" "str")}
+    {Lisp-Entry "%%procedure-name" #f 686 24 686 40 ("##procedure-name" "%%procedure-name" "1" ",procedure" "%%check-procedure" "%%force-uniqueness" "procedure")}
+    {Lisp-Entry "%%rational?" #f 701 24 701 35 ("##rational?" ",obj" "rational?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%readenv?" #f 716 24 716 34 ("obj")}
+    {Lisp-Entry "%%readenv-current-filepos" #f 719 24 719 49 ("##readenv-current-filepos" "%%readenv-current-filepos" "1" ",readenv" "%%check-readenv" "%%force-uniqueness" "readenv")}
+    {Lisp-Entry "%%build-list" #f 724 24 724 36 ("##build-list" ",close" ",start-pos" ",allow-improper?" "%%build-list" "1" ",readenv" "%%check-readenv" "%%force-uniqueness" "close" "start-pos" "allow-improper?" "readenv")}
+    {Lisp-Entry "%%read-datum-or-label-or-none-or-dot" #f 729 24 729 60 ("##read-datum-or-label-or-none-or-dot" "%%read-datum-or-label-or-none-or-dot" "1" ",readenv" "%%check-readenv" "%%force-uniqueness" "readenv")}
+    {Lisp-Entry "%%readtable?" #f 744 24 744 36 ("##readtable?" ",obj" "readtable?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%current-readtable" #f 749 24 749 43 ()}
+    {Lisp-Entry "%%readtable-copy" #f 752 24 752 40 ("##readtable-copy" "%%readtable-copy" "1" ",readtable" "%%check-readtable" "%%force-uniqueness" "readtable")}
+    {Lisp-Entry "%%readtable-char-class-set!" #f 757 24 757 51 ("##readtable-char-class-set!" ",handler" ",delimiter?" ",c" "%%readtable-char-class-set!" "1" ",readtable" "%%check-readtable" "%%force-uniqueness" "handler" "delimiter?" "c" "readtable")}
+    {Lisp-Entry "%%readtable-char-sharp-handler-set!" #f 762 24 762 59 ("##readtable-char-sharp-handler-set!" ",handler" ",c" "%%readtable-char-sharp-handler-set!" "1" ",readtable" "%%check-readtable" "%%force-uniqueness" "handler" "c" "readtable")}
+    {Lisp-Entry "%%repl" #f 777 24 777 30 ("write-reason" "#!optional")}
+    {Lisp-Entry "%%thread-repl-context-get!" #f 780 24 780 50 ()}
+    {Lisp-Entry "%%thread-repl-channel-get!" #f 783 24 783 50 ("thread")}
+    {Lisp-Entry "%%repl-channel-result-history-add" #f 786 24 786 57 ("result" "channel")}
+    {Lisp-Entry "%%string?" #f 799 24 799 33 ("##string?" ",obj" "string?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%string=?" #f 804 24 804 34 ("##string=?" ",str2" ",str1" "string=?" "jazz.debug-core?" "if" "str2" "str1")}
+    {Lisp-Entry "%%string-ci=?" #f 809 24 809 37 ("##string-ci=?" ",str2" ",str1" "string-ci=?" "jazz.debug-core?" "if" "str2" "str1")}
+    {Lisp-Entry "%%string<?" #f 814 24 814 34 ("##string<?" ",str2" ",str1" "string<?" "jazz.debug-core?" "if" "str2" "str1")}
+    {Lisp-Entry "%%string-length" #f 819 24 819 39 ("##string-length" ",str" "string-length" "jazz.debug-core?" "if" "str")}
+    {Lisp-Entry "%%string-ref" #f 824 23 824 35 ("##string-ref" ",pos" ",str" "string-ref" "jazz.debug-core?" "if" "pos" "str")}
+    {Lisp-Entry "%%string-set!" #f 829 23 829 36 ("##string-set!" ",val" ",pos" ",str" "string-set!" "jazz.debug-core?" "if" "val" "pos" "str")}
+    {Lisp-Entry "%%substring" #f 834 23 834 34 ("##substring" ",end" ",start" ",str" "substring" "jazz.debug-core?" "if" "end" "start" "str")}
+    {Lisp-Entry "%%string-append" #f 839 23 839 38 ("##string-append" ",@rest" "string-append" "jazz.debug-core?" "if" "rest")}
+    {Lisp-Entry "%%string-shrink!" #f 844 23 844 39 ("##string-shrink!" ",len" "%%string-shrink!" "1" ",str" "%%check-string" "%%force-uniqueness" "len" "str")}
+    {Lisp-Entry "%%structure-type" #f 859 24 859 40 ("structure")}
+    {Lisp-Entry "%%symbol?" #f 872 24 872 33 ("##symbol?" ",obj" "symbol?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%string->symbol" #f 877 24 877 40 ("##string->symbol" ",str" "string->symbol" "jazz.debug-core?" "if" "str")}
+    {Lisp-Entry "%%symbol->string" #f 882 23 882 39 ("##symbol->string" ",symbol" "symbol->string" "jazz.debug-core?" "if" "symbol")}
+    {Lisp-Entry "%%unbound?" #f 887 23 887 33 ("obj")}
+    {Lisp-Entry "%%global-var?" #f 890 23 890 36 ("##global-var?" "%%global-var?" "1" ",symbol" "%%check-symbol" "%%force-uniqueness" "symbol")}
+    {Lisp-Entry "%%global-var-ref" #f 895 23 895 39 ("##global-var-ref" "%%global-var-ref" "1" ",symbol" "%%check-symbol" "%%force-uniqueness" "symbol")}
+    {Lisp-Entry "%%source?" #f 910 24 910 33 ("expr")}
+    {Lisp-Entry "%%source-code" #f 913 24 913 37 ("##source-code" "%%source-code" "1" ",src" "%%check-source" "%%force-uniqueness" "src")}
+    {Lisp-Entry "%%source-locat" #f 918 24 918 38 ("##source-locat" "%%source-locat" "1" ",src" "%%check-source" "%%force-uniqueness" "src")}
+    {Lisp-Entry "%%desourcify" #f 923 24 923 36 ("expr")}
+    {Lisp-Entry "%%make-source" #f 926 24 926 37 ("locat" "code")}
+    {Lisp-Entry "%%sourcify" #f 929 24 929 34 ("##sourcify" ",expr" "%%sourcify" "2" ",src" "%%check-source" "%%force-uniqueness" "src" "expr")}
+    {Lisp-Entry "%%locat?" #f 934 24 934 32 ("expr")}
+    {Lisp-Entry "%%locat-container" #f 937 24 937 41 ("##locat-container" "%%locat-container" "1" ",locat" "%%check-locat" "%%force-uniqueness" "locat")}
+    {Lisp-Entry "%%locat-position" #f 942 24 942 40 ("##locat-position" "%%locat-position" "1" ",locat" "%%check-locat" "%%force-uniqueness" "locat")}
+    {Lisp-Entry "%%container->path" #f 947 24 947 41 ("container")}
+    {Lisp-Entry "%%position->filepos" #f 950 24 950 43 ("position")}
+    {Lisp-Entry "%%filepos-line" #f 953 24 953 38 ("##filepos-line" "%%filepos-line" "1" ",filepos" "%%check-fixnum" "%%force-uniqueness" "filepos")}
+    {Lisp-Entry "%%filepos-col" #f 958 24 958 37 ("##filepos-col" "%%filepos-col" "1" ",filepos" "%%check-fixnum" "%%force-uniqueness" "filepos")}
+    {Lisp-Entry "%%table?" #f 971 24 971 32 ("obj")}
+    {Lisp-Entry "%%make-table" #f 974 24 974 36 ("hash" "eq?" "test" "#!key")}
+    {Lisp-Entry "%%table-ref" #f 979 24 979 35 ("##table-ref" ",default" ",key" ",table" "table-ref" "jazz.debug-core?" "if" "default" "key" "table")}
+    {Lisp-Entry "%%table-set!" #f 984 24 984 36 ("##table-set!" ",value" ",key" ",table" "table-set!" "jazz.debug-core?" "if" "value" "key" "table")}
+    {Lisp-Entry "%%table-clear" #f 989 24 989 37 ("key" "table")}
+    {Lisp-Entry "%%table-keys" #f 992 24 992 36 ("table")}
+    {Lisp-Entry "%%table-length" #f 995 24 995 38 ("table")}
+    {Lisp-Entry "%%iterate-table" #f 998 24 998 39 ("proc" "table")}
+    {Lisp-Entry "%%table-merge!" #f 1001 24 1001 38 ("##table-merge!" ",additions-takes-precedence?" ",additions" ",table" "table-merge!" "jazz.debug-core?" "if" "additions-takes-precedence?" "#!optional" "additions" "table")}
+    {Lisp-Entry "%%list->table" #f 1006 24 1006 37 ("rest" "alist")}
+    {Lisp-Entry "%%table->list" #f 1009 24 1009 37 ("table")}
+    {Lisp-Entry "%%table-entries" #f 1012 24 1012 39 ("table")}
+    {Lisp-Entry "%%copy-table" #f 1015 24 1015 36 ("table")}
+    {Lisp-Entry "%%thread?" #f 1028 24 1028 33 ("obj")}
+    {Lisp-Entry "%%current-thread" #f 1031 24 1031 40 ()}
+    {Lisp-Entry "jazz.Unspecified-Value" #f 1044 12 1044 34 ("void")}
+    {Lisp-Entry "jazz.Unspecified-Value" #f 1048 12 1048 34 ("jazz.unspecified" "'jazz.unspecified" "%%list")}
+    {Lisp-Entry "%%unspecified" #f 1052 20 1052 33 ("'jazz.Unspecified-Value")}
+    {Lisp-Entry "%%unspecified?" #f 1056 20 1056 34 ("value")}
+    {Lisp-Entry "%%specified?" #f 1060 20 1060 32 ("value")}
+    {Lisp-Entry "%%values?" #f 1071 24 1071 33 ("obj")}
+    {Lisp-Entry "%%vector?" #f 1083 24 1083 33 ("##vector?" ",obj" "vector?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%vector" #f 1088 23 1088 31 ("##vector" ",@rest" "vector" "jazz.debug-core?" "if" "rest")}
+    {Lisp-Entry "%%make-vector" #f 1093 23 1093 36 ("##make-vector" ",@rest" ",size" "make-vector" "jazz.debug-core?" "if" "rest" "size")}
+    {Lisp-Entry "%%vector-length" #f 1098 23 1098 38 ("##vector-length" ",vector" "vector-length" "jazz.debug-core?" "if" "vector")}
+    {Lisp-Entry "%%vector-ref" #f 1103 23 1103 35 ("##vector-ref" ",n" ",vector" "vector-ref" "jazz.debug-core?" "if" "n" "vector")}
+    {Lisp-Entry "%%vector-set!" #f 1108 23 1108 36 ("##vector-set!" ",value" ",n" ",vector" "vector-set!" "jazz.debug-core?" "if" "value" "n" "vector")}
+    {Lisp-Entry "%%vector-copy" #f 1113 23 1113 36 ("##vector-copy" ",@rest" ",vector" "vector-copy" "jazz.debug-core?" "if" "rest" "vector")}
+    {Lisp-Entry "%%vector->list" #f 1118 23 1118 37 ("##vector->list" ",vector" "vector->list" "jazz.debug-core?" "if" "vector")}
+    {Lisp-Entry "%%s8vector?" #f 1123 23 1123 34 ("##s8vector?" ",obj" "s8vector?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%u8vector?" #f 1128 23 1128 34 ("##u8vector?" ",obj" "u8vector?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%s16vector?" #f 1133 23 1133 35 ("##s16vector?" ",obj" "s16vector?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%u16vector?" #f 1138 23 1138 35 ("##u16vector?" ",obj" "u16vector?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%s32vector?" #f 1143 23 1143 35 ("##s32vector?" ",obj" "s32vector?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%u32vector?" #f 1148 23 1148 35 ("##u32vector?" ",obj" "u32vector?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%s64vector?" #f 1153 23 1153 35 ("##s64vector?" ",obj" "s64vector?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%u64vector?" #f 1158 23 1158 35 ("##u64vector?" ",obj" "u64vector?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%f32vector?" #f 1163 23 1163 35 ("##f32vector?" ",obj" "f32vector?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%f64vector?" #f 1168 23 1168 35 ("##f64vector?" ",obj" "f64vector?" "jazz.debug-core?" "if" "obj")}
+    {Lisp-Entry "%%vector?" #f 1174 23 1174 32 ("obj")}
+    {Lisp-Entry "%%vector" #f 1177 23 1177 31 ("rest")}
+    {Lisp-Entry "%%make-vector" #f 1180 23 1180 36 ("rest" "size")}
+    {Lisp-Entry "%%vector-length" #f 1183 23 1183 38 ("vector")}
+    {Lisp-Entry "%%vector-ref" #f 1186 23 1186 35 ("n" "vector")}
+    {Lisp-Entry "%%vector-set!" #f 1189 23 1189 36 ("value" "n" "vector")}
+    {Lisp-Entry "%%vector-copy" #f 1192 23 1192 36 ("rest" "vector")}})
+"runtime"
+ ({Lisp-File-Entry {File Jazz "kernel" "syntax" "runtime.scm"} 1251729947
+    {Lisp-Entry "jazz.expand-module-source" #f 45 9 45 34 (",@body" "module" "'module" "jazz.declares" "begin" "jazz.error" "%%neq?" "jazz.requested-module-name" "and" "if" "body" "access" "name" "lambda" "parse" "rest")
+      {Lisp-Entry "parse" #f 46 11 46 16 ("%%cdr" "'public" "%%cddr" "%%cadr" "public" "protected" "%%memq" "if" "%%car" "jazz.source-code" "first" "let" "proc" "rest")}}
+    {Lisp-Entry "jazz.expand-require" #f 66 9 66 28 ("%%desourcify" "src" "jazz.filter-features" ",module-name" "',module-name" "jazz.load-module" "phase" "feature-requirement" "module-name" "jazz.listify" "jazz.parse-require" "require" "lambda" "map" "begin" "jazz.simplify-begin" "rest")}
+    {Lisp-Entry "jazz.parse-require" #f 76 9 76 27 ("'phase" "%%cdar" "set!" "begin" "cond" "'cond" "%%caar" "%%eq?" "%%pair?" "and" "if" "runtime" "'runtime" "phase" "feature-requirement" "%%cdr" "scan" "%%car" "name" "let" "proc" "require")}
+    {Lisp-Entry "jazz.filter-features" #f 98 9 98 29 ("else" "%%cddr" "%%car" "%%cons" "jazz.feature-safisfied?" "%%list" "%%not" "cond" "extract-feature-requirement" "feature-requirement" "let" "invoice" "lambda" "map" "append" "%%apply" "invoices")
+      {Lisp-Entry "extract-feature-requirement" #f 99 11 99 38 ("cond" "'cond" "%%car" "%%eq?" "%%cadr" "%%cdr" "%%null?" "%%not" "%%pair?" "and" "if" "invoice")}}
+    {Lisp-Entry "jazz.feature-safisfied?" #f 119 9 119 32 ("error" "##cond-expand-features" "%%memq" "%%symbol?" "if" "feature-requirement")}})
+"settings"
+ ({Lisp-File-Entry {File Jazz "kernel" "runtime" "settings.scm"} 1250852530
+    {Lisp-Entry "jazz.load-verbose?" #f 45 21 45 39 ()}
+    {Lisp-Entry "jazz.warn-interpreted?" #f 48 21 48 43 ()}
+    {Lisp-Entry "jazz.parse-verbose?" #f 51 21 51 40 ()}
+    {Lisp-Entry "jazz.done-verbose?" #f 54 21 54 39 ()}
+    {Lisp-Entry "jazz.warnings?" #f 64 21 64 35 ()}
+    {Lisp-Entry "jazz.delay-reporting?" #f 68 21 68 42 ()}
+    {Lisp-Entry "jazz.use-print?" #f 78 21 78 36 ()}
+    {Lisp-Entry "jazz.debug-build?" #f 87 21 87 38 ()}
+    {Lisp-Entry "jazz.build-jobs" #f 90 21 90 36 ("1")}
+    {Lisp-Entry "jazz.inline-definitions?" #f 101 24 101 48 ()}
+    {Lisp-Entry "jazz.inline-definitions?" #f 104 24 104 48 ()}
+    {Lisp-Entry "jazz.debug-specializers" #f 108 21 108 44 ()}
+    {Lisp-Entry "jazz.force-interpreted?" #f 112 21 112 44 ()}
+    {Lisp-Entry "jazz.use-debugger?" #f 116 21 116 39 ()}
+    {Lisp-Entry "jazz.profile-walker?" #f 125 21 125 41 ()}
+    {Lisp-Entry "jazz.keep-instances-statistics" #f 134 21 134 51 ()}})
+"setup"
+ ({Lisp-File-Entry {File Jazz "kernel" "runtime" "setup.scm"} 1251729947
     {Lisp-Entry "jazz.compile-module-internal" #f 45 22 45 50 ()}
     {Lisp-Entry "jazz.build-module-internal" #f 46 22 46 48 ()}
-    {Lisp-Entry "jazz.compile-module" #f 49 9 49 28 ("jazz.compile-module-internal" "apply" "core.module.builder" "'core.module.builder" "core.library" "'core.library" "jazz.load-module" "rest")}
-    {Lisp-Entry "jazz.build-module" #f 54 9 54 26 ("jazz.build-module-internal" "apply" "core.module.builder" "'core.module.builder" "core.library" "'core.library" "jazz.load-module" "rest")}
+    {Lisp-Entry "jazz.compile-module" #f 49 9 49 28 ("jazz.compile-module-internal" "%%apply" "core.module.builder" "'core.module.builder" "core.library" "'core.library" "jazz.load-module" "rest")}
+    {Lisp-Entry "jazz.build-module" #f 54 9 54 26 ("jazz.build-module-internal" "%%apply" "core.module.builder" "'core.module.builder" "core.library" "'core.library" "jazz.load-module" "rest")}
     {Lisp-Entry "jazz.path->container-hook" #f 65 9 65 34 ("jazz.find-pathname-module" "path")}
     {Lisp-Entry "jazz.container->path-hook" #f 70 9 70 34 ("else" "jazz.resource-pathname" "if" "jazz.find-module-src" "src" "let" "%%symbol?" "%%string-length" "%%substring" "%%string-append" "jazz.string-starts-with?" "jazz.kernel-source" "jazz.kernel-source-built" "%%string?" "and" "cond" "container")}
     {Lisp-Entry "jazz.container->id-hook" #f 90 9 90 32 ("%%symbol->string" "%%symbol?" "if" "container")}
@@ -570,217 +823,17 @@
     {Lisp-Entry "jazz.jazzini-file" #f 112 8 112 25 ()}
     {Lisp-Entry "jazz.buildini-file" #f 115 8 115 26 ()}
     {Lisp-Entry "jazz.warnings" #f 118 8 118 21 ()}
-    {Lisp-Entry "jazz.process-main" #f 122 9 122 26 ("jazz.repl-main" "else" "force-output" "newline" "begin" "if" "read" "product" "iter" "jazz.compile-module" "jazz.make-product" "jazz.build-product" "jazz.update-product" "with-debug-exception-handler" "process-buildini-file" "jazz.product" "%%string->symbol" "jazz.run-product" "cond" "jazz.setup-repositories" "process-jazzini-file" "jazz.jobs" "jazz.debugger" "set!" "read-argument" "jobs" "debugger" "compile" "make" "build2" "build" "update" "jazz.get-option" "run" "let" "remaining" "options" "lambda" "missing-argument-for-option" "command-line" "%%cdr" "jazz.split-command-line")
-      {Lisp-Entry "missing-argument-for-option" #f 123 11 123 38 ("jazz.repl-main" "%%write-string" "output-port" "lambda" "jazz.warnings" "set!" "opt")}
-      {Lisp-Entry "read-argument" #f 134 11 134 24 ("read" "init:" "%%list" "call-with-input-string" "%%string?" "if" "arg")}
-      {Lisp-Entry "process-jazzini-file" #f 140 11 140 31 ("jazz.load" "jazz.jazzini-file" "file-exists?" "if")}
-      {Lisp-Entry "process-buildini-file" #f 144 11 144 32 ("jazz.load" "jazz.buildini-file" "file-exists?" "if")}
-      {Lisp-Entry "with-debug-exception-handler" #f 148 11 148 39 ("jazz.debug-build?" "console-port" "jazz.debug-exception" "exc" "lambda" "with-exception-handler" "current-exception-handler" "current-handler" "let" "thunk")}}
-    {Lisp-Entry "jazz.repl-main" #f 210 9 210 23 ("force-output" "newline" "jazz.kernel-version" "jazz.present-version" "display" "jazz.warnings" "if" "output-port" "first" "lambda" "%%repl" "current-error-port" "repl-output-port" "current-output-port" "repl-input-port" "current-input-port")}})
-"primitives"
- ({Lisp-File-Entry {File Jazz "kernel" "syntax" "primitives.scm"} 1236190768
-    {Lisp-Entry "%%boolean?" #f 47 23 47 33 ("obj")}
-    {Lisp-Entry "%%not" #f 50 23 50 28 ("##not" ",expr" "not" "jazz.debug-core?" "if" "expr")}
-    {Lisp-Entry "%%char?" #f 65 24 65 31 ("##char?" ",obj" "char?" "jazz.debug-core?" "if" "obj")}
-    {Lisp-Entry "%%char=?" #f 70 24 70 32 ("##char=?" ",c2" ",c1" "char=?" "jazz.debug-core?" "if" "c2" "c1")}
-    {Lisp-Entry "%%complex?" #f 85 24 85 34 ("##complex?" ",obj" "complex?" "jazz.debug-core?" "if" "obj")}
-    {Lisp-Entry "%%continuation?" #f 100 23 100 38 ("##continuation?" ",obj" "continuation?" "jazz.debug-core?" "if" "##source-code" "##cadr" "obj" "let" "src" "lambda")}
-    {Lisp-Entry "%%continuation-capture" #f 107 23 107 45 ("##continuation-capture" ",proc" "continuation-capture" "jazz.debug-core?" "if" "##source-code" "##cadr" "proc" "let" "src" "lambda")}
-    {Lisp-Entry "%%continuation-graft" #f 114 23 114 43 ("##continuation-graft" ",proc" ",cont" "continuation-graft" "jazz.debug-core?" "if" "##cddr" "##car" "proc" "##source-code" "##cadr" "cont" "let" "src" "lambda")}
-    {Lisp-Entry "%%continuation-return" #f 122 23 122 44 ("##continuation-return" ",@values" ",cont" "continuation-return" "jazz.debug-core?" "if" "##cddr" "values" "##source-code" "##cadr" "cont" "let" "src" "lambda")}
-    {Lisp-Entry "%%continuation-graft-no-winding" #f 130 23 130 54 ("##continuation-graft-no-winding" ",values" "%%continuation-graft-no-winding" "1" ",cont" "%%check-continuation" "%%force-uniqueness" "values" "cont")}
-    {Lisp-Entry "%%continuation-return-no-winding" #f 135 23 135 55 ("##continuation-return-no-winding" ",values" "%%continuation-return-no-winding" "1" ",cont" "%%check-continuation" "%%force-uniqueness" "values" "cont")}
-    {Lisp-Entry "%%continuation-creator" #f 140 23 140 45 ("##continuation-creator" "%%continuation-creator" "1" ",cont" "%%check-continuation" "%%force-uniqueness" "cont")}
-    {Lisp-Entry "%%continuation-locat" #f 145 23 145 43 ("##continuation-locat" "%%continuation-locat" "1" ",cont" "%%check-continuation" "%%force-uniqueness" "cont")}
-    {Lisp-Entry "%%continuation-locals" #f 150 23 150 44 ("##continuation-locals" "%%continuation-locals" "1" ",cont" "%%check-continuation" "%%force-uniqueness" "cont")}
-    {Lisp-Entry "%%continuation-next" #f 155 23 155 42 ("##continuation-next" "%%continuation-next" "1" ",cont" "%%check-continuation" "%%force-uniqueness" "cont")}
-    {Lisp-Entry "%%continuation-first-frame" #f 160 23 160 49 ("##continuation-first-frame" ",all-frames?" "%%continuation-first-frame" "1" ",cont" "%%check-continuation" "%%force-uniqueness" "all-frames?" "cont")}
-    {Lisp-Entry "%%continuation-next-frame" #f 165 23 165 48 ("##continuation-next-frame" ",all-frames?" "%%continuation-next-frame" "1" ",cont" "%%check-continuation" "%%force-uniqueness" "all-frames?" "cont")}
-    {Lisp-Entry "%%interp-continuation?" #f 170 23 170 45 ("##interp-continuation?" "%%interp-continuation?" "1" ",cont" "%%check-continuation" "%%force-uniqueness" "cont")}
-    {Lisp-Entry "%%procedure?" #f 185 23 185 35 ("##procedure?" ",obj" "procedure?" "jazz.debug-core?" "if" "obj")}
-    {Lisp-Entry "%%apply" #f 190 23 190 30 ("##apply" ",lst" ",proc" "apply" "jazz.debug-core?" "if" "lst" "proc")}
-    {Lisp-Entry "%%eq?" #f 205 23 205 28 ("##eq?" ",y" ",x" "eq?" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%neq?" #f 210 23 210 29 ("y" "x")}
-    {Lisp-Entry "%%eqv?" #f 213 23 213 29 ("##eqv?" ",y" ",x" "eqv?" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%equal?" #f 218 23 218 31 ("##equal?" ",y" ",x" "equal?" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%eq?" #f 224 23 224 28 ("y" "x")}
-    {Lisp-Entry "%%load" #f 235 23 235 29 ("##load" ",quiet?" ",raise-os-exception?" ",clone-cte?" ",script-callback" "%%load" "1" ",path" "%%check-string" "%%force-uniqueness" "quiet?" "raise-os-exception?" "clone-cte?" "script-callback" "path")}
-    {Lisp-Entry "%%fixnum?" #f 250 23 250 32 ("##fixnum?" ",obj" "fixnum?" "jazz.debug-core?" "if" "obj")}
-    {Lisp-Entry "%%fixnum->flonum" #f 255 23 255 39 ("##fixnum->flonum" ",x" "fixnum->flonum" "jazz.debug-core?" "if" "x")}
-    {Lisp-Entry "%%fx=" #f 260 23 260 28 ("##fixnum.=" ",y" ",x" "=" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%fx<" #f 265 23 265 28 ("##fixnum.<" ",y" ",x" "<" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%fx<=" #f 270 23 270 29 ("##fixnum.<=" ",y" ",x" "<=" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%fx>" #f 275 23 275 28 ("##fixnum.>" ",y" ",x" ">" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%fx>=" #f 280 23 280 29 ("##fixnum.>=" ",y" ",x" ">=" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%fx+" #f 285 23 285 28 ("##fixnum.+" ",y" ",x" "+" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%fx-" #f 290 23 290 28 ("##fixnum.-" ",y" ",x" "-" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%fx*" #f 295 23 295 28 ("##fixnum.*" ",y" ",x" "*" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%fxquotient" #f 300 23 300 35 ("##fxquotient" ",y" ",x" "quotient" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%flonum?" #f 313 23 313 32 ("##flonum?" ",obj" "flonum?" "jazz.debug-core?" "if" "obj")}
-    {Lisp-Entry "%%fl=" #f 318 23 318 28 ("##flonum.=" ",y" ",x" "=" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%fl<" #f 323 23 323 28 ("##flonum.<" ",y" ",x" "<" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%fl<=" #f 328 23 328 29 ("##flonum.<=" ",y" ",x" "<=" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%fl>" #f 333 23 333 28 ("##flonum.>" ",y" ",x" ">" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%fl>=" #f 338 23 338 29 ("##flonum.>=" ",y" ",x" ">=" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%fl+" #f 343 23 343 28 ("##flonum.+" ",y" ",x" "+" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%fl-" #f 348 23 348 28 ("##flonum.-" ",y" ",x" "-" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%fl*" #f 353 23 353 28 ("##flonum.*" ",y" ",x" "*" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%fl/" #f 358 23 358 28 ("##flonum./" ",y" ",x" "/" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%fl>" #f 364 23 364 28 ("y" "x")}
-    {Lisp-Entry "%%fl+" #f 367 23 367 28 ("y" "x")}
-    {Lisp-Entry "%%foreign?" #f 378 23 378 33 ("obj")}
-    {Lisp-Entry "%%still-obj-refcount-dec!" #f 381 23 381 48 ("##still-obj-refcount-dec!" "%%still-obj-refcount-dec!" "1" ",foreign" "%%check-foreign" "%%force-uniqueness" "foreign")}
-    {Lisp-Entry "%%still-obj-refcount-inc!" #f 386 23 386 48 ("##still-obj-refcount-inc!" "%%still-obj-refcount-inc!" "1" ",foreign" "%%check-foreign" "%%force-uniqueness" "foreign")}
-    {Lisp-Entry "%%interrupt-handler" #f 401 24 401 43 ("code")}
-    {Lisp-Entry "%%interrupt-vector-set!" #f 404 24 404 47 ("handler" "code")}
-    {Lisp-Entry "%%keyword?" #f 417 24 417 34 ("##keyword?" ",obj" "keyword?" "jazz.debug-core?" "if" "obj")}
-    {Lisp-Entry "%%string->keyword" #f 422 24 422 41 ("##string->keyword" ",str" "string->keyword" "jazz.debug-core?" "if" "str")}
-    {Lisp-Entry "%%keyword->string" #f 427 23 427 40 ("##keyword->string" ",keyword" "keyword->string" "jazz.debug-core?" "if" "keyword")}
-    {Lisp-Entry "%%null?" #f 442 24 442 31 ("##null?" ",obj" "null?" "jazz.debug-core?" "if" "obj")}
-    {Lisp-Entry "%%pair?" #f 447 24 447 31 ("##pair?" ",obj" "pair?" "jazz.debug-core?" "if" "obj")}
-    {Lisp-Entry "%%car" #f 452 24 452 29 ("##car" ",pair" "car" "jazz.debug-core?" "if" "pair")}
-    {Lisp-Entry "%%cdr" #f 457 24 457 29 ("##cdr" ",pair" "cdr" "jazz.debug-core?" "if" "pair")}
-    {Lisp-Entry "%%set-car!" #f 462 24 462 34 ("##set-car!" ",val" ",pair" "set-car!" "jazz.debug-core?" "if" "val" "pair")}
-    {Lisp-Entry "%%set-cdr!" #f 467 24 467 34 ("##set-cdr!" ",val" ",pair" "set-cdr!" "jazz.debug-core?" "if" "val" "pair")}
-    {Lisp-Entry "%%caar" #f 472 24 472 30 ("##caar" ",pair" "caar" "jazz.debug-core?" "if" "pair")}
-    {Lisp-Entry "%%cadr" #f 477 24 477 30 ("##cadr" ",pair" "cadr" "jazz.debug-core?" "if" "pair")}
-    {Lisp-Entry "%%cdar" #f 482 24 482 30 ("##cdar" ",pair" "cdar" "jazz.debug-core?" "if" "pair")}
-    {Lisp-Entry "%%cddr" #f 487 24 487 30 ("##cddr" ",pair" "cddr" "jazz.debug-core?" "if" "pair")}
-    {Lisp-Entry "%%length" #f 492 24 492 32 ("##length" ",lst" "length" "jazz.debug-core?" "if" "lst")}
-    {Lisp-Entry "%%memq" #f 497 24 497 30 ("##memq" ",lst" ",obj" "memq" "jazz.debug-core?" "if" "lst" "obj")}
-    {Lisp-Entry "%%memv" #f 502 24 502 30 ("lst" "obj")}
-    {Lisp-Entry "%%member" #f 505 24 505 32 ("##member" ",lst" ",obj" "member" "jazz.debug-core?" "if" "lst" "obj")}
-    {Lisp-Entry "%%assq" #f 510 24 510 30 ("##assq" ",alist" ",obj" "assq" "jazz.debug-core?" "if" "alist" "obj")}
-    {Lisp-Entry "%%assv" #f 515 24 515 30 ("##assv" ",alist" ",obj" "assv" "jazz.debug-core?" "if" "alist" "obj")}
-    {Lisp-Entry "%%assoc" #f 520 24 520 31 ("##assoc" ",alist" ",obj" "assoc" "jazz.debug-core?" "if" "alist" "obj")}
-    {Lisp-Entry "%%cons" #f 525 24 525 30 ("##cons" ",y" ",x" "cons" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%list" #f 530 24 530 30 ("##list" ",@rest" "list" "jazz.debug-core?" "if" "rest")}
-    {Lisp-Entry "%%append" #f 535 24 535 32 ("##append" ",y" ",x" "append" "jazz.debug-core?" "if" "y" "x")}
-    {Lisp-Entry "%%remove" #f 540 24 540 32 ("##remove" ",elem" "%%remove" "2" ",lst" "%%check-list" "%%force-uniqueness" "lst" "elem")}
-    {Lisp-Entry "%%reverse" #f 545 24 545 33 ("##reverse" ",lst" "reverse" "jazz.debug-core?" "if" "lst")}
-    {Lisp-Entry "%%list->vector" #f 550 24 550 38 ("##list->vector" ",lst" "list->vector" "jazz.debug-core?" "if" "lst")}
-    {Lisp-Entry "%%memq" #f 556 23 556 29 ("lst" "obj")}
-    {Lisp-Entry "%%gc" #f 567 24 567 28 ()}
-    {Lisp-Entry "%%number?" #f 578 24 578 33 ("##number?" ",obj" "number?" "jazz.debug-core?" "if" "obj")}
-    {Lisp-Entry "%%integer?" #f 583 24 583 34 ("##integer?" ",obj" "integer?" "jazz.debug-core?" "if" "obj")}
-    {Lisp-Entry "%%real?" #f 588 24 588 31 ("##real?" ",obj" "real?" "jazz.debug-core?" "if" "obj")}
-    {Lisp-Entry "%%number->string" #f 593 24 593 40 ("##number->string" ",n" "number->string" "jazz.debug-core?" "if" "n")}
-    {Lisp-Entry "%%port?" #f 608 24 608 31 ("##port?" ",obj" "port?" "jazz.debug-core?" "if" "obj")}
-    {Lisp-Entry "%%eof-object?" #f 613 24 613 37 ("##eof-object?" ",obj" "eof-object?" "jazz.debug-core?" "if" "obj")}
-    {Lisp-Entry "%%input-port-names-set!" #f 618 24 618 47 ("4" "##vector-set!" ",names" "%%input-port-names-set!" "1" ",port" "%%check-port" "%%force-uniqueness" "names" "port")}
-    {Lisp-Entry "%%input-port-line-set!" #f 624 24 624 46 ("##input-port-line-set!" ",line" "%%input-port-line-set!" "1" ",port" "%%check-port" "%%force-uniqueness" "line" "port")}
-    {Lisp-Entry "%%input-port-column-set!" #f 629 24 629 48 ("##input-port-column-set!" ",col" "%%input-port-column-set!" "1" ",port" "%%check-port" "%%force-uniqueness" "col" "port")}
-    {Lisp-Entry "%%read-all-as-a-begin-expr-from-port" #f 634 24 634 60 ("##read-all-as-a-begin-expr-from-port" "2" "%%check-readtable" ",close-port?" ",start-syntax" ",unwrap" ",wrap" ",readtable" "%%read-all-as-a-begin-expr-from-port" "1" ",port" "%%check-port" "%%force-uniqueness" "close-port?" "start-syntax" "unwrap" "wrap" "readtable" "port")}
-    {Lisp-Entry "%%write-string" #f 640 24 640 38 ("##write-string" "2" "%%check-port" ",port" "%%write-string" "1" ",str" "%%check-string" "%%force-uniqueness" "port" "str")}
-    {Lisp-Entry "%%procedure-name" #f 656 24 656 40 ("##procedure-name" "%%procedure-name" "1" ",procedure" "%%check-procedure" "%%force-uniqueness" "procedure")}
-    {Lisp-Entry "%%rational?" #f 671 24 671 35 ("##rational?" ",obj" "rational?" "jazz.debug-core?" "if" "obj")}
-    {Lisp-Entry "%%readenv?" #f 686 24 686 34 ("obj")}
-    {Lisp-Entry "%%readenv-current-filepos" #f 689 24 689 49 ("##readenv-current-filepos" "%%readenv-current-filepos" "1" ",readenv" "%%check-readenv" "%%force-uniqueness" "readenv")}
-    {Lisp-Entry "%%build-list" #f 694 24 694 36 ("##build-list" ",close" ",start-pos" ",allow-improper?" "%%build-list" "1" ",readenv" "%%check-readenv" "%%force-uniqueness" "close" "start-pos" "allow-improper?" "readenv")}
-    {Lisp-Entry "%%read-datum-or-label-or-none-or-dot" #f 699 24 699 60 ("##read-datum-or-label-or-none-or-dot" "%%read-datum-or-label-or-none-or-dot" "1" ",readenv" "%%check-readenv" "%%force-uniqueness" "readenv")}
-    {Lisp-Entry "%%readtable?" #f 714 24 714 36 ("##readtable?" ",obj" "readtable?" "jazz.debug-core?" "if" "obj")}
-    {Lisp-Entry "%%current-readtable" #f 719 24 719 43 ()}
-    {Lisp-Entry "%%readtable-copy" #f 722 24 722 40 ("##readtable-copy" "%%readtable-copy" "1" ",readtable" "%%check-readtable" "%%force-uniqueness" "readtable")}
-    {Lisp-Entry "%%readtable-char-class-set!" #f 727 24 727 51 ("##readtable-char-class-set!" ",handler" ",delimiter?" ",c" "%%readtable-char-class-set!" "1" ",readtable" "%%check-readtable" "%%force-uniqueness" "handler" "delimiter?" "c" "readtable")}
-    {Lisp-Entry "%%readtable-char-sharp-handler-set!" #f 732 24 732 59 ("##readtable-char-sharp-handler-set!" ",handler" ",c" "%%readtable-char-sharp-handler-set!" "1" ",readtable" "%%check-readtable" "%%force-uniqueness" "handler" "c" "readtable")}
-    {Lisp-Entry "%%repl" #f 747 24 747 30 ("write-reason" "#!optional")}
-    {Lisp-Entry "%%thread-repl-context-get!" #f 750 24 750 50 ()}
-    {Lisp-Entry "%%thread-repl-channel-get!" #f 753 24 753 50 ("thread")}
-    {Lisp-Entry "%%repl-channel-result-history-add" #f 756 24 756 57 ("result" "channel")}
-    {Lisp-Entry "%%string?" #f 769 24 769 33 ("##string?" ",obj" "string?" "jazz.debug-core?" "if" "obj")}
-    {Lisp-Entry "%%string=?" #f 774 24 774 34 ("##string=?" ",str2" ",str1" "string=?" "jazz.debug-core?" "if" "str2" "str1")}
-    {Lisp-Entry "%%string-ci=?" #f 779 24 779 37 ("##string-ci=?" ",str2" ",str1" "string-ci=?" "jazz.debug-core?" "if" "str2" "str1")}
-    {Lisp-Entry "%%string-length" #f 784 24 784 39 ("##string-length" ",str" "string-length" "jazz.debug-core?" "if" "str")}
-    {Lisp-Entry "%%string-ref" #f 789 23 789 35 ("##string-ref" ",pos" ",str" "string-ref" "jazz.debug-core?" "if" "pos" "str")}
-    {Lisp-Entry "%%string-set!" #f 794 23 794 36 ("##string-set!" ",val" ",pos" ",str" "string-set!" "jazz.debug-core?" "if" "val" "pos" "str")}
-    {Lisp-Entry "%%substring" #f 799 23 799 34 ("##substring" ",end" ",start" ",str" "substring" "jazz.debug-core?" "if" "end" "start" "str")}
-    {Lisp-Entry "%%string-append" #f 804 23 804 38 ("##string-append" ",@rest" "string-append" "jazz.debug-core?" "if" "rest")}
-    {Lisp-Entry "%%string-shrink!" #f 809 23 809 39 ("##string-shrink!" ",len" "%%string-shrink!" "1" ",str" "%%check-string" "%%force-uniqueness" "len" "str")}
-    {Lisp-Entry "%%structure-type" #f 824 24 824 40 ("structure")}
-    {Lisp-Entry "%%symbol?" #f 837 24 837 33 ("##symbol?" ",obj" "symbol?" "jazz.debug-core?" "if" "obj")}
-    {Lisp-Entry "%%string->symbol" #f 842 24 842 40 ("##string->symbol" ",str" "string->symbol" "jazz.debug-core?" "if" "str")}
-    {Lisp-Entry "%%symbol->string" #f 847 23 847 39 ("##symbol->string" ",symbol" "symbol->string" "jazz.debug-core?" "if" "symbol")}
-    {Lisp-Entry "%%unbound?" #f 852 23 852 33 ("obj")}
-    {Lisp-Entry "%%global-var?" #f 855 23 855 36 ("##global-var?" "%%global-var?" "1" ",symbol" "%%check-symbol" "%%force-uniqueness" "symbol")}
-    {Lisp-Entry "%%global-var-ref" #f 860 23 860 39 ("##global-var-ref" "%%global-var-ref" "1" ",symbol" "%%check-symbol" "%%force-uniqueness" "symbol")}
-    {Lisp-Entry "%%source?" #f 875 24 875 33 ("expr")}
-    {Lisp-Entry "%%source-code" #f 878 24 878 37 ("##source-code" "%%source-code" "1" ",src" "%%check-source" "%%force-uniqueness" "src")}
-    {Lisp-Entry "%%source-locat" #f 883 24 883 38 ("##source-locat" "%%source-locat" "1" ",src" "%%check-source" "%%force-uniqueness" "src")}
-    {Lisp-Entry "%%desourcify" #f 888 24 888 36 ("expr")}
-    {Lisp-Entry "%%make-source" #f 891 24 891 37 ("locat" "code")}
-    {Lisp-Entry "%%sourcify" #f 894 24 894 34 ("##sourcify" ",expr" "%%sourcify" "2" ",src" "%%check-source" "%%force-uniqueness" "src" "expr")}
-    {Lisp-Entry "%%locat?" #f 899 24 899 32 ("expr")}
-    {Lisp-Entry "%%locat-container" #f 902 24 902 41 ("##locat-container" "%%locat-container" "1" ",locat" "%%check-locat" "%%force-uniqueness" "locat")}
-    {Lisp-Entry "%%locat-position" #f 907 24 907 40 ("##locat-position" "%%locat-position" "1" ",locat" "%%check-locat" "%%force-uniqueness" "locat")}
-    {Lisp-Entry "%%container->path" #f 912 24 912 41 ("container")}
-    {Lisp-Entry "%%position->filepos" #f 915 24 915 43 ("position")}
-    {Lisp-Entry "%%filepos-line" #f 918 24 918 38 ("##filepos-line" "%%filepos-line" "1" ",filepos" "%%check-fixnum" "%%force-uniqueness" "filepos")}
-    {Lisp-Entry "%%filepos-col" #f 923 24 923 37 ("##filepos-col" "%%filepos-col" "1" ",filepos" "%%check-fixnum" "%%force-uniqueness" "filepos")}
-    {Lisp-Entry "%%table?" #f 936 24 936 32 ("obj")}
-    {Lisp-Entry "%%make-table" #f 939 24 939 36 ("hash" "eq?" "test" "#!key")}
-    {Lisp-Entry "%%table-ref" #f 944 24 944 35 ("##table-ref" ",default" ",key" ",table" "table-ref" "jazz.debug-core?" "if" "default" "key" "table")}
-    {Lisp-Entry "%%table-set!" #f 949 24 949 36 ("##table-set!" ",value" ",key" ",table" "table-set!" "jazz.debug-core?" "if" "value" "key" "table")}
-    {Lisp-Entry "%%table-clear" #f 954 24 954 37 ("key" "table")}
-    {Lisp-Entry "%%table-keys" #f 957 24 957 36 ("table")}
-    {Lisp-Entry "%%table-length" #f 960 24 960 38 ("table")}
-    {Lisp-Entry "%%iterate-table" #f 963 24 963 39 ("proc" "table")}
-    {Lisp-Entry "%%table-merge!" #f 966 24 966 38 ("##table-merge!" ",additions-takes-precedence?" ",additions" ",table" "table-merge!" "jazz.debug-core?" "if" "additions-takes-precedence?" "#!optional" "additions" "table")}
-    {Lisp-Entry "%%list->table" #f 971 24 971 37 ("test" "alist")}
-    {Lisp-Entry "%%table->list" #f 974 24 974 37 ("table")}
-    {Lisp-Entry "%%table-entries" #f 977 24 977 39 ("table")}
-    {Lisp-Entry "%%copy-table" #f 980 24 980 36 ("table")}
-    {Lisp-Entry "%%thread?" #f 993 24 993 33 ("obj")}
-    {Lisp-Entry "%%current-thread" #f 996 24 996 40 ()}
-    {Lisp-Entry "jazz.Unspecified-Value" #f 1009 12 1009 34 ("void")}
-    {Lisp-Entry "jazz.Unspecified-Value" #f 1013 12 1013 34 ("jazz.unspecified" "'jazz.unspecified" "%%list")}
-    {Lisp-Entry "%%unspecified" #f 1017 20 1017 33 ("'jazz.Unspecified-Value")}
-    {Lisp-Entry "%%unspecified?" #f 1021 20 1021 34 ("value")}
-    {Lisp-Entry "%%specified?" #f 1025 20 1025 32 ("value")}
-    {Lisp-Entry "%%values?" #f 1036 24 1036 33 ("obj")}
-    {Lisp-Entry "%%vector?" #f 1048 24 1048 33 ("##vector?" ",obj" "vector?" "jazz.debug-core?" "if" "obj")}
-    {Lisp-Entry "%%vector" #f 1053 23 1053 31 ("##vector" ",@rest" "vector" "jazz.debug-core?" "if" "rest")}
-    {Lisp-Entry "%%make-vector" #f 1058 23 1058 36 ("##make-vector" ",@rest" ",size" "make-vector" "jazz.debug-core?" "if" "rest" "size")}
-    {Lisp-Entry "%%vector-length" #f 1063 23 1063 38 ("##vector-length" ",vector" "vector-length" "jazz.debug-core?" "if" "vector")}
-    {Lisp-Entry "%%vector-ref" #f 1068 23 1068 35 ("##vector-ref" ",n" ",vector" "vector-ref" "jazz.debug-core?" "if" "n" "vector")}
-    {Lisp-Entry "%%vector-set!" #f 1073 23 1073 36 ("##vector-set!" ",value" ",n" ",vector" "vector-set!" "jazz.debug-core?" "if" "value" "n" "vector")}
-    {Lisp-Entry "%%vector-copy" #f 1078 23 1078 36 ("##vector-copy" ",@rest" ",vector" "vector-copy" "jazz.debug-core?" "if" "rest" "vector")}
-    {Lisp-Entry "%%vector->list" #f 1083 23 1083 37 ("##vector->list" ",vector" "vector->list" "jazz.debug-core?" "if" "vector")}
-    {Lisp-Entry "%%u8vector?" #f 1088 23 1088 34 ("##u8vector?" ",obj" "u8vector?" "jazz.debug-core?" "if" "obj")}
-    {Lisp-Entry "%%vector?" #f 1094 23 1094 32 ("obj")}
-    {Lisp-Entry "%%vector" #f 1097 23 1097 31 ("rest")}
-    {Lisp-Entry "%%make-vector" #f 1100 23 1100 36 ("rest" "size")}
-    {Lisp-Entry "%%vector-length" #f 1103 23 1103 38 ("vector")}
-    {Lisp-Entry "%%vector-ref" #f 1106 23 1106 35 ("n" "vector")}
-    {Lisp-Entry "%%vector-set!" #f 1109 23 1109 36 ("value" "n" "vector")}
-    {Lisp-Entry "%%vector-copy" #f 1112 23 1112 36 ("rest" "vector")}})
-"runtime"
- ({Lisp-File-Entry {File Jazz "kernel" "syntax" "runtime.scm"} 1238328024
-    {Lisp-Entry "jazz.expand-module" #f 45 9 45 27 (",@body" ",module-name" "',module-name" "jazz.load-module" "phase" "feature-requirement" "module-name" "jazz.parse-require" "require" "map" "module" "'module" "jazz.declares" "begin" "body" "requires" "lambda" "parse" "rest" "name")
-      {Lisp-Entry "parse" #f 46 11 46 16 ("%%desourcify" "%%cdr" "jazz.filter-features" "require" "'require" "%%eq?" "%%car" "jazz.source-code" "%%pair?" "and" "if" "proc" "rest")}}
-    {Lisp-Entry "jazz.parse-require" #f 68 9 68 27 ("'phase" "%%cdar" "set!" "begin" "cond" "'cond" "%%caar" "%%eq?" "%%pair?" "and" "if" "runtime" "'runtime" "phase" "feature-requirement" "%%cdr" "scan" "%%car" "name" "let" "proc" "require")}
-    {Lisp-Entry "jazz.filter-features" #f 90 9 90 29 ("else" "%%cddr" "%%car" "%%cons" "jazz.feature-safisfied?" "%%list" "%%not" "cond" "extract-feature-requirement" "feature-requirement" "let" "invoice" "lambda" "map" "append" "apply" "invoices")
-      {Lisp-Entry "extract-feature-requirement" #f 91 11 91 38 ("cond" "'cond" "%%car" "%%eq?" "%%cadr" "%%cdr" "%%null?" "%%not" "%%pair?" "and" "if" "invoice")}}
-    {Lisp-Entry "jazz.feature-safisfied?" #f 111 9 111 32 ("error" "##cond-expand-features" "%%memq" "%%symbol?" "if" "feature-requirement")}})
-"settings"
- ({Lisp-File-Entry {File Jazz "kernel" "runtime" "settings.scm"} 1245592475
-    {Lisp-Entry "jazz.load-verbose?" #f 45 21 45 39 ()}
-    {Lisp-Entry "jazz.load-interpreted?" #f 48 21 48 43 ()}
-    {Lisp-Entry "jazz.warn-interpreted?" #f 51 21 51 43 ()}
-    {Lisp-Entry "jazz.parse-verbose?" #f 54 21 54 40 ()}
-    {Lisp-Entry "jazz.done-verbose?" #f 57 21 57 39 ()}
-    {Lisp-Entry "jazz.warnings?" #f 67 21 67 35 ()}
-    {Lisp-Entry "jazz.delay-reporting?" #f 71 21 71 42 ()}
-    {Lisp-Entry "jazz.use-print?" #f 81 21 81 36 ()}
-    {Lisp-Entry "jazz.debug-build?" #f 90 21 90 38 ()}
-    {Lisp-Entry "jazz.build-jobs" #f 93 21 93 36 ("1")}
-    {Lisp-Entry "jazz.inline-definitions?" #f 104 24 104 48 ()}
-    {Lisp-Entry "jazz.inline-definitions?" #f 107 24 107 48 ()}
-    {Lisp-Entry "jazz.debug-specializers" #f 111 21 111 44 ()}
-    {Lisp-Entry "jazz.use-debugger?" #f 115 21 115 39 ()}
-    {Lisp-Entry "jazz.profile-walker?" #f 124 21 124 41 ()}
-    {Lisp-Entry "jazz.keep-instances-statistics" #f 133 21 133 51 ()}})
+    {Lisp-Entry "jazz.process-jazzini-file" #f 122 9 122 34 ("jazz.load" "jazz.jazzini-file" "file-exists?" "if")}
+    {Lisp-Entry "jazz.library-main" #f 132 9 132 26 ("jazz.setup-repositories" "jazz.process-jazzini-file")}
+    {Lisp-Entry "jazz.executable-main" #f 142 9 142 29 ("jazz.repl-main" "else" "jazz.subprocess-build-products" "jazz.make-product" "jazz.update-product" "jazz.compile-module" "with-debug-exception-handler" "process-buildini-file" "jazz.product" "%%string->symbol" "jazz.run-product" "cond" "jazz.debug-build?" "0" "eqv?" "or" "if" "jazz.setup-repositories" "jazz.process-jazzini-file" "jazz.jobs" "jazz.debugger" "##allow-inner-global-define?" "set!" "number-argument" "jobs" "debugger" "compile" "make" "build" "update" "jazz.get-option" "run" "let" "remaining" "options" "lambda" "missing-argument-for-option" "command-line" "%%cdr" "jazz.split-command-line")
+      {Lisp-Entry "missing-argument-for-option" #f 143 11 143 38 ("jazz.repl-main" "%%write-string" "output-port" "lambda" "jazz.warnings" "set!" "opt")}
+      {Lisp-Entry "number-argument" #f 154 11 154 26 ("%%string->number" "%%string?" "if" "arg")}
+      {Lisp-Entry "symbol-argument" #f 159 11 159 26 ("%%string->symbol" "%%string?" "if" "arg")}
+      {Lisp-Entry "process-buildini-file" #f 164 11 164 32 ("jazz.load" "jazz.buildini-file" "file-exists?" "if")}
+      {Lisp-Entry "with-debug-exception-handler" #f 168 11 168 39 ("console-port" "jazz.debug-exception" "jazz.debug-build?" "%%not" "if" "exc" "lambda" "with-exception-handler" "current-exception-handler" "current-handler" "let" "thunk")}}
+    {Lisp-Entry "jazz.repl-main" #f 223 9 223 23 ("force-output" "newline" "jazz.kernel-version" "jazz.present-version" "display" "jazz.warnings" "if" "output-port" "first" "lambda" "%%repl" "current-error-port" "repl-output-port" "current-output-port" "repl-input-port" "current-input-port")}})
 "syntax"
- ({Lisp-File-Entry {File Jazz "kernel" "syntax" "syntax.scm"} 1246650265
+ ({Lisp-File-Entry {File Jazz "kernel" "syntax" "syntax.scm"} 1251729947
     {Lisp-Entry "jazz.compile-options" #f 45 8 45 28 ()}
     {Lisp-Entry "jazz.define-setting" #f 56 20 56 39 ("set!" ",name" ",expr" ",global" "define" "begin" "symbol->string" "jazz.generate-symbol" "global" "%%car" "%%null?" "if" "expr" "let" "rest" "name")}
     {Lisp-Entry "jazz.define-variable" #f 72 20 72 40 (",expr" "set!" ",name" "define" "begin" "%%car" "%%null?" "if" "expr" "let" "rest" "name")}
@@ -824,8 +877,12 @@
     {Lisp-Entry "%%digest-source-hash-set!" #f 241 20 241 45 ("source-hash" "digest")}
     {Lisp-Entry "%%digest-source-time" #f 244 20 244 40 ("digest")}
     {Lisp-Entry "%%digest-source-time-set!" #f 247 20 247 45 ("source-time" "digest")}
-    {Lisp-Entry "%%make-manifest" #f 256 20 256 35 ("digest" "version" "name")}
+    {Lisp-Entry "%%make-manifest" #f 256 20 256 35 ("references" "digest" "version" "name")}
     {Lisp-Entry "%%manifest-name" #f 260 20 260 35 ("manifest")}
     {Lisp-Entry "%%manifest-version" #f 263 20 263 38 ("manifest")}
-    {Lisp-Entry "%%manifest-digest" #f 266 20 266 37 ("manifest")}
-    {Lisp-Entry "module" #f 275 20 275 26 ("jazz.expand-module" "jazz.error" "jazz.requested-module-name" "eval" "'eval" "jazz.walk-for" "%%neq?" "and" "access" "name" "%%cdr" "'public" "%%cddr" "%%cadr" "public" "protected" "%%memq" "if" "%%car" "jazz.source-code" "first" "let" "proc" "rest" "parse" "define" "form-src" "lambda")}})
+    {Lisp-Entry "%%manifest-version-set!" #f 266 20 266 43 ("version" "manifest")}
+    {Lisp-Entry "%%manifest-digest" #f 269 20 269 37 ("manifest")}
+    {Lisp-Entry "%%manifest-references" #f 272 20 272 41 ("manifest")}
+    {Lisp-Entry "%%manifest-references-set!" #f 275 20 275 46 ("references" "manifest")}
+    {Lisp-Entry "module" #f 284 20 284 26 ("jazz.source-code" "%%cdr" "jazz.expand-module-source" "form-src" "lambda")}
+    {Lisp-Entry "require" #f 289 20 289 27 ("jazz.source-code" "%%cdr" "jazz.expand-require" "form-src" "lambda")}})

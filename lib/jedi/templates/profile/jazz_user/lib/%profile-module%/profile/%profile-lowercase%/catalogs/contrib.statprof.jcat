@@ -1,19 +1,20 @@
 "_statprof"
- ({Lisp-File-Entry {File contrib.statprof "src" "statprof" "_statprof.jazz"} 1246940598
+ ({Lisp-File-Entry {File contrib.statprof "src" "statprof" "_statprof.jazz"} 1247175194
     {Lisp-Entry "statprof" #f 37 9 37 17 ("jazz")
       {Lisp-Entry "active-profile" #f 43 8 43 27 ()}
       {Lisp-Entry "profile-total" #f 44 8 44 26 ()}
       {Lisp-Entry "profile-unknown" #f 45 8 45 28 ()}
       {Lisp-Entry "profile-calls" #f 46 8 46 26 ()}
-      {Lisp-Entry "reset-profile" #f 47 8 47 26 ()}
-      {Lisp-Entry "start-profile" #f 48 8 48 26 ()}
-      {Lisp-Entry "stop-profile" #f 49 8 49 25 ()}
-      {Lisp-Entry "profile-running?" #f 50 8 50 29 ()}}})
+      {Lisp-Entry "new-profile" #f 47 8 47 24 ()}
+      {Lisp-Entry "reset-profile" #f 48 8 48 26 ()}
+      {Lisp-Entry "start-profile" #f 49 8 49 26 ()}
+      {Lisp-Entry "stop-profile" #f 50 8 50 25 ()}
+      {Lisp-Entry "profile-running?" #f 51 8 51 29 ()}}})
 "implementation"
- ({Lisp-File-Entry {File contrib.statprof "src" "statprof" "implementation.scm"} 1246940598
-    {Lisp-Entry "statprof.implementation" #f 10 8 10 31 ("proper-tail-calls" "declare")
-      {Lisp-Entry "profiler-depth" #f 21 21 21 35 ("5")}
-      {Lisp-Entry "make-profile" #f 30 9 30 21 ("equal?" "test:" "make-table" "0" "profile" "'profile" "%%vector" "depth")}
+ ({Lisp-File-Entry {File contrib.statprof "src" "statprof" "implementation.scm"} 1251206746
+    {Lisp-Entry "statprof.implementation" #f 10 18 10 41 ()
+      {Lisp-Entry "profiler-depth" #f 21 21 21 35 ("1")}
+      {Lisp-Entry "make-profile" #f 30 9 30 21 ("equal?" "test:" "%%make-table" "0" "profile" "'profile" "%%vector" "depth")}
       {Lisp-Entry "profile-depth" #f 34 9 34 22 ("1" "%%vector-ref" "profile")}
       {Lisp-Entry "profile-total" #f 37 9 37 22 ("2" "%%vector-ref" "profile")}
       {Lisp-Entry "profile-total-set!" #f 40 9 40 27 ("2" "%%vector-set!" "total" "profile")}
@@ -22,13 +23,15 @@
       {Lisp-Entry "profile-calls" #f 49 9 49 22 ("4" "%%vector-ref" "profile")}
       {Lisp-Entry "*profile*" #f 58 8 58 17 ("profiler-depth" "make-profile")}
       {Lisp-Entry "active-profile" #f 62 9 62 23 ("*profile*")}
-      {Lisp-Entry "profile-reset!" #f 66 9 66 23 ("profile-depth" "make-profile" "*profile*" "set!")}
-      {Lisp-Entry "*profile-running?*" #f 75 8 75 26 ()}
-      {Lisp-Entry "profile-start!" #f 79 9 79 23 ("*profile-running?*" "set!" "profile-heartbeat!" "1" "%%interrupt-vector-set!")}
-      {Lisp-Entry "profile-stop!" #f 83 9 83 22 ("*profile-running?*" "set!" "##thread-heartbeat!" "1" "%%interrupt-vector-set!")}
-      {Lisp-Entry "profile-running?" #f 88 9 88 25 ("*profile-running?*")}
-      {Lisp-Entry "profile-heartbeat!" #f 97 9 97 27 ("register-continuation" "##thread-heartbeat!" "cont" "lambda" "%%continuation-capture")}
-      {Lisp-Entry "register-continuation" #f 104 9 104 30 ("%%fx+" "table-set!" "0" "profile-calls" "table-ref" "actual" "profile-total" "profile-total-set!" "begin" "1" "profile-unknown" "+" "profile-unknown-set!" "not" "if" "*profile*" "profile-depth" "identify-stack" "stack" "let" "cont")}
-      {Lisp-Entry "identify-stack" #f 119 9 119 23 ("0" "identify" "depth" "cont")
-        {Lisp-Entry "identify-location" #f 121 11 121 28 ("list" "%%filepos-col" "col" "%%filepos-line" "line" "%%locat-position" "%%position->filepos" "filepos" "%%locat-container" "%%container->path" "file" "let" "if" "locat")}
-        {Lisp-Entry "identify" #f 132 11 132 19 ("1" "%%fx+" "list" "cons" "%%continuation-next" "identify" "%%continuation-locat" "identify-location" "location" "%%continuation-creator" "creator" "let" "%%fx>=" "depth" "and" "%%not" "or" "if" "count" "stack" "cont")}}}})
+      {Lisp-Entry "profile-new" #f 66 9 66 20 ("profiler-depth" "or" "make-profile" "*profile*" "set!" "depth" "#!key")}
+      {Lisp-Entry "profile-reset!" #f 70 9 70 23 ("profile-depth" "make-profile" "*profile*" "set!")}
+      {Lisp-Entry "*profile-running?*" #f 79 8 79 26 ()}
+      {Lisp-Entry "profile-start!" #f 83 9 83 23 ("*profile-running?*" "set!" "profile-heartbeat!" "1" "%%interrupt-vector-set!")}
+      {Lisp-Entry "profile-stop!" #f 87 9 87 22 ("*profile-running?*" "set!" "##thread-heartbeat!" "1" "%%interrupt-vector-set!")}
+      {Lisp-Entry "profile-running?" #f 92 9 92 25 ("*profile-running?*")}
+      {Lisp-Entry "*in-profile-heartbeat?*" #f 101 8 101 31 ("make-parameter")}
+      {Lisp-Entry "profile-heartbeat!" #f 105 9 105 27 ("register-continuation" "##thread-heartbeat!" "parameterize" "cont" "lambda" "%%continuation-capture" "*in-profile-heartbeat?*" "%%not" "if")}
+      {Lisp-Entry "register-continuation" #f 115 9 115 30 ("%%table-set!" "0" "profile-calls" "%%table-ref" "actual" "profile-total" "profile-total-set!" "begin" "1" "profile-unknown" "%%fx+" "profile-unknown-set!" "%%not" "if" "*profile*" "profile-depth" "identify-stack" "stack" "let" "cont")}
+      {Lisp-Entry "identify-stack" #f 130 9 130 23 ("0" "identify" "depth" "cont")
+        {Lisp-Entry "identify-location" #f 131 11 131 28 ("%%list" "%%filepos-col" "col" "%%filepos-line" "line" "%%locat-position" "%%position->filepos" "filepos" "%%locat-container" "container" "let" "if" "locat")}
+        {Lisp-Entry "identify" #f 142 11 142 19 ("1" "%%fx+" "%%list" "%%cons" "%%continuation-next" "identify" "%%continuation-locat" "identify-location" "location" "%%continuation-creator" "creator" "let" "%%fx>=" "depth" "and" "%%not" "or" "if" "count" "stack" "cont")}}}})

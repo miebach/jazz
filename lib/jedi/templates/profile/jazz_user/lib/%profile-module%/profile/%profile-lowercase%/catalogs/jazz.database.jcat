@@ -1,594 +1,600 @@
 "Connection"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "connection" "Connection.jazz"} 1244915305
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "connection" "Connection.jazz"} 1248797036
     {Lisp-Entry "jazz.database.connection.Connection" #f 37 19 37 54 ("jazz")
-      {Lisp-Entry "Connection" #f 45 7 45 17 ("Object")
-        {Lisp-Entry "data-source" #f 48 8 48 19 ()}
-        {Lisp-Entry "inventory" #f 49 8 49 17 ()}
-        {Lisp-Entry "initialize" #f 52 11 52 21 ("destroy-mandatory" "open" "apply" "setup-connection" "nextmethod" "rest" "data-source")}
-        {Lisp-Entry "setup-connection" #f 59 19 59 35 ()}
-        {Lisp-Entry "destroy" #f 63 11 63 18 ("nextmethod" "destroy-connection")}
-        {Lisp-Entry "destroy-connection" #f 68 19 68 37 ("data-source" "set!" "close" "inventory" "when")}
-        {Lisp-Entry "print" #f 75 11 75 16 ("get-connection-string" "format" "data-source" "when" "function" "self" "print-unreadable" "readably" "printer")}
-        {Lisp-Entry "get-data-source" #f 87 18 87 33 ("data-source")}
-        {Lisp-Entry "get-inventory" #f 91 18 91 31 ("reload-inventory" "apply" "inventory" "either" "rest")}
-        {Lisp-Entry "reload-inventory" #f 95 18 95 34 ("self" "new-inventory" "" "apply" "inventory" "set!" "data-source" "when" "rest")}
-        {Lisp-Entry "open" #f 105 19 105 23 ("data-source~self" "set!" "rest" "data-source")}
-        {Lisp-Entry "get-state" #f 114 26 114 35 ()}
-        {Lisp-Entry "new-request" #f 123 26 123 37 ()}
-        {Lisp-Entry "supports-multirequests?" #f 127 26 127 49 ("data-source" "get-provider" "supports-multirequests?")}
-        {Lisp-Entry "load-request" #f 138 26 138 38 ("load-request" "new-request" "request" "with-closed" "data-class" "data-class:" "max-load" "max-load:" "name" "name:" "command")}
-        {Lisp-Entry "load-multirequest" #f 143 26 143 43 ("load-multirequest" "new-request" "request" "with-closed" "data-classes" "data-classes:" "max-load" "max-load:" "command")}
-        {Lisp-Entry "load-rows" #f 148 26 148 35 ("load-request" "get-rows" "command")}
-        {Lisp-Entry "load-row" #f 152 26 152 34 ("car" "length" "1" "=" "assert" "load-rows" "rows" "let" "command")}
-        {Lisp-Entry "load-value" #f 158 18 158 28 ("car" "get" "length" "1" "=" "assert" "load-rows" "rows" "let" "column" "command")}
-        {Lisp-Entry "load-values" #f 164 18 164 29 ("load-rows" "get" "row" "function" "map" "column" "command")}
-        {Lisp-Entry "execute" #f 175 26 175 33 ("command")}
-        {Lisp-Entry "comment" #f 179 26 179 33 ("parameters" "string")}
-        {Lisp-Entry "begin-transaction" #f 188 26 188 43 ()}
-        {Lisp-Entry "commit-transaction" #f 192 26 192 44 ()}
-        {Lisp-Entry "rollback-transaction" #f 196 26 196 46 ()}
-        {Lisp-Entry "with-transaction" #f 200 18 200 34 ("rollback-transaction" "commit-transaction" "if" "when" "set!" "begin-transaction" "begin" "unwind-protect" "completed?" "started?" "let" "proc")}}}})
+      {Lisp-Entry "Connection" #f 43 7 43 17 ("initialize")
+        {Lisp-Entry "data-source" #f 46 8 46 19 ()}
+        {Lisp-Entry "inventory" #f 47 8 47 17 ()}
+        {Lisp-Entry "initialize" #f 50 11 50 21 ("destroy-mandatory" "open" "apply" "setup-connection" "nextmethod" "rest" "data-source")}
+        {Lisp-Entry "setup-connection" #f 57 19 57 35 ()}
+        {Lisp-Entry "destroy" #f 61 11 61 18 ("nextmethod" "destroy-connection")}
+        {Lisp-Entry "destroy-connection" #f 66 19 66 37 ("data-source" "set!" "close" "inventory" "when")}
+        {Lisp-Entry "print" #f 73 11 73 16 ("get-connection-string" "format" "data-source" "when" "function" "self" "print-unreadable" "readably" "printer")}
+        {Lisp-Entry "get-data-source" #f 85 18 85 33 ("data-source")}
+        {Lisp-Entry "get-inventory" #f 89 18 89 31 ("reload-inventory" "apply" "inventory" "either" "rest")}
+        {Lisp-Entry "reload-inventory" #f 93 18 93 34 ("self" "new-inventory" "" "apply" "inventory" "set!" "data-source" "when" "rest")}
+        {Lisp-Entry "open" #f 103 19 103 23 ("data-source~self" "set!" "rest" "data-source")}
+        {Lisp-Entry "get-state" #f 112 26 112 35 ()}
+        {Lisp-Entry "new-request" #f 121 26 121 37 ()}
+        {Lisp-Entry "supports-multirequests?" #f 125 26 125 49 ("data-source" "get-provider" "supports-multirequests?")}
+        {Lisp-Entry "load-request" #f 136 26 136 38 ("load-request" "new-request" "request" "with-closed" "data-class" "data-class:" "max-load" "max-load:" "name" "name:" "command")}
+        {Lisp-Entry "load-multirequest" #f 141 26 141 43 ("load-multirequest" "new-request" "request" "with-closed" "data-classes" "data-classes:" "max-load" "max-load:" "command")}
+        {Lisp-Entry "load-rows" #f 146 26 146 35 ("load-request" "get-rows" "command")}
+        {Lisp-Entry "load-row" #f 150 26 150 34 ("car" "length" "1" "=" "assert" "load-rows" "rows" "let" "command")}
+        {Lisp-Entry "load-value" #f 156 18 156 28 ("car" "get" "length" "1" "=" "assert" "load-rows" "rows" "let" "column" "command")}
+        {Lisp-Entry "load-values" #f 162 18 162 29 ("load-rows" "get" "row" "function" "map" "column" "command")}
+        {Lisp-Entry "execute" #f 173 26 173 33 ("command")}
+        {Lisp-Entry "comment" #f 177 26 177 33 ("parameters" "string")}
+        {Lisp-Entry "begin-transaction" #f 186 26 186 43 ()}
+        {Lisp-Entry "commit-transaction" #f 190 26 190 44 ()}
+        {Lisp-Entry "rollback-transaction" #f 194 26 194 46 ()}
+        {Lisp-Entry "with-transaction" #f 198 18 198 34 ("rollback-transaction" "commit-transaction" "if" "when" "set!" "begin-transaction" "begin" "unwind-protect" "completed?" "started?" "let" "proc")}}}})
 "Data-Group"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "view" "Data-Group.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "view" "Data-Group.jazz"} 1248797036
     {Lisp-Entry "jazz.database.view.Data-Group" #f 37 19 37 48 ("jazz")
-      {Lisp-Entry "Data-Group" #f 46 7 46 17 ("Group")}}})
+      {Lisp-Entry "Data-Group" #f 43 20 43 30 ()}}})
 "Data-Source-Browser"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "view" "Data-Source-Browser.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "view" "Data-Source-Browser.jazz"} 1248797036
     {Lisp-Entry "jazz.database.view.Data-Source-Browser" #f 37 19 37 57 ("jazz")
-      {Lisp-Entry "Data-Source-Browser" #f 48 7 48 26 ("160" "450" "33" "source" "top-padding:" "2" "left-padding:" "body" "content" "scroller" "on-provider-change" ":form" "Event-Handler" "content-change-handler:" "provider" "edge" "border-type:" "19" "146" "1" "67" "provider-border" "20" "50" "0" "Point" "position:" "title:" "provider-label" "name:" "206" "500" "Dimension" "size:" "View")
-        {Lisp-Entry "provider" #f 51 12 51 20 ("set-provider" "get-provider")}
-        {Lisp-Entry "install" #f 65 11 65 18 ("setup-providers" "nextmethod" "rest")}
-        {Lisp-Entry "get-provider" #f 75 18 75 30 ("provider")}
-        {Lisp-Entry "set-provider" #f 79 18 79 30 ("provider-update" "provider" "set!" "value")}
-        {Lisp-Entry "get-data-source" #f 84 18 84 33 ("get-data-source" "when" "get-data-source-browser" "browser" "let")}
-        {Lisp-Entry "set-data-source" #f 90 18 90 33 ("get-data-source-browser" "set-data-source" "provider-update" "set-value" "get-provider" "external-name" "set!" "set-entry" "null?" "if" "provider" "'provider" "locate" "combo" "let" "source")}
-        {Lisp-Entry "setup-username/password-mode" #f 100 18 100 46 ("setup-username/password-mode" "when" "get-data-source-browser" "browser" "let")}
-        {Lisp-Entry "set-default-focus" #f 111 18 111 35 ()}
-        {Lisp-Entry "on-provider-change" #f 115 11 115 29 ("provider-update" "get-value" "set!" "provider" "'provider" "locate" "combo" "let" "evt")}
-        {Lisp-Entry "on-return-press" #f 121 11 121 26 ("self" "invoke" "return-press-handler" "when" "evt")}
-        {Lisp-Entry "layout" #f 131 11 131 17 ("get-size" "-" "set-size" "33" "0" "Point" "source" "'source" "set-position" "provider-border" "'provider-border" "provider-label" "'provider-label" "locate" "set-visible?" "begin" "provider" "null?" "if")}
-        {Lisp-Entry "validate-content" #f 149 11 149 27 ("when" "get-data-source-browser" "browser" "let" "provider" "'provider" "locate" "validate-content")}
-        {Lisp-Entry "setup-providers" #f 161 11 161 26 ("set-entry" "set-choices" "second" "key:" "Provider" "get-providers" "present" "external-name" "list" "function" "map" "<" "sort" "choices" "provider" "'provider" "locate" "combo" "let")}
-        {Lisp-Entry "get-data-source-browser" #f 178 11 178 34 ("source" "'source" "locate" "first-child")}
-        {Lisp-Entry "provider-update" #f 182 11 182 26 ("layout-view" "parent:" "Provider" "get-provider" "browser-class" "new" "provider" "when" "close-children" "'source" "locate" "source" "let")}}}})
+      {Lisp-Entry "Data-Source-Browser" #f 46 20 46 39 ("160" "450" "33" "source" "top-padding:" "2" "left-padding:" "body" "content" "scroller" "on-provider-change" ":form" "Event-Handler" "content-change-handler:" "provider" "edge" "border-type:" "19" "146" "1" "67" "provider-border" "20" "50" "0" "Point" "position:" "title:" "provider-label" "name:" "206" "500" "Dimension" "size:" "set-provider" "get-provider" "initialize")
+        {Lisp-Entry "provider" #f 49 12 49 20 ()}
+        {Lisp-Entry "install" #f 63 11 63 18 ("setup-providers" "nextmethod" "rest")}
+        {Lisp-Entry "get-provider" #f 73 18 73 30 ("provider")}
+        {Lisp-Entry "set-provider" #f 77 18 77 30 ("provider-update" "provider" "set!" "value")}
+        {Lisp-Entry "get-data-source" #f 82 18 82 33 ("get-data-source" "when" "get-data-source-browser" "browser" "let")}
+        {Lisp-Entry "set-data-source" #f 88 18 88 33 ("get-data-source-browser" "set-data-source" "provider-update" "set-value" "get-provider" "external-name" "set!" "set-entry" "null?" "if" "provider" "'provider" "locate" "combo" "let" "source")}
+        {Lisp-Entry "setup-username/password-mode" #f 98 18 98 46 ("setup-username/password-mode" "when" "get-data-source-browser" "browser" "let")}
+        {Lisp-Entry "set-default-focus" #f 109 18 109 35 ()}
+        {Lisp-Entry "on-provider-change" #f 113 11 113 29 ("provider-update" "get-value" "set!" "provider" "'provider" "locate" "combo" "let" "evt")}
+        {Lisp-Entry "on-return-press" #f 119 11 119 26 ("self" "invoke" "return-press-handler" "when" "evt")}
+        {Lisp-Entry "layout" #f 129 11 129 17 ("get-size" "-" "set-size" "33" "0" "Point" "source" "'source" "set-position" "provider-border" "'provider-border" "provider-label" "'provider-label" "locate" "set-visible?" "begin" "provider" "null?" "if")}
+        {Lisp-Entry "validate-content" #f 147 11 147 27 ("when" "get-data-source-browser" "browser" "let" "provider" "'provider" "locate" "validate-content")}
+        {Lisp-Entry "setup-providers" #f 159 11 159 26 ("set-entry" "set-choices" "second" "key:" "Provider" "get-providers" "present" "external-name" "list" "function" "map" "<" "sort" "choices" "provider" "'provider" "locate" "combo" "let")}
+        {Lisp-Entry "get-data-source-browser" #f 176 11 176 34 ("source" "'source" "locate" "first-child")}
+        {Lisp-Entry "provider-update" #f 180 11 180 26 ("layout-view" "parent:" "Provider" "get-provider" "browser-class" "new" "provider" "when" "close-children" "'source" "locate" "source" "let")}}}})
 "Data-Source-Chooser"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "view" "Data-Source-Chooser.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "view" "Data-Source-Chooser.jazz"} 1248797036
     {Lisp-Entry "jazz.database.view.Data-Source-Chooser" #f 37 19 37 57 ("jazz")
-      {Lisp-Entry "Data-Source-Chooser" #f 49 7 49 26 ("on-cancel" ":host" "195" "cancel" "on-update" ":guest" "Event-Handler" "action-handler:" "default?:" "24" "80" "170" "105" "update" "browser" "0" "22" "Rect" "layout-insets:" "fill" "layout-type:" "116" "604" "44" "-2" "database" "Label" "27" "30" "description" "Caption" "Font" "font:" "16" "350" "9" "10" "Point" "position:" "title:" "title" "name:" "202" "500" "Dimension" "size:" "View")
-        {Lisp-Entry "provider" #f 52 12 52 20 ()}
-        {Lisp-Entry "finish" #f 66 11 66 17 ("target-provider" "setup-browser" "nextmethod" "rest")}
-        {Lisp-Entry "target-provider" #f 71 29 71 44 ("provider")}
-        {Lisp-Entry "host-title" #f 80 16 80 26 ()}
-        {Lisp-Entry "host-size" #f 84 16 84 25 ("250" "650" "Dimension")}
-        {Lisp-Entry "get-provider" #f 93 18 93 30 ("provider")}
-        {Lisp-Entry "set-provider" #f 97 18 97 30 ("get-browser" "set-provider" "provider" "set!" "value")}
-        {Lisp-Entry "get-data-source" #f 102 18 102 33 ("get-browser" "get-data-source")}
-        {Lisp-Entry "set-data-source" #f 106 18 106 33 ("get-browser" "set-data-source" "value")}
-        {Lisp-Entry "get-browser" #f 110 18 110 29 ("browser" "'browser" "locate")}
-        {Lisp-Entry "setup-browser" #f 119 11 119 24 ("set-default-focus" "browser" "'browser" "locate" "set-provider" "provider")}
-        {Lisp-Entry "resize" #f 129 11 129 17 ("cancel" "'cancel" "update" "'update" "move-figure" "database" "'database" "locate" "size-figure" "nextmethod" "dv" "dh")}
-        {Lisp-Entry "get-tab-stops" #f 136 11 136 24 ("get-browser" "get-tab-stops")}
-        {Lisp-Entry "on-return-press" #f 140 11 140 26 ("update-database" "evt")}
-        {Lisp-Entry "on-update" #f 144 11 144 20 ("update-database" "evt")}
-        {Lisp-Entry "on-close" #f 148 11 148 19 ("get-host" "close" "evt")}
-        {Lisp-Entry "update-database" #f 157 29 157 44 ("end-modal" "get-data-source" "source" "get-host" "dialog" "let")}
-        {Lisp-Entry "Header-Color" #f 168 14 168 26 ("255" "blue:" "green:" "120" "red:" "Color" "new")}
-        {Lisp-Entry "draw" #f 172 11 172 15 ("Header-Color" "1" "White" "name:" "Color" "list" "50" "get-width" "0" "Rect" "new" "gradient-fill" "get-size" "size" "let" "lv" "lh" "context" "surface")}}}})
+      {Lisp-Entry "Data-Source-Chooser" #f 47 20 47 39 ("on-cancel" ":host" "195" "cancel" "on-update" ":guest" "Event-Handler" "action-handler:" "default?:" "24" "80" "170" "105" "update" "browser" "0" "22" "Rect" "layout-insets:" "fill" "layout-type:" "116" "604" "44" "-2" "database" "Label" "27" "30" "description" "Caption" "Font" "font:" "16" "350" "9" "10" "Point" "position:" "title:" "title" "name:" "202" "500" "Dimension" "size:" "initialize")
+        {Lisp-Entry "provider" #f 50 12 50 20 ()}
+        {Lisp-Entry "finish" #f 64 11 64 17 ("target-provider" "setup-browser" "nextmethod" "rest")}
+        {Lisp-Entry "target-provider" #f 69 29 69 44 ("provider")}
+        {Lisp-Entry "host-title" #f 78 16 78 26 ()}
+        {Lisp-Entry "host-size" #f 82 16 82 25 ("250" "650" "Dimension")}
+        {Lisp-Entry "get-provider" #f 91 18 91 30 ("provider")}
+        {Lisp-Entry "set-provider" #f 95 18 95 30 ("get-browser" "set-provider" "provider" "set!" "value")}
+        {Lisp-Entry "get-data-source" #f 100 18 100 33 ("get-browser" "get-data-source")}
+        {Lisp-Entry "set-data-source" #f 104 18 104 33 ("get-browser" "set-data-source" "value")}
+        {Lisp-Entry "get-browser" #f 108 18 108 29 ("browser" "'browser" "locate")}
+        {Lisp-Entry "setup-browser" #f 117 11 117 24 ("set-default-focus" "browser" "'browser" "locate" "set-provider" "provider")}
+        {Lisp-Entry "resize" #f 127 11 127 17 ("cancel" "'cancel" "update" "'update" "move-figure" "database" "'database" "locate" "size-figure" "nextmethod" "dv" "dh")}
+        {Lisp-Entry "get-tab-stops" #f 134 11 134 24 ("get-browser" "get-tab-stops")}
+        {Lisp-Entry "on-return-press" #f 138 11 138 26 ("update-database" "evt")}
+        {Lisp-Entry "on-update" #f 142 11 142 20 ("update-database" "evt")}
+        {Lisp-Entry "on-close" #f 146 11 146 19 ("get-host" "close" "evt")}
+        {Lisp-Entry "update-database" #f 155 29 155 44 ("end-modal" "get-data-source" "source" "get-host" "dialog" "let")}
+        {Lisp-Entry "Header-Color" #f 166 14 166 26 ("255" "blue:" "green:" "120" "red:" "Color" "new")}
+        {Lisp-Entry "draw" #f 170 11 170 15 ("Header-Color" "1" "White" "name:" "Color" "list" "50" "get-width" "0" "Rect" "new" "gradient-fill" "get-size" "size" "let" "lv" "lh" "context" "surface")}}}})
 "Data-Source-Widget"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "view" "Data-Source-Widget.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "view" "Data-Source-Widget.jazz"} 1248797036
     {Lisp-Entry "jazz.database.view.Data-Source-Widget" #f 37 19 37 56 ("jazz")
-      {Lisp-Entry "Data-Source-Widget" #f 46 7 46 25 ("Layout-View")
-        {Lisp-Entry "get-data-source" #f 54 26 54 41 ()}
-        {Lisp-Entry "set-data-source" #f 58 26 58 41 ("source")}
-        {Lisp-Entry "setup-username/password-mode" #f 62 26 62 54 ()}
-        {Lisp-Entry "set-default-focus" #f 71 26 71 43 ()}}}})
+      {Lisp-Entry "Data-Source-Widget" #f 43 20 43 38 ()
+        {Lisp-Entry "get-data-source" #f 51 26 51 41 ()}
+        {Lisp-Entry "set-data-source" #f 55 26 55 41 ("source")}
+        {Lisp-Entry "setup-username/password-mode" #f 59 26 59 54 ()}
+        {Lisp-Entry "set-default-focus" #f 68 26 68 43 ()}}}})
 "Datatype-Row"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "designer" "Datatype-Row.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "designer" "Datatype-Row.jazz"} 1248797036
     {Lisp-Entry "jazz.database.designer.Datatype-Row" #f 37 19 37 54 ("jazz")
-      {Lisp-Entry "Datatype-Row" #f 49 7 49 19 ("Combo-Row")
-        {Lisp-Entry "datatype-class" #f 52 12 52 26 ("generate")}
-        {Lisp-Entry "allow-partial-datatype?" #f 53 12 53 35 ("generate")}
-        {Lisp-Entry "systypes" #f 56 8 56 16 ()}
-        {Lisp-Entry "initialize" #f 64 11 64 21 ("systypes" "setup" "get-systypes" "essay" "systypes~self" "allow-partial-datatype?~self" "datatype-class~self" "set!" "nextmethod" "apply" "others" "allow-partial-datatype?" "unavailable-systypes-message" "datatype-class" "bind-keywords" "rest")}
-        {Lisp-Entry "setup" #f 73 11 73 16 ("get-name" "present-format" "list" "systype" "map" "set-choices" "message-box" "combo" "function" "set-choices-updater" "null?" "if" "unavailable-systypes-message" "systypes")}
-        {Lisp-Entry "present" #f 88 11 88 18 ("present" "null?" "if" "type")}
-        {Lisp-Entry "editor-class" #f 99 11 99 23 ("Datatype-Row-Editor")}
-        {Lisp-Entry "get-edited-value" #f 103 11 103 27 ("Datatype" "datatype-class" "either" "new" "scale" "precision" "size" "name" "receive" "when" "parse-content" "parsed" "editor" "get-content" "string" "let*")}
-        {Lisp-Entry "set-edited-value" #f 111 11 111 27 ("present" "editor" "set-content" "value")}
-        {Lisp-Entry "read-content" #f 115 11 115 23 ("separator:" "substitute" "parse-strings" "empty-string?" "not" "string" "function" "collect-if" "content")}
-        {Lisp-Entry "parse-content" #f 121 11 121 24 ("present-format" "format" "parse-error" "null?" "if" "parse-systype" "systype" "name" "let*" "else" "parse-decimal" "3" "parse-variable" "2" "car" "parse-fixed" "1" "0" "length" "case" "read-content" "content" "let" "string")}
-        {Lisp-Entry "present-format" #f 136 11 136 25 ("get-fixed?" "get-sizeable?" "format" "get-precisionable?" "cond" "allow-partial-datatype?" "if" "name" "systype")}
-        {Lisp-Entry "parse-fixed" #f 148 11 148 22 ("values" "present-format" "parse-error" "get-precisionable?" "get-sizeable?" "or" "allow-partial-datatype?" "not" "and" "if" "parse-systype" "systype" "let" "name")}
-        {Lisp-Entry "parse-variable" #f 156 11 156 25 ("present-format" "parse-error" "else" "allow-partial-datatype?" "get-precisionable?" "and" "parse-integer" "values" "get-sizeable?" "cond" "parse-systype" "systype" "let" "precision" "name" "bind" "list")}
-        {Lisp-Entry "parse-decimal" #f 168 11 168 24 ("present-format" "parse-error" "parse-integer" "values" "get-scalable?" "get-precisionable?" "and" "if" "parse-systype" "systype" "let" "scale" "precision" "name" "bind" "list")}
-        {Lisp-Entry "parse-systype" #f 176 11 176 24 ("format" "parse-error" "find-systype" "either" "datatype-class" "when" "name")}
-        {Lisp-Entry "parse-error" #f 182 11 182 22 ("format" "message:" "Parse-Error" "new" "signal" "message")}}
-      {Lisp-Entry "Datatype-Row-Editor" #f 191 7 191 26 ("Combo-Row-Editor")
-        {Lisp-Entry "content-change" #f 194 11 194 25 ("nextmethod" "popup" "'popup" "eq?" "unless" "origin")}
-        {Lisp-Entry "combo-choice" #f 199 11 199 23 ()}
-        {Lisp-Entry "get-entry" #f 203 11 203 20 ("car" "when" "get-content" "value-row" "read-content" "content" "let")}
-        {Lisp-Entry "set-entry" #f 209 11 209 20 ("cdr" "cons" "join" "set-content" "separator:" "parse-strings" "car" "get-content" "value-row" "read-content" "actual" "let" "entry")}}}})
+      {Lisp-Entry "Datatype-Row" #f 45 20 45 32 ("initialize")
+        {Lisp-Entry "datatype-class" #f 48 12 48 26 ()}
+        {Lisp-Entry "get-datatype-class" #f 48 60 48 68 ()}
+        {Lisp-Entry "set-datatype-class" #f 48 60 48 68 ()}
+        {Lisp-Entry "allow-partial-datatype?" #f 49 12 49 35 ()}
+        {Lisp-Entry "get-allow-partial-datatype?" #f 49 60 49 68 ()}
+        {Lisp-Entry "set-allow-partial-datatype?" #f 49 60 49 68 ()}
+        {Lisp-Entry "systypes" #f 52 8 52 16 ()}
+        {Lisp-Entry "initialize" #f 60 11 60 21 ("systypes" "setup" "get-systypes" "essay" "systypes~self" "allow-partial-datatype?~self" "datatype-class~self" "set!" "nextmethod" "apply" "others" "allow-partial-datatype?" "unavailable-systypes-message" "datatype-class" "bind-keywords" "rest")}
+        {Lisp-Entry "setup" #f 69 11 69 16 ("get-name" "present-format" "list" "systype" "map" "set-choices" "message-box" "combo" "function" "set-choices-updater" "null?" "if" "unavailable-systypes-message" "systypes")}
+        {Lisp-Entry "present" #f 84 11 84 18 ("present" "null?" "if" "type")}
+        {Lisp-Entry "editor-class" #f 95 11 95 23 ("Datatype-Row-Editor")}
+        {Lisp-Entry "get-edited-value" #f 99 11 99 27 ("Datatype" "datatype-class" "either" "new" "scale" "precision" "size" "name" "receive" "when" "parse-content" "parsed" "editor" "get-content" "string" "let*")}
+        {Lisp-Entry "set-edited-value" #f 107 11 107 27 ("present" "editor" "set-content" "value")}
+        {Lisp-Entry "read-content" #f 111 11 111 23 ("separator:" "substitute" "parse-strings" "empty-string?" "not" "string" "function" "collect-if" "content")}
+        {Lisp-Entry "parse-content" #f 117 11 117 24 ("present-format" "format" "parse-error" "null?" "if" "parse-systype" "systype" "name" "let*" "else" "parse-decimal" "3" "parse-variable" "2" "car" "parse-fixed" "1" "0" "length" "case" "read-content" "content" "let" "string")}
+        {Lisp-Entry "present-format" #f 132 11 132 25 ("get-fixed?" "get-sizeable?" "format" "get-precisionable?" "cond" "allow-partial-datatype?" "if" "name" "systype")}
+        {Lisp-Entry "parse-fixed" #f 144 11 144 22 ("values" "present-format" "parse-error" "get-precisionable?" "get-sizeable?" "or" "allow-partial-datatype?" "not" "and" "if" "parse-systype" "systype" "let" "name")}
+        {Lisp-Entry "parse-variable" #f 152 11 152 25 ("present-format" "parse-error" "else" "allow-partial-datatype?" "get-precisionable?" "and" "parse-integer" "values" "get-sizeable?" "cond" "parse-systype" "systype" "let" "precision" "name" "bind" "list")}
+        {Lisp-Entry "parse-decimal" #f 164 11 164 24 ("present-format" "parse-error" "parse-integer" "values" "get-scalable?" "get-precisionable?" "and" "if" "parse-systype" "systype" "let" "scale" "precision" "name" "bind" "list")}
+        {Lisp-Entry "parse-systype" #f 172 11 172 24 ("format" "parse-error" "find-systype" "either" "datatype-class" "when" "name")}
+        {Lisp-Entry "parse-error" #f 178 11 178 22 ("format" "message:" "Parse-Error" "new" "signal" "message")}}
+      {Lisp-Entry "Datatype-Row-Editor" #f 187 7 187 26 ()
+        {Lisp-Entry "content-change" #f 190 11 190 25 ("nextmethod" "popup" "'popup" "eq?" "unless" "origin")}
+        {Lisp-Entry "combo-choice" #f 195 11 195 23 ()}
+        {Lisp-Entry "get-entry" #f 199 11 199 20 ("car" "when" "get-content" "value-row" "read-content" "content" "let")}
+        {Lisp-Entry "set-entry" #f 205 11 205 20 ("cdr" "cons" "join" "set-content" "separator:" "parse-strings" "car" "get-content" "value-row" "read-content" "actual" "let" "entry")}}}})
 "Inventory"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory.jazz"} 1248797036
     {Lisp-Entry "jazz.database.inventory.Inventory" #f 37 19 37 52 ("jazz")
-      {Lisp-Entry "Inventory" #f 45 7 45 16 ("Object")
-        {Lisp-Entry "connection" #f 48 8 48 18 ()}
-        {Lisp-Entry "initialize" #f 51 11 51 21 ("destroy-mandatory" "connection" "set!" "nextmethod" "conn")}
-        {Lisp-Entry "destroy" #f 57 11 57 18 ("nextmethod" "connection" "close")}
-        {Lisp-Entry "get-version" #f 67 26 67 37 ()}
-        {Lisp-Entry "type-connection-string" #f 76 26 76 48 ()}
-        {Lisp-Entry "get-connection" #f 85 18 85 32 ("connection")}
-        {Lisp-Entry "get-tables" #f 94 26 94 36 ()}
-        {Lisp-Entry "get-table" #f 98 26 98 35 ("name")}
-        {Lisp-Entry "create-table" #f 102 26 102 38 ("name")}
-        {Lisp-Entry "append-table" #f 106 26 106 38 ("table")}
-        {Lisp-Entry "remove-table" #f 110 26 110 38 ("name")}
-        {Lisp-Entry "columns-ordinal-position-consecutive?" #f 114 26 114 63 ()}
-        {Lisp-Entry "column-supports-property?" #f 118 26 118 51 ("property" "object")}
-        {Lisp-Entry "create-or-modify-view" #f 127 26 127 47 ("append-view" "set-text" "create-view" "new-view" "remove-view" "when" "error?:" "get-view" "view" "with-closed" "text" "name")}
-        {Lisp-Entry "get-views" #f 136 26 136 35 ()}
-        {Lisp-Entry "get-view" #f 140 26 140 34 ("rest" "name")}
-        {Lisp-Entry "create-view" #f 144 26 144 37 ("name")}
-        {Lisp-Entry "append-view" #f 148 26 148 37 ("view")}
-        {Lisp-Entry "remove-view" #f 152 26 152 37 ("name")}
-        {Lisp-Entry "get-relations" #f 161 26 161 39 ()}
-        {Lisp-Entry "get-relation" #f 165 26 165 38 ("name")}
-        {Lisp-Entry "create-relation" #f 169 26 169 41 ("name")}
-        {Lisp-Entry "create-relation-complete" #f 173 26 173 50 ("foreign-fields" "foreign-table" "primary-fields" "primary-table" "name")}
-        {Lisp-Entry "append-relation" #f 177 26 177 41 ("new-relation")}
-        {Lisp-Entry "remove-relation" #f 181 26 181 41 ("relation-name")}
-        {Lisp-Entry "create-or-modify-procedure" #f 190 26 190 52 ("append-procedure" "set-text" "create-procedure" "new-procedure" "remove-procedure" "when" "error?:" "get-procedure" "procedure" "with-closed" "text" "name")}
-        {Lisp-Entry "get-procedures" #f 199 26 199 40 ()}
-        {Lisp-Entry "get-procedure" #f 203 26 203 39 ("rest" "name")}
-        {Lisp-Entry "create-procedure" #f 207 26 207 42 ("name")}
-        {Lisp-Entry "append-procedure" #f 211 26 211 42 ("procedure")}
-        {Lisp-Entry "remove-procedure" #f 215 26 215 42 ("name")}
-        {Lisp-Entry "create-or-modify-trigger" #f 224 26 224 50 ("create-or-modify-trigger" "get-table" "table" "let" "text" "trigger-name" "table-name")}
-        {Lisp-Entry "create-or-modify-constraint" #f 229 26 229 53 ("create-or-modify-constraint" "get-table" "table" "let" "exclude-replication?" "checked?" "text" "constraint-name" "table-name")}}}})
+      {Lisp-Entry "Inventory" #f 43 7 43 16 ()
+        {Lisp-Entry "connection" #f 46 8 46 18 ()}
+        {Lisp-Entry "initialize" #f 49 11 49 21 ("destroy-mandatory" "connection" "set!" "nextmethod" "conn")}
+        {Lisp-Entry "destroy" #f 55 11 55 18 ("nextmethod" "connection" "close")}
+        {Lisp-Entry "get-version" #f 65 26 65 37 ()}
+        {Lisp-Entry "type-connection-string" #f 74 26 74 48 ()}
+        {Lisp-Entry "get-connection" #f 83 18 83 32 ("connection")}
+        {Lisp-Entry "get-tables" #f 92 26 92 36 ()}
+        {Lisp-Entry "get-table" #f 96 26 96 35 ("name")}
+        {Lisp-Entry "create-table" #f 100 26 100 38 ("name")}
+        {Lisp-Entry "append-table" #f 104 26 104 38 ("table")}
+        {Lisp-Entry "remove-table" #f 108 26 108 38 ("name")}
+        {Lisp-Entry "columns-ordinal-position-consecutive?" #f 112 26 112 63 ()}
+        {Lisp-Entry "column-supports-property?" #f 116 26 116 51 ("property" "object")}
+        {Lisp-Entry "create-or-modify-view" #f 125 26 125 47 ("append-view" "set-text" "create-view" "new-view" "remove-view" "when" "error?:" "get-view" "view" "with-closed" "text" "name")}
+        {Lisp-Entry "get-views" #f 134 26 134 35 ()}
+        {Lisp-Entry "get-view" #f 138 26 138 34 ("rest" "name")}
+        {Lisp-Entry "create-view" #f 142 26 142 37 ("name")}
+        {Lisp-Entry "append-view" #f 146 26 146 37 ("view")}
+        {Lisp-Entry "remove-view" #f 150 26 150 37 ("name")}
+        {Lisp-Entry "get-relations" #f 159 26 159 39 ()}
+        {Lisp-Entry "get-relation" #f 163 26 163 38 ("name")}
+        {Lisp-Entry "create-relation" #f 167 26 167 41 ("name")}
+        {Lisp-Entry "create-relation-complete" #f 171 26 171 50 ("foreign-fields" "foreign-table" "primary-fields" "primary-table" "name")}
+        {Lisp-Entry "append-relation" #f 175 26 175 41 ("new-relation")}
+        {Lisp-Entry "remove-relation" #f 179 26 179 41 ("relation-name")}
+        {Lisp-Entry "create-or-modify-procedure" #f 188 26 188 52 ("append-procedure" "set-text" "create-procedure" "new-procedure" "remove-procedure" "when" "error?:" "get-procedure" "procedure" "with-closed" "text" "name")}
+        {Lisp-Entry "get-procedures" #f 197 26 197 40 ()}
+        {Lisp-Entry "get-procedure" #f 201 26 201 39 ("rest" "name")}
+        {Lisp-Entry "create-procedure" #f 205 26 205 42 ("name")}
+        {Lisp-Entry "append-procedure" #f 209 26 209 42 ("procedure")}
+        {Lisp-Entry "remove-procedure" #f 213 26 213 42 ("name")}
+        {Lisp-Entry "create-or-modify-trigger" #f 222 26 222 50 ("create-or-modify-trigger" "get-table" "table" "let" "text" "trigger-name" "table-name")}
+        {Lisp-Entry "create-or-modify-constraint" #f 227 26 227 53 ("create-or-modify-constraint" "get-table" "table" "let" "exclude-replication?" "checked?" "text" "constraint-name" "table-name")}}}})
 "Inventory-Column"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-Column.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-Column.jazz"} 1248797036
     {Lisp-Entry "jazz.database.inventory.Inventory-Column" #f 37 19 37 59 ("jazz")
-      {Lisp-Entry "Inventory-Column" #f 45 7 45 23 ("Object")
-        {Lisp-Entry "inventory" #f 48 8 48 17 ()}
-        {Lisp-Entry "parent" #f 49 8 49 14 ()}
-        {Lisp-Entry "index-column?" #f 50 8 50 21 ()}
-        {Lisp-Entry "initialize" #f 53 11 53 21 ("index-column?~self" "parent~self" "inventory~self" "set!" "nextmethod" "index-column?" "parent" "inventory")}
-        {Lisp-Entry "get-inventory" #f 65 18 65 31 ("inventory")}
-        {Lisp-Entry "get-parent" #f 69 18 69 28 ("parent")}
-        {Lisp-Entry "get-table" #f 73 18 73 27 ("parent")}
-        {Lisp-Entry "get-index-column?" #f 77 18 77 35 ("index-column?")}
-        {Lisp-Entry "get-default-value" #f 86 26 86 43 ()}
-        {Lisp-Entry "set-default-value" #f 90 26 90 43 ("value")}
-        {Lisp-Entry "get-default-value-name" #f 94 26 94 48 ()}
-        {Lisp-Entry "set-default-value-name" #f 98 26 98 48 ("value")}
-        {Lisp-Entry "get-used-defined-datatype" #f 102 26 102 51 ()}
-        {Lisp-Entry "get-datatype" #f 106 26 106 38 ()}
-        {Lisp-Entry "set-datatype" #f 110 26 110 38 ("value")}
-        {Lisp-Entry "get-type" #f 114 26 114 34 ()}
-        {Lisp-Entry "get-size" #f 118 26 118 34 ()}
-        {Lisp-Entry "set-size" #f 122 26 122 34 ("size")}
-        {Lisp-Entry "get-nullable?" #f 126 26 126 39 ()}
-        {Lisp-Entry "set-nullable?" #f 130 26 130 39 ("value")}
-        {Lisp-Entry "get-validation-rule" #f 134 26 134 45 ()}
-        {Lisp-Entry "set-validation-rule" #f 138 26 138 45 ("value")}
-        {Lisp-Entry "get-validation-text" #f 142 26 142 45 ()}
-        {Lisp-Entry "set-validation-text" #f 146 26 146 45 ("value")}
-        {Lisp-Entry "get-allow-zero-length?" #f 150 26 150 48 ()}
-        {Lisp-Entry "set-allow-zero-length?" #f 154 26 154 48 ("value")}
-        {Lisp-Entry "get-description" #f 158 26 158 41 ()}
-        {Lisp-Entry "set-description" #f 162 26 162 41 ("value")}
-        {Lisp-Entry "get-display-format" #f 166 26 166 44 ()}
-        {Lisp-Entry "set-display-format" #f 170 26 170 44 ("value")}
-        {Lisp-Entry "get-ordinal-position" #f 174 26 174 46 ()}
-        {Lisp-Entry "set-ordinal-position" #f 178 26 178 46 ("value")}
-        {Lisp-Entry "get-auto-increment?" #f 182 26 182 45 ()}
-        {Lisp-Entry "set-auto-increment?" #f 186 26 186 45 ("value")}
-        {Lisp-Entry "get-title" #f 190 26 190 35 ()}
-        {Lisp-Entry "get-scale" #f 194 26 194 35 ()}
-        {Lisp-Entry "set-scale" #f 198 26 198 35 ("value")}
-        {Lisp-Entry "get-precision" #f 202 26 202 39 ()}
-        {Lisp-Entry "set-precision" #f 206 26 206 39 ("value")}
-        {Lisp-Entry "get-fixed?" #f 210 26 210 36 ()}
-        {Lisp-Entry "get-order" #f 214 26 214 35 ()}
-        {Lisp-Entry "get-identity?" #f 218 26 218 39 ()}
-        {Lisp-Entry "set-identity?" #f 222 26 222 39 ("value")}
-        {Lisp-Entry "get-identity-replication?" #f 226 26 226 51 ()}
-        {Lisp-Entry "set-identity-replication?" #f 230 26 230 51 ("value")}
-        {Lisp-Entry "get-identity-seed" #f 234 26 234 43 ("0")}
-        {Lisp-Entry "set-identity-seed" #f 238 26 238 43 ("value")}
-        {Lisp-Entry "get-identity-increment" #f 242 26 242 48 ("0")}
-        {Lisp-Entry "set-identity-increment" #f 246 26 246 48 ("value")}
-        {Lisp-Entry "get-row-guid-col?" #f 250 26 250 43 ()}
-        {Lisp-Entry "get-computed?" #f 254 26 254 39 ()}
-        {Lisp-Entry "get-computed-text" #f 258 26 258 43 ()}
-        {Lisp-Entry "get-collation" #f 262 26 262 39 ()}}}})
+      {Lisp-Entry "Inventory-Column" #f 43 7 43 23 ()
+        {Lisp-Entry "inventory" #f 46 8 46 17 ()}
+        {Lisp-Entry "parent" #f 47 8 47 14 ()}
+        {Lisp-Entry "index-column?" #f 48 8 48 21 ()}
+        {Lisp-Entry "initialize" #f 51 11 51 21 ("index-column?~self" "parent~self" "inventory~self" "set!" "nextmethod" "index-column?" "parent" "inventory")}
+        {Lisp-Entry "get-inventory" #f 63 18 63 31 ("inventory")}
+        {Lisp-Entry "get-parent" #f 67 18 67 28 ("parent")}
+        {Lisp-Entry "get-table" #f 71 18 71 27 ("parent")}
+        {Lisp-Entry "get-index-column?" #f 75 18 75 35 ("index-column?")}
+        {Lisp-Entry "get-default-value" #f 84 26 84 43 ()}
+        {Lisp-Entry "set-default-value" #f 88 26 88 43 ("value")}
+        {Lisp-Entry "get-default-value-name" #f 92 26 92 48 ()}
+        {Lisp-Entry "set-default-value-name" #f 96 26 96 48 ("value")}
+        {Lisp-Entry "get-used-defined-datatype" #f 100 26 100 51 ()}
+        {Lisp-Entry "get-datatype" #f 104 26 104 38 ()}
+        {Lisp-Entry "set-datatype" #f 108 26 108 38 ("value")}
+        {Lisp-Entry "get-type" #f 112 26 112 34 ()}
+        {Lisp-Entry "get-size" #f 116 26 116 34 ()}
+        {Lisp-Entry "set-size" #f 120 26 120 34 ("size")}
+        {Lisp-Entry "get-nullable?" #f 124 26 124 39 ()}
+        {Lisp-Entry "set-nullable?" #f 128 26 128 39 ("value")}
+        {Lisp-Entry "get-validation-rule" #f 132 26 132 45 ()}
+        {Lisp-Entry "set-validation-rule" #f 136 26 136 45 ("value")}
+        {Lisp-Entry "get-validation-text" #f 140 26 140 45 ()}
+        {Lisp-Entry "set-validation-text" #f 144 26 144 45 ("value")}
+        {Lisp-Entry "get-allow-zero-length?" #f 148 26 148 48 ()}
+        {Lisp-Entry "set-allow-zero-length?" #f 152 26 152 48 ("value")}
+        {Lisp-Entry "get-description" #f 156 26 156 41 ()}
+        {Lisp-Entry "set-description" #f 160 26 160 41 ("value")}
+        {Lisp-Entry "get-display-format" #f 164 26 164 44 ()}
+        {Lisp-Entry "set-display-format" #f 168 26 168 44 ("value")}
+        {Lisp-Entry "get-ordinal-position" #f 172 26 172 46 ()}
+        {Lisp-Entry "set-ordinal-position" #f 176 26 176 46 ("value")}
+        {Lisp-Entry "get-auto-increment?" #f 180 26 180 45 ()}
+        {Lisp-Entry "set-auto-increment?" #f 184 26 184 45 ("value")}
+        {Lisp-Entry "get-title" #f 188 26 188 35 ()}
+        {Lisp-Entry "get-scale" #f 192 26 192 35 ()}
+        {Lisp-Entry "set-scale" #f 196 26 196 35 ("value")}
+        {Lisp-Entry "get-precision" #f 200 26 200 39 ()}
+        {Lisp-Entry "set-precision" #f 204 26 204 39 ("value")}
+        {Lisp-Entry "get-fixed?" #f 208 26 208 36 ()}
+        {Lisp-Entry "get-order" #f 212 26 212 35 ()}
+        {Lisp-Entry "get-identity?" #f 216 26 216 39 ()}
+        {Lisp-Entry "set-identity?" #f 220 26 220 39 ("value")}
+        {Lisp-Entry "get-identity-replication?" #f 224 26 224 51 ()}
+        {Lisp-Entry "set-identity-replication?" #f 228 26 228 51 ("value")}
+        {Lisp-Entry "get-identity-seed" #f 232 26 232 43 ("0")}
+        {Lisp-Entry "set-identity-seed" #f 236 26 236 43 ("value")}
+        {Lisp-Entry "get-identity-increment" #f 240 26 240 48 ("0")}
+        {Lisp-Entry "set-identity-increment" #f 244 26 244 48 ("value")}
+        {Lisp-Entry "get-row-guid-col?" #f 248 26 248 43 ()}
+        {Lisp-Entry "get-computed?" #f 252 26 252 39 ()}
+        {Lisp-Entry "get-computed-text" #f 256 26 256 43 ()}
+        {Lisp-Entry "get-collation" #f 260 26 260 39 ()}}}})
 "Inventory-Constraint"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-Constraint.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-Constraint.jazz"} 1248797036
     {Lisp-Entry "jazz.database.inventory.Inventory-Constraint" #f 37 19 37 63 ("jazz")
-      {Lisp-Entry "Inventory-Constraint" #f 45 7 45 27 ("Object")
-        {Lisp-Entry "inventory" #f 48 8 48 17 ()}
-        {Lisp-Entry "parent" #f 49 8 49 14 ()}
-        {Lisp-Entry "initialize" #f 52 11 52 21 ("parent~self" "inventory~self" "set!" "nextmethod" "parent" "inventory")}
-        {Lisp-Entry "get-inventory" #f 63 18 63 31 ("inventory")}
-        {Lisp-Entry "get-parent" #f 67 18 67 28 ("parent")}
-        {Lisp-Entry "get-handle" #f 76 26 76 36 ()}
-        {Lisp-Entry "get-title" #f 80 26 80 35 ()}
-        {Lisp-Entry "get-text" #f 84 26 84 34 ()}
-        {Lisp-Entry "set-text" #f 88 26 88 34 ("value")}
-        {Lisp-Entry "get-checked?" #f 92 26 92 38 ()}
-        {Lisp-Entry "set-checked?" #f 96 26 96 38 ("value")}
-        {Lisp-Entry "get-exclude-replication?" #f 100 26 100 50 ()}
-        {Lisp-Entry "set-exclude-replication?" #f 104 26 104 50 ("value")}}}})
+      {Lisp-Entry "Inventory-Constraint" #f 43 7 43 27 ()
+        {Lisp-Entry "inventory" #f 46 8 46 17 ()}
+        {Lisp-Entry "parent" #f 47 8 47 14 ()}
+        {Lisp-Entry "initialize" #f 50 11 50 21 ("parent~self" "inventory~self" "set!" "nextmethod" "parent" "inventory")}
+        {Lisp-Entry "get-inventory" #f 61 18 61 31 ("inventory")}
+        {Lisp-Entry "get-parent" #f 65 18 65 28 ("parent")}
+        {Lisp-Entry "get-handle" #f 74 26 74 36 ()}
+        {Lisp-Entry "get-title" #f 78 26 78 35 ()}
+        {Lisp-Entry "get-text" #f 82 26 82 34 ()}
+        {Lisp-Entry "set-text" #f 86 26 86 34 ("value")}
+        {Lisp-Entry "get-checked?" #f 90 26 90 38 ()}
+        {Lisp-Entry "set-checked?" #f 94 26 94 38 ("value")}
+        {Lisp-Entry "get-exclude-replication?" #f 98 26 98 50 ()}
+        {Lisp-Entry "set-exclude-replication?" #f 102 26 102 50 ("value")}}}})
 "Inventory-Index"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-Index.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-Index.jazz"} 1248797036
     {Lisp-Entry "jazz.database.inventory.Inventory-Index" #f 37 19 37 58 ("jazz")
-      {Lisp-Entry "Inventory-Index" #f 45 7 45 22 ("Object")
-        {Lisp-Entry "inventory" #f 48 8 48 17 ()}
-        {Lisp-Entry "parent" #f 49 8 49 14 ()}
-        {Lisp-Entry "initialize" #f 52 11 52 21 ("parent~self" "inventory~self" "set!" "nextmethod" "parent" "inventory")}
-        {Lisp-Entry "get-inventory" #f 63 18 63 31 ("inventory")}
-        {Lisp-Entry "get-parent" #f 67 18 67 28 ("parent")}
-        {Lisp-Entry "get-title" #f 76 26 76 35 ()}
-        {Lisp-Entry "get-unique?" #f 80 26 80 37 ()}
-        {Lisp-Entry "set-unique?" #f 84 26 84 37 ("value")}
-        {Lisp-Entry "get-required?" #f 88 26 88 39 ()}
-        {Lisp-Entry "get-ignore-nulls?" #f 92 26 92 43 ()}
-        {Lisp-Entry "get-fields" #f 96 26 96 36 ()}
-        {Lisp-Entry "get-fields/orders" #f 100 26 100 43 ("get-order" "get-title" "list" "field" "function" "map" "get-fields" "fields" "with-closed")}
-        {Lisp-Entry "set-fields/orders" #f 107 26 107 43 ("value")}
-        {Lisp-Entry "get-ignore-duplicates?" #f 111 26 111 48 ()}
-        {Lisp-Entry "get-clustered?" #f 115 26 115 40 ()}
-        {Lisp-Entry "get-pad-index?" #f 119 26 119 40 ()}
-        {Lisp-Entry "get-recompute-statistics?" #f 123 26 123 51 ()}
-        {Lisp-Entry "get-fill-factor" #f 127 26 127 41 ("0")}}}})
+      {Lisp-Entry "Inventory-Index" #f 43 7 43 22 ()
+        {Lisp-Entry "inventory" #f 46 8 46 17 ()}
+        {Lisp-Entry "parent" #f 47 8 47 14 ()}
+        {Lisp-Entry "initialize" #f 50 11 50 21 ("parent~self" "inventory~self" "set!" "nextmethod" "parent" "inventory")}
+        {Lisp-Entry "get-inventory" #f 61 18 61 31 ("inventory")}
+        {Lisp-Entry "get-parent" #f 65 18 65 28 ("parent")}
+        {Lisp-Entry "get-title" #f 74 26 74 35 ()}
+        {Lisp-Entry "get-unique?" #f 78 26 78 37 ()}
+        {Lisp-Entry "set-unique?" #f 82 26 82 37 ("value")}
+        {Lisp-Entry "get-required?" #f 86 26 86 39 ()}
+        {Lisp-Entry "get-ignore-nulls?" #f 90 26 90 43 ()}
+        {Lisp-Entry "get-fields" #f 94 26 94 36 ()}
+        {Lisp-Entry "get-fields/orders" #f 98 26 98 43 ("get-order" "get-title" "list" "field" "function" "map" "get-fields" "fields" "with-closed")}
+        {Lisp-Entry "set-fields/orders" #f 105 26 105 43 ("value")}
+        {Lisp-Entry "get-ignore-duplicates?" #f 109 26 109 48 ()}
+        {Lisp-Entry "get-clustered?" #f 113 26 113 40 ()}
+        {Lisp-Entry "get-pad-index?" #f 117 26 117 40 ()}
+        {Lisp-Entry "get-recompute-statistics?" #f 121 26 121 51 ()}
+        {Lisp-Entry "get-fill-factor" #f 125 26 125 41 ("0")}}}})
 "Inventory-Primary-Key"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-Primary-Key.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-Primary-Key.jazz"} 1248797036
     {Lisp-Entry "jazz.database.inventory.Inventory-Primary-Key" #f 37 19 37 64 ("jazz")
-      {Lisp-Entry "Inventory-Primary-Key" #f 45 7 45 28 ("Object")
-        {Lisp-Entry "inventory" #f 48 8 48 17 ()}
-        {Lisp-Entry "parent" #f 49 8 49 14 ()}
-        {Lisp-Entry "initialize" #f 52 11 52 21 ("parent~self" "inventory~self" "set!" "nextmethod" "parent" "inventory")}
-        {Lisp-Entry "get-inventory" #f 63 18 63 31 ("inventory")}
-        {Lisp-Entry "get-parent" #f 67 18 67 28 ("parent")}
-        {Lisp-Entry "get-title" #f 76 26 76 35 ()}
-        {Lisp-Entry "get-fields" #f 80 26 80 36 ()}
-        {Lisp-Entry "get-fields/orders" #f 84 26 84 43 ("get-order" "get-title" "list" "field" "function" "map" "get-fields" "fields" "with-closed")}
-        {Lisp-Entry "get-clustered?" #f 91 26 91 40 ()}
-        {Lisp-Entry "get-fill-factor" #f 95 26 95 41 ("0")}}}})
+      {Lisp-Entry "Inventory-Primary-Key" #f 40 7 40 28 ()
+        {Lisp-Entry "inventory" #f 43 8 43 17 ()}
+        {Lisp-Entry "parent" #f 44 8 44 14 ()}
+        {Lisp-Entry "initialize" #f 47 11 47 21 ("parent~self" "inventory~self" "set!" "nextmethod" "parent" "inventory")}
+        {Lisp-Entry "get-inventory" #f 58 18 58 31 ("inventory")}
+        {Lisp-Entry "get-parent" #f 62 18 62 28 ("parent")}
+        {Lisp-Entry "get-title" #f 71 26 71 35 ()}
+        {Lisp-Entry "get-fields" #f 75 26 75 36 ()}
+        {Lisp-Entry "get-fields/orders" #f 79 26 79 43 ("get-order" "get-title" "list" "field" "function" "map" "get-fields" "fields" "with-closed")}
+        {Lisp-Entry "get-clustered?" #f 86 26 86 40 ()}
+        {Lisp-Entry "get-fill-factor" #f 90 26 90 41 ("0")}}}})
 "Inventory-Procedure"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-Procedure.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-Procedure.jazz"} 1248797036
     {Lisp-Entry "jazz.database.inventory.Inventory-Procedure" #f 37 19 37 62 ("jazz")
-      {Lisp-Entry "Inventory-Procedure" #f 45 7 45 26 ("Object")
-        {Lisp-Entry "inventory" #f 48 8 48 17 ()}
-        {Lisp-Entry "parent" #f 49 8 49 14 ()}
-        {Lisp-Entry "initialize" #f 52 11 52 21 ("parent~self" "inventory~self" "set!" "nextmethod" "parent" "inventory")}
-        {Lisp-Entry "get-inventory" #f 63 18 63 31 ("inventory")}
-        {Lisp-Entry "get-parent" #f 67 18 67 28 ("parent")}
-        {Lisp-Entry "get-title" #f 76 26 76 35 ()}
-        {Lisp-Entry "get-text" #f 80 26 80 34 ()}
-        {Lisp-Entry "set-text" #f 84 26 84 34 ("value")}}}})
+      {Lisp-Entry "Inventory-Procedure" #f 43 7 43 26 ()
+        {Lisp-Entry "inventory" #f 46 8 46 17 ()}
+        {Lisp-Entry "parent" #f 47 8 47 14 ()}
+        {Lisp-Entry "initialize" #f 50 11 50 21 ("parent~self" "inventory~self" "set!" "nextmethod" "parent" "inventory")}
+        {Lisp-Entry "get-inventory" #f 61 18 61 31 ("inventory")}
+        {Lisp-Entry "get-parent" #f 65 18 65 28 ("parent")}
+        {Lisp-Entry "get-title" #f 74 26 74 35 ()}
+        {Lisp-Entry "get-text" #f 78 26 78 34 ()}
+        {Lisp-Entry "set-text" #f 82 26 82 34 ("value")}}}})
 "Inventory-Relation"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-Relation.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-Relation.jazz"} 1248797036
     {Lisp-Entry "jazz.database.inventory.Inventory-Relation" #f 37 19 37 61 ("jazz")
-      {Lisp-Entry "Inventory-Relation" #f 45 7 45 25 ("Object")
-        {Lisp-Entry "inventory" #f 48 8 48 17 ()}
-        {Lisp-Entry "parent" #f 49 8 49 14 ()}
-        {Lisp-Entry "initialize" #f 52 11 52 21 ("parent~self" "inventory~self" "set!" "nextmethod" "parent" "inventory")}
-        {Lisp-Entry "get-inventory" #f 63 18 63 31 ("inventory")}
-        {Lisp-Entry "get-parent" #f 67 18 67 28 ("parent")}
-        {Lisp-Entry "get-title" #f 76 26 76 35 ()}
-        {Lisp-Entry "get-primary-table" #f 80 26 80 43 ()}
-        {Lisp-Entry "set-primary-table" #f 84 26 84 43 ("value")}
-        {Lisp-Entry "get-primary-field-names" #f 88 26 88 49 ()}
-        {Lisp-Entry "set-primary-field-names" #f 92 26 92 49 ("value")}
-        {Lisp-Entry "get-foreign-table" #f 96 26 96 43 ()}
-        {Lisp-Entry "set-foreign-table" #f 100 26 100 43 ("value")}
-        {Lisp-Entry "get-foreign-field-names" #f 104 26 104 49 ()}
-        {Lisp-Entry "set-foreign-field-names" #f 108 26 108 49 ("value")}
-        {Lisp-Entry "get-unique?" #f 112 26 112 37 ()}
-        {Lisp-Entry "set-unique?" #f 116 26 116 37 ("value")}
-        {Lisp-Entry "get-dont-enforce?" #f 120 26 120 43 ()}
-        {Lisp-Entry "get-inherited?" #f 124 26 124 40 ()}
-        {Lisp-Entry "get-update-cascade?" #f 128 26 128 45 ()}
-        {Lisp-Entry "set-update-cascade?" #f 132 26 132 45 ("value")}
-        {Lisp-Entry "get-delete-cascade?" #f 136 26 136 45 ()}
-        {Lisp-Entry "set-delete-cascade?" #f 140 26 140 45 ("value")}
-        {Lisp-Entry "get-left?" #f 144 26 144 35 ()}
-        {Lisp-Entry "set-left?" #f 148 26 148 35 ("value")}
-        {Lisp-Entry "get-right?" #f 152 26 152 36 ()}
-        {Lisp-Entry "set-right?" #f 156 26 156 36 ("value")}
-        {Lisp-Entry "get-checked?" #f 160 26 160 38 ()}
-        {Lisp-Entry "get-exclude-replication?" #f 164 26 164 50 ()}}}})
+      {Lisp-Entry "Inventory-Relation" #f 40 7 40 25 ()
+        {Lisp-Entry "inventory" #f 43 8 43 17 ()}
+        {Lisp-Entry "parent" #f 44 8 44 14 ()}
+        {Lisp-Entry "initialize" #f 47 11 47 21 ("parent~self" "inventory~self" "set!" "nextmethod" "parent" "inventory")}
+        {Lisp-Entry "get-inventory" #f 58 18 58 31 ("inventory")}
+        {Lisp-Entry "get-parent" #f 62 18 62 28 ("parent")}
+        {Lisp-Entry "get-title" #f 71 26 71 35 ()}
+        {Lisp-Entry "get-primary-table" #f 75 26 75 43 ()}
+        {Lisp-Entry "set-primary-table" #f 79 26 79 43 ("value")}
+        {Lisp-Entry "get-primary-field-names" #f 83 26 83 49 ()}
+        {Lisp-Entry "set-primary-field-names" #f 87 26 87 49 ("value")}
+        {Lisp-Entry "get-foreign-table" #f 91 26 91 43 ()}
+        {Lisp-Entry "set-foreign-table" #f 95 26 95 43 ("value")}
+        {Lisp-Entry "get-foreign-field-names" #f 99 26 99 49 ()}
+        {Lisp-Entry "set-foreign-field-names" #f 103 26 103 49 ("value")}
+        {Lisp-Entry "get-unique?" #f 107 26 107 37 ()}
+        {Lisp-Entry "set-unique?" #f 111 26 111 37 ("value")}
+        {Lisp-Entry "get-dont-enforce?" #f 115 26 115 43 ()}
+        {Lisp-Entry "get-inherited?" #f 119 26 119 40 ()}
+        {Lisp-Entry "get-update-cascade?" #f 123 26 123 45 ()}
+        {Lisp-Entry "set-update-cascade?" #f 127 26 127 45 ("value")}
+        {Lisp-Entry "get-delete-cascade?" #f 131 26 131 45 ()}
+        {Lisp-Entry "set-delete-cascade?" #f 135 26 135 45 ("value")}
+        {Lisp-Entry "get-left?" #f 139 26 139 35 ()}
+        {Lisp-Entry "set-left?" #f 143 26 143 35 ("value")}
+        {Lisp-Entry "get-right?" #f 147 26 147 36 ()}
+        {Lisp-Entry "set-right?" #f 151 26 151 36 ("value")}
+        {Lisp-Entry "get-checked?" #f 155 26 155 38 ()}
+        {Lisp-Entry "get-exclude-replication?" #f 159 26 159 50 ()}}}})
 "Inventory-Table"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-Table.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-Table.jazz"} 1248797036
     {Lisp-Entry "jazz.database.inventory.Inventory-Table" #f 37 19 37 58 ("jazz")
-      {Lisp-Entry "Inventory-Table" #f 45 7 45 22 ("Object")
-        {Lisp-Entry "inventory" #f 48 8 48 17 ()}
-        {Lisp-Entry "parent" #f 49 8 49 14 ()}
-        {Lisp-Entry "initialize" #f 52 11 52 21 ("parent~self" "inventory~self" "set!" "nextmethod" "parent" "inventory")}
-        {Lisp-Entry "get-inventory" #f 63 18 63 31 ("inventory")}
-        {Lisp-Entry "get-parent" #f 67 18 67 28 ("parent")}
-        {Lisp-Entry "get-owner" #f 76 26 76 35 ()}
-        {Lisp-Entry "set-owner" #f 80 26 80 35 ("value")}
-        {Lisp-Entry "get-name" #f 84 26 84 34 ()}
-        {Lisp-Entry "get-title" #f 88 26 88 35 ()}
-        {Lisp-Entry "get-linked?" #f 92 26 92 37 ()}
-        {Lisp-Entry "get-connect" #f 96 26 96 37 ()}
-        {Lisp-Entry "set-connect" #f 100 26 100 37 ("value")}
-        {Lisp-Entry "get-source-table-name" #f 104 26 104 47 ()}
-        {Lisp-Entry "set-source-table-name" #f 108 26 108 47 ("value")}
-        {Lisp-Entry "get-validation-rule" #f 112 26 112 45 ()}
-        {Lisp-Entry "set-validation-rule" #f 116 26 116 45 ("value")}
-        {Lisp-Entry "get-validation-text" #f 120 26 120 45 ()}
-        {Lisp-Entry "set-validation-text" #f 124 26 124 45 ("value")}
-        {Lisp-Entry "get-description" #f 128 26 128 41 ()}
-        {Lisp-Entry "set-description" #f 132 26 132 41 ("value")}
-        {Lisp-Entry "get-primary-key" #f 141 26 141 41 ()}
-        {Lisp-Entry "create-primary-key" #f 145 26 145 44 ("fields/orders" "name")}
-        {Lisp-Entry "remove-primary-key" #f 149 26 149 44 ("name")}
-        {Lisp-Entry "append-primary-key" #f 153 26 153 44 ("primary-key")}
-        {Lisp-Entry "get-columns" #f 162 26 162 37 ()}
-        {Lisp-Entry "get-column" #f 166 26 166 36 ("name")}
-        {Lisp-Entry "create-column" #f 170 26 170 39 ("name")}
-        {Lisp-Entry "append-column" #f 174 26 174 39 ("column")}
-        {Lisp-Entry "remove-column" #f 178 26 178 39 ("name")}
-        {Lisp-Entry "get-indexes" #f 187 26 187 37 ()}
-        {Lisp-Entry "get-index" #f 191 26 191 35 ("name")}
-        {Lisp-Entry "create-index" #f 195 26 195 38 ("name")}
-        {Lisp-Entry "append-index" #f 199 26 199 38 ("index")}
-        {Lisp-Entry "remove-index" #f 203 26 203 38 ("name")}
-        {Lisp-Entry "create-or-modify-trigger" #f 212 26 212 50 ("append-trigger" "set-text" "create-trigger" "new-trigger" "remove-trigger" "when" "error?:" "get-trigger" "trigger" "with-closed" "text" "name")}
-        {Lisp-Entry "get-triggers" #f 221 26 221 38 ()}
-        {Lisp-Entry "get-trigger" #f 225 26 225 37 ("rest" "name")}
-        {Lisp-Entry "create-trigger" #f 229 26 229 40 ("name")}
-        {Lisp-Entry "append-trigger" #f 233 26 233 40 ("trigger")}
-        {Lisp-Entry "remove-trigger" #f 237 26 237 40 ("name")}
-        {Lisp-Entry "create-or-modify-constraint" #f 246 26 246 53 ("set-checked?" "append-constraint" "set-exclude-replication?" "set-text" "create-constraint" "new-constraint" "remove-constraint" "when" "error?:" "get-constraint" "constraint" "with-closed" "exclude-replication?" "checked?" "text" "name")}
-        {Lisp-Entry "get-constraints" #f 257 26 257 41 ()}
-        {Lisp-Entry "get-constraint" #f 261 26 261 40 ("rest" "name")}
-        {Lisp-Entry "create-constraint" #f 265 26 265 43 ("name")}
-        {Lisp-Entry "append-constraint" #f 269 26 269 43 ("constraint")}
-        {Lisp-Entry "remove-constraint" #f 273 26 273 43 ("name")}
-        {Lisp-Entry "get-text-file-group" #f 282 26 282 45 ()}
-        {Lisp-Entry "set-text-file-group" #f 286 26 286 45 ("value")}
-        {Lisp-Entry "get-file-group" #f 290 26 290 40 ()}
-        {Lisp-Entry "set-file-group" #f 294 26 294 40 ("value")}}}})
+      {Lisp-Entry "Inventory-Table" #f 43 7 43 22 ()
+        {Lisp-Entry "inventory" #f 46 8 46 17 ()}
+        {Lisp-Entry "parent" #f 47 8 47 14 ()}
+        {Lisp-Entry "initialize" #f 50 11 50 21 ("parent~self" "inventory~self" "set!" "nextmethod" "parent" "inventory")}
+        {Lisp-Entry "get-inventory" #f 61 18 61 31 ("inventory")}
+        {Lisp-Entry "get-parent" #f 65 18 65 28 ("parent")}
+        {Lisp-Entry "get-owner" #f 74 26 74 35 ()}
+        {Lisp-Entry "set-owner" #f 78 26 78 35 ("value")}
+        {Lisp-Entry "get-name" #f 82 26 82 34 ()}
+        {Lisp-Entry "get-title" #f 86 26 86 35 ()}
+        {Lisp-Entry "get-linked?" #f 90 26 90 37 ()}
+        {Lisp-Entry "get-connect" #f 94 26 94 37 ()}
+        {Lisp-Entry "set-connect" #f 98 26 98 37 ("value")}
+        {Lisp-Entry "get-source-table-name" #f 102 26 102 47 ()}
+        {Lisp-Entry "set-source-table-name" #f 106 26 106 47 ("value")}
+        {Lisp-Entry "get-validation-rule" #f 110 26 110 45 ()}
+        {Lisp-Entry "set-validation-rule" #f 114 26 114 45 ("value")}
+        {Lisp-Entry "get-validation-text" #f 118 26 118 45 ()}
+        {Lisp-Entry "set-validation-text" #f 122 26 122 45 ("value")}
+        {Lisp-Entry "get-description" #f 126 26 126 41 ()}
+        {Lisp-Entry "set-description" #f 130 26 130 41 ("value")}
+        {Lisp-Entry "get-primary-key" #f 139 26 139 41 ()}
+        {Lisp-Entry "create-primary-key" #f 143 26 143 44 ("fields/orders" "name")}
+        {Lisp-Entry "remove-primary-key" #f 147 26 147 44 ("name")}
+        {Lisp-Entry "append-primary-key" #f 151 26 151 44 ("primary-key")}
+        {Lisp-Entry "get-columns" #f 160 26 160 37 ()}
+        {Lisp-Entry "get-column" #f 164 26 164 36 ("name")}
+        {Lisp-Entry "create-column" #f 168 26 168 39 ("name")}
+        {Lisp-Entry "append-column" #f 172 26 172 39 ("column")}
+        {Lisp-Entry "remove-column" #f 176 26 176 39 ("name")}
+        {Lisp-Entry "get-indexes" #f 185 26 185 37 ()}
+        {Lisp-Entry "get-index" #f 189 26 189 35 ("name")}
+        {Lisp-Entry "create-index" #f 193 26 193 38 ("name")}
+        {Lisp-Entry "append-index" #f 197 26 197 38 ("index")}
+        {Lisp-Entry "remove-index" #f 201 26 201 38 ("name")}
+        {Lisp-Entry "create-or-modify-trigger" #f 210 26 210 50 ("append-trigger" "set-text" "create-trigger" "new-trigger" "remove-trigger" "when" "error?:" "get-trigger" "trigger" "with-closed" "text" "name")}
+        {Lisp-Entry "get-triggers" #f 219 26 219 38 ()}
+        {Lisp-Entry "get-trigger" #f 223 26 223 37 ("rest" "name")}
+        {Lisp-Entry "create-trigger" #f 227 26 227 40 ("name")}
+        {Lisp-Entry "append-trigger" #f 231 26 231 40 ("trigger")}
+        {Lisp-Entry "remove-trigger" #f 235 26 235 40 ("name")}
+        {Lisp-Entry "create-or-modify-constraint" #f 244 26 244 53 ("set-checked?" "append-constraint" "set-exclude-replication?" "set-text" "create-constraint" "new-constraint" "remove-constraint" "when" "error?:" "get-constraint" "constraint" "with-closed" "exclude-replication?" "checked?" "text" "name")}
+        {Lisp-Entry "get-constraints" #f 255 26 255 41 ()}
+        {Lisp-Entry "get-constraint" #f 259 26 259 40 ("rest" "name")}
+        {Lisp-Entry "create-constraint" #f 263 26 263 43 ("name")}
+        {Lisp-Entry "append-constraint" #f 267 26 267 43 ("constraint")}
+        {Lisp-Entry "remove-constraint" #f 271 26 271 43 ("name")}
+        {Lisp-Entry "get-text-file-group" #f 280 26 280 45 ()}
+        {Lisp-Entry "set-text-file-group" #f 284 26 284 45 ("value")}
+        {Lisp-Entry "get-file-group" #f 288 26 288 40 ()}
+        {Lisp-Entry "set-file-group" #f 292 26 292 40 ("value")}}}})
 "Inventory-Trigger"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-Trigger.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-Trigger.jazz"} 1248797036
     {Lisp-Entry "jazz.database.inventory.Inventory-Trigger" #f 37 19 37 60 ("jazz")
-      {Lisp-Entry "Inventory-Trigger" #f 45 7 45 24 ("Object")
-        {Lisp-Entry "inventory" #f 48 8 48 17 ()}
-        {Lisp-Entry "parent" #f 49 8 49 14 ()}
-        {Lisp-Entry "initialize" #f 52 11 52 21 ("parent~self" "inventory~self" "set!" "nextmethod" "parent" "inventory")}
-        {Lisp-Entry "get-inventory" #f 63 18 63 31 ("inventory")}
-        {Lisp-Entry "get-parent" #f 67 18 67 28 ("parent")}
-        {Lisp-Entry "get-title" #f 76 26 76 35 ()}
-        {Lisp-Entry "get-text" #f 80 26 80 34 ()}
-        {Lisp-Entry "set-text" #f 84 26 84 34 ("value")}}}})
+      {Lisp-Entry "Inventory-Trigger" #f 43 7 43 24 ()
+        {Lisp-Entry "inventory" #f 46 8 46 17 ()}
+        {Lisp-Entry "parent" #f 47 8 47 14 ()}
+        {Lisp-Entry "initialize" #f 50 11 50 21 ("parent~self" "inventory~self" "set!" "nextmethod" "parent" "inventory")}
+        {Lisp-Entry "get-inventory" #f 61 18 61 31 ("inventory")}
+        {Lisp-Entry "get-parent" #f 65 18 65 28 ("parent")}
+        {Lisp-Entry "get-title" #f 74 26 74 35 ()}
+        {Lisp-Entry "get-text" #f 78 26 78 34 ()}
+        {Lisp-Entry "set-text" #f 82 26 82 34 ("value")}}}})
 "Inventory-Updater"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-Updater.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-Updater.jazz"} 1248797036
     {Lisp-Entry "jazz.database.inventory.Inventory-Updater" #f 37 19 37 60 ("jazz")
-      {Lisp-Entry "Inventory-Updater" #f 45 7 45 24 ("Object")}
-      {Lisp-Entry "Inventory-Updater" #f 51 7 51 24 ("Object")
-        {Lisp-Entry "connection" #f 54 8 54 18 ()}
-        {Lisp-Entry "inventory" #f 55 8 55 17 ()}
-        {Lisp-Entry "pending-properties" #f 56 8 56 26 ()}
-        {Lisp-Entry "pending-deletes" #f 57 8 57 23 ()}
-        {Lisp-Entry "pending-triggers/indexes" #f 58 8 58 32 ()}
-        {Lisp-Entry "ugly-patch" #f 59 8 59 18 ()}
-        {Lisp-Entry "initialize" #f 62 11 62 21 ("get-inventory" "inventory~self" "connection~self" "set!" "nextmethod" "connection")}
-        {Lisp-Entry "Actions" #f 73 14 73 21 ("no-action" "modify" "add" "right" "remove" "left")}
-        {Lisp-Entry "update-inventory" #f 80 18 80 34 ("reporter:" "title:" "ugly-patch" "close" "proxy" "for-each" "process-pending-deletes" "process-pending-triggers/indexes" "process-pending-properties" "process-table-triggers" "SQLServer-Inventory" "is?" "when" "inventory" "process-children" "pending-triggers/indexes" "pending-deletes" "pending-properties" "set!" "function" "with-execution-context" "reporter" "delta")}
-        {Lisp-Entry "process-children" #f 101 11 101 27 ("8" "constraint" "7" "trigger" "6" "index" "5" "primary-key" "-1" "ordinal-position:" "get-property" "third" "either" "4" "column" "3" "relation" "2" "procedure" "1" "view" "0" "list" "table" "get-kind" "case" "get-name" "name" "let" "x" "key:" "get-children" "<" "sort" "process-entity" "create-sql" "SQLServer-Inventory" "is?" "if" "object" "function" "for-each" "reporter" "parent-proxy" "entity")}
-        {Lisp-Entry "create-sql" #f 125 11 125 21 ("view" "generate-sql-procedure" "procedure" "generate-sql-table" "table" "when" "has-differences?:" "get-property" "has-differences?" "let" "else" "generate-sql-relation" "relation" "get-kind" "case" "function" "with-continue" "reporter" "parent-proxy" "object")}
-        {Lisp-Entry "process-object" #f 139 11 139 25 ("modify" "right" "case" "left" "'left" "eq?" "unless" "if" "difference:" "get-property" "action" "let" "drop-proc" "create-proc" "recreate-table?" "object")}
-        {Lisp-Entry "find-action-on-process-property" #f 151 11 151 42 ("left" "'left" "modify" "'modify" "eq?" "right" "'right" "/=" "and" "when" "if" "recreate-table?" "new-value" "old-value" "action")}
-        {Lisp-Entry "drop-object" #f 164 11 164 22 ("execute-sql-commit-preserve" "tie" "script" "get-kind" "object-kind" "get-name" "object-name" "let*" "object")}
-        {Lisp-Entry "generate-sql-header-script" #f 171 11 171 37 ("tie")}
-        {Lisp-Entry "Table-Not-Found" #f 187 12 187 27 ("#x80045510")}
-        {Lisp-Entry "set-table-tempo-name" #f 191 11 191 31 ("Table-Not-Found" "Item" "cotry" "format" "set!" "increase!" "while" "inventory" "get-database" "get-Tables" "tables" "with-closed" "looking" "table-tempo-name" "-1" "suffix" "get-name" "table-name" "let" "object")}
-        {Lisp-Entry "generate-sql-table" #f 204 11 204 29 ("modify" "drop-table" "left" "right" "case" "generate-sql-partial-table" "generate-sql-full-table" "regenerate-full-table?" "null?" "if" "difference:" "get-property" "action" "let" "reporter" "table")}
-        {Lisp-Entry "regenerate-full-table?" #f 218 11 218 33 ("left" "right" "modify" "case" "modify-column?" "null?" "if" "difference:" "get-property" "action" "let" "table")}
-        {Lisp-Entry "modify-column?" #f 228 11 228 25 ("-1" "either" "key:" "get-columns" "<" "sort" "third" "second" "+" "/=" "null?" "when" "else" "decrease!" "left" "increase!" "right" "case" "nullable?:" "datatype:" "modify" "'modify" "ordinal-position:" "first" "=" "or" "difference:" "get-property" "action" "column" "function" "some?" "0" "column-pos" "let" "table")}
-        {Lisp-Entry "generate-sql-full-table" #f 249 11 249 34 ("generate-sql-access-right" "process-triggers" "process-constraints" "process-indexes" "process-primary-key" "generate-sql-identity-end" "recreate-table?:" "set-property" "undo-create-table" "set!" "process-copy-data" "generate-sql-identity-start" "check-default-values" "process-default-values" "process-description-columns" "process-description-table" "begin" "unwind-protect" "temp-table-created" "let" "generate-sql-create-table" "drop-default-values" "drop-table-relation" "generate-sql-header-script" "execute-sql-commit-preserve" "user-message" "get-columns" "identity?:" "third" "column" "function" "some?" "identity-column?" "if" "table-current-name" "set-table-tempo-name" "not" "when" "table-tempo-name" "right" "'right" "=" "new-table?" "difference:" "get-property" "action" "get-name" "table-name" "let*" "reporter" "table")}
-        {Lisp-Entry "undo-create-table" #f 290 11 290 28 ("execute-sql-commit-preserve" "tie" "script" "let" "table-name")}
-        {Lisp-Entry "generate-sql-partial-table" #f 295 11 295 37 ("process-triggers" "process-constraints" "process-indexes" "process-primary-key" "process-default-values" "process-description-columns" "process-description-table" "user-message" "when" "get-name" "table-name" "let" "reporter" "table")}
-        {Lisp-Entry "create-fields-list" #f 309 11 309 29 ("0" ">=" "tie" "identity-replication?:" "id-repl" "identity-increment:" "id-inc" "identity-seed:" "id-seed" "identity?:" "identity-string" "nullable?:" "if" "nullable-string" "ordinal-position:" "ordinal-position" "get-datatype" "third" "get-native" "datatype" "get-name" "field-name" "let" "left" "'left" "difference:" "get-property" "/=" "when" "field" "function" "collect" "list")}
-        {Lisp-Entry "generate-sql-create-table" #f 331 11 331 36 ("tie" "def-table" "-1" "ordinal-position:" "get-property" "third" "either" "column" "function" "key:" "get-columns" "<" "sort" "create-fields-list" "join" "fields-list" "let*" "table-name" "object")}
-        {Lisp-Entry "get-added-columns-without-default-value" #f 341 11 341 50 ("get-columns" "get-defaultable?" "=" "or" "not" "second" "null?" "and" "datatype:" "new-datatype" "nullable?:" "new-nullable?" "first" "new-default-value-action" "default-value:" "third" "new-default-value" "ordinal-position:" "get-property" "ordinal-position" "let" "column" "function" "collect-if" "table")}
-        {Lisp-Entry "process-copy-data" #f 358 11 358 28 ("execute-sql-commit-preserve" "script-drop-rename-table" "tie" "script-copy" "get-native" "format" "not" "and" "need-default?" "modify" "'modify" "action-for-property" "eq?" "must-convert?" "safe-name" "let" "else" "if" "cond" "read-only" "'read-only" "=" "read-only?" "indirect?:" "default-value:" "get-native-with-value" "default-value" "datatype:" "datatype" "nullable?:" "nullable?" "object-old-property" "null?" "new-column?" "new-values" "get-name" "encapsulate-name" "map" "new-names" "key:" "get-columns" "ordinal-position:" "object-new-property" "not-null?" "column" "function" "collect-if" "<" "sort" "new-columns" "let*" "old-table" "new-table" "object")}
-        {Lisp-Entry "drop-table" #f 403 11 403 21 ("drop-object" "drop-default-values" "drop-table-relation" "table")}
-        {Lisp-Entry "process-description-table" #f 409 11 409 36 ("generate-sql-update-description-table" "modify" "generate-sql-drop-description-table" "left" "generate-sql-add-description-table" "right" "case" "execute-sql-commit-preserve" "when" "find-action-on-process-property" "set!" "description:" "get-property" "new-value" "old-value" "action" "bind" "recreate-table?" "table-name" "table")}
-        {Lisp-Entry "generate-sql-add-description-table" #f 420 11 420 45 ("tie" "script" "substitute-alist" "user" "let*" "description" "table-name")}
-        {Lisp-Entry "generate-sql-drop-description-table" #f 429 11 429 46 ("tie" "script" "user" "let*" "table-name")}
-        {Lisp-Entry "generate-sql-update-description-table" #f 435 11 435 48 ("tie" "script" "substitute-alist" "user" "let*" "description" "table-name")}
-        {Lisp-Entry "generate-sql-drop-columns" #f 450 11 450 36 ("tie" "script" "list" "join" "columns-list" "let*" "table-name" "object")}
-        {Lisp-Entry "generate-sql-add-default-value" #f 457 11 457 41 ("tie" "script" "let" "default-value" "constraint-name" "column-name" "table-name")}
-        {Lisp-Entry "process-default-values" #f 463 11 463 33 ("get-columns" "script-add-default-value" "script-drop-default-value" "modify" "generate-sql-drop-constraint" "find-constraint-name" "old-constraint-name" "left" "format" "title:" "generate-sql-add-default-value" "execute-sql-commit-preserve" "with-execution-node" "right" "case" "tie" "new-constraint-name" "column-name" "let*" "when" "find-action-on-process-property" "set!" "default-value:" "get-property" "new-value" "old-value" "action" "bind" "column" "function" "for-each" "get-name" "constraint-table-name" "let" "recreate-table?" "table-name" "table")}
-        {Lisp-Entry "check-default-values" #f 494 11 494 31 ("get-columns" "error" "find-default-value" "/=" "modify" "right" "case" "tie" "new-constraint-name" "column-name" "let*" "when" "find-action-on-process-property" "set!" "default-value:" "get-property" "new-value" "old-value" "action" "bind" "column" "function" "for-each" "get-name" "constraint-table-name" "let" "table-name" "table")}
-        {Lisp-Entry "drop-default-values" #f 508 11 508 30 ("get-columns" "execute-sql-commit-preserve" "generate-sql-drop-constraint" "script-drop-constraint" "generate-sql-header-script" "script-header" "find-constraint-name" "constraint-name" "column-name" "let*" "default-value:" "get-property" "second" "when" "column" "function" "for-each" "get-name" "table-name" "let" "table")}
-        {Lisp-Entry "find-constraint-name" #f 521 11 521 31 ("get-Name" "get-DRIDefault" "default" "column" "get-Columns" "columns" "Item" "table" "inventory" "get-database" "get-Tables" "tables" "with-closed" "column-name" "table-name")}
-        {Lisp-Entry "find-default-value" #f 530 11 530 29 ("0" "connection" "load-value" "tie" "script" "let" "constraint-name")}
-        {Lisp-Entry "generate-sql-identity-start" #f 535 11 535 38 ("tie" "script" "let" "table-name")}
-        {Lisp-Entry "generate-sql-identity-end" #f 540 11 540 36 ("tie" "script" "let" "table-name")}
-        {Lisp-Entry "process-description-columns" #f 545 11 545 38 ("get-columns" "generate-sql-update-description-column" "modify" "generate-sql-drop-description-column" "left" "generate-sql-add-description-column" "right" "case" "execute-sql-commit-preserve" "when" "get-name" "column-name" "let" "find-action-on-process-property" "set!" "description:" "get-property" "new-value" "old-value" "action" "bind" "column" "function" "for-each" "recreate-table?" "table-name" "table")}
-        {Lisp-Entry "generate-sql-add-description-column" #f 559 11 559 46 ("tie" "script" "substitute-alist" "user" "let*" "description" "column-name" "table-name")}
-        {Lisp-Entry "generate-sql-drop-description-column" #f 568 11 568 47 ("tie" "script" "user" "let*" "column-name" "table-name")}
-        {Lisp-Entry "generate-sql-update-description-column" #f 574 11 574 49 ("tie" "script" "substitute-alist" "user" "let*" "description" "column-name" "table-name")}
-        {Lisp-Entry "process-primary-key" #f 588 11 588 30 ("drop-primary-key" "add-primary-key" "process-object" "when" "get-primary-key" "primary-key" "let" "recreate-table?" "table")}
-        {Lisp-Entry "add-primary-key" #f 594 11 594 26 ("execute-sql-commit-preserve" "generate-sql-primary-key" "script-create-primary-key" "generate-sql-header-script" "script-header" "let" "object")}
-        {Lisp-Entry "drop-primary-key" #f 601 11 601 27 ("execute-sql-commit-preserve" "drop-table-relation" "generate-sql-drop-constraint" "script-drop-constraint" "generate-sql-header-script" "script-header" "table-name" "get-parent" "table" "get-name" "constraint-name" "let*" "primary-key")}
-        {Lisp-Entry "generate-sql-primary-key" #f 612 11 612 35 ("script" "tie" "0" ">" "fill-factor-text" "fill-factor:" "fill-factor" "clustered?:" "if" "clustered" "fields/orders:" "get-property" "third" "create-fields/orders-list" "fields/orders" "pk-name" "get-parent" "get-name" "table-name" "let*" "primary-key")}
-        {Lisp-Entry "create-fields/orders-list" #f 627 11 627 36 ("tie" "ascending" "'ascending" "=" "if" "order-string" "second" "order" "first" "encapsulate-name" "field" "let*" "field/order" "function" "map" "join" "list")}
-        {Lisp-Entry "process-indexes" #f 643 11 643 26 ("get-indexes" "drop-index" "add-index" "process-object" "index" "function" "for-each" "recreate-table?" "object")}
-        {Lisp-Entry "add-index" #f 649 11 649 20 ("execute-sql-commit-preserve" "generate-sql-index" "script-create-index" "generate-sql-header-script" "script-header" "let" "index")}
-        {Lisp-Entry "drop-index" #f 656 11 656 21 ("execute-sql-commit-preserve" "tie" "script" "get-parent" "table-name" "get-name" "index-name" "let*" "index")}
-        {Lisp-Entry "generate-sql-index" #f 663 11 663 29 ("script" "options" "list" "remove-nils" "options-list" "recompute-statistics?:" "statistics-norecompute" "ignore-duplicates?:" "ignore-dup-key" "tie" "0" ">" "fill-factor-text" "fill-factor:" "fill-factor" "pad-index?:" "pad-index" "clustered?:" "clustered" "unique?:" "if" "unique" "fields/orders:" "get-property" "third" "create-fields/orders-list" "fields/orders" "index-name" "get-parent" "get-name" "table-name" "let*" "index")}
-        {Lisp-Entry "process-triggers" #f 692 11 692 27 ("get-triggers" "drop-object" "create-procedure" "process-object" "with-continue" "trigger" "function" "for-each" "recreate-table?" "object")}
-        {Lisp-Entry "process-table-triggers" #f 700 11 700 33 ("get-tables" "process-triggers" "left" "'left" "=" "unless" "difference:" "action" "recreate-table?:" "get-property" "recreate-table?" "let" "table" "function" "for-each" "objects")}
-        {Lisp-Entry "process-constraints" #f 714 11 714 30 ("get-constraints" "drop-constraint" "create-constraint" "process-object" "constraint" "function" "for-each" "recreate-table?" "table")}
-        {Lisp-Entry "create-constraint" #f 720 11 720 28 ("execute-sql-commit-preserve" "script" "tie" "checked?:" "not" "checked-text" "exclude-replication?:" "replication-text" "if" "check-text" "check?" "text:" "get-property" "third" "text" "constraint-name" "get-parent" "get-name" "table-name" "let*" "constraint")}
-        {Lisp-Entry "drop-constraint" #f 737 11 737 26 ("execute-sql-commit-preserve" "tie" "script" "constraint-name" "get-parent" "get-name" "table-name" "let*" "constraint")}
-        {Lisp-Entry "generate-sql-drop-constraint" #f 745 11 745 39 ("tie" "script" "let" "constraint-name" "table-name")}
-        {Lisp-Entry "generate-sql-relation" #f 756 11 756 32 ("drop-relation" "create-relation" "process-object" "recreate-table?:" "get-property" "recreate-table?" "let" "relation")}
-        {Lisp-Entry "create-relation" #f 761 11 761 26 ("execute-sql-commit-preserve" "script" "tie" "checked?:" "not" "checked-text" "check-text" "check?" "exclude-replication?:" "replication-text" "delete-cascade?:" "on-delete-cascade" "update-cascade?:" "get-property" "if" "on-update-cascade" "get-foreign-columns" "foreign-fields" "get-foreign-table" "foreign-table" "get-primary-columns" "primary-fields" "get-primary-table" "third" "primary-table" "get-name" "relation-name" "let*" "relation")}
-        {Lisp-Entry "drop-relation" #f 788 11 788 24 ("execute-sql-commit-preserve" "tie" "script" "get-foreign-table" "second" "foreign-table" "get-name" "relation-name" "let*" "relation")}
-        {Lisp-Entry "drop-table-relation" #f 796 11 796 30 ("get-parent" "get-relations" "set-property" "drop-relation" "=" "or" "when" "get-primary-table" "primary-table" "get-foreign-table" "second" "foreign-table" "recreate-table?:" "get-property" "unless" "relation" "function" "for-each" "get-name" "table-name" "let" "table")}
-        {Lisp-Entry "generate-sql-procedure" #f 814 11 814 33 ("modify" "drop-object" "left" "create-procedure" "right" "case" "user-message" "when" "get-name" "name" "difference:" "get-property" "action" "let" "reporter" "object")}
-        {Lisp-Entry "create-procedure" #f 826 11 826 27 ("connection" "execute" "text:" "get-property" "third" "script-create-procedure" "generate-sql-header-script" "script-header" "let" "object")}
-        {Lisp-Entry "generate-sql-access-right" #f 839 11 839 36 ("tie" "script" "user" "let*")}
-        {Lisp-Entry "object-new-property" #f 856 11 856 30 ("get-property" "third" "property" "object")}
-        {Lisp-Entry "object-old-property" #f 860 11 860 30 ("get-property" "second" "property" "object")}
-        {Lisp-Entry "action-for-property" #f 864 11 864 30 ("get-property" "first" "property" "object")}
-        {Lisp-Entry "encapsulate-name" #f 868 11 868 27 ("format" "name")}
-        {Lisp-Entry "execute-sql-commit-preserve" #f 872 11 872 38 ("connection" "execute" "commit" "tie" "let*" "script")}
-        {Lisp-Entry "process-entity" #f 885 11 885 25 ("process-modify" "no-action" "modify" "process-delete" "remove" "process-new" "add" "case" "get-name" "name" "get-kind" "kind" "Actions" "difference:" "get-property" "assq" "cdr" "action" "let" "function" "with-continue" "reporter" "parent-proxy" "object")}
-        {Lisp-Entry "process-new" #f 897 11 897 22 ("format" "title:" "process-proxy" "cons" "ugly-patch" "set!" "new-proxy" "proxy" "let" "function" "with-execution-node" "reporter" "name" "kind" "parent-proxy" "object")}
-        {Lisp-Entry "process-delete" #f 906 11 906 25 ("format" "title:" "process-proxy" "function" "with-execution-node" "reporter" "name" "kind" "parent-proxy" "object")}
-        {Lisp-Entry "process-modify" #f 913 11 913 25 ("format" "title:" "process-proxy" "cons" "ugly-patch" "set!" "get-proxy" "proxy" "let" "function" "with-execution-node" "reporter" "name" "kind" "parent-proxy" "object")}
-        {Lisp-Entry "Recreate" #f 922 14 922 22 ("procedure" "relation" "view" "constraint" "trigger" "index" "primary-key")}
-        {Lisp-Entry "process-proxy" #f 926 11 926 24 ("add-pending-trigger/index" "index" "trigger" "complete-append" "SQLServer-Inventory-Relation" "unless" "process-children" "modify-proxy" "cons" "ugly-patch" "new-proxy" "set!" "delete-proxy" "linked?:" "table" "'table" "Recreate" "memq?" "has-differences?:" "and" "modify" "'modify" "no-action" "'no-action" "or" "process-pending-triggers/indexes" "relation" "'relation" "eq?" "list" "add-pending-delete" "remove" "'remove" "if" "user-message" "when" "add" "'add" "=" "new?" "Data-Entity" "is?" "entity?" "get-name" "name" "get-kind" "kind" "Actions" "difference:" "get-property" "assq" "cdr" "action" "let*" "reporter" "proxy" "parent-proxy" "object")}
-        {Lisp-Entry "new-proxy" #f 964 11 964 20 ("error" "else" "create-procedure" "procedure" "create-relation-complete" "foreign-columns:" "foreign-fields" "foreign-table:" "foreign-table" "primary-columns:" "primary-fields" "primary-table:" "primary-table" "create-relation" "SQLServer-Inventory" "is-not?" "if" "relation" "create-view" "view" "create-constraint" "constraint" "create-trigger" "trigger" "create-index" "index" "create-column" "column" "create-primary-key" "fields/orders:" "get-property" "third" "fields/orders" "let" "primary-key" "create-table" "table" "case" "object" "name" "kind" "parent")}
-        {Lisp-Entry "get-proxy" #f 990 11 990 20 ("error" "else" "get-procedure" "procedure" "get-relation" "relation" "get-view" "view" "get-constraint" "constraint" "get-trigger" "trigger" "get-index" "index" "get-column" "column" "get-primary-key" "primary-key" "get-table" "table" "case" "name" "kind" "parent")}
-        {Lisp-Entry "modify-proxy" #f 1009 11 1009 23 ("property-names" "modify-proxy-property" "list" "add-pending-property" "allow-zero-length?" "display-format" "description" "memq?" "if" "modify" "'modify" "=" "or" "when" "new-value" "old-value" "action" "bind" "get-property" "composite" "symbol->keyword" "property" "let*" "symbol" "function" "for-each" "force?" "kind" "physical" "object")}
-        {Lisp-Entry "modify-proxy-property" #f 1021 11 1021 32 ("format" "title:" "error" "else" "modify-relation-property" "relation" "modify-procedure-property" "procedure" "modify-view-property" "view" "modify-constraint-property" "constraint" "modify-trigger-property" "trigger" "modify-index-property" "index" "modify-column-property" "column" "modify-primary-key-property" "primary-key" "modify-table-property" "table" "case" "function" "with-execution-node" "force?" "value" "property" "kind" "physical" "object")}
-        {Lisp-Entry "modify-table-property" #f 1038 11 1038 32 ("error" "else" "set-validation-text" "validation-text" "set-validation-rule" "validation-rule" "set-description" "description" "set-source-table-name" "source-table-name" "set-connect" "connect" "case" "value" "property" "physical")}
-        {Lisp-Entry "modify-primary-key-property" #f 1048 11 1048 38 ("error" "else" "fill-factor" "clustered?" "fields/orders" "case" "value" "property" "physical")}
-        {Lisp-Entry "create-field-by-sql" #f 1054 11 1054 30 ("connection" "execute" "tie" "request" "format" "if" "size-label" "has-size?" "sizeable?" "get-size" "size" "get-name" "type-name" "get-nullable?" "nullable?" "field-name" "get-table" "get-title" "table-name" "let*" "value" "physical")}
-        {Lisp-Entry "modify-column-property" #f 1071 11 1071 33 ("error" "set-identity-seed" "identity-seed" "set-identity-increment" "identity-increment" "identity-replication?" "set-identity?" "identity?" "set-auto-increment?" "auto-increment?" "set-ordinal-position" "ordinal-position" "set-display-format" "display-format" "set-allow-zero-length?" "allow-zero-length?" "set-validation-text" "validation-text" "set-validation-rule" "validation-rule" "set-nullable?" "get-size" "set-size" "begin" "=" "get-name" "new-type" "get-type" "type" "get-nullable?" "nullable?" "let" "else" "create-field-by-sql" "Access-Datatype" "typecase" "set-datatype" "if" "datatype" "set-description" "description" "set-default-value" "default-value" "case" "inventory" "column-supports-property?" "when" "force?" "value" "property" "physical" "object")}
-        {Lisp-Entry "modify-index-property" #f 1106 11 1106 32 ("error" "else" "exclude-replication?" "checked?" "fill-factor" "recompute-statistics?" "pad-index?" "clustered?" "ignore-duplicates?" "set-unique?" "SQLServer-Inventory-Index" "is?" "unless" "unique?" "set-fields/orders" "fields/orders" "case" "value" "property" "physical")}
-        {Lisp-Entry "modify-trigger-property" #f 1114 11 1114 34 ("error" "else" "set-text" "text" "case" "value" "property" "physical")}
-        {Lisp-Entry "modify-constraint-property" #f 1120 11 1120 37 ("error" "else" "checked?" "exclude-replication?" "text" "case" "value" "property" "physical")}
-        {Lisp-Entry "modify-procedure-property" #f 1126 11 1126 36 ("error" "else" "set-text" "text" "case" "value" "property" "physical")}
-        {Lisp-Entry "modify-view-property" #f 1132 11 1132 31 ("error" "else" "set-text" "text" "case" "value" "property" "physical")}
-        {Lisp-Entry "modify-relation-property" #f 1138 11 1138 35 ("error" "else" "checked?" "exclude-replication?" "set-update-cascade?" "update-cascade?" "set-delete-cascade?" "delete-cascade?" "set-unique?" "unique?" "set-left?" "left?" "set-right?" "right?" "set-foreign-table" "foreign-table" "set-foreign-field-names" "foreign-columns" "set-primary-table" "primary-table" "set-primary-field-names" "primary-columns" "case" "SQLServer-Inventory-Relation" "is?" "unless" "value" "property" "physical")}
-        {Lisp-Entry "complete-append" #f 1159 11 1159 26 ("error" "else" "append-procedure" "procedure" "append-relation" "relation" "append-view" "view" "append-constraint" "constraint" "append-trigger" "trigger" "append-index" "index" "append-column" "column" "append-primary-key" "primary-key" "append-table" "table" "case" "function" "with-continue" "child" "parent" "kind")}
-        {Lisp-Entry "delete-proxy" #f 1180 11 1180 23 ("error" "else" "remove-procedure" "procedure" "foreign-table:" "get-property" "second" "foreign-table" "let" "remove-relation" "SQLServer-Inventory" "is-not?" "if" "relation" "remove-view" "view" "remove-constraint" "constraint" "remove-trigger" "trigger" "remove-index" "index" "remove-column" "column" "remove-primary-key" "primary-key" "remove-table" "table" "case" "object" "child-name" "parent" "kind")}
-        {Lisp-Entry "add-pending-property" #f 1202 11 1202 31 ("cons" "pending-properties" "set!" "info")}
-        {Lisp-Entry "add-pending-delete" #f 1206 11 1206 29 ("cons" "pending-deletes" "set!" "info")}
-        {Lisp-Entry "add-pending-trigger/index" #f 1210 11 1210 36 ("cons" "pending-triggers/indexes" "set!" "info")}
-        {Lisp-Entry "process-pending-properties" #f 1214 11 1214 37 ("pending-properties" "modify-proxy-property" "with-continue" "new-value" "symbol" "kind" "physical" "object" "bind" "element" "function" "for-each")}
-        {Lisp-Entry "Entities-Delete" #f 1223 14 1223 29 ("column" "primary-key" "index" "constraint" "trigger" "table" "view" "procedure" "relation")}
-        {Lisp-Entry "process-pending-deletes" #f 1227 11 1227 34 ("first" "Entities-Delete" "find" "lst" "key:" "pending-deletes" "<" "sort" "delete-proxy" "with-continue" "object" "name" "physical" "kind" "bind" "element" "function" "for-each")}
-        {Lisp-Entry "process-pending-triggers/indexes" #f 1237 11 1237 43 ("set!" "pending-triggers/indexes" "complete-append" "subentity" "entity" "kind" "bind" "element" "function" "for-each")}}}})
-"Inventory-View"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-View.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.inventory.Inventory-View" #f 37 19 37 57 ("jazz")
-      {Lisp-Entry "Inventory-View" #f 46 7 46 21 ("Object")
-        {Lisp-Entry "inventory" #f 49 8 49 17 ()}
-        {Lisp-Entry "parent" #f 50 8 50 14 ()}
-        {Lisp-Entry "initialize" #f 53 11 53 21 ("parent~self" "inventory~self" "set!" "nextmethod" "parent" "inventory")}
-        {Lisp-Entry "get-inventory" #f 64 18 64 31 ("inventory")}
-        {Lisp-Entry "get-parent" #f 68 18 68 28 ("parent")}
-        {Lisp-Entry "get-title" #f 77 26 77 35 ()}
-        {Lisp-Entry "get-text" #f 81 26 81 34 ()}
-        {Lisp-Entry "set-text" #f 85 26 85 34 ("value")}}}})
-"Logical-Datatype-Row"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "designer" "Logical-Datatype-Row.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.designer.Logical-Datatype-Row" #f 37 19 37 62 ("jazz")
-      {Lisp-Entry "Logical-Datatype-Row" #f 47 7 47 27 ("Combo-Row")
-        {Lisp-Entry "domains" #f 50 12 50 19 ("set-domains" "get-domains")}
-        {Lisp-Entry "initialize" #f 58 11 58 21 ("setup" "domains~self" "set!" "nextmethod" "apply" "others" "domains" "bind-keywords" "rest")}
-        {Lisp-Entry "setup" #f 65 11 65 16 ("get-children" "get-name" "list" "domain" "function" "map" "set-choices" "domains")}
-        {Lisp-Entry "get-domains" #f 76 18 76 29 ("domains")}
-        {Lisp-Entry "set-domains" #f 80 18 80 29 ("domains" "set!" "value")}
-        {Lisp-Entry "present" #f 89 11 89 18 ("present" "null?" "if" "type")}
-        {Lisp-Entry "editor-class" #f 100 11 100 23 ("Logical-Datatype-Row-Editor")}
-        {Lisp-Entry "get-edited-value" #f 104 11 104 27 ("Logical-Datatype" "new" "size" "name" "receive" "when" "parse-content" "parsed" "editor" "get-content" "string" "let*")}
-        {Lisp-Entry "set-edited-value" #f 112 11 112 27 ("present" "editor" "set-content" "value")}
-        {Lisp-Entry "read-content" #f 116 11 116 23 ("separator:" "substitute" "parse-strings" "content")}
-        {Lisp-Entry "parse-content" #f 120 11 120 24 ("message:" "Parse-Error" "new" "signal" "else" "cadr" "parse-integer" "2" "car" "values" "1" "0" "length" "case" "read-content" "content" "let" "string")}}
-      {Lisp-Entry "Logical-Datatype-Row-Editor" #f 134 7 134 34 ("Combo-Row-Editor")
-        {Lisp-Entry "content-change" #f 137 11 137 25 ("nextmethod" "popup" "'popup" "eq?" "unless" "origin")}
-        {Lisp-Entry "combo-choice" #f 142 11 142 23 ()}
-        {Lisp-Entry "get-entry" #f 146 11 146 20 ("car" "when" "get-content" "value-row" "read-content" "content" "let")}
-        {Lisp-Entry "set-entry" #f 152 11 152 20 ("cdr" "cons" "join" "set-content" "get-content" "value-row" "read-content" "actual" "let" "entry")}}}})
-"Printer-Connection"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "connection" "Printer-Connection.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.connection.Printer-Connection" #f 37 19 37 62 ("jazz")
-      {Lisp-Entry "Printer-Connection" #f 45 7 45 25 ("Connection")
-        {Lisp-Entry "printer" #f 48 8 48 15 ()}
-        {Lisp-Entry "initialize" #f 51 11 51 21 ("printer" "set!" "nextmethod" "prt")}
-        {Lisp-Entry "get-printer" #f 61 18 61 29 ("printer")}
-        {Lisp-Entry "load-request" #f 70 11 70 23 ("printer" "format" "rest" "command")}
-        {Lisp-Entry "load-multirequest" #f 74 11 74 28 ("printer" "format" "rest" "command")}
-        {Lisp-Entry "load-rows" #f 78 11 78 20 ("printer" "format" "command")}
-        {Lisp-Entry "load-row" #f 82 11 82 19 ("printer" "format" "command")}
-        {Lisp-Entry "execute" #f 91 11 91 18 ("printer" "format" "command")}
-        {Lisp-Entry "comment" #f 95 11 95 18 ("printer" "format" "apply" "parameters" "string")}}}})
-"Provider"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "provider" "Provider.jazz"} 1244915305
-    {Lisp-Entry "jazz.database.provider.Provider" #f 37 19 37 50 ("jazz")
-      {Lisp-Entry "Provider" #f 47 7 47 15 ("Object")
-        {Lisp-Entry "external-name" #f 50 26 50 39 ()}
-        {Lisp-Entry "get-datatype" #f 59 26 59 38 ()}
-        {Lisp-Entry "supports-multirequests?" #f 68 26 68 49 ()}
-        {Lisp-Entry "format-value" #f 77 26 77 38 ("->string" "else" "format-datetime" "Date" "is?" "format-boolean" "boolean?" "format-string" "string?" "format-variable" "symbol?" "cond" "value")}
-        {Lisp-Entry "format-variable" #f 86 29 86 44 ("->string" "variable")}
-        {Lisp-Entry "format-string" #f 90 11 90 24 ("format" "error" "find-in" "if" "string")}
-        {Lisp-Entry "format-boolean" #f 96 11 96 25 ("if" "value")}
-        {Lisp-Entry "format-date" #f 100 26 100 37 ("date-separator:" "present-date-day" "date")}
-        {Lisp-Entry "format-datetime" #f 104 26 104 41 ("date-separator:" "present" "date")}
-        {Lisp-Entry "present" #f 113 26 113 33 ()}
-        {Lisp-Entry "browser-class" #f 122 26 122 39 ()}
-        {Lisp-Entry "new-updater" #f 131 26 131 37 ("Inventory-Updater" "new" "connection")}}}})
-"Recordset"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "connection" "Recordset.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.connection.Recordset" #f 37 19 37 53 ("jazz")
-      {Lisp-Entry "Recordset" #f 46 7 46 16 ("Object")
-        {Lisp-Entry "initialize" #f 49 11 49 21 ("destroy-mandatory" "open" "apply" "when" "setup-recordset" "nextmethod" "rest" "command")}
-        {Lisp-Entry "setup-recordset" #f 57 19 57 34 ("initargs")}
-        {Lisp-Entry "destroy" #f 61 11 61 18 ("nextmethod" "destroy-recordset")}
-        {Lisp-Entry "destroy-recordset" #f 66 19 66 36 ()}
-        {Lisp-Entry "opened?" #f 75 26 75 33 ()}
-        {Lisp-Entry "open" #f 79 19 79 23 ("rest" "command")}
-        {Lisp-Entry "get-state" #f 88 26 88 35 ()}
-        {Lisp-Entry "new-recordset-metadata" #f 97 26 97 48 ()}
-        {Lisp-Entry "get-field-type" #f 101 26 101 40 ("field" "metadata")}
-        {Lisp-Entry "get-field-value" #f 105 26 105 41 ("field" "metadata")}
-        {Lisp-Entry "safe-field-value" #f 109 26 109 42 ("get-field-value" "field" "metadata")}
-        {Lisp-Entry "next-recordset!" #f 118 26 118 41 ()}
-        {Lisp-Entry "get-columns" #f 127 26 127 37 ("0" "naturals" "get-column" "n" "function" "map" "get-count" "count" "let" "new-recordset-metadata" "metadata" "with-closed")}
-        {Lisp-Entry "get-rows" #f 135 26 135 34 ("missing?" "get-output" "rows" "increase!" "Data-Row" "not" "put" "safe-field-value" "field" "map" "values" "set!" "begin" "=" "neq?" "and" "if" "<=" "eq?" "or" "when" "function" "iterate-records" "has-more?" "0" "count" "List-Factory" "new" "fact" "let" "get-fields" "fields" "new-recordset-metadata" "metadata" "with-closed" "data-class" "data-class:" "max-load" "max-load:" "table")}
-        {Lisp-Entry "move-first" #f 166 26 166 36 ()}
-        {Lisp-Entry "move-last" #f 170 26 170 35 ()}
-        {Lisp-Entry "move-next" #f 174 26 174 35 ()}
-        {Lisp-Entry "move-previous" #f 178 26 178 39 ()}
-        {Lisp-Entry "at-bof?" #f 182 26 182 33 ()}
-        {Lisp-Entry "at-eof?" #f 186 26 186 33 ()}
-        {Lisp-Entry "iterate-records" #f 190 26 190 41 ("proc")}
-        {Lisp-Entry "for-each-record" #f 194 26 194 41 ("function" "iterate-records" "proc")}
-        {Lisp-Entry "create-table" #f 206 18 206 30 ("load-table" "Data-Table" "new" "table" "let" "max-load" "max-load:" "name" "name:")}
-        {Lisp-Entry "load-table" #f 212 21 212 31 ("set-missing?" "set-rows" "set-columns" "get-rows" "missing?" "rows" "receive" "get-columns" "columns" "let" "data-class" "data-class:" "max-load" "max-load:" "table")}}}})
-"Recordset-Metadata"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "connection" "Recordset-Metadata.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.connection.Recordset-Metadata" #f 37 19 37 62 ("jazz")
-      {Lisp-Entry "Recordset-Metadata" #f 46 7 46 25 ("Object")
-        {Lisp-Entry "get-column" #f 54 18 54 28 ("get-field-precision" "width:" "get-field-size" "100" "min" "get-field-type" "Datatype" "datatype:" "get-field-name" "name:" "Data-Column" "new" "get-field" "field" "with-closed" "field-name")}
-        {Lisp-Entry "get-fields" #f 70 18 70 28 ("get-field" "collect" "get-count" "below" "0" "from" "n" "for" "loop")}
-        {Lisp-Entry "get-count" #f 75 26 75 35 ()}
-        {Lisp-Entry "get-field" #f 79 26 79 35 ("field-name")}
-        {Lisp-Entry "get-field-value" #f 83 26 83 41 ("field-name")}
-        {Lisp-Entry "get-field-name" #f 87 26 87 40 ("field")}
-        {Lisp-Entry "get-field-type" #f 91 26 91 40 ("field")}
-        {Lisp-Entry "get-field-size" #f 95 26 95 40 ("field")}
-        {Lisp-Entry "get-field-precision" #f 99 26 99 45 ("field")}}}})
-"Request"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "connection" "Request.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.connection.Request" #f 37 19 37 51 ("jazz")
-      {Lisp-Entry "Request" #f 46 7 46 14 ("Object")
+      {Lisp-Entry "Inventory-Updater" #f 40 7 40 24 ()}
+      {Lisp-Entry "Inventory-Updater" #f 46 7 46 24 ("initialize")
         {Lisp-Entry "connection" #f 49 8 49 18 ()}
-        {Lisp-Entry "initialize" #f 52 11 52 21 ("connection" "set!" "nextmethod" "con")}
-        {Lisp-Entry "new-recordset" #f 57 19 57 32 ("rest" "request")}
-        {Lisp-Entry "load-request" #f 61 18 61 30 ("load-table" "set-name" "when" "request:" "Data-Table" "new" "either" "let" "closed" "'closed" "get-state" "eq?" "unless" "new-recordset" "recordset" "with-closed" "data-class" "data-class:" "max-load" "max-load:" "name" "name:" "table" "table:" "request")}
-        {Lisp-Entry "load-multirequest" #f 71 18 71 35 ("get-output" "next-recordset!" "put" "data-class:" "cdr" "set!" "car" "data-class" "load-table" "null?" "request:" "Data-Table" "table" "open" "'open" "get-state" "=" "opened?" "and" "while" "List-Factory" "new" "tables" "let" "new-recordset" "recordset" "with-closed" "load-request" "list" "connection" "supports-multirequests?" "not" "if" "data-classes" "data-classes:" "max-load" "max-load:" "request")}
-        {Lisp-Entry "load-rows" #f 89 18 89 27 ("values" "get-rows" "missing?" "rows" "receive" "get-columns" "columns" "let" "new-recordset" "recordset" "with-closed" "max-load" "max-load:" "table" "request")}
-        {Lisp-Entry "execute" #f 101 26 101 33 ("command")}}}})
+        {Lisp-Entry "inventory" #f 50 8 50 17 ()}
+        {Lisp-Entry "pending-properties" #f 51 8 51 26 ()}
+        {Lisp-Entry "pending-deletes" #f 52 8 52 23 ()}
+        {Lisp-Entry "pending-triggers/indexes" #f 53 8 53 32 ()}
+        {Lisp-Entry "ugly-patch" #f 54 8 54 18 ()}
+        {Lisp-Entry "initialize" #f 57 11 57 21 ("get-inventory" "inventory~self" "connection~self" "set!" "nextmethod" "connection")}
+        {Lisp-Entry "Actions" #f 68 14 68 21 ("no-action" "modify" "add" "right" "remove" "left")}
+        {Lisp-Entry "update-inventory" #f 75 18 75 34 ("reporter:" "title:" "ugly-patch" "close" "proxy" "for-each" "process-pending-deletes" "process-pending-triggers/indexes" "process-pending-properties" "process-table-triggers" "SQLServer-Inventory" "is?" "when" "inventory" "process-children" "pending-triggers/indexes" "pending-deletes" "pending-properties" "set!" "function" "with-execution-context" "reporter" "delta")}
+        {Lisp-Entry "process-children" #f 96 11 96 27 ("8" "constraint" "7" "trigger" "6" "index" "5" "primary-key" "-1" "ordinal-position:" "get-property" "third" "either" "4" "column" "3" "relation" "2" "procedure" "1" "view" "0" "list" "table" "get-kind" "case" "get-name" "name" "let" "x" "key:" "get-children" "<" "sort" "process-entity" "create-sql" "SQLServer-Inventory" "is?" "if" "object" "function" "for-each" "reporter" "parent-proxy" "entity")}
+        {Lisp-Entry "create-sql" #f 120 11 120 21 ("view" "generate-sql-procedure" "procedure" "generate-sql-table" "table" "when" "has-differences?:" "get-property" "has-differences?" "let" "else" "generate-sql-relation" "relation" "get-kind" "case" "function" "with-continue" "reporter" "parent-proxy" "object")}
+        {Lisp-Entry "process-object" #f 134 11 134 25 ("modify" "right" "case" "left" "'left" "eq?" "unless" "if" "difference:" "get-property" "action" "let" "drop-proc" "create-proc" "recreate-table?" "object")}
+        {Lisp-Entry "find-action-on-process-property" #f 146 11 146 42 ("left" "'left" "modify" "'modify" "eq?" "right" "'right" "/=" "and" "when" "if" "recreate-table?" "new-value" "old-value" "action")}
+        {Lisp-Entry "drop-object" #f 159 11 159 22 ("execute-sql-commit-preserve" "tie" "script" "get-kind" "object-kind" "get-name" "object-name" "let*" "object")}
+        {Lisp-Entry "generate-sql-header-script" #f 166 11 166 37 ("tie")}
+        {Lisp-Entry "Table-Not-Found" #f 182 12 182 27 ("#x80045510")}
+        {Lisp-Entry "set-table-tempo-name" #f 186 11 186 31 ("Table-Not-Found" "Item" "cotry" "format" "set!" "increase!" "while" "inventory" "get-database" "get-Tables" "tables" "with-closed" "looking" "table-tempo-name" "-1" "suffix" "get-name" "table-name" "let" "object")}
+        {Lisp-Entry "generate-sql-table" #f 199 11 199 29 ("modify" "drop-table" "left" "right" "case" "generate-sql-partial-table" "generate-sql-full-table" "regenerate-full-table?" "null?" "if" "difference:" "get-property" "action" "let" "reporter" "table")}
+        {Lisp-Entry "regenerate-full-table?" #f 213 11 213 33 ("left" "right" "modify" "case" "modify-column?" "null?" "if" "difference:" "get-property" "action" "let" "table")}
+        {Lisp-Entry "modify-column?" #f 223 11 223 25 ("-1" "either" "key:" "get-columns" "<" "sort" "third" "second" "+" "/=" "null?" "when" "else" "decrease!" "left" "increase!" "right" "case" "nullable?:" "datatype:" "modify" "'modify" "ordinal-position:" "first" "=" "or" "difference:" "get-property" "action" "column" "function" "some?" "0" "column-pos" "let" "table")}
+        {Lisp-Entry "generate-sql-full-table" #f 244 11 244 34 ("generate-sql-access-right" "process-triggers" "process-constraints" "process-indexes" "process-primary-key" "generate-sql-identity-end" "recreate-table?:" "set-property" "undo-create-table" "set!" "process-copy-data" "generate-sql-identity-start" "check-default-values" "process-default-values" "process-description-columns" "process-description-table" "begin" "unwind-protect" "temp-table-created" "let" "generate-sql-create-table" "drop-default-values" "drop-table-relation" "generate-sql-header-script" "execute-sql-commit-preserve" "user-message" "get-columns" "identity?:" "third" "column" "function" "some?" "identity-column?" "if" "table-current-name" "set-table-tempo-name" "not" "when" "table-tempo-name" "right" "'right" "=" "new-table?" "difference:" "get-property" "action" "get-name" "table-name" "let*" "reporter" "table")}
+        {Lisp-Entry "undo-create-table" #f 285 11 285 28 ("execute-sql-commit-preserve" "tie" "script" "let" "table-name")}
+        {Lisp-Entry "generate-sql-partial-table" #f 290 11 290 37 ("process-triggers" "process-constraints" "process-indexes" "process-primary-key" "process-default-values" "process-description-columns" "process-description-table" "user-message" "when" "get-name" "table-name" "let" "reporter" "table")}
+        {Lisp-Entry "create-fields-list" #f 304 11 304 29 ("0" ">=" "tie" "identity-replication?:" "id-repl" "identity-increment:" "id-inc" "identity-seed:" "id-seed" "identity?:" "identity-string" "nullable?:" "if" "nullable-string" "ordinal-position:" "ordinal-position" "get-datatype" "third" "get-native" "datatype" "get-name" "field-name" "let" "left" "'left" "difference:" "get-property" "/=" "when" "field" "function" "collect" "list")}
+        {Lisp-Entry "generate-sql-create-table" #f 326 11 326 36 ("tie" "def-table" "-1" "ordinal-position:" "get-property" "third" "either" "column" "function" "key:" "get-columns" "<" "sort" "create-fields-list" "join" "fields-list" "let*" "table-name" "object")}
+        {Lisp-Entry "get-added-columns-without-default-value" #f 336 11 336 50 ("get-columns" "get-defaultable?" "=" "or" "not" "second" "null?" "and" "datatype:" "new-datatype" "nullable?:" "new-nullable?" "first" "new-default-value-action" "default-value:" "third" "new-default-value" "ordinal-position:" "get-property" "ordinal-position" "let" "column" "function" "collect-if" "table")}
+        {Lisp-Entry "process-copy-data" #f 353 11 353 28 ("execute-sql-commit-preserve" "script-drop-rename-table" "tie" "script-copy" "get-native" "format" "not" "and" "need-default?" "modify" "'modify" "action-for-property" "eq?" "must-convert?" "safe-name" "let" "else" "if" "cond" "read-only" "'read-only" "=" "read-only?" "indirect?:" "default-value:" "get-native-with-value" "default-value" "datatype:" "datatype" "nullable?:" "nullable?" "object-old-property" "null?" "new-column?" "new-values" "get-name" "encapsulate-name" "map" "new-names" "key:" "get-columns" "ordinal-position:" "object-new-property" "not-null?" "column" "function" "collect-if" "<" "sort" "new-columns" "let*" "old-table" "new-table" "object")}
+        {Lisp-Entry "drop-table" #f 398 11 398 21 ("drop-object" "drop-default-values" "drop-table-relation" "table")}
+        {Lisp-Entry "process-description-table" #f 404 11 404 36 ("generate-sql-update-description-table" "modify" "generate-sql-drop-description-table" "left" "generate-sql-add-description-table" "right" "case" "execute-sql-commit-preserve" "when" "find-action-on-process-property" "set!" "description:" "get-property" "new-value" "old-value" "action" "bind" "recreate-table?" "table-name" "table")}
+        {Lisp-Entry "generate-sql-add-description-table" #f 415 11 415 45 ("tie" "script" "substitute-alist" "user" "let*" "description" "table-name")}
+        {Lisp-Entry "generate-sql-drop-description-table" #f 424 11 424 46 ("tie" "script" "user" "let*" "table-name")}
+        {Lisp-Entry "generate-sql-update-description-table" #f 430 11 430 48 ("tie" "script" "substitute-alist" "user" "let*" "description" "table-name")}
+        {Lisp-Entry "generate-sql-drop-columns" #f 445 11 445 36 ("tie" "script" "list" "join" "columns-list" "let*" "table-name" "object")}
+        {Lisp-Entry "generate-sql-add-default-value" #f 452 11 452 41 ("tie" "script" "let" "default-value" "constraint-name" "column-name" "table-name")}
+        {Lisp-Entry "process-default-values" #f 458 11 458 33 ("get-columns" "script-add-default-value" "script-drop-default-value" "modify" "generate-sql-drop-constraint" "find-constraint-name" "old-constraint-name" "left" "format" "title:" "generate-sql-add-default-value" "execute-sql-commit-preserve" "with-execution-node" "right" "case" "tie" "new-constraint-name" "column-name" "let*" "when" "find-action-on-process-property" "set!" "default-value:" "get-property" "new-value" "old-value" "action" "bind" "column" "function" "for-each" "get-name" "constraint-table-name" "let" "recreate-table?" "table-name" "table")}
+        {Lisp-Entry "check-default-values" #f 489 11 489 31 ("get-columns" "error" "find-default-value" "/=" "modify" "right" "case" "tie" "new-constraint-name" "column-name" "let*" "when" "find-action-on-process-property" "set!" "default-value:" "get-property" "new-value" "old-value" "action" "bind" "column" "function" "for-each" "get-name" "constraint-table-name" "let" "table-name" "table")}
+        {Lisp-Entry "drop-default-values" #f 503 11 503 30 ("get-columns" "execute-sql-commit-preserve" "generate-sql-drop-constraint" "script-drop-constraint" "generate-sql-header-script" "script-header" "find-constraint-name" "constraint-name" "column-name" "let*" "default-value:" "get-property" "second" "when" "column" "function" "for-each" "get-name" "table-name" "let" "table")}
+        {Lisp-Entry "find-constraint-name" #f 516 11 516 31 ("get-Name" "get-DRIDefault" "default" "column" "get-Columns" "columns" "Item" "table" "inventory" "get-database" "get-Tables" "tables" "with-closed" "column-name" "table-name")}
+        {Lisp-Entry "find-default-value" #f 525 11 525 29 ("0" "connection" "load-value" "tie" "script" "let" "constraint-name")}
+        {Lisp-Entry "generate-sql-identity-start" #f 530 11 530 38 ("tie" "script" "let" "table-name")}
+        {Lisp-Entry "generate-sql-identity-end" #f 535 11 535 36 ("tie" "script" "let" "table-name")}
+        {Lisp-Entry "process-description-columns" #f 540 11 540 38 ("get-columns" "generate-sql-update-description-column" "modify" "generate-sql-drop-description-column" "left" "generate-sql-add-description-column" "right" "case" "execute-sql-commit-preserve" "when" "get-name" "column-name" "let" "find-action-on-process-property" "set!" "description:" "get-property" "new-value" "old-value" "action" "bind" "column" "function" "for-each" "recreate-table?" "table-name" "table")}
+        {Lisp-Entry "generate-sql-add-description-column" #f 554 11 554 46 ("tie" "script" "substitute-alist" "user" "let*" "description" "column-name" "table-name")}
+        {Lisp-Entry "generate-sql-drop-description-column" #f 563 11 563 47 ("tie" "script" "user" "let*" "column-name" "table-name")}
+        {Lisp-Entry "generate-sql-update-description-column" #f 569 11 569 49 ("tie" "script" "substitute-alist" "user" "let*" "description" "column-name" "table-name")}
+        {Lisp-Entry "process-primary-key" #f 583 11 583 30 ("drop-primary-key" "add-primary-key" "process-object" "when" "get-primary-key" "primary-key" "let" "recreate-table?" "table")}
+        {Lisp-Entry "add-primary-key" #f 589 11 589 26 ("execute-sql-commit-preserve" "generate-sql-primary-key" "script-create-primary-key" "generate-sql-header-script" "script-header" "let" "object")}
+        {Lisp-Entry "drop-primary-key" #f 596 11 596 27 ("execute-sql-commit-preserve" "drop-table-relation" "generate-sql-drop-constraint" "script-drop-constraint" "generate-sql-header-script" "script-header" "table-name" "get-parent" "table" "get-name" "constraint-name" "let*" "primary-key")}
+        {Lisp-Entry "generate-sql-primary-key" #f 607 11 607 35 ("script" "tie" "0" ">" "fill-factor-text" "fill-factor:" "fill-factor" "clustered?:" "if" "clustered" "fields/orders:" "get-property" "third" "create-fields/orders-list" "fields/orders" "pk-name" "get-parent" "get-name" "table-name" "let*" "primary-key")}
+        {Lisp-Entry "create-fields/orders-list" #f 622 11 622 36 ("tie" "ascending" "'ascending" "=" "if" "order-string" "second" "order" "first" "encapsulate-name" "field" "let*" "field/order" "function" "map" "join" "list")}
+        {Lisp-Entry "process-indexes" #f 638 11 638 26 ("get-indexes" "drop-index" "add-index" "process-object" "index" "function" "for-each" "recreate-table?" "object")}
+        {Lisp-Entry "add-index" #f 644 11 644 20 ("execute-sql-commit-preserve" "generate-sql-index" "script-create-index" "generate-sql-header-script" "script-header" "let" "index")}
+        {Lisp-Entry "drop-index" #f 651 11 651 21 ("execute-sql-commit-preserve" "tie" "script" "get-parent" "table-name" "get-name" "index-name" "let*" "index")}
+        {Lisp-Entry "generate-sql-index" #f 658 11 658 29 ("script" "options" "list" "remove-nils" "options-list" "recompute-statistics?:" "statistics-norecompute" "ignore-duplicates?:" "ignore-dup-key" "tie" "0" ">" "fill-factor-text" "fill-factor:" "fill-factor" "pad-index?:" "pad-index" "clustered?:" "clustered" "unique?:" "if" "unique" "fields/orders:" "get-property" "third" "create-fields/orders-list" "fields/orders" "index-name" "get-parent" "get-name" "table-name" "let*" "index")}
+        {Lisp-Entry "process-triggers" #f 687 11 687 27 ("get-triggers" "drop-object" "create-procedure" "process-object" "with-continue" "trigger" "function" "for-each" "recreate-table?" "object")}
+        {Lisp-Entry "process-table-triggers" #f 695 11 695 33 ("get-tables" "process-triggers" "left" "'left" "=" "unless" "difference:" "action" "recreate-table?:" "get-property" "recreate-table?" "let" "table" "function" "for-each" "objects")}
+        {Lisp-Entry "process-constraints" #f 709 11 709 30 ("get-constraints" "drop-constraint" "create-constraint" "process-object" "constraint" "function" "for-each" "recreate-table?" "table")}
+        {Lisp-Entry "create-constraint" #f 715 11 715 28 ("execute-sql-commit-preserve" "script" "tie" "checked?:" "not" "checked-text" "exclude-replication?:" "replication-text" "if" "check-text" "check?" "text:" "get-property" "third" "text" "constraint-name" "get-parent" "get-name" "table-name" "let*" "constraint")}
+        {Lisp-Entry "drop-constraint" #f 732 11 732 26 ("execute-sql-commit-preserve" "tie" "script" "constraint-name" "get-parent" "get-name" "table-name" "let*" "constraint")}
+        {Lisp-Entry "generate-sql-drop-constraint" #f 740 11 740 39 ("tie" "script" "let" "constraint-name" "table-name")}
+        {Lisp-Entry "generate-sql-relation" #f 751 11 751 32 ("drop-relation" "create-relation" "process-object" "recreate-table?:" "get-property" "recreate-table?" "let" "relation")}
+        {Lisp-Entry "create-relation" #f 756 11 756 26 ("execute-sql-commit-preserve" "script" "tie" "checked?:" "not" "checked-text" "check-text" "check?" "exclude-replication?:" "replication-text" "delete-cascade?:" "on-delete-cascade" "update-cascade?:" "get-property" "if" "on-update-cascade" "get-foreign-columns" "foreign-fields" "get-foreign-table" "foreign-table" "get-primary-columns" "primary-fields" "get-primary-table" "third" "primary-table" "get-name" "relation-name" "let*" "relation")}
+        {Lisp-Entry "drop-relation" #f 783 11 783 24 ("execute-sql-commit-preserve" "tie" "script" "get-foreign-table" "second" "foreign-table" "get-name" "relation-name" "let*" "relation")}
+        {Lisp-Entry "drop-table-relation" #f 791 11 791 30 ("get-parent" "get-relations" "set-property" "drop-relation" "=" "or" "when" "get-primary-table" "primary-table" "get-foreign-table" "second" "foreign-table" "recreate-table?:" "get-property" "unless" "relation" "function" "for-each" "get-name" "table-name" "let" "table")}
+        {Lisp-Entry "generate-sql-procedure" #f 809 11 809 33 ("modify" "drop-object" "left" "create-procedure" "right" "case" "user-message" "when" "get-name" "name" "difference:" "get-property" "action" "let" "reporter" "object")}
+        {Lisp-Entry "create-procedure" #f 821 11 821 27 ("connection" "execute" "text:" "get-property" "third" "script-create-procedure" "generate-sql-header-script" "script-header" "let" "object")}
+        {Lisp-Entry "generate-sql-access-right" #f 834 11 834 36 ("tie" "script" "user" "let*")}
+        {Lisp-Entry "object-new-property" #f 851 11 851 30 ("get-property" "third" "property" "object")}
+        {Lisp-Entry "object-old-property" #f 855 11 855 30 ("get-property" "second" "property" "object")}
+        {Lisp-Entry "action-for-property" #f 859 11 859 30 ("get-property" "first" "property" "object")}
+        {Lisp-Entry "encapsulate-name" #f 863 11 863 27 ("format" "name")}
+        {Lisp-Entry "execute-sql-commit-preserve" #f 867 11 867 38 ("connection" "execute" "commit" "tie" "let*" "script")}
+        {Lisp-Entry "process-entity" #f 880 11 880 25 ("process-modify" "no-action" "modify" "process-delete" "remove" "process-new" "add" "case" "get-name" "name" "get-kind" "kind" "Actions" "difference:" "get-property" "assq" "cdr" "action" "let" "function" "with-continue" "reporter" "parent-proxy" "object")}
+        {Lisp-Entry "process-new" #f 892 11 892 22 ("format" "title:" "process-proxy" "cons" "ugly-patch" "set!" "new-proxy" "proxy" "let" "function" "with-execution-node" "reporter" "name" "kind" "parent-proxy" "object")}
+        {Lisp-Entry "process-delete" #f 901 11 901 25 ("format" "title:" "process-proxy" "function" "with-execution-node" "reporter" "name" "kind" "parent-proxy" "object")}
+        {Lisp-Entry "process-modify" #f 908 11 908 25 ("format" "title:" "process-proxy" "cons" "ugly-patch" "set!" "get-proxy" "proxy" "let" "function" "with-execution-node" "reporter" "name" "kind" "parent-proxy" "object")}
+        {Lisp-Entry "Recreate" #f 917 14 917 22 ("procedure" "relation" "view" "constraint" "trigger" "index" "primary-key")}
+        {Lisp-Entry "process-proxy" #f 921 11 921 24 ("add-pending-trigger/index" "index" "trigger" "complete-append" "SQLServer-Inventory-Relation" "unless" "process-children" "modify-proxy" "cons" "ugly-patch" "new-proxy" "set!" "delete-proxy" "linked?:" "table" "'table" "Recreate" "memq?" "has-differences?:" "and" "modify" "'modify" "no-action" "'no-action" "or" "process-pending-triggers/indexes" "relation" "'relation" "eq?" "list" "add-pending-delete" "remove" "'remove" "if" "user-message" "when" "add" "'add" "=" "new?" "Data-Entity" "is?" "entity?" "get-name" "name" "get-kind" "kind" "Actions" "difference:" "get-property" "assq" "cdr" "action" "let*" "reporter" "proxy" "parent-proxy" "object")}
+        {Lisp-Entry "new-proxy" #f 959 11 959 20 ("error" "else" "create-procedure" "procedure" "create-relation-complete" "foreign-columns:" "foreign-fields" "foreign-table:" "foreign-table" "primary-columns:" "primary-fields" "primary-table:" "primary-table" "create-relation" "SQLServer-Inventory" "is-not?" "if" "relation" "create-view" "view" "create-constraint" "constraint" "create-trigger" "trigger" "create-index" "index" "create-column" "column" "create-primary-key" "fields/orders:" "get-property" "third" "fields/orders" "let" "primary-key" "create-table" "table" "case" "object" "name" "kind" "parent")}
+        {Lisp-Entry "get-proxy" #f 985 11 985 20 ("error" "else" "get-procedure" "procedure" "get-relation" "relation" "get-view" "view" "get-constraint" "constraint" "get-trigger" "trigger" "get-index" "index" "get-column" "column" "get-primary-key" "primary-key" "get-table" "table" "case" "name" "kind" "parent")}
+        {Lisp-Entry "modify-proxy" #f 1004 11 1004 23 ("property-names" "modify-proxy-property" "list" "add-pending-property" "allow-zero-length?" "display-format" "description" "memq?" "if" "modify" "'modify" "=" "or" "when" "new-value" "old-value" "action" "bind" "get-property" "composite" "symbol->keyword" "property" "let*" "symbol" "function" "for-each" "force?" "kind" "physical" "object")}
+        {Lisp-Entry "modify-proxy-property" #f 1016 11 1016 32 ("format" "title:" "error" "else" "modify-relation-property" "relation" "modify-procedure-property" "procedure" "modify-view-property" "view" "modify-constraint-property" "constraint" "modify-trigger-property" "trigger" "modify-index-property" "index" "modify-column-property" "column" "modify-primary-key-property" "primary-key" "modify-table-property" "table" "case" "function" "with-execution-node" "force?" "value" "property" "kind" "physical" "object")}
+        {Lisp-Entry "modify-table-property" #f 1033 11 1033 32 ("error" "else" "set-validation-text" "validation-text" "set-validation-rule" "validation-rule" "set-description" "description" "set-source-table-name" "source-table-name" "set-connect" "connect" "case" "value" "property" "physical")}
+        {Lisp-Entry "modify-primary-key-property" #f 1043 11 1043 38 ("error" "else" "fill-factor" "clustered?" "fields/orders" "case" "value" "property" "physical")}
+        {Lisp-Entry "create-field-by-sql" #f 1049 11 1049 30 ("connection" "execute" "tie" "request" "format" "if" "size-label" "has-size?" "sizeable?" "get-size" "size" "get-name" "type-name" "get-nullable?" "nullable?" "field-name" "get-table" "get-title" "table-name" "let*" "value" "physical")}
+        {Lisp-Entry "modify-column-property" #f 1066 11 1066 33 ("error" "set-identity-seed" "identity-seed" "set-identity-increment" "identity-increment" "identity-replication?" "set-identity?" "identity?" "set-auto-increment?" "auto-increment?" "set-ordinal-position" "ordinal-position" "set-display-format" "display-format" "set-allow-zero-length?" "allow-zero-length?" "set-validation-text" "validation-text" "set-validation-rule" "validation-rule" "set-nullable?" "get-size" "set-size" "begin" "=" "get-name" "new-type" "get-type" "type" "get-nullable?" "nullable?" "let" "else" "create-field-by-sql" "Access-Datatype" "typecase" "set-datatype" "if" "datatype" "set-description" "description" "set-default-value" "default-value" "case" "inventory" "column-supports-property?" "when" "force?" "value" "property" "physical" "object")}
+        {Lisp-Entry "modify-index-property" #f 1101 11 1101 32 ("error" "else" "exclude-replication?" "checked?" "fill-factor" "recompute-statistics?" "pad-index?" "clustered?" "ignore-duplicates?" "set-unique?" "SQLServer-Inventory-Index" "is?" "unless" "unique?" "set-fields/orders" "fields/orders" "case" "value" "property" "physical")}
+        {Lisp-Entry "modify-trigger-property" #f 1109 11 1109 34 ("error" "else" "set-text" "text" "case" "value" "property" "physical")}
+        {Lisp-Entry "modify-constraint-property" #f 1115 11 1115 37 ("error" "else" "checked?" "exclude-replication?" "text" "case" "value" "property" "physical")}
+        {Lisp-Entry "modify-procedure-property" #f 1121 11 1121 36 ("error" "else" "set-text" "text" "case" "value" "property" "physical")}
+        {Lisp-Entry "modify-view-property" #f 1127 11 1127 31 ("error" "else" "set-text" "text" "case" "value" "property" "physical")}
+        {Lisp-Entry "modify-relation-property" #f 1133 11 1133 35 ("error" "else" "checked?" "exclude-replication?" "set-update-cascade?" "update-cascade?" "set-delete-cascade?" "delete-cascade?" "set-unique?" "unique?" "set-left?" "left?" "set-right?" "right?" "set-foreign-table" "foreign-table" "set-foreign-field-names" "foreign-columns" "set-primary-table" "primary-table" "set-primary-field-names" "primary-columns" "case" "SQLServer-Inventory-Relation" "is?" "unless" "value" "property" "physical")}
+        {Lisp-Entry "complete-append" #f 1154 11 1154 26 ("error" "else" "append-procedure" "procedure" "append-relation" "relation" "append-view" "view" "append-constraint" "constraint" "append-trigger" "trigger" "append-index" "index" "append-column" "column" "append-primary-key" "primary-key" "append-table" "table" "case" "function" "with-continue" "child" "parent" "kind")}
+        {Lisp-Entry "delete-proxy" #f 1175 11 1175 23 ("error" "else" "remove-procedure" "procedure" "foreign-table:" "get-property" "second" "foreign-table" "let" "remove-relation" "SQLServer-Inventory" "is-not?" "if" "relation" "remove-view" "view" "remove-constraint" "constraint" "remove-trigger" "trigger" "remove-index" "index" "remove-column" "column" "remove-primary-key" "primary-key" "remove-table" "table" "case" "object" "child-name" "parent" "kind")}
+        {Lisp-Entry "add-pending-property" #f 1197 11 1197 31 ("cons" "pending-properties" "set!" "info")}
+        {Lisp-Entry "add-pending-delete" #f 1201 11 1201 29 ("cons" "pending-deletes" "set!" "info")}
+        {Lisp-Entry "add-pending-trigger/index" #f 1205 11 1205 36 ("cons" "pending-triggers/indexes" "set!" "info")}
+        {Lisp-Entry "process-pending-properties" #f 1209 11 1209 37 ("pending-properties" "modify-proxy-property" "with-continue" "new-value" "symbol" "kind" "physical" "object" "bind" "element" "function" "for-each")}
+        {Lisp-Entry "Entities-Delete" #f 1218 14 1218 29 ("column" "primary-key" "index" "constraint" "trigger" "table" "view" "procedure" "relation")}
+        {Lisp-Entry "process-pending-deletes" #f 1222 11 1222 34 ("first" "Entities-Delete" "find" "lst" "key:" "pending-deletes" "<" "sort" "delete-proxy" "with-continue" "object" "name" "physical" "kind" "bind" "element" "function" "for-each")}
+        {Lisp-Entry "process-pending-triggers/indexes" #f 1232 11 1232 43 ("set!" "pending-triggers/indexes" "complete-append" "subentity" "entity" "kind" "bind" "element" "function" "for-each")}}}})
+"Inventory-View"
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "inventory" "Inventory-View.jazz"} 1248797036
+    {Lisp-Entry "jazz.database.inventory.Inventory-View" #f 37 19 37 57 ("jazz")
+      {Lisp-Entry "Inventory-View" #f 43 7 43 21 ()
+        {Lisp-Entry "inventory" #f 46 8 46 17 ()}
+        {Lisp-Entry "parent" #f 47 8 47 14 ()}
+        {Lisp-Entry "initialize" #f 50 11 50 21 ("parent~self" "inventory~self" "set!" "nextmethod" "parent" "inventory")}
+        {Lisp-Entry "get-inventory" #f 61 18 61 31 ("inventory")}
+        {Lisp-Entry "get-parent" #f 65 18 65 28 ("parent")}
+        {Lisp-Entry "get-title" #f 74 26 74 35 ()}
+        {Lisp-Entry "get-text" #f 78 26 78 34 ()}
+        {Lisp-Entry "set-text" #f 82 26 82 34 ("value")}}}})
+"Logical-Datatype-Row"
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "designer" "Logical-Datatype-Row.jazz"} 1248797036
+    {Lisp-Entry "jazz.database.designer.Logical-Datatype-Row" #f 37 19 37 62 ("jazz")
+      {Lisp-Entry "Logical-Datatype-Row" #f 44 20 44 40 ("set-domains" "get-domains" "initialize")
+        {Lisp-Entry "domains" #f 47 12 47 19 ()}
+        {Lisp-Entry "initialize" #f 55 11 55 21 ("setup" "domains~self" "set!" "nextmethod" "apply" "others" "domains" "bind-keywords" "rest")}
+        {Lisp-Entry "setup" #f 62 11 62 16 ("get-children" "get-name" "list" "domain" "function" "map" "set-choices" "domains")}
+        {Lisp-Entry "get-domains" #f 73 18 73 29 ("domains")}
+        {Lisp-Entry "set-domains" #f 77 18 77 29 ("domains" "set!" "value")}
+        {Lisp-Entry "present" #f 86 11 86 18 ("present" "null?" "if" "type")}
+        {Lisp-Entry "editor-class" #f 97 11 97 23 ("Logical-Datatype-Row-Editor")}
+        {Lisp-Entry "get-edited-value" #f 101 11 101 27 ("Logical-Datatype" "new" "size" "name" "receive" "when" "parse-content" "parsed" "editor" "get-content" "string" "let*")}
+        {Lisp-Entry "set-edited-value" #f 109 11 109 27 ("present" "editor" "set-content" "value")}
+        {Lisp-Entry "read-content" #f 113 11 113 23 ("separator:" "substitute" "parse-strings" "content")}
+        {Lisp-Entry "parse-content" #f 117 11 117 24 ("message:" "Parse-Error" "new" "signal" "else" "cadr" "parse-integer" "2" "car" "values" "1" "0" "length" "case" "read-content" "content" "let" "string")}}
+      {Lisp-Entry "Logical-Datatype-Row-Editor" #f 131 7 131 34 ()
+        {Lisp-Entry "content-change" #f 134 11 134 25 ("nextmethod" "popup" "'popup" "eq?" "unless" "origin")}
+        {Lisp-Entry "combo-choice" #f 139 11 139 23 ()}
+        {Lisp-Entry "get-entry" #f 143 11 143 20 ("car" "when" "get-content" "value-row" "read-content" "content" "let")}
+        {Lisp-Entry "set-entry" #f 149 11 149 20 ("cdr" "cons" "join" "set-content" "get-content" "value-row" "read-content" "actual" "let" "entry")}}}})
+"Printer-Connection"
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "connection" "Printer-Connection.jazz"} 1248797036
+    {Lisp-Entry "jazz.database.connection.Printer-Connection" #f 37 19 37 62 ("jazz")
+      {Lisp-Entry "Printer-Connection" #f 43 20 43 38 ()
+        {Lisp-Entry "printer" #f 46 8 46 15 ()}
+        {Lisp-Entry "initialize" #f 49 11 49 21 ("printer" "set!" "nextmethod" "prt")}
+        {Lisp-Entry "get-printer" #f 59 18 59 29 ("printer")}
+        {Lisp-Entry "load-request" #f 68 11 68 23 ("printer" "format" "rest" "command")}
+        {Lisp-Entry "load-multirequest" #f 72 11 72 28 ("printer" "format" "rest" "command")}
+        {Lisp-Entry "load-rows" #f 76 11 76 20 ("printer" "format" "command")}
+        {Lisp-Entry "load-row" #f 80 11 80 19 ("printer" "format" "command")}
+        {Lisp-Entry "execute" #f 89 11 89 18 ("printer" "format" "command")}
+        {Lisp-Entry "comment" #f 93 11 93 18 ("printer" "format" "apply" "parameters" "string")}}}})
+"Provider"
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "provider" "Provider.jazz"} 1250004222
+    {Lisp-Entry "jazz.database.provider.Provider" #f 37 19 37 50 ("jazz")
+      {Lisp-Entry "Provider" #f 44 7 44 15 ()
+        {Lisp-Entry "external-name" #f 47 26 47 39 ()}
+        {Lisp-Entry "get-datatype" #f 56 26 56 38 ()}
+        {Lisp-Entry "supports-multirequests?" #f 65 26 65 49 ()}
+        {Lisp-Entry "format-value" #f 74 26 74 38 ("->string" "else" "format-datetime" "Date" "is?" "format-boolean" "boolean?" "format-string" "string?" "format-variable" "symbol?" "cond" "value")}
+        {Lisp-Entry "format-variable" #f 83 29 83 44 ("->string" "variable")}
+        {Lisp-Entry "format-string" #f 87 11 87 24 ("format" "error" "find-in" "if" "string")}
+        {Lisp-Entry "format-boolean" #f 93 11 93 25 ("if" "value")}
+        {Lisp-Entry "format-date" #f 97 26 97 37 ("date-separator:" "present-date-day" "date")}
+        {Lisp-Entry "format-datetime" #f 101 26 101 41 ("date-separator:" "present" "date")}
+        {Lisp-Entry "present" #f 110 26 110 33 ()}
+        {Lisp-Entry "browser-class" #f 119 26 119 39 ()}
+        {Lisp-Entry "new-updater" #f 128 26 128 37 ("Inventory-Updater" "new" "connection")}}}})
+"Recordset"
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "connection" "Recordset.jazz"} 1248797036
+    {Lisp-Entry "jazz.database.connection.Recordset" #f 37 19 37 53 ("jazz")
+      {Lisp-Entry "Recordset" #f 44 7 44 16 ()
+        {Lisp-Entry "initialize" #f 47 11 47 21 ("destroy-mandatory" "open" "apply" "when" "setup-recordset" "nextmethod" "rest" "command")}
+        {Lisp-Entry "setup-recordset" #f 55 19 55 34 ("initargs")}
+        {Lisp-Entry "destroy" #f 59 11 59 18 ("nextmethod" "destroy-recordset")}
+        {Lisp-Entry "destroy-recordset" #f 64 19 64 36 ()}
+        {Lisp-Entry "opened?" #f 73 26 73 33 ()}
+        {Lisp-Entry "open" #f 77 19 77 23 ("rest" "command")}
+        {Lisp-Entry "get-state" #f 86 26 86 35 ()}
+        {Lisp-Entry "new-recordset-metadata" #f 95 26 95 48 ()}
+        {Lisp-Entry "get-field-type" #f 99 26 99 40 ("field" "metadata")}
+        {Lisp-Entry "get-field-value" #f 103 26 103 41 ("field" "metadata")}
+        {Lisp-Entry "safe-field-value" #f 107 26 107 42 ("get-field-value" "field" "metadata")}
+        {Lisp-Entry "next-recordset!" #f 116 26 116 41 ()}
+        {Lisp-Entry "get-columns" #f 125 26 125 37 ("0" "naturals" "get-column" "n" "function" "map" "get-count" "count" "let" "new-recordset-metadata" "metadata" "with-closed")}
+        {Lisp-Entry "get-rows" #f 133 26 133 34 ("missing?" "get-output" "rows" "increase!" "Data-Row" "not" "put" "safe-field-value" "field" "map" "values" "set!" "begin" "=" "neq?" "and" "if" "<=" "eq?" "or" "when" "function" "iterate-records" "has-more?" "0" "count" "List-Factory" "new" "fact" "let" "get-fields" "fields" "new-recordset-metadata" "metadata" "with-closed" "data-class" "data-class:" "max-load" "max-load:" "table")}
+        {Lisp-Entry "move-first" #f 164 26 164 36 ()}
+        {Lisp-Entry "move-last" #f 168 26 168 35 ()}
+        {Lisp-Entry "move-next" #f 172 26 172 35 ()}
+        {Lisp-Entry "move-previous" #f 176 26 176 39 ()}
+        {Lisp-Entry "at-bof?" #f 180 26 180 33 ()}
+        {Lisp-Entry "at-eof?" #f 184 26 184 33 ()}
+        {Lisp-Entry "iterate-records" #f 188 26 188 41 ("proc")}
+        {Lisp-Entry "for-each-record" #f 192 26 192 41 ("function" "iterate-records" "proc")}
+        {Lisp-Entry "create-table" #f 204 18 204 30 ("load-table" "Data-Table" "new" "table" "let" "max-load" "max-load:" "name" "name:")}
+        {Lisp-Entry "load-table" #f 210 21 210 31 ("set-missing?" "set-rows" "set-columns" "get-rows" "missing?" "rows" "receive" "get-columns" "columns" "let" "data-class" "data-class:" "max-load" "max-load:" "table")}}}})
+"Recordset-Metadata"
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "connection" "Recordset-Metadata.jazz"} 1248797036
+    {Lisp-Entry "jazz.database.connection.Recordset-Metadata" #f 37 19 37 62 ("jazz")
+      {Lisp-Entry "Recordset-Metadata" #f 44 7 44 25 ()
+        {Lisp-Entry "get-column" #f 52 18 52 28 ("get-field-precision" "width:" "get-field-size" "100" "min" "get-field-type" "Datatype" "datatype:" "get-field-name" "name:" "Data-Column" "new" "get-field" "field" "with-closed" "field-name")}
+        {Lisp-Entry "get-fields" #f 68 18 68 28 ("get-field" "collect" "get-count" "below" "0" "from" "n" "for" "loop")}
+        {Lisp-Entry "get-count" #f 73 26 73 35 ()}
+        {Lisp-Entry "get-field" #f 77 26 77 35 ("field-name")}
+        {Lisp-Entry "get-field-value" #f 81 26 81 41 ("field-name")}
+        {Lisp-Entry "get-field-name" #f 85 26 85 40 ("field")}
+        {Lisp-Entry "get-field-type" #f 89 26 89 40 ("field")}
+        {Lisp-Entry "get-field-size" #f 93 26 93 40 ("field")}
+        {Lisp-Entry "get-field-precision" #f 97 26 97 45 ("field")}}}})
+"Request"
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "connection" "Request.jazz"} 1250004222
+    {Lisp-Entry "jazz.database.connection.Request" #f 37 19 37 51 ("jazz")
+      {Lisp-Entry "Request" #f 44 7 44 14 ()
+        {Lisp-Entry "connection" #f 47 8 47 18 ()}
+        {Lisp-Entry "initialize" #f 50 11 50 21 ("connection" "set!" "nextmethod" "con")}
+        {Lisp-Entry "new-recordset" #f 55 19 55 32 ("rest" "request")}
+        {Lisp-Entry "load-request" #f 59 18 59 30 ("load-table" "set-name" "when" "request:" "Data-Table" "new" "either" "let" "closed" "'closed" "get-state" "eq?" "unless" "new-recordset" "recordset" "with-closed" "data-class" "data-class:" "max-load" "max-load:" "name" "name:" "table" "table:" "request")}
+        {Lisp-Entry "load-multirequest" #f 69 18 69 35 ("get-output" "next-recordset!" "put" "data-class:" "cdr" "set!" "car" "data-class" "load-table" "null?" "request:" "Data-Table" "table" "open" "'open" "get-state" "=" "opened?" "and" "while" "List-Factory" "new" "tables" "let" "new-recordset" "recordset" "with-closed" "load-request" "list" "connection" "supports-multirequests?" "not" "if" "data-classes" "data-classes:" "max-load" "max-load:" "request")}
+        {Lisp-Entry "load-rows" #f 87 18 87 27 ("values" "get-rows" "missing?" "rows" "receive" "get-columns" "columns" "let" "new-recordset" "recordset" "with-closed" "max-load" "max-load:" "table" "request")}
+        {Lisp-Entry "execute" #f 99 26 99 33 ("command")}}}})
 "Schema-Browser"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "view" "Schema-Browser.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "view" "Schema-Browser.jazz"} 1249298137
     {Lisp-Entry "jazz.database.view.Schema-Browser" #f 37 19 37 52 ("jazz")
-      {Lisp-Entry "Schema-Browser" #f 50 7 50 21 ("on-return-press" "return-press-handler:" "1" "paragraph-spacing:" "2" "top-padding:" "left-padding:" "show-unfocused-selection?:" "accepts-returns?:" "selectable?:" "editable?:" "text" "vscroll?:" "hscroll?:" "center" "scroller" "on-browse" ":form" "Event-Handler" "action-handler:" ":icons" "portfolio:" "Bitmap-Resource" "image-name:" "tooltip-text:" "tooltip?:" "tail" "22" "browse" "label" "0" "4" "Medium" "Color" "background:" "flow" "north" "location:" "21" "120" "top" "border" "content" "name:" "fill" "layout-type:" "entry" "style:" "edge" "border-type:" "24" "142" "Dimension" "size:" "Border-View")
-        {Lisp-Entry "empty-text" #f 53 12 53 22 ("generate")}
+      {Lisp-Entry "Schema-Browser" #f 50 20 50 34 ("on-return-press" "return-press-handler:" "1" "paragraph-spacing:" "2" "top-padding:" "left-padding:" "show-unfocused-selection?:" "accepts-returns?:" "selectable?:" "editable?:" "text" "vscroll?:" "hscroll?:" "center" "scroller" "on-browse" ":form" "Event-Handler" "action-handler:" ":icons" "portfolio:" "Bitmap-Resource" "image-name:" "tooltip-text:" "tooltip?:" "tail" "22" "browse" "label" "0" "4" "Medium" "Color" "background:" "flow" "north" "location:" "21" "120" "top" "border" "content" "name:" "fill" "layout-type:" "entry" "style:" "edge" "border-type:" "24" "142" "Dimension" "size:" "initialize")
+        {Lisp-Entry "empty-text" #f 53 12 53 22 ()}
+        {Lisp-Entry "get-empty-text" #f 53 47 53 55 ()}
+        {Lisp-Entry "set-empty-text" #f 53 47 53 55 ()}
         {Lisp-Entry "source" #f 56 8 56 14 ()}
         {Lisp-Entry "on-browse" #f 76 11 76 20 ("get-source" "source:" "Schema-Chooser" "get-modal" "set-source" "evt")}
         {Lisp-Entry "on-return-press" #f 80 11 80 26 ("self" "invoke" "return-press-handler" "when" "evt")}
@@ -601,42 +607,39 @@
         {Lisp-Entry "present-source" #f 144 11 144 25 ("present-detailed" "when" "source")}
         {Lisp-Entry "source-changing" #f 149 29 149 44 ("source")}
         {Lisp-Entry "source-changed" #f 153 29 153 43 ("reload" "'reload" "locate" "set-enabled?" "source")}}
-      {Lisp-Entry "Schema-Text-View" #f 162 7 162 23 ("Label" "Font" "font:" "Default" "name:" "Text-Style" "default-style:" "Plain-Formatted-Text-View")
+      {Lisp-Entry "Schema-Text-View" #f 162 7 162 23 ("Label" "Font" "font:" "Default" "name:" "Text-Style" "default-style:")
         {Lisp-Entry "get-scroll-context" #f 169 11 169 29 ("0" "cons")}
         {Lisp-Entry "draw-children" #f 173 11 173 24 ("nextmethod" "draw-empty-schema" "text-empty?" "if" "sc?" "sc" "sv" "sh" "lv" "lh" "context" "surface")}
         {Lisp-Entry "Background-Font" #f 179 14 179 29 ("Text" "name:" "Font")}
         {Lisp-Entry "draw-empty-schema" #f 183 11 183 28 ("get-v" "get-h" "draw-text" "Dark" "name:" "Color" "set-text-color" "get-display-size" "center" "pos" "get-text-extent" "extent" "creator" "get-empty-text" "either" "localize" "title" "let*" "Background-Font" "set-font" "surface")}}}})
 "Schema-Chooser"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "view" "Schema-Chooser.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "view" "Schema-Chooser.jazz"} 1248797036
     {Lisp-Entry "jazz.database.view.Schema-Chooser" #f 37 19 37 52 ("jazz")
-      {Lisp-Entry "Schema-Chooser" #f 48 7 48 21 ("Chooser")}}})
+      {Lisp-Entry "Schema-Chooser" #f 43 20 43 34 ()}}})
 "Systype"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "provider" "Systype.jazz"} 1244896779
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "provider" "Systype.jazz"} 1250272407
     {Lisp-Entry "jazz.database.provider.Systype" #f 37 19 37 49 ("jazz")
-      {Lisp-Entry "Systype" #f 44 7 44 14 ("Object")
-        {Lisp-Entry "name" #f 47 8 47 12 ()}
-        {Lisp-Entry "size" #f 48 8 48 12 ()}
-        {Lisp-Entry "precision" #f 49 8 49 17 ()}
-        {Lisp-Entry "scale" #f 50 8 50 13 ()}
-        {Lisp-Entry "default-value" #f 51 8 51 21 ()}
-        {Lisp-Entry "construct-literal" #f 55 16 55 33 ("self" "new" "read-only" "'read-only" "=" "String" "is?" "null?" "integer?" "or" "assert" "default-value" "scale" "precision" "size" "name" "context")}
-        {Lisp-Entry "initialize" #f 63 11 63 21 ("default-value~self" "scale~self" "precision~self" "size~self" "name~self" "set!" "nextmethod" "default-value" "scale" "precision" "size" "name")}
-        {Lisp-Entry "compare-object" #f 72 11 72 25 (":not-equal" "else" ":equal" "get-default-value" "default-value" "get-scale" "scale" "get-precision" "precision" "get-size" "size" "get-name" "name" "=" "and" ":incompatible" "Systype" "is-not?" "cond" "target")}
-        {Lisp-Entry "fold-literal" #f 85 11 85 23 ("default-value" ",default-value" "',default-value" "scale" ",scale" "',scale" "precision" ",precision" "',precision" "size" ",size" "',size" "name" ",name" "',name" "Systype" "new")}
-        {Lisp-Entry "foldable?" #f 90 11 90 20 ()}
-        {Lisp-Entry "fold-object" #f 95 11 95 22 ("default-value" "scale" "precision" "size" "name" "fold-more" "self" "class-of" "type-name" "fold" "output" "compiler")}
-        {Lisp-Entry "print" #f 106 11 106 16 ("default-value" "scale" "precision" "size" "name" "self" "class-of" "type-name" "identifier-name" "format" "readably" "printer")}
-        {Lisp-Entry "get-name" #f 121 18 121 26 ("name")}
-        {Lisp-Entry "get-size" #f 125 18 125 26 ("size")}
-        {Lisp-Entry "get-precision" #f 129 18 129 31 ("precision")}
-        {Lisp-Entry "get-scale" #f 133 18 133 27 ("scale")}
-        {Lisp-Entry "get-default-value" #f 137 18 137 35 ("default-value")}
-        {Lisp-Entry "get-sizeable?" #f 141 18 141 31 ("size" "null?")}
-        {Lisp-Entry "get-fixed?" #f 145 18 145 28 ("size" "not-null?")}
-        {Lisp-Entry "get-precisionable?" #f 149 18 149 36 ("precision" "not-null?")}
-        {Lisp-Entry "get-scalable?" #f 153 18 153 31 ("scale" "not-null?")}
-        {Lisp-Entry "get-defaultable?" #f 157 18 157 34 ("default-value" "not-null?")}
-        {Lisp-Entry "present" #f 166 18 166 25 ("name" "format")}}}})
+      {Lisp-Entry "Systype" #f 43 7 43 14 ()
+        {Lisp-Entry "name" #f 46 8 46 12 ()}
+        {Lisp-Entry "size" #f 47 8 47 12 ()}
+        {Lisp-Entry "precision" #f 48 8 48 17 ()}
+        {Lisp-Entry "scale" #f 49 8 49 13 ()}
+        {Lisp-Entry "default-value" #f 50 8 50 21 ()}
+        {Lisp-Entry "construct-literal" #f 54 16 54 33 ("self" "new" "read-only" "'read-only" "=" "String" "is?" "null?" "integer?" "or" "assert" "default-value" "scale" "precision" "size" "name" "context")}
+        {Lisp-Entry "initialize" #f 62 11 62 21 ("default-value~self" "scale~self" "precision~self" "size~self" "name~self" "set!" "nextmethod" "default-value" "scale" "precision" "size" "name")}
+        {Lisp-Entry "compare-object" #f 71 11 71 25 (":not-equal" "else" ":equal" "get-default-value" "default-value" "get-scale" "scale" "get-precision" "precision" "get-size" "size" "get-name" "name" "=" "and" ":incompatible" "Systype" "is-not?" "cond" "target")}
+        {Lisp-Entry "print" #f 84 11 84 16 ("default-value" "scale" "precision" "size" "name" "self" "class-of" "type-name" "identifier-name" "format" "readably" "printer")}
+        {Lisp-Entry "get-name" #f 99 18 99 26 ("name")}
+        {Lisp-Entry "get-size" #f 103 18 103 26 ("size")}
+        {Lisp-Entry "get-precision" #f 107 18 107 31 ("precision")}
+        {Lisp-Entry "get-scale" #f 111 18 111 27 ("scale")}
+        {Lisp-Entry "get-default-value" #f 115 18 115 35 ("default-value")}
+        {Lisp-Entry "get-sizeable?" #f 119 18 119 31 ("size" "null?")}
+        {Lisp-Entry "get-fixed?" #f 123 18 123 28 ("size" "not-null?")}
+        {Lisp-Entry "get-precisionable?" #f 127 18 127 36 ("precision" "not-null?")}
+        {Lisp-Entry "get-scalable?" #f 131 18 131 31 ("scale" "not-null?")}
+        {Lisp-Entry "get-defaultable?" #f 135 18 135 34 ("default-value" "not-null?")}
+        {Lisp-Entry "present" #f 144 18 144 25 ("name" "format")}}}})
 "_database"
  ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "_database.jazz"} 1244915305
     {Lisp-Entry "jazz.database" #f 37 9 37 22 ("jazz")
@@ -647,16 +650,14 @@
       {Lisp-Entry "Datatypes" #f 71 12 71 21 ("SQLServer-Datatype" "Oracle-Datatype" "Access-Datatype")}
       {Lisp-Entry "Datatype-Classes" #f 74 12 74 28 ()}
       {Lisp-Entry "get-datatypes" #f 78 20 78 33 ("Datatypes" "load" "map" "set!" "Datatype-Classes" "unless")}}})
-"_literals"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "literals" "_literals.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.literals" #f 37 9 37 31 ("jazz")}})
 "autoload"
  ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "autoload.jazz"} 1244896779
     {Lisp-Entry "jazz.database.autoload" #f 37 19 37 41 ("jazz")}})
-"constructors"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "literals" "constructors.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.literals.constructors" #f 37 9 37 44 ("jazz")
-      {Lisp-Entry "construct-systype" #f 48 13 48 30 ("Systype" "new" "default-value" "scale" "precision" "size" "name")}}})
 "install"
- ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "install.scm"} 1244896779
-    {Lisp-Entry "jazz.database.install" #f 37 8 37 29 ()}})
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "install.scm"} 1249913821
+    {Lisp-Entry "jazz.database.install" #f 37 8 37 29 ()
+      {Lisp-Entry "Systype" #f 40 21 40 28 ("jazz.database.literals.construct-systype")}}})
+"literals"
+ ({Lisp-File-Entry {File jazz.database "src" "jazz" "database" "literals.jazz"} 1249913821
+    {Lisp-Entry "jazz.database.literals" #f 37 9 37 31 ("jazz")
+      {Lisp-Entry "construct-systype" #f 48 21 48 38 ("Systype" "new" "default-value" "scale" "precision" "size" "name")}}})

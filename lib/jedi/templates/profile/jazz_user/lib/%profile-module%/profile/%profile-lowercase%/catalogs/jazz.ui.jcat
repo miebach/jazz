@@ -838,9 +838,9 @@
 "Dialog"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "dialog" "Dialog.jazz"} 1238328026
     {Lisp-Entry "jazz.ui.dialog.Dialog" #f 37 19 37 40 ("jazz")
-      {Lisp-Entry "Dialog" #f 44 7 44 13 ("Overlapped")
-        {Lisp-Entry "sizable?" #f 47 12 47 20 ("set-sizable?" "get-sizable?")}
-        {Lisp-Entry "closable?" #f 48 12 48 21 ("set-closable?" "get-closable?")}
+      {Lisp-Entry "Dialog" #f 44 7 44 13 ("set-closable?" "get-closable?" "set-sizable?" "get-sizable?" "initialize")
+        {Lisp-Entry "sizable?" #f 47 12 47 20 ()}
+        {Lisp-Entry "closable?" #f 48 12 48 21 ()}
         {Lisp-Entry "new-root" #f 51 11 51 19 ("offscreen?:" "Dialog-Host" "new")}
         {Lisp-Entry "get-sizable?" #f 60 11 60 23 ("sizable?")}
         {Lisp-Entry "set-sizable?" #f 64 11 64 23 ("sizable?" "set!" "value")}
@@ -1536,14 +1536,14 @@
 "Formatted-Text-View"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "text" "Formatted-Text-View.jazz"} 1238328026
     {Lisp-Entry "jazz.ui.text.Formatted-Text-View" #f 37 19 37 51 ("jazz")
-      {Lisp-Entry "Formatted-Text-View" #f 48 7 48 26 ("wrap?:" "Text-View")
+      {Lisp-Entry "Formatted-Text-View" #f 48 7 48 26 ("wrap?:" "initialize")
         {Lisp-Entry "ruler" #f 51 8 51 13 ()}
         {Lisp-Entry "external-name" #f 63 16 63 29 ("formatted-text" "'formatted-text" "rest")}
         {Lisp-Entry "default-extension" #f 67 11 67 28 ()}
         {Lisp-Entry "extensions" #f 71 11 71 21 ()}
         {Lisp-Entry "focus-actions" #f 80 11 80 24 ("nextmethod" "formatted-text" "'formatted-text" "find-actions" "cons")}
         {Lisp-Entry "host-workspaces" #f 90 11 90 26 ("formatted")}
-        {Lisp-Entry "Formatted-Text-Controller" #f 100 9 100 34 ("Document-Controller")
+        {Lisp-Entry "Formatted-Text-Controller" #f 100 9 100 34 ()
           {Lisp-Entry "install-container" #f 103 13 103 30 ("install-ruler" "install-scroller")}
           {Lisp-Entry "install-ruler" #f 108 13 108 26 ("set-client" "set-parent" "set-ruler" "get-content" "parent:" "Ruler" "new" "ruler" "get-scroller" "scroller" "document" "get-root" "root" "let*")}}
         {Lisp-Entry "new-controller" #f 118 11 118 25 ("self" "Formatted-Text-Controller" "new")}
@@ -4281,7 +4281,7 @@
 "Style"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "text" "Style.jazz"} 1238328026
     {Lisp-Entry "jazz.ui.text.Style" #f 37 19 37 37 ("jazz")
-      {Lisp-Entry "Style" #f 44 7 44 12 ("bottom" "'bottom" "initialize" "alignment" "Exemplar")
+      {Lisp-Entry "Style" #f 44 7 44 12 ("bottom" "'bottom" "initialize" "alignment")
         {Lisp-Entry "get-width" #f 56 26 56 35 ()}
         {Lisp-Entry "get-height" #f 60 26 60 36 ()}
         {Lisp-Entry "run-width" #f 64 26 64 35 ("run")}
@@ -4650,7 +4650,7 @@
         {Lisp-Entry "auto-complete-characters" #f 97 26 97 50 ()}
         {Lisp-Entry "auto-complete-char?" #f 101 26 101 45 ("text-constituent?" "not" "auto-complete-characters" "memq?" "or" "last" "key")}}}})
 "Text-View"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "text" "Text-View.jazz"} 1251731530
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "text" "Text-View.jazz"} 1251746526
     {Lisp-Entry "jazz.ui.text.Text-View" #f 38 19 38 41 ("jazz")
       {Lisp-Entry "Text-View" #f 64 7 64 16 ("16" "default-row-height:" "12" "left-padding:" "White" "name:" "Color" "background:" "Exemplar-Domain" "self" "Undoer" "new" "char" "'char" "set-colorize?" "get-colorize?" "set-eol-encoding" "get-eol-encoding" "set-char-encoding" "get-char-encoding" "set-caret-pen" "get-caret-pen" "Caret-Color" "set-completion-color" "get-completion-color" "Completion-Color" "set-inactive-selection-color" "get-inactive-selection-color" "Inactive-Selection-Color" "set-active-selection-color" "get-active-selection-color" "Active-Selection-Color" "set-show-unfocused-selection?" "get-show-unfocused-selection?" "set-focus-selects-all?" "get-focus-selects-all?" "set-accepts-returns?" "get-accepts-returns?" "set-paragraph-spacing" "get-paragraph-spacing" "0" "set-default-style" "get-default-style" "set-default-format" "get-default-format" "set-wrap?" "get-wrap?" "set-selectable?" "get-selectable?" "set-editable?" "get-editable?" "set-text-content" "get-text-content" "set-text" "get-text" "initialize")
         {Lisp-Entry "Active-Selection-Color" #f 67 21 67 43 ("230" "blue:" "green:" "190" "red:" "Color")}
@@ -7498,10 +7498,18 @@
       {Lisp-Entry "platform-get-desktop" #f 834 21 834 41 ("XDefaultScreen" "default-x11-display" "XRootWindow" "platform-get-desktop" "'platform-get-desktop" "unimplemented")}
       {Lisp-Entry "get-work-area" #f 841 20 841 33 ("desktop" "get-handle" "platform-get-rect")}
       {Lisp-Entry "platform-drop-files" #f 850 21 850 40 ("platform-drop-files" "'platform-drop-files" "unimplemented" "temp" "window")}}}
+  {Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "resizer" "platform" "carbon.jazz"} 1238328026
+    {Lisp-Entry "jazz.ui.resizer.platform.carbon" #f 37 19 37 50 ("jazz")
+      {Lisp-Entry "Part-Cursor" #f 43 10 43 21 ()}}}
   {Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "print" "platform" "carbon.jazz"} 1246989654
     {Lisp-Entry "jazz.ui.print.platform.carbon" #f 37 19 37 48 ("jazz")
       {Lisp-Entry "platform-print-document" #f 49 21 49 44 ("view")}
       {Lisp-Entry "platform-print-picture" #f 52 21 52 43 ("view")}}}
+  {Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "dialog" "platform" "carbon.jazz"} 1238328026
+    {Lisp-Entry "jazz.ui.dialog.platform.carbon" #f 37 19 37 49 ("jazz")
+      {Lisp-Entry "choose-file" #f 54 20 54 31 ("host-title:" "File-Request" "get-modal" "anchors" "anchors:" "multiple-selection?" "multiple-selection?:" "extensions" "extensions:" "filenames" "filenames:" "directory" "directory:" "title" "title:")}
+      {Lisp-Entry "choose-new-file" #f 74 20 74 35 ("host-title:" "NewFile-Request" "get-modal" "anchors" "anchors:" "default-extension" "default-extension:" "initial-filename" "initial-filename:" "extensions" "extensions:" "filenames" "filenames:" "directory" "directory:" "title" "title:")}
+      {Lisp-Entry "choose-directory" #f 96 20 96 36 ("host-title:" "Directory-Request" "get-modal" "anchors" "anchors:" "directory" "directory:" "title" "title:")}}}
   {Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "clipboard" "platform" "carbon.jazz"} 1247023405
     {Lisp-Entry "jazz.ui.clipboard.platform.carbon" #f 37 19 37 52 ("jazz")
       {Lisp-Entry "initialize-clipboard" #f 48 21 48 41 ()}
@@ -7512,15 +7520,7 @@
       {Lisp-Entry "clipboard-format-available?" #f 69 33 69 60 ("available-clipboard-formats" "member?" "error" "Formats" "table-ref" "either" "get-format" "define" "format")}
       {Lisp-Entry "available-clipboard-formats" #f 79 33 79 60 ("get-output" "put" "/=" "when" "EnumClipboardFormats" "format" "0" "previous" "iter" "List-Factory" "new" "formats" "let" "function" "with-opened-clipboard")}
       {Lisp-Entry "mouse-select-copy" #f 98 21 98 38 ("proc")}
-      {Lisp-Entry "middle-mouse-paste" #f 102 21 102 39 ("proc")}}}
-  {Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "resizer" "platform" "carbon.jazz"} 1238328026
-    {Lisp-Entry "jazz.ui.resizer.platform.carbon" #f 37 19 37 50 ("jazz")
-      {Lisp-Entry "Part-Cursor" #f 43 10 43 21 ()}}}
-  {Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "dialog" "platform" "carbon.jazz"} 1238328026
-    {Lisp-Entry "jazz.ui.dialog.platform.carbon" #f 37 19 37 49 ("jazz")
-      {Lisp-Entry "choose-file" #f 54 20 54 31 ("host-title:" "File-Request" "get-modal" "anchors" "anchors:" "multiple-selection?" "multiple-selection?:" "extensions" "extensions:" "filenames" "filenames:" "directory" "directory:" "title" "title:")}
-      {Lisp-Entry "choose-new-file" #f 74 20 74 35 ("host-title:" "NewFile-Request" "get-modal" "anchors" "anchors:" "default-extension" "default-extension:" "initial-filename" "initial-filename:" "extensions" "extensions:" "filenames" "filenames:" "directory" "directory:" "title" "title:")}
-      {Lisp-Entry "choose-directory" #f 96 20 96 36 ("host-title:" "Directory-Request" "get-modal" "anchors" "anchors:" "directory" "directory:" "title" "title:")}}})
+      {Lisp-Entry "middle-mouse-paste" #f 102 21 102 39 ("proc")}}})
 "development"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "development.jazz"} 1250103141
     {Lisp-Entry "jazz.ui.development" #f 37 9 37 28 ("get-image" "Tree-Node" "is?" "and" "get-columns-right" "get-columns-borders" "get-node-column" "not" "set-%u" "set-%o" "set-%d" "get-cell-data" "data" "get-debugged" "part" "receive" "get-user-data" "user-data" "get-children" "car" "node" "get-column" "column" "cell-coordinates" "view->tree" "cell" "format" "get-controller" "set-%c" "set-%k" "essay" "set-%i" "get-style-at" "set-%y" "get-col" "get-line-at" "set-%n" "get-format" "set-%f" "set-%p" "set-%e" "set-%s" "string-length" "substring" "starts-with?" "if" "filename" "Jazz" "Directory" "parse" "jazzdir" "path" "git-filename" "define" "get-paragraph" "paragraph" "get-moniker" "moniker" "get-end" "end" "get-start" "start" "get-visible-height" "get-visible-width" "get-visible-count" "set-%r" "get-row" "row" "let" "when" "v->row" "r" "get-v" "v" "let*" "get-icon" "get-disabled-image-name" "get-image-name" "list" "nextmethod" "append" "pos" "view" "jazz")
@@ -7753,6 +7753,9 @@
       {Lisp-Entry "get-taskbar-edge" #f 1097 20 1097 36 ("uEdge" "'uEdge" "get" "ABM_GETTASKBARPOS" "SHAppBarMessage" "size-of" "cbSize" "'cbSize" "set" "APPBARDATA" "new" "data" "with" "get-taskbar-edge" "'get-taskbar-edge" "unimplemented")}
       {Lisp-Entry "platform-drop-files" #f 1111 21 1111 40 ("POINT-free" "get-toplevel-hwnd" "platform-select-foreground-window" "prog1" "receive-files" "POINT->point" "pos" "DragFinish" "DragQueryPoint" "POINT-make" "pt" "received-files" "files" "WPARAM->HDROP" "hdrop" "let" "wparam" "window")}
       {Lisp-Entry "received-files" #f 1123 13 1123 27 ("naturals" "WCHAR-array-free" "anchorize" "prog1" "tokenise-windows" "File" "else" "Directory" "directory" "pathname-type" "case" "new" "pathname" "WCHAR-string" "filename" "WCHAR-array-set!" "WCHAR-array-make" "buffer" "MAX_PATH" "size" "let*" "n" "function" "map" "0" "NULL" "#xFFFFFFFF" "DragQueryFile" "count" "let" "hdrop")}}}
+  {Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "resizer" "platform" "windows.jazz"} 1238328026
+    {Lisp-Entry "jazz.ui.resizer.platform.windows" #f 37 19 37 51 ("jazz")
+      {Lisp-Entry "Part-Cursor" #f 43 10 43 21 ("IDC_ARROW" "IDC_SIZEWE" "IDC_SIZENESW" "1" "IDC_SIZENS" "0" "IDC_SIZENWSE" "-1" "cons" "list")}}}
   {Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "print" "platform" "windows.jazz"} 1246989654
     {Lisp-Entry "jazz.ui.print.platform.windows" #f 37 19 37 49 ("jazz")
       {Lisp-Entry "platform-print-document" #f 53 21 53 44 ("print-job" "nb-copies:" "to:" "essay" "from:" "selection?:" "Printer-Job" "job" "let" "10000" "0" "Rect" "setup-clipper" "LOGPIXELSX" "GetDeviceCaps" "resolution" "printer" "'printer" "get-page-setup-for" "page-setup" "cairo_win32_surface_create" "Surface" "new" "surface" "let*" "print-picture" "if" "print-dialog" "orientation" "nb-copies" "to" "from" "pages?" "selection?" "print-to-file?" "hdc" "receive" "view")}
@@ -7782,10 +7785,7 @@
       {Lisp-Entry "register-clipboard-format" #f 135 33 135 58 ("Formats" "table-set!" "RegisterClipboardFormat" "id" "let" "format" "name")}
       {Lisp-Entry "get-clipboard-format" #f 140 33 140 53 ("error" "Formats" "table-ref" "either" "integer?" "if" "format")}
       {Lisp-Entry "clipboard-format-available?" #f 147 33 147 60 ("available-clipboard-formats" "get-clipboard-format" "member?" "format")}
-      {Lisp-Entry "available-clipboard-formats" #f 151 33 151 60 ("get-output" "put" "/=" "when" "EnumClipboardFormats" "format" "0" "previous" "iter" "List-Factory" "new" "formats" "let" "function" "with-opened-clipboard")}}}
-  {Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "resizer" "platform" "windows.jazz"} 1238328026
-    {Lisp-Entry "jazz.ui.resizer.platform.windows" #f 37 19 37 51 ("jazz")
-      {Lisp-Entry "Part-Cursor" #f 43 10 43 21 ("IDC_ARROW" "IDC_SIZEWE" "IDC_SIZENESW" "1" "IDC_SIZENS" "0" "IDC_SIZENWSE" "-1" "cons" "list")}}})
+      {Lisp-Entry "available-clipboard-formats" #f 151 33 151 60 ("get-output" "put" "/=" "when" "EnumClipboardFormats" "format" "0" "previous" "iter" "List-Factory" "new" "formats" "let" "function" "with-opened-clipboard")}}})
 "x11"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "window" "platform" "x11.jazz"} 1250267408
     {Lisp-Entry "jazz.ui.window.platform.x11" #f 38 19 38 46 ("jazz")
@@ -7913,10 +7913,18 @@
       {Lisp-Entry "get-dock-height" #f 1208 16 1208 31 ("135")}
       {Lisp-Entry "get-dock-height" #f 1211 16 1211 31 ("0")}
       {Lisp-Entry "platform-drop-files" #f 1220 21 1220 40 ("platform-drop-files" "'platform-drop-files" "unimplemented" "temp" "window")}}}
+  {Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "resizer" "platform" "x11.jazz"} 1238328026
+    {Lisp-Entry "jazz.ui.resizer.platform.x11" #f 37 19 37 47 ("jazz")
+      {Lisp-Entry "Part-Cursor" #f 43 10 43 21 ()}}}
   {Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "print" "platform" "x11.jazz"} 1246989654
     {Lisp-Entry "jazz.ui.print.platform.x11" #f 37 19 37 45 ("jazz")
       {Lisp-Entry "platform-print-document" #f 49 21 49 44 ("view")}
       {Lisp-Entry "platform-print-picture" #f 52 21 52 43 ("view")}}}
+  {Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "dialog" "platform" "x11.jazz"} 1238328026
+    {Lisp-Entry "jazz.ui.dialog.platform.x11" #f 37 19 37 46 ("jazz")
+      {Lisp-Entry "choose-file" #f 54 20 54 31 ("host-title:" "File-Request" "Text-File-Request" "if" "get-modal" "text?" "text?:" "anchors" "anchors:" "multiple-selection?" "multiple-selection?:" "extensions" "extensions:" "filenames" "filenames:" "directory" "directory:" "title" "title:")}
+      {Lisp-Entry "choose-new-file" #f 75 20 75 35 ("host-title:" "NewFile-Request" "get-modal" "anchors" "anchors:" "default-extension" "default-extension:" "initial-filename" "initial-filename:" "extensions" "extensions:" "filenames" "filenames:" "directory" "directory:" "title" "title:")}
+      {Lisp-Entry "choose-directory" #f 97 20 97 36 ("host-title:" "Directory-Request" "get-modal" "anchors" "anchors:" "directory" "directory:" "title" "title:")}}}
   {Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "clipboard" "platform" "x11.jazz"} 1249913822
     {Lisp-Entry "jazz.ui.clipboard.platform.x11" #f 37 19 37 49 ("jazz")
       {Lisp-Entry "initialize-clipboard" #f 53 25 53 45 ("carbon-initialize-clipboard")}
@@ -7931,12 +7939,4 @@
       {Lisp-Entry "middle-mouse-paste" #f 109 25 109 43 ("not" "if" "XA_PRIMARY" "selection:" "get-clipboard-text" "text" "let" "proc")}
       {Lisp-Entry "register-clipboard-format" #f 122 33 122 58 ("Formats" "table-set!" "RegisterClipboardFormat" "id" "let" "format" "name")}
       {Lisp-Entry "clipboard-format-available?" #f 128 33 128 60 ("available-clipboard-formats" "member?" "error" "Formats" "table-ref" "either" "get-format" "define" "format")}
-      {Lisp-Entry "available-clipboard-formats" #f 138 33 138 60 ("get-output" "put" "/=" "when" "EnumClipboardFormats" "format" "0" "previous" "iter" "List-Factory" "new" "formats" "let" "function" "with-opened-clipboard")}}}
-  {Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "resizer" "platform" "x11.jazz"} 1238328026
-    {Lisp-Entry "jazz.ui.resizer.platform.x11" #f 37 19 37 47 ("jazz")
-      {Lisp-Entry "Part-Cursor" #f 43 10 43 21 ()}}}
-  {Lisp-File-Entry {File Jazz "lib" "jazz.ui" "src" "jazz" "ui" "dialog" "platform" "x11.jazz"} 1238328026
-    {Lisp-Entry "jazz.ui.dialog.platform.x11" #f 37 19 37 46 ("jazz")
-      {Lisp-Entry "choose-file" #f 54 20 54 31 ("host-title:" "File-Request" "Text-File-Request" "if" "get-modal" "text?" "text?:" "anchors" "anchors:" "multiple-selection?" "multiple-selection?:" "extensions" "extensions:" "filenames" "filenames:" "directory" "directory:" "title" "title:")}
-      {Lisp-Entry "choose-new-file" #f 75 20 75 35 ("host-title:" "NewFile-Request" "get-modal" "anchors" "anchors:" "default-extension" "default-extension:" "initial-filename" "initial-filename:" "extensions" "extensions:" "filenames" "filenames:" "directory" "directory:" "title" "title:")}
-      {Lisp-Entry "choose-directory" #f 97 20 97 36 ("host-title:" "Directory-Request" "get-modal" "anchors" "anchors:" "directory" "directory:" "title" "title:")}}})
+      {Lisp-Entry "available-clipboard-formats" #f 138 33 138 60 ("get-output" "put" "/=" "when" "EnumClipboardFormats" "format" "0" "previous" "iter" "List-Factory" "new" "formats" "let" "function" "with-opened-clipboard")}}})

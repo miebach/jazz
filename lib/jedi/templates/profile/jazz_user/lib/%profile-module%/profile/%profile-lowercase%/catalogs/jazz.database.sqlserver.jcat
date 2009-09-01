@@ -4,7 +4,7 @@
 "SQLServer-Constraint-Name-Global-Unicity-Constraint"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Constraint-Name-Global-Unicity-Constraint.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Constraint-Name-Global-Unicity-Constraint" #f 37 19 37 104 ("jazz")
-      {Lisp-Entry "SQLServer-Constraint-Name-Global-Unicity-Constraint" #f 45 7 45 58 ("Integrity-Constraint")
+      {Lisp-Entry "SQLServer-Constraint-Name-Global-Unicity-Constraint" #f 45 7 45 58 ()
         {Lisp-Entry "register-constraints" #f 53 16 53 36 ("Design-Constraint" "self" "new" "register-constraint" "manager")}
         {Lisp-Entry "validate" #f 63 11 63 19 ("message:" "Integrity-Violation" "new" "add-violation" "when" "manager" "context" "client" "architecture" "constraint")}}}})
 "SQLServer-Data-Source"
@@ -34,9 +34,9 @@
 "SQLServer-Database-Browser"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Database-Browser.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Database-Browser" #f 37 19 37 79 ("jazz")
-      {Lisp-Entry "SQLServer-Database-Browser" #f 47 7 47 33 ("Combo-Box")}
-      {Lisp-Entry "SQLServer-Database-Browser" #f 53 7 53 33 ("Combo-Box")
-        {Lisp-Entry "data-source" #f 56 12 56 23 ("set-data-source" "get-data-source")}
+      {Lisp-Entry "SQLServer-Database-Browser" #f 47 7 47 33 ()}
+      {Lisp-Entry "SQLServer-Database-Browser" #f 53 7 53 33 ("set-data-source" "get-data-source" "initialize")
+        {Lisp-Entry "data-source" #f 56 12 56 23 ()}
         {Lisp-Entry "database-names" #f 59 8 59 22 ()}
         {Lisp-Entry "get-data-source" #f 67 18 67 33 ("data-source")}
         {Lisp-Entry "set-data-source" #f 71 18 71 33 ("update-database-names" "data-source" "set!" "value")}
@@ -47,8 +47,8 @@
 "SQLServer-Database-Row"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Database-Row.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Database-Row" #f 37 19 37 75 ("jazz")
-      {Lisp-Entry "SQLServer-Database-Row" #f 48 7 48 29 ("Combo-Row")}
-      {Lisp-Entry "SQLServer-Database-Row" #f 54 7 54 29 ("Combo-Row")
+      {Lisp-Entry "SQLServer-Database-Row" #f 48 7 48 29 ()}
+      {Lisp-Entry "SQLServer-Database-Row" #f 54 7 54 29 ("initialize")
         {Lisp-Entry "database-names" #f 57 8 57 22 ()}
         {Lisp-Entry "patch-recursing?" #f 58 8 58 24 ()}
         {Lisp-Entry "Unable-To-Connect" #f 61 12 61 29 ("#x80040000")}
@@ -59,25 +59,25 @@
 "SQLServer-Datatype"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Datatype.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Datatype" #f 37 19 37 71 ("jazz")
-      {Lisp-Entry "SQLServer-Datatype" #f 46 7 46 25 ("Datatype")
+      {Lisp-Entry "SQLServer-Datatype" #f 46 7 46 25 ()
         {Lisp-Entry "call-construct-literal" #f 50 23 50 45 ("construct-literal" "apply" "elements" "context")}
         {Lisp-Entry "get-systypes" #f 54 16 54 28 ("read-only" "2" "4" "16" "18" "9" "1" "0" "8" "Systype")}}}})
 "SQLServer-Default-Value-Constraint"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Default-Value-Constraint.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Default-Value-Constraint" #f 37 19 37 87 ("jazz")
-      {Lisp-Entry "SQLServer-Default-Value-Constraint" #f 45 7 45 41 ("Integrity-Constraint")
+      {Lisp-Entry "SQLServer-Default-Value-Constraint" #f 45 7 45 41 ()
         {Lisp-Entry "register-constraints" #f 53 16 53 36 ("Design-Column" "self" "new" "register-constraint" "manager")}
         {Lisp-Entry "validate" #f 63 11 63 19 ("split" "search" "text" "function" "some?" "apostrophe-alone?" "apostrophes?" "stop-descent" "'stop-descent" "'default-value" "property:" "message:" "Integrity-Violation" "new" "add-violation" "begin" "not" "if" "-" "1" "0" "subseq" "=" "2" ">=" "parentheses?" "length" "len" "not-null?" "SQLServer-Design-Schema" "is?" "and" "get-default-value" "default-value" "get-table" "get-schema" "schema" "Design-Architecture" "find-ascendant" "let*" "get-visible?" "when" "manager" "context" "client" "architecture" "column")}}}})
 "SQLServer-Index-Constraint"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Index-Constraint.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Index-Constraint" #f 37 19 37 79 ("jazz")
-      {Lisp-Entry "SQLServer-Index-Constraint" #f 45 7 45 33 ("Integrity-Constraint")
+      {Lisp-Entry "SQLServer-Index-Constraint" #f 45 7 45 33 ()
         {Lisp-Entry "register-constraints" #f 53 16 53 36 ("Design-Index" "self" "new" "register-constraint" "manager")}
         {Lisp-Entry "validate" #f 63 11 63 19 ("message:" "Integrity-Violation" "new" "add-violation" "when" "manager" "context" "client" "architecture" "index")}}}})
 "SQLServer-Inventory"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory" #f 37 19 37 72 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory" #f 45 7 45 26 ("Inventory")
+      {Lisp-Entry "SQLServer-Inventory" #f 45 7 45 26 ("initialize")
         {Lisp-Entry "server" #f 53 8 53 14 ()}
         {Lisp-Entry "database" #f 54 8 54 16 ()}
         {Lisp-Entry "system-types" #f 55 8 55 20 ()}
@@ -114,7 +114,7 @@
 "SQLServer-Inventory-Column"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-Column.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Column" #f 37 19 37 79 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-Column" #f 45 7 45 33 ("Inventory-Column")
+      {Lisp-Entry "SQLServer-Inventory-Column" #f 45 7 45 33 ()
         {Lisp-Entry "handle" #f 48 8 48 14 ()}
         {Lisp-Entry "initialize" #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "index-column?" "parent" "inventory")}
         {Lisp-Entry "destroy" #f 57 11 57 18 ("nextmethod" "handle" "com-release")}
@@ -158,7 +158,7 @@
 "SQLServer-Inventory-Constraint"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-Constraint.jazz"} 1244896779
     {Lisp-Entry "jazz.database..sqlserver.SQLServer-Inventory-Constraint" #f 37 19 37 74 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-Constraint" #f 45 7 45 37 ("Inventory-Constraint")
+      {Lisp-Entry "SQLServer-Inventory-Constraint" #f 45 7 45 37 ()
         {Lisp-Entry "handle" #f 48 8 48 14 ()}
         {Lisp-Entry "initialize" #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
         {Lisp-Entry "destroy" #f 57 11 57 18 ("nextmethod" "handle" "com-release")}
@@ -173,7 +173,7 @@
 "SQLServer-Inventory-Index"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-Index.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Index" #f 37 19 37 78 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-Index" #f 45 7 45 32 ("Inventory-Index")
+      {Lisp-Entry "SQLServer-Inventory-Index" #f 45 7 45 32 ()
         {Lisp-Entry "handle" #f 48 8 48 14 ()}
         {Lisp-Entry "initialize" #f 51 11 51 21 ("destroy-mandatory" "com-release" "SQLDMO._Index2" "coquery" "handle~self" "set!" "nextmethod" "index-handle" "parent" "inventory")}
         {Lisp-Entry "destroy" #f 58 11 58 18 ("nextmethod" "handle" "com-release")}
@@ -193,7 +193,7 @@
 "SQLServer-Inventory-Primary-Key"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-Primary-Key.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Primary-Key" #f 37 19 37 84 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-Primary-Key" #f 45 7 45 38 ("Inventory-Primary-Key")
+      {Lisp-Entry "SQLServer-Inventory-Primary-Key" #f 45 7 45 38 ()
         {Lisp-Entry "handle" #f 48 8 48 14 ()}
         {Lisp-Entry "initialize" #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
         {Lisp-Entry "destroy" #f 57 11 57 18 ("nextmethod" "handle" "com-release")}
@@ -205,7 +205,7 @@
 "SQLServer-Inventory-Procedure"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-Procedure.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Procedure" #f 37 19 37 82 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-Procedure" #f 45 7 45 36 ("Inventory-Procedure")
+      {Lisp-Entry "SQLServer-Inventory-Procedure" #f 45 7 45 36 ()
         {Lisp-Entry "handle" #f 48 8 48 14 ()}
         {Lisp-Entry "initialize" #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
         {Lisp-Entry "destroy" #f 57 11 57 18 ("nextmethod" "handle" "com-release")}
@@ -216,7 +216,7 @@
 "SQLServer-Inventory-Relation"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-Relation.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Relation" #f 37 19 37 81 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-Relation" #f 45 7 45 35 ("Inventory-Relation")
+      {Lisp-Entry "SQLServer-Inventory-Relation" #f 45 7 45 35 ()
         {Lisp-Entry "handle" #f 48 8 48 14 ()}
         {Lisp-Entry "initialize" #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
         {Lisp-Entry "destroy" #f 57 11 57 18 ("nextmethod" "close" "parent" "when" "handle" "com-release")}
@@ -235,7 +235,7 @@
 "SQLServer-Inventory-Table"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-Table.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Table" #f 37 19 37 78 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-Table" #f 45 7 45 32 ("Inventory-Table")
+      {Lisp-Entry "SQLServer-Inventory-Table" #f 45 7 45 32 ()
         {Lisp-Entry "handle" #f 48 8 48 14 ()}
         {Lisp-Entry "initialize" #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
         {Lisp-Entry "destroy" #f 57 11 57 18 ("nextmethod" "handle" "com-release")}
@@ -277,7 +277,7 @@
 "SQLServer-Inventory-Trigger"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-Trigger.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Trigger" #f 37 19 37 80 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-Trigger" #f 45 7 45 34 ("Inventory-Trigger")
+      {Lisp-Entry "SQLServer-Inventory-Trigger" #f 45 7 45 34 ()
         {Lisp-Entry "handle" #f 48 8 48 14 ()}
         {Lisp-Entry "initialize" #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
         {Lisp-Entry "destroy" #f 57 11 57 18 ("nextmethod" "handle" "com-release")}
@@ -288,11 +288,11 @@
 "SQLServer-Inventory-Updater"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-Updater.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Updater" #f 37 19 37 80 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-Updater" #f 45 7 45 34 ("Inventory-Updater")}}})
+      {Lisp-Entry "SQLServer-Inventory-Updater" #f 45 7 45 34 ()}}})
 "SQLServer-Inventory-View"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-View.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-View" #f 37 19 37 77 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-View" #f 46 7 46 31 ("Inventory-View")
+      {Lisp-Entry "SQLServer-Inventory-View" #f 46 7 46 31 ()
         {Lisp-Entry "handle" #f 49 8 49 14 ()}
         {Lisp-Entry "initialize" #f 52 11 52 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
         {Lisp-Entry "destroy" #f 58 11 58 18 ("nextmethod" "handle" "com-release")}
@@ -303,19 +303,19 @@
 "SQLServer-Primary-Key-Constraint"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Primary-Key-Constraint.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Primary-Key-Constraint" #f 37 19 37 85 ("jazz")
-      {Lisp-Entry "SQLServer-Primary-Key-Constraint" #f 45 7 45 39 ("Integrity-Constraint")
+      {Lisp-Entry "SQLServer-Primary-Key-Constraint" #f 45 7 45 39 ()
         {Lisp-Entry "register-constraints" #f 53 16 53 36 ("Design-Primary-Key" "self" "new" "register-constraint" "manager")}
         {Lisp-Entry "validate" #f 63 11 63 19 ("get-fields/orders" "fields/orders" "'fields/orders" "property:" "message:" "Integrity-Violation" "new" "add-violation" "format" "message" "get-nullable?" "find-visible-column" "column" "let" "order" "field" "bind" "field/order" "function" "for-each" "SQLServer-Design-Schema" "is?" "when" "get-schema" "schema" "Design-Architecture" "find-ascendant" "get-table" "table" "let*" "manager" "context" "client" "architecture" "primary-key")}}}})
 "SQLServer-Primary-Key-Name-Global-Unicity-Constraint"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Primary-Key-Name-Global-Unicity-Constraint.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Primary-Key-Name-Global-Unicity-Constraint" #f 37 19 37 105 ("jazz")
-      {Lisp-Entry "SQLServer-Primary-Key-Name-Global-Unicity-Constraint" #f 45 7 45 59 ("Integrity-Constraint")
+      {Lisp-Entry "SQLServer-Primary-Key-Name-Global-Unicity-Constraint" #f 45 7 45 59 ()
         {Lisp-Entry "register-constraints" #f 53 16 53 36 ("Design-Primary-Key" "self" "new" "register-constraint" "manager")}
         {Lisp-Entry "validate" #f 63 11 63 19 ("message:" "Integrity-Violation" "new" "add-violation" "when" "manager" "context" "client" "architecture" "primary-key")}}}})
 "SQLServer-Procedure-Validity-Constraint"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Procedure-Validity-Constraint.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Procedure-Validity-Constraint" #f 37 19 37 92 ("jazz")
-      {Lisp-Entry "SQLServer-Procedure-Validity-Constraint" #f 45 7 45 46 ("Integrity-Constraint")
+      {Lisp-Entry "SQLServer-Procedure-Validity-Constraint" #f 45 7 45 46 ()
         {Lisp-Entry "register-constraints" #f 53 16 53 36 ("Design-Procedure" "self" "new" "register-constraint" "manager")}
         {Lisp-Entry "ends-with-go?" #f 63 11 63 24 ("+" "-" "subseq" "ci=?" "1" ">=" "and" "position" "'position" "return:" "reversed?:" "whitespace?" "not" "c" "function" "find-if" "last-non-white" "let" "text")}
         {Lisp-Entry "validate" #f 70 11 70 19 ("stop-descent" "'stop-descent" "'text" "property:" "message:" "Integrity-Violation" "new" "add-violation" "ends-with-go?" "SQLServer-Design-Schema" "is?" "and" "when" "get-schema" "schema" "Design-Architecture" "find-ascendant" "get-text" "text" "get-name" "name" "let*" "manager" "context" "client" "architecture" "procedure")}}}})
@@ -336,13 +336,13 @@
 "SQLServer-Server-Browser"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Server-Browser.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Server-Browser" #f 37 19 37 77 ("jazz")
-      {Lisp-Entry "SQLServer-Server-Browser" #f 46 7 46 31 ("Combo-Box")
+      {Lisp-Entry "SQLServer-Server-Browser" #f 46 7 46 31 ()
         {Lisp-Entry "install" #f 49 11 49 18 ("update-server-names" "nextmethod" "rest")}
         {Lisp-Entry "update-server-names" #f 59 11 59 30 ("set-entry" "sqlserver" "'sqlserver" "Provider" "get-provider" "server-names-choices-updater" "" "set-choices-updater")}}}})
 "SQLServer-Server-Row"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Server-Row.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Server-Row" #f 37 19 37 73 ("jazz")
-      {Lisp-Entry "SQLServer-Server-Row" #f 46 7 46 27 ("Combo-Row")
+      {Lisp-Entry "SQLServer-Server-Row" #f 46 7 46 27 ()
         {Lisp-Entry "update-server-names" #f 49 11 49 30 ("sqlserver" "'sqlserver" "Provider" "get-provider" "server-names-choices-updater" "" "set-choices-updater")}
         {Lisp-Entry "edit" #f 54 11 54 15 ("self" "get-tree" "expand" "edit-in-cell")}
         {Lisp-Entry "edit-in-cell" #f 59 11 59 23 ("update-server-names" "nextmethod")}
@@ -361,7 +361,7 @@
 "SQLServer-Trigger-Name-Global-Unicity-Constraint"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Trigger-Name-Global-Unicity-Constraint.jazz"} 1244896779
     {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Trigger-Name-Global-Unicity-Constraint" #f 37 19 37 101 ("jazz")
-      {Lisp-Entry "SQLServer-Trigger-Name-Global-Unicity-Constraint" #f 45 7 45 55 ("Integrity-Constraint")
+      {Lisp-Entry "SQLServer-Trigger-Name-Global-Unicity-Constraint" #f 45 7 45 55 ()
         {Lisp-Entry "register-constraints" #f 53 16 53 36 ("Design-Trigger" "self" "new" "register-constraint" "manager")}
         {Lisp-Entry "validate" #f 63 11 63 19 ("message:" "Integrity-Violation" "new" "add-violation" "when" "manager" "context" "client" "architecture" "trigger")}}}})
 "SQLServer-Widget"

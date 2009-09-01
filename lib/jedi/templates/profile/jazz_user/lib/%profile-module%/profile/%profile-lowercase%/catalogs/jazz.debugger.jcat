@@ -31,10 +31,13 @@
 "Debugged"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugged" "Debugged.jazz"} 1238328024
     {Lisp-Entry "jazz.debugger.debugged.Debugged" #f 37 19 37 50 ("jazz")
-      {Lisp-Entry "Debugged" #f 43 7 43 15 ("Object")
-        {Lisp-Entry "debugger" #f 46 8 46 16 ("generate")}
-        {Lisp-Entry "process" #f 47 8 47 15 ("generate")}
-        {Lisp-Entry "reference" #f 48 8 48 17 ("generate")}
+      {Lisp-Entry "Debugged" #f 43 7 43 15 ()
+        {Lisp-Entry "debugger" #f 46 8 46 16 ()}
+        {Lisp-Entry "get-debugger" #f 46 25 46 33 ()}
+        {Lisp-Entry "process" #f 47 8 47 15 ()}
+        {Lisp-Entry "get-process" #f 47 25 47 33 ()}
+        {Lisp-Entry "reference" #f 48 8 48 17 ()}
+        {Lisp-Entry "get-reference" #f 48 25 48 33 ()}
         {Lisp-Entry "initialize" #f 51 11 51 21 ("reference~self" "process~self" "debugger~self" "set!" "nextmethod" "reference" "process" "debugger")}
         {Lisp-Entry "print" #f 58 11 58 16 ("reference" "format" "function" "self" "print-unreadable" "readably" "printer")}
         {Lisp-Entry "same?" #f 69 26 69 31 ("debugged")}}}})
@@ -67,14 +70,14 @@
 "Debugged-Restart"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugged" "Debugged-Restart.jazz"} 1238328024
     {Lisp-Entry "jazz.debugger.debugged.Debugged-Restart" #f 37 19 37 58 ("jazz")
-      {Lisp-Entry "Debugged-Restart" #f 43 7 43 23 ("Debugged")
+      {Lisp-Entry "Debugged-Restart" #f 43 7 43 23 ()
         {Lisp-Entry "same?" #f 51 11 51 16 ("get-reference" "get-process" "reference" "process" "debugger" "restart=?" "Debugged-Restart" "is?" "and" "debugged")}
         {Lisp-Entry "get-name" #f 61 18 61 26 ("reference" "process" "debugger" "restart-name")}
         {Lisp-Entry "get-message" #f 65 18 65 29 ("reference" "process" "debugger" "restart-message")}}}})
 "Debugged-Stop"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugged" "Debugged-Stop.jazz"} 1238328024
     {Lisp-Entry "jazz.debugger.debugged.Debugged-Stop" #f 37 19 37 55 ("jazz")
-      {Lisp-Entry "Debugged-Stop" #f 43 7 43 20 ("Debugged")
+      {Lisp-Entry "Debugged-Stop" #f 43 7 43 20 ()
         {Lisp-Entry "same?" #f 51 11 51 16 ("get-reference" "get-process" "reference" "process" "debugger" "stop=?" "Debugged-Stop" "is?" "and" "debugged")}
         {Lisp-Entry "get-kind" #f 61 18 61 26 ("reference" "process" "debugger" "stop-kind")}
         {Lisp-Entry "get-reason" #f 65 18 65 28 ("reference" "process" "debugger" "stop-reason")}
@@ -84,7 +87,7 @@
 "Debugged-Thread"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.debugger" "src" "jazz" "debugger" "debugged" "Debugged-Thread.jazz"} 1238328024
     {Lisp-Entry "jazz.debugger.debugged.Debugged-Thread" #f 37 19 37 57 ("jazz")
-      {Lisp-Entry "Debugged-Thread" #f 43 7 43 22 ("Debugged")
+      {Lisp-Entry "Debugged-Thread" #f 43 7 43 22 ()
         {Lisp-Entry "same?" #f 51 11 51 16 ("get-reference" "get-process" "reference" "process" "debugger" "thread=?" "Debugged-Thread" "is?" "and" "debugged")}
         {Lisp-Entry "get-name" #f 61 18 61 26 ("reference" "process" "debugger" "thread-name")}
         {Lisp-Entry "get-state" #f 65 18 65 27 ("reference" "process" "debugger" "thread-state")}

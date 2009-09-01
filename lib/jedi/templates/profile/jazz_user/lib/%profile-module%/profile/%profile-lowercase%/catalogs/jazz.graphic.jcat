@@ -148,7 +148,17 @@
         {Lisp-Entry "start-page" #f 62 11 62 21 ("1" "+" "filename" "format" "directory" "new-file" "file:" "Picture" "new" "surface" "set!" "no")}
         {Lisp-Entry "end-page" #f 66 11 66 19 ("Picture" "delete-metafile" "close" "surface" "get-metafile" "metafile" "let" "no")}}}})
 "Region"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "windows" "Region.jazz"} 1248797036
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "x11" "Region.jazz"} 1238328024
+    {Lisp-Entry "jazz.graphic.platform.x11.Region" #f 37 19 37 51 ("jazz")
+      {Lisp-Entry "Region" #f 44 7 44 13 ()
+        {Lisp-Entry "rectangles" #f 47 8 47 18 ()}
+        {Lisp-Entry "get-rectangles" #f 47 26 47 34 ()}
+        {Lisp-Entry "initialize" #f 50 11 50 21 ("destroy-mandatory" "0" "else" "Rect" "new" "list" "rectangles" "set!" "cond" "nextmethod" "bottom" "bottom:" "right" "right:" "top" "top:" "left" "left:" "rect" "rect:")}
+        {Lisp-Entry "destroy" #f 61 11 61 18 ("nextmethod")}
+        {Lisp-Entry "offset!" #f 65 18 65 25 ("get-bottom" "get-right" "get-top" "get-left" "+" "Rect" "new" "rect" "function" "map" "rectangles" "set!" "v" "h")}
+        {Lisp-Entry "combine!" #f 76 18 76 26 ("get-rectangles" "append" "rectangles" "set!" "mode" "region")}
+        {Lisp-Entry "get-box" #f 80 18 80 25 ("get-box" "'get-box" "unimplemented")}}}}
+  {Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "windows" "Region.jazz"} 1248797036
     {Lisp-Entry "jazz.graphic.platform.windows.Region" #f 37 19 37 55 ("jazz")
       {Lisp-Entry "Region" #f 43 7 43 13 ()
         {Lisp-Entry "handle" #f 46 8 46 14 ()}
@@ -161,20 +171,13 @@
         {Lisp-Entry "combine!" #f 77 18 77 26 ("get-rectangles" "append" "rectangles" "set!" "get-combine-mode" "get-handle" "handle" "CombineRgn" "mode" "region")}
         {Lisp-Entry "get-combine-mode" #f 82 11 82 27 ("error" "else" "RGN_DIFF" "diff" "RGN_XOR" "xor" "RGN_OR" "or" "RGN_AND" "and" "case" "mode")}
         {Lisp-Entry "get-box" #f 91 18 91 25 ("RECT-free" "RECT->rect" "prog1" "handle" "GetRgnBox" "RECT-make" "rect" "with")}}}}
-  {Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "x11" "Region.jazz"} 1238328024
-    {Lisp-Entry "jazz.graphic.platform.x11.Region" #f 37 19 37 51 ("jazz")
-      {Lisp-Entry "Region" #f 44 7 44 13 ("Object")
-        {Lisp-Entry "rectangles" #f 47 8 47 18 ("generate")}
-        {Lisp-Entry "initialize" #f 50 11 50 21 ("destroy-mandatory" "0" "else" "Rect" "new" "list" "rectangles" "set!" "cond" "nextmethod" "bottom" "bottom:" "right" "right:" "top" "top:" "left" "left:" "rect" "rect:")}
-        {Lisp-Entry "destroy" #f 61 11 61 18 ("nextmethod")}
-        {Lisp-Entry "offset!" #f 65 18 65 25 ("get-bottom" "get-right" "get-top" "get-left" "+" "Rect" "new" "rect" "function" "map" "rectangles" "set!" "v" "h")}
-        {Lisp-Entry "combine!" #f 76 18 76 26 ("get-rectangles" "append" "rectangles" "set!" "mode" "region")}
-        {Lisp-Entry "get-box" #f 80 18 80 25 ("get-box" "'get-box" "unimplemented")}}}}
   {Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "carbon" "Region.jazz"} 1238328024
     {Lisp-Entry "jazz.graphic.platform.carbon.Region" #f 37 19 37 54 ("jazz")
-      {Lisp-Entry "Region" #f 45 7 45 13 ("Object")
-        {Lisp-Entry "handle" #f 48 8 48 14 ("generate")}
-        {Lisp-Entry "rectangles" #f 49 8 49 18 ("generate")}
+      {Lisp-Entry "Region" #f 45 7 45 13 ()
+        {Lisp-Entry "handle" #f 48 8 48 14 ()}
+        {Lisp-Entry "get-handle" #f 48 26 48 34 ()}
+        {Lisp-Entry "rectangles" #f 49 8 49 18 ()}
+        {Lisp-Entry "get-rectangles" #f 49 26 49 34 ()}
         {Lisp-Entry "initialize" #f 52 11 52 21 ("destroy-mandatory" "0" "NewRgn" "else" "Rect" "new" "list" "rectangles" "get-bottom" "get-right" "get-top" "get-left" "RectRgn" "handle~self" "set!" "cond" "nextmethod" "bottom" "bottom:" "right" "right:" "top" "top:" "left" "left:" "rect" "rect:" "handle" "handle:")}
         {Lisp-Entry "destroy" #f 68 11 68 18 ("nextmethod" "handle" "DisposeRgn")}
         {Lisp-Entry "offset!" #f 73 18 73 25 ("handle" "OffsetRgn" "v" "h")}

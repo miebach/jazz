@@ -80,21 +80,21 @@
 "Form-Tester"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.validate" "src" "jazz" "validate" "suite" "Form-Tester.jazz"} 1238328026
     {Lisp-Entry "jazz.validate.suite.Form-Tester" #f 37 19 37 50 ("jazz")
-      {Lisp-Entry "Form-Tester" #f 45 7 45 18 ("title:" "Tester")
+      {Lisp-Entry "Form-Tester" #f 45 7 45 18 ("title:")
         {Lisp-Entry "test-form" #f 52 11 52 20 ("test-fields" "invoke")}
         {Lisp-Entry "test-fields" #f 61 11 61 22 ("1" "get-children" "length" "2" "a" "'a" "category-field" "list" "get-properties" "get-name" "'X" "get-model-name" "=" "rpt" "validate" "get-class-form" "form" "let" "X" "new")}}
-      {Lisp-Entry "F" #f 76 7 76 8 ("2" "f1:" "Component")
-        {Lisp-Entry "f1" #f 79 12 79 14 ("set-f1" "get-f1")}
+      {Lisp-Entry "F" #f 76 7 76 8 ("2" "f1:" "set-f1" "get-f1" "initialize")
+        {Lisp-Entry "f1" #f 79 12 79 14 ()}
         {Lisp-Entry "get-f1" #f 86 11 86 17 ("f1")}
         {Lisp-Entry "set-f1" #f 87 11 87 17 ("f1" "set!" "value")}}
-      {Lisp-Entry "X" #f 90 7 90 8 ("5" "fc" "4" "fb" "f1:" "fa" "name:" "3" "x2:" "2" "x1:" "Component")
-        {Lisp-Entry "x1" #f 93 12 93 14 ("set-x1" "get-x1")}
-        {Lisp-Entry "x2" #f 94 12 94 14 ("set-x2" "get-x2")}
+      {Lisp-Entry "X" #f 90 7 90 8 ("5" "fc" "4" "fb" "f1:" "fa" "name:" "3" "x2:" "2" "x1:" "set-x2" "get-x2" "set-x1" "get-x1" "initialize")
+        {Lisp-Entry "x1" #f 93 12 93 14 ()}
+        {Lisp-Entry "x2" #f 94 12 94 14 ()}
         {Lisp-Entry "get-x1" #f 104 11 104 17 ("x1")}
         {Lisp-Entry "set-x1" #f 105 11 105 17 ("x1" "set!" "value")}
         {Lisp-Entry "get-x2" #f 108 11 108 17 ("x2")}
         {Lisp-Entry "set-x2" #f 109 11 109 17 ("x2" "set!" "value")}}
-      {Lisp-Entry "Y" #f 112 7 112 8 ("5" "x2:" "X")}}})
+      {Lisp-Entry "Y" #f 112 7 112 8 ("5" "x2:")}}})
 "Format-Tester"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.validate" "src" "jazz" "validate" "suite" "Format-Tester.jazz"} 1249298137
     {Lisp-Entry "jazz.validate.suite.Format-Tester" #f 37 19 37 52 ("jazz")
@@ -213,8 +213,10 @@
 "Test-Architecture"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.validate" "src" "jazz" "validate" "support" "Test-Architecture.jazz"} 1238328026
     {Lisp-Entry "jazz.validate.support.Test-Architecture" #f 37 19 37 58 ("jazz")
-      {Lisp-Entry "Test-Architecture" #f 44 7 44 24 ("Component")
-        {Lisp-Entry "author" #f 47 12 47 18 ("generate")}
+      {Lisp-Entry "Test-Architecture" #f 44 7 44 24 ("initialize")
+        {Lisp-Entry "author" #f 47 12 47 18 ()}
+        {Lisp-Entry "get-author" #f 47 43 47 51 ()}
+        {Lisp-Entry "set-author" #f 47 43 47 51 ()}
         {Lisp-Entry "get-class-image" #f 55 16 55 31 ("Bitmap-Resource")}
         {Lisp-Entry "get-class-presentation" #f 59 16 59 38 ()}
         {Lisp-Entry "property-presentation" #f 63 16 63 37 ("nextmethod" "else" "author" "field-name" "case" "property")}
@@ -245,9 +247,13 @@
 "Tester"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.validate" "src" "jazz" "validate" "tester" "Tester.jazz"} 1238328026
     {Lisp-Entry "jazz.validate.tester.Tester" #f 37 19 37 46 ("jazz")
-      {Lisp-Entry "Tester" #f 44 7 44 13 ("Component")
-        {Lisp-Entry "suite" #f 47 12 47 17 ("generate")}
-        {Lisp-Entry "title" #f 48 12 48 17 ("generate")}
+      {Lisp-Entry "Tester" #f 44 7 44 13 ("initialize")
+        {Lisp-Entry "suite" #f 47 12 47 17 ()}
+        {Lisp-Entry "get-suite" #f 47 42 47 50 ()}
+        {Lisp-Entry "set-suite" #f 47 42 47 50 ()}
+        {Lisp-Entry "title" #f 48 12 48 17 ()}
+        {Lisp-Entry "get-title" #f 48 42 48 50 ()}
+        {Lisp-Entry "set-title" #f 48 42 48 50 ()}
         {Lisp-Entry "*section*" #f 56 10 56 19 ("make-parameter")}
         {Lisp-Entry "test" #f 60 26 60 30 ()}
         {Lisp-Entry "invoke" #f 64 21 64 27 ("*section*" "parameterize" "proc" "section")}
@@ -271,7 +277,7 @@
 "Validate"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.validate" "src" "jazz" "validate" "validate" "Validate.jazz"} 1238328026
     {Lisp-Entry "jazz.validate.validate.Validate" #f 37 19 37 50 ("jazz")
-      {Lisp-Entry "Validate" #f 44 7 44 15 ("Process")
+      {Lisp-Entry "Validate" #f 44 7 44 15 ()
         {Lisp-Entry "start-process" #f 47 11 47 24 ("exit-process" "Validation-Suite" "new" "validate")}}}})
 "Validation-Suite"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.validate" "src" "jazz" "validate" "validate" "Validation-Suite.jazz"} 1248797037

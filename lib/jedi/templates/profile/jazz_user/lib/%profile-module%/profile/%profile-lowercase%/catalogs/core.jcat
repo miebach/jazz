@@ -1,7 +1,9 @@
 "Dispatcher"
  ({Lisp-File-Entry {File core "src" "core" "generic" "runtime" "Dispatcher.jazz"} 1237033579
-    {Lisp-Entry "Dispatcher" #f 47 7 47 17 ("Object")
-      {Lisp-Entry "dag-root" #f 50 12 50 20 ("generate")}
+    {Lisp-Entry "Dispatcher" #f 47 7 47 17 ()
+      {Lisp-Entry "dag-root" #f 50 12 50 20 ()}
+      {Lisp-Entry "get-dag-root" #f 50 31 50 39 ()}
+      {Lisp-Entry "set-dag-root" #f 50 31 50 39 ()}
       {Lisp-Entry "Root-Signature" #f 53 14 53 28 ("root-signature" "'root-signature")}
       {Lisp-Entry "initialize" #f 57 11 57 21 ("Root-Signature" "Dispatch-Node" "new" "dag-root" "set!" "nextmethod")}
       {Lisp-Entry "insert-signature" #f 62 18 62 34 ("insert-node" "else" "proper-list?" "not" "type-name" "error" "locate-node" "cond" "standardize-signature" "let" "category" "signature" "procedure" "symbol")}
@@ -12,11 +14,19 @@
       {Lisp-Entry "gather-generics" #f 122 18 122 33 ("dag-root" "cons" "memq?" "not" "and" "get-specific-nodes" "set!" "can-call-with?" "when" "child-node" "for-each" "no-match?" "walk-node" "function" "iter" "letrec" "generics" "let" "parameter-types")}
       {Lisp-Entry "find-generics" #f 138 18 138 31 ("dag-root" "car" "eq?" "if" "gather-generics" "generics" "let" "parameter-types")}
       {Lisp-Entry "get-node-procedure" #f 145 18 145 36 ("get-procedure" "node")}}
-    {Lisp-Entry "Dispatch-Node" #f 154 7 154 20 ("Object")
-      {Lisp-Entry "procedure" #f 157 12 157 21 ("generate")}
-      {Lisp-Entry "signature" #f 158 12 158 21 ("generate")}
-      {Lisp-Entry "generic-nodes" #f 159 12 159 25 ("generate")}
-      {Lisp-Entry "specific-nodes" #f 160 12 160 26 ("generate")}
+    {Lisp-Entry "Dispatch-Node" #f 154 7 154 20 ("initialize")
+      {Lisp-Entry "procedure" #f 157 12 157 21 ()}
+      {Lisp-Entry "get-procedure" #f 157 52 157 60 ()}
+      {Lisp-Entry "set-procedure" #f 157 52 157 60 ()}
+      {Lisp-Entry "signature" #f 158 12 158 21 ()}
+      {Lisp-Entry "get-signature" #f 158 52 158 60 ()}
+      {Lisp-Entry "set-signature" #f 158 52 158 60 ()}
+      {Lisp-Entry "generic-nodes" #f 159 12 159 25 ()}
+      {Lisp-Entry "get-generic-nodes" #f 159 52 159 60 ()}
+      {Lisp-Entry "set-generic-nodes" #f 159 52 159 60 ()}
+      {Lisp-Entry "specific-nodes" #f 160 12 160 26 ()}
+      {Lisp-Entry "get-specific-nodes" #f 160 52 160 60 ()}
+      {Lisp-Entry "set-specific-nodes" #f 160 52 160 60 ()}
       {Lisp-Entry "initialize" #f 163 11 163 21 ("generic-nodes" "signature" "procedure" "set!" "nextmethod" "gen" "sig" "proc")}
       {Lisp-Entry "print" #f 170 11 170 16 ("type-name" "map" "format" "Root-Signature" "signature" "eq?" "if" "function" "self" "print-unreadable" "readably" "printer")}
       {Lisp-Entry "can-call-with?" #f 178 11 178 25 ("null?" "finally" "return" "Java" "can-cast-into?" "not" "and" "when" "r2" "parameter-type" "r1" "remainder" "in" "data-type" "for" "loop" "Root-Signature" "signature" "eq?" "if" "sig")}
@@ -26,10 +36,10 @@
       {Lisp-Entry "remove-specific-node" #f 209 11 209 31 ("specific-nodes" "remove" "set-specific-nodes" "specific")}}})
 "_base"
  ({Lisp-File-Entry {File core "src" "core" "base" "_base.scm"} 1251542558
-    {Lisp-Entry "core.base" #f 37 8 37 17 ("core.base.runtime" "syntax" "phase" "core.base.syntax" "require")}})
+    {Lisp-Entry "core.base" #f 37 8 37 17 ()}})
 "_builder"
  ({Lisp-File-Entry {File core "src" "core" "module" "builder" "_builder.scm"} 1251126336
-    {Lisp-Entry "core.module.builder" #f 38 18 38 37 ("core.library" "core.base" "require")
+    {Lisp-Entry "core.module.builder" #f 38 18 38 37 ()
       {Lisp-Entry "jazz.manifest-references-valid?" #f 50 9 50 40 ("library-references-valid?" "jazz.every?" "if" "get-manifest-references" "references" "let" "bin")
         {Lisp-Entry "get-manifest-references" #f 51 11 51 34 ("%%manifest-references" "and" "jazz.load-manifest" "manifest" "bin" "%%resource-package" "jazz.manifest-pathname" "manifest-filepath" "let")}
         {Lisp-Entry "library-references-valid?" #f 56 11 56 36 ("private" "'private" "%%get-declaration-access" "%%neq?" "%%get-declaration-toplevel" "%%get-lexical-binding-name" "%%eq?" "else" "jazz.find-declaration" "%%not" "cond" "declaration" "symbols" "iter" "%%pair?" "if" "found" "symbol" "lambda" "jazz.every?" "and" "jazz.outline-library" "library-declaration" "%%cdr" "library-references" "%%car" "library-locator" "let" "lst")}}
@@ -55,7 +65,7 @@
     {Lisp-Entry "core.module" #f 37 8 37 19 ()}})
 "_runtime"
  ({Lisp-File-Entry {File core "src" "core" "library" "runtime" "_runtime.scm"} 1250720196
-    {Lisp-Entry "core.library.runtime" #f 37 18 37 38 ("jazz.Library" "jazz.encapsulate-class" "core.library.runtime.autoload" "require")
+    {Lisp-Entry "core.library.runtime" #f 37 18 37 38 ("jazz.Library" "jazz.encapsulate-class")
       {Lisp-Entry "jazz.Library" #f 48 19 48 31 ("%%get-library-exports" "exports" "%%get-library-name" "name" "jazz.allocate-library" "jazz.Object-Class" "jazz.Object")}
       {Lisp-Entry "jazz.Library" #f 53 27 53 39 ()}
       {Lisp-Entry "jazz.new-library" #f 56 9 56 25 ("jazz.Library" "jazz.allocate-library" "exports" "name")}
@@ -449,7 +459,7 @@
       {Lisp-Entry "jazz.find-nextmethod" #f 146 9 146 29 ("jazz.error" "rest" "obj" "lambda" "%%get-class-ascendant" "jazz.get-method-implementation" "jazz.inherited-name?" "if" "method-name" "class")}}})
 "development"
  ({Lisp-File-Entry {File core "src" "core" "library" "development.scm"} 1251729948
-    {Lisp-Entry "core.library.development" #f 38 8 38 32 ("core.base" "require")
+    {Lisp-Entry "core.library.development" #f 38 8 38 32 ()
       {Lisp-Entry "jazz.parse" #f 49 9 49 19 ("pretty-print" "jazz.read-toplevel-form" "form" "jazz.find-module-src" "jazz.resource-pathname" "source" "let" "module-name")}
       {Lisp-Entry "jazz.parse-source" #f 55 9 55 26 ("jazz.present-source" "pretty-print" "read-source?:" "jazz.read-toplevel-form" "syntax" "jazz.resource-pathname" "source" "jazz.find-module-src" "src" "let*" "walk" "'walk" "jazz.walk-for" "parameterize" "module-name")}
       {Lisp-Entry "jazz.expand-module" #f 70 9 70 27 ("jazz.expand-library-source" "library" "jazz.expand-module-source" "module" "case" "jazz.requested-module-resource" "jazz.requested-module-name" "cdr" "rest" "car" "jazz.source-code" "kind" "read-source?:" "jazz.read-toplevel-form" "form" "jazz.resource-pathname" "source" "jazz.find-module-src" "src" "let*" "walk" "'walk" "or" "jazz.walk-for" "parameterize" "walk-for" "#!key" "module-name")}
@@ -478,7 +488,7 @@
       {Lisp-Entry "jazz.dialect-walker" ("jazz.Dialect") 45 22 45 41 ()}}})
 "error"
  ({Lisp-File-Entry {File core "src" "core" "exception" "runtime" "error.scm"} 1238328024
-    {Lisp-Entry "core.exception.runtime.error" #f 37 18 37 46 ("jazz.raise-jazz-error" "jazz.error" "set!" "proper-tail-calls" "declare" "jazz.Error" "jazz.encapsulate-class")
+    {Lisp-Entry "core.exception.runtime.error" #f 37 18 37 46 ("jazz.raise-jazz-error" "jazz.error" "set!" "jazz.Error" "jazz.encapsulate-class")
       {Lisp-Entry "jazz.Error" #f 40 27 40 37 ()}
       {Lisp-Entry "jazz.new-error" #f 43 9 43 23 ("jazz.Error" "jazz.allocate-error" "message")}
       {Lisp-Entry "jazz.get-message" ("jazz.Error") 47 21 47 37 ("error" "%%get-error-message")}

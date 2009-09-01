@@ -1,18 +1,26 @@
 "_game"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.game" "src" "jazz" "sample" "game" "_game.jazz"} 1236190769
     {Lisp-Entry "jazz.sample.game" #f 38 9 38 25 ("jazz")
-      {Lisp-Entry "Player" #f 49 7 49 13 ("Object")
+      {Lisp-Entry "Player" #f 49 7 49 13 ()
         {Lisp-Entry "player-kind" #f 52 29 52 40 ()}
         {Lisp-Entry "human?" #f 56 29 56 35 ("human" "'human" "player-kind" "eq?")}
         {Lisp-Entry "computer?" #f 60 29 60 38 ("computer" "'computer" "player-kind" "eq?")}
         {Lisp-Entry "computer-move" #f 64 29 64 42 ()}
         {Lisp-Entry "move-played" #f 69 29 69 40 ("token" "move")}}
-      {Lisp-Entry "Game" #f 78 7 78 11 ("Object")
-        {Lisp-Entry "players" #f 82 8 82 15 ("generate")}
-        {Lisp-Entry "next-player-rank" #f 83 8 83 24 ("generate")}
+      {Lisp-Entry "Game" #f 78 7 78 11 ("initialize")
+        {Lisp-Entry "players" #f 82 8 82 15 ()}
+        {Lisp-Entry "get-players" #f 82 49 82 57 ()}
+        {Lisp-Entry "set-players" #f 82 49 82 57 ()}
+        {Lisp-Entry "next-player-rank" #f 83 8 83 24 ()}
+        {Lisp-Entry "get-next-player-rank" #f 83 49 83 57 ()}
+        {Lisp-Entry "set-next-player-rank" #f 83 49 83 57 ()}
         {Lisp-Entry "history-manager" #f 86 8 86 23 ()}
-        {Lisp-Entry "status" #f 89 8 89 14 ("generate")}
-        {Lisp-Entry "winner" #f 90 8 90 14 ("generate")}
+        {Lisp-Entry "status" #f 89 8 89 14 ()}
+        {Lisp-Entry "get-status" #f 89 49 89 57 ()}
+        {Lisp-Entry "set-status" #f 89 49 89 57 ()}
+        {Lisp-Entry "winner" #f 90 8 90 14 ()}
+        {Lisp-Entry "get-winner" #f 90 49 90 57 ()}
+        {Lisp-Entry "set-winner" #f 90 49 90 57 ()}
         {Lisp-Entry "initialize" #f 98 11 98 21 ("winner" "play" "'play" "status" "self" "History-Manager" "new" "history-manager" "0" "next-player-rank" "set!" "nextmethod")}
         {Lisp-Entry "register-players" #f 111 18 111 34 ("list->vector" "players" "set!" "lst")}
         {Lisp-Entry "get-next-player" #f 115 18 115 33 ("next-player-rank" "players" "vector-ref")}
@@ -34,8 +42,9 @@
         {Lisp-Entry "save" #f 210 26 210 30 ()}
         {Lisp-Entry "load" #f 214 26 214 30 ()}
         {Lisp-Entry "inspect" #f 223 26 223 33 ()}}
-      {Lisp-Entry "History-Move" #f 232 7 232 19 ("History-Item")
-        {Lisp-Entry "move" #f 235 8 235 12 ("generate")}
+      {Lisp-Entry "History-Move" #f 232 7 232 19 ()
+        {Lisp-Entry "move" #f 235 8 235 12 ()}
+        {Lisp-Entry "get-move" #f 235 20 235 28 ()}
         {Lisp-Entry "initialize" #f 238 11 238 21 ("move~self" "set!" "nextmethod" "move")}
         {Lisp-Entry "print" #f 243 11 243 16 ("move" "format" "function" "self" "print-unreadable" "readably" "printer")}}}})
 "minimax"

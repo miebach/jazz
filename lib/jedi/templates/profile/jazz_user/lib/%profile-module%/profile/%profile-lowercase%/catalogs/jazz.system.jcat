@@ -392,7 +392,7 @@
 "Performance-Query"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "performance" "platform" "windows" "Performance-Query.jazz"} 1238328026
     {Lisp-Entry "jazz.system.performance.platform.windows.Performance-Query" #f 37 19 37 77 ("jazz")
-      {Lisp-Entry "Performance-Query" #f 44 7 44 24 ("Object")
+      {Lisp-Entry "Performance-Query" #f 44 7 44 24 ()
         {Lisp-Entry "query" #f 47 8 47 13 ()}
         {Lisp-Entry "initialize" #f 50 11 50 21 ("destroy-mandatory" "query~self" "set!" "validate-status" "0" "NULL" "PdhOpenQuery" "query" "status" "receive" "nextmethod")}
         {Lisp-Entry "destroy" #f 58 11 58 18 ("nextmethod" "query" "PdhCloseQuery" "validate-status")}
@@ -626,10 +626,10 @@
       {Lisp-Entry "process-active?" #f 67 20 67 35 ("Process-Active?")}
       {Lisp-Entry "get-toplevel" #f 71 20 71 32 ("get-toplevel" "when" "get-application" "appl" "let")}}})
 "autoload"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "autoload.jazz"} 1247023405
-    {Lisp-Entry "jazz.system.process.autoload" #f 37 19 37 47 ("jazz")}}
-  {Lisp-File-Entry {File jazz.system "src" "jazz" "system" "service" "platform" "windows" "autoload.jazz"} 1246937490
+ ({Lisp-File-Entry {File jazz.system "src" "jazz" "system" "service" "platform" "windows" "autoload.jazz"} 1246937490
     {Lisp-Entry "jazz.system.service.platform.windows.autoload" #f 37 19 37 64 ("jazz")}}
+  {Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "autoload.jazz"} 1247023405
+    {Lisp-Entry "jazz.system.process.autoload" #f 37 19 37 47 ("jazz")}}
   {Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "application" "autoload.jazz"} 1238328026
     {Lisp-Entry "jazz.system.application.autoload" #f 37 19 37 51 ("jazz")}})
 "carbon"
@@ -664,9 +664,7 @@
  ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "process" "stub.jazz"} 1237033582
     {Lisp-Entry "jazz.system.process.stub" #f 37 9 37 33 ("jazz")
       {Lisp-Entry "Process" #f 43 16 43 23 ()
-        {Lisp-Entry "get-name" #f 46 23 46 31 ()}
-        {Lisp-Entry "get-icon" #f 47 23 47 31 ()}
-        {Lisp-Entry "get-register" #f 48 23 48 35 ()}}}})
+        {Lisp-Entry "call" #f 46 17 46 21 ("get-register" "get-icon" "call" "public" "method" "get-name")}}}})
 "windows"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.system" "src" "jazz" "system" "platform" "windows.jazz"} 1247281501
     {Lisp-Entry "jazz.system.platform.windows" #f 37 19 37 47 ("jazz")

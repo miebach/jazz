@@ -529,7 +529,7 @@
 "DocToHTML-Transformation"
  ({Lisp-File-Entry {File jedi "lib" "jazz.doc" "src" "jazz" "doc" "transformation" "DocToHTML-Transformation.jazz"} 1246892385
     {Lisp-Entry "jazz.doc.transformation.DocToHTML-Transformation" #f 37 19 37 67 ("jazz")
-      {Lisp-Entry "DocToHTML-Transformation" #f 43 7 43 31 ("JML-Transformation")
+      {Lisp-Entry "DocToHTML-Transformation" #f 43 7 43 31 ()
         {Lisp-Entry "<parameter>" #f 46 12 46 23 (",text" "get-child-text" "text" "let" "node")}
         {Lisp-Entry "<code>" #f 51 12 51 18 (",text" "get-child-text" "text" "let" "node")}
         {Lisp-Entry "<reference>" #f 56 12 56 23 (",text" ",name" "href:" "->string" "get-text" "if" "text" "first-child" "child" "format" "name" "'href" "get-property" "href" "let*" "node")}
@@ -542,7 +542,7 @@
 "DocToText-Transformation"
  ({Lisp-File-Entry {File jedi "lib" "jazz.doc" "src" "jazz" "doc" "transformation" "DocToText-Transformation.jazz"} 1245732655
     {Lisp-Entry "jazz.doc.transformation.DocToText-Transformation" #f 37 19 37 67 ("jazz")
-      {Lisp-Entry "DocToText-Transformation" #f 43 7 43 31 ("JML-Transformation")
+      {Lisp-Entry "DocToText-Transformation" #f 43 7 43 31 ()
         {Lisp-Entry "<parameter>" #f 46 12 46 23 (",text" "Dark-Red" "color:" "get-child-text" "text" "let" "node")}
         {Lisp-Entry "<code>" #f 51 12 51 18 (",text" "Dark-Red" "color:" "get-child-text" "text" "let" "node")}
         {Lisp-Entry "<hyperlink>" #f 56 12 56 23 (",text" "Dark-Blue" "color:" "get-child-text" "text" "let" "node")}
@@ -739,7 +739,7 @@
         {Lisp-Entry "layout" #f 66 11 66 17 ("increase!" "set-size" "Point" "set-position" "view" "function" "for-each-view" "0" "h" "Dimension" "new" "child-size" "get-height" "height" "get-width" "quotient" "width" "get-size" "size" "length" "let*" "children" "when")}
         {Lisp-Entry "draw" #f 86 11 86 15 ("Dark-Red" "name:" "Color" "get-bounds" "fill-rect" "lv" "lh" "context" "surface")}}}})
 "IDE"
- ({Lisp-File-Entry {File jedi "lib" "jazz.ide" "src" "jazz" "ide" "IDE.jazz"} 1251730942
+ ({Lisp-File-Entry {File jedi "lib" "jazz.ide" "src" "jazz" "ide" "IDE.jazz"} 1251746526
     {Lisp-Entry "jazz.ide.IDE" #f 37 19 37 31 ("jazz")
       {Lisp-Entry "IDE" #f 67 7 67 10 ("Macro-Recorder" "Cataloguer" "new" "initialize")
         {Lisp-Entry "local-debugger" #f 70 8 70 22 ()}
@@ -1168,7 +1168,7 @@
         {Lisp-Entry "record-event?" #f 599 11 599 24 ("event")}
         {Lisp-Entry "on-readme" #f 608 19 608 28 ("Jazz" "File" "edit-document" "evt")}}}})
 "Jedi-Actions"
- ({Lisp-File-Entry {File jedi "src" "jedi" "preference" "Jedi-Actions.jazz"} 1251730021
+ ({Lisp-File-Entry {File jedi "src" "jedi" "preference" "Jedi-Actions.jazz"} 1251746526
     {Lisp-Entry "jedi.preference.Jedi-Actions" #f 37 19 37 47 ("jazz")
       {Lisp-Entry "Jedi-Actions" #f 46 7 46 19 ("on-readme" "readme" "play-recording-5" "play-recording-4" "play-recording-3" "play-recording-2" "play-recording-1" "play-recording-0" "on-play-recording" "play-recording" "on-set-active-recording" "set-active-recording" "on-output-recording" "output-recording" "on-register-recording" "register-recording" "on-present-recording" "present-recording" "on-resume-recording" "resume-recording" "on-stop-recording" "stop-recording" "on-start-recording" ":recorder" "start-recording" "on-capture-mouse-host" "capture-mouse-host" "on-capture-host" "capture-host" "on-capture-mouse-document" "capture-mouse-document" "on-capture-document" "capture-document" "unzoom-document" "zoom-out-document" "document" "zoom-in-document" "on-unzoom" "unzoom-mouse-view" "on-zoom-out" "zoom-out-mouse-view" "mouse-view" "what:" "on-zoom-in" "zoom-in-mouse-view" "on-update-catalogs" "update-catalogs" "on-catalogs-manager" "catalogs-manager" "on-view-bindings" "view-bindings" "on-bindings-manager" "bindings-manager" "on-compare-files" "compare-files" "on-compare-directories" "compare-directories" "on-variables" "variables" "on-exception" "exception" "on-frames" "frames" "on-threads" "threads" "on-processes" "processes" "on-profiler-manager" "profiler-manager" "on-resources-monitor" "resources-monitor" "on-logs-viewer" "logs-viewer" "on-references-analyser" "references-analyser" "on-class-browser" "class-browser" "on-reload-process" "reload-process" "0" "test-0" "9" "test-9" "8" "test-8" "7" "test-7" "6" "test-6" "5" "test-5" "4" "test-4" "3" "test-3" "2" "test-2" "1" "no:" "on-test-no" "test-1" "on-test-shift" "test-shift" "on-test" "test" "on-clear-terminal" "clear-terminal" "on-toggle-terminal" "toggle-terminal" "on-spy-events" "spy-events" "on-spy-messages" "spy-messages" "on-explore-views" "explore-views" "F8" "on-debug-views" "debug-views" "Tab" "on-next-debuggee" "next-debuggee" "on-call-run-to" "call-run-to" "on-call-step-out" "call-step-out" "on-call-step-into" "call-step-into" "on-call-step-over" "call-step-over" "on-run-to-result" "run-to-result" "on-run-to-cursor" "run-to-cursor" "on-step-outside-function" "step-outside-function" "on-step-out" "step-out" "on-step-into-function" "step-into-function" "F11" "on-step-into" "step-into" "F10" "on-step-over" "step-over" "on-continue" "continue" "on-break" "break" "enabled?:" "F9" "on-restart" ":debugger" "restart" "on-build-project" "build-project" "F7" "on-compile-file" "compile-file" "on-debug-project-with" "debug-project-with" "on-debug-project" "debug-project" "on-run-project" "run-project" "on-test-project" "test-project" "on-view-project-log" "view-project-log" "on-clean-project" "clean-project" "on-edit-project" "edit-project" "F5" "on-select-project" "select-project" "on-showcase" "view-showcase" "on-documentation-editor" "view-documentation-editor" "on-hierarchy" "view-hierarchy" "on-chapters" "view-chapters" "on-sql-console" "view-sql-console" "on-sql-inventory" "view-sql-inventory" "on-sql-connections" "view-sql-connections" "on-java-manager" "view-java-manager" "on-java-reference-finder" "view-java-reference-finder" "on-preferences" "view-preferences" "on-branches" "view-branches" "on-descendants" "view-descendants" "on-toolbox" "view-toolbox" "on-type-viewer" "view-type-viewer" "on-registry-viewer" "view-registry-viewer" "on-web-servers" "view-web-servers" "on-activities" "view-activities" "on-user-log" "view-user-log" "on-output-log" "view-output-log" "on-profile-results" "view-profile-results" "on-search-results" "view-search-results" "Return" "on-properties" "view-properties" "on-debugger" "view-debugger" "Space" "on-console" "view-console" "on-repositories" "view-repositories" ":control" "on-workbench" "view-workbench" "on-exit-without-save" "exit-without-save" "on-save-workspace" "save-workspace" "on-open-jazz-text" "open-jazz-text" "on-open-text" "open-text" ":shift" ":alt" "Shortcut" "shortcut:" "on-new-project" ":application" "Event-Handler" "action-handler:" "new-project" "name:")}}})
 "Jedi-Bindings"
@@ -1176,7 +1176,7 @@
     {Lisp-Entry "jedi.preference.Jedi-Bindings" #f 37 19 37 48 ("jazz")
       {Lisp-Entry "Jedi-Bindings" #f 46 7 46 20 ("current-frame" "previous-frame" "F6" "next-frame" "exit" "print-preview" "print-layout" "print" "F4" "close" "new" "windows" "save" "mac" "paste&next-aux" "select-outer" "Space" "lock-anchor" "paste" "copy" "cut" "redo-aux" "redo" "undo-aux" "undo" "emacs" "insert-next-aux" "insert-previous-aux" "edit-references-aux" "edit-definitions-aux" "next-aux" "prior-aux" "document-end-aux" "document-home-aux" "extend-end-aux" "end-aux" "extend-home-aux" "home-aux" "kill-line" "delete-word-aux" "delete-char-aux" "downward-compound-aux" "upward-compound-aux" "extend-downward-aux" "move-downward-aux" "extend-upward-aux" "move-upward-aux" "forward-compound-aux" "extend-forward-word-aux" "move-forward-word-aux" "extend-forward-char-aux" "move-forward-char-aux" "backward-compound-aux" "extend-backward-word-aux" "move-backward-word-aux" "extend-backward-char-aux" "move-backward-char-aux" "select-all" "view-bindings" "bindings-manager" ":control" "find" ":shift" "pop-clipboard-stack" ":alt" "Shortcut" "shortcut:" "paste-from-stack" "jazz" "shortcut-viewer" "preview-pane" "view-editor" "search-results-tree" "search-manager" "compare-trees" "class-browser" "manager" "repositories-manager" "workbench-manager" "workbench-tree" "web-servers" "entities-tree" "components-tree" "components-viewer" "tree-embedded-search-text" "scheme-text" "composite-text" "compare-text" "combo-text" "console-text" "command-search" "command-execute" "jazz-text" "lisp-text" "code-text" "jedi" "name:")}}})
 "Jedi-Menubar"
- ({Lisp-File-Entry {File jedi "src" "jedi" "application" "Jedi-Menubar.jazz"} 1251730021
+ ({Lisp-File-Entry {File jedi "src" "jedi" "application" "Jedi-Menubar.jazz"} 1251746526
     {Lisp-Entry "jedi.application.Jedi-Menubar" #f 37 19 37 48 ("jazz")
       {Lisp-Entry "Jedi-Menubar" #f 47 7 47 19 ()
         {Lisp-Entry "host-icon" #f 55 16 55 25 ("Bitmap-Resource")}
@@ -2528,16 +2528,16 @@
       {Lisp-Entry "collect-projects" #f 95 20 95 36 ("queue-list" "enqueue" "concrete?" "Project" "is?" "and" "when" "level" "file" "function" "for-each-descendant" "new-queue" "projects" "let" "project")}
       {Lisp-Entry "build-preferences" #f 110 13 110 30 ("build" "'build" "get-preferences")}}})
 "autoload"
- ({Lisp-File-Entry {File jedi "lib" "jazz.ide" "src" "jazz" "ide" "autoload.jazz"} 1248722444
+ ({Lisp-File-Entry {File jedi "lib" "jazz.recorder" "src" "jazz" "recorder" "autoload.jazz"} 1238328027
+    {Lisp-Entry "jazz.recorder.autoload" #f 37 19 37 41 ("jazz")}}
+  {Lisp-File-Entry {File jedi "lib" "jazz.doc" "src" "jazz" "doc" "autoload.jazz"} 1246650283
+    {Lisp-Entry "jazz.doc.autoload" #f 37 19 37 36 ("jazz")}}
+  {Lisp-File-Entry {File jedi "lib" "jazz.ide" "src" "jazz" "ide" "autoload.jazz"} 1248722444
     {Lisp-Entry "jazz.ide.autoload" #f 37 19 37 36 ("jazz")}}
   {Lisp-File-Entry {File jedi "lib" "jazz.catalog" "src" "jazz" "catalog" "autoload.jazz"} 1247075199
     {Lisp-Entry "jazz.catalog.autoload" #f 37 19 37 40 ("jazz")}}
   {Lisp-File-Entry {File jedi "src" "jedi" "autoload.jazz"} 1251404157
-    {Lisp-Entry "jedi.autoload" #f 37 19 37 32 ("jazz")}}
-  {Lisp-File-Entry {File jedi "lib" "jazz.recorder" "src" "jazz" "recorder" "autoload.jazz"} 1238328027
-    {Lisp-Entry "jazz.recorder.autoload" #f 37 19 37 41 ("jazz")}}
-  {Lisp-File-Entry {File jedi "lib" "jazz.doc" "src" "jazz" "doc" "autoload.jazz"} 1246650283
-    {Lisp-Entry "jazz.doc.autoload" #f 37 19 37 36 ("jazz")}})
+    {Lisp-Entry "jedi.autoload" #f 37 19 37 32 ("jazz")}})
 "run"
  ({Lisp-File-Entry {File jedi "src" "jedi" "run.jazz"} 1238328027
     {Lisp-Entry "jedi.run" #f 37 9 37 17 ("Jedi" "new" "boot-environment" "descriptor" "function" "jedi" "'jedi" "register-product-run" "jazz")}})

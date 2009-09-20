@@ -1,387 +1,387 @@
 "SQLDMO"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLDMO.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLDMO" #f 37 19 37 59 ("jazz")}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLDMO" library #f 37 19 37 59 ("jazz")}})
 "SQLServer-Constraint-Name-Global-Unicity-Constraint"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Constraint-Name-Global-Unicity-Constraint.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Constraint-Name-Global-Unicity-Constraint" #f 37 19 37 104 ("jazz")
-      {Lisp-Entry "SQLServer-Constraint-Name-Global-Unicity-Constraint" #f 45 7 45 58 ()
-        {Lisp-Entry "register-constraints" #f 53 16 53 36 ("Design-Constraint" "self" "new" "register-constraint" "manager")}
-        {Lisp-Entry "validate" #f 63 11 63 19 ("message:" "Integrity-Violation" "new" "add-violation" "when" "manager" "context" "client" "architecture" "constraint")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Constraint-Name-Global-Unicity-Constraint" library #f 37 19 37 104 ("jazz")
+      {Lisp-Entry "SQLServer-Constraint-Name-Global-Unicity-Constraint" class #f 45 7 45 58 ("Integrity-Constraint")
+        {Lisp-Entry "register-constraints" method #f 53 16 53 36 ("Design-Constraint" "self" "new" "register-constraint" "manager")}
+        {Lisp-Entry "validate" method #f 63 11 63 19 ("message:" "Integrity-Violation" "new" "add-violation" "when" "manager" "context" "client" "architecture" "constraint")}}}})
 "SQLServer-Data-Source"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "SQLServer-Data-Source.jazz"} 1248797036
-    {Lisp-Entry "jazz.database.sqlserver.SQLServer-Data-Source" #f 37 19 37 64 ("jazz")
-      {Lisp-Entry "SQLServer-Data-Source" #f 44 7 44 28 ("initialize")
-        {Lisp-Entry "server" #f 47 12 47 18 ()}
-        {Lisp-Entry "get-server" #f 47 45 47 53 ()}
-        {Lisp-Entry "set-server" #f 47 45 47 53 ()}
-        {Lisp-Entry "database" #f 48 12 48 20 ()}
-        {Lisp-Entry "get-database" #f 48 45 48 53 ()}
-        {Lisp-Entry "set-database" #f 48 45 48 53 ()}
-        {Lisp-Entry "dsn" #f 49 12 49 15 ()}
-        {Lisp-Entry "get-dsn" #f 49 45 49 53 ()}
-        {Lisp-Entry "set-dsn" #f 49 45 49 53 ()}
-        {Lisp-Entry "external-name" #f 52 16 52 29 ("sqlserver" "'sqlserver" "rest")}
-        {Lisp-Entry "new-inventory" #f 62 11 62 24 ("database" "password" "username" "server" "SQLServer-Inventory" "new" "rest" "connection")}
-        {Lisp-Entry "new-connection" #f 71 11 71 25 ("self" "ADO-Connection" "new")}
-        {Lisp-Entry "get-connection-string" #f 75 11 75 32 ("password" "username" "either" "database" "server" "format" "dsn" "if")}
-        {Lisp-Entry "get-connection-properties" #f 85 11 85 36 ("password" "password:" "username" "username:" "database" "database:" "server" "server:" "list")}
-        {Lisp-Entry "present" #f 97 11 97 18 ("database" "server" "format" "dsn" "if")}
-        {Lisp-Entry "present-detailed" #f 103 11 103 27 ("database" "server" "format" ":bulleted" "list")}
-        {Lisp-Entry "get-class-presentation" #f 116 16 116 38 ()}
-        {Lisp-Entry "property-presentation" #f 121 16 121 37 ("nextmethod" "else" "dsn" "database" "server" "field-name" "case" "property")}
-        {Lisp-Entry "get-row-instance" #f 130 11 130 27 ("nextmethod" "else" "String-Row" "dsn" "condensed?:" "SQLServer-Database-Row" "database" "limit-to-list?:" "nullable?:" "SQLServer-Server-Row" "new" "server" "field-name" "case" "property")}
-        {Lisp-Entry "get-categorized-properties" #f 139 11 139 37 ("database" "password" "username" "server" "dsn" "class-info")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.SQLServer-Data-Source" library #f 37 19 37 64 ("jazz")
+      {Lisp-Entry "SQLServer-Data-Source" class #f 44 7 44 28 ("initialize" "Data-Source")
+        {Lisp-Entry "server" property #f 47 12 47 18 ()}
+        {Lisp-Entry "get-server" accessor #f 47 45 47 53 ()}
+        {Lisp-Entry "set-server" accessor #f 47 45 47 53 ()}
+        {Lisp-Entry "database" property #f 48 12 48 20 ()}
+        {Lisp-Entry "get-database" accessor #f 48 45 48 53 ()}
+        {Lisp-Entry "set-database" accessor #f 48 45 48 53 ()}
+        {Lisp-Entry "dsn" property #f 49 12 49 15 ()}
+        {Lisp-Entry "get-dsn" accessor #f 49 45 49 53 ()}
+        {Lisp-Entry "set-dsn" accessor #f 49 45 49 53 ()}
+        {Lisp-Entry "external-name" method #f 52 16 52 29 ("sqlserver" "'sqlserver" "rest")}
+        {Lisp-Entry "new-inventory" method #f 62 11 62 24 ("database" "password" "username" "server" "SQLServer-Inventory" "new" "rest" "connection")}
+        {Lisp-Entry "new-connection" method #f 71 11 71 25 ("self" "ADO-Connection" "new")}
+        {Lisp-Entry "get-connection-string" method #f 75 11 75 32 ("password" "username" "either" "database" "server" "format" "dsn" "if")}
+        {Lisp-Entry "get-connection-properties" method #f 85 11 85 36 ("password" "password:" "username" "username:" "database" "database:" "server" "server:" "list")}
+        {Lisp-Entry "present" method #f 97 11 97 18 ("database" "server" "format" "dsn" "if")}
+        {Lisp-Entry "present-detailed" method #f 103 11 103 27 ("database" "server" "format" ":bulleted" "list")}
+        {Lisp-Entry "get-class-presentation" method #f 116 16 116 38 ()}
+        {Lisp-Entry "property-presentation" method #f 121 16 121 37 ("nextmethod" "else" "dsn" "database" "server" "field-name" "case" "property")}
+        {Lisp-Entry "get-row-instance" method #f 130 11 130 27 ("nextmethod" "else" "String-Row" "dsn" "condensed?:" "SQLServer-Database-Row" "database" "limit-to-list?:" "nullable?:" "SQLServer-Server-Row" "new" "server" "field-name" "case" "property")}
+        {Lisp-Entry "get-categorized-properties" method #f 139 11 139 37 ("database" "password" "username" "server" "dsn" "class-info")}}}})
 "SQLServer-Database-Browser"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Database-Browser.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Database-Browser" #f 37 19 37 79 ("jazz")
-      {Lisp-Entry "SQLServer-Database-Browser" #f 47 7 47 33 ()}
-      {Lisp-Entry "SQLServer-Database-Browser" #f 53 7 53 33 ("set-data-source" "get-data-source" "initialize")
-        {Lisp-Entry "data-source" #f 56 12 56 23 ()}
-        {Lisp-Entry "database-names" #f 59 8 59 22 ()}
-        {Lisp-Entry "get-data-source" #f 67 18 67 33 ("data-source")}
-        {Lisp-Entry "set-data-source" #f 71 18 71 33 ("update-database-names" "data-source" "set!" "value")}
-        {Lisp-Entry "Unable-To-Connect" #f 81 12 81 29 ("#x80040000")}
-        {Lisp-Entry "Login-Failed" #f 84 12 84 24 ("#x80044818")}
-        {Lisp-Entry "update-database-names" #f 88 11 88 32 ("set-entry" "null?" "when" "20" "choices" "length" ">=" "set-condensed?" "database-names" "list" "map" "set-choices" "setup-database-names")}
-        {Lisp-Entry "setup-database-names" #f 96 11 96 31 ("DisConnect" "Login-Failed" "format" "Unable-To-Connect" "Item" "get-Name" "collect" "get-Count" "to" "from" "n" "for" "loop" "get-Databases" "databases" "get-password" "get-username" "Connect" "cotry" "1" "put-LoginTimeout" "message-box" "begin" "SQLDMO.SQLServer" "com-create" "server" "with-closed" "get-server" "servername" "let" "database-names" "set!" "data-source" "null?" "if" "function" ":wait" "with-cursor")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Database-Browser" library #f 37 19 37 79 ("jazz")
+      {Lisp-Entry "SQLServer-Database-Browser" class #f 47 7 47 33 ("Combo-Box")}
+      {Lisp-Entry "SQLServer-Database-Browser" class #f 53 7 53 33 ("set-data-source" "get-data-source" "initialize" "Combo-Box")
+        {Lisp-Entry "data-source" property #f 56 12 56 23 ()}
+        {Lisp-Entry "database-names" slot #f 59 8 59 22 ()}
+        {Lisp-Entry "get-data-source" method #f 67 18 67 33 ("data-source")}
+        {Lisp-Entry "set-data-source" method #f 71 18 71 33 ("update-database-names" "data-source" "set!" "value")}
+        {Lisp-Entry "Unable-To-Connect" constant #f 81 12 81 29 ("#x80040000")}
+        {Lisp-Entry "Login-Failed" constant #f 84 12 84 24 ("#x80044818")}
+        {Lisp-Entry "update-database-names" method #f 88 11 88 32 ("set-entry" "null?" "when" "20" "choices" "length" ">=" "set-condensed?" "database-names" "list" "map" "set-choices" "setup-database-names")}
+        {Lisp-Entry "setup-database-names" method #f 96 11 96 31 ("DisConnect" "Login-Failed" "format" "Unable-To-Connect" "Item" "get-Name" "collect" "get-Count" "to" "from" "n" "for" "loop" "get-Databases" "databases" "get-password" "get-username" "Connect" "cotry" "1" "put-LoginTimeout" "message-box" "begin" "SQLDMO.SQLServer" "com-create" "server" "with-closed" "get-server" "servername" "let" "database-names" "set!" "data-source" "null?" "if" "function" ":wait" "with-cursor")}}}})
 "SQLServer-Database-Row"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Database-Row.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Database-Row" #f 37 19 37 75 ("jazz")
-      {Lisp-Entry "SQLServer-Database-Row" #f 48 7 48 29 ()}
-      {Lisp-Entry "SQLServer-Database-Row" #f 54 7 54 29 ("initialize")
-        {Lisp-Entry "database-names" #f 57 8 57 22 ()}
-        {Lisp-Entry "patch-recursing?" #f 58 8 58 24 ()}
-        {Lisp-Entry "Unable-To-Connect" #f 61 12 61 29 ("#x80040000")}
-        {Lisp-Entry "Login-Failed" #f 64 12 64 24 ("#x80044818")}
-        {Lisp-Entry "setup-database-names" #f 68 11 68 31 ("DisConnect" "Login-Failed" "format" "Unable-To-Connect" "Item" "get-Name" "collect" "get-Count" "to" "from" "n" "for" "loop" "get-Databases" "databases" "get-password" "get-username" "Connect" "cotry" "1" "put-LoginTimeout" "message-box" "database-names" "set!" "begin" "null?" "if" "error?:" "SQLDMO.SQLServer" "com-create" "server" "with-closed" "get-server" "servername" "get-client" "car" "source" "let*" "function" ":wait" "with-cursor")}
-        {Lisp-Entry "update-database-names" #f 93 11 93 32 ("19" "length" ">" "editor" "get-choices" "choices" "let" "database-names" "list" "map" "set-choices" "set-condensed?" "setup-database-names")}
-        {Lisp-Entry "edit-in-cell" #f 101 11 101 23 ("update-database-names" "unwind-protect" "set!" "patch-recursing?" "unless" "nextmethod")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Database-Row" library #f 37 19 37 75 ("jazz")
+      {Lisp-Entry "SQLServer-Database-Row" class #f 48 7 48 29 ("Combo-Row")}
+      {Lisp-Entry "SQLServer-Database-Row" class #f 54 7 54 29 ("initialize" "Combo-Row")
+        {Lisp-Entry "database-names" slot #f 57 8 57 22 ()}
+        {Lisp-Entry "patch-recursing?" slot #f 58 8 58 24 ()}
+        {Lisp-Entry "Unable-To-Connect" constant #f 61 12 61 29 ("#x80040000")}
+        {Lisp-Entry "Login-Failed" constant #f 64 12 64 24 ("#x80044818")}
+        {Lisp-Entry "setup-database-names" method #f 68 11 68 31 ("DisConnect" "Login-Failed" "format" "Unable-To-Connect" "Item" "get-Name" "collect" "get-Count" "to" "from" "n" "for" "loop" "get-Databases" "databases" "get-password" "get-username" "Connect" "cotry" "1" "put-LoginTimeout" "message-box" "database-names" "set!" "begin" "null?" "if" "error?:" "SQLDMO.SQLServer" "com-create" "server" "with-closed" "get-server" "servername" "get-client" "car" "source" "let*" "function" ":wait" "with-cursor")}
+        {Lisp-Entry "update-database-names" method #f 93 11 93 32 ("19" "length" ">" "editor" "get-choices" "choices" "let" "database-names" "list" "map" "set-choices" "set-condensed?" "setup-database-names")}
+        {Lisp-Entry "edit-in-cell" method #f 101 11 101 23 ("update-database-names" "unwind-protect" "set!" "patch-recursing?" "unless" "nextmethod")}}}})
 "SQLServer-Datatype"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Datatype.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Datatype" #f 37 19 37 71 ("jazz")
-      {Lisp-Entry "SQLServer-Datatype" #f 46 7 46 25 ()
-        {Lisp-Entry "call-construct-literal" #f 50 23 50 45 ("construct-literal" "apply" "elements" "context")}
-        {Lisp-Entry "get-systypes" #f 54 16 54 28 ("read-only" "2" "4" "16" "18" "9" "1" "0" "8" "Systype")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Datatype" library #f 37 19 37 71 ("jazz")
+      {Lisp-Entry "SQLServer-Datatype" class #f 46 7 46 25 ("Datatype")
+        {Lisp-Entry "call-construct-literal" method #f 50 23 50 45 ("construct-literal" "apply" "elements" "context")}
+        {Lisp-Entry "get-systypes" method #f 54 16 54 28 ("read-only" "2" "4" "16" "18" "9" "1" "0" "8" "Systype")}}}})
 "SQLServer-Default-Value-Constraint"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Default-Value-Constraint.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Default-Value-Constraint" #f 37 19 37 87 ("jazz")
-      {Lisp-Entry "SQLServer-Default-Value-Constraint" #f 45 7 45 41 ()
-        {Lisp-Entry "register-constraints" #f 53 16 53 36 ("Design-Column" "self" "new" "register-constraint" "manager")}
-        {Lisp-Entry "validate" #f 63 11 63 19 ("split" "search" "text" "function" "some?" "apostrophe-alone?" "apostrophes?" "stop-descent" "'stop-descent" "'default-value" "property:" "message:" "Integrity-Violation" "new" "add-violation" "begin" "not" "if" "-" "1" "0" "subseq" "=" "2" ">=" "parentheses?" "length" "len" "not-null?" "SQLServer-Design-Schema" "is?" "and" "get-default-value" "default-value" "get-table" "get-schema" "schema" "Design-Architecture" "find-ascendant" "let*" "get-visible?" "when" "manager" "context" "client" "architecture" "column")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Default-Value-Constraint" library #f 37 19 37 87 ("jazz")
+      {Lisp-Entry "SQLServer-Default-Value-Constraint" class #f 45 7 45 41 ("Integrity-Constraint")
+        {Lisp-Entry "register-constraints" method #f 53 16 53 36 ("Design-Column" "self" "new" "register-constraint" "manager")}
+        {Lisp-Entry "validate" method #f 63 11 63 19 ("split" "search" "text" "function" "some?" "apostrophe-alone?" "apostrophes?" "stop-descent" "'stop-descent" "'default-value" "property:" "message:" "Integrity-Violation" "new" "add-violation" "begin" "not" "if" "-" "1" "0" "subseq" "=" "2" ">=" "parentheses?" "length" "len" "not-null?" "SQLServer-Design-Schema" "is?" "and" "get-default-value" "default-value" "get-table" "get-schema" "schema" "Design-Architecture" "find-ascendant" "let*" "get-visible?" "when" "manager" "context" "client" "architecture" "column")}}}})
 "SQLServer-Index-Constraint"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Index-Constraint.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Index-Constraint" #f 37 19 37 79 ("jazz")
-      {Lisp-Entry "SQLServer-Index-Constraint" #f 45 7 45 33 ()
-        {Lisp-Entry "register-constraints" #f 53 16 53 36 ("Design-Index" "self" "new" "register-constraint" "manager")}
-        {Lisp-Entry "validate" #f 63 11 63 19 ("message:" "Integrity-Violation" "new" "add-violation" "when" "manager" "context" "client" "architecture" "index")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Index-Constraint" library #f 37 19 37 79 ("jazz")
+      {Lisp-Entry "SQLServer-Index-Constraint" class #f 45 7 45 33 ("Integrity-Constraint")
+        {Lisp-Entry "register-constraints" method #f 53 16 53 36 ("Design-Index" "self" "new" "register-constraint" "manager")}
+        {Lisp-Entry "validate" method #f 63 11 63 19 ("message:" "Integrity-Violation" "new" "add-violation" "when" "manager" "context" "client" "architecture" "index")}}}})
 "SQLServer-Inventory"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory" #f 37 19 37 72 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory" #f 45 7 45 26 ("initialize")
-        {Lisp-Entry "server" #f 53 8 53 14 ()}
-        {Lisp-Entry "database" #f 54 8 54 16 ()}
-        {Lisp-Entry "system-types" #f 55 8 55 20 ()}
-        {Lisp-Entry "initialize" #f 58 11 58 21 ("destroy-mandatory" "Item" "database" "get-Databases" "databases" "with-closed" "destroy-inventory" "cleanup:" ":sqlserver-version" "register:" "get-version" "sqlserver" "'sqlserver" "validate-version" "Connect" "error" "null?" "when" "error?:" "SQLDMO.SQLServer" "com-create" "server" "set!" "nextmethod" "databasename" "password" "username" "servername" "connection")}
-        {Lisp-Entry "destroy" #f 71 11 71 18 ("nextmethod" "destroy-inventory")}
-        {Lisp-Entry "destroy-inventory" #f 76 11 76 28 ("DisConnect" "server" "com-interface-refcount" "***" "'***" "debug" "database" "set!" "com-release" "system-types" "when")}
-        {Lisp-Entry "get-version" #f 98 11 98 22 ("Version" "new" "0" "revision" "get-VersionMinor" "minor" "server" "get-VersionMajor" "major" "let")}
-        {Lisp-Entry "load-system-types" #f 110 11 110 28 ("database" "get-SystemDatatypes")}
-        {Lisp-Entry "get-system-types" #f 114 18 114 34 ("load-system-types" "set!" "system-types" "unless")}
-        {Lisp-Entry "get-system-type" #f 120 18 120 33 ("get-system-types" "Item" "name")}
-        {Lisp-Entry "get-database" #f 130 18 130 30 ("database")}
-        {Lisp-Entry "get-tables" #f 139 11 139 21 ("get-output" "self" "SQLServer-Inventory-Table" "put" "com-release" "get-SystemObject" "if" "Item" "table" "get-Count" "to" "1" "from" "n" "for" "loop" "List-Factory" "new" "fact" "let" "database" "get-Tables" "tables" "with-closed")}
-        {Lisp-Entry "get-table" #f 150 11 150 20 ("Item" "self" "SQLServer-Inventory-Table" "new" "database" "get-Tables" "tables" "with-closed" "name")}
-        {Lisp-Entry "create-table" #f 155 11 155 23 ("self" "SQLServer-Inventory-Table" "new" "put-Name" "SQLDMO.Table" "com-create" "new-table" "let" "name")}
-        {Lisp-Entry "append-table" #f 161 11 161 23 ("get-handle" "Add" "database" "get-Tables" "tables" "with-closed" "table")}
-        {Lisp-Entry "remove-table" #f 166 11 166 23 ("Remove" "database" "get-Tables" "tables" "with-closed" "name")}
-        {Lisp-Entry "columns-ordinal-position-consecutive?" #f 171 11 171 48 ()}
-        {Lisp-Entry "get-views" #f 180 11 180 20 ("get-output" "com-release" "self" "SQLServer-Inventory-View" "put" "get-SystemObject" "not" "if" "Item" "view" "get-Count" "to" "1" "from" "n" "for" "loop" "List-Factory" "new" "fact" "let" "database" "get-Views" "views" "with-closed")}
-        {Lisp-Entry "get-view" #f 191 11 191 19 ("self" "SQLServer-Inventory-View" "new" "when" "Object-Not-Existant" "cotry" "if" "view" "Item" "function" "action" "let*" "database" "get-Views" "views" "with-closed" "error?" "error?:" "name")}
-        {Lisp-Entry "create-view" #f 204 11 204 22 ("self" "SQLServer-Inventory-View" "new" "put-Name" "SQLDMO.View" "com-create" "new-view" "let" "name")}
-        {Lisp-Entry "append-view" #f 210 11 210 22 ("get-handle" "Add" "database" "get-Views" "views" "with-closed" "view")}
-        {Lisp-Entry "remove-view" #f 215 11 215 22 ("Remove" "database" "get-Views" "views" "with-closed" "name")}
-        {Lisp-Entry "get-relations" #f 225 11 225 24 ("get-output" "close" "put-sequence" "if" "get-table-relations" "relations" "table" "function" "for-each" "get-tables" "tables" "List-Factory" "new" "fact" "let")}
-        {Lisp-Entry "create-relation-complete" #f 237 11 237 35 ("self" "SQLServer-Inventory-Relation" "new" "get-Keys" "foreign-keys" "Item" "database" "get-Tables" "tables" "get-ReferencedColumns" "put-ReferencedTable" "Add" "field" "function" "for-each" "get-KeyColumns" "columns" "with-closed" "SQLDMO.SQLDMOKey_Foreign" "put-Type" "put-Name" "SQLDMO.Key" "com-create" "new-key" "let" "foreign-fields" "foreign-table" "primary-fields" "primary-table" "relation-name")}
-        {Lisp-Entry "remove-relation" #f 257 11 257 26 ("Remove" "get-Keys" "keys" "Item" "table" "database" "get-Tables" "tables" "with-closed" "table-name" "relation-name")}
-        {Lisp-Entry "create-procedure-by-sql" #f 269 11 269 34 ("connection" "execute" "length" "-" "0" "subseq" "set!" "ends-with?" "when" "tie" "marker" "let" "script-create-procedure")}
-        {Lisp-Entry "get-procedures" #f 277 11 277 25 ("get-output" "com-release" "self" "SQLServer-Inventory-Procedure" "put" "get-SystemObject" "not" "if" "Item" "procedure" "get-Count" "to" "1" "from" "n" "for" "loop" "List-Factory" "new" "fact" "let" "database" "get-StoredProcedures" "procedures" "with-closed")}
-        {Lisp-Entry "Object-Not-Existant" #f 288 12 288 31 ("#x80045510")}
-        {Lisp-Entry "get-procedure" #f 292 11 292 24 ("self" "SQLServer-Inventory-Procedure" "new" "when" "Object-Not-Existant" "cotry" "if" "procedure" "Item" "function" "action" "let*" "database" "get-StoredProcedures" "procedures" "with-closed" "error?" "error?:" "name")}
-        {Lisp-Entry "create-procedure" #f 305 11 305 27 ("self" "SQLServer-Inventory-Procedure" "new" "put-Name" "SQLDMO.StoredProcedure" "com-create" "new-procedure" "let" "name")}
-        {Lisp-Entry "append-procedure" #f 311 11 311 27 ("get-handle" "Add" "database" "get-StoredProcedures" "procedures" "with-closed" "procedure")}
-        {Lisp-Entry "remove-procedure" #f 316 11 316 27 ("Remove" "database" "get-StoredProcedures" "procedures" "with-closed" "name")}
-        {Lisp-Entry "restore-database" #f 326 18 326 34 ("server" "SQLRestore" "parse" "put-Files" "put-Database" "SQLDMO.Restore" "com-create" "restore" "with-closed" "backup" "database")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory" library #f 37 19 37 72 ("jazz")
+      {Lisp-Entry "SQLServer-Inventory" class #f 45 7 45 26 ("initialize" "Inventory")
+        {Lisp-Entry "server" slot #f 53 8 53 14 ()}
+        {Lisp-Entry "database" slot #f 54 8 54 16 ()}
+        {Lisp-Entry "system-types" slot #f 55 8 55 20 ()}
+        {Lisp-Entry "initialize" method #f 58 11 58 21 ("destroy-mandatory" "Item" "database" "get-Databases" "databases" "with-closed" "destroy-inventory" "cleanup:" ":sqlserver-version" "register:" "get-version" "sqlserver" "'sqlserver" "validate-version" "Connect" "error" "null?" "when" "error?:" "SQLDMO.SQLServer" "com-create" "server" "set!" "nextmethod" "databasename" "password" "username" "servername" "connection")}
+        {Lisp-Entry "destroy" method #f 71 11 71 18 ("nextmethod" "destroy-inventory")}
+        {Lisp-Entry "destroy-inventory" method #f 76 11 76 28 ("DisConnect" "server" "com-interface-refcount" "***" "'***" "debug" "database" "set!" "com-release" "system-types" "when")}
+        {Lisp-Entry "get-version" method #f 98 11 98 22 ("Version" "new" "0" "revision" "get-VersionMinor" "minor" "server" "get-VersionMajor" "major" "let")}
+        {Lisp-Entry "load-system-types" method #f 110 11 110 28 ("database" "get-SystemDatatypes")}
+        {Lisp-Entry "get-system-types" method #f 114 18 114 34 ("load-system-types" "set!" "system-types" "unless")}
+        {Lisp-Entry "get-system-type" method #f 120 18 120 33 ("get-system-types" "Item" "name")}
+        {Lisp-Entry "get-database" method #f 130 18 130 30 ("database")}
+        {Lisp-Entry "get-tables" method #f 139 11 139 21 ("get-output" "self" "SQLServer-Inventory-Table" "put" "com-release" "get-SystemObject" "if" "Item" "table" "get-Count" "to" "1" "from" "n" "for" "loop" "List-Factory" "new" "fact" "let" "database" "get-Tables" "tables" "with-closed")}
+        {Lisp-Entry "get-table" method #f 150 11 150 20 ("Item" "self" "SQLServer-Inventory-Table" "new" "database" "get-Tables" "tables" "with-closed" "name")}
+        {Lisp-Entry "create-table" method #f 155 11 155 23 ("self" "SQLServer-Inventory-Table" "new" "put-Name" "SQLDMO.Table" "com-create" "new-table" "let" "name")}
+        {Lisp-Entry "append-table" method #f 161 11 161 23 ("get-handle" "Add" "database" "get-Tables" "tables" "with-closed" "table")}
+        {Lisp-Entry "remove-table" method #f 166 11 166 23 ("Remove" "database" "get-Tables" "tables" "with-closed" "name")}
+        {Lisp-Entry "columns-ordinal-position-consecutive?" method #f 171 11 171 48 ()}
+        {Lisp-Entry "get-views" method #f 180 11 180 20 ("get-output" "com-release" "self" "SQLServer-Inventory-View" "put" "get-SystemObject" "not" "if" "Item" "view" "get-Count" "to" "1" "from" "n" "for" "loop" "List-Factory" "new" "fact" "let" "database" "get-Views" "views" "with-closed")}
+        {Lisp-Entry "get-view" method #f 191 11 191 19 ("self" "SQLServer-Inventory-View" "new" "when" "Object-Not-Existant" "cotry" "if" "view" "Item" "function" "action" "let*" "database" "get-Views" "views" "with-closed" "error?" "error?:" "name")}
+        {Lisp-Entry "create-view" method #f 204 11 204 22 ("self" "SQLServer-Inventory-View" "new" "put-Name" "SQLDMO.View" "com-create" "new-view" "let" "name")}
+        {Lisp-Entry "append-view" method #f 210 11 210 22 ("get-handle" "Add" "database" "get-Views" "views" "with-closed" "view")}
+        {Lisp-Entry "remove-view" method #f 215 11 215 22 ("Remove" "database" "get-Views" "views" "with-closed" "name")}
+        {Lisp-Entry "get-relations" method #f 225 11 225 24 ("get-output" "close" "put-sequence" "if" "get-table-relations" "relations" "table" "function" "for-each" "get-tables" "tables" "List-Factory" "new" "fact" "let")}
+        {Lisp-Entry "create-relation-complete" method #f 237 11 237 35 ("self" "SQLServer-Inventory-Relation" "new" "get-Keys" "foreign-keys" "Item" "database" "get-Tables" "tables" "get-ReferencedColumns" "put-ReferencedTable" "Add" "field" "function" "for-each" "get-KeyColumns" "columns" "with-closed" "SQLDMO.SQLDMOKey_Foreign" "put-Type" "put-Name" "SQLDMO.Key" "com-create" "new-key" "let" "foreign-fields" "foreign-table" "primary-fields" "primary-table" "relation-name")}
+        {Lisp-Entry "remove-relation" method #f 257 11 257 26 ("Remove" "get-Keys" "keys" "Item" "table" "database" "get-Tables" "tables" "with-closed" "table-name" "relation-name")}
+        {Lisp-Entry "create-procedure-by-sql" method #f 269 11 269 34 ("connection" "execute" "length" "-" "0" "subseq" "set!" "ends-with?" "when" "tie" "marker" "let" "script-create-procedure")}
+        {Lisp-Entry "get-procedures" method #f 277 11 277 25 ("get-output" "com-release" "self" "SQLServer-Inventory-Procedure" "put" "get-SystemObject" "not" "if" "Item" "procedure" "get-Count" "to" "1" "from" "n" "for" "loop" "List-Factory" "new" "fact" "let" "database" "get-StoredProcedures" "procedures" "with-closed")}
+        {Lisp-Entry "Object-Not-Existant" constant #f 288 12 288 31 ("#x80045510")}
+        {Lisp-Entry "get-procedure" method #f 292 11 292 24 ("self" "SQLServer-Inventory-Procedure" "new" "when" "Object-Not-Existant" "cotry" "if" "procedure" "Item" "function" "action" "let*" "database" "get-StoredProcedures" "procedures" "with-closed" "error?" "error?:" "name")}
+        {Lisp-Entry "create-procedure" method #f 305 11 305 27 ("self" "SQLServer-Inventory-Procedure" "new" "put-Name" "SQLDMO.StoredProcedure" "com-create" "new-procedure" "let" "name")}
+        {Lisp-Entry "append-procedure" method #f 311 11 311 27 ("get-handle" "Add" "database" "get-StoredProcedures" "procedures" "with-closed" "procedure")}
+        {Lisp-Entry "remove-procedure" method #f 316 11 316 27 ("Remove" "database" "get-StoredProcedures" "procedures" "with-closed" "name")}
+        {Lisp-Entry "restore-database" method #f 326 18 326 34 ("server" "SQLRestore" "parse" "put-Files" "put-Database" "SQLDMO.Restore" "com-create" "restore" "with-closed" "backup" "database")}}}})
 "SQLServer-Inventory-Column"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-Column.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Column" #f 37 19 37 79 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-Column" #f 45 7 45 33 ()
-        {Lisp-Entry "handle" #f 48 8 48 14 ()}
-        {Lisp-Entry "initialize" #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "index-column?" "parent" "inventory")}
-        {Lisp-Entry "destroy" #f 57 11 57 18 ("nextmethod" "handle" "com-release")}
-        {Lisp-Entry "get-handle" #f 67 18 67 28 ("handle")}
-        {Lisp-Entry "get-default-value" #f 71 11 71 28 ("get-Text" "handle" "get-DRIDefault" "default" "with-closed")}
-        {Lisp-Entry "set-default-value" #f 76 11 76 28 ("put-Text" "Remove" "null?" "if" "handle" "get-DRIDefault" "default" "with-closed" "value")}
-        {Lisp-Entry "get-default-value-name" #f 83 11 83 33 ("get-Name" "handle" "get-DRIDefault" "default" "with-closed")}
-        {Lisp-Entry "set-default-value-name" #f 88 11 88 33 ("put-Name" "when" "handle" "get-DRIDefault" "default" "with-closed" "value")}
-        {Lisp-Entry "get-used-defined-datatype" #f 94 11 94 36 ("/=" "if" "get-type" "type" "get-used-defined-type" "used-defined-type" "let")}
-        {Lisp-Entry "get-used-defined-type" #f 102 11 102 32 ("handle" "get-Datatype")}
-        {Lisp-Entry "get-datatype" #f 106 11 106 23 ("get-scale" "get-precision" "get-size" "get-type" "SQLServer-Datatype" "new-datatype")}
-        {Lisp-Entry "get-type" #f 110 11 110 19 ("get-Datatype" "handle" "get-PhysicalDatatype")}
-        {Lisp-Entry "get-size" #f 116 11 116 19 ("handle" "get-Length")}
-        {Lisp-Entry "set-datatype" #f 120 11 120 23 ("set-scale" "set-precision" "set-size" "handle" "put-Datatype" "get-scale" "scale" "get-precision" "precision" "get-size" "size" "get-name" "name" "let" "value")}
-        {Lisp-Entry "modify-datatype" #f 131 11 131 26 ("0" "AlterDataType" "SQLDMO._Column2" "handle" "coquery" "column" "with-closed" "get-size" "size" "get-name" "name" "let" "value")}
-        {Lisp-Entry "set-size" #f 138 11 138 19 ("handle" "put-Length" "when" "size")}
-        {Lisp-Entry "get-title" #f 143 11 143 20 ("handle" "get-Name")}
-        {Lisp-Entry "get-length" #f 147 18 147 28 ("handle" "get-Length")}
-        {Lisp-Entry "get-scale" #f 151 11 151 20 ("handle" "get-NumericScale")}
-        {Lisp-Entry "set-scale" #f 155 11 155 20 ("handle" "put-NumericScale" "when" "scale")}
-        {Lisp-Entry "get-precision" #f 160 11 160 24 ("handle" "get-NumericPrecision")}
-        {Lisp-Entry "set-precision" #f 164 11 164 24 ("handle" "put-NumericPrecision" "when" "precision")}
-        {Lisp-Entry "get-nullable?" #f 169 11 169 24 ("handle" "get-AllowNulls")}
-        {Lisp-Entry "set-nullable?" #f 173 11 173 24 ("handle" "put-AllowNulls" "value")}
-        {Lisp-Entry "get-fixed?" #f 177 11 177 21 ("get-IsVariableLength" "not" "get-type" "inventory" "get-system-type" "type" "with-closed")}
-        {Lisp-Entry "get-ordinal-position" #f 182 11 182 31 ("1" "handle" "get-ID" "-")}
-        {Lisp-Entry "set-ordinal-position" #f 186 11 186 31 ("value")}
-        {Lisp-Entry "get-order" #f 191 11 191 20 ("get-title" "parent" "order-of")}
-        {Lisp-Entry "get-identity?" #f 195 11 195 24 ("handle" "get-Identity")}
-        {Lisp-Entry "set-identity?" #f 199 11 199 24 ("handle" "put-Identity" "value")}
-        {Lisp-Entry "get-identity-replication?" #f 203 11 203 36 ("handle" "get-NotForRepl" "not")}
-        {Lisp-Entry "set-identity-replication?" #f 207 11 207 36 ("not" "handle" "put-NotForRepl" "value")}
-        {Lisp-Entry "get-identity-seed" #f 211 11 211 28 ("handle" "get-IdentitySeed")}
-        {Lisp-Entry "set-identity-seed" #f 215 11 215 28 ("handle" "put-IdentitySeed" "value")}
-        {Lisp-Entry "get-identity-increment" #f 219 11 219 33 ("handle" "get-IdentityIncrement")}
-        {Lisp-Entry "get-row-guid-col?" #f 223 11 223 28 ("handle" "get-IsRowGuidCol")}
-        {Lisp-Entry "get-computed?" #f 227 11 227 24 ("handle" "get-IsComputed")}
-        {Lisp-Entry "get-computed-text" #f 231 11 231 28 ("handle" "get-ComputedText")}
-        {Lisp-Entry "get-collation" #f 235 11 235 24 ("get-Collation" "SQLDMO._Column2" "handle" "coquery" "column2" "with-closed")}
-        {Lisp-Entry "get-description" #f 240 11 240 26 ("inventory" "get-connection" "load-value" "tie" "cmd" "parent" "table-name" "get-title" "column-name" "let*")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Column" library #f 37 19 37 79 ("jazz")
+      {Lisp-Entry "SQLServer-Inventory-Column" class #f 45 7 45 33 ("Inventory-Column")
+        {Lisp-Entry "handle" slot #f 48 8 48 14 ()}
+        {Lisp-Entry "initialize" method #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "index-column?" "parent" "inventory")}
+        {Lisp-Entry "destroy" method #f 57 11 57 18 ("nextmethod" "handle" "com-release")}
+        {Lisp-Entry "get-handle" method #f 67 18 67 28 ("handle")}
+        {Lisp-Entry "get-default-value" method #f 71 11 71 28 ("get-Text" "handle" "get-DRIDefault" "default" "with-closed")}
+        {Lisp-Entry "set-default-value" method #f 76 11 76 28 ("put-Text" "Remove" "null?" "if" "handle" "get-DRIDefault" "default" "with-closed" "value")}
+        {Lisp-Entry "get-default-value-name" method #f 83 11 83 33 ("get-Name" "handle" "get-DRIDefault" "default" "with-closed")}
+        {Lisp-Entry "set-default-value-name" method #f 88 11 88 33 ("put-Name" "when" "handle" "get-DRIDefault" "default" "with-closed" "value")}
+        {Lisp-Entry "get-used-defined-datatype" method #f 94 11 94 36 ("/=" "if" "get-type" "type" "get-used-defined-type" "used-defined-type" "let")}
+        {Lisp-Entry "get-used-defined-type" method #f 102 11 102 32 ("handle" "get-Datatype")}
+        {Lisp-Entry "get-datatype" method #f 106 11 106 23 ("get-scale" "get-precision" "get-size" "get-type" "SQLServer-Datatype" "new-datatype")}
+        {Lisp-Entry "get-type" method #f 110 11 110 19 ("get-Datatype" "handle" "get-PhysicalDatatype")}
+        {Lisp-Entry "get-size" method #f 116 11 116 19 ("handle" "get-Length")}
+        {Lisp-Entry "set-datatype" method #f 120 11 120 23 ("set-scale" "set-precision" "set-size" "handle" "put-Datatype" "get-scale" "scale" "get-precision" "precision" "get-size" "size" "get-name" "name" "let" "value")}
+        {Lisp-Entry "modify-datatype" method #f 131 11 131 26 ("0" "AlterDataType" "SQLDMO._Column2" "handle" "coquery" "column" "with-closed" "get-size" "size" "get-name" "name" "let" "value")}
+        {Lisp-Entry "set-size" method #f 138 11 138 19 ("handle" "put-Length" "when" "size")}
+        {Lisp-Entry "get-title" method #f 143 11 143 20 ("handle" "get-Name")}
+        {Lisp-Entry "get-length" method #f 147 18 147 28 ("handle" "get-Length")}
+        {Lisp-Entry "get-scale" method #f 151 11 151 20 ("handle" "get-NumericScale")}
+        {Lisp-Entry "set-scale" method #f 155 11 155 20 ("handle" "put-NumericScale" "when" "scale")}
+        {Lisp-Entry "get-precision" method #f 160 11 160 24 ("handle" "get-NumericPrecision")}
+        {Lisp-Entry "set-precision" method #f 164 11 164 24 ("handle" "put-NumericPrecision" "when" "precision")}
+        {Lisp-Entry "get-nullable?" method #f 169 11 169 24 ("handle" "get-AllowNulls")}
+        {Lisp-Entry "set-nullable?" method #f 173 11 173 24 ("handle" "put-AllowNulls" "value")}
+        {Lisp-Entry "get-fixed?" method #f 177 11 177 21 ("get-IsVariableLength" "not" "get-type" "inventory" "get-system-type" "type" "with-closed")}
+        {Lisp-Entry "get-ordinal-position" method #f 182 11 182 31 ("1" "handle" "get-ID" "-")}
+        {Lisp-Entry "set-ordinal-position" method #f 186 11 186 31 ("value")}
+        {Lisp-Entry "get-order" method #f 191 11 191 20 ("get-title" "parent" "order-of")}
+        {Lisp-Entry "get-identity?" method #f 195 11 195 24 ("handle" "get-Identity")}
+        {Lisp-Entry "set-identity?" method #f 199 11 199 24 ("handle" "put-Identity" "value")}
+        {Lisp-Entry "get-identity-replication?" method #f 203 11 203 36 ("handle" "get-NotForRepl" "not")}
+        {Lisp-Entry "set-identity-replication?" method #f 207 11 207 36 ("not" "handle" "put-NotForRepl" "value")}
+        {Lisp-Entry "get-identity-seed" method #f 211 11 211 28 ("handle" "get-IdentitySeed")}
+        {Lisp-Entry "set-identity-seed" method #f 215 11 215 28 ("handle" "put-IdentitySeed" "value")}
+        {Lisp-Entry "get-identity-increment" method #f 219 11 219 33 ("handle" "get-IdentityIncrement")}
+        {Lisp-Entry "get-row-guid-col?" method #f 223 11 223 28 ("handle" "get-IsRowGuidCol")}
+        {Lisp-Entry "get-computed?" method #f 227 11 227 24 ("handle" "get-IsComputed")}
+        {Lisp-Entry "get-computed-text" method #f 231 11 231 28 ("handle" "get-ComputedText")}
+        {Lisp-Entry "get-collation" method #f 235 11 235 24 ("get-Collation" "SQLDMO._Column2" "handle" "coquery" "column2" "with-closed")}
+        {Lisp-Entry "get-description" method #f 240 11 240 26 ("inventory" "get-connection" "load-value" "tie" "cmd" "parent" "table-name" "get-title" "column-name" "let*")}}}})
 "SQLServer-Inventory-Constraint"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-Constraint.jazz"} 1244896779
-    {Lisp-Entry "jazz.database..sqlserver.SQLServer-Inventory-Constraint" #f 37 19 37 74 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-Constraint" #f 45 7 45 37 ()
-        {Lisp-Entry "handle" #f 48 8 48 14 ()}
-        {Lisp-Entry "initialize" #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
-        {Lisp-Entry "destroy" #f 57 11 57 18 ("nextmethod" "handle" "com-release")}
-        {Lisp-Entry "get-handle" #f 67 18 67 28 ("handle")}
-        {Lisp-Entry "get-title" #f 71 11 71 20 ("handle" "get-Name")}
-        {Lisp-Entry "get-text" #f 75 18 75 26 ("handle" "get-Text")}
-        {Lisp-Entry "set-text" #f 79 18 79 26 ("handle" "put-Text" "value")}
-        {Lisp-Entry "get-checked?" #f 83 18 83 30 ("handle" "get-Checked")}
-        {Lisp-Entry "set-checked?" #f 87 18 87 30 ("handle" "put-Checked" "value")}
-        {Lisp-Entry "get-exclude-replication?" #f 91 18 91 42 ("handle" "get-ExcludeReplication")}
-        {Lisp-Entry "set-exclude-replication?" #f 95 18 95 42 ("handle" "put-ExcludeReplication" "value")}}}})
+    {Lisp-Entry "jazz.database..sqlserver.SQLServer-Inventory-Constraint" library #f 37 19 37 74 ("jazz")
+      {Lisp-Entry "SQLServer-Inventory-Constraint" class #f 45 7 45 37 ("Inventory-Constraint")
+        {Lisp-Entry "handle" slot #f 48 8 48 14 ()}
+        {Lisp-Entry "initialize" method #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
+        {Lisp-Entry "destroy" method #f 57 11 57 18 ("nextmethod" "handle" "com-release")}
+        {Lisp-Entry "get-handle" method #f 67 18 67 28 ("handle")}
+        {Lisp-Entry "get-title" method #f 71 11 71 20 ("handle" "get-Name")}
+        {Lisp-Entry "get-text" method #f 75 18 75 26 ("handle" "get-Text")}
+        {Lisp-Entry "set-text" method #f 79 18 79 26 ("handle" "put-Text" "value")}
+        {Lisp-Entry "get-checked?" method #f 83 18 83 30 ("handle" "get-Checked")}
+        {Lisp-Entry "set-checked?" method #f 87 18 87 30 ("handle" "put-Checked" "value")}
+        {Lisp-Entry "get-exclude-replication?" method #f 91 18 91 42 ("handle" "get-ExcludeReplication")}
+        {Lisp-Entry "set-exclude-replication?" method #f 95 18 95 42 ("handle" "put-ExcludeReplication" "value")}}}})
 "SQLServer-Inventory-Index"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-Index.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Index" #f 37 19 37 78 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-Index" #f 45 7 45 32 ()
-        {Lisp-Entry "handle" #f 48 8 48 14 ()}
-        {Lisp-Entry "initialize" #f 51 11 51 21 ("destroy-mandatory" "com-release" "SQLDMO._Index2" "coquery" "handle~self" "set!" "nextmethod" "index-handle" "parent" "inventory")}
-        {Lisp-Entry "destroy" #f 58 11 58 18 ("nextmethod" "handle" "com-release")}
-        {Lisp-Entry "get-handle" #f 68 18 68 28 ("handle")}
-        {Lisp-Entry "get-title" #f 72 11 72 20 ("handle" "get-Name")}
-        {Lisp-Entry "set-fields/orders" #f 76 18 76 35 ("descending" "'descending" "=" "SetIndexedColumnDESC" "order" "field" "bind" "for-each" "handle" "put-IndexedColumns" "car" "format" "field/order" "function" "map" "join" "string" "let" "value")}
-        {Lisp-Entry "get-ignore-duplicates?" #f 88 11 88 33 ("SQLDMO.SQLDMOIndex_IgnoreDupKey" "type-bit?")}
-        {Lisp-Entry "get-unique?" #f 92 11 92 22 ("SQLDMO.SQLDMOIndex_Unique" "type-bit?")}
-        {Lisp-Entry "get-clustered?" #f 96 11 96 25 ("SQLDMO.SQLDMOIndex_Clustered" "type-bit?")}
-        {Lisp-Entry "get-pad-index?" #f 100 11 100 25 ("SQLDMO.SQLDMOIndex_PadIndex" "type-bit?")}
-        {Lisp-Entry "get-recompute-statistics?" #f 104 11 104 36 ("SQLDMO.SQLDMOIndex_NoRecompute" "type-bit?" "not")}
-        {Lisp-Entry "get-fields" #f 108 11 108 21 ("SQLDMO._Column" "coquery" "self" "inventory" "SQLServer-Inventory-Column" "new" "Item" "field" "collect" "get-Count" "to" "1" "from" "n" "for" "loop" "handle" "ListIndexedColumns" "fields" "with-closed")}
-        {Lisp-Entry "order-of" #f 116 21 116 29 ("ascending" "'ascending" "descending" "'descending" "handle" "GetIndexedColumnDESC" "if" "name")}
-        {Lisp-Entry "get-fill-factor" #f 125 11 125 26 ("handle" "get-FillFactor")}
-        {Lisp-Entry "type-bit?" #f 134 11 134 20 ("handle" "get-Type" "mask-bit-set?" "bit")}
-        {Lisp-Entry "set-type-bit?" #f 138 11 138 24 ("get-Type" "mask-bit-set" "handle" "put-Type" "value" "bit")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Index" library #f 37 19 37 78 ("jazz")
+      {Lisp-Entry "SQLServer-Inventory-Index" class #f 45 7 45 32 ("Inventory-Index")
+        {Lisp-Entry "handle" slot #f 48 8 48 14 ()}
+        {Lisp-Entry "initialize" method #f 51 11 51 21 ("destroy-mandatory" "com-release" "SQLDMO._Index2" "coquery" "handle~self" "set!" "nextmethod" "index-handle" "parent" "inventory")}
+        {Lisp-Entry "destroy" method #f 58 11 58 18 ("nextmethod" "handle" "com-release")}
+        {Lisp-Entry "get-handle" method #f 68 18 68 28 ("handle")}
+        {Lisp-Entry "get-title" method #f 72 11 72 20 ("handle" "get-Name")}
+        {Lisp-Entry "set-fields/orders" method #f 76 18 76 35 ("descending" "'descending" "=" "SetIndexedColumnDESC" "order" "field" "bind" "for-each" "handle" "put-IndexedColumns" "car" "format" "field/order" "function" "map" "join" "string" "let" "value")}
+        {Lisp-Entry "get-ignore-duplicates?" method #f 88 11 88 33 ("SQLDMO.SQLDMOIndex_IgnoreDupKey" "type-bit?")}
+        {Lisp-Entry "get-unique?" method #f 92 11 92 22 ("SQLDMO.SQLDMOIndex_Unique" "type-bit?")}
+        {Lisp-Entry "get-clustered?" method #f 96 11 96 25 ("SQLDMO.SQLDMOIndex_Clustered" "type-bit?")}
+        {Lisp-Entry "get-pad-index?" method #f 100 11 100 25 ("SQLDMO.SQLDMOIndex_PadIndex" "type-bit?")}
+        {Lisp-Entry "get-recompute-statistics?" method #f 104 11 104 36 ("SQLDMO.SQLDMOIndex_NoRecompute" "type-bit?" "not")}
+        {Lisp-Entry "get-fields" method #f 108 11 108 21 ("SQLDMO._Column" "coquery" "self" "inventory" "SQLServer-Inventory-Column" "new" "Item" "field" "collect" "get-Count" "to" "1" "from" "n" "for" "loop" "handle" "ListIndexedColumns" "fields" "with-closed")}
+        {Lisp-Entry "order-of" method #f 116 21 116 29 ("ascending" "'ascending" "descending" "'descending" "handle" "GetIndexedColumnDESC" "if" "name")}
+        {Lisp-Entry "get-fill-factor" method #f 125 11 125 26 ("handle" "get-FillFactor")}
+        {Lisp-Entry "type-bit?" method #f 134 11 134 20 ("handle" "get-Type" "mask-bit-set?" "bit")}
+        {Lisp-Entry "set-type-bit?" method #f 138 11 138 24 ("get-Type" "mask-bit-set" "handle" "put-Type" "value" "bit")}}}})
 "SQLServer-Inventory-Primary-Key"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-Primary-Key.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Primary-Key" #f 37 19 37 84 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-Primary-Key" #f 45 7 45 38 ()
-        {Lisp-Entry "handle" #f 48 8 48 14 ()}
-        {Lisp-Entry "initialize" #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
-        {Lisp-Entry "destroy" #f 57 11 57 18 ("nextmethod" "handle" "com-release")}
-        {Lisp-Entry "get-handle" #f 67 18 67 28 ("handle")}
-        {Lisp-Entry "get-title" #f 71 11 71 20 ("handle" "get-Name")}
-        {Lisp-Entry "get-fields/orders" #f 75 11 75 28 ("get-fields/orders" "parent" "get-primary-index" "primary-index" "with-closed")}
-        {Lisp-Entry "get-clustered?" #f 80 11 80 25 ("handle" "get-Clustered")}
-        {Lisp-Entry "get-fill-factor" #f 84 11 84 26 ("handle" "get-FillFactor")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Primary-Key" library #f 37 19 37 84 ("jazz")
+      {Lisp-Entry "SQLServer-Inventory-Primary-Key" class #f 45 7 45 38 ("Inventory-Primary-Key")
+        {Lisp-Entry "handle" slot #f 48 8 48 14 ()}
+        {Lisp-Entry "initialize" method #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
+        {Lisp-Entry "destroy" method #f 57 11 57 18 ("nextmethod" "handle" "com-release")}
+        {Lisp-Entry "get-handle" method #f 67 18 67 28 ("handle")}
+        {Lisp-Entry "get-title" method #f 71 11 71 20 ("handle" "get-Name")}
+        {Lisp-Entry "get-fields/orders" method #f 75 11 75 28 ("get-fields/orders" "parent" "get-primary-index" "primary-index" "with-closed")}
+        {Lisp-Entry "get-clustered?" method #f 80 11 80 25 ("handle" "get-Clustered")}
+        {Lisp-Entry "get-fill-factor" method #f 84 11 84 26 ("handle" "get-FillFactor")}}}})
 "SQLServer-Inventory-Procedure"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-Procedure.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Procedure" #f 37 19 37 82 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-Procedure" #f 45 7 45 36 ()
-        {Lisp-Entry "handle" #f 48 8 48 14 ()}
-        {Lisp-Entry "initialize" #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
-        {Lisp-Entry "destroy" #f 57 11 57 18 ("nextmethod" "handle" "com-release")}
-        {Lisp-Entry "get-handle" #f 67 18 67 28 ("handle")}
-        {Lisp-Entry "get-title" #f 71 11 71 20 ("handle" "get-Name")}
-        {Lisp-Entry "get-text" #f 75 11 75 19 ("length" "-" "0" "subseq" "set!" "ends-with?" "when" "tie" "marker" "handle" "get-Text" "text" "let")}
-        {Lisp-Entry "set-text" #f 84 18 84 26 ("handle" "put-Text" "value")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Procedure" library #f 37 19 37 82 ("jazz")
+      {Lisp-Entry "SQLServer-Inventory-Procedure" class #f 45 7 45 36 ("Inventory-Procedure")
+        {Lisp-Entry "handle" slot #f 48 8 48 14 ()}
+        {Lisp-Entry "initialize" method #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
+        {Lisp-Entry "destroy" method #f 57 11 57 18 ("nextmethod" "handle" "com-release")}
+        {Lisp-Entry "get-handle" method #f 67 18 67 28 ("handle")}
+        {Lisp-Entry "get-title" method #f 71 11 71 20 ("handle" "get-Name")}
+        {Lisp-Entry "get-text" method #f 75 11 75 19 ("length" "-" "0" "subseq" "set!" "ends-with?" "when" "tie" "marker" "handle" "get-Text" "text" "let")}
+        {Lisp-Entry "set-text" method #f 84 18 84 26 ("handle" "put-Text" "value")}}}})
 "SQLServer-Inventory-Relation"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-Relation.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Relation" #f 37 19 37 81 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-Relation" #f 45 7 45 35 ()
-        {Lisp-Entry "handle" #f 48 8 48 14 ()}
-        {Lisp-Entry "initialize" #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
-        {Lisp-Entry "destroy" #f 57 11 57 18 ("nextmethod" "close" "parent" "when" "handle" "com-release")}
-        {Lisp-Entry "get-title" #f 70 11 70 20 ("handle" "get-Name")}
-        {Lisp-Entry "get-primary-table" #f 74 11 74 28 ("handle" "get-ReferencedTable" "standardize-name")}
-        {Lisp-Entry "get-primary-field-names" #f 78 11 78 34 ("Item" "collect" "get-Count" "to" "1" "from" "n" "for" "loop" "handle" "get-ReferencedColumns" "names" "with-closed")}
-        {Lisp-Entry "get-foreign-table" #f 84 11 84 28 ("parent" "get-title")}
-        {Lisp-Entry "get-foreign-field-names" #f 88 11 88 34 ("Item" "collect" "get-Count" "to" "1" "from" "n" "for" "loop" "handle" "get-KeyColumns" "names" "with-closed")}
-        {Lisp-Entry "get-checked?" #f 94 11 94 23 ("handle" "get-Checked")}
-        {Lisp-Entry "get-exclude-replication?" #f 98 11 98 35 ("handle" "get-ExcludeReplication")}
-        {Lisp-Entry "get-update-cascade?" #f 102 11 102 30 ("get-cascade?")}
-        {Lisp-Entry "get-delete-cascade?" #f 106 11 106 30 ("get-cascade?")}
-        {Lisp-Entry "get-cascade?" #f 110 11 110 23 ("1" "inventory" "get-connection" "load-value" "=" "if" "tie" "cmd" "get-title" "fk-name" "let*" "kind")}
-        {Lisp-Entry "dbo-header" #f 123 14 123 24 ()}
-        {Lisp-Entry "standardize-name" #f 127 11 127 27 ("-" "1" "0" "element" "eqv?" "length" "subseq" "set!" "dbo-header" "starts-with?" "when" "name")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Relation" library #f 37 19 37 81 ("jazz")
+      {Lisp-Entry "SQLServer-Inventory-Relation" class #f 45 7 45 35 ("Inventory-Relation")
+        {Lisp-Entry "handle" slot #f 48 8 48 14 ()}
+        {Lisp-Entry "initialize" method #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
+        {Lisp-Entry "destroy" method #f 57 11 57 18 ("nextmethod" "close" "parent" "when" "handle" "com-release")}
+        {Lisp-Entry "get-title" method #f 70 11 70 20 ("handle" "get-Name")}
+        {Lisp-Entry "get-primary-table" method #f 74 11 74 28 ("handle" "get-ReferencedTable" "standardize-name")}
+        {Lisp-Entry "get-primary-field-names" method #f 78 11 78 34 ("Item" "collect" "get-Count" "to" "1" "from" "n" "for" "loop" "handle" "get-ReferencedColumns" "names" "with-closed")}
+        {Lisp-Entry "get-foreign-table" method #f 84 11 84 28 ("parent" "get-title")}
+        {Lisp-Entry "get-foreign-field-names" method #f 88 11 88 34 ("Item" "collect" "get-Count" "to" "1" "from" "n" "for" "loop" "handle" "get-KeyColumns" "names" "with-closed")}
+        {Lisp-Entry "get-checked?" method #f 94 11 94 23 ("handle" "get-Checked")}
+        {Lisp-Entry "get-exclude-replication?" method #f 98 11 98 35 ("handle" "get-ExcludeReplication")}
+        {Lisp-Entry "get-update-cascade?" method #f 102 11 102 30 ("get-cascade?")}
+        {Lisp-Entry "get-delete-cascade?" method #f 106 11 106 30 ("get-cascade?")}
+        {Lisp-Entry "get-cascade?" method #f 110 11 110 23 ("1" "inventory" "get-connection" "load-value" "=" "if" "tie" "cmd" "get-title" "fk-name" "let*" "kind")}
+        {Lisp-Entry "dbo-header" definition #f 123 14 123 24 ()}
+        {Lisp-Entry "standardize-name" method #f 127 11 127 27 ("-" "1" "0" "element" "eqv?" "length" "subseq" "set!" "dbo-header" "starts-with?" "when" "name")}}}})
 "SQLServer-Inventory-Table"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-Table.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Table" #f 37 19 37 78 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-Table" #f 45 7 45 32 ()
-        {Lisp-Entry "handle" #f 48 8 48 14 ()}
-        {Lisp-Entry "initialize" #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
-        {Lisp-Entry "destroy" #f 57 11 57 18 ("nextmethod" "handle" "com-release")}
-        {Lisp-Entry "get-handle" #f 67 18 67 28 ("handle")}
-        {Lisp-Entry "get-title" #f 71 11 71 20 ("handle" "get-Name")}
-        {Lisp-Entry "get-primary-key" #f 80 18 80 33 ("self" "inventory" "SQLServer-Inventory-Primary-Key" "new" "when" "handle" "get-PrimaryKey" "key" "let")}
-        {Lisp-Entry "create-primary-key" #f 86 18 86 36 ("self" "inventory" "SQLServer-Inventory-Primary-Key" "new" "handle" "get-Keys" "keys" "Add" "order" "field" "bind" "field/order" "function" "for-each" "get-KeyColumns" "names" "with-closed" "SQLDMO.SQLDMOKey_Primary" "put-Type" "put-Name" "SQLDMO.Key" "com-create" "primary-key" "let" "fields/orders" "name")}
-        {Lisp-Entry "remove-primary-key" #f 100 11 100 29 ("Remove" "handle" "get-Keys" "keys" "with-closed" "name")}
-        {Lisp-Entry "get-columns" #f 110 11 110 22 ("Item" "self" "inventory" "SQLServer-Inventory-Column" "new" "collect" "get-Count" "to" "1" "from" "n" "for" "loop" "handle" "get-Columns" "columns" "with-closed")}
-        {Lisp-Entry "get-column" #f 116 11 116 21 ("Item" "self" "inventory" "SQLServer-Inventory-Column" "new" "handle" "get-Columns" "columns" "with-closed" "name")}
-        {Lisp-Entry "create-column" #f 121 11 121 24 ("self" "inventory" "SQLServer-Inventory-Column" "new" "put-Name" "SQLDMO.Column" "com-create" "new-column" "let" "name")}
-        {Lisp-Entry "append-column" #f 127 11 127 24 ("get-handle" "Add" "handle" "get-Columns" "columns" "with-closed" "column")}
-        {Lisp-Entry "remove-column" #f 132 11 132 24 ("Remove" "handle" "get-Columns" "columns" "with-closed" "name")}
-        {Lisp-Entry "get-indexes" #f 142 11 142 22 ("get-output" "com-release" "self" "inventory" "SQLServer-Inventory-Index" "put" "SQLDMO.SQLDMOIndex_DRIPrimaryKey" "get-Type" "mask-bit-set?" "get-StatisticsIndex" "not" "and" "if" "Item" "index" "get-Count" "to" "1" "from" "n" "for" "loop" "List-Factory" "new" "fact" "let" "handle" "get-Indexes" "indexes" "with-closed")}
-        {Lisp-Entry "get-primary-index" #f 154 18 154 35 ("com-release" "self" "inventory" "SQLServer-Inventory-Index" "new" "continuation-return" "SQLDMO.SQLDMOIndex_DRIPrimaryKey" "get-Type" "mask-bit-set?" "get-StatisticsIndex" "not" "and" "if" "Item" "index" "let" "get-Count" "to" "1" "from" "n" "for" "loop" "return" "function" "continuation-capture" "handle" "get-Indexes" "indexes" "with-closed")}
-        {Lisp-Entry "get-index" #f 167 11 167 20 ("Item" "self" "inventory" "SQLServer-Inventory-Index" "new" "handle" "get-Indexes" "indexes" "with-closed" "name")}
-        {Lisp-Entry "create-index" #f 172 11 172 23 ("self" "inventory" "SQLServer-Inventory-Index" "new" "put-Name" "SQLDMO.Index" "com-create" "new-index" "let" "name")}
-        {Lisp-Entry "append-index" #f 178 11 178 23 ("get-handle" "Add" "handle" "get-Indexes" "indexes" "with-closed" "index")}
-        {Lisp-Entry "remove-index" #f 183 11 183 23 ("Remove" "handle" "get-Indexes" "indexes" "with-closed" "name")}
-        {Lisp-Entry "get-triggers" #f 193 11 193 23 ("get-output" "com-release" "self" "inventory" "SQLServer-Inventory-Trigger" "put" "get-SystemObject" "not" "if" "Item" "trigger" "get-Count" "to" "1" "from" "n" "for" "loop" "List-Factory" "new" "fact" "let" "handle" "get-Triggers" "triggers" "with-closed")}
-        {Lisp-Entry "Object-Not-Existant" #f 204 12 204 31 ("#x80045510")}
-        {Lisp-Entry "get-trigger" #f 208 11 208 22 ("self" "inventory" "SQLServer-Inventory-Trigger" "new" "when" "Object-Not-Existant" "cotry" "if" "trigger" "Item" "function" "action" "let*" "handle" "get-Triggers" "triggers" "with-closed" "error?" "error?:" "name")}
-        {Lisp-Entry "create-trigger" #f 221 11 221 25 ("self" "inventory" "SQLServer-Inventory-Trigger" "new" "put-Name" "SQLDMO.Trigger" "com-create" "new-trigger" "let" "name")}
-        {Lisp-Entry "append-trigger" #f 227 11 227 25 ("get-handle" "Add" "handle" "get-Triggers" "triggers" "with-closed" "trigger")}
-        {Lisp-Entry "remove-trigger" #f 232 11 232 25 ("Remove" "handle" "get-Triggers" "triggers" "with-closed" "trigger-name")}
-        {Lisp-Entry "get-table-relations" #f 242 21 242 40 ("get-output" "com-release" "self" "inventory" "SQLServer-Inventory-Relation" "put" "SQLDMO.SQLDMOKey_Foreign" "get-Type" "=" "if" "Item" "key" "get-Count" "to" "1" "from" "n" "for" "loop" "List-Factory" "new" "fact" "let" "handle" "get-Keys" "keys" "with-closed")}
-        {Lisp-Entry "get-constraints" #f 258 11 258 26 ("get-output" "self" "inventory" "SQLServer-Inventory-Constraint" "put" "Item" "check" "get-Count" "to" "1" "from" "n" "for" "loop" "List-Factory" "new" "fact" "let" "handle" "get-Checks" "checks" "with-closed")}
-        {Lisp-Entry "get-constraint" #f 267 11 267 25 ("self" "inventory" "SQLServer-Inventory-Constraint" "new" "when" "Object-Not-Existant" "cotry" "if" "constraint" "Item" "function" "action" "let*" "handle" "get-Checks" "constraints" "with-closed" "error?" "error?:" "name")}
-        {Lisp-Entry "create-constraint" #f 280 11 280 28 ("self" "inventory" "SQLServer-Inventory-Constraint" "new" "put-Name" "SQLDMO.Check" "com-create" "new-constraint" "let" "name")}
-        {Lisp-Entry "append-constraint" #f 286 11 286 28 ("get-handle" "Add" "handle" "get-Checks" "constraints" "with-closed" "constraint")}
-        {Lisp-Entry "remove-constraint" #f 291 11 291 28 ("Remove" "handle" "get-Checks" "constraints" "with-closed" "constraint-name")}
-        {Lisp-Entry "get-text-file-group" #f 301 11 301 30 ("handle" "get-TextFileGroup")}
-        {Lisp-Entry "set-text-file-group" #f 305 11 305 30 ("handle" "put-TextFileGroup" "value")}
-        {Lisp-Entry "get-file-group" #f 309 11 309 25 ("handle" "get-FileGroup")}
-        {Lisp-Entry "set-file-group" #f 313 11 313 25 ("handle" "put-FileGroup" "value")}
-        {Lisp-Entry "get-owner" #f 317 11 317 20 ("handle" "get-Owner")}
-        {Lisp-Entry "set-owner" #f 321 11 321 20 ("handle" "put-Owner" "value")}
-        {Lisp-Entry "get-description" #f 325 11 325 26 ("inventory" "get-connection" "load-value" "tie" "cmd" "get-title" "table-name" "let*")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Table" library #f 37 19 37 78 ("jazz")
+      {Lisp-Entry "SQLServer-Inventory-Table" class #f 45 7 45 32 ("Inventory-Table")
+        {Lisp-Entry "handle" slot #f 48 8 48 14 ()}
+        {Lisp-Entry "initialize" method #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
+        {Lisp-Entry "destroy" method #f 57 11 57 18 ("nextmethod" "handle" "com-release")}
+        {Lisp-Entry "get-handle" method #f 67 18 67 28 ("handle")}
+        {Lisp-Entry "get-title" method #f 71 11 71 20 ("handle" "get-Name")}
+        {Lisp-Entry "get-primary-key" method #f 80 18 80 33 ("self" "inventory" "SQLServer-Inventory-Primary-Key" "new" "when" "handle" "get-PrimaryKey" "key" "let")}
+        {Lisp-Entry "create-primary-key" method #f 86 18 86 36 ("self" "inventory" "SQLServer-Inventory-Primary-Key" "new" "handle" "get-Keys" "keys" "Add" "order" "field" "bind" "field/order" "function" "for-each" "get-KeyColumns" "names" "with-closed" "SQLDMO.SQLDMOKey_Primary" "put-Type" "put-Name" "SQLDMO.Key" "com-create" "primary-key" "let" "fields/orders" "name")}
+        {Lisp-Entry "remove-primary-key" method #f 100 11 100 29 ("Remove" "handle" "get-Keys" "keys" "with-closed" "name")}
+        {Lisp-Entry "get-columns" method #f 110 11 110 22 ("Item" "self" "inventory" "SQLServer-Inventory-Column" "new" "collect" "get-Count" "to" "1" "from" "n" "for" "loop" "handle" "get-Columns" "columns" "with-closed")}
+        {Lisp-Entry "get-column" method #f 116 11 116 21 ("Item" "self" "inventory" "SQLServer-Inventory-Column" "new" "handle" "get-Columns" "columns" "with-closed" "name")}
+        {Lisp-Entry "create-column" method #f 121 11 121 24 ("self" "inventory" "SQLServer-Inventory-Column" "new" "put-Name" "SQLDMO.Column" "com-create" "new-column" "let" "name")}
+        {Lisp-Entry "append-column" method #f 127 11 127 24 ("get-handle" "Add" "handle" "get-Columns" "columns" "with-closed" "column")}
+        {Lisp-Entry "remove-column" method #f 132 11 132 24 ("Remove" "handle" "get-Columns" "columns" "with-closed" "name")}
+        {Lisp-Entry "get-indexes" method #f 142 11 142 22 ("get-output" "com-release" "self" "inventory" "SQLServer-Inventory-Index" "put" "SQLDMO.SQLDMOIndex_DRIPrimaryKey" "get-Type" "mask-bit-set?" "get-StatisticsIndex" "not" "and" "if" "Item" "index" "get-Count" "to" "1" "from" "n" "for" "loop" "List-Factory" "new" "fact" "let" "handle" "get-Indexes" "indexes" "with-closed")}
+        {Lisp-Entry "get-primary-index" method #f 154 18 154 35 ("com-release" "self" "inventory" "SQLServer-Inventory-Index" "new" "continuation-return" "SQLDMO.SQLDMOIndex_DRIPrimaryKey" "get-Type" "mask-bit-set?" "get-StatisticsIndex" "not" "and" "if" "Item" "index" "let" "get-Count" "to" "1" "from" "n" "for" "loop" "return" "function" "continuation-capture" "handle" "get-Indexes" "indexes" "with-closed")}
+        {Lisp-Entry "get-index" method #f 167 11 167 20 ("Item" "self" "inventory" "SQLServer-Inventory-Index" "new" "handle" "get-Indexes" "indexes" "with-closed" "name")}
+        {Lisp-Entry "create-index" method #f 172 11 172 23 ("self" "inventory" "SQLServer-Inventory-Index" "new" "put-Name" "SQLDMO.Index" "com-create" "new-index" "let" "name")}
+        {Lisp-Entry "append-index" method #f 178 11 178 23 ("get-handle" "Add" "handle" "get-Indexes" "indexes" "with-closed" "index")}
+        {Lisp-Entry "remove-index" method #f 183 11 183 23 ("Remove" "handle" "get-Indexes" "indexes" "with-closed" "name")}
+        {Lisp-Entry "get-triggers" method #f 193 11 193 23 ("get-output" "com-release" "self" "inventory" "SQLServer-Inventory-Trigger" "put" "get-SystemObject" "not" "if" "Item" "trigger" "get-Count" "to" "1" "from" "n" "for" "loop" "List-Factory" "new" "fact" "let" "handle" "get-Triggers" "triggers" "with-closed")}
+        {Lisp-Entry "Object-Not-Existant" constant #f 204 12 204 31 ("#x80045510")}
+        {Lisp-Entry "get-trigger" method #f 208 11 208 22 ("self" "inventory" "SQLServer-Inventory-Trigger" "new" "when" "Object-Not-Existant" "cotry" "if" "trigger" "Item" "function" "action" "let*" "handle" "get-Triggers" "triggers" "with-closed" "error?" "error?:" "name")}
+        {Lisp-Entry "create-trigger" method #f 221 11 221 25 ("self" "inventory" "SQLServer-Inventory-Trigger" "new" "put-Name" "SQLDMO.Trigger" "com-create" "new-trigger" "let" "name")}
+        {Lisp-Entry "append-trigger" method #f 227 11 227 25 ("get-handle" "Add" "handle" "get-Triggers" "triggers" "with-closed" "trigger")}
+        {Lisp-Entry "remove-trigger" method #f 232 11 232 25 ("Remove" "handle" "get-Triggers" "triggers" "with-closed" "trigger-name")}
+        {Lisp-Entry "get-table-relations" method #f 242 21 242 40 ("get-output" "com-release" "self" "inventory" "SQLServer-Inventory-Relation" "put" "SQLDMO.SQLDMOKey_Foreign" "get-Type" "=" "if" "Item" "key" "get-Count" "to" "1" "from" "n" "for" "loop" "List-Factory" "new" "fact" "let" "handle" "get-Keys" "keys" "with-closed")}
+        {Lisp-Entry "get-constraints" method #f 258 11 258 26 ("get-output" "self" "inventory" "SQLServer-Inventory-Constraint" "put" "Item" "check" "get-Count" "to" "1" "from" "n" "for" "loop" "List-Factory" "new" "fact" "let" "handle" "get-Checks" "checks" "with-closed")}
+        {Lisp-Entry "get-constraint" method #f 267 11 267 25 ("self" "inventory" "SQLServer-Inventory-Constraint" "new" "when" "Object-Not-Existant" "cotry" "if" "constraint" "Item" "function" "action" "let*" "handle" "get-Checks" "constraints" "with-closed" "error?" "error?:" "name")}
+        {Lisp-Entry "create-constraint" method #f 280 11 280 28 ("self" "inventory" "SQLServer-Inventory-Constraint" "new" "put-Name" "SQLDMO.Check" "com-create" "new-constraint" "let" "name")}
+        {Lisp-Entry "append-constraint" method #f 286 11 286 28 ("get-handle" "Add" "handle" "get-Checks" "constraints" "with-closed" "constraint")}
+        {Lisp-Entry "remove-constraint" method #f 291 11 291 28 ("Remove" "handle" "get-Checks" "constraints" "with-closed" "constraint-name")}
+        {Lisp-Entry "get-text-file-group" method #f 301 11 301 30 ("handle" "get-TextFileGroup")}
+        {Lisp-Entry "set-text-file-group" method #f 305 11 305 30 ("handle" "put-TextFileGroup" "value")}
+        {Lisp-Entry "get-file-group" method #f 309 11 309 25 ("handle" "get-FileGroup")}
+        {Lisp-Entry "set-file-group" method #f 313 11 313 25 ("handle" "put-FileGroup" "value")}
+        {Lisp-Entry "get-owner" method #f 317 11 317 20 ("handle" "get-Owner")}
+        {Lisp-Entry "set-owner" method #f 321 11 321 20 ("handle" "put-Owner" "value")}
+        {Lisp-Entry "get-description" method #f 325 11 325 26 ("inventory" "get-connection" "load-value" "tie" "cmd" "get-title" "table-name" "let*")}}}})
 "SQLServer-Inventory-Trigger"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-Trigger.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Trigger" #f 37 19 37 80 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-Trigger" #f 45 7 45 34 ()
-        {Lisp-Entry "handle" #f 48 8 48 14 ()}
-        {Lisp-Entry "initialize" #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
-        {Lisp-Entry "destroy" #f 57 11 57 18 ("nextmethod" "handle" "com-release")}
-        {Lisp-Entry "get-handle" #f 67 18 67 28 ("handle")}
-        {Lisp-Entry "get-title" #f 71 11 71 20 ("handle" "get-Name")}
-        {Lisp-Entry "get-text" #f 75 11 75 19 ("handle" "get-Text")}
-        {Lisp-Entry "set-text" #f 79 18 79 26 ("handle" "put-Text" "value")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Trigger" library #f 37 19 37 80 ("jazz")
+      {Lisp-Entry "SQLServer-Inventory-Trigger" class #f 45 7 45 34 ("Inventory-Trigger")
+        {Lisp-Entry "handle" slot #f 48 8 48 14 ()}
+        {Lisp-Entry "initialize" method #f 51 11 51 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
+        {Lisp-Entry "destroy" method #f 57 11 57 18 ("nextmethod" "handle" "com-release")}
+        {Lisp-Entry "get-handle" method #f 67 18 67 28 ("handle")}
+        {Lisp-Entry "get-title" method #f 71 11 71 20 ("handle" "get-Name")}
+        {Lisp-Entry "get-text" method #f 75 11 75 19 ("handle" "get-Text")}
+        {Lisp-Entry "set-text" method #f 79 18 79 26 ("handle" "put-Text" "value")}}}})
 "SQLServer-Inventory-Updater"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-Updater.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Updater" #f 37 19 37 80 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-Updater" #f 45 7 45 34 ()}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-Updater" library #f 37 19 37 80 ("jazz")
+      {Lisp-Entry "SQLServer-Inventory-Updater" class #f 45 7 45 34 ("Inventory-Updater")}}})
 "SQLServer-Inventory-View"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Inventory-View.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-View" #f 37 19 37 77 ("jazz")
-      {Lisp-Entry "SQLServer-Inventory-View" #f 46 7 46 31 ()
-        {Lisp-Entry "handle" #f 49 8 49 14 ()}
-        {Lisp-Entry "initialize" #f 52 11 52 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
-        {Lisp-Entry "destroy" #f 58 11 58 18 ("nextmethod" "handle" "com-release")}
-        {Lisp-Entry "get-handle" #f 68 18 68 28 ("handle")}
-        {Lisp-Entry "get-title" #f 72 11 72 20 ("handle" "get-Name")}
-        {Lisp-Entry "get-text" #f 76 11 76 19 ("handle" "get-Text")}
-        {Lisp-Entry "set-text" #f 80 18 80 26 ("handle" "put-Text" "value")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Inventory-View" library #f 37 19 37 77 ("jazz")
+      {Lisp-Entry "SQLServer-Inventory-View" class #f 46 7 46 31 ("Inventory-View")
+        {Lisp-Entry "handle" slot #f 49 8 49 14 ()}
+        {Lisp-Entry "initialize" method #f 52 11 52 21 ("destroy-mandatory" "handle~self" "set!" "nextmethod" "handle" "parent" "inventory")}
+        {Lisp-Entry "destroy" method #f 58 11 58 18 ("nextmethod" "handle" "com-release")}
+        {Lisp-Entry "get-handle" method #f 68 18 68 28 ("handle")}
+        {Lisp-Entry "get-title" method #f 72 11 72 20 ("handle" "get-Name")}
+        {Lisp-Entry "get-text" method #f 76 11 76 19 ("handle" "get-Text")}
+        {Lisp-Entry "set-text" method #f 80 18 80 26 ("handle" "put-Text" "value")}}}})
 "SQLServer-Primary-Key-Constraint"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Primary-Key-Constraint.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Primary-Key-Constraint" #f 37 19 37 85 ("jazz")
-      {Lisp-Entry "SQLServer-Primary-Key-Constraint" #f 45 7 45 39 ()
-        {Lisp-Entry "register-constraints" #f 53 16 53 36 ("Design-Primary-Key" "self" "new" "register-constraint" "manager")}
-        {Lisp-Entry "validate" #f 63 11 63 19 ("get-fields/orders" "fields/orders" "'fields/orders" "property:" "message:" "Integrity-Violation" "new" "add-violation" "format" "message" "get-nullable?" "find-visible-column" "column" "let" "order" "field" "bind" "field/order" "function" "for-each" "SQLServer-Design-Schema" "is?" "when" "get-schema" "schema" "Design-Architecture" "find-ascendant" "get-table" "table" "let*" "manager" "context" "client" "architecture" "primary-key")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Primary-Key-Constraint" library #f 37 19 37 85 ("jazz")
+      {Lisp-Entry "SQLServer-Primary-Key-Constraint" class #f 45 7 45 39 ("Integrity-Constraint")
+        {Lisp-Entry "register-constraints" method #f 53 16 53 36 ("Design-Primary-Key" "self" "new" "register-constraint" "manager")}
+        {Lisp-Entry "validate" method #f 63 11 63 19 ("get-fields/orders" "fields/orders" "'fields/orders" "property:" "message:" "Integrity-Violation" "new" "add-violation" "format" "message" "get-nullable?" "find-visible-column" "column" "let" "order" "field" "bind" "field/order" "function" "for-each" "SQLServer-Design-Schema" "is?" "when" "get-schema" "schema" "Design-Architecture" "find-ascendant" "get-table" "table" "let*" "manager" "context" "client" "architecture" "primary-key")}}}})
 "SQLServer-Primary-Key-Name-Global-Unicity-Constraint"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Primary-Key-Name-Global-Unicity-Constraint.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Primary-Key-Name-Global-Unicity-Constraint" #f 37 19 37 105 ("jazz")
-      {Lisp-Entry "SQLServer-Primary-Key-Name-Global-Unicity-Constraint" #f 45 7 45 59 ()
-        {Lisp-Entry "register-constraints" #f 53 16 53 36 ("Design-Primary-Key" "self" "new" "register-constraint" "manager")}
-        {Lisp-Entry "validate" #f 63 11 63 19 ("message:" "Integrity-Violation" "new" "add-violation" "when" "manager" "context" "client" "architecture" "primary-key")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Primary-Key-Name-Global-Unicity-Constraint" library #f 37 19 37 105 ("jazz")
+      {Lisp-Entry "SQLServer-Primary-Key-Name-Global-Unicity-Constraint" class #f 45 7 45 59 ("Integrity-Constraint")
+        {Lisp-Entry "register-constraints" method #f 53 16 53 36 ("Design-Primary-Key" "self" "new" "register-constraint" "manager")}
+        {Lisp-Entry "validate" method #f 63 11 63 19 ("message:" "Integrity-Violation" "new" "add-violation" "when" "manager" "context" "client" "architecture" "primary-key")}}}})
 "SQLServer-Procedure-Validity-Constraint"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Procedure-Validity-Constraint.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Procedure-Validity-Constraint" #f 37 19 37 92 ("jazz")
-      {Lisp-Entry "SQLServer-Procedure-Validity-Constraint" #f 45 7 45 46 ()
-        {Lisp-Entry "register-constraints" #f 53 16 53 36 ("Design-Procedure" "self" "new" "register-constraint" "manager")}
-        {Lisp-Entry "ends-with-go?" #f 63 11 63 24 ("+" "-" "subseq" "ci=?" "1" ">=" "and" "position" "'position" "return:" "reversed?:" "whitespace?" "not" "c" "function" "find-if" "last-non-white" "let" "text")}
-        {Lisp-Entry "validate" #f 70 11 70 19 ("stop-descent" "'stop-descent" "'text" "property:" "message:" "Integrity-Violation" "new" "add-violation" "ends-with-go?" "SQLServer-Design-Schema" "is?" "and" "when" "get-schema" "schema" "Design-Architecture" "find-ascendant" "get-text" "text" "get-name" "name" "let*" "manager" "context" "client" "architecture" "procedure")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Procedure-Validity-Constraint" library #f 37 19 37 92 ("jazz")
+      {Lisp-Entry "SQLServer-Procedure-Validity-Constraint" class #f 45 7 45 46 ("Integrity-Constraint")
+        {Lisp-Entry "register-constraints" method #f 53 16 53 36 ("Design-Procedure" "self" "new" "register-constraint" "manager")}
+        {Lisp-Entry "ends-with-go?" method #f 63 11 63 24 ("+" "-" "subseq" "ci=?" "1" ">=" "and" "position" "'position" "return:" "reversed?:" "whitespace?" "not" "c" "function" "find-if" "last-non-white" "let" "text")}
+        {Lisp-Entry "validate" method #f 70 11 70 19 ("stop-descent" "'stop-descent" "'text" "property:" "message:" "Integrity-Violation" "new" "add-violation" "ends-with-go?" "SQLServer-Design-Schema" "is?" "and" "when" "get-schema" "schema" "Design-Architecture" "find-ascendant" "get-text" "text" "get-name" "name" "let*" "manager" "context" "client" "architecture" "procedure")}}}})
 "SQLServer-Provider"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Provider.jazz"} 1248797036
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Provider" #f 37 19 37 71 ("jazz")
-      {Lisp-Entry "SQLServer-Provider" #f 43 7 43 25 ()
-        {Lisp-Entry "external-name" #f 46 11 46 24 ("sqlserver" "'sqlserver")}
-        {Lisp-Entry "get-datatype" #f 56 11 56 23 ("SQLServer-Datatype")}
-        {Lisp-Entry "supports-multirequests?" #f 66 11 66 34 ()}
-        {Lisp-Entry "format-variable" #f 76 11 76 26 ("format" "variable")}
-        {Lisp-Entry "present" #f 85 11 85 18 ()}
-        {Lisp-Entry "get-server-names" #f 95 18 95 34 ("Item" "collect" "get-Count" "to" "1" "from" "n" "for" "loop" "ListAvailableSQLServers" "essay" "name-list" "message-box" "begin" "null?" "if" "error?:" "SQLDMO.Application" "com-create" "application" "with-closed" "function" ":wait" "with-cursor")}
-        {Lisp-Entry "server-names-for-combo" #f 109 18 109 40 ("equal?" "test:" "remove" "map" "list" "cons" "get-server-names" "names" "let")}
-        {Lisp-Entry "server-names-choices-updater" #f 115 18 115 46 ("server-names-for-combo" "set-choices" "combo")}
-        {Lisp-Entry "browser-class" #f 126 11 126 24 ("SQLServer-Widget")}
-        {Lisp-Entry "new-updater" #f 136 11 136 22 ("SQLServer-Inventory-Updater" "new" "connection")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Provider" library #f 37 19 37 71 ("jazz")
+      {Lisp-Entry "SQLServer-Provider" class #f 43 7 43 25 ("Provider")
+        {Lisp-Entry "external-name" method #f 46 11 46 24 ("sqlserver" "'sqlserver")}
+        {Lisp-Entry "get-datatype" method #f 56 11 56 23 ("SQLServer-Datatype")}
+        {Lisp-Entry "supports-multirequests?" method #f 66 11 66 34 ()}
+        {Lisp-Entry "format-variable" method #f 76 11 76 26 ("format" "variable")}
+        {Lisp-Entry "present" method #f 85 11 85 18 ()}
+        {Lisp-Entry "get-server-names" method #f 95 18 95 34 ("Item" "collect" "get-Count" "to" "1" "from" "n" "for" "loop" "ListAvailableSQLServers" "essay" "name-list" "message-box" "begin" "null?" "if" "error?:" "SQLDMO.Application" "com-create" "application" "with-closed" "function" ":wait" "with-cursor")}
+        {Lisp-Entry "server-names-for-combo" method #f 109 18 109 40 ("equal?" "test:" "remove" "map" "list" "cons" "get-server-names" "names" "let")}
+        {Lisp-Entry "server-names-choices-updater" method #f 115 18 115 46 ("server-names-for-combo" "set-choices" "combo")}
+        {Lisp-Entry "browser-class" method #f 126 11 126 24 ("SQLServer-Widget")}
+        {Lisp-Entry "new-updater" method #f 136 11 136 22 ("SQLServer-Inventory-Updater" "new" "connection")}}}})
 "SQLServer-Server-Browser"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Server-Browser.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Server-Browser" #f 37 19 37 77 ("jazz")
-      {Lisp-Entry "SQLServer-Server-Browser" #f 46 7 46 31 ()
-        {Lisp-Entry "install" #f 49 11 49 18 ("update-server-names" "nextmethod" "rest")}
-        {Lisp-Entry "update-server-names" #f 59 11 59 30 ("set-entry" "sqlserver" "'sqlserver" "Provider" "get-provider" "server-names-choices-updater" "" "set-choices-updater")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Server-Browser" library #f 37 19 37 77 ("jazz")
+      {Lisp-Entry "SQLServer-Server-Browser" class #f 46 7 46 31 ("Combo-Box")
+        {Lisp-Entry "install" method #f 49 11 49 18 ("update-server-names" "nextmethod" "rest")}
+        {Lisp-Entry "update-server-names" method #f 59 11 59 30 ("set-entry" "sqlserver" "'sqlserver" "Provider" "get-provider" "server-names-choices-updater" "" "set-choices-updater")}}}})
 "SQLServer-Server-Row"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Server-Row.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Server-Row" #f 37 19 37 73 ("jazz")
-      {Lisp-Entry "SQLServer-Server-Row" #f 46 7 46 27 ()
-        {Lisp-Entry "update-server-names" #f 49 11 49 30 ("sqlserver" "'sqlserver" "Provider" "get-provider" "server-names-choices-updater" "" "set-choices-updater")}
-        {Lisp-Entry "edit" #f 54 11 54 15 ("self" "get-tree" "expand" "edit-in-cell")}
-        {Lisp-Entry "edit-in-cell" #f 59 11 59 23 ("update-server-names" "nextmethod")}
-        {Lisp-Entry "close-editor" #f 64 11 64 23 ("self" "get-tree" "collapse" "nextmethod")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Server-Row" library #f 37 19 37 73 ("jazz")
+      {Lisp-Entry "SQLServer-Server-Row" class #f 46 7 46 27 ("Combo-Row")
+        {Lisp-Entry "update-server-names" method #f 49 11 49 30 ("sqlserver" "'sqlserver" "Provider" "get-provider" "server-names-choices-updater" "" "set-choices-updater")}
+        {Lisp-Entry "edit" method #f 54 11 54 15 ("self" "get-tree" "expand" "edit-in-cell")}
+        {Lisp-Entry "edit-in-cell" method #f 59 11 59 23 ("update-server-names" "nextmethod")}
+        {Lisp-Entry "close-editor" method #f 64 11 64 23 ("self" "get-tree" "collapse" "nextmethod")}}}})
 "SQLServer-Text-View"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Text-View.jazz"} 1246978515
-    {Lisp-Entry "jazz.database.inventory.sqlserver.SQLServer-Text-View" #f 37 19 37 72 ("jazz")
-      {Lisp-Entry "SQLServer-Text-View" #f 47 7 47 26 ()
-        {Lisp-Entry "host-workspaces" #f 55 11 55 26 ("text")}
-        {Lisp-Entry "TransactSQL-Keywords" #f 64 12 64 32 ()}
-        {Lisp-Entry "get-keywords" #f 82 11 82 23 ("TransactSQL-Keywords" "nextmethod" "append")}
-        {Lisp-Entry "SQLServer-Syntax-Targets" #f 92 14 92 38 ()}
-        {Lisp-Entry "SQLServer-Syntax-Automata" #f 95 14 95 39 ()}
-        {Lisp-Entry "syntax-targets" #f 99 11 99 25 ("compute-syntax-targets" "set!" "SQLServer-Syntax-Targets" "unless")}
-        {Lisp-Entry "syntax-automata" #f 105 11 105 26 ("compute-syntax-automata" "set!" "SQLServer-Syntax-Automata" "unless")}}}})
+    {Lisp-Entry "jazz.database.inventory.sqlserver.SQLServer-Text-View" library #f 37 19 37 72 ("jazz")
+      {Lisp-Entry "SQLServer-Text-View" class #f 47 7 47 26 ("SQL-Text-View")
+        {Lisp-Entry "host-workspaces" method #f 55 11 55 26 ("text")}
+        {Lisp-Entry "TransactSQL-Keywords" constant #f 64 12 64 32 ()}
+        {Lisp-Entry "get-keywords" method #f 82 11 82 23 ("TransactSQL-Keywords" "nextmethod" "append")}
+        {Lisp-Entry "SQLServer-Syntax-Targets" definition #f 92 14 92 38 ()}
+        {Lisp-Entry "SQLServer-Syntax-Automata" definition #f 95 14 95 39 ()}
+        {Lisp-Entry "syntax-targets" method #f 99 11 99 25 ("compute-syntax-targets" "set!" "SQLServer-Syntax-Targets" "unless")}
+        {Lisp-Entry "syntax-automata" method #f 105 11 105 26 ("compute-syntax-automata" "set!" "SQLServer-Syntax-Automata" "unless")}}}})
 "SQLServer-Trigger-Name-Global-Unicity-Constraint"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Trigger-Name-Global-Unicity-Constraint.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Trigger-Name-Global-Unicity-Constraint" #f 37 19 37 101 ("jazz")
-      {Lisp-Entry "SQLServer-Trigger-Name-Global-Unicity-Constraint" #f 45 7 45 55 ()
-        {Lisp-Entry "register-constraints" #f 53 16 53 36 ("Design-Trigger" "self" "new" "register-constraint" "manager")}
-        {Lisp-Entry "validate" #f 63 11 63 19 ("message:" "Integrity-Violation" "new" "add-violation" "when" "manager" "context" "client" "architecture" "trigger")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Trigger-Name-Global-Unicity-Constraint" library #f 37 19 37 101 ("jazz")
+      {Lisp-Entry "SQLServer-Trigger-Name-Global-Unicity-Constraint" class #f 45 7 45 55 ("Integrity-Constraint")
+        {Lisp-Entry "register-constraints" method #f 53 16 53 36 ("Design-Trigger" "self" "new" "register-constraint" "manager")}
+        {Lisp-Entry "validate" method #f 63 11 63 19 ("message:" "Integrity-Violation" "new" "add-violation" "when" "manager" "context" "client" "architecture" "trigger")}}}})
 "SQLServer-Widget"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "inventory" "SQLServer-Widget.jazz"} 1248797036
-    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Widget" #f 37 19 37 69 ("jazz")
-      {Lisp-Entry "SQLServer-Widget" #f 48 7 48 23 ("database" "79" "database-border" "81" "database-label" "password" "49" "password-border" "56" "52" "password-label" "on-return-press" "return-press-handler:" "username" "fill" "layout-type:" "vscroll?:" "hscroll?:" "21" "26" "username-border" "29" "username-label" "top-padding:" "2" "left-padding:" "body" "content" "scroller" "on-server-change" ":form" "Event-Handler" "content-change-handler:" "server" "style:" "edge" "border-type:" "19" "203" "1" "67" "server-border" "16" "59" "3" "0" "Point" "position:" "title:" "server-label" "name:" "129" "278" "Dimension" "size:")
-        {Lisp-Entry "install" #f 77 11 77 18 ("database-choices-updater" "database" "'database" "locate" "set-choices-updater" "nextmethod" "rest")}
-        {Lisp-Entry "database-choices-updater" #f 82 11 82 35 ("get-data-source" "set-data-source" "combo-box")}
-        {Lisp-Entry "get-data-source" #f 92 11 92 26 ("database" "'database" "database:" "password" "'password" "password:" "username" "'username" "get-string-content" "username:" "server" "'server" "locate" "get-entry" "server:" "SQLServer-Data-Source" "new")}
-        {Lisp-Entry "set-data-source" #f 100 11 100 26 ("get-database" "database" "'database" "get-password" "password" "'password" "get-username" "username" "'username" "set-string-content" "get-server" "server" "'server" "locate" "set-entry" "source")}
-        {Lisp-Entry "setup-username/password-mode" #f 107 11 107 39 ("select-all" "username" "'username" "acquire-focus" "database" "'database" "server" "'server" "locate" "set-enabled?")}
-        {Lisp-Entry "set-enabled?" #f 119 11 119 23 ("invalidate-view" "database" "'database" "password" "'password" "username" "'username" "server" "'server" "locate" "set-enabled?" "enabled?" "set!" "flag")}
-        {Lisp-Entry "get-tab-stops" #f 133 11 133 24 ("database" "'database" "password" "'password" "username" "'username" "server" "'server" "locate" "list")}
-        {Lisp-Entry "set-default-focus" #f 141 18 141 35 ("server" "'server" "locate" "set-focus")}
-        {Lisp-Entry "on-server-change" #f 145 11 145 27 ("database" "'database" "locate" "set-data-source" "evt")}
-        {Lisp-Entry "on-return-press" #f 149 11 149 26 ("self" "invoke" "return-press-handler" "when" "evt")}
-        {Lisp-Entry "validate-content" #f 159 11 159 27 ("database" "'database" "server" "'server" "locate" "validate-content")}}}})
+    {Lisp-Entry "jazz.database.sqlserver.inventory.SQLServer-Widget" library #f 37 19 37 69 ("jazz")
+      {Lisp-Entry "SQLServer-Widget" class #f 48 7 48 23 ("database" "79" "database-border" "81" "database-label" "password" "49" "password-border" "56" "52" "password-label" "on-return-press" "return-press-handler:" "username" "fill" "layout-type:" "vscroll?:" "hscroll?:" "21" "26" "username-border" "29" "username-label" "top-padding:" "2" "left-padding:" "body" "content" "scroller" "on-server-change" ":form" "Event-Handler" "content-change-handler:" "server" "style:" "edge" "border-type:" "19" "203" "1" "67" "server-border" "16" "59" "3" "0" "Point" "position:" "title:" "server-label" "name:" "129" "278" "Dimension" "size:" "Data-Source-Widget")
+        {Lisp-Entry "install" method #f 77 11 77 18 ("database-choices-updater" "database" "'database" "locate" "set-choices-updater" "nextmethod" "rest")}
+        {Lisp-Entry "database-choices-updater" method #f 82 11 82 35 ("get-data-source" "set-data-source" "combo-box")}
+        {Lisp-Entry "get-data-source" method #f 92 11 92 26 ("database" "'database" "database:" "password" "'password" "password:" "username" "'username" "get-string-content" "username:" "server" "'server" "locate" "get-entry" "server:" "SQLServer-Data-Source" "new")}
+        {Lisp-Entry "set-data-source" method #f 100 11 100 26 ("get-database" "database" "'database" "get-password" "password" "'password" "get-username" "username" "'username" "set-string-content" "get-server" "server" "'server" "locate" "set-entry" "source")}
+        {Lisp-Entry "setup-username/password-mode" method #f 107 11 107 39 ("select-all" "username" "'username" "acquire-focus" "database" "'database" "server" "'server" "locate" "set-enabled?")}
+        {Lisp-Entry "set-enabled?" method #f 119 11 119 23 ("invalidate-view" "database" "'database" "password" "'password" "username" "'username" "server" "'server" "locate" "set-enabled?" "enabled?" "set!" "flag")}
+        {Lisp-Entry "get-tab-stops" method #f 133 11 133 24 ("database" "'database" "password" "'password" "username" "'username" "server" "'server" "locate" "list")}
+        {Lisp-Entry "set-default-focus" method #f 141 18 141 35 ("server" "'server" "locate" "set-focus")}
+        {Lisp-Entry "on-server-change" method #f 145 11 145 27 ("database" "'database" "locate" "set-data-source" "evt")}
+        {Lisp-Entry "on-return-press" method #f 149 11 149 26 ("self" "invoke" "return-press-handler" "when" "evt")}
+        {Lisp-Entry "validate-content" method #f 159 11 159 27 ("database" "'database" "server" "'server" "locate" "validate-content")}}}})
 "_sqlserver"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "_sqlserver.jazz"} 1244896779
-    {Lisp-Entry "jazz.database.sqlserver" #f 37 9 37 32 ("jazz")}})
+    {Lisp-Entry "jazz.database.sqlserver" library #f 37 9 37 32 ("jazz")}})
 "autoload"
  ({Lisp-File-Entry {File jazz.database.sqlserver "src" "jazz" "database" "sqlserver" "autoload.jazz"} 1244915305
-    {Lisp-Entry "jazz.database.sqlserver.autoload" #f 37 19 37 51 ("jazz")}})
+    {Lisp-Entry "jazz.database.sqlserver.autoload" library #f 37 19 37 51 ("jazz")}})

@@ -1,0 +1,53 @@
+"Tester"
+ ({Lisp-File-Entry {File jazz.validation "src" "jazz" "validation" "tester" "Tester.jazz"} 1257476630
+    {Lisp-Entry "jazz.validation.tester.Tester" module #f 37 18 37 47 ("jazz")
+      {Lisp-Entry "Tester" class #f 44 7 44 13 ("initialize" "Component")
+        {Lisp-Entry "suite" property #f 47 12 47 17 ()}
+        {Lisp-Entry "get-suite" accessor #f 47 42 47 50 ()}
+        {Lisp-Entry "set-suite" accessor #f 47 42 47 50 ()}
+        {Lisp-Entry "title" property #f 48 12 48 17 ()}
+        {Lisp-Entry "get-title" accessor #f 48 42 48 50 ()}
+        {Lisp-Entry "set-title" accessor #f 48 42 48 50 ()}
+        {Lisp-Entry "*section*" define #f 56 10 56 19 ("make-parameter")}
+        {Lisp-Entry "test" method #f 60 26 60 30 ()}
+        {Lisp-Entry "invoke" method #f 64 21 64 27 ("*section*" "parameterize" "proc" "section")}
+        {Lisp-Entry "rpt" method #f 69 11 69 14 ("*section*" "title" "suite" "assertion-failed" "message")}}}})
+"Tester-Error"
+ ({Lisp-File-Entry {File jazz.validation "src" "jazz" "validation" "tester" "Tester-Error.jazz"} 1257476630
+    {Lisp-Entry "jazz.validation.tester.Tester-Error" module #f 37 18 37 53 ("jazz")
+      {Lisp-Entry "Tester-Error" class #f 40 7 40 19 ("Error")
+        {Lisp-Entry "form" slot #f 43 8 43 12 ()}
+        {Lisp-Entry "get-form" accessor #f 43 23 43 31 ()}
+        {Lisp-Entry "string?" slot #f 44 8 44 15 ()}
+        {Lisp-Entry "initialize" method #f 47 20 47 30 ("string?~self" "form~self" "set!" "nextmethod" "string?" "form")}
+        {Lisp-Entry "get-message" method #f 58 20 58 31 ("->string" "form" "string?" "if")}
+        {Lisp-Entry "present-message" method #f 64 20 64 35 ("get-message" "format" "list" "rest")}}}})
+"Validate"
+ ({Lisp-File-Entry {File jazz.validation "src" "jazz" "validation" "validate" "Validate.jazz"} 1257476666
+    {Lisp-Entry "jazz.validation.validate.Validate" module #f 37 18 37 51 ("jazz")
+      {Lisp-Entry "Validate" class #f 44 7 44 15 ("Process")
+        {Lisp-Entry "start-process" method #f 47 20 47 33 ("exit-process" "Validation-Suite" "new" "validate")}}}})
+"Validation-Suite"
+ ({Lisp-File-Entry {File jazz.validation "src" "jazz" "validation" "validate" "Validation-Suite.jazz"} 1257476666
+    {Lisp-Entry "jazz.validation.validate.Validation-Suite" module #f 37 18 37 59 ("jazz")
+      {Lisp-Entry "Validation-Suite" class #f 40 7 40 23 ("Object")
+        {Lisp-Entry "feedback" slot #f 43 8 43 16 ()}
+        {Lisp-Entry "failed-assertions" slot #f 44 8 44 25 ()}
+        {Lisp-Entry "default-feedback" define #f 47 11 47 27 (":terminal" "format" "apply" "rest" "format-string")}
+        {Lisp-Entry "initialize" method #f 52 20 52 30 ("default-feedback" "either" "feedback~self" "set!" "nextmethod" "feedback" "feedback:")}
+        {Lisp-Entry "validate" method #f 57 18 57 26 ("report-results" "validate-suite" "report-success?" "report-success?:" "test" "test:")}
+        {Lisp-Entry "validate-suite" method #f 62 11 62 25 ("feedback" "list" "pair?" "if" "invoke-tester" "for-each" "List-Factory" "new" "failed-assertions" "set!" "test")}
+        {Lisp-Entry "invoke-tester" method #f 68 11 68 24 ("test" "class-of" "type-name" "identifier-name" "feedback" "self" "suite:" "new" "tester" "let" "class")}
+        {Lisp-Entry "assertion-failed" method #f 74 18 74 34 ("list" "failed-assertions" "put" "form" "section" "title")}
+        {Lisp-Entry "report-results" method #f 78 11 78 25 ("message" "section" "title" "bind" "info" "lambda" "for-each" ":terminal" "format" "when" "null?" "if" "failed-assertions" "get-output" "failed" "let" "report-success?" "report-success?:")}}}})
+"_validation"
+ ({Lisp-File-Entry {File jazz.validation "src" "jazz" "validation" "_validation.jazz"} 1257476734
+    {Lisp-Entry "jazz.validation" module #f 37 8 37 23 ("jazz")}})
+"autoload"
+ ({Lisp-File-Entry {File jazz.validation "src" "jazz" "validation" "autoload.jazz"} 1257476742
+    {Lisp-Entry "jazz.validation.autoload" module #f 37 18 37 42 ("jazz")}})
+"syntax"
+ ({Lisp-File-Entry {File jazz.validation "src" "jazz" "validation" "syntax.jazz"} 1257476798
+    {Lisp-Entry "jazz.validation.syntax" module #f 37 18 37 40 ("jazz")
+      {Lisp-Entry "validate" macro #f 40 16 40 24 (",message" ",proc" ",expr" "unless" ":text" "desourcify" "->string" "message" "third" "expr" "source-code" "second" "proc" "let" "form-src")}
+      {Lisp-Entry "error-occurred?" macro #f 48 16 48 31 ("form-src")}}})

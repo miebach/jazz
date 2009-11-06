@@ -1,0 +1,163 @@
+"Scheme-Explorer"
+ ({Lisp-File-Entry {File jazz.editor.scheme "src" "jazz" "editor" "scheme" "text" "Scheme-Explorer.jazz"} 1257478065
+    {Lisp-Entry "jazz.editor.scheme.text.Scheme-Explorer" module #f 37 18 37 57 ("jazz")
+      {Lisp-Entry "Scheme-Explorer" class #f 49 7 49 22 ("Lisp-Explorer")
+        {Lisp-Entry "get-syntax" method #f 52 20 52 30 ("scheme" "'scheme")}
+        {Lisp-Entry "expression-comment?" method #f 56 20 56 39 ("nextmethod" "get-range" "string=?" "or" "get-end" "get-start" "get-range-string" "range" "get-string" "define" "mark")}
+        {Lisp-Entry "declaration-name?" method #f 69 20 69 37 ("nextmethod" "define-type-of-symbol?" "or" "name")}
+        {Lisp-Entry "define-type-of-symbol?" definition #f 74 15 74 37 ("symbol->string" "starts-with?" "symbol?" "and" "symbol")}
+        {Lisp-Entry "find-named-walker" method #f 84 20 84 37 ("nextmethod" "else" "walk-c-initialize" ":c-initialize" "walk-c-declare" ":c-declare" "walk-unknown" ":unknown" "walk-native" ":native" "walk-type" ":type" "walk-define-class" ":define-class" "walk-macro" ":macro" "walk-define-syntax" ":define-syntax" "walk-define-macro" ":define-macro" "walk-generic/specific" ":generic/specific" "walk-define" ":define" "walk-declare" ":declare" "walk-keyword" ":keyword" "walk-module" ":module" "walk-unit" ":unit" "walk-package" ":package" "walk-repository" ":repository" "walk-begin" ":begin" "walk-cond-expand" ":cond-expand" "case" "walk-define-type-of" "define-type-of-symbol?" "if" "name")}
+        {Lisp-Entry "walk-modifiers" method #f 110 11 110 25 ("set!" "start" "find-marked-symbol" "memq?" "forward-constituent" "text-constituent?" "and" "when" "0" "char-forward" "c0" "set-start" "forward-whites" "iterate" "end" "copy" "old" "let" "modifiers" "keyword" "declaration" "context")}
+        {Lisp-Entry "walk-keywords" method #f 125 11 125 24 ("set!" "code" "'code" "walk-expression" "forward-expr" "start" "memq?" "find-marked-symbol" "marked-keyword" "forward-constituent" "text-constituent?" "and" "when" "0" "char-forward" "c0" "set-start" "forward-whites" "iterate" "end" "copy" "old" "let" "keywords" "expression" "keyword" "declaration" "context")}
+        {Lisp-Entry "walk-begin" method #f 143 11 143 21 ("walk-declarations" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-cond-expand" method #f 147 11 147 27 ("exit-list" "walk-declarations" "feature" "'feature" "code" "'code" "end" "start" "'symbol" "get-kind" "eq?" "when" "forward-expr" "set!" "if" "enter-list" "enter?" "not" "while" "done?" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-repository" method #f 160 11 160 26 ("repository" "'repository" "walk-namespace" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-package" method #f 163 11 163 23 ("package" "'package" "walk-namespace" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-unit" method #f 166 11 166 20 ("unit" "'unit" "walk-namespace" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-module" method #f 169 11 169 22 ("module" "'module" "walk-namespace" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-namespace" method #f 173 11 173 25 ("walk-declarations" "get-keywords" "walk-keywords" "find-marked-symbol" "symbol-documented?" "get-marked" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "namespace-kind" "context")}
+        {Lisp-Entry "walk-keyword" method #f 184 11 184 23 ("end" "start" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-declare" method #f 188 11 188 23 ("end" "start" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-define-type-of" method #f 192 11 192 30 ("define" "'define" "get-lisp-form" "walk-define" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-define" method #f 196 11 196 22 ("walk-declarations" "exit-list" "walk-parameters" "get-marked" "define" "'define" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "enter-list" "when" "0" "char-forward" "eqv?" "list?" "forward-whites" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-generic/specific" method #f 213 11 213 32 ("walk-declarations" "walk-parameters" "exit-list" "list" "generic/specific" "'generic/specific" "set!" "tag" "'tag" "code" "'code" "typename" "get-marked" "name" "get-end" "get-start" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "enter-list" "forward-whites" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-macro" method #f 235 11 235 21 ("walk-expressions" "exit-list" "walk-parameters" "find-marked-symbol" "symbol-documented?" "get-marked" "macro" "'macro" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "enter-list" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-define-macro" method #f 248 11 248 28 ("walk-declarations" "exit-list" "code" "'code" "walk-expressions" "get-marked" "define-macro" "'define-macro" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "enter-list" "when" "0" "char-forward" "eqv?" "list?" "forward-whites" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-define-syntax" method #f 265 11 265 29 ("walk-declarations" "exit-list" "code" "'code" "walk-expressions" "get-marked" "define-macro" "'define-macro" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "enter-list" "when" "0" "char-forward" "eqv?" "list?" "forward-whites" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-define-class" method #f 283 11 283 28 ("walk-expressions" "get-marked" "define-class" "'define-class" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "forward-whites" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-native" method #f 293 11 293 22 ("walk-expressions" "symbol-documented?" "native" "'native" "set!" "get-marked" "name" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "forward-whites" "get-modifiers" "walk-modifiers" "end" "start" "entry" "string-length" "1" "+" "substring" "not" "if" "reversed?:" "find" "pos" "let" "str" "parse-identifier" "define" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-type" method #f 311 11 311 20 ("walk-expressions" "get-marked" "type" "'type" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-c-initialize" method #f 320 11 320 28 ("walk-expressions" "end" "start" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-c-declare" method #f 325 11 325 25 ("walk-expressions" "end" "start" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "symbol-documentation" method #f 330 19 330 39 ("get-definition" "and" "when" "doc" "symbol")}
+        {Lisp-Entry "symbol-documented?" method #f 335 19 335 37 ("symbol-documentation" "doc" "symbol")}}}})
+"Scheme-Parser"
+ ({Lisp-File-Entry {File jazz.editor.scheme "src" "jazz" "editor" "scheme" "parser" "Scheme-Parser.jazz"} 1257476591
+    {Lisp-Entry "jazz.editor.scheme.parser.Scheme-Parser" module #f 37 18 37 57 ("jazz")
+      {Lisp-Entry "Scheme-Parser" class #f 44 7 44 20 ("Lisp-Parser")
+        {Lisp-Entry "explorer-class" method #f 47 20 47 34 ("Scheme-Explorer" "file")}
+        {Lisp-Entry "text-view-class" method #f 51 20 51 35 ("Scheme-Text-View")}}}})
+"Scheme-Syntax"
+ ({Lisp-File-Entry {File jazz.editor.scheme "src" "jazz" "editor" "scheme" "syntax" "Scheme-Syntax.jazz"} 1257476592
+    {Lisp-Entry "jazz.editor.scheme.syntax.Scheme-Syntax" module #f 37 18 37 57 ("jazz")
+      {Lisp-Entry "Scheme-Syntax" class #f 45 7 45 20 ("Lisp-Syntax")
+        {Lisp-Entry "translate-key" method #f 53 20 53 33 ("translate-lisp-key" "scheme-text" "documents" "get-preferences" "get-translate-keys?" "not" "if" "key")}
+        {Lisp-Entry "get-constituent-test" method #f 64 20 64 40 ("scheme-constituent?")}}}})
+"Scheme-Text-Actions"
+ ({Lisp-File-Entry {File jazz.editor.scheme "src" "jazz" "editor" "scheme" "text" "Scheme-Text-Actions.jazz"} 1257476592
+    {Lisp-Entry "jazz.editor.scheme.text.Scheme-Text-Actions" module #f 37 18 37 61 ("jazz")
+      {Lisp-Entry "Scheme-Text-Actions" class #f 45 7 45 26 ("Actions")}}})
+"Scheme-Text-Preferences"
+ ({Lisp-File-Entry {File jazz.editor.scheme "src" "jazz" "editor" "scheme" "text" "Scheme-Text-Preferences.jazz"} 1257476592
+    {Lisp-Entry "jazz.editor.scheme.text.Scheme-Text-Preferences" module #f 37 18 37 65 ("jazz")
+      {Lisp-Entry "Scheme-Text-Preferences" class #f 48 7 48 30 ("completions:" "Dark-Orange" "feature-style:" "quotation-style:" "named-string-style:" "delimited-string-style:" "string-style:" "boolean-style:" "number-style:" "specifier-style:" "Dark-Purple" "tag-style:" "Ochre" "char-style:" "keyword-style:" "Dark-Green" "declaration-style:" "Dark-Blue" "declaration-keyword-style:" "Text-Gray" "expr-comment-style:" "Purple" "comment-style:" "Dark-Red" "color:" "Text-Style-Preference" "title-style:" "title:" "Lisp-Text-Preferences")
+        {Lisp-Entry "get-categorized-properties" method #f 97 20 97 46 ("translate-keys?" "keyword-style" "declaration-style" "expr-comment-style" "comment-style" "title-style" "completions")}
+        {Lisp-Entry "get-row-instance" method #f 101 20 101 36 ("nextmethod" "else" "Boolean-Row" "translate-keys?" "Completion-List-Row" "completions" "Style-Row" "new" "keyword-style" "declaration-style" "expr-comment-style" "comment-style" "title-style" "field-name" "case" "property")}}}})
+"Scheme-Text-View"
+ ({Lisp-File-Entry {File jazz.editor.scheme "src" "jazz" "editor" "scheme" "text" "Scheme-Text-View.jazz"} 1257476593
+    {Lisp-Entry "jazz.editor.scheme.text.Scheme-Text-View" module #f 37 18 37 58 ("jazz")
+      {Lisp-Entry "Scheme-Text-View" class #f 50 7 50 23 ("tooltip?:" "Lisp-Text-View")
+        {Lisp-Entry "install" method #f 57 20 57 27 ("Red" "Walk-Fatal" "'Walk-Fatal" "Color" "frame:" "base:" "Reference" "'Reference" "name:" "Text-Style" "new" "add-style" "get-feature-style" "Feature" "'Feature" "get-quotation-style" "Quotation" "'Quotation" "get-named-string-style" "Named-String" "'Named-String" "get-delimited-string-style" "Delimited-String" "'Delimited-String" "get-string-style" "String" "'String" "get-boolean-style" "Boolean" "'Boolean" "get-char-style" "Char" "'Char" "get-specifier-style" "Specifier" "'Specifier" "get-tag-style" "Tag" "'Tag" "get-keyword-style" "Keyword" "'Keyword" "get-declaration-style" "Declaration" "'Declaration" "get-declaration-keyword-style" "Declaration-Keyword" "'Declaration-Keyword" "get-expr-comment-style" "Expr-Comment" "'Expr-Comment" "get-comment-style" "Comment" "'Comment" "get-title-style" "Title" "'Title" "add-style-preference" "default-style" "get-name" "default" "preferences" "pref" "let" "nextmethod" "rest")}
+        {Lisp-Entry "external-name" method #f 80 25 80 38 ("scheme-text" "'scheme-text" "rest")}
+        {Lisp-Entry "default-extension" method #f 84 20 84 37 ()}
+        {Lisp-Entry "extensions" method #f 88 20 88 30 ()}
+        {Lisp-Entry "new-syntax" method #f 92 20 92 30 ("Scheme-Syntax" "new")}
+        {Lisp-Entry "focus-actions" method #f 101 20 101 33 ("nextmethod" "scheme-text" "'scheme-text" "find-actions" "cons")}
+        {Lisp-Entry "get-context-menu" method #f 111 20 111 36 ("Scheme-Text-Menu" "new")}
+        {Lisp-Entry "default-preferences" definition #f 120 14 120 33 ("completions:" "Dark-Blue" "keyword-style:" "Dark-Green" "declaration-style:" "Dark-Orange" "expr-comment-style:" "Purple" "comment-style:" "Dark-Red" "color:" "Text-Style-Preference" "title-style:" "form>>" "instantiate")}
+        {Lisp-Entry "preferences" method #f 132 20 132 31 ("scheme-text" "documents" "get-preferences")}
+        {Lisp-Entry "declaration-style" method #f 136 20 136 37 ("Declaration" "'Declaration" "documented?")}
+        {Lisp-Entry "get-readtable" method #f 145 20 145 33 ("scheme-readtable")}
+        {Lisp-Entry "prepare-expressions" method #f 154 20 154 39 ("scheme" "'scheme" "list" "get-col" "col" "get-start" "get-row" "line" "get-string" "str" "get-locat-container" "container" "let" "range")}
+        {Lisp-Entry "need-definition?" method #f 167 11 167 27 ()}
+        {Lisp-Entry "explorer-class" method #f 176 20 176 34 ("Scheme-Explorer")}}
+      {Lisp-Entry "Scheme-Text-Menu" class #f 185 7 185 23 ("paste" "copy" "view" "french:" "english:" "Locales" "cut" "edit-references" "edit-definitions" "code-text" "Action" "action:" "Bitmap-Resource" "icon:" "title:" "evaluate" "name:" "Context-Menu")}}})
+"_scheme"
+ ({Lisp-File-Entry {File jazz.editor.scheme "src" "jazz" "editor" "scheme" "_scheme.jazz"} 1257476729
+    {Lisp-Entry "jazz.editor.scheme" module #f 37 8 37 26 ("jazz")}})
+"autoload"
+ ({Lisp-File-Entry {File jazz.editor.scheme "src" "jazz" "editor" "scheme" "autoload.jazz"} 1257476745
+    {Lisp-Entry "jazz.editor.scheme.autoload" module #f 37 18 37 45 ("jazz")}})
+"forms"
+ ({Lisp-File-Entry {File jazz.editor.scheme "src" "jazz" "editor" "scheme" "forms.jazz"} 1257478909
+    {Lisp-Entry "jazz.editor.scheme.forms" module #f 37 8 37 32 ("jazz")
+      {Lisp-Entry "repository" define ("form") 49 13 49 23 (":repository" "walk:" "0" "tabulate:" "repository" "dialect:")}
+      {Lisp-Entry "package" define ("form") 60 13 60 20 (":package" "walk:" "1" "tabulate:" "package" "dialect:")}
+      {Lisp-Entry "root" define ("form") 66 13 66 17 (":keyword" "walk:" "scheme" "dialect:")}
+      {Lisp-Entry "install" define ("form") 70 13 70 20 (":keyword" "walk:" "scheme" "dialect:")}
+      {Lisp-Entry "char-encoding" define ("form") 74 13 74 26 (":keyword" "walk:" "scheme" "dialect:")}
+      {Lisp-Entry "project" define ("form") 78 13 78 20 (":keyword" "walk:" "scheme" "dialect:")}
+      {Lisp-Entry "products" define ("form") 82 13 82 21 (":keyword" "walk:" "scheme" "dialect:")}
+      {Lisp-Entry "profiles" define ("form") 86 13 86 21 (":keyword" "walk:" "scheme" "dialect:")}
+      {Lisp-Entry "unit" define ("form") 96 13 96 17 (":unit" "walk:" "-1" "tabulate:" "public" "protected" "modifiers:" "declaration?:" "namespace?:" "scheme" "dialect:")}
+      {Lisp-Entry "module" define ("form") 110 13 110 19 (":module" "walk:" "-1" "tabulate:" "public" "protected" "modifiers:" "declaration?:" "namespace?:" "scheme" "dialect:")}
+      {Lisp-Entry "import" define ("form") 119 13 119 19 (":keyword" "walk:" "scheme" "dialect:")}
+      {Lisp-Entry "export" define ("form") 123 13 123 19 (":keyword" "walk:" "scheme" "dialect:")}
+      {Lisp-Entry "require" define ("form") 127 13 127 20 (":keyword" "walk:" "scheme" "dialect:")}
+      {Lisp-Entry "define" define ("form") 137 13 137 19 (":define" "walk:" "1" "tabulate:" "inner?:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "define-macro" define ("form") 144 13 144 25 (":define-macro" "walk:" "1" "tabulate:" "inner?:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "define-syntax" define ("form") 151 13 151 26 (":define-syntax" "walk:" "1" "tabulate:" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "modifiers:" "inner?:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "syntax-rules" define ("form") 159 13 159 25 ("1" "tabulate:")}
+      {Lisp-Entry "native" define ("form") 168 13 168 19 (":native" "walk:" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "modifiers:" "declaration?:")}
+      {Lisp-Entry "native-syntax" define ("form") 173 13 173 26 (":native" "walk:" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "modifiers:" "declaration?:")}
+      {Lisp-Entry "begin" define ("form") 184 13 184 18 (":begin" "walk:" "0" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "call/cc" define ("form") 189 13 189 20 ("0" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "case" define ("form") 193 13 193 17 ("1" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "cond-expand" define ("form") 197 13 197 24 (":cond-expand" "walk:" "scheme" "dialect:")}
+      {Lisp-Entry "do" define ("form") 201 13 201 15 ("2" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "if" define ("form") 205 13 205 15 ("2" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "lambda" define ("form") 209 13 209 19 ("1" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "let" define ("form") 213 13 213 16 ("1" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "let*" define ("form") 217 13 217 17 ("1" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "letrec" define ("form") 221 13 221 19 ("1" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "parameterize" define ("form") 225 13 225 25 ("1" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "receive" define ("form") 229 13 229 20 ("2" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "c-define-type" define ("form") 239 13 239 26 (":type" "walk:" "gambit" "dialect:")}
+      {Lisp-Entry "c-lambda" define ("form") 243 13 243 21 (":type" "walk:" "1" "tabulate:" "gambit" "dialect:")}
+      {Lisp-Entry "declare" define ("form") 248 13 248 20 (":declare" "walk:" "gambit" "dialect:")}
+      {Lisp-Entry "define-check-type" define ("form") 252 13 252 30 (":define" "walk:" "2" "tabulate:" "declaration?:" "gambit" "dialect:")}
+      {Lisp-Entry "define-fail-check-type" define ("form") 258 13 258 35 (":define" "walk:" "1" "tabulate:" "declaration?:" "gambit" "dialect:")}
+      {Lisp-Entry "define-library-type" define ("form") 264 13 264 32 (":define" "walk:" "declaration?:" "gambit" "dialect:")}
+      {Lisp-Entry "define-library-type-of-exception" define ("form") 269 13 269 45 (":define" "walk:" "1" "tabulate:" "declaration?:" "gambit" "dialect:")}
+      {Lisp-Entry "define-prim" define ("form") 275 13 275 24 (":define" "walk:" "1" "tabulate:" "declaration?:" "gambit" "dialect:")}
+      {Lisp-Entry "define-runtime-macro" define ("form") 281 13 281 33 (":define-macro" "walk:" "1" "tabulate:" "declaration?:" "gambit" "dialect:")}
+      {Lisp-Entry "define-runtime-syntax" define ("form") 287 13 287 34 (":define-macro" "walk:" "1" "tabulate:" "declaration?:" "gambit" "dialect:")}
+      {Lisp-Entry "define-type" define ("form") 293 13 293 24 (":define" "walk:" "1" "tabulate:" "declaration?:" "gambit" "dialect:")}
+      {Lisp-Entry "##define-macro" define ("form") 299 13 299 27 (":define-macro" "walk:" "1" "tabulate:" "declaration?:" "gambit" "dialect:")}
+      {Lisp-Entry "##include" define ("form") 305 13 305 22 (":keyword" "walk:" "gambit" "dialect:")}
+      {Lisp-Entry "##core#lambda" define ("form") 315 13 315 26 ("1" "tabulate:" "chicken" "dialect:")}
+      {Lisp-Entry "jazz.define" define ("form") 325 13 325 24 (":define" "walk:" "1" "tabulate:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-check-macro" define ("form") 331 13 331 36 (":define-macro" "walk:" "1" "tabulate:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-class" define ("form") 337 13 337 30 (":define-class" "walk:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-class-runtime" define ("form") 342 13 342 38 (":define-class" "walk:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-feature" define ("form") 347 13 347 32 (":define" "walk:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-generic" define ("form") 352 13 352 32 (":generic/specific" "walk:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-global" define ("form") 357 13 357 31 (":define-macro" "walk:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-literal" define ("form") 362 13 362 32 (":define" "walk:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-macro" define ("form") 367 13 367 30 (":define-macro" "walk:" "1" "tabulate:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-method" define ("form") 373 13 373 31 (":generic/specific" "walk:" "1" "tabulate:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-remote" define ("form") 379 13 379 31 (":define" "walk:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-setting" define ("form") 384 13 384 32 (":define-macro" "walk:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-special" define ("form") 389 13 389 32 (":define-macro" "walk:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-specific" define ("form") 394 13 394 33 (":generic/specific" "walk:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-syntax" define ("form") 399 13 399 31 (":define-macro" "walk:" "1" "tabulate:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-variable" define ("form") 405 13 405 33 (":define-macro" "walk:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-virtual" define ("form") 410 13 410 32 (":generic/specific" "walk:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-virtual-runtime" define ("form") 415 13 415 40 (":generic/specific" "walk:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-virtual-syntax" define ("form") 420 13 420 39 (":generic/specific" "walk:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-dialect" define ("form") 425 13 425 32 (":define" "walk:" "1" "tabulate:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-walker-special" define ("form") 431 13 431 39 (":define" "walk:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-walker-syntax" define ("form") 436 13 436 38 (":define" "walk:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "jazz.define-walker-macro" define ("form") 441 13 441 37 (":define" "walk:" "declaration?:" "scheme" "dialect:")}
+      {Lisp-Entry "instantiate" define ("form") 452 13 452 24 (":define-macro" "walk:" "scheme" "dialect:")}
+      {Lisp-Entry "specialize" define ("form") 456 13 456 23 (":define-macro" "walk:" "scheme" "dialect:")}
+      {Lisp-Entry "template" define ("form") 460 13 460 21 (":define-macro" "walk:" "1" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "%%assert" define ("form") 465 13 465 21 ("1" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "%%assertion" define ("form") 469 13 469 24 ("2" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "%%core-assert" define ("form") 473 13 473 26 ("1" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "%%core-assertion" define ("form") 477 13 477 29 ("2" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "%%debug-assert" define ("form") 481 13 481 27 ("1" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "%%debug-assertion" define ("form") 485 13 485 30 ("2" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "%%force-uniqueness" define ("form") 489 13 489 31 ("1" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "%%iterate-table" define ("form") 493 13 493 28 ("1" "tabulate:" "scheme" "dialect:")}
+      {Lisp-Entry "%%when" define ("form") 497 13 497 19 ("1" "tabulate:" "scheme" "dialect:")}}})

@@ -1,0 +1,345 @@
+"Bitmap"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "windows" "Bitmap.jazz"} 1257476301
+    {Lisp-Entry "jazz.graphic.platform.windows.Bitmap" module #f 37 18 37 54 ("jazz")
+      {Lisp-Entry "Bitmap" class #f 43 20 43 26 ("Object")
+        {Lisp-Entry "handle" slot #f 46 8 46 14 ()}
+        {Lisp-Entry "initialize" method #f 49 20 49 30 ("destroy-mandatory" "get-hdc" "CreateCompatibleBitmap" "handle~self" "set!" "not" "if" "nextmethod" "height" "height:" "width" "width:" "surface" "surface:" "handle" "handle:")}
+        {Lisp-Entry "destroy" method #f 60 20 60 27 ("nextmethod" "handle" "DeleteObject")}
+        {Lisp-Entry "get-handle" method #f 65 11 65 21 ("handle")}
+        {Lisp-Entry "get-size" method #f 69 18 69 26 ("BITMAP-bmHeight-ref" "BITMAP-bmWidth-ref" "Dimension" "new" "BITMAP-sizeof" "handle" "GetObject" "BITMAP-make" "info" "let")}}}})
+"Client-Surface"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "Client-Surface.jazz"} 1257476328
+    {Lisp-Entry "jazz.graphic.Client-Surface" module #f 38 18 38 45 ("jazz")
+      {Lisp-Entry "Client-Surface" class #f 44 20 44 34 ("initialize" "Surface")
+        {Lisp-Entry "window" slot #f 47 8 47 14 ()}
+        {Lisp-Entry "initialize" method #f 50 20 50 30 ("get-handle" "GetDC" "nextmethod" "window" "set!" "wnd")}
+        {Lisp-Entry "destroy-hdc" method #f 56 11 56 22 ("hdc" "window" "get-handle" "ReleaseDC")}}}})
+"Color"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "Color.jazz"} 1257476331
+    {Lisp-Entry "jazz.graphic.Color" module #f 37 18 37 36 ("jazz")
+      {Lisp-Entry "Color" class #f 43 7 43 12 ("Object")
+        {Lisp-Entry "name" slot #f 46 8 46 12 ()}
+        {Lisp-Entry "get-name" accessor #f 46 21 46 29 ()}
+        {Lisp-Entry "red" slot #f 47 8 47 11 ()}
+        {Lisp-Entry "get-red" accessor #f 47 21 47 29 ()}
+        {Lisp-Entry "green" slot #f 48 8 48 13 ()}
+        {Lisp-Entry "get-green" accessor #f 48 21 48 29 ()}
+        {Lisp-Entry "blue" slot #f 49 8 49 12 ()}
+        {Lisp-Entry "get-blue" accessor #f 49 21 49 29 ()}
+        {Lisp-Entry "alpha" slot #f 50 8 50 13 ()}
+        {Lisp-Entry "get-alpha" accessor #f 50 24 50 32 ()}
+        {Lisp-Entry "set-alpha" accessor #f 50 24 50 32 ()}
+        {Lisp-Entry "initialize" method #f 53 20 53 30 ("alpha~self" "blue~self" "green~self" "red~self" "name~self" "set!" "nextmethod" "alpha" "alpha:" "blue" "blue:" "green" "green:" "red" "red:" "name" "name:")}
+        {Lisp-Entry "copy-object" method #f 66 20 66 31 ("alpha" "alpha:" "blue" "blue:" "green" "green:" "red" "red:" "name" "name:" "Color" "new" "deep?")}
+        {Lisp-Entry "compare-object" method #f 75 20 75 34 (":not-equal" "else" ":equal" "alpha" "blue" "green" "get-ref" "red" "and" "get-name" "=" "name" "if" ":incompatible" "Color" "is-not?" "cond" "target")}
+        {Lisp-Entry "print" method #f 89 20 89 25 ("blue" "green" "red" "alpha" "self" "class-of" "type-name" "identifier-name" "format" "name" "if" "readably" "printer")}
+        {Lisp-Entry "white?" method #f 108 18 108 24 ("alpha" "not" "blue" "green" "255" "red" "=" "and")}
+        {Lisp-Entry "parse-string" method #f 121 23 121 35 ("blue:" "green:" "red:" "integer?" "blue" "green" "red" "bind" "3" "dispatch" "Constants" "memq?" "car" "symbol?" "1" "=" "and" "self" "type:" "object:" "Convertion-Error" "new" "signal" "lambda" "err" "length" "len" "read-string-content" "lst" "let*" "empty-string?" "if" "string")}
+        {Lisp-Entry "present" method #f 139 18 139 25 ("alpha" "blue" "green" "red" "format" "->string" "name" "if")}
+        {Lisp-Entry "determine-color" method #f 154 18 154 33 ("self" "else" "get-opposite" "Light-Gray" "'Light-Gray" "registered-color" "not" "cond" "selected?" "enabled?")}
+        {Lisp-Entry "get-opposite" method #f 161 18 161 30 ("else" "Gray" "'Gray" "Dark-Gray" "Yellow" "'Yellow" "registered-color" "Dark-Red" "name" "case")}
+        {Lisp-Entry "rgb->hls" method #f 169 18 169 26 ("rgb" "colorref:" "Color" "new" "ref" "ColorRGBToHLS" "saturation" "lightness" "hue" "receive")}
+        {Lisp-Entry "hls->rgb" method #f 174 18 174 26 ("colorref:" "Color" "new" "blue-part" "green-part" "red-part" "ColorHLSToRGB" "ref" "let")}
+        {Lisp-Entry "color-cycle" method #f 185 23 185 34 ("hls->rgb" "blue:" "green:" "red:" "Color" "new" "hls" "round" "+" "n" "lambda" "map" "blue-part" "sat" "green-part" "lig" "red-part" "hue" "rgb->hls" "get-colorref" "ref" "240" "/" "inc" "*" "cardinality" "cycle-naturals" "seq" "let*" "subcycle" "cycle" "base")}}}})
+"DC-Snapshot"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "DC-Snapshot.jazz"} 1257476360
+    {Lisp-Entry "jazz.graphic.DC-Snapshot" module #f 37 18 37 42 ("jazz")
+      {Lisp-Entry "DC-Snapshot" class #f 43 20 43 31 ("Viewable" "Object")}
+      {Lisp-Entry "Snapshot-Size" constant #f 47 10 47 23 ("200" "Dimension")}
+      {Lisp-Entry "DC-Snapshot" class #f 52 20 52 31 ("Viewable" "Object")
+        {Lisp-Entry "memory-dc" slot #f 55 8 55 17 ()}
+        {Lisp-Entry "initialize" method #f 58 11 58 21 ("Snapshot-Size" "destination-size:" "bit-blit" "size:" "Memory-Surface" "new" "memory-dc" "set!" "nextmethod" "size" "surface")}
+        {Lisp-Entry "get-title" method #f 65 11 65 20 ()}
+        {Lisp-Entry "get-viewer-class" method #f 69 11 69 27 ("DC-Viewer")}
+        {Lisp-Entry "get-memory-dc" method #f 73 18 73 31 ("memory-dc")}}
+      {Lisp-Entry "DC-Viewer" class #f 83 7 83 16 ("entry" "style:" "edge" "border-type:" "202" "Dimension" "size:" "center" "layout-type:" "Layout-View")
+        {Lisp-Entry "client" property #f 92 12 92 18 ()}
+        {Lisp-Entry "get-client" accessor #f 92 29 92 37 ()}
+        {Lisp-Entry "set-client" accessor #f 92 29 92 37 ()}}
+      {Lisp-Entry "DC-Renderer" class #f 101 7 101 18 ("View")
+        {Lisp-Entry "client" property #f 104 12 104 18 ()}
+        {Lisp-Entry "draw" method #f 107 11 107 15 ("get-size" "destination-size:" "size:" "bit-blit" "client" "get-memory-dc" "memory-dc" "Snapshot-Size" "size" "let" "lv" "lh" "context" "surface")}}}})
+"Font"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "font" "Font.jazz"} 1257476417
+    {Lisp-Entry "jazz.graphic.font.Font" module #f 37 18 37 40 ("jazz")
+      {Lisp-Entry "Font" class #f 45 7 45 11 ("initialize" "Object")
+        {Lisp-Entry "name" slot #f 48 8 48 12 ()}
+        {Lisp-Entry "get-name" accessor #f 48 41 48 49 ()}
+        {Lisp-Entry "font-name" slot #f 49 8 49 17 ()}
+        {Lisp-Entry "get-font-name" accessor #f 49 41 49 49 ()}
+        {Lisp-Entry "point-size" slot #f 50 8 50 18 ()}
+        {Lisp-Entry "get-point-size" accessor #f 50 41 50 49 ()}
+        {Lisp-Entry "color" slot #f 51 8 51 13 ()}
+        {Lisp-Entry "get-color" accessor #f 51 41 51 49 ()}
+        {Lisp-Entry "bold?" slot #f 52 8 52 13 ()}
+        {Lisp-Entry "get-bold?" accessor #f 52 41 52 49 ()}
+        {Lisp-Entry "italic?" slot #f 53 8 53 15 ()}
+        {Lisp-Entry "get-italic?" accessor #f 53 41 53 49 ()}
+        {Lisp-Entry "underline?" slot #f 54 8 54 18 ()}
+        {Lisp-Entry "get-underline?" accessor #f 54 41 54 49 ()}
+        {Lisp-Entry "monospace?" slot #f 55 8 55 18 ()}
+        {Lisp-Entry "get-monospace?" accessor #f 55 41 55 49 ()}
+        {Lisp-Entry "hint-style" slot #f 56 8 56 18 ()}
+        {Lisp-Entry "handle" slot #f 57 8 57 14 ()}
+        {Lisp-Entry "source" slot #f 58 8 58 14 ()}
+        {Lisp-Entry "metrics" slot #f 59 8 59 15 ()}
+        {Lisp-Entry "all-widths" slot #f 60 8 60 18 ()}
+        {Lisp-Entry "cairo-font" slot #f 61 8 61 18 ()}
+        {Lisp-Entry "get-cairo-font" accessor #f 61 41 61 49 ()}
+        {Lisp-Entry "scaled-font" slot #f 62 8 62 19 ()}
+        {Lisp-Entry "get-scaled-font" accessor #f 62 41 62 49 ()}
+        {Lisp-Entry "initialize" method #f 65 20 65 30 ("cairo-font" "create-cairo-scaled-font" "scaled-font" "create-cairo-font-handle" "cairo-font~self" "create-font-handle" "handle~self" "hint-style~self" "monospace?~self" "underline?~self" "italic?~self" "bold?~self" "color~self" "point-size~self" "font-name~self" "name~self" "set!" "nextmethod" "hint-style" "hint-style:" "monospace?" "monospace?:" "underline?" "underline?:" "italic?" "italic?:" "bold?" "bold?:" "color" "color:" "point-size" "point-size:" "font-name" "font-name:" "logfont" "logfont:" "stock" "stock:" "name" "name:")}
+        {Lisp-Entry "create-cairo-scaled-font" method #f 91 11 91 35 ("cairo_font_options_destroy" "cairo_matrix_t-free" "cairo_scaled_font_create" "prog1" "cairo_matrix_init_identity" "cairo_matrix_init_scale" "'full" "'slight" "bold?" "if" "hint-style" "either" "cairo_font_options_set_hint_style" "CAIRO_ANTIALIAS_SUBPIXEL" "cairo_font_options_set_antialias" "cairo_font_options_create" "options" "ctm" "cairo_matrix_t-make" "matrix" "calculate-height" "height" "let" "CAIRO_HINT_STYLE_FULL" "full" "CAIRO_HINT_STYLE_MEDIUM" "medium" "CAIRO_HINT_STYLE_SLIGHT" "slight" "CAIRO_HINT_STYLE_NONE" "none" "CAIRO_HINT_STYLE_DEFAULT" "default" "case" "style" "cairo-hint-style" "define" "point-size" "font-face")}
+        {Lisp-Entry "calculate-height" definition #f 116 19 116 35 ("72" "96" "*" "/" "exact->inexact" "point-size")}
+        {Lisp-Entry "calculate-height" definition #f 119 19 119 35 ("point-size")}
+        {Lisp-Entry "destroy" method #f 123 20 123 27 ("nextmethod" "handle" "destroy-font-handle" "cairo-font" "destroy-cairo-font-handle" "scaled-font" "cairo_scaled_font_destroy")}
+        {Lisp-Entry "compare-object" method #f 130 20 130 34 (":not-equal" "else" "get-handle" "handle" "get-underline?" "underline?" "get-italic?" "italic?" "get-bold?" "bold?" "get-color" "color" "get-point-size" "point-size" "get-font-name" "font-name" "direct" "'direct" "source" ":equal" "get-name" "=" "name" "and" ":incompatible" "Font" "is-not?" "cond" "target")}
+        {Lisp-Entry "print" method #f 149 20 149 25 ("lambda" "print-unreadable" "else" "monospace?" "underline?" "italic?" "bold?" "color" "point-size" "font-name" "self" "class-of" "type-name" "identifier-name" "format" "name" "cond" "readably" "printer")}
+        {Lisp-Entry "get-handle" method #f 175 11 175 21 ("handle")}
+        {Lisp-Entry "Work-DC" definition #f 184 14 184 21 ()}
+        {Lisp-Entry "work-dc" definition #f 188 15 188 22 ("Memory-Surface" "new" "set!" "Work-DC" "unless")}
+        {Lisp-Entry "text-extent" method #f 194 18 194 29 ("get-text-extent" "self" "work-dc" "set-font" "text")}
+        {Lisp-Entry "text-width" method #f 199 18 199 28 ("get-text-width" "self" "work-dc" "set-font" "text")}
+        {Lisp-Entry "font-height" method #f 204 18 204 29 ("get-font-height" "self" "work-dc" "set-font")}
+        {Lisp-Entry "get-metrics" method #f 214 18 214 29 ("get-text-metrics" "Font-Metrics" "new" "self" "work-dc" "set-font" "begin" "set!" "metrics" "unless")}
+        {Lisp-Entry "get-all-widths" method #f 223 18 223 32 ("get-char-widths" "self" "work-dc" "set-font" "begin" "set!" "all-widths" "unless")}
+        {Lisp-Entry "get-widths" method #f 232 18 232 28 ("get-char-widths" "self" "work-dc" "set-font" "rest")}
+        {Lisp-Entry "get-char-width" method #f 237 18 237 32 ("get-char-width" "self" "work-dc" "set-font" "get-all-widths" "vector-ref" "256" "<" "if" "char->integer" "n" "let" "c")}
+        {Lisp-Entry "extend-font-name" method #f 250 18 250 34 ("monospace?" "monospace?:" "underline?" "underline?:" "italic?" "italic?:" "bold?" "bold?:" "point-size" "point-size:" "font-name:" "Font" "new" "name")}
+        {Lisp-Entry "extend-point-size" method #f 260 18 260 35 ("monospace?" "monospace?:" "underline?" "underline?:" "italic?" "italic?:" "bold?" "bold?:" "point-size:" "font-name" "font-name:" "Font" "new" "point-size")}
+        {Lisp-Entry "toggle-bold" method #f 270 18 270 29 ("monospace?" "monospace?:" "underline?" "underline?:" "italic?" "italic?:" "bold?" "not" "bold?:" "point-size" "point-size:" "font-name" "font-name:" "Font" "new")}
+        {Lisp-Entry "toggle-italic" method #f 280 18 280 31 ("monospace?" "monospace?:" "underline?" "underline?:" "italic?" "not" "italic?:" "bold?" "bold?:" "point-size" "point-size:" "font-name" "font-name:" "Font" "new")}
+        {Lisp-Entry "toggle-underline" method #f 290 18 290 34 ("monospace?" "monospace?:" "underline?" "not" "underline?:" "italic?" "italic?:" "bold?" "bold?:" "point-size" "point-size:" "font-name" "font-name:" "Font" "new")}}}})
+"Font-Metrics"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "Font-Metrics.jazz"} 1257476416
+    {Lisp-Entry "jazz.graphic.Font-Metrics" module #f 37 18 37 43 ("jazz")
+      {Lisp-Entry "Font-Metrics" class #f 43 7 43 19 ("Object")
+        {Lisp-Entry "metrics" slot #f 46 8 46 15 ()}
+        {Lisp-Entry "initialize" method #f 49 20 49 30 ("metrics~self" "set!" "nextmethod" "metrics")}
+        {Lisp-Entry "destroy" method #f 54 20 54 27 ("nextmethod" "metrics" "cairo_font_extents_t-free")}
+        {Lisp-Entry "print" method #f 58 20 58 25 ("lambda" "self" "print-unreadable" "readably" "printer")}
+        {Lisp-Entry "get-height" method #f 71 22 71 32 ("metrics" "cairo_font_extents_t-height-ref" "fxround")}
+        {Lisp-Entry "get-height" method #f 75 21 75 31 ("metrics" "cairo_font_extents_t-height-ref" "fxceiling" "1" "+")}
+        {Lisp-Entry "get-ascent" method #f 79 18 79 28 ("metrics" "cairo_font_extents_t-ascent-ref" "fxround")}
+        {Lisp-Entry "get-max-char-width" method #f 83 18 83 36 ("metrics" "cairo_font_extents_t-max_x_advance-ref" "fxround")}}}})
+"Memory-Surface"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "Memory-Surface.jazz"} 1257476497
+    {Lisp-Entry "jazz.graphic.Memory-Surface" module #f 37 18 37 45 ("jazz")
+      {Lisp-Entry "Memory-Surface" class #f 44 7 44 21 ("Surface")
+        {Lisp-Entry "size" slot #f 47 8 47 12 ()}
+        {Lisp-Entry "get-size" accessor #f 47 20 47 28 ()}
+        {Lisp-Entry "initialize" method #f 50 20 50 30 ("size~self" "set!" "nextmethod" "get-height" "get-width" "0" "cairo_image_surface_create" "surface" "let*" "10" "Dimension" "size" "size:" "compatibility-dc")}
+        {Lisp-Entry "renew-context" method #f 56 19 56 32 ("surface" "cairo_create" "context" "set!" "destroy-context")}}}})
+"Picture"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "windows" "Picture.jazz"} 1257476525
+    {Lisp-Entry "jazz.graphic.platform.windows.Picture" module #f 37 18 37 55 ("jazz")
+      {Lisp-Entry "Picture" class #f 43 7 43 14 ("Surface")}
+      {Lisp-Entry "Picture" class #f 49 7 49 14 ("Surface")
+        {Lisp-Entry "initialize" method #f 52 11 52 21 ("destroy-mandatory" "10000" "0" "Rect" "setup-clipper" "CreateEnhMetaFile" "nextmethod" "NULL" "parse" "if" "filename" "let" "file" "file:")}
+        {Lisp-Entry "destroy" method #f 59 11 59 18 ("nextmethod" "set!" "CloseEnhMetaFile" "hdc" "not" "unless")}
+        {Lisp-Entry "get-metafile" method #f 66 18 66 30 ("set!" "CloseEnhMetaFile" "prog1" "hdc" "not" "unless")}
+        {Lisp-Entry "delete-metafile" method #f 72 23 72 38 ("DeleteEnhMetaFile" "metafile")}}}})
+"Picture-Job"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "windows" "Picture-Job.jazz"} 1257476525
+    {Lisp-Entry "jazz.graphic.platform.windows.Picture-Job" module #f 37 18 37 59 ("jazz")
+      {Lisp-Entry "Picture-Job" class #f 40 20 40 31 ("Object")}
+      {Lisp-Entry "Picture-Job" class #f 44 20 44 31 ("Print-Job")
+        {Lisp-Entry "directory" slot #f 47 8 47 17 ()}
+        {Lisp-Entry "filename" slot #f 48 8 48 16 ()}
+        {Lisp-Entry "initialize" method #f 51 11 51 21 ("nextmethod" "apply" "filename~self" "directory~self" "set!" "rest" "resolution" "page-setup" "client" "filename" "directory")}
+        {Lisp-Entry "start-page" method #f 62 11 62 21 ("1" "+" "filename" "format" "directory" "new-file" "file:" "Picture" "new" "surface" "set!" "no")}
+        {Lisp-Entry "end-page" method #f 66 11 66 19 ("Picture" "delete-metafile" "close" "surface" "get-metafile" "metafile" "let" "no")}}}})
+"Region"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "carbon" "Region.jazz"} 1257476556
+    {Lisp-Entry "jazz.graphic.platform.carbon.Region" module #f 37 18 37 53 ("jazz")
+      {Lisp-Entry "Region" class #f 44 7 44 13 ("Object")
+        {Lisp-Entry "handle" slot #f 47 8 47 14 ()}
+        {Lisp-Entry "get-handle" accessor #f 47 26 47 34 ()}
+        {Lisp-Entry "rectangles" slot #f 48 8 48 18 ()}
+        {Lisp-Entry "get-rectangles" accessor #f 48 26 48 34 ()}
+        {Lisp-Entry "initialize" method #f 51 20 51 30 ("destroy-mandatory" "0" "NewRgn" "else" "Rect" "new" "list" "rectangles" "get-bottom" "get-right" "get-top" "get-left" "RectRgn" "handle~self" "set!" "cond" "nextmethod" "bottom" "bottom:" "right" "right:" "top" "top:" "left" "left:" "rect" "rect:" "handle" "handle:")}
+        {Lisp-Entry "destroy" method #f 67 20 67 27 ("nextmethod" "handle" "DisposeRgn")}
+        {Lisp-Entry "offset!" method #f 72 18 72 25 ("handle" "OffsetRgn" "v" "h")}
+        {Lisp-Entry "combine!" method #f 76 18 76 26 ("get-rectangles" "append" "rectangles" "set!" "error" "else" "xor" "get-handle" "handle" "UnionRgn" "or" "case" "mode" "region")}
+        {Lisp-Entry "get-box" method #f 84 18 84 25 ("Rect" "new" "handle" "GetRegionBounds" "r" "b" "t" "l" "receive")}}}}
+  {Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "windows" "Region.jazz"} 1257476557
+    {Lisp-Entry "jazz.graphic.platform.windows.Region" module #f 37 18 37 54 ("jazz")
+      {Lisp-Entry "Region" class #f 43 7 43 13 ("Object")
+        {Lisp-Entry "handle" slot #f 46 8 46 14 ()}
+        {Lisp-Entry "get-handle" accessor #f 46 26 46 34 ()}
+        {Lisp-Entry "rectangles" slot #f 47 8 47 18 ()}
+        {Lisp-Entry "get-rectangles" accessor #f 47 26 47 34 ()}
+        {Lisp-Entry "initialize" method #f 50 20 50 30 ("destroy-mandatory" "0" "else" "Rect" "new" "CreateRectRgn" "list" "rectangles" "RECT-free" "CreateRectRgnIndirect" "prog1" "rect->RECT" "with" "handle~self" "set!" "cond" "nextmethod" "bottom" "bottom:" "right" "right:" "top" "top:" "left" "left:" "rect" "rect:" "handle" "handle:")}
+        {Lisp-Entry "destroy" method #f 68 20 68 27 ("nextmethod" "handle" "DeleteObject")}
+        {Lisp-Entry "offset!" method #f 73 18 73 25 ("handle" "OffsetRgn" "v" "h")}
+        {Lisp-Entry "combine!" method #f 77 18 77 26 ("get-rectangles" "append" "rectangles" "set!" "get-combine-mode" "get-handle" "handle" "CombineRgn" "mode" "region")}
+        {Lisp-Entry "get-combine-mode" method #f 82 11 82 27 ("error" "else" "RGN_DIFF" "diff" "RGN_XOR" "xor" "RGN_OR" "or" "RGN_AND" "and" "case" "mode")}
+        {Lisp-Entry "get-box" method #f 91 18 91 25 ("RECT-free" "RECT->rect" "prog1" "handle" "GetRgnBox" "RECT-make" "rect" "with")}}}}
+  {Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "x11" "Region.jazz"} 1257476555
+    {Lisp-Entry "jazz.graphic.platform.x11.Region" module #f 37 18 37 50 ("jazz")
+      {Lisp-Entry "Region" class #f 43 7 43 13 ("Object")
+        {Lisp-Entry "rectangles" slot #f 46 8 46 18 ()}
+        {Lisp-Entry "get-rectangles" accessor #f 46 26 46 34 ()}
+        {Lisp-Entry "initialize" method #f 49 20 49 30 ("destroy-mandatory" "0" "else" "Rect" "new" "list" "rectangles" "set!" "cond" "nextmethod" "bottom" "bottom:" "right" "right:" "top" "top:" "left" "left:" "rect" "rect:")}
+        {Lisp-Entry "destroy" method #f 60 20 60 27 ("nextmethod")}
+        {Lisp-Entry "offset!" method #f 64 18 64 25 ("get-bottom" "get-right" "get-top" "get-left" "+" "Rect" "new" "rect" "lambda" "map" "rectangles" "set!" "v" "h")}
+        {Lisp-Entry "combine!" method #f 75 18 75 26 ("get-rectangles" "append" "rectangles" "set!" "mode" "region")}
+        {Lisp-Entry "get-box" method #f 79 18 79 25 ("get-box" "'get-box" "unimplemented")}}}})
+"Surface"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "Surface.jazz"} 1257476616
+    {Lisp-Entry "jazz.graphic.Surface" module #f 38 18 38 38 ("jazz")
+      {Lisp-Entry "Surface" class #f 52 7 52 14 ("0" "Rect" "new" "initialize" "Object")
+        {Lisp-Entry "clipper" slot #f 55 8 55 15 ()}
+        {Lisp-Entry "surface" slot #f 56 8 56 15 ()}
+        {Lisp-Entry "get-surface" accessor #f 56 61 56 69 ()}
+        {Lisp-Entry "context" slot #f 57 8 57 15 ()}
+        {Lisp-Entry "get-context" accessor #f 57 61 57 69 ()}
+        {Lisp-Entry "font" slot #f 58 8 58 12 ()}
+        {Lisp-Entry "dash-array" slot #f 59 8 59 18 ()}
+        {Lisp-Entry "empty-array" slot #f 60 8 60 19 ()}
+        {Lisp-Entry "glyph-array" slot #f 61 8 61 19 ()}
+        {Lisp-Entry "array-length" slot #f 62 8 62 20 ()}
+        {Lisp-Entry "landscape?" slot #f 63 8 63 18 ()}
+        {Lisp-Entry "landscape-rotation" slot #f 64 8 64 26 ()}
+        {Lisp-Entry "landscape-page" slot #f 65 8 65 22 ()}
+        {Lisp-Entry "initialize" method #f 68 20 68 30 ("destroy-mandatory" "cairo_create" "context~self" "surface~self" "set!" "nextmethod" "rest" "surface")}
+        {Lisp-Entry "destroy" method #f 75 20 75 27 ("nextmethod" "destroy-context" "destroy-surface" "destroy-glyph-array")}
+        {Lisp-Entry "destroy-glyph-array" method #f 82 11 82 30 ("set!" "glyph-array-free" "glyph-array" "when")}
+        {Lisp-Entry "destroy-surface" method #f 88 11 88 26 ("set!" "cairo_status_to_string" "error" "0" "/=" "cairo-surface-status" "err" "let" "cairo_surface_destroy" "surface" "when")}
+        {Lisp-Entry "destroy-context" method #f 98 11 98 26 ("set!" "cairo_status_to_string" "error" "0" "/=" "cairo-status" "err" "let" "cairo_destroy" "context" "when")}
+        {Lisp-Entry "cairo-finish" method #f 108 18 108 30 ("surface" "cairo_surface_finish")}
+        {Lisp-Entry "show-page" method #f 112 18 112 27 ("surface" "cairo_surface_show_page")}
+        {Lisp-Entry "logical->device" method #f 130 18 130 33 ("context" "cairo_user_to_device" "shape")}
+        {Lisp-Entry "device->logical" method #f 134 18 134 33 ("get-v" "get-h" "get-bottom" "get-right" "pt2" "get-top" "get-left" "new" "pt1" "let" "Rect" "context" "cairo_device_to_user" "Point" "typecase" "shape")}
+        {Lisp-Entry "setup-clipper" method #f 149 18 149 31 ("set-clipper" "clipper")}
+        {Lisp-Entry "get-clipper" method #f 153 18 153 29 ("get-bottom" "get-right" "get-top" "clipper" "get-left" "Rect" "new")}
+        {Lisp-Entry "get-logical-clipper" method #f 160 18 160 37 ("get-clipper" "device->logical")}
+        {Lisp-Entry "set-clipper" method #f 164 18 164 29 ("select-clipper" "set-bottom" "set-right" "set-top" "clipper" "set-left" "1" "car" "get-bottom" "get-right" "get-top" "get-left" "fixnum?" "and" "unless" "rect")}
+        {Lisp-Entry "select-clipper" method #f 177 18 177 32 ("cairo_clip" "draw-rectangle" "context" "cairo_reset_clip" "rect")}
+        {Lisp-Entry "with-clipper" method #f 183 18 183 30 ("when" "set!" "set-clipper" "begin" "unwind-protect" "selected?" "let" "rect-intersection" "new-clipper" "get-clipper" "old-clipper" "let*" "proc" "clip-rect")}
+        {Lisp-Entry "with-landscape" method #f 201 18 201 32 ("landscape-page" "landscape-rotation" "set!" "begin" "unwind-protect" "landscape?" "preserved" "let" "proc" "page" "rotation")}
+        {Lisp-Entry "set-transform" method #f 224 18 224 31 ("cairo_translate" "set-transform-unscaled" "values" "cairo_matrix_t-free" "cairo_set_matrix" "cairo_matrix_t-y0-set!" "exact->inexact" "cairo_matrix_t-x0-set!" "cairo_matrix_t-yy-set!" "cairo_matrix_t-yx-set!" "cairo_matrix_t-xy-set!" "0.0" "cairo_matrix_t-xx-set!" "set-clipper" "rect-intersection" "new-clipper" "get-clipper" "old-clipper" "counterclockwise" "Rect" "new" "clipper" "cairo_identity_matrix" "context" "cairo_get_matrix" "new-matrix" "cairo_matrix_t-make" "old-matrix" "let" "cheight" "fxceiling" "cwidth" "cv" "fxround" "ch" "get-width" "dy" "else" "landscape-page" "cast" "get-height" "clockwise" "landscape-rotation" "case" "*" "+" "landscape?" "not" "if" "dx" "dv" "-" "dh" "let*" "set-transform-scaled" "define" "sc?" "sc" "sv" "sh" "height" "width" "lv" "lh")}
+        {Lisp-Entry "with-transform" method #f 280 18 280 32 ("cairo_matrix_t-free" "cairo_set_matrix" "set-clipper" "context" "cairo_identity_matrix" "set-transform" "old-matrix" "old-clipper" "receive" "proc" "sc?" "sc" "sv" "sh" "height" "width" "lv" "lh")}
+        {Lisp-Entry "set-text-color" method #f 294 18 294 32 ("set-color" "color")}
+        {Lisp-Entry "get-char-width" method #f 298 18 298 32 ("cairo_text_extents_t-free" "cairo_glyph_t-free" "cairo_text_extents_t-x_advance-ref" "fxround" "width" "1" "context" "cairo_glyph_extents" "cairo_glyph_t-y-set!" "0." "cairo_glyph_t-x-set!" "cairo_glyph_t-index-set!" "surface" "cairo_glyph_index" "ch" "font" "get-handle" "handle" "cairo_glyph_t-make" "gly" "cairo_text_extents_t-make" "ext" "let" "n")}
+        {Lisp-Entry "get-char-widths" method #f 313 18 313 33 ("cairo_text_extents_t-free" "cairo_glyph_t-free" "cairo_text_extents_t-x_advance-ref" "fxround" "vector-set!" "context" "cairo_glyph_extents" "cairo_glyph_t-y-set!" "0." "cairo_glyph_t-x-set!" "cairo_glyph_t-index-set!" "surface" "cairo_glyph_index" "ch" "do" "to" "from" "i" "for" "loop" "1" "-" "+" "make-vector" "vec" "font" "get-handle" "handle" "cairo_glyph_t-make" "gly" "cairo_text_extents_t-make" "ext" "let" "255" "last" "last:" "0" "first" "first:")}
+        {Lisp-Entry "get-text-extent" method #f 331 18 331 33 ("cairo_font_extents_t-free" "cairo_text_extents_t-free" "cairo_font_extents_t-height-ref" "cairo_text_extents_t-x_advance-ref" "fxround" "Dimension" "new" "prog1" "context" "cairo_text_extents" "get-text-metrics" "metrics" "cairo_text_extents_t-make" "extents" "with" "text")}
+        {Lisp-Entry "get-font-height" method #f 342 18 342 33 ("cairo_font_extents_t-free" "cairo_font_extents_t-height-ref" "fxround" "prog1" "context" "cairo_font_extents" "cairo_font_extents_t-make" "extents" "with")}
+        {Lisp-Entry "get-text-metrics" method #f 349 18 349 34 ("context" "cairo_font_extents" "cairo_font_extents_t-make" "info" "let")}
+        {Lisp-Entry "get-text-width" method #f 355 18 355 32 ("cairo_text_extents_t-free" "cairo_text_extents_t-x_advance-ref" "fxceiling" "prog1" "context" "cairo_text_extents" "cairo_text_extents_t-make" "extents" "with" "text")}
+        {Lisp-Entry "draw-text" method #f 362 18 362 27 ("-" "cairo_text_extents_t-free" "cairo_font_extents_t-free" "cairo_show_glyphs" "cairo_text_extents_t-x_advance-ref" "1" "cairo_glyph_extents" "cairo_glyph_t-y-set!" "cast" "cairo_glyph_t-x-set!" "cairo_glyph_t-index-set!" "element" "char->integer" "surface" "cairo_glyph_index" "ch" "glyph-array-ref" "glyph" "when" "0" "i" "iter" "cairo_font_extents_t-ascent-ref" "fxround" "+" "y" "font" "get-handle" "handle" "context" "cairo_font_extents" "2" "*" "glyph-array-make" "glyph-array" "set!" "destroy-glyph-array" "begin" "array-length" "<" "if" "cardinality" "len" "cairo_text_extents_t-make" "extents" "cairo_font_extents_t-make" "font-ext" "uph" "let" "rest" "str" "v" "h")}
+        {Lisp-Entry "draw-substring" method #f 392 11 392 25 ("-" "cairo_text_extents_t-free" "cairo_font_extents_t-free" "cairo_show_glyphs" "set-text-color" "cairo_font_extents_t-height-ref" "Rect" "new" "fill-rect" "cairo_text_extents_t-x_advance-ref" "1" "cairo_glyph_extents" "cairo_glyph_t-y-set!" "cast" "cairo_glyph_t-x-set!" "cairo_glyph_t-index-set!" "element" "char->integer" "surface" "cairo_glyph_index" "ch" "glyph-array-ref" "glyph" "when" "0" "i" "iter" "cairo_font_extents_t-ascent-ref" "fxround" "+" "y" "font" "get-handle" "handle" "context" "cairo_font_extents" "2" "*" "glyph-array-make" "glyph-array" "set!" "destroy-glyph-array" "begin" "array-length" "<" "if" "cardinality" "len" "cairo_text_extents_t-make" "extents" "cairo_font_extents_t-make" "font-ext" "uph" "let" "highlight-color" "color" "str" "v" "h")}
+        {Lisp-Entry "draw-tabbed-text" method #f 425 18 425 34 ("-" "cdr" "1" "car" "cast" "<=" "while" "subseq!" "draw-substring" "+" "set!" "/=" "element" "eqv?" "when" "cardinality" "below" "from" "i" "for" "loop" "stops" "0" "beginning" "uph" "let" "highlight-color" "color" "origin" "tabs" "str" "v" "h")}
+        {Lisp-Entry "fill-region" method #f 447 18 447 29 ("fill-rect" "do" "get-rectangles" "in" "rect" "for" "loop" "color" "region")}
+        {Lisp-Entry "gradient-fill" method #f 452 18 452 31 ("cairo_pattern_destroy" "fill" "context" "cairo_set_source" "draw-rectangle" "add-color-stop" "color" "offset" "bind" "stop" "lambda" "for-each" "vertical" "create-linear-pattern" "case" "pattern" "vertmid" "2" "-" "fxfloor/" "horzmid" "get-bottom" "bottom" "get-right" "right" "get-top" "top" "get-left" "left" "let*" "horizontal" "'horizontal" "direction" "direction:" "stops" "rect")}
+        {Lisp-Entry "ellipse" method #f 474 18 474 25 ("fill" "stroke-preserve" "stroke" "not" "self" "set-color" "Color" "is?" "if" "when" "M_PI" "*" "1" "0" "cast" "cairo_arc" "cairo_scale" "context" "cairo_translate" "ty" "2" "/" "+" "exact->inexact" "tx" "h" "-" "w" "get-bottom" "bottom" "get-top" "top" "get-right" "right" "get-left" "left" "let" "inside" "outside" "rect")}
+        {Lisp-Entry "draw-image" method #f 501 18 501 28 ("paint" "set-source-surface" "y" "x" "handle")}
+        {Lisp-Entry "draw-scroll-bar" method #f 511 18 511 33 ("4" "get-top" "3" "get-left" "+" "draw-arrow-tip" "Black" "0" "else" "dv" "down" "'down" "up" "'up" "2" "right" "'right" "1" "left" "'left" "eq?" "cond" "dh" "let" "rectangle" "'rectangle" "edges:" "outer:" "raised" "'raised" "inner:" "draw-edge" "fill" "Draw-Edge-Light" "name:" "Color" "set-color" "draw-rectangle" "direction" "rect")}
+        {Lisp-Entry "draw-caption" method #f 527 18 527 30 ("7.5" "9" "-8.5" "-7" "8.5" "maximize" "'maximize" "2.5" "8" "-1" "move-to-rel" "-5.5" "-4" "0" "5.5" "line-to-rel" "0.5" "restore" "'restore" "6" "5" "minimize" "'minimize" "stroke" "line-to" "3" "4" "move-to" "set-line-width" "close" "'close" "eq?" "cond" "let" "Black" "raised" "'raised" "outer:" "get-bottom" "get-right" "-" "get-top" "1" "get-left" "+" "Rect" "new" "rectangle" "'rectangle" "edges:" "sunken" "'sunken" "inner:" "draw-edge" "begin" "if" "fill" "Draw-Edge-Light" "name:" "Color" "set-color" "draw-rectangle" "pushed?" "type" "rect")}
+        {Lisp-Entry "draw-radio-button" method #f 583 18 583 35 ("Black" "when" "Draw-Edge-Light" "Draw-Edge-Dark" "stroke" "Draw-Edge-Medium" "7" "4" "3" "exact->inexact" "1" "set-line-width" "fill" "White" "Light-Background" "name:" "Color" "if" "set-color" "M_PI" "2" "*" "0" "cast" "context" "cairo_arc" "r" "get-bottom" "get-top" "y" "2." "get-right" "-" "/" "get-left" "+" "x" "let" "selected?" "selected?:" "inactive?" "inactive?:" "rect")}
+        {Lisp-Entry "draw-push-button" method #f 611 18 611 34 ("stroke" "line-to-no-stroke" "move-to" "White" "2" "+" "Draw-Edge-Medium" "get-bottom" "get-right" "-" "get-top" "get-left" "line" "Draw-Edge-Dark" "name:" "Color" "set-color" "begin" "if" "1" "set-line-width" "pushed?" "rect")}
+        {Lisp-Entry "set-source-surface" method #f 643 18 643 36 ("get-surface" "Surface" "is?" "if" "context" "cairo_set_source_surface" "y" "x" "surface")}
+        {Lisp-Entry "blit-surface" method #f 650 18 650 30 ("paint" "get-v" "get-h" "set-source-surface" "destination-size" "destination-size:" "destination" "destination:" "tofix" "'tofix" "size" "size:" "0" "Point" "position" "position:" "surface")}
+        {Lisp-Entry "set-font" method #f 664 18 664 26 ("get-scaled-font" "context" "cairo_set_scaled_font" "font~self" "set!" "font")}
+        {Lisp-Entry "set-style" method #f 669 18 669 27 ("error" "else" "cairo_set_alternate" "alternate" "context" "cairo_set_solid" "solid" "case" "style")}
+        {Lisp-Entry "draw-edge" method #f 676 18 676 27 ("Draw-Edge-Light" "'bottom" "226" "blue:" "239" "green:" "241" "red:" "new" "2" "-" "Draw-Edge-Medium" "'right" "get-bottom" "'left" "Draw-Edge-Dark" "sunken" "'sunken" "get-right" "get-top" "+" "get-left" "line" "White" "name:" "Color" "set-color" "raised" "'raised" "cond" "'top" "memq?" "when" "1" "set-line-width" "bottom" "top" "right" "left" "eq?" "if" "let" "outer" "outer:" "inner" "inner:" "rectangle" "'rectangle" "edges" "edges:" "rect")}
+        {Lisp-Entry "fill-rect" method #f 753 18 753 27 ("fill" "draw-rectangle" "set-color" "color" "rect")}
+        {Lisp-Entry "draw-check" method #f 759 18 759 28 ("stroke" "7" "4" "6" "3" "1" "5" "2" "0" "+" "line" "v" "h")}
+        {Lisp-Entry "draw-raised" method #f 770 18 770 29 ("line-to" "Dark" "stroke" "get-right" "get-top" "line-to-no-stroke" "1" "get-bottom" "-" "get-left" "move-to" "Light-Background" "name:" "Color" "set-color" "rect")}
+        {Lisp-Entry "draw-arrow-tip" method #f 782 18 782 32 ("right" "height" "left" "down" "0" "naturals" "2" "decrease!" "line" "n" "lambda" "for-each" "increase!" "+" "-" "width" "let" "up" "case" "1" "set-line-width" "direction" "size" "v" "h")}
+        {Lisp-Entry "start-doc" method #f 828 22 828 31 ("surface" "cairo_win32_surface_get_dc" "StartDoc" "rec")}
+        {Lisp-Entry "end-doc" method #f 832 22 832 29 ("surface" "cairo_win32_surface_get_dc" "EndDoc")}
+        {Lisp-Entry "start-page" method #f 836 22 836 32 ("surface" "cairo_win32_surface_get_dc" "StartPage")}
+        {Lisp-Entry "end-page" method #f 840 22 840 30 ("surface" "cairo_win32_surface_get_dc" "EndPage")}
+        {Lisp-Entry "with-outside/inside" method #f 845 11 845 30 ("stroke-preserve" "fill" "self" "set-color" "Color" "is?" "if" "when" "inside-proc" "outside-proc" "inside" "outside")}
+        {Lisp-Entry "frame-rect" method #f 860 18 860 28 ("stroke" "get-bottom" "get-right" "-" "get-top" "0.5" "get-left" "+" "Rect" "new" "draw-rectangle" "set-color" "1" "set-line-width" "color" "rect")}
+        {Lisp-Entry "rectangle" method #f 872 18 872 27 ("-0.5" "inflate-rect" "draw-rectangle" "lambda" "with-outside/inside" "inside" "outside" "rect")}
+        {Lisp-Entry "cairo-move-to" method #f 885 18 885 31 ("context" "cairo_move_to" "v" "h")}
+        {Lisp-Entry "cairo-line-to" method #f 889 18 889 31 ("context" "cairo_line_to" "v" "h")}
+        {Lisp-Entry "arc" method #f 893 18 893 21 ("cast" "context" "cairo_arc" "angle2" "angle1" "radius" "vc" "hc")}
+        {Lisp-Entry "curve-to-relative" method #f 897 18 897 35 ("cast" "context" "cairo_rel_curve_to" "dy3" "dx3" "dy2" "dx2" "dy1" "dx1")}
+        {Lisp-Entry "close-path" method #f 901 18 901 28 ("context" "cairo_close_path")}
+        {Lisp-Entry "create-linear-pattern" method #f 905 18 905 39 ("cast" "cairo_pattern_create_linear" "ev" "eh" "sv" "sh")}
+        {Lisp-Entry "set-source" method #f 909 18 909 28 ("context" "cairo_set_source" "pattern")}
+        {Lisp-Entry "scale" method #f 913 18 913 23 ("exact->inexact" "context" "cairo_scale" "sv" "sh")}
+        {Lisp-Entry "move-to" method #f 922 18 922 25 ("context" "cairo_move_to" "v" "h")}
+        {Lisp-Entry "line-to" method #f 926 18 926 25 ("stroke" "line-to-no-stroke" "v" "h")}
+        {Lisp-Entry "line-to-preserve" method #f 931 18 931 34 ("stroke-preserve" "line-to-no-stroke" "v" "h")}
+        {Lisp-Entry "line-to-no-stroke" method #f 936 18 936 35 ("cairo_line_to" "0.5" "+" "move-to" "begin" "=" "if" "let" "get-v" "cur-v" "get-h" "cur-h" "context" "cairo_current_point" "pt" "let*" "v" "h")}
+        {Lisp-Entry "line-to-rel" method #f 953 18 953 29 ("context" "cairo_rel_line_to" "dv" "dh")}
+        {Lisp-Entry "move-to-rel" method #f 957 18 957 29 ("context" "cairo_rel_move_to" "dv" "dh")}
+        {Lisp-Entry "line" method #f 961 18 961 22 ("line-to" "move-to" "dest-v" "dest-h" "v" "h")}
+        {Lisp-Entry "pixel-to" method #f 966 18 966 26 ("1" "+" "line-to" "move-to" "v" "h")}
+        {Lisp-Entry "set-line-width" method #f 971 18 971 32 ("context" "cairo_set_line_width" "w")}
+        {Lisp-Entry "get-line-width" method #f 975 18 975 32 ("context" "cairo_get_line_width")}
+        {Lisp-Entry "set-operator" method #f 979 18 979 30 ("context" "cairo_set_operator" "op")}
+        {Lisp-Entry "stroke" method #f 983 18 983 24 ("context" "cairo_stroke")}
+        {Lisp-Entry "stroke-preserve" method #f 987 18 987 33 ("context" "cairo_stroke_preserve")}
+        {Lisp-Entry "fill" method #f 991 18 991 22 ("context" "cairo_fill")}
+        {Lisp-Entry "fill-preserve" method #f 995 18 995 31 ("context" "cairo_fill_preserve")}
+        {Lisp-Entry "paint" method #f 999 18 999 23 ("context" "cairo_paint")}
+        {Lisp-Entry "draw-rectangle" method #f 1003 18 1003 32 ("cast" "context" "cairo_rectangle" "get-bottom" "h" "get-right" "-" "w" "get-top" "y" "get-left" "x" "let" "rect")}
+        {Lisp-Entry "set-color" method #f 1015 18 1015 27 ("cairo_set_source_rgba" "context" "cairo_set_source_rgb" "not" "if" "get-alpha" "a" "get-blue" "b" "get-green" "g" "255.0" "get-red" "/" "exact->inexact" "r" "let" "color")}
+        {Lisp-Entry "add-color-stop" method #f 1025 11 1025 25 ("cairo_pattern_add_color_stop_rgba" "exact->inexact" "cairo_pattern_add_color_stop_rgb" "not" "if" "get-alpha" "a" "get-blue" "b" "get-green" "g" "255" "get-red" "/" "r" "let" "color" "offset" "pattern")}
+        {Lisp-Entry "export-to-png" method #f 1035 18 1035 31 ("parse" "surface" "cairo_surface_write_to_png" "file")}
+        {Lisp-Entry "cairo-status" method #f 1039 18 1039 30 ("context" "cairo_status")}
+        {Lisp-Entry "cairo-surface-status" method #f 1043 18 1043 38 ("surface" "cairo_surface_status")}}}})
+"Viewable"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "Viewable.jazz"} 1257476679
+    {Lisp-Entry "jazz.graphic.Viewable" module #f 37 18 37 39 ("jazz")
+      {Lisp-Entry "Viewable" interface #f 40 24 40 32 ()
+        {Lisp-Entry "get-title" method #f 43 35 43 44 ()}
+        {Lisp-Entry "get-viewer-class" method #f 44 35 44 51 ()}}}})
+"_font"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "font" "_font.jazz"} 1257476710
+    {Lisp-Entry "jazz.graphic.font" module #f 37 8 37 25 ("jazz")}})
+"_graphic"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "_graphic.jazz"} 1257476713
+    {Lisp-Entry "jazz.graphic" module #f 37 8 37 20 ("jazz")
+      {Lisp-Entry "registered-object" definition #f 48 13 48 30 ("table-set!" "object" "procedure?" "if" "table-ref" "procedure/object" "let" "name" "table")}
+      {Lisp-Entry "Colors" definition #f 62 12 62 18 ("eq?" "test:" "make-table")}
+      {Lisp-Entry "register-color" definition #f 66 21 66 35 ("Colors" "table-set!" "color" "name")}
+      {Lisp-Entry "registered-color" definition #f 70 21 70 37 ("set-alpha" "registered-color" "copy" "if" "error" "Colors" "registered-object" "either" "color" "let" "jazz.graphic.literals.colors" "'jazz.graphic.literals.colors" "load-unit" "alpha" "name")}
+      {Lisp-Entry "symbolic-font" definition #f 81 20 81 33 ("registered-font" "symbol?" "if" "font")}
+      {Lisp-Entry "Fonts" definition #f 92 12 92 17 ("eq?" "test:" "make-table")}
+      {Lisp-Entry "register-font" definition #f 96 21 96 34 ("Fonts" "table-set!" "font" "name")}
+      {Lisp-Entry "registered-font" definition #f 100 21 100 36 ("error" "Fonts" "registered-object" "either" "jazz.graphic.literals.fonts" "'jazz.graphic.literals.fonts" "load-unit" "name")}
+      {Lisp-Entry "symbolic-color" definition #f 106 20 106 34 ("registered-color" "symbol?" "if" "color")}}})
+"_literals"
+ ({Lisp-File-Entry {File jazz.graphic "src" "jazz" "graphic" "literals" "_literals.jazz"} 1257476722
+    {Lisp-Entry "jazz.graphic.literals" module #f 37 8 37 29 ("jazz")
+      {Lisp-Entry "construct-color" definition #f 48 21 48 36 ("Color" "new" "apply" "alpha:" "getf" "registered-color" "if" "others" "name" "bind-keywords" "rest")}
+      {Lisp-Entry "construct-font" definition #f 60 21 60 35 ("Font" "new" "apply" "registered-font" "if" "others" "name" "bind-keywords" "rest")}}})
+"autoload"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "autoload.jazz"} 1257476748
+    {Lisp-Entry "jazz.graphic.autoload" module #f 37 18 37 39 ("jazz")}})
+"colors"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "literals" "colors.jazz"} 1257476766
+    {Lisp-Entry "jazz.graphic.literals.colors" module #f 37 8 37 36 ("Reference" "'Reference" "Debug" "'Debug" "51" "Slide-Bullet" "'Slide-Bullet" "Slide-Title" "'Slide-Title" "Hyperlink" "'Hyperlink" "Unfocused-Selected-Text" "'Unfocused-Selected-Text" "Focused-Selected-Text" "'Focused-Selected-Text" "194" "222" "Unfocused-Selection" "'Unfocused-Selection" "49" "Focused-Selection" "'Focused-Selection" "207" "188" "167" "Uneditable-Border" "'Uneditable-Border" "185" "157" "127" "Entry-Border" "'Entry-Border" "Outline-Border" "'Outline-Border" "191" "209" "208" "Group-Border" "'Group-Border" "240" "248" "249" "Light-Background" "'Light-Background" "226" "239" "241" "Draw-Edge-Light" "'Draw-Edge-Light" "Draw-Edge-Medium" "'Draw-Edge-Medium" "100" "111" "113" "Draw-Edge-Dark" "'Draw-Edge-Dark" "227" "84" "Active-Caption" "'Active-Caption" "225" "Tooltip" "'Tooltip" "168" "172" "Dark" "'Dark" "216" "233" "Medium" "'Medium" "Light" "'Light" "161" "Dark-Purple" "'Dark-Purple" "Purple" "'Purple" "215" "Light-Purple" "'Light-Purple" "Dark-Blue" "'Dark-Blue" "Blue" "'Blue" "Light-Blue" "'Light-Blue" "31" "128" "18" "Dark-Green" "'Dark-Green" "Green" "'Green" "122" "254" "112" "Light-Green" "'Light-Green" "55" "197" "200" "Dark-Yellow" "'Dark-Yellow" "Yellow" "'Yellow" "153" "Light-Yellow" "'Light-Yellow" "193" "Soft-Yellow" "'Soft-Yellow" "91" "121" "Ochre" "'Ochre" "106" "213" "Dark-Orange" "'Dark-Orange" "140" "Orange" "'Orange" "102" "204" "Light-Orange" "'Light-Orange" "179" "Dark-Red" "'Dark-Red" "Red" "'Red" "171" "Light-Red" "'Light-Red" "90" "Text-Gray" "'Text-Gray" "132" "Dark-Gray" "'Dark-Gray" "218" "Gray" "'Gray" "236" "Light-Gray" "'Light-Gray" "255" "White" "'White" "blue:" "green:" "0" "red:" "name:" "Color" "new" "lambda" "Black" "'Black" "register-color" "jazz")}})
+"fonts"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "literals" "fonts.jazz"} 1257476769
+    {Lisp-Entry "jazz.graphic.literals.fonts" module #f 37 8 37 35 ("24" "36" "11.5" "vera-mono" "'vera-mono" "vera-serif" "'vera-serif" "10.5" "vera-sans" "'vera-sans" "Doc-Heading3" "'Doc-Heading3" "Doc-Heading2" "'Doc-Heading2" "14" "Doc-Heading1" "'Doc-Heading1" "Doc-Heading0" "'Doc-Heading0" "11" "Heading5" "'Heading5" "Heading4" "'Heading4" "13" "Heading3" "'Heading3" "16" "Heading2" "'Heading2" "18" "Heading1" "'Heading1" "28" "Heading0" "'Heading0" "9" "Password" "'Password" "Hyperlink-Small" "'Hyperlink-Small" "underline?:" "Hyperlink" "'Hyperlink" "Code-Bold" "'Code-Bold" "monospace?:" "10" "Code" "'Code" "Text" "'Text" "italic?:" "12" "Text-Italic" "'Text-Italic" "Caption" "'Caption" "none" "'none" "hint-style:" "Label-User" "'Label-User" "bold?:" "Label-Bold" "'Label-Bold" "8" "point-size:" "font-name:" "name:" "Font" "new" "lambda" "Label" "'Label" "register-font" "jazz")}})
+"freetype"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "font" "platform" "freetype.jazz"} 1257476773
+    {Lisp-Entry "jazz.graphic.font.platform.freetype" module #f 37 18 37 53 ("droid-serif" "'droid-serif" "droid-mono" "'droid-mono" "droid-sans" "'droid-sans" "vera-serif" "'vera-serif" "vera-mono" "'vera-mono" "vera-sans" "'vera-sans" "freetype-font-table" "table-set!" "jazz")
+      {Lisp-Entry "freetype-font-table" definition #f 49 12 49 31 ("make-table")}
+      {Lisp-Entry "get-freetype-font" definition #f 53 13 53 30 ("error" "freetype-font-table" "table-ref" "either" "name")}
+      {Lisp-Entry "set-freetype-font" definition #f 57 13 57 30 ("freetype-font-table" "table-set!" "paths" "name")}
+      {Lisp-Entry "create-font-handle" definition #f 74 20 74 38 ("error" "kernel-source" "string-append" "ft-library" "FT_New_Face" "/=" "when" "make-FT_Face" "face" "let" "list-ref" "path" "0" "else" "1" "2" "3" "and" "cond" "index" "get-freetype-font" "paths" "let*" "underline?" "underline?:" "italic?" "italic?:" "bold?" "bold?:" "point-size" "point-size:" "font-name" "font-name:")}
+      {Lisp-Entry "create-cairo-font-handle" definition #f 96 20 96 44 ("0" "cairo_ft_font_face_create_for_ft_face" "handle")}
+      {Lisp-Entry "destroy-font-handle" definition #f 100 20 100 39 ("free-FT_Face" "handle")}
+      {Lisp-Entry "destroy-cairo-font-handle" definition #f 104 20 104 45 ("cairo_font_face_destroy" "handle")}}})
+"install"
+ ({Lisp-File-Entry {File jazz.graphic "src" "jazz" "graphic" "install.scm"} 1257473850
+    {Lisp-Entry "jazz.graphic.install" unit #f 37 6 37 26 ()
+      {Lisp-Entry "Color" define ("literal") 40 21 40 26 ("jazz.graphic.literals.construct-color")}
+      {Lisp-Entry "Font" define ("literal") 41 21 41 25 ("jazz.graphic.literals.construct-font")}}})
+"logfont"
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "font" "platform" "logfont.jazz"} 1257476785
+    {Lisp-Entry "jazz.graphic.font.platform.logfont" module #f 37 18 37 52 ("jazz")
+      {Lisp-Entry "create-font-handle" definition #f 44 20 44 38 ("DEFAULT_PITCH" "DEFAULT_QUALITY" "CLIP_DEFAULT_PRECIS" "OUT_DEFAULT_PRECIS" "ANSI_CHARSET" "1" "FW_NORMAL" "FW_BOLD" "if" "0" "calculate-height" "fxround" "CreateFont" "monospace?" "monospace?:" "underline?" "underline?:" "italic?" "italic?:" "bold?" "bold?:" "point-size" "point-size:" "font-name" "font-name:")}
+      {Lisp-Entry "calculate-height" definition #f 68 20 68 36 ("72" "96" "*" "fxround/" "point-size")}
+      {Lisp-Entry "create-cairo-font-handle" definition #f 72 20 72 44 ("LOGFONTW-free" "cairo_win32_font_face_create_for_logfontw" "prog1" "get-logfont" "logfont" "let" "handle")}
+      {Lisp-Entry "get-logfont" definition #f 78 20 78 31 ("LOGFONTW*->PVOID" "LOGFONTW-sizeof" "GetObject" "LOGFONTW-make" "info" "let" "handle")}
+      {Lisp-Entry "destroy-font-handle" definition #f 84 20 84 39 ("DeleteObject" "handle")}
+      {Lisp-Entry "destroy-cairo-font-handle" definition #f 88 20 88 45 ("cairo_font_face_destroy" "handle")}}})

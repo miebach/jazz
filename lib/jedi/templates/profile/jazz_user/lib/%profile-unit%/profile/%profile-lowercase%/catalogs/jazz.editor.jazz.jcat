@@ -1,10 +1,10 @@
 "Class-Browser"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "tools" "Class-Browser.jazz"} 1257476326
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "tools" "Class-Browser.jazz"} 1265989215
     {Lisp-Entry "jazz.editor.jazz.tools.Class-Browser" module #f 37 18 37 54 ("jazz")
-      {Lisp-Entry "Class-Browser" class #f 48 7 48 20 ("419" "width:" "display-images?:" "on-double-click" "double-click-handler:" ":icons" "portfolio:" "multiple-selection?:" "classes" "document" "562" "391" "35" "classes-border" "on-browse" "action-handler:" "22" "120" "7" "272" "title:" "browse" "on-return-press" ":form" "Event-Handler" "return-press-handler:" "focus-selects-all?:" "show-unfocused-selection?:" "accepts-returns?:" "top-padding:" "left-padding:" "name" "fill" "layout-type:" "content" "vscroll?:" "hscroll?:" "entry" "style:" "edge" "border-type:" "19" "250" "9" "2" "Point" "position:" "name-border" "name:" "599" "395" "Dimension" "size:" "initialize" "View")
+      {Lisp-Entry "Class-Browser" class #f 48 7 48 20 ("419" "width:" "display-images?:" "on-double-click" "double-click-handler:" ":images" "portfolio:" "multiple-selection?:" "classes" "document" "562" "391" "35" "classes-border" "on-browse" "action-handler:" "22" "120" "7" "272" "title:" "browse" "on-return-press" ":form" "Event-Handler" "return-press-handler:" "focus-selects-all?:" "show-unfocused-selection?:" "accepts-returns?:" "top-padding:" "left-padding:" "name" "fill" "layout-type:" "content" "vscroll?:" "hscroll?:" "entry" "style:" "edge" "border-type:" "19" "250" "9" "2" "Point" "position:" "name-border" "name:" "599" "395" "Dimension" "size:" "initialize" "View")
         {Lisp-Entry "text" property #f 51 12 51 16 ()}
         {Lisp-Entry "external-name" method #f 70 25 70 38 ("class-browser" "'class-browser" "rest")}
-        {Lisp-Entry "host-icon" method #f 79 25 79 34 ("Bitmap-Resource")}
+        {Lisp-Entry "host-icon" method #f 79 25 79 34 ("Image-Resource")}
         {Lisp-Entry "host-title" method #f 83 25 83 35 ()}
         {Lisp-Entry "host-position" method #f 87 25 87 38 ("20" "90" "Point")}
         {Lisp-Entry "host-size" method #f 91 25 91 34 ("600" "395" "Dimension")}
@@ -13,26 +13,25 @@
         {Lisp-Entry "set-text" method #f 108 18 108 26 ("either" "name" "'name" "locate" "set-string-content" "value")}
         {Lisp-Entry "guest-actions" method #f 118 20 118 33 ("nextmethod" "class-browser" "'class-browser" "find-actions" "cons")}
         {Lisp-Entry "resize" method #f 128 20 128 26 ("classes-border" "'classes-border" "size-figure" "0" "browse" "'browse" "locate" "move-figure" "nextmethod" "dv" "dh")}
-        {Lisp-Entry "on-browse" method #f 134 11 134 20 ("root:" "browse-inheritance-tree" "lambda" ":wait" "with-cursor" "'name" "locate" "get-string-content" "format" "message-box" "not" "root" "category?" "global-value" "value" "global-variable?" "autoload" "get-autoload" "string->symbol" "name" "Object" "empty-string?" "if" "get-text" "text" "let" "get-root-class" "define" "evt")}
-        {Lisp-Entry "on-return-press" method #f 157 20 157 35 ("on-browse" "evt")}
-        {Lisp-Entry "on-double-click" method #f 161 11 161 26 ("type-name" "identifier-name" "edit-definitions" "get-application" "appl" "get-user-data" "type" "get-row" "row" "when" "get-single-selection" "selection" "get-sender" "tree" "let*" "evt")}
-        {Lisp-Entry "browse-inheritance-tree" method #f 176 11 176 34 ("remove-every-row" "with-update-locked" "symbol->string" "key:" "type-descendants" "string<?" "sort" "subtype" "lambda" "for-each" "downward" "user-data:" "Bitmap-Resource" "image:" "title:" "Tree-Node" "new" "list" "children:" "state:" "father:" "add-row" "essay" "father" "type-ascendant" "ascendant" "type-name" "->string" "title" "expanded" "'expanded" "state" "let*" "type" "upward" "define" "classes" "'classes" "locate" "tree" "let" "Object" "root" "root:")}
-        {Lisp-Entry "selected-categories" method #f 206 11 206 30 ("get-row" "get-user-data" "rank" "lambda" "map" "get-selection" "selection" "classes" "'classes" "locate" "tree" "let*")}
-        {Lisp-Entry "selected-files" method #f 214 11 214 25 ("selected-categories" "type-name" "get-manifest-source" "category" "lambda" "collect")}}}})
+        {Lisp-Entry "on-browse" method #f 134 11 134 20 ("root:" "browse-inheritance-tree" "lambda" ":wait" "with-cursor" "else" "class?" "'name" "locate" "get-string-content" "format" "message-box" "not" "cond" "root" "category?" "global-value" "value" "global-variable?" "autoload" "get-autoload" "string->symbol" "name" "Object" "empty-string?" "if" "get-text" "text" "let" "get-root-class" "define" "evt")}
+        {Lisp-Entry "on-return-press" method #f 160 20 160 35 ("on-browse" "evt")}
+        {Lisp-Entry "on-double-click" method #f 164 11 164 26 ("category-name" "identifier-name" "edit-definitions" "get-application" "appl" "get-user-data" "type" "get-row" "row" "when" "get-single-selection" "selection" "get-sender" "tree" "let*" "evt")}
+        {Lisp-Entry "browse-inheritance-tree" method #f 179 11 179 34 ("remove-every-row" "with-update-locked" "symbol->string" "key:" "category-descendants" "string<?" "sort" "subtype" "lambda" "for-each" "downward" "user-data:" "Image-Resource" "image:" "title:" "Tree-Node" "new" "list" "children:" "state:" "father:" "add-row" "essay" "father" "class-ascendant" "ascendant" "category-name" "->string" "title" "expanded" "'expanded" "state" "let*" "type" "upward" "define" "classes" "'classes" "locate" "tree" "let" "Object" "root" "root:")}
+        {Lisp-Entry "selected-categories" method #f 209 11 209 30 ("get-row" "get-user-data" "rank" "lambda" "map" "get-selection" "selection" "classes" "'classes" "locate" "tree" "let*")}}}})
 "Class-Browser-Actions"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "tools" "Class-Browser-Actions.jazz"} 1257476325
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "tools" "Class-Browser-Actions.jazz"} 1258811565
     {Lisp-Entry "jazz.editor.jazz.tools.Class-Browser-Actions" module #f 37 18 37 62 ("jazz")
       {Lisp-Entry "Class-Browser-Actions" class #f 43 7 43 28 ("Actions")}}})
 "Documentation-Text-View"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "documentation" "Documentation-Text-View.jazz"} 1257476395
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "documentation" "Documentation-Text-View.jazz"} 1258811564
     {Lisp-Entry "jazz.editor.jazz.documentation.Documentation-Text-View" module #f 37 18 37 72 ("jazz")
       {Lisp-Entry "Documentation-Text-View" class #f 46 7 46 30 ("Text" "Font" "font:" "Default" "name:" "Text-Style" "default-style:" "4" "left-padding:" "Formatted-Text-View")
         {Lisp-Entry "install" method #f 53 20 53 27 ("Variable" "Code" "Dark-Blue" "Hyperlink" "Reference" "Purple" "Comment" "Dark-Red" "Color" "color:" "Title" "Doc-Heading3" "Doc-Heading2" "Doc-Heading1" "Doc-Heading0" "Font" "font:" "Text-Style" "add-style" "Heading3" "Heading2" "Heading1" "Default" "base:" "Heading0" "name:" "Format" "add-format" "nextmethod" "rest")}
         {Lisp-Entry "get-context-menu" method #f 73 20 73 36 ("new-text-context-menu")}}}})
 "Event-Spy"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "spy" "Event-Spy.jazz"} 1257476405
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "spy" "Event-Spy.jazz"} 1265989215
     {Lisp-Entry "jazz.editor.jazz.spy.Event-Spy" module #f 37 18 37 48 ("jazz")
-      {Lisp-Entry "Event-Categories" constant #f 51 10 51 26 ("unknown" "menu" "focus" "clipboard" "keyboard" "mouse" "action" "paint" "window" "component" "Bitmap-Resource" "general")}
+      {Lisp-Entry "Event-Categories" constant #f 51 10 51 26 ("unknown" "menu" "focus" "clipboard" "keyboard" "mouse" "action" "paint" "window" "component" "Image-Resource" "general")}
       {Lisp-Entry "Event-Classes" constant #f 65 10 65 23 ("Selection-Event" "Print-Event" "Paint-Event" "mouse" "Mouse-Event" "Keyboard-Event" "Focus-Event" "focus" "Edition-Event" "paint" "Draw-Event" "window" "Cursor-Event" "Component-Event" "general" "Break-Event" "component" "Action-Event")}
       {Lisp-Entry "Event-Spy" class #f 85 7 85 16 ("213" "226" "toplevel-controls?:" "140" "width:" "title:" "tree" "tree-header" "content" "tree-scroller" "tree-border" "name:" "Spy-View")
         {Lisp-Entry "host-title" method #f 107 25 107 35 ()}
@@ -41,7 +40,7 @@
         {Lisp-Entry "spy-domain" method #f 124 20 124 30 ("views" "'views")}
         {Lisp-Entry "spy" method #f 128 20 128 23 ("self" "Spyer" "new" "set-event-consumer" "get-event-consumer" "old-consumer" "set!" "Event-Consumer" "is?" "when" "client")}
         {Lisp-Entry "unspy" method #f 134 20 134 25 ("old-consumer" "set-event-consumer" "Event-Consumer" "is?" "when" "client")}
-        {Lisp-Entry "incoming-event" method #f 139 11 139 25 ("slowdown-quantum" "sleep" "slowdown?" "update-view" "ensure-at-end" "list" "children:" "add-row" "get-visible-count" "item" "5" "*" "make-string" "format" "c3" "c2" "get-kind" "Tree-Label" "c1" "image:" "title:" "Tree-Node" "new" "c0" "parameters" "Event-Categories" "assq" "cdr" "image" "get-tree" "tree" "all" "'all" "category" "eq?" "or" "when" "unknown" "'unknown" "second" "if" "cat" "car" "key:" "Event-Classes" "find-in" "info" "class-of" "type-name" "type" "let*" "evt" "client" "window" "level")}
+        {Lisp-Entry "incoming-event" method #f 139 11 139 25 ("slowdown-quantum" "sleep" "slowdown?" "update-view" "ensure-at-end" "list" "children:" "add-row" "get-visible-count" "item" "5" "*" "make-string" "format" "c3" "c2" "get-kind" "Tree-Label" "c1" "image:" "title:" "Tree-Node" "new" "c0" "parameters" "Event-Categories" "assq" "cdr" "image" "get-tree" "tree" "all" "'all" "category" "eq?" "or" "when" "unknown" "'unknown" "second" "if" "cat" "car" "key:" "Event-Classes" "find-in" "info" "class-of" "category-name" "type" "let*" "evt" "client" "window" "level")}
         {Lisp-Entry "incoming-result" method #f 160 11 160 26 ("result" "item" "level")}}
       {Lisp-Entry "Spyer" class #f 169 7 169 12 ("0" "initialize" "Event-Consumer" "Object")
         {Lisp-Entry "level" slot #f 172 8 172 13 ()}
@@ -52,9 +51,9 @@
         {Lisp-Entry "initialize" method #f 181 20 181 30 ("client" "spy-window" "set!" "nextmethod" "clt" "wnd")}
         {Lisp-Entry "deliver-event" method #f 187 20 187 33 ("decrease!" "increase!" "client" "level" "spy-window" "incoming-event" "evt" "proc" "target" "handler")}}}})
 "Inspector"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "inspector" "Inspector.jazz"} 1257476454
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "inspector" "Inspector.jazz"} 1265989215
     {Lisp-Entry "jazz.editor.jazz.inspector.Inspector" module #f 37 18 37 54 ("jazz")
-      {Lisp-Entry "Inspector" class #f 49 7 49 16 ("title:" "name" "name:" ":icons" "portfolio:" "row" "selection-mode:" "multiple-selection?:" "value" "filled-column:" "set-client" "get-client" "initialize" "Tree-View")
+      {Lisp-Entry "Inspector" class #f 49 7 49 16 ("title:" "name" "name:" ":images" "portfolio:" "row" "selection-mode:" "multiple-selection?:" "value" "filled-column:" "explicit" "initialize" "Tree-View")
         {Lisp-Entry "process" property #f 52 12 52 19 ()}
         {Lisp-Entry "get-process" accessor #f 52 44 52 52 ()}
         {Lisp-Entry "set-process" accessor #f 52 44 52 52 ()}
@@ -66,12 +65,12 @@
         {Lisp-Entry "set-client" method #f 72 18 72 28 ("present-client" "set!" "client" "neq?" "when" "clt")}
         {Lisp-Entry "update-row" method #f 83 20 83 30 ("process" "inspect-serial" "present" "get-user-data" "kind" "serial" "bind" "row")}
         {Lisp-Entry "present-client" method #f 93 11 93 25 ("inspect" "root-row" "present" "kind" "data" "bind" "when" "remove-every-row" "lambda" "with-update-locked" "client")}
-        {Lisp-Entry "present" method #f 102 11 102 18 ("cons" "user-data:" "Tree-Label" "Bitmap-Resource" "image:" "title:" "Tree-Node" "new" "list" "children:" "state:" "father:" "add-row" "collapsed" "'collapsed" "dynamic" "'dynamic" "if" "state" "let" "kind" "mutable?" "more?" "presented" "serial" "name" "bind" "info" "for-each" "lambda" "with-update-locked" "values" "row")}
+        {Lisp-Entry "present" method #f 102 11 102 18 ("cons" "user-data:" "Tree-Label" "Image-Resource" "image:" "title:" "Tree-Node" "new" "list" "children:" "state:" "father:" "add-row" "collapsed" "'collapsed" "dynamic" "'dynamic" "if" "state" "let" "kind" "mutable?" "more?" "presented" "serial" "name" "bind" "info" "for-each" "lambda" "with-update-locked" "values" "row")}
         {Lisp-Entry "inspect" method #f 119 26 119 33 ("process" "inspect-serial" "if" "mutable?" "more?" "presented" "serial" "bind" ":remote" "inspect-value" ":value" "case" "kind" "data")}}}})
 "Inspector-View"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "inspector" "Inspector-View.jazz"} 1257476454
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "inspector" "Inspector-View.jazz"} 1265989215
     {Lisp-Entry "jazz.editor.jazz.inspector.Inspector-View" module #f 37 18 37 59 ("jazz")
-      {Lisp-Entry "Inspector-View" class #f 45 7 45 21 ("261" "value" "170" "width:" "name" "row" "selection-mode:" "inspector" "content" "name:" "flat?:" "hscroll?:" "vscroll?:" "fill" "layout-type:" "set-client" "get-client" "set-process" "get-process" "initialize" "Layout-View")
+      {Lisp-Entry "Inspector-View" class #f 45 7 45 21 ("261" "value" "170" "width:" "name" "row" "selection-mode:" "inspector" "content" "name:" "flat?:" "hscroll?:" "vscroll?:" "fill" "layout-type:" "explicit" "initialize" "Layout-View")
         {Lisp-Entry "process" property #f 48 12 48 19 ()}
         {Lisp-Entry "client" property #f 49 12 49 18 ()}
         {Lisp-Entry "host-title" method #f 68 25 68 35 ()}
@@ -84,67 +83,66 @@
         {Lisp-Entry "Max-Title" definition #f 107 14 107 23 ("50")}
         {Lisp-Entry "update-title" method #f 111 11 111 23 ("0" "subseq" "set-title" "Max-Title" "cardinality" "<" "format" "title" "let" "mutable?" "more?" "presented" "serial" ":remote" "eq?" "if" "kind" "data" "bind" "get-presentation" "define" "client")}}}})
 "Jazz-Code-Location"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "text" "Jazz-Code-Location.jazz"} 1257476467
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "text" "Jazz-Code-Location.jazz"} 1258811564
     {Lisp-Entry "jazz.editor.jazz.text.Jazz-Code-Location" module #f 37 18 37 58 ("jazz")
       {Lisp-Entry "Jazz-Code-Location" class #f 46 7 46 25 ("initialize" "Code-Location")
         {Lisp-Entry "unit-name" slot #f 49 8 49 17 ()}
         {Lisp-Entry "sublocation" slot #f 50 8 50 19 ()}
-        {Lisp-Entry "initialize" method #f 53 20 53 30 ("setup-location" "nextmethod" "location")}
-        {Lisp-Entry "setup-location" method #f 58 11 58 25 ("last" "cons" "butlast" "sublocation" "unit-name" "set!" "begin" "find-unit-source" "compose-name" "apply" "name" "location:" "unknown" "'unknown" "kind:" "Location-Error" "new" "signal" "null?" "if" "cdr" "sub" "car" "split-identifier" "path" "iterate" "let" "location")}
-        {Lisp-Entry "print" method #f 72 20 72 25 ("format" "sublocation" "unit-name" "and" "when" "lambda" "self" "print-unreadable" "readably" "printer")}
-        {Lisp-Entry "edit" method #f 80 20 80 24 ("focus-host" "set-visible?" "bring-to-front" "head" "'head" "force-vertical:" "ensure-displayed" "ensure-displayed?:" "set-selection" "range" "text" "frame" "receive" "when" "find-location" "location" "let" "error?" "error?:" "activate-focus?" "activate-focus?:" "workspace" "workspace:")}
-        {Lisp-Entry "find-source" method #f 93 18 93 29 ("unit-name" "find-unit-source")}
-        {Lisp-Entry "find-location" method #f 97 18 97 31 ("values" "cons" "toplevel-location:" "sublocation" "location-range" "range" "Jazz-Text-View" "is?" "get-guest" "text" "when" "unit-name" "find-unit" "frame" "let" "error?" "error?:" "workspace" "workspace:")}
-        {Lisp-Entry "find-unit" method #f 107 11 107 20 ("location:" "unknown" "'unknown" "kind:" "Location-Error" "new" "signal" "when" "visible?:" "Jazz-Text-View" "class:" "edit-document" "either" "find-unit-source" "source" "get-application" "appl" "let*" "error?" "error?:" "workspace" "workspace:" "unit-name")}}}})
+        {Lisp-Entry "initialize" method #f 53 20 53 30 ("nextmethod" "last" "cons" "butlast" "sublocation" "unit-name" "set!" "begin" "find-unit-source" "compose-name" "apply" "name" "location:" "unknown" "'unknown" "kind:" "Location-Error" "new" "signal" "null?" "if" "cdr" "sub" "car" "split-identifier" "path" "iterate" "let" "setup-location" "define" "location")}
+        {Lisp-Entry "print" method #f 71 20 71 25 ("format" "sublocation" "unit-name" "and" "when" "lambda" "self" "print-unreadable" "readably" "printer")}
+        {Lisp-Entry "edit" method #f 79 20 79 24 ("focus-host" "set-visible?" "bring-to-front" "head" "'head" "force-vertical:" "ensure-displayed" "ensure-displayed?:" "set-selection" "range" "text" "frame" "receive" "when" "find-location" "location" "let" "error?" "error?:" "activate-focus?" "activate-focus?:" "workspace" "workspace:")}
+        {Lisp-Entry "find-source" method #f 92 18 92 29 ("unit-name" "find-unit-source")}
+        {Lisp-Entry "find-location" method #f 96 18 96 31 ("values" "cons" "toplevel-location:" "sublocation" "location-range" "range" "is?" "get-guest" "text" "frame" "let" "location:" "unknown" "'unknown" "kind:" "Location-Error" "new" "signal" "when" "visible?:" "Jazz-Text-View" "class:" "edit-document" "either" "find-unit-source" "source" "get-application" "appl" "let*" "unit-name" "find-unit" "define" "error?" "error?:" "workspace" "workspace:")}}}})
 "Jazz-Explorer"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "text" "Jazz-Explorer.jazz"} 1257477716
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "text" "Jazz-Explorer.jazz"} 1265989215
     {Lisp-Entry "jazz.editor.jazz.text.Jazz-Explorer" module #f 37 18 37 53 ("jazz")
       {Lisp-Entry "Jazz-Explorer" class #f 51 7 51 20 ("Scheme-Explorer")
         {Lisp-Entry "get-syntax" method #f 54 20 54 30 ("jazz" "'jazz")}
         {Lisp-Entry "expression-comment?" method #f 58 20 58 39 ("nextmethod" "get-range" "char=?" "or" "get-start" "get-char" "range" "get-first-char" "define" "mark")}
         {Lisp-Entry "forward-location" method #f 71 18 71 34 ("symbol?" ":form" ":new-form" "meta" "'meta" "unless" "bad" "'bad" "enter-composite" "1" "cdr" "forward" "eqv?" "char-forward" "c0" "forward-whites" "car" "ref" "not-null?" "scan" "else" "named-comment" "'named-comment" "eq?" "cond" "kind" "decrease!" "0" ">=" "n" "forward-numeric" "declaration-only-name" "neq?" "declaration-expr?" "name" "forward-declaration" "'form" "either" "location:" "unknown" "'unknown" "kind:" "Location-Error" "new" "signal" "forward-valid-expr" "when" "form" "form-expr" "not" "forward-form" "get-start" "forward-new-form" "set-end" "set-start" "implements" "extends" "metaclass" "interface" "class" "module" "unit" "memq?" "lisp-form-namespace?" "or" "find-marked-symbol" "set!" "begin" "forward-expr" "and" "while" "get-end" "previous" "keyword" "let" "forward-category-keywords" "define" "toplevel-location" "toplevel-location:" "location")}
         {Lisp-Entry "namespace-declaration-range" method #f 154 18 154 45 ("set-end" "set-start" "Range$Cell$" "new" "prog1" "forward-namespace" "end" "e" "start" "copy" "s" "let")}
-        {Lisp-Entry "forward-namespace" method #f 163 18 163 35 ("forward-interface" "interface" "forward-class" "class" "forward-module" "module" "forward-unit" "unit" "case" "intern-marked-symbol" "type" "let" "forward-expr" "enter-list" "start" "set-end" "include-invoices?" "include-invoices?:")}
-        {Lisp-Entry "forward-unit" method #f 175 11 175 23 ("forward-invoices" "when" "forward-name" "lisp-form-modifiers" "forward-modifiers" "unit" "'unit" "list" "include-invoices?")}
-        {Lisp-Entry "forward-module" method #f 183 11 183 25 ("forward-invoices" "when" "forward-name" "lisp-form-modifiers" "forward-modifiers" "module" "'module" "list" "include-invoices?")}
-        {Lisp-Entry "forward-class" method #f 192 11 192 24 ("lisp-form-keywords" "forward-keywords" "forward-name" "lisp-form-modifiers" "forward-modifiers" "class" "'class" "list")}
-        {Lisp-Entry "forward-interface" method #f 199 11 199 28 ("lisp-form-keywords" "forward-keywords" "forward-name" "lisp-form-modifiers" "forward-modifiers" "interface" "'interface" "list")}
-        {Lisp-Entry "forward-name" method #f 206 11 206 23 ("intern-marked-symbol" "forward-expr")}
-        {Lisp-Entry "forward-keywords" method #f 211 11 211 27 ("list" "append" "read-marked" "value" "begin" "memq?" "intern-marked-symbol" "expr" "symbol" "'symbol" "kind" "eq?" "if" "forward-expr" "set-end" "done" "define" "result" "end" "copy" "finish" "iterate" "let" "keywords")}
-        {Lisp-Entry "forward-invoices" method #f 230 11 230 27 ()}
-        {Lisp-Entry "enter-import" method #f 239 11 239 23 ("import" "'import" "intern-marked-symbol" "expr" "symbol" "'symbol" "enter-list" "set-end" "e" "get-start" "s" "list" "'list" "kind" "eq?" "if" "get-end" "copy" "pos" "forward-expr" "when" "iterate" "let")}
-        {Lisp-Entry "find-import-invoice" method #f 260 11 260 30 ("else" "string>?" "and" "values" "set-start" "exit-list" "string=?" "cond" "get-marked" "name" "enter-list" "start" "set-end" "begin" "forward-expr" "if" "get-end" "copy" "pos" "first?" "iterate" "symbol->string" "target" "let" "ordered-insert?" "unit")}
-        {Lisp-Entry "insert-import-invoice" method #f 284 18 284 39 ("else" "tabulate" "insert-newline" "format" "insert-string" "cond" "get-end" "set-caret" "lambda" "text" "get-undoer" "with-atomic-undo" "unless" "find-import-invoice" "first?" "found?" "receive" "error" "enter-import" "not" "if" "forward-namespace" "unit")}
-        {Lisp-Entry "remove-import-invoice" method #f 303 18 303 39 ("one" "'one" "keep:" "get-start" "remove-spaces" "get-range" "delete-range" "lambda" "text" "get-undoer" "with-atomic-undo" "when" "find-import-invoice" "first?" "found?" "receive" "error" "enter-import" "not" "if" "forward-namespace" "unit")}
-        {Lisp-Entry "find-named-walker" method #f 321 20 321 37 ("nextmethod" "else" "walk-datacontainer" ":datacontainer" "walk-com-external" ":com-external" "walk-external" ":c-external" "walk-c-definition" ":c-definition" "walk-c-structure" ":c-structure" "walk-c-type" ":c-type" "walk-c-include" ":c-include" "walk-c-named-declare" ":c-named-declare" "walk-c-enumeration" ":c-enumeration" "walk-c-constant" ":c-constant" "walk-enumeration" ":enumeration" "walk-constant" ":constant" "walk-global" ":global" "walk-form" ":form" "walk-property" ":property" "walk-slot" ":slot" "walk-method" ":method" "walk-remotable-stub" ":remotable-stub" "walk-interface" ":interface" "walk-class" ":class" "walk-specialize" ":specialize" "walk-definition" ":definition" "walk-native" ":native" "walk-attributes" ":attributes" "walk-properties" ":properties" "walk-proclaim" ":proclaim" "case" "name")}
-        {Lisp-Entry "walk-proclaim" method #f 352 11 352 24 ("end" "start" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-properties" method #f 356 11 356 26 ("walk-expressions" "end" "start" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-attributes" method #f 361 11 361 26 ("exit-list" "walk-expressions" "initialize" "'initialize" "and" "setter" "'setter" "string-append" "getter" "'getter" "accessor" "'accessor" "find-marked-symbol" "symbol-documented?" "definition" "'definition" "get-marked" "marked" "'symbol" "kind" "eq?" "enter-list" "when" "iterate" "let" "forward-expr" "code" "'code" "walk-expression" "end" "start" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-definition" method #f 381 11 381 26 ("code" "'code" "walk-expressions" "exit-list" "walk-parameters" "enter-list" "else" "find-marked-symbol" "symbol-documented?" "get-marked" "definition" "'definition" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "not" "cond" "0" "char-forward" "eqv?" "list?" "forward-whites" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-specialize" method #f 400 11 400 26 ("code" "'code" "walk-expressions" "exit-list" "walk-parameters" "enter-list" "else" "set!" "cond" "list?" "symbol-documented?" "get-marked" "specialize" "'specialize" "as" "'as" "find-marked-symbol" "'symbol" "kind" "eq?" "forward-expr" "and" "0" "char-forward" "eqv?" "not" "when" "forward-whites" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-class" method #f 425 11 425 21 ("class" "'class" "walk-namespace" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-interface" method #f 428 11 428 25 ("interface" "'interface" "walk-namespace" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-remotable-stub" method #f 431 11 431 30 ("remotable-stub" "'remotable-stub" "walk-namespace" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-method" method #f 435 18 435 29 ("code" "'code" "walk-expressions" "exit-list" "walk-parameters" "forward-whites" "find-marked-symbol" "symbol-documented?" "get-marked" "method" "'method" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "enter-list" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-slot/property-accessors" method #f 449 11 449 39 ("code" "'code" "walk-expression" "else" "'setter" "'getter" "get-marked" "string=?" "when" "accessors" "initialize" "marked-symbol" "symbol" "'symbol" "kind" "eq?" "and" "unless" "forward-expr" "while" "find-marked-symbol" "symbol-documented?" "end" "start" "'accessor" "setter" "getter" "case" "string-append" "name" "let" "accessor" "declare-accessor" "define" "doc" "expression" "keyword" "declaration" "slot-name" "context")}
-        {Lisp-Entry "walk-slot" method #f 478 11 478 20 ("walk-expressions" "walk-slot/property-accessors" "find-marked-symbol" "symbol-documented?" "slot" "'slot" "set!" "get-marked" "marked" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "forward-whites" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-property" method #f 491 11 491 24 ("walk-expressions" "walk-slot/property-accessors" "find-marked-symbol" "symbol-documented?" "property" "'property" "set!" "get-marked" "marked" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-form" method #f 503 11 503 20 ("walk-expressions" "end" "start" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-global" method #f 508 11 508 22 ("find-marked-symbol" "symbol-documented?" "get-marked" "global" "'global" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-constant" method #f 517 11 517 24 ("walk-expressions" "find-marked-symbol" "symbol-documented?" "get-marked" "constant" "'constant" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-enumeration" method #f 527 11 527 27 ("walk-expressions" "find-marked-symbol" "symbol-documented?" "get-marked" "enumeration" "'enumeration" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-c-constant" method #f 537 11 537 26 ("walk-expressions" "find-marked-symbol" "symbol-documented?" "get-marked" "c-constant" "'c-constant" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-c-enumeration" method #f 547 11 547 29 ("walk-expressions" "find-marked-symbol" "symbol-documented?" "get-marked" "c-enumeration" "'c-enumeration" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-c-named-declare" method #f 557 11 557 31 ("walk-expressions" "end" "start" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-c-include" method #f 562 11 562 25 ("walk-expressions" "end" "start" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-c-type" method #f 567 11 567 22 ("walk-expressions" "find-marked-symbol" "symbol-documented?" "get-marked" "c-type" "'c-type" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-c-structure" method #f 577 11 577 27 ("walk-expressions" "exit-list" "find-marked-symbol" "symbol-documented?" "get-marked" "c-structure" "'c-structure" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "enter-list" "when" "0" "char-forward" "eqv?" "list?" "forward-whites" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-c-definition" method #f 593 11 593 28 ("walk-expressions" "exit-list" "find-marked-symbol" "symbol-documented?" "get-marked" "c-definition" "'c-definition" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "enter-list" "when" "0" "char-forward" "eqv?" "list?" "forward-whites" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-external" method #f 609 11 609 24 ("walk-expressions" "exit-list" "walk-parameters" "find-marked-symbol" "symbol-documented?" "get-marked" "external" "'external" "'symbol" "kind" "eq?" "and" "enter-list" "entered?" "forward-expr" "when" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-com-external" method #f 625 11 625 28 ("walk-expressions" "exit-list" "walk-parameters" "find-marked-symbol" "symbol-documented?" "get-marked" "com-external" "'com-external" "'symbol" "kind" "eq?" "enter-list" "entered?" "forward-expr" "and" "when" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-datacontainer" method #f 641 11 641 29 ("walk-expressions" "find-marked-symbol" "symbol-documented?" "get-marked" "datacontainer" "'datacontainer" "forward-expr" "when" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}}}})
+        {Lisp-Entry "forward-namespace" method #f 163 18 163 35 ("forward-interface" "interface" "forward-class" "class" "forward-submodule" "submodule" "forward-module" "module" "forward-unit" "unit" "case" "intern-marked-symbol" "type" "let" "forward-expr" "enter-list" "start" "set-end" "include-invoices?" "include-invoices?:")}
+        {Lisp-Entry "forward-unit" method #f 176 11 176 23 ("forward-invoices" "when" "forward-name" "lisp-form-modifiers" "forward-modifiers" "unit" "'unit" "list" "include-invoices?")}
+        {Lisp-Entry "forward-module" method #f 184 11 184 25 ("forward-invoices" "when" "forward-name" "lisp-form-modifiers" "forward-modifiers" "module" "'module" "list" "include-invoices?")}
+        {Lisp-Entry "forward-submodule" method #f 193 11 193 28 ("forward-name" "lisp-form-modifiers" "forward-modifiers" "submodule" "'submodule" "list")}
+        {Lisp-Entry "forward-class" method #f 199 11 199 24 ("lisp-form-keywords" "forward-keywords" "forward-name" "lisp-form-modifiers" "forward-modifiers" "class" "'class" "list")}
+        {Lisp-Entry "forward-interface" method #f 206 11 206 28 ("lisp-form-keywords" "forward-keywords" "forward-name" "lisp-form-modifiers" "forward-modifiers" "interface" "'interface" "list")}
+        {Lisp-Entry "forward-name" method #f 213 11 213 23 ("intern-marked-symbol" "forward-expr")}
+        {Lisp-Entry "forward-keywords" method #f 218 11 218 27 ("list" "append" "read-marked" "value" "begin" "memq?" "intern-marked-symbol" "expr" "symbol" "'symbol" "kind" "eq?" "if" "forward-expr" "set-end" "done" "define" "result" "end" "copy" "finish" "iterate" "let" "keywords")}
+        {Lisp-Entry "forward-invoices" method #f 237 11 237 27 ()}
+        {Lisp-Entry "enter-import" method #f 246 11 246 23 ("import" "'import" "intern-marked-symbol" "expr" "symbol" "'symbol" "enter-list" "set-end" "e" "get-start" "s" "list" "'list" "kind" "eq?" "if" "get-end" "copy" "pos" "forward-expr" "when" "iterate" "let")}
+        {Lisp-Entry "find-import-invoice" method #f 267 11 267 30 ("else" "string>?" "and" "values" "set-start" "exit-list" "string=?" "cond" "get-marked" "name" "enter-list" "start" "set-end" "begin" "forward-expr" "if" "get-end" "copy" "pos" "first?" "iterate" "symbol->string" "target" "let" "ordered-insert?" "unit")}
+        {Lisp-Entry "insert-import-invoice" method #f 291 18 291 39 ("else" "tabulate" "insert-newline" "format" "insert-string" "cond" "get-end" "set-caret" "lambda" "text" "get-undoer" "with-atomic-undo" "unless" "find-import-invoice" "first?" "found?" "receive" "error" "enter-import" "not" "if" "forward-namespace" "unit")}
+        {Lisp-Entry "remove-import-invoice" method #f 310 18 310 39 ("one" "'one" "keep:" "get-start" "remove-spaces" "get-range" "delete-range" "lambda" "text" "get-undoer" "with-atomic-undo" "when" "find-import-invoice" "first?" "found?" "receive" "error" "enter-import" "not" "if" "forward-namespace" "unit")}
+        {Lisp-Entry "find-named-walker" method #f 328 20 328 37 ("nextmethod" "else" "walk-datacontainer" ":datacontainer" "walk-com-external" ":com-external" "walk-external" ":c-external" "walk-c-define" ":c-definition" "walk-c-structure" ":c-structure" "walk-c-type" ":c-type" "walk-c-include" ":c-include" "walk-c-named-declare" ":c-named-declare" "walk-c-enumeration" ":c-enumeration" "walk-c-constant" ":c-constant" "walk-enumeration" ":enumeration" "walk-constant" ":constant" "walk-global" ":global" "walk-form" ":form" "walk-property" ":property" "walk-slot" ":slot" "walk-method" ":method" "walk-submodule" ":submodule" "walk-remotable-stub" ":remotable-stub" "walk-interface" ":interface" "walk-class" ":class" "walk-specialize" ":specialize" "walk-definition" ":definition" "walk-native" ":native" "walk-attributes" ":attributes" "walk-properties" ":properties" "walk-proclaim" ":proclaim" "case" "name")}
+        {Lisp-Entry "walk-proclaim" method #f 360 11 360 24 ("end" "start" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-properties" method #f 364 11 364 26 ("walk-expressions" "end" "start" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-attributes" method #f 369 11 369 26 ("exit-list" "walk-expressions" "initialize" "'initialize" "and" "setter" "'setter" "string-append" "getter" "'getter" "accessor" "'accessor" "find-marked-symbol" "symbol-documented?" "definition" "'definition" "get-marked" "marked" "'symbol" "kind" "eq?" "enter-list" "when" "iterate" "let" "forward-expr" "code" "'code" "walk-expression" "end" "start" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-definition" method #f 389 11 389 26 ("code" "'code" "walk-expressions" "exit-list" "walk-parameters" "enter-list" "else" "find-marked-symbol" "symbol-documented?" "get-marked" "definition" "'definition" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "not" "cond" "0" "char-forward" "eqv?" "list?" "forward-whites" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-specialize" method #f 408 11 408 26 ("code" "'code" "walk-expressions" "exit-list" "walk-parameters" "enter-list" "else" "set!" "cond" "list?" "symbol-documented?" "get-marked" "specialize" "'specialize" "as" "'as" "find-marked-symbol" "'symbol" "kind" "eq?" "forward-expr" "and" "0" "char-forward" "eqv?" "not" "when" "forward-whites" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-class" method #f 433 11 433 21 ("class" "'class" "walk-namespace" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-interface" method #f 436 11 436 25 ("interface" "'interface" "walk-namespace" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-remotable-stub" method #f 439 11 439 30 ("remotable-stub" "'remotable-stub" "walk-namespace" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-submodule" method #f 442 11 442 25 ("submodule" "'submodule" "walk-namespace" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-method" method #f 446 18 446 29 ("code" "'code" "walk-expressions" "exit-list" "walk-parameters" "forward-whites" "find-marked-symbol" "symbol-documented?" "get-marked" "method" "'method" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "enter-list" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-slot/property-accessors" method #f 460 11 460 39 ("code" "'code" "walk-expression" "else" "'setter" "'getter" "get-marked" "string=?" "when" "accessors" "initialize" "marked-symbol" "symbol" "'symbol" "kind" "eq?" "and" "unless" "forward-expr" "while" "find-marked-symbol" "symbol-documented?" "end" "start" "'accessor" "setter" "getter" "case" "string-append" "name" "let" "accessor" "declare-accessor" "define" "doc" "expression" "keyword" "declaration" "slot-name" "context")}
+        {Lisp-Entry "walk-slot" method #f 489 11 489 20 ("walk-expressions" "walk-slot/property-accessors" "find-marked-symbol" "symbol-documented?" "slot" "'slot" "set!" "get-marked" "marked" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "forward-whites" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-property" method #f 502 11 502 24 ("walk-expressions" "walk-slot/property-accessors" "find-marked-symbol" "symbol-documented?" "property" "'property" "set!" "get-marked" "marked" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-form" method #f 514 11 514 20 ("walk-expressions" "end" "start" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-global" method #f 519 11 519 22 ("find-marked-symbol" "symbol-documented?" "get-marked" "global" "'global" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-constant" method #f 528 11 528 24 ("walk-expressions" "find-marked-symbol" "symbol-documented?" "get-marked" "constant" "'constant" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-enumeration" method #f 538 11 538 27 ("walk-expressions" "find-marked-symbol" "symbol-documented?" "get-marked" "enumeration" "'enumeration" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-c-constant" method #f 548 11 548 26 ("walk-expressions" "find-marked-symbol" "symbol-documented?" "get-marked" "c-constant" "'c-constant" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-c-enumeration" method #f 558 11 558 29 ("walk-expressions" "find-marked-symbol" "symbol-documented?" "get-marked" "c-enumeration" "'c-enumeration" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-c-named-declare" method #f 568 11 568 31 ("walk-expressions" "end" "start" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-c-include" method #f 573 11 573 25 ("walk-expressions" "end" "start" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-c-type" method #f 578 11 578 22 ("walk-expressions" "find-marked-symbol" "symbol-documented?" "get-marked" "c-type" "'c-type" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "when" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-c-structure" method #f 588 11 588 27 ("walk-expressions" "exit-list" "find-marked-symbol" "symbol-documented?" "get-marked" "c-structure" "'c-structure" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "enter-list" "when" "0" "char-forward" "eqv?" "list?" "forward-whites" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-external" method #f 604 11 604 24 ("walk-expressions" "exit-list" "walk-parameters" "find-marked-symbol" "symbol-documented?" "get-marked" "external" "'external" "'symbol" "kind" "eq?" "and" "enter-list" "entered?" "forward-expr" "when" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-com-external" method #f 620 11 620 28 ("walk-expressions" "exit-list" "walk-parameters" "find-marked-symbol" "symbol-documented?" "get-marked" "com-external" "'com-external" "'symbol" "kind" "eq?" "enter-list" "entered?" "forward-expr" "and" "when" "get-modifiers" "walk-modifiers" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-datacontainer" method #f 636 11 636 29 ("walk-expressions" "find-marked-symbol" "symbol-documented?" "get-marked" "datacontainer" "'datacontainer" "forward-expr" "when" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}}}})
 "Jazz-File"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "builder" "Jazz-File.jazz"} 1257476468
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "builder" "Jazz-File.jazz"} 1258811564
     {Lisp-Entry "jazz.editor.jazz.builder.Jazz-File" module #f 37 18 37 52 ("jazz")
       {Lisp-Entry "Jazz-File" class #f 44 7 44 16 ("initialize" "Project-File")
         {Lisp-Entry "tester?" property #f 47 12 47 19 ()}
@@ -152,40 +150,41 @@
         {Lisp-Entry "set-tester?" accessor #f 47 44 47 52 ()}
         {Lisp-Entry "print" method #f 50 20 50 25 ("name" "format" "lambda" "self" "print-unreadable" "readably" "printer")}
         {Lisp-Entry "get-product" method #f 64 18 64 29 ("project" "Product" "self" "is?" "if")}
-        {Lisp-Entry "get-class-presentation" method #f 77 25 77 47 ()}
-        {Lisp-Entry "property-presentation" method #f 81 25 81 46 ("nextmethod" "else" "tester?" "field-name" "case" "property")}
-        {Lisp-Entry "can-rename-component?" method #f 87 20 87 41 ()}
-        {Lisp-Entry "get-categorized-properties" method #f 91 20 91 46 ("tester?" "build?" "source")}
-        {Lisp-Entry "get-row-instance" method #f 95 20 95 36 ("nextmethod" "else" "Boolean-Row" "new" "tester?" "field-name" "case" "property")}}}})
+        {Lisp-Entry "get-class-descriptor" method #f 77 25 77 45 ("Jazz-File-Descriptor" "new")}}
+      {Lisp-Entry "design" submodule #f 86 11 86 17 ()
+        {Lisp-Entry "Jazz-File-Descriptor" class #f 92 7 92 27 ("Project-File-Descriptor")
+          {Lisp-Entry "class-presentation" method #f 95 20 95 38 ("class")}
+          {Lisp-Entry "class-property-presentation" method #f 99 20 99 47 ("nextmethod" "else" "tester?" "field-name" "case" "property" "class")}
+          {Lisp-Entry "component-can-rename-component?" method #f 105 20 105 51 ("component")}
+          {Lisp-Entry "component-get-categorized-properties" method #f 109 20 109 56 ("tester?" "build?" "source" "component")}
+          {Lisp-Entry "component-get-row-instance" method #f 113 20 113 46 ("nextmethod" "else" "Boolean-Row" "new" "tester?" "field-name" "case" "property" "component")}}}}})
 "Jazz-Parser"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "parser" "Jazz-Parser.jazz"} 1257476468
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "parser" "Jazz-Parser.jazz"} 1258811564
     {Lisp-Entry "jazz.editor.jazz.parser.Jazz-Parser" module #f 37 18 37 53 ("jazz")
       {Lisp-Entry "Jazz-Parser" class #f 44 7 44 18 ("Lisp-Parser")
         {Lisp-Entry "explorer-class" method #f 47 20 47 34 ("Jazz-Explorer" "file")}
         {Lisp-Entry "text-view-class" method #f 51 20 51 35 ("Jazz-Text-View")}}}})
 "Jazz-Plain-Text-View"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "text" "Jazz-Plain-Text-View.jazz"} 1257476469
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "text" "Jazz-Plain-Text-View.jazz"} 1258811565
     {Lisp-Entry "jazz.editor.jazz.text.Jazz-Plain-Text-View" module #f 37 18 37 60 ("jazz")
       {Lisp-Entry "Jazz-Plain-Text-View" class #f 44 7 44 27 ("Plain-Text-View")
         {Lisp-Entry "install" method #f 47 20 47 27 ("get-comment-style" "Comment" "'Comment" "get-title-style" "Title" "'Title" "add-style-preference" "default-style" "get-name" "default" "preferences" "pref" "let" "nextmethod" "rest")}
         {Lisp-Entry "colorize-comments" method #f 60 20 60 37 ("Title" "'Title" "4" "+" "Comment" "'Comment" "stylize" "not" "if" "title?" "end" "start" "lambda" "for-each-comment" "text-beginning" "end:" "self" "Jazz-Explorer" "new" "expl" "let" "jazz" "'jazz" "type-heuristic" "eq?" "when" "rest")}
-        {Lisp-Entry "recolorize-text" method #f 71 20 71 35 ("recolorize-row" "for-each" "1" "+" "get-row" "naturals" "range" "let" "jazz" "'jazz" "type-heuristic" "eq?" "when" "end-row" "start")}
-        {Lisp-Entry "recolorize-row" method #f 77 11 77 25 ("recolorize-comments" "row")}
-        {Lisp-Entry "recolorize-comments" method #f 81 11 81 30 ("Title" "'Title" "Cell" "new" "Comment" "'Comment" "stylize" "begin" "title-comment-string" "subseq" "=" "<" "if" "4" "+" "title-end" "let" "20" "<=" "when" "search" "and" "comment" "syntax" "comment-string" "cardinality" "len" "paragraph-string" "line" "let*" "row")}}}})
+        {Lisp-Entry "recolorize-text" method #f 71 20 71 35 ("for-each" "1" "get-row" "naturals" "range" "jazz" "'jazz" "type-heuristic" "eq?" "Title" "'Title" "Cell" "new" "Comment" "'Comment" "stylize" "begin" "title-comment-string" "subseq" "=" "<" "if" "4" "+" "title-end" "let" "20" "<=" "when" "search" "and" "comment" "syntax" "comment-string" "cardinality" "len" "paragraph-string" "line" "let*" "recolorize-comments" "row" "recolorize-row" "define" "end-row" "start")}}}})
 "Jazz-Syntax"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "syntax" "Jazz-Syntax.jazz"} 1257477716
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "syntax" "Jazz-Syntax.jazz"} 1265989215
     {Lisp-Entry "jazz.editor.jazz.syntax.Jazz-Syntax" module #f 37 18 37 53 ("jazz")
       {Lisp-Entry "Jazz-Syntax" class #f 52 7 52 18 ("Lisp-Syntax")
         {Lisp-Entry "translate-key" method #f 60 20 60 33 ("translate-lisp-key" "jazz-text" "documents" "get-preferences" "get-translate-keys?" "not" "if" "key")}
         {Lisp-Entry "get-constituent-test" method #f 71 20 71 40 ("jazz-constituent?")}
-        {Lisp-Entry "find-imports" method #f 80 20 80 32 ("throw-cancel" "cancel" "insert-import-invoice" "set-end" "text-beginning" "set-start" "explorer-class" "expl" "no" "map" "join" "set-clipboard-text" "null?" "unless" "yes" "case" "cons" "set!" "public-access" "lookup-declaration" "public" "'public" "get-access" "eq?" "Module-Declaration" "is?" "and" "when" "outline-unit" "declaration" "iterate-units" "user-message" "unit-name" "outline-feedback" "parameterize" "default" "'default" "0" "=" "if" "sound:" "content:" "no:" "yes:" "confirmation" "'confirmation" "type:" "format-plural" "format-cardinality" "downcase" "format" "message-box" "Bitmap-Resource" "image:" "title:" "Tree-Node" "list" "children:" "add-row" "symbol->string" "title" "let" "import" "lambda" "for-each" "length" "count" "'tree" "locate" "tree" "150" "450" "Dimension" "size:" "Imports-Border" "new" "border" "let*" "imports" "present-imports" "define" "symbol" "text")}}
-      {Lisp-Entry "Imports-Border" class #f 128 7 128 21 ("display-images?:" "toplevel-controls?:" "300" "width:" "title:" "row" "selection-mode:" ":icons" "portfolio:" "tree" "fill" "layout-type:" "content" "vscroll?:" "hscroll?:" "flat?:" "Outline-Border" "name:" "Color" "border-color:" "solid" "border-type:" "Border-View")}}})
+        {Lisp-Entry "find-imports" method #f 80 20 80 32 ("throw-cancel" "cancel" "insert-import-invoice" "set-end" "text-beginning" "set-start" "explorer-class" "expl" "no" "map" "join" "set-clipboard-text" "null?" "unless" "yes" "case" "cons" "set!" "public-access" "lookup-declaration" "public" "'public" "get-access" "eq?" "Module-Declaration" "is?" "and" "when" "outline-unit" "declaration" "iterate-units" "user-message" "unit-name" "outline-feedback" "parameterize" "default" "'default" "0" "=" "if" "sound:" "content:" "no:" "yes:" "confirmation" "'confirmation" "type:" "format-plural" "format-cardinality" "downcase" "format" "message-box" "Image-Resource" "image:" "title:" "Tree-Node" "list" "children:" "add-row" "symbol->string" "title" "let" "import" "lambda" "for-each" "length" "count" "'tree" "locate" "tree" "150" "450" "Dimension" "size:" "Imports-Border" "new" "border" "let*" "imports" "present-imports" "define" "symbol" "text")}}
+      {Lisp-Entry "Imports-Border" class #f 128 7 128 21 ("display-images?:" "toplevel-controls?:" "300" "width:" "title:" "row" "selection-mode:" ":images" "portfolio:" "tree" "fill" "layout-type:" "content" "vscroll?:" "hscroll?:" "flat?:" "Outline-Border" "name:" "Color" "border-color:" "solid" "border-type:" "Border-View")}}})
 "Jazz-Text-Actions"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "text" "Jazz-Text-Actions.jazz"} 1257476470
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "text" "Jazz-Text-Actions.jazz"} 1258811565
     {Lisp-Entry "jazz.editor.jazz.text.Jazz-Text-Actions" module #f 37 18 37 57 ("jazz")
       {Lisp-Entry "Jazz-Text-Actions" class #f 46 7 46 24 ("on-set-read/write" "set-read/write" "on-remove-break" "remove-break" "F9" "on-add-break" "add-break" "F12" ":shift" "on-edit-documentation" "edit-documentation" "F1" "on-present-documentation" "present-documentation" ":control" "Shortcut" "shortcut:" "on-design-form" ":focus" "Event-Handler" "action-handler:" "design-form" "name:" "Actions")}}})
 "Jazz-Text-Preferences"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "text" "Jazz-Text-Preferences.jazz"} 1257477716
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "text" "Jazz-Text-Preferences.jazz"} 1265989215
     {Lisp-Entry "jazz.editor.jazz.text.Jazz-Text-Preferences" module #f 37 18 37 61 ("jazz")
       {Lisp-Entry "Jazz-Text-Preferences" class #f 49 7 49 28 ("completions:" "Dark-Orange" "feature-style:" "quotation-style:" "named-string-style:" "delimited-string-style:" "string-style:" "boolean-style:" "number-style:" "char-style:" "Ochre" "literal-style:" "specifier-style:" "Dark-Purple" "tag-style:" "keyword-style:" "undocumented-declaration-style:" "Dark-Green" "documented-declaration-style:" "Dark-Blue" "declaration-keyword-style:" "named-comment-style:" "Text-Gray" "expr-comment-style:" "Purple" "comment-style:" "Dark-Red" "color:" "Text-Style-Preference" "title-style:" "title:" "initialize" "Lisp-Text-Preferences")
         {Lisp-Entry "named-comment-style" property #f 52 12 52 31 ()}
@@ -200,10 +199,13 @@
         {Lisp-Entry "literal-style" property #f 55 12 55 25 ()}
         {Lisp-Entry "get-literal-style" accessor #f 55 67 55 75 ()}
         {Lisp-Entry "set-literal-style" accessor #f 55 67 55 75 ()}
-        {Lisp-Entry "get-categorized-properties" method #f 241 20 241 46 ("translate-keys?" "string-style" "specifier-style" "keyword-style" "undocumented-declaration-style" "documented-declaration-style" "named-comment-style" "expr-comment-style" "comment-style" "title-style" "completions")}
-        {Lisp-Entry "get-row-instance" method #f 245 20 245 36 ("nextmethod" "else" "Boolean-Row" "translate-keys?" "Completion-List-Row" "completions" "Style-Row" "new" "string-style" "specifier-style" "keyword-style" "undocumented-declaration-style" "documented-declaration-style" "named-comment-style" "expr-comment-style" "comment-style" "title-style" "field-name" "case" "property")}}}})
+        {Lisp-Entry "get-class-descriptor" method #f 243 25 243 45 ("Jazz-Text-Preferences-Descriptor" "new")}}
+      {Lisp-Entry "design" submodule #f 252 11 252 17 ()
+        {Lisp-Entry "Jazz-Text-Preferences-Descriptor" class #f 258 7 258 39 ("Document-Preferences-Descriptor")
+          {Lisp-Entry "component-get-categorized-properties" method #f 261 20 261 56 ("translate-keys?" "string-style" "specifier-style" "keyword-style" "undocumented-declaration-style" "documented-declaration-style" "named-comment-style" "expr-comment-style" "comment-style" "title-style" "completions" "component")}
+          {Lisp-Entry "component-get-row-instance" method #f 265 20 265 46 ("nextmethod" "else" "Boolean-Row" "translate-keys?" "Completion-List-Row" "completions" "Style-Row" "new" "string-style" "specifier-style" "keyword-style" "undocumented-declaration-style" "documented-declaration-style" "named-comment-style" "expr-comment-style" "comment-style" "title-style" "field-name" "case" "property" "component")}}}}})
 "Jazz-Text-View"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "text" "Jazz-Text-View.jazz"} 1257476471
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "text" "Jazz-Text-View.jazz"} 1265989215
     {Lisp-Entry "jazz.editor.jazz.text.Jazz-Text-View" module #f 37 18 37 54 ("jazz")
       {Lisp-Entry "Jazz-Text-View" class #f 58 7 58 21 ("tooltip?:" "Lisp-Text-View")
         {Lisp-Entry "install" method #f 65 20 65 27 ("highlight:" "Break" "'Break" "Red" "Walk-Fatal" "'Walk-Fatal" "Orange" "Walk-Warning" "'Walk-Warning" "Color" "frame:" "base:" "Reference" "'Reference" "name:" "Text-Style" "new" "add-style" "get-feature-style" "Feature" "'Feature" "get-literal-style" "Literal" "'Literal" "get-quotation-style" "Quotation" "'Quotation" "get-named-string-style" "Named-String" "'Named-String" "get-delimited-string-style" "Delimited-String" "'Delimited-String" "get-string-style" "String" "'String" "get-boolean-style" "Boolean" "'Boolean" "get-number-style" "Number" "'Number" "get-char-style" "Char" "'Char" "get-specifier-style" "Specifier" "'Specifier" "get-tag-style" "Tag" "'Tag" "get-keyword-style" "Keyword" "'Keyword" "get-undocumented-declaration-style" "Undocumented-Declaration" "'Undocumented-Declaration" "get-documented-declaration-style" "Documented-Declaration" "'Documented-Declaration" "get-declaration-keyword-style" "Declaration-Keyword" "'Declaration-Keyword" "get-named-comment-style" "Named-Comment" "'Named-Comment" "get-expr-comment-style" "Expr-Comment" "'Expr-Comment" "get-comment-style" "Comment" "'Comment" "get-title-style" "Title" "'Title" "add-style-preference" "default-style" "get-name" "default" "preferences" "pref" "let" "nextmethod" "rest")}
@@ -213,47 +215,39 @@
         {Lisp-Entry "new-syntax" method #f 106 20 106 30 ("Jazz-Syntax" "new")}
         {Lisp-Entry "focus-actions" method #f 115 20 115 33 ("nextmethod" "jazz-text" "'jazz-text" "find-actions" "cons")}
         {Lisp-Entry "get-context-menu" method #f 125 20 125 36 ("layout-menu" "set-read/write" "'set-read/write" "locate" "set-visible?" "read/write?" "not" "or" "when" "get-moniker" "moniker" "get-controller" "controller" "Jazz-Text-Menu" "new" "menu" "let*")}
-        {Lisp-Entry "on-design-form" method #f 141 11 141 25 ("client:" "new-frame" "Manager-View" "View-Editor" "View" "is?" "editor-class" "new" "component" "set-visible?" "bring-to-front" "begin" "find-editor" "essay" "frame" "get-self-form" "form" "error" "Component" "subtype?" "not" "if" "autoload" "class" "current-category-name" "name" "let*" "on-design-form" "'on-design-form" "unimplemented" "evt")}
-        {Lisp-Entry "find-editor" method #f 159 11 159 22 ("get-children" "continuation-return" "get-form" "eq?" "and" "get-designer" "designer" "Editor-View" "get-guest" "guest" "Host-View" "is?" "when" "frame" "for-each" "return" "lambda" "continuation-capture" "get-stage" "stage" "let" "form")}
-        {Lisp-Entry "on-copy-list" method #f 174 11 174 23 ("length" "user-message" "push-clipboard-list" "get-selected-string" "read-string-content" ":reader" "->string" "object" "lambda" "map" "list" "get-application" "appl" "let" "evt")}
-        {Lisp-Entry "get-tooltip-context" method #f 186 20 186 39 ("Label" "name:" "Font" "font:" "bounds:" "rect-height" "-10" "Point" "rect-position" "+" "position:" "text:" "view:" "Tooltip-Context" "in-rect?" "get-end" "get-col" "get-start" "get-row" "row-range-rect" "bounds" "present-location" "essay" "text" "range-location" "location" "get-range" "range" "symbol" "'symbol" "eq?" "get-kind" "kind" "let" "explore-whitespace?:" "atomic?:" "outer-expr" "err" "Explore-Error" "catch" "end:" "start:" "self" "Jazz-Explorer" "new" "expl" "view->text" "pos" "let*" "debugging?" "Debugger" "'Debugger" "in-manifest?" "and" "when" "view")}
-        {Lisp-Entry "default-preferences" definition #f 215 14 215 33 ("completions:" "Dark-Blue" "keyword-style:" "Dark-Green" "undocumented-declaration-style:" "documented-declaration-style:" "named-comment-style:" "Text-Gray" "expr-comment-style:" "Purple" "comment-style:" "Dark-Red" "color:" "Text-Style-Preference" "title-style:" "form>>" "instantiate")}
-        {Lisp-Entry "preferences" method #f 229 20 229 31 ("jazz-text" "documents" "get-preferences")}
-        {Lisp-Entry "declaration-style" method #f 233 20 233 37 ("Undocumented-Declaration" "'Undocumented-Declaration" "Documented-Declaration" "'Documented-Declaration" "if" "documented?")}
-        {Lisp-Entry "colorize-tag" method #f 239 20 239 32 ("Tag" "'Tag" "apply-coloring" "end" "start" "colorizer")}
-        {Lisp-Entry "colorize-specifier" method #f 243 20 243 38 ("Specifier" "'Specifier" "apply-coloring" "end" "start" "colorizer")}
-        {Lisp-Entry "recolorize-named-comments" method #f 247 11 247 36 ("get-start" "Named-Comment" "'Named-Comment" "apply-style" "get-row" "=" "symbol" "'symbol" "eq?" "when" "get-end" "end" "forward-expr" "kind" "end:" "self" "explorer-class" "expl" "+" "Cell" "new" "pos" "1" "-" "element" "eqv?" ">" "and" "unless" "set!" "if" "start:" "search" "comment" "let" "not" "while" "done?" "0" "col" "cardinality" "len" "paragraph-string" "line" "let*" "row")}
-        {Lisp-Entry "get-readtable" method #f 271 20 271 33 ("jazz-readtable")}
-        {Lisp-Entry "prepare-expressions" method #f 280 20 280 39 ("jazz" "'jazz" "list" "str" "receive" "get-locat-container" "container" "get-output-string" "values" "length" "string" "split" "cardinality" "newline" "not" "cdr" "null?" "last?" "line" "pair" "for-each-pair" "get-string" "lambda" "for-each" "0" "1" "+" "-" "make-string" "display" "begin" "=" "iterate" "c" "r" "rng" "fill" "open-output-string" "output" "col" "row" "get-col" "first-col" "get-start" "get-row" "first-row" "car" "not-null?" "if" "first" "expressions" "package-expressions" "cons" "set!" "namespace-declaration-range" "namespace" "namespace-expr?" "when" "outer-expr" "while" "range:" "self" "Jazz-Explorer" "new" "expl" "namespaces" "let" "collect-namespaces" "define" "range")}
-        {Lisp-Entry "on-add-break" method #f 342 19 342 31 ("1" "+" "get-start" "Break" "'Break" "apply-style" "add-break" "error" "not" "if" "Interpreter" "resolve-location" "object" "toplevel-closure" "in-context?" "resolved?" "receive" "range-location" "loc" "current-expr-range" "range" "let*" "evt")}
-        {Lisp-Entry "on-remove-break" method #f 353 19 353 34 ("get-row" "get-paragraph" "invalidate-paragraph" "default-style" "set-style" "when" "1" "get-start" "+" "get-run-at" "run" "let" "remove-break" "bell" "not" "if" "Interpreter" "resolve-location" "object" "toplevel-closure" "in-context?" "resolved?" "receive" "range-location" "loc" "current-expr-range" "range" "let*" "evt")}
-        {Lisp-Entry "present-location" method #f 373 11 373 27 ("location")}
-        {Lisp-Entry "current-location" method #f 382 11 382 27 ("get-start" "position->location")}
-        {Lisp-Entry "position->location" method #f 386 11 386 29 ("range-location" "get-range" "range" "outer-composite?:" "outer-expr" "when" "end:" "start:" "self" "Jazz-Explorer" "new" "expl" "let" "pos")}
-        {Lisp-Entry "location-class" method #f 393 11 393 25 ("cdr" "class-of" "category-field" "definition-value" "set!" "meta" "'meta" "eq?" "name" "lambda" "for-each" "meta?" "let" "error" "not" "if" "global-value" "class" "car" "class-name" "let*" "load?" "load?:" "loc")}
-        {Lisp-Entry "split-location" method #f 409 11 409 25 ("get-output" "values" "cdr" "set!" "put" "car" "symbol?" "while" "List-Factory" "new" "definition" "scan" "let" "location")}
-        {Lisp-Entry "declaration-name-info" method #f 418 11 418 32 ("else" "2" "external?" "procedure?" "definition-value" "value" "let" "field?" "field-modifiers-count" "+" "slot?" "1" "values" "category?" "cond" "declaration-name-info" "'declaration-name-info" "unimplemented" "object")}
-        {Lisp-Entry "declaration-name-location?" method #f 434 11 434 37 ("0" "and" "list" "=" "or" "inside-allowed?" "skip" "receive" "when" "declaration-name-info" "info" "let" "internal-location" "object")}
-        {Lisp-Entry "range-location" method #f 442 11 442 25 ("meta" "'meta" "memq?" "cons" "loc" "declaration-name" "name" "modifiers" "receive" "declaration-expr?" "def?" "set!" "if" "outer-expr" "rank" "not" "while" "done?" "previous-def?" "location" "get-end" "end:" "get-start" "start:" "self" "Jazz-Explorer" "new" "expl" "let" "range")}
-        {Lisp-Entry "location-range" method #f 463 18 463 32 ("get-range" "forward-location" "text-beginning" "end:" "self" "Jazz-Explorer" "new" "expl" "let" "toplevel-location" "toplevel-location:" "location")}
-        {Lisp-Entry "on-edit-documentation" method #f 474 11 474 32 ("edit-documentation" "get-application" "appl" "bell" "not" "if" "current-symbol" "symbol" "let" "evt")}
-        {Lisp-Entry "on-present-documentation" method #f 482 11 482 35 ("current-symbol" "present-documentation" "evt")}
-        {Lisp-Entry "present-documentation" method #f 486 11 486 32 ("border:" "alternate-position:" "popup" "DocToText-Transformation" "parse-jml" "transform-jml" "set-text" "get-display" "display" "solid" "'solid" "border-type:" "Border-View" "border" "alternate" "100" "Point" "pos" "'text" "locate" "text" "300" "600" "Dimension" "size:" "Documentation-View" "new" "view" "let*" "bell" "not" "if" "jml" "present-text" "get-application" "get-documentation" "doc" "let" "when" "doc-jml" "define" "symbol")}
-        {Lisp-Entry "show-arguments" method #f 516 20 516 34 ("show-declaration-arguments" "0" "char-backward" "case" "symbol" "'symbol" "get-kind" "=" "backward-expr" "and" "get-end" "end:" "get-start" "start:" "self" "Jazz-Explorer" "new" "expl" "let" "empty-selection?" "when")}
-        {Lisp-Entry "show-declaration-arguments" method #f 525 11 525 37 ("show-symbol-arguments" "uses" "'uses" "getf" "imports" "find-symbol" "symbol" "keywords" "meta?" "kind" "category" "bind" "category-info" "in" "receive" "when" "current-toplevel-info" "info" "get-marked" "name" "let" "expl")}
-        {Lisp-Entry "show-symbol-arguments" method #f 539 11 539 32 ("Interpreter" "closure-function" "Closure" "show-function-arguments" "%function" "show-external-arguments" "External" "typecase" "definition-value" "value" "when" "find-in" "field" "let" "show-symbol-arguments" "'show-symbol-arguments" "unimplemented" "packages" "class" "symbol")}
-        {Lisp-Entry "show-external-arguments" method #f 554 11 554 34 ("proxy-result" "proxy-rest?" "if" "List" "get-type" "param" "lambda" "Interpreter" "proxy-parameters" "accumulate" "type-name" "map" "user-message" "external" "symbol")}
-        {Lisp-Entry "show-function-arguments" method #f 563 11 563 34 ("get-output-string" "user-message" "present-parameters" "'rest" "rest" "open-output-string" "printer" "Interpreter" "function-parameters" "parameters" "let*" "function" "symbol")}
-        {Lisp-Entry "present-parameters" method #f 573 11 573 29 ("else" "cdr" "present-parameters" "format" "car" "present-parameter" "pair?" "cond" "when" "printer" "bind" "parameters")}
-        {Lisp-Entry "present-parameter" method #f 585 11 585 28 ("else" "Interpreter" "variable-symbol" "format" "Variable" "typecase" "printer" "parameter")}
-        {Lisp-Entry "explorer-class" method #f 597 20 597 34 ("Jazz-Explorer")}
-        {Lisp-Entry "current-category-name" method #f 606 11 606 32 ("keywords" "name" "meta?" "kind" "category" "bind" "current-toplevel-info" "category-info" "in" "receive")}
-        {Lisp-Entry "toplevel-expr" method #f 613 11 613 24 ("get-range" "set!" "outer-expr" "while" "range" "end:" "start:" "self" "Jazz-Explorer" "new" "expl" "let" "pos")}
-        {Lisp-Entry "edit-symbol-class" method #f 626 20 626 37 ("get-application" "edit-class" "in-manifest?" "when" "symbol")}}
-      {Lisp-Entry "Documentation-View" class #f 638 7 638 25 ("editable?:" "Tooltip" "Color" "background:" "text" "content" "name:" "flat?:" "vscroll?:" "hscroll?:" "fill" "layout-type:" "Layout-View")}
-      {Lisp-Entry "Jazz-Text-Menu" class #f 653 7 653 21 ("paste" "copy" "view" "french:" "english:" "Locales" "cut" "set-read/write" "remove-break" "add-break" "edit-documentation" "edit-references" "edit-definitions" "jazz-text" "design-form" "code-text" "Action" "action:" "Bitmap-Resource" "icon:" "title:" "evaluate" "name:" "Context-Menu")}}})
+        {Lisp-Entry "on-design-form" method #f 141 11 141 25 ("client:" "new-frame" "Manager-View" "View-Editor" "View" "editor-class" "new" "component" "set-visible?" "bring-to-front" "begin" "essay" "get-self-form" "error" "Component" "subtype?" "not" "if" "autoload" "class" "current-category-name" "name" "let*" "on-design-form" "'on-design-form" "unimplemented" "get-children" "continuation-return" "get-form" "eq?" "and" "get-designer" "designer" "Editor-View" "get-guest" "guest" "Host-View" "is?" "when" "frame" "for-each" "return" "lambda" "continuation-capture" "get-stage" "stage" "let" "form" "find-editor" "define" "evt")}
+        {Lisp-Entry "on-copy-list" method #f 173 11 173 23 ("length" "user-message" "push-clipboard-list" "get-selected-string" "read-string-content" ":reader" "->string" "object" "lambda" "map" "list" "get-application" "appl" "let" "evt")}
+        {Lisp-Entry "get-tooltip-context" method #f 185 20 185 39 ("Label" "name:" "Font" "font:" "bounds:" "rect-height" "-10" "Point" "rect-position" "+" "position:" "text:" "view:" "Tooltip-Context" "in-rect?" "get-end" "get-col" "get-start" "get-row" "row-range-rect" "bounds" "present-location" "essay" "text" "range-location" "location" "get-range" "range" "symbol" "'symbol" "eq?" "get-kind" "kind" "let" "explore-whitespace?:" "atomic?:" "outer-expr" "err" "Explore-Error" "catch" "end:" "start:" "self" "Jazz-Explorer" "new" "expl" "view->text" "pos" "let*" "debugging?" "Debugger" "'Debugger" "in-manifest?" "and" "when" "view")}
+        {Lisp-Entry "default-preferences" definition #f 214 14 214 33 ("completions:" "Dark-Blue" "keyword-style:" "Dark-Green" "undocumented-declaration-style:" "documented-declaration-style:" "named-comment-style:" "Text-Gray" "expr-comment-style:" "Purple" "comment-style:" "Dark-Red" "color:" "Text-Style-Preference" "title-style:" "form>>" "instantiate")}
+        {Lisp-Entry "preferences" method #f 228 20 228 31 ("jazz-text" "documents" "get-preferences")}
+        {Lisp-Entry "declaration-style" method #f 232 20 232 37 ("Undocumented-Declaration" "'Undocumented-Declaration" "Documented-Declaration" "'Documented-Declaration" "if" "documented?")}
+        {Lisp-Entry "colorize-tag" method #f 238 20 238 32 ("Tag" "'Tag" "apply-coloring" "end" "start" "colorizer")}
+        {Lisp-Entry "colorize-specifier" method #f 242 20 242 38 ("Specifier" "'Specifier" "apply-coloring" "end" "start" "colorizer")}
+        {Lisp-Entry "recolorize-named-comments" method #f 246 11 246 36 ("get-start" "Named-Comment" "'Named-Comment" "apply-style" "get-row" "=" "symbol" "'symbol" "eq?" "when" "get-end" "end" "forward-expr" "kind" "end:" "self" "explorer-class" "expl" "+" "Cell" "new" "pos" "1" "-" "element" "eqv?" ">" "and" "unless" "set!" "if" "start:" "search" "comment" "let" "not" "while" "done?" "0" "col" "cardinality" "len" "paragraph-string" "line" "let*" "row")}
+        {Lisp-Entry "get-readtable" method #f 270 20 270 33 ("jazz-readtable")}
+        {Lisp-Entry "prepare-expressions" method #f 279 20 279 39 ("jazz" "'jazz" "list" "str" "receive" "get-locat-container" "container" "get-output-string" "values" "length" "string" "split" "cardinality" "newline" "not" "cdr" "null?" "last?" "line" "pair" "for-each-pair" "get-string" "lambda" "for-each" "0" "1" "+" "-" "make-string" "display" "begin" "=" "iterate" "c" "r" "rng" "fill" "open-output-string" "output" "col" "row" "get-col" "first-col" "get-start" "get-row" "first-row" "car" "not-null?" "if" "first" "expressions" "package-expressions" "cons" "set!" "namespace-declaration-range" "namespace" "namespace-expr?" "when" "outer-expr" "while" "range:" "self" "Jazz-Explorer" "new" "expl" "namespaces" "let" "collect-namespaces" "define" "range")}
+        {Lisp-Entry "on-add-break" method #f 341 19 341 31 ("1" "+" "get-start" "Break" "'Break" "apply-style" "add-break" "error" "not" "if" "Interpreter" "resolve-location" "object" "toplevel-closure" "in-context?" "resolved?" "receive" "range-location" "loc" "current-expr-range" "range" "let*" "evt")}
+        {Lisp-Entry "on-remove-break" method #f 352 19 352 34 ("get-row" "get-paragraph" "invalidate-paragraph" "default-style" "set-style" "when" "1" "get-start" "+" "get-run-at" "run" "let" "remove-break" "bell" "not" "if" "Interpreter" "resolve-location" "object" "toplevel-closure" "in-context?" "resolved?" "receive" "range-location" "loc" "current-expr-range" "range" "let*" "evt")}
+        {Lisp-Entry "present-location" definition #f 372 15 372 31 ("location")}
+        {Lisp-Entry "current-location" method #f 381 11 381 27 ("get-start" "position->location")}
+        {Lisp-Entry "position->location" method #f 385 11 385 29 ("range-location" "get-range" "range" "outer-composite?:" "outer-expr" "when" "end:" "start:" "self" "Jazz-Explorer" "new" "expl" "let" "pos")}
+        {Lisp-Entry "location-class" method #f 392 11 392 25 ("cdr" "class-of" "category-field" "definition-value" "set!" "meta" "'meta" "eq?" "name" "lambda" "for-each" "meta?" "let" "error" "not" "if" "global-value" "class" "car" "class-name" "let*" "load?" "load?:" "loc")}
+        {Lisp-Entry "declaration-name-info" method #f 408 11 408 32 ("else" "2" "external?" "procedure?" "definition-value" "value" "let" "field?" "field-modifiers-count" "+" "slot?" "1" "values" "category?" "cond" "declaration-name-info" "'declaration-name-info" "unimplemented" "object")}
+        {Lisp-Entry "declaration-name-location?" method #f 424 11 424 37 ("0" "and" "list" "=" "or" "inside-allowed?" "skip" "receive" "when" "declaration-name-info" "info" "let" "internal-location" "object")}
+        {Lisp-Entry "range-location" method #f 432 11 432 25 ("meta" "'meta" "memq?" "cons" "loc" "declaration-name" "name" "modifiers" "receive" "declaration-expr?" "def?" "set!" "if" "outer-expr" "rank" "not" "while" "done?" "previous-def?" "location" "get-end" "end:" "get-start" "start:" "self" "Jazz-Explorer" "new" "expl" "let" "range")}
+        {Lisp-Entry "location-range" method #f 453 18 453 32 ("get-range" "forward-location" "text-beginning" "end:" "self" "Jazz-Explorer" "new" "expl" "let" "toplevel-location" "toplevel-location:" "location")}
+        {Lisp-Entry "on-edit-documentation" method #f 464 11 464 32 ("edit-documentation" "get-application" "appl" "bell" "not" "if" "current-symbol" "symbol" "let" "evt")}
+        {Lisp-Entry "on-present-documentation" method #f 472 11 472 35 ("current-symbol" "present-documentation" "evt")}
+        {Lisp-Entry "present-documentation" method #f 476 11 476 32 ("border:" "alternate-position:" "popup" "DocToText-Transformation" "parse-jml" "transform-jml" "set-text" "get-display" "display" "solid" "'solid" "border-type:" "Border-View" "border" "alternate" "100" "Point" "pos" "'text" "locate" "text" "300" "600" "Dimension" "size:" "Documentation-View" "new" "view" "let*" "bell" "not" "if" "jml" "present-text" "get-application" "get-documentation" "doc" "let" "when" "doc-jml" "define" "symbol")}
+        {Lisp-Entry "show-arguments" method #f 506 20 506 34 ("0" "char-backward" "case" "'symbol" "get-kind" "=" "backward-expr" "and" "get-end" "end:" "get-start" "start:" "self" "Jazz-Explorer" "new" "empty-selection?" "cdr" "car" "pair?" "cond" "else" "variable-symbol" "format" "Variable" "parameter" "present-parameter" "get-output-string" "present-parameters" "'rest" "rest" "open-output-string" "printer" "function-parameters" "parameters" "let*" "function" "proxy-result" "proxy-rest?" "if" "List" "get-type" "proxy-parameters" "accumulate" "category-name" "map" "user-message" "external" "Interpreter" "closure-function" "Closure" "show-function-arguments" "%function" "show-external-arguments" "External" "typecase" "definition-value" "value" "find-in" "field" "'show-symbol-arguments" "unimplemented" "packages" "class" "show-symbol-arguments" "uses" "'uses" "getf" "imports" "find-symbol" "symbol" "keywords" "meta?" "kind" "category" "bind" "category-info" "in" "receive" "when" "current-toplevel-info" "info" "get-marked" "name" "let" "expl" "show-declaration-arguments" "define")}
+        {Lisp-Entry "explorer-class" method #f 581 20 581 34 ("Jazz-Explorer")}
+        {Lisp-Entry "current-category-name" method #f 590 11 590 32 ("keywords" "name" "meta?" "kind" "category" "bind" "current-toplevel-info" "category-info" "in" "receive")}
+        {Lisp-Entry "toplevel-expr" method #f 597 11 597 24 ("get-range" "set!" "outer-expr" "while" "range" "end:" "start:" "self" "Jazz-Explorer" "new" "expl" "let" "pos")}
+        {Lisp-Entry "edit-symbol-class" method #f 610 20 610 37 ("get-application" "edit-class" "in-manifest?" "when" "symbol")}}
+      {Lisp-Entry "Documentation-View" class #f 622 7 622 25 ("editable?:" "Tooltip" "Color" "background:" "text" "content" "name:" "flat?:" "vscroll?:" "hscroll?:" "fill" "layout-type:" "Layout-View")}
+      {Lisp-Entry "Jazz-Text-Menu" class #f 637 7 637 21 ("paste" "copy" "view" "french:" "english:" "Locales" "cut" "set-read/write" "remove-break" "add-break" "edit-documentation" "edit-references" "edit-definitions" "jazz-text" "design-form" "code-text" "Action" "action:" "Image-Resource" "icon:" "title:" "evaluate" "name:" "Context-Menu")}}})
 "Location-Error"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "text" "Location-Error.jazz"} 1257476491
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "text" "Location-Error.jazz"} 1258811565
     {Lisp-Entry "jazz.editor.jazz.text.Location-Error" module #f 37 18 37 54 ("jazz")
       {Lisp-Entry "Location-Error" class #f 43 7 43 21 ("Error")
         {Lisp-Entry "kind" slot #f 46 8 46 12 ()}
@@ -263,20 +257,20 @@
         {Lisp-Entry "initialize" method #f 50 20 50 30 ("location~self" "kind~self" "set!" "nextmethod" "apply" "others" "location" "bad" "'bad" "kind" "bind-keywords" "rest")}
         {Lisp-Entry "get-message" method #f 62 20 62 31 ("unknown" "location" "format" "bad" "kind" "case")}}}})
 "Logs-Viewer"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "log" "Logs-Viewer.jazz"} 1257476495
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "log" "Logs-Viewer.jazz"} 1265989215
     {Lisp-Entry "jazz.editor.jazz.log.Logs-Viewer" module #f 37 18 37 50 ("No-Data-Viewer" "register-autoclass" "jazz")
-      {Lisp-Entry "Logs-Viewer" class #f 52 7 52 18 ("data-container" "log-tree" "header" "scroller" "log-view" "second" "log-border" "200" "width:" "toplevel-controls?:" "on-return-press" "return-press-handler:" "on-double-click" "double-click-handler:" "on-selection-change" "selection-handler:" "log" "filled-column:" "logs-tree" "fill" "content" "vscroll?:" "document" "entry" "style:" "edge" "border-type:" "logs-border" "20" "horz" "first" "horizontal" "50" "division:" "relative" "mode:" "vert" "orientation:" "center" "vertical" "on-refresh" "refresh" "on-clear" "clear" "10" "on-open" "tail" "open" "on-refresh-logs" "refresh-logs" "on-directory-logs" "directory-logs" "on-memory-logs" ":form" "Event-Handler" "action-handler:" ":icons" "portfolio:" "Bitmap-Resource" "image-name:" "tooltip-text:" "tooltip?:" "22" "memory-logs" "0" "6" "flow" "north" "location:" "33" "300" "Dimension" "size:" "tools" "name:" "2" "Rect" "layout-insets:" "border" "layout-type:" "title:" "initialize" "Layout-View")
+      {Lisp-Entry "Logs-Viewer" class #f 52 7 52 18 ("data-container" "log-tree" "header" "scroller" "log-view" "second" "log-border" "200" "width:" "toplevel-controls?:" "on-return-press" "return-press-handler:" "on-double-click" "double-click-handler:" "on-selection-change" "selection-handler:" "log" "filled-column:" "logs-tree" "fill" "content" "vscroll?:" "document" "entry" "style:" "edge" "border-type:" "logs-border" "20" "horz" "first" "horizontal" "50" "division:" "relative" "mode:" "vert" "orientation:" "center" "vertical" "on-refresh" "refresh" "on-clear" "clear" "10" "on-open" "tail" "open" "on-refresh-logs" "refresh-logs" "on-directory-logs" "directory-logs" "on-memory-logs" ":form" "Event-Handler" "action-handler:" ":images" "portfolio:" "Image-Resource" "resource:" "tooltip-text:" "tooltip?:" "22" "memory-logs" "0" "6" "flow" "north" "location:" "33" "300" "Dimension" "size:" "tools" "name:" "2" "Rect" "layout-insets:" "border" "layout-type:" "title:" "initialize" "Layout-View")
         {Lisp-Entry "logs-directory" slot #f 55 8 55 22 ()}
         {Lisp-Entry "data-viewer" slot #f 56 8 56 19 ()}
         {Lisp-Entry "finish" method #f 92 20 92 26 ("refresh-logs" "nextmethod" "initargs")}
-        {Lisp-Entry "host-icon" method #f 102 25 102 34 ("Bitmap-Resource")}
+        {Lisp-Entry "host-icon" method #f 102 25 102 34 ("Image-Resource")}
         {Lisp-Entry "host-title" method #f 106 25 106 35 ()}
         {Lisp-Entry "host-position" method #f 110 25 110 38 ("50" "Point")}
         {Lisp-Entry "host-size" method #f 114 25 114 34 ("500" "850" "Point")}
         {Lisp-Entry "client-activate" method #f 118 20 118 35 ("perserving-refresh-logs")}
         {Lisp-Entry "get-tree" method #f 127 11 127 19 ("logs-tree" "'logs-tree" "locate")}
         {Lisp-Entry "Logs-Directory" definition #f 136 14 136 28 ("Bin" "Directory")}
-        {Lisp-Entry "with-directory" method #f 140 11 140 25 ("lambda" "with-preserved-current-directory" "Logs-Directory" "exists?" "and" "if" "proc" "default?")}
+        {Lisp-Entry "with-directory" definition #f 140 15 140 29 ("lambda" "with-preserved-current-directory" "Logs-Directory" "exists?" "and" "if" "proc" "default?")}
         {Lisp-Entry "on-memory-logs" method #f 148 11 148 25 ("refresh-logs" "logs-directory" "set!" "evt")}
         {Lisp-Entry "on-directory-logs" method #f 153 11 153 28 ("refresh-logs" "logs-directory" "set!" "directory:" "choose-directory" "directory" "let" "dir" "lambda" "get-shift?" "with-directory" "evt")}
         {Lisp-Entry "on-refresh-logs" method #f 161 11 161 26 ("refresh-logs" "evt")}
@@ -288,25 +282,20 @@
         {Lisp-Entry "on-selection-change" method #f 200 11 200 30 ("view-data" "node" "log-tree" "view-log" "reload" "get-file" "close-data-viewer" "get-row" "get-user-data" "log" "'log-view" "locate" "log-view" "when" "get-single-selection" "selection" "logs-tree" "get-name" "case" "get-sender" "sender" "let" "evt")}
         {Lisp-Entry "on-double-click" method #f 219 11 219 26 ("edit-data" "get-row" "get-user-data" "node" "when" "get-single-selection" "selection" "log-tree" "get-name" "case" "get-sender" "sender" "let" "evt")}
         {Lisp-Entry "on-return-press" method #f 229 20 229 35 ("on-double-click" "evt")}
-        {Lisp-Entry "view-logs" method #f 238 11 238 20 ("insert-file" "ci=?" "when" "get-extension" "extension" "file" "iterate-directory" "get-logs" "insert-log" "log" "for-each" "logs-directory" "null?" "if" "remove-every-row" "lambda" "with-update-locked" "get-tree" "tree" "let")}
-        {Lisp-Entry "insert-log" method #f 254 11 254 21 ("user-data:" "Bitmap-Resource" "image:" "title:" "Tree-Node" "new" "list" "children:" "add-row" "get-name" "->string" "name" "let" "log" "tree")}
-        {Lisp-Entry "insert-file" method #f 259 11 259 22 ("file:" "Log" "user-data:" "Bitmap-Resource" "image:" "title:" "Tree-Node" "new" "list" "children:" "add-row" "get-base" "name" "let" "file" "tree")}
-        {Lisp-Entry "view-data" method #f 269 29 269 38 ("layout-view" "parent:" "client:" "new" "data-viewer" "set!" "data-container" "'data-container" "locate" "container" "data-viewer-class" "class" "'data" "get-property" "data" "let*" "JML-Node" "is?" "when" "close-data-viewer" "node")}
-        {Lisp-Entry "data-viewer-class" method #f 282 11 282 28 ("No-Data-Viewer" "get-viewer-class" "either" "Viewable" "is?" "and" "if" "data")}
-        {Lisp-Entry "close-data-viewer" method #f 288 11 288 28 ("set!" "close" "data-viewer" "when")}
-        {Lisp-Entry "edit-data" method #f 299 29 299 38 ("node")}}
-      {Lisp-Entry "No-Data-Viewer" class #f 308 7 308 21 ("entry" "style:" "edge" "border-type:" "Border-View")
-        {Lisp-Entry "client" property #f 311 12 311 18 ()}
-        {Lisp-Entry "get-client" accessor #f 311 29 311 37 ()}
-        {Lisp-Entry "set-client" accessor #f 311 29 311 37 ()}
-        {Lisp-Entry "Background-Font" definition #f 318 14 318 29 ("Heading1" "name:" "Font")}
-        {Lisp-Entry "draw" method #f 322 20 322 24 ("draw-no-data" "nextmethod" "lv" "lh" "context" "surface")}
-        {Lisp-Entry "draw-no-data" method #f 327 11 327 23 ("get-v" "get-h" "draw-text" "Dark-Gray" "name:" "Color" "set-text-color" "get-display-size" "center" "pos" "get-text-extent" "extent" "localize" "title" "let*" "Background-Font" "set-font" "surface")}}}})
+        {Lisp-Entry "view-logs" method #f 238 11 238 20 ("ci=?" "when" "get-extension" "extension" "iterate-directory" "get-logs" "for-each" "logs-directory" "null?" "if" "remove-every-row" "lambda" "with-update-locked" "get-tree" "file:" "Log" "get-base" "file" "insert-file" "user-data:" "Image-Resource" "image:" "title:" "Tree-Node" "new" "list" "children:" "add-row" "get-name" "->string" "name" "let" "log" "tree" "insert-log" "define")}
+        {Lisp-Entry "view-data" method #f 267 29 267 38 ("layout-view" "parent:" "client:" "new" "data-viewer" "set!" "data-container" "'data-container" "locate" "container" "class" "'data" "get-property" "let*" "JML-Node" "when" "close-data-viewer" "No-Data-Viewer" "get-viewer-class" "either" "Viewable" "is?" "and" "if" "data" "data-viewer-class" "define" "node")}
+        {Lisp-Entry "close-data-viewer" method #f 285 11 285 28 ("set!" "close" "data-viewer" "when")}
+        {Lisp-Entry "edit-data" method #f 296 29 296 38 ("node")}}
+      {Lisp-Entry "No-Data-Viewer" class #f 305 7 305 21 ("entry" "style:" "edge" "border-type:" "Border-View")
+        {Lisp-Entry "client" property #f 308 12 308 18 ()}
+        {Lisp-Entry "get-client" accessor #f 308 29 308 37 ()}
+        {Lisp-Entry "set-client" accessor #f 308 29 308 37 ()}
+        {Lisp-Entry "draw" method #f 315 20 315 24 ("nextmethod" "get-v" "get-h" "draw-text" "Dark-Gray" "Color" "set-text-color" "get-display-size" "center" "pos" "get-text-extent" "extent" "localize" "title" "let*" "set-font" "draw-no-data" "Heading1" "name:" "Font" "Background-Font" "define" "lv" "lh" "context" "surface")}}}})
 "Profile-Results"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "profiler" "Profile-Results.jazz"} 1257476536
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "profiler" "Profile-Results.jazz"} 1265989215
     {Lisp-Entry "jazz.editor.jazz.profiler.Profile-Results" module #f 37 18 37 59 ("Calls-Tree" "register-autoclass" "jazz")
-      {Lisp-Entry "Profile-Results" class #f 50 7 50 22 ("on-return-press" "return-press-handler:" "on-select-location" "Selection-Handler" "selection-handler:" "calls" "fill" "vscroll?:" "hscroll?:" "document" "style:" "center" "on-refresh" "refresh" "0" "6" "on-reset-profile" "reset" "on-stop-profile" "stop" "on-start-profile" ":form" "Event-Handler" "action-handler:" ":icons" "portfolio:" "Bitmap-Resource" "image-name:" "tooltip-text:" "tooltip?:" "tail" "location:" "22" "start" "tools" "name:" "border" "layout-type:" "612" "412" "Dimension" "size:" "Layout-View")
-        {Lisp-Entry "host-icon" method #f 74 25 74 34 ("Bitmap-Resource")}
+      {Lisp-Entry "Profile-Results" class #f 50 7 50 22 ("on-return-press" "return-press-handler:" "on-select-location" "Selection-Handler" "selection-handler:" "calls" "fill" "vscroll?:" "hscroll?:" "document" "style:" "center" "on-refresh" "refresh" "0" "6" "on-reset-profile" "reset" "on-stop-profile" "stop" "on-start-profile" ":form" "Event-Handler" "action-handler:" ":images" "portfolio:" "Image-Resource" "resource:" "tooltip-text:" "tooltip?:" "tail" "location:" "22" "start" "tools" "name:" "border" "layout-type:" "612" "412" "Dimension" "size:" "Layout-View")
+        {Lisp-Entry "host-icon" method #f 74 25 74 34 ("Image-Resource")}
         {Lisp-Entry "host-title" method #f 78 25 78 35 ()}
         {Lisp-Entry "host-position" method #f 82 25 82 38 ("14" "28" "Point")}
         {Lisp-Entry "host-size" method #f 86 25 86 34 ("608" "408" "Dimension")}
@@ -323,19 +312,15 @@
         {Lisp-Entry "selected-frame" method #f 161 11 161 25 ("get-row" "get-user-data" "not" "if" "get-single-selection" "rank" "get-tree" "tree" "let")}
         {Lisp-Entry "selected-location" method #f 169 11 169 28 ("second" "not" "if" "selected-frame" "frame" "let")}
         {Lisp-Entry "view-profile" method #f 181 11 181 23 ("active-profile" "get-tree" "view-profile")}}
-      {Lisp-Entry "Calls-Tree" class #f 190 7 190 17 ("percentage" "75" "count" "250" "width:" "title:" "name:" "procedure" "filled-column:" ":icons" "portfolio:" "Tree-View")
-        {Lisp-Entry "view-profile" method #f 205 11 205 23 ("view-calls" "remove-every-row" "lambda" "with-update-locked" "profile")}
-        {Lisp-Entry "view-calls" method #f 212 11 212 21 ("collect-calls" "butlast" "reverse" "father:" "user-data:" "->string" "Tree-Label" "Bitmap-Resource" "image:" "title:" "Tree-Node" "new" "list" "children:" "add-row" "row" "number->string" "procedure" "last" "not-null?" "percentage" "count" "stack" "bind" "call" "lambda" "for-each" "present-identifier" "get-procedure-name" "name" "first" "creator" "let" "if" "either" "frame" "present-procedure" "define" "profile")}
-        {Lisp-Entry "collect-calls" method #f 238 11 238 24 ("third" "key:" ">" "sort" "cons" "set!" "calculate-percentage" "list" "call" "count" "stack" "lambda" "profile-calls" "iterate-table" "calls" "profile-total" "total" "let" "profile")}
-        {Lisp-Entry "present-filename" definition #f 248 15 248 31 ("1" "+" "subseq" "if" "reversed?:" "find" "pos" "let" "filename")}
-        {Lisp-Entry "calculate-percentage" definition #f 255 15 255 35 ("100." "10000" "*" "round" "/" "total" "count")}}}})
+      {Lisp-Entry "Calls-Tree" class #f 190 7 190 17 ("percentage" "75" "count" "250" "width:" "title:" "name:" "procedure" "filled-column:" ":images" "portfolio:" "Tree-View")
+        {Lisp-Entry "view-profile" method #f 205 11 205 23 ("remove-every-row" "with-update-locked" "butlast" "reverse" "father:" "user-data:" "->string" "Tree-Label" "Image-Resource" "image:" "title:" "Tree-Node" "new" "children:" "add-row" "row" "number->string" "procedure" "last" "not-null?" "percentage" "bind" "for-each" "present-identifier" "get-procedure-name" "name" "first" "creator" "if" "either" "frame" "present-procedure" "100." "10000" "*" "round" "/" "third" "key:" ">" "sort" "cons" "set!" "calculate-percentage" "list" "call" "count" "stack" "lambda" "profile-calls" "iterate-table" "calls" "profile-total" "total" "let" "collect-calls" "view-calls" "define" "profile")}}}})
 "References-Analyser"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "tools" "References-Analyser.jazz"} 1257477925
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "tools" "References-Analyser.jazz"} 1265989215
     {Lisp-Entry "jazz.editor.jazz.tools.References-Analyser" module #f 37 18 37 60 ("jazz")
-      {Lisp-Entry "References-Analyser" class #f 49 7 49 26 ("419" "200" "width:" "display-images?:" "on-double-click" "double-click-handler:" ":icons" "portfolio:" "multiple-selection?:" "info" "filled-column:" "declarations" "document" "562" "391" "35" "declarations-border" "on-find-dead-code" "action-handler:" "22" "120" "7" "272" "title:" "browse" "on-return-press" ":form" "Event-Handler" "return-press-handler:" "focus-selects-all?:" "show-unfocused-selection?:" "accepts-returns?:" "top-padding:" "left-padding:" "name" "fill" "layout-type:" "content" "vscroll?:" "hscroll?:" "entry" "style:" "edge" "border-type:" "19" "250" "9" "2" "Point" "position:" "name-border" "name:" "599" "395" "Dimension" "size:" "initialize" "View")
+      {Lisp-Entry "References-Analyser" class #f 49 7 49 26 ("419" "200" "width:" "display-images?:" "on-double-click" "double-click-handler:" ":images" "portfolio:" "multiple-selection?:" "info" "filled-column:" "declarations" "document" "562" "391" "35" "declarations-border" "on-find-dead-code" "action-handler:" "22" "120" "7" "272" "title:" "browse" "on-return-press" ":form" "Event-Handler" "return-press-handler:" "focus-selects-all?:" "show-unfocused-selection?:" "accepts-returns?:" "top-padding:" "left-padding:" "name" "fill" "layout-type:" "content" "vscroll?:" "hscroll?:" "entry" "style:" "edge" "border-type:" "19" "250" "9" "2" "Point" "position:" "name-border" "name:" "599" "395" "Dimension" "size:" "initialize" "View")
         {Lisp-Entry "text" property #f 52 12 52 16 ()}
         {Lisp-Entry "external-name" method #f 72 25 72 38 ("references-analyser" "'references-analyser" "rest")}
-        {Lisp-Entry "host-icon" method #f 81 25 81 34 ("Bitmap-Resource")}
+        {Lisp-Entry "host-icon" method #f 81 25 81 34 ("Image-Resource")}
         {Lisp-Entry "host-title" method #f 85 25 85 35 ()}
         {Lisp-Entry "host-position" method #f 89 25 89 38 ("20" "90" "Point")}
         {Lisp-Entry "host-size" method #f 93 25 93 34 ("600" "395" "Dimension")}
@@ -345,28 +330,28 @@
         {Lisp-Entry "resize" method #f 119 20 119 26 ("declarations-border" "'declarations-border" "size-figure" "0" "browse" "'browse" "locate" "move-figure" "nextmethod" "dv" "dh")}
         {Lisp-Entry "on-find-dead-code" method #f 125 11 125 28 ("find-dead-code" "lambda" ":wait" "with-cursor" "evt")}
         {Lisp-Entry "on-return-press" method #f 131 20 131 35 ("on-find-dead-code" "evt")}
-        {Lisp-Entry "on-double-click" method #f 135 11 135 26 ("type-name" "identifier-name" "edit-definitions" "get-application" "appl" "get-user-data" "type" "get-row" "row" "when" "get-single-selection" "selection" "get-sender" "tree" "let*" "evt")}
-        {Lisp-Entry "find-dead-code" method #f 150 11 150 25 ("get-row-count" "user-message" "get-children" "queue-list" "user-data:" "Tree-Label" "title:" "Tree-Node" "new" "list" "children:" "add-row" "info" "get-name" "symbol->string" "Category-Declaration" "for-each" "Module-Declaration" "jazz.get-catalog-entry" "unit-name" "iterate-units" "table-set!" "decl" "name" "set!" "set-hits" "eq?" "test:" "make-table" "table" "not" "when" "declaration-hits" "get-hits" "hits" "resolve-binding" "autoload" "locator" "autoload-references" "iterate-table" "analyse-all" "remove-every-row" "lambda" "with-update-locked" "declarations" "'declarations" "locate" "tree" "let" "type-name" "identifier-name" "get-core-classes" "table-ref" "Class-Declaration" "is?" "and" "declaration" "exception-declaration?" "define")}
-        {Lisp-Entry "analyse-all" definition #f 190 14 190 25 ("set!" "walk-all" "analysis-mode?" "parameterize" "unless" "lambda" "done?" "let")}
-        {Lisp-Entry "selected-declarations" method #f 204 11 204 32 ("get-row" "get-user-data" "rank" "lambda" "map" "get-selection" "selection" "declarations" "'declarations" "locate" "tree" "let*")}}}})
+        {Lisp-Entry "on-double-click" method #f 135 11 135 26 ("category-name" "identifier-name" "edit-definitions" "get-application" "appl" "get-user-data" "type" "get-row" "row" "when" "get-single-selection" "selection" "get-sender" "tree" "let*" "evt")}
+        {Lisp-Entry "find-dead-code" method #f 150 11 150 25 ("get-row-count" "user-message" "get-children" "queue-list" "user-data:" "Tree-Label" "title:" "Tree-Node" "new" "list" "children:" "add-row" "info" "get-name" "symbol->string" "Category-Declaration" "for-each" "Module-Declaration" "jazz.get-catalog-entry" "unit-name" "iterate-units" "table-set!" "decl" "name" "set!" "set-hits" "eq?" "test:" "make-table" "table" "not" "when" "declaration-hits" "get-hits" "hits" "resolve-binding" "get-autoload-reference" "autoload" "data" "locator" "analysis-data" "iterate-table" "analyse-all" "remove-every-row" "lambda" "with-update-locked" "declarations" "'declarations" "locate" "tree" "let" "category-name" "identifier-name" "get-core-classes" "table-ref" "Class-Declaration" "is?" "and" "declaration" "exception-declaration?" "define")}
+        {Lisp-Entry "analyse-all" definition #f 191 14 191 25 ("set!" "walk-all" "analysis-mode?" "parameterize" "unless" "lambda" "done?" "let")}
+        {Lisp-Entry "selected-declarations" method #f 205 11 205 32 ("get-row" "get-user-data" "rank" "lambda" "map" "get-selection" "selection" "declarations" "'declarations" "locate" "tree" "let*")}}}})
 "Registry-Viewer"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "registry" "Registry-Viewer.jazz"} 1257476558
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "registry" "Registry-Viewer.jazz"} 1265989215
     {Lisp-Entry "jazz.editor.jazz.registry.Registry-Viewer" module #f 37 18 37 59 ("jazz")
       {Lisp-Entry "Registry-Viewer" class #f 44 7 44 22 ("Layout-View")}
-      {Lisp-Entry "Registry-Viewer" class #f 50 7 50 22 ("419" "width:" ":icons" "portfolio:" "on-selection-change" "selection-handler:" "registry" "fill" "content" "vscroll?:" "hscroll?:" "document" "entry" "style:" "edge" "border-type:" "center" "registry-border" "on-view-type-libs" ":form" "Event-Handler" "action-handler:" "selected?:" "22" "70" "title:" "type-libs" "6" "0" "Rect" "layout-insets:" "flow" "north" "location:" "33" "300" "toolbar" "name:" "border" "layout-type:" "639" "436" "Dimension" "size:" "Layout-View")
+      {Lisp-Entry "Registry-Viewer" class #f 50 7 50 22 ("419" "width:" ":images" "portfolio:" "on-selection-change" "selection-handler:" "registry" "fill" "content" "vscroll?:" "hscroll?:" "document" "entry" "style:" "edge" "border-type:" "center" "registry-border" "on-view-type-libs" ":form" "Event-Handler" "action-handler:" "selected?:" "22" "70" "title:" "type-libs" "6" "0" "Rect" "layout-insets:" "flow" "north" "location:" "33" "300" "toolbar" "name:" "border" "layout-type:" "639" "436" "Dimension" "size:" "Layout-View")
         {Lisp-Entry "conclude" method #f 66 11 66 19 ("view-type-libs" "nextmethod" "initargs")}
-        {Lisp-Entry "host-icon" method #f 76 16 76 25 ("Bitmap-Resource")}
+        {Lisp-Entry "host-icon" method #f 76 16 76 25 ("Image-Resource")}
         {Lisp-Entry "host-title" method #f 80 16 80 26 ()}
         {Lisp-Entry "host-position" method #f 84 16 84 29 ("14" "28" "Point")}
         {Lisp-Entry "host-size" method #f 88 16 88 25 ("635" "416" "Dimension")}
         {Lisp-Entry "host-workspaces" method #f 92 11 92 26 ("home")}
         {Lisp-Entry "on-view-type-libs" method #f 101 11 101 28 ("view-type-libs" "evt")}
-        {Lisp-Entry "view-type-libs" method #f 105 11 105 25 ("second" "key:" "get-output" "<" "sort" "user-data:" "Bitmap-Resource" "image:" "title:" "Tree-Node" "list" "children:" "add-row" "empty-string?" "not" "pathname" "language-id" "minor-version" "major-version" "desc" "bind" "with-update-locked" "cons" "put" "when" "get-information" "info" "let" "guid-name" "lambda" "for-each" "List-Factory" "new" "informations" "gather" "guid-names" "iterate-subkeys" "all" "registry" "'registry" "locate" "tree" "let*" "user-message" "Registry" "open-type-lib" "type-lib" "with-closed")}
+        {Lisp-Entry "view-type-libs" method #f 105 11 105 25 ("second" "key:" "get-output" "<" "sort" "user-data:" "Image-Resource" "image:" "title:" "Tree-Node" "list" "children:" "add-row" "empty-string?" "not" "pathname" "language-id" "minor-version" "major-version" "desc" "bind" "with-update-locked" "cons" "put" "when" "get-information" "info" "let" "guid-name" "lambda" "for-each" "List-Factory" "new" "informations" "gather" "guid-names" "iterate-subkeys" "all" "registry" "'registry" "locate" "tree" "let*" "user-message" "Registry" "open-type-lib" "type-lib" "with-closed")}
         {Lisp-Entry "on-selection-change" method #f 128 11 128 30 ("set-visible?" "bring-to-front" "view-file" "get-guest" "view-registered-typelib" "cardinality" "-" "1" "subseq" "GUID" "new" "guid" "Type-Viewer" "singleton" "frame" "pathname" "language-id" "minor-version" "major-version" "desc" "guid-name" "bind" "get-row" "get-user-data" "info" "let" "when" "get-single-selection" "selection" "get-sender" "sender" "let*" "evt")}}}})
 "Spy-View"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "spy" "Spy-View.jazz"} 1257476612
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "spy" "Spy-View.jazz"} 1265989215
     {Lisp-Entry "jazz.editor.jazz.spy.Spy-View" module #f 37 18 37 47 ("jazz")
-      {Lisp-Entry "Spy-View" class #f 45 7 45 15 ("row" "selection-mode:" "tree" "tree-header" "fill" "layout-type:" "content" "vscroll?:" "tree-scroller" "edge" "border-type:" "306" "33" "0" "tree-border" "on-on/off" "710" "on/off" "on-slowdown" "686" "slowdown" "on-clear" ":form" "605" "clear" "on-spy-family" "180" "spy-family" "on-spy" "156" "spy" "76" "keyboard" "52" "mouse" "28" "paint" "selected?:" ":icons" "portfolio:" "on-category" "parent:" "Event-Handler" "action-handler:" "Bitmap-Resource" "image-name:" "tooltip-text:" "tooltip?:" "22" "6" "4" "Point" "position:" "name:" "east" "location:" "339" "736" "Dimension" "size:" "all" "'all" "1000" "set-clients" "get-clients" "initialize" "View")
+      {Lisp-Entry "Spy-View" class #f 45 7 45 15 ("row" "selection-mode:" "tree" "tree-header" "fill" "layout-type:" "content" "vscroll?:" "tree-scroller" "edge" "border-type:" "306" "33" "0" "tree-border" "on-on/off" "710" "on/off" "on-slowdown" "686" "slowdown" "on-clear" ":form" "605" "clear" "on-spy-family" "180" "spy-family" "on-spy" "156" "spy" "76" "keyboard" "52" "mouse" "28" "paint" "selected?:" ":images" "portfolio:" "on-category" "parent:" "Event-Handler" "action-handler:" "Image-Resource" "resource:" "tooltip-text:" "tooltip?:" "22" "6" "4" "Point" "position:" "name:" "east" "location:" "339" "736" "Dimension" "size:" "all" "'all" "1000" "explicit" "initialize" "View")
         {Lisp-Entry "clients" property #f 48 12 48 19 ()}
         {Lisp-Entry "active?" slot #f 51 8 51 15 ()}
         {Lisp-Entry "slowdown?" slot #f 52 8 52 17 ()}
@@ -390,7 +375,7 @@
         {Lisp-Entry "spy" method #f 188 29 188 32 ("client")}
         {Lisp-Entry "unspy" method #f 192 29 192 34 ("client")}}}})
 "Type-Extractor"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "registry" "Type-Extractor.jazz"} 1257478187
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "registry" "Type-Extractor.jazz"} 1258811564
     {Lisp-Entry "jazz.editor.jazz.registry.Type-Extractor" module #f 42 18 42 58 ("jazz")
       {Lisp-Entry "Type-Extractor" class #f 48 7 48 21 ("Object")}
       {Lisp-Entry "Type-Extractor" class #f 54 7 54 21 ("Object")
@@ -437,14 +422,14 @@
         {Lisp-Entry "idl-type-info" method #f 449 11 449 24 ("VARENUM" "value->name" "error" "else" "VT_LPWSTR" "VT_LPSTR" "VT_CY" "VT_SAFEARRAY" "VT_DISPATCH" "VT_UNKNOWN" "VT_USERDEFINED" "VT_DATE" "VT_VARIANT" "VT_BSTR" "VT_CARRAY" "cons" "VT_PTR" "VT_HRESULT" "VT_BOOL" "VT_INT" "VT_R8" "VT_R4" "VT_I4" "VT_I2" "VT_I1" "VT_UINT" "VT_UI4" "VT_UI2" "VT_UI1" "VT_VOID" "ecase" "type")}
         {Lisp-Entry "add-modifier" method #f 479 11 479 23 ("format" "if" "pointer?" "name")}}}})
 "Type-Viewer"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "registry" "Type-Viewer.jazz"} 1257476665
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "registry" "Type-Viewer.jazz"} 1265989215
     {Lisp-Entry "jazz.editor.jazz.registry.Type-Viewer" module #f 37 18 37 55 ("jazz")
       {Lisp-Entry "Type-Viewer" class #f 44 7 44 18 ("Layout-View")}
-      {Lisp-Entry "Type-Viewer" class #f 50 7 50 18 ("Code" "Font" "font:" "Default" "Text-Style" "default-style:" "descr" "second" "descr-border" "269" "width:" "on-selection-change" "selection-handler:" "library" "fill" "content" "vscroll?:" "document" "entry" "style:" "edge" "border-type:" "first" "library-border" "30" "division:" "relative" "mode:" "horz" "orientation:" "center" "splitter" "on-browse" "tail" "100" "title:" "browse" "on-generate" ":form" "Event-Handler" "action-handler:" "tooltip-text:" "tooltip?:" ":icons" "portfolio:" "Bitmap-Resource" "image-name:" "22" "generate" "0" "6" "1" "Rect" "layout-insets:" "flow" "north" "location:" "33" "300" "toolbar" "name:" "border" "layout-type:" "739" "693" "Dimension" "size:" "initialize" "Layout-View")
+      {Lisp-Entry "Type-Viewer" class #f 50 7 50 18 ("Code" "Font" "font:" "Default" "Text-Style" "default-style:" "descr" "second" "descr-border" "269" "width:" "on-selection-change" "selection-handler:" "library" "fill" "content" "vscroll?:" "document" "entry" "style:" "edge" "border-type:" "first" "library-border" "30" "division:" "relative" "mode:" "horz" "orientation:" "center" "splitter" "on-browse" "tail" "100" "title:" "browse" "on-generate" ":form" "Event-Handler" "action-handler:" "tooltip-text:" "tooltip?:" ":images" "portfolio:" "Image-Resource" "resource:" "22" "generate" "0" "6" "1" "Rect" "layout-insets:" "flow" "north" "location:" "33" "300" "toolbar" "name:" "border" "layout-type:" "739" "693" "Dimension" "size:" "initialize" "Layout-View")
         {Lisp-Entry "library" slot #f 53 8 53 15 ()}
         {Lisp-Entry "singleton" method #f 74 23 74 32 ("new-frame" "Type-Viewer" "get-stage" "find-host" "either")}
         {Lisp-Entry "destroy" method #f 79 11 79 18 ("nextmethod" "library" "set!")}
-        {Lisp-Entry "host-icon" method #f 89 16 89 25 ("Bitmap-Resource")}
+        {Lisp-Entry "host-icon" method #f 89 16 89 25 ("Image-Resource")}
         {Lisp-Entry "host-title" method #f 93 16 93 26 ()}
         {Lisp-Entry "host-position" method #f 97 16 97 29 ("14" "503" "Point")}
         {Lisp-Entry "host-size" method #f 101 16 101 25 ("635" "557" "Dimension")}
@@ -455,14 +440,14 @@
         {Lisp-Entry "view-file" method #f 136 18 136 27 ("file:" "Type-Lib" "new" "view-library" "file")}
         {Lisp-Entry "view-registered-library" method #f 140 18 140 41 (":language-id" ":minor-version" ":major-version" "guid:" "Type-Lib" "new" "view-library" "li" "mi" "ma" "g")}
         {Lisp-Entry "view-library" method #f 144 18 144 30 ("describe-item" "insert-library" "remove-every-row" "with-update-locked" "'library" "locate" "tree" "let" "library" "set!" "lambda" ":wait" "with-cursor" "lib")}
-        {Lisp-Entry "insert-library" method #f 161 11 161 25 ("get-types" "insert-info" "info" "lambda" "for-each" "user-data:" "Bitmap-Resource" "image:" "title:" "Tree-Node" "new" "list" "children:" "expanded" "'expanded" "state:" "add-row" "node" "library" "get-name" "title" "let*" "tree")}
-        {Lisp-Entry "insert-info" method #f 169 11 169 22 ("user-data:" "image:" "title:" "Tree-Node" "new" "list" "children:" "dynamic" "'dynamic" "state:" "father:" "add-row" "else" "TKIND_UNION" "TKIND_ALIAS" "TKIND_DISPATCH" "TKIND_INTERFACE" "TKIND_COCLASS" "TKIND_RECORD" "Bitmap-Resource" "TKIND_ENUM" "ecase" "icon" "get-kind" "kind" "get-doc" "doc" "get-name" "name" "let*" "node" "tree" "info")}
+        {Lisp-Entry "insert-library" method #f 161 11 161 25 ("get-types" "insert-info" "info" "lambda" "for-each" "user-data:" "Image-Resource" "image:" "title:" "Tree-Node" "new" "list" "children:" "expanded" "'expanded" "state:" "add-row" "node" "library" "get-name" "title" "let*" "tree")}
+        {Lisp-Entry "insert-info" method #f 169 11 169 22 ("user-data:" "image:" "title:" "Tree-Node" "new" "list" "children:" "dynamic" "'dynamic" "state:" "father:" "add-row" "else" "TKIND_UNION" "TKIND_ALIAS" "TKIND_DISPATCH" "TKIND_INTERFACE" "TKIND_COCLASS" "TKIND_RECORD" "Image-Resource" "TKIND_ENUM" "ecase" "icon" "get-kind" "kind" "get-doc" "doc" "get-name" "name" "let*" "node" "tree" "info")}
         {Lisp-Entry "update-info-row" method #f 185 11 185 26 ("get-variables" "insert-variable" "get-functions" "insert-function" "desc" "lambda" "for-each" "get-user-data" "info" "get-parent" "tree" "let" "row")}
-        {Lisp-Entry "insert-function" method #f 196 11 196 26 ("cons" "user-data:" "image:" "title:" "Tree-Node" "new" "list" "children:" "expanded" "'expanded" "state:" "father:" "add-row" "else" "INVOKE_PROPERTYPUTREF" "INVOKE_PROPERTYPUT" "INVOKE_PROPERTYGET" "Bitmap-Resource" "INVOKE_FUNC" "invkind" "'invkind" "get" "ecase" "icon" "get-member-name" "name" "let" "node" "tree" "desc" "info")}
-        {Lisp-Entry "insert-variable" method #f 207 11 207 26 ("cons" "user-data:" "Bitmap-Resource" "image:" "title:" "Tree-Node" "new" "list" "children:" "expanded" "'expanded" "state:" "father:" "add-row" "get-member-name" "name" "let" "node" "tree" "desc" "info")}
+        {Lisp-Entry "insert-function" method #f 196 11 196 26 ("cons" "user-data:" "image:" "title:" "Tree-Node" "new" "list" "children:" "expanded" "'expanded" "state:" "father:" "add-row" "else" "INVOKE_PROPERTYPUTREF" "INVOKE_PROPERTYPUT" "INVOKE_PROPERTYGET" "Image-Resource" "INVOKE_FUNC" "invkind" "'invkind" "get" "ecase" "icon" "get-member-name" "name" "let" "node" "tree" "desc" "info")}
+        {Lisp-Entry "insert-variable" method #f 207 11 207 26 ("cons" "user-data:" "Image-Resource" "image:" "title:" "Tree-Node" "new" "list" "children:" "expanded" "'expanded" "state:" "father:" "add-row" "get-member-name" "name" "let" "node" "tree" "desc" "info")}
         {Lisp-Entry "describe-item" method #f 217 11 217 24 ("get-output" "set-content" "describe-member" "else" "describe-info" "Type-Info" "describe-lib" "Type-Lib" "typecase" "List-Factory" "new" "fact" "descr" "'descr" "locate" "text" "let" "when" "item")}
         {Lisp-Entry "describe-lib" method #f 228 11 228 23 ("get-lib-file" "get-lib-guid" "get-doc" "get-name" "format" "put" "fact" "item")}
-        {Lisp-Entry "describe-info" method #f 236 11 236 24 ("get-implemented-types" "info" "lambda" "map" "get-guid" "get-kind" "TYPEKIND" "value->name" "get-doc" "get-name" "format" "put" "fact" "item")}
+        {Lisp-Entry "describe-info" method #f 236 11 236 24 ("get-implemented-types" "map" "get-guid" "get-kind" "TYPEKIND" "value->name" "get-doc" "get-name" "format" "put" "fact" "item")}
         {Lisp-Entry "describe-member" method #f 244 11 244 26 ("describe-variable" "VARDESC" "describe-function" "FUNCDESC" "typecase" "desc" "info" "bind" "fact" "item")}
         {Lisp-Entry "describe-function" method #f 251 11 251 28 ("0" "naturals" "get-name" "get-referenced-type" "referenced" "ptr-ptr-type" "ptr-ptr-typedesc" "when" "make-string" "length" "10" "-" "1" "max" "padding" "param-type-name" "ptr-type" "TYPEDESC" "'desc" "coerce" "essay" "ptr-typedesc" "VT_USERDEFINED" "user?" "VT_PTR" "=" "pointer?" "parameter-direction" "direction" "vt" "'vt" "type" "'tdesc" "typedesc" "array-ref" "param" "let*" "n" "lambda" "for-each" "get-function-parameters" "params" "let" "tdesc" "elemdescFunc" "describe-type" "cParamsOpt" "'cParamsOpt" "cParams" "'cParams" "oVft" "'oVft" "callconv" "'callconv" "CALLCONV" "invkind" "'invkind" "INVOKEKIND" "funckind" "'funckind" "get" "FUNCKIND" "value->name" "format" "put" "fact" "desc" "info")}
         {Lisp-Entry "describe-type" method #f 285 11 285 24 ("VARENUM" "value->name" "get-name" "'desc" "get-referenced-type" "referenced" "VT_USERDEFINED" "=" "if" "vt" "'vt" "get" "type" "let" "desc" "info")}
@@ -471,12 +456,12 @@
       {Lisp-Entry "Type-Tree" class #f 334 7 334 16 ("Tree-View")
         {Lisp-Entry "update-row" method #f 337 11 337 21 ("update-info-row" "row")}}}})
 "User-Log"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "log" "User-Log.jazz"} 1257476666
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "log" "User-Log.jazz"} 1265989215
     {Lisp-Entry "jazz.editor.jazz.log.User-Log" module #f 37 18 37 47 ("jazz")
       {Lisp-Entry "User-Log" class #f 45 7 45 15 ("Log-View")
         {Lisp-Entry "external-name" method #f 48 25 48 38 ("user-log" "'user-log" "rest")}
         {Lisp-Entry "finish" method #f 52 20 52 26 ("separator3" "'separator3" "0" "8" "Dimension" "separator2" "'separator2" "set-size" "separator1" "'separator1" "close" "none" "'none" "set-border-type" "log-border" "'log-border" "splitter" "'splitter" "locate" "zoom" "nextmethod" "initargs")}
-        {Lisp-Entry "host-icon" method #f 66 25 66 34 ("Bitmap-Resource")}
+        {Lisp-Entry "host-icon" method #f 66 25 66 34 ("Image-Resource")}
         {Lisp-Entry "host-title" method #f 70 25 70 35 ()}
         {Lisp-Entry "get-tools-view" method #f 79 20 79 34 ("tools" "'tools" "locate")}
         {Lisp-Entry "focus-default" method #f 83 20 83 33 ("acquire-focus" "log-tree" "'log-tree" "locate" "tree" "let")}
@@ -485,7 +470,7 @@
         {Lisp-Entry "output-tables" method #f 115 11 115 24 ("sql" "'sql" "select-workspace" "get-application" "appl" "when" "output-tables" "get-sql-console-text" "text" "let" "select?" "select?:" "name" "name:" "tables")}
         {Lisp-Entry "output-table" method #f 125 11 125 23 ("list" "output-tables" "select?" "select?:" "name" "name:" "table")}}}})
 "_inspector"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "inspector" "_inspector.jazz"} 1257476714
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "inspector" "_inspector.jazz"} 1259335949
     {Lisp-Entry "jazz.editor.jazz.inspector" module #f 37 18 37 44 ("jazz")
       {Lisp-Entry "presented-limit" definition #f 48 12 48 27 ("128")}
       {Lisp-Entry "Unbound" definition #f 52 12 52 19 ("cons")}
@@ -494,65 +479,66 @@
       {Lisp-Entry "inspect-rank-limit" constant #f 86 10 86 28 ("100")}
       {Lisp-Entry "inspect-value" definition #f 90 20 90 33 ("object?" "List" "coerce" "sequence?" "structure?" "table?" "null/pair?" "format" "-" "missing" "total" "displayed" "symbol->string" "string-ci<?" "sort" "class-of" "read-property" "property?" "unspecified?" "and" "field-name" "slot-value" ":raw" "kind:" "symbol?" "slot" "collect" "infos" "get-ascendant" "get-slots" "class" "class-slots" "object" "inspect-object" "subseq" "table-length" ">" "string<=?" "test:" "key:" "insert-ordered!" "set!" "present-object" "data" "key" "iterate-table" "sorted" "table" "inspect-table" "else" "rest" "'rest" "null?" "1" "cdr" "car" "pair?" "length" "+" "inspect-limit" "list" "inspect-rank-limit" ">=" "cond" "0" "rank" "scan" "lst" "inspect-list" "kind-fields" "structure-ref" "package-info" "cons" "index" "name" "bind" "info" "lambda" "map" "append" "kind-super" "not" "if" "fields" "iter" "structure-kind" "kind" "let" "struct" "inspect-structure" "define" "value")}}})
 "_jazz"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "_jazz.jazz"} 1257476716
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "_jazz.jazz"} 1258811564
     {Lisp-Entry "jazz.editor.jazz" module #f 37 8 37 24 ("jazz")}})
 "autoload"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "autoload.jazz"} 1257476749
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "autoload.jazz"} 1258811564
     {Lisp-Entry "jazz.editor.jazz.autoload" module #f 37 18 37 43 ("jazz")}})
 "forms"
- ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "forms.jazz"} 1257476771
+ ({Lisp-File-Entry {File jazz.editor.jazz "src" "jazz" "editor" "jazz" "forms.jazz"} 1265989215
     {Lisp-Entry "jazz.editor.jazz.forms" module #f 37 8 37 30 ("jazz")
       {Lisp-Entry "class" define ("form") 50 13 50 18 (":class" "walk:" "0" "tabulate:" "attributes" "implements" "extends" "metaclass" "keywords:" "native" "primitive" "uptodate" "undocumented" "deprecated" "concrete" "abstract" "public" "package" "protected" "private" "modifiers:" "declaration?:" "namespace?:")}
       {Lisp-Entry "interface" define ("form") 59 13 59 22 (":interface" "walk:" "0" "tabulate:" "attributes" "extends" "metaclass" "keywords:" "native" "primitive" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "modifiers:" "declaration?:" "namespace?:")}
       {Lisp-Entry "remotable-stub" define ("form") 68 13 68 27 (":remotable-stub" "walk:" "0" "tabulate:" "extends" "keywords:" "public" "package" "protected" "private" "modifiers:" "declaration?:" "namespace?:")}
-      {Lisp-Entry "constant" define ("form") 82 13 82 21 (":constant" "walk:" "1" "tabulate:" "declaration?:")}
-      {Lisp-Entry "datacontainer" define ("form") 87 13 87 26 (":datacontainer" "walk:" "1" "tabulate:" "declaration?:")}
-      {Lisp-Entry "definition" define ("form") 92 13 92 23 (":definition" "walk:" "1" "tabulate:" "onsite" "inline" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "meta" "modifiers:" "declaration?:")}
-      {Lisp-Entry "define-form" define ("form") 98 13 98 24 (":define" "walk:" "1" "tabulate:" "declaration?:")}
-      {Lisp-Entry "enumeration" define ("form") 103 13 103 24 (":enumeration" "walk:" "1" "tabulate:" "declaration?:")}
-      {Lisp-Entry "form" define ("form") 108 13 108 17 (":form" "walk:" "0" "tabulate:" "declaration?:")}
-      {Lisp-Entry "generic" define ("form") 113 13 113 20 (":generic/specific" "walk:" "1" "tabulate:" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "meta" "modifiers:" "declaration?:")}
-      {Lisp-Entry "global" define ("form") 119 13 119 19 (":global" "walk:" "declaration?:")}
-      {Lisp-Entry "macro" define ("form") 123 13 123 18 (":macro" "walk:" "1" "tabulate:" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "meta" "modifiers:" "declaration?:")}
-      {Lisp-Entry "method" define ("form") 129 13 129 19 (":method" "walk:" "1" "tabulate:" "value" "call" "exec" "post" "notsynchronized" "synchronized" "notremote" "remote" "onsite" "inline" "concrete" "abstract" "override" "chained" "virtual" "final" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "meta" "modifiers:" "declaration?:")}
-      {Lisp-Entry "pattern" define ("form") 135 13 135 20 (":method" "walk:" "1" "tabulate:" "notsynchronized" "synchronized" "notremote" "remote" "onsite" "inline" "concrete" "abstract" "override" "chained" "virtual" "final" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "meta" "modifiers:" "declaration?:")}
-      {Lisp-Entry "property" define ("form") 141 13 141 21 (":property" "walk:" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "modifiers:" "declaration?:")}
-      {Lisp-Entry "slot" define ("form") 146 13 146 17 (":slot" "walk:" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "modifiers:" "declaration?:")}
-      {Lisp-Entry "special" define ("form") 151 13 151 20 (":define-macro" "walk:" "declaration?:")}
-      {Lisp-Entry "specialize" define ("form") 155 13 155 23 (":specialize" "walk:" "inline" "modifiers:" "declaration?:")}
-      {Lisp-Entry "specific" define ("form") 160 13 160 21 (":generic/specific" "walk:" "1" "tabulate:" "declaration?:")}
-      {Lisp-Entry "syntax" define ("form") 165 13 165 19 (":macro" "walk:" "1" "tabulate:" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "meta" "modifiers:" "declaration?:")}
-      {Lisp-Entry "%macro" define ("form") 171 13 171 19 (":macro" "walk:" "declaration?:")}
-      {Lisp-Entry "assert" define ("form") 181 13 181 19 ("1" "tabulate:")}
-      {Lisp-Entry "attributes" define ("form") 184 13 184 23 (":attributes" "walk:" "1" "tabulate:")}
-      {Lisp-Entry "bind" define ("form") 188 13 188 17 ("2" "tabulate:")}
-      {Lisp-Entry "call-with-catch" define ("form") 191 13 191 28 ("2" "tabulate:")}
-      {Lisp-Entry "catch" define ("form") 194 13 194 18 ("1" "tabulate:")}
-      {Lisp-Entry "cotry" define ("form") 197 13 197 18 ("1" "tabulate:")}
-      {Lisp-Entry "ecase" define ("form") 200 13 200 18 ("1" "tabulate:")}
-      {Lisp-Entry "form>>" define ("form") 203 13 203 19 ("0" "tabulate:")}
-      {Lisp-Entry "jml" define ("form") 206 13 206 16 ("0" "tabulate:")}
-      {Lisp-Entry "jml>>" define ("form") 209 13 209 18 ("0" "tabulate:")}
-      {Lisp-Entry "new" define ("form") 212 13 212 16 ("1" "tabulate:")}
-      {Lisp-Entry "proclaim" define ("form") 215 13 215 21 (":proclaim" "walk:")}
-      {Lisp-Entry "prog1" define ("form") 218 13 218 18 ("1" "tabulate:")}
-      {Lisp-Entry "properties" define ("form") 221 13 221 23 (":properties" "walk:")}
-      {Lisp-Entry "synchronize" define ("form") 224 13 224 24 ("1" "tabulate:")}
-      {Lisp-Entry "typecase" define ("form") 227 13 227 21 ("1" "tabulate:")}
-      {Lisp-Entry "unless" define ("form") 230 13 230 19 ("1" "tabulate:")}
-      {Lisp-Entry "unwind-protect" define ("form") 233 13 233 27 ("1" "tabulate:")}
-      {Lisp-Entry "when" define ("form") 236 13 236 17 ("1" "tabulate:")}
-      {Lisp-Entry "while" define ("form") 239 13 239 18 ("1" "tabulate:")}
-      {Lisp-Entry "with" define ("form") 242 13 242 17 ("1" "tabulate:")}
-      {Lisp-Entry "with-closed" define ("form") 245 13 245 24 ("1" "tabulate:")}
-      {Lisp-Entry "c-constant" define ("form") 254 13 254 23 (":c-constant" "walk:" "1" "tabulate:" "declaration?:")}
-      {Lisp-Entry "c-declare" define ("form") 259 13 259 22 (":c-declare" "walk:")}
-      {Lisp-Entry "c-definition" define ("form") 262 13 262 25 (":c-definition" "walk:" "5" "tabulate:" "public" "package" "protected" "private" "modifiers:" "declaration?:")}
-      {Lisp-Entry "c-enumeration" define ("form") 268 13 268 26 (":c-enumeration" "walk:" "1" "tabulate:" "declaration?:")}
-      {Lisp-Entry "c-external" define ("form") 273 13 273 23 (":c-external" "walk:" "declaration?:")}
-      {Lisp-Entry "c-include" define ("form") 277 13 277 22 (":c-include" "walk:")}
-      {Lisp-Entry "c-initialize" define ("form") 280 13 280 25 (":c-initialize" "walk:")}
-      {Lisp-Entry "c-named-declare" define ("form") 283 13 283 28 (":c-named-declare" "walk:")}
-      {Lisp-Entry "c-structure" define ("form") 286 13 286 24 (":c-structure" "walk:" "1" "tabulate:" "declaration?:")}
-      {Lisp-Entry "c-type" define ("form") 291 13 291 19 (":c-type" "walk:" "declaration?:")}
-      {Lisp-Entry "com-external" define ("form") 301 13 301 25 (":com-external" "walk:" "declaration?:")}}})
+      {Lisp-Entry "submodule" define ("form") 77 13 77 22 (":submodule" "walk:" "0" "tabulate:" "public" "package" "protected" "private" "modifiers:" "declaration?:" "namespace?:")}
+      {Lisp-Entry "constant" define ("form") 90 13 90 21 (":constant" "walk:" "1" "tabulate:" "declaration?:")}
+      {Lisp-Entry "datacontainer" define ("form") 95 13 95 26 (":datacontainer" "walk:" "1" "tabulate:" "declaration?:")}
+      {Lisp-Entry "definition" define ("form") 100 13 100 23 (":definition" "walk:" "1" "tabulate:" "onsite" "inline" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "meta" "modifiers:" "declaration?:")}
+      {Lisp-Entry "define-form" define ("form") 106 13 106 24 (":define" "walk:" "1" "tabulate:" "declaration?:")}
+      {Lisp-Entry "enumeration" define ("form") 111 13 111 24 (":enumeration" "walk:" "1" "tabulate:" "declaration?:")}
+      {Lisp-Entry "form" define ("form") 116 13 116 17 (":form" "walk:" "0" "tabulate:" "declaration?:")}
+      {Lisp-Entry "generic" define ("form") 121 13 121 20 (":generic/specific" "walk:" "1" "tabulate:" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "meta" "modifiers:" "declaration?:")}
+      {Lisp-Entry "global" define ("form") 127 13 127 19 (":global" "walk:" "declaration?:")}
+      {Lisp-Entry "macro" define ("form") 131 13 131 18 (":macro" "walk:" "1" "tabulate:" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "meta" "modifiers:" "declaration?:")}
+      {Lisp-Entry "method" define ("form") 137 13 137 19 (":method" "walk:" "1" "tabulate:" "value" "call" "exec" "post" "notsynchronized" "synchronized" "notremote" "remote" "onsite" "inline" "concrete" "abstract" "override" "chained" "virtual" "final" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "meta" "modifiers:" "declaration?:")}
+      {Lisp-Entry "pattern" define ("form") 143 13 143 20 (":method" "walk:" "1" "tabulate:" "notsynchronized" "synchronized" "notremote" "remote" "onsite" "inline" "concrete" "abstract" "override" "chained" "virtual" "final" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "meta" "modifiers:" "declaration?:")}
+      {Lisp-Entry "property" define ("form") 149 13 149 21 (":property" "walk:" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "modifiers:" "declaration?:")}
+      {Lisp-Entry "slot" define ("form") 154 13 154 17 (":slot" "walk:" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "meta" "modifiers:" "declaration?:")}
+      {Lisp-Entry "special" define ("form") 159 13 159 20 (":define-macro" "walk:" "declaration?:")}
+      {Lisp-Entry "specialize" define ("form") 163 13 163 23 (":specialize" "walk:" "inline" "modifiers:" "declaration?:")}
+      {Lisp-Entry "specific" define ("form") 168 13 168 21 (":generic/specific" "walk:" "1" "tabulate:" "declaration?:")}
+      {Lisp-Entry "syntax" define ("form") 173 13 173 19 (":macro" "walk:" "1" "tabulate:" "uptodate" "undocumented" "deprecated" "public" "package" "protected" "private" "meta" "modifiers:" "declaration?:")}
+      {Lisp-Entry "%macro" define ("form") 179 13 179 19 (":macro" "walk:" "declaration?:")}
+      {Lisp-Entry "assert" define ("form") 189 13 189 19 ("1" "tabulate:")}
+      {Lisp-Entry "attributes" define ("form") 192 13 192 23 (":attributes" "walk:" "1" "tabulate:")}
+      {Lisp-Entry "bind" define ("form") 196 13 196 17 ("2" "tabulate:")}
+      {Lisp-Entry "call-with-catch" define ("form") 199 13 199 28 ("2" "tabulate:")}
+      {Lisp-Entry "catch" define ("form") 202 13 202 18 ("1" "tabulate:")}
+      {Lisp-Entry "cotry" define ("form") 205 13 205 18 ("1" "tabulate:")}
+      {Lisp-Entry "ecase" define ("form") 208 13 208 18 ("1" "tabulate:")}
+      {Lisp-Entry "form>>" define ("form") 211 13 211 19 ("0" "tabulate:")}
+      {Lisp-Entry "jml" define ("form") 214 13 214 16 ("0" "tabulate:")}
+      {Lisp-Entry "jml>>" define ("form") 217 13 217 18 ("0" "tabulate:")}
+      {Lisp-Entry "new" define ("form") 220 13 220 16 ("1" "tabulate:")}
+      {Lisp-Entry "proclaim" define ("form") 223 13 223 21 (":proclaim" "walk:")}
+      {Lisp-Entry "prog1" define ("form") 226 13 226 18 ("1" "tabulate:")}
+      {Lisp-Entry "properties" define ("form") 229 13 229 23 (":properties" "walk:")}
+      {Lisp-Entry "synchronize" define ("form") 232 13 232 24 ("1" "tabulate:")}
+      {Lisp-Entry "typecase" define ("form") 235 13 235 21 ("1" "tabulate:")}
+      {Lisp-Entry "unless" define ("form") 238 13 238 19 ("1" "tabulate:")}
+      {Lisp-Entry "unwind-protect" define ("form") 241 13 241 27 ("1" "tabulate:")}
+      {Lisp-Entry "when" define ("form") 244 13 244 17 ("1" "tabulate:")}
+      {Lisp-Entry "while" define ("form") 247 13 247 18 ("1" "tabulate:")}
+      {Lisp-Entry "with" define ("form") 250 13 250 17 ("1" "tabulate:")}
+      {Lisp-Entry "with-closed" define ("form") 253 13 253 24 ("1" "tabulate:")}
+      {Lisp-Entry "c-constant" define ("form") 262 13 262 23 (":c-constant" "walk:" "1" "tabulate:" "declaration?:")}
+      {Lisp-Entry "c-declare" define ("form") 267 13 267 22 (":c-declare" "walk:")}
+      {Lisp-Entry "c-definition" define ("form") 270 13 270 25 (":c-definition" "walk:" "5" "tabulate:" "public" "package" "protected" "private" "modifiers:" "declaration?:")}
+      {Lisp-Entry "c-enumeration" define ("form") 276 13 276 26 (":c-enumeration" "walk:" "1" "tabulate:" "declaration?:")}
+      {Lisp-Entry "c-external" define ("form") 281 13 281 23 (":c-external" "walk:" "declaration?:")}
+      {Lisp-Entry "c-include" define ("form") 285 13 285 22 (":c-include" "walk:")}
+      {Lisp-Entry "c-initialize" define ("form") 288 13 288 25 (":c-initialize" "walk:")}
+      {Lisp-Entry "c-named-declare" define ("form") 291 13 291 28 (":c-named-declare" "walk:")}
+      {Lisp-Entry "c-structure" define ("form") 294 13 294 24 (":c-structure" "walk:" "1" "tabulate:" "declaration?:")}
+      {Lisp-Entry "c-type" define ("form") 299 13 299 19 (":c-type" "walk:" "declaration?:")}
+      {Lisp-Entry "com-external" define ("form") 309 13 309 25 (":com-external" "walk:" "declaration?:")}}})

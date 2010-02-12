@@ -1,26 +1,29 @@
 "CommonLisp-Explorer"
- ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "text" "CommonLisp-Explorer.jazz"} 1257476340
+ ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "text" "CommonLisp-Explorer.jazz"} 1258811564
     {Lisp-Entry "jazz.editor.commonlisp.text.CommonLisp-Explorer" module #f 37 18 37 65 ("jazz")
       {Lisp-Entry "CommonLisp-Explorer" class #f 46 7 46 26 ("Lisp-Explorer")
         {Lisp-Entry "find-named-walker" method #f 54 20 54 37 ("nextmethod" "else" "walk-eval-when" ":eval-when" "walk-define-variable" ":define-variable" "walk-define-macro" ":define-macro" "walk-define" ":define" "case" "name")}
-        {Lisp-Entry "walk-define" method #f 63 11 63 22 ("walk-declarations" "exit-list" "walk-parameters" "get-marked" "define" "'define" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "enter-list" "when" "0" "char-forward" "eqv?" "list?" "forward-whites" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-define-macro" method #f 80 11 80 28 ("walk-declarations" "exit-list" "code" "'code" "walk-expressions" "get-marked" "define-macro" "'define-macro" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "enter-list" "when" "0" "char-forward" "eqv?" "list?" "forward-whites" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
-        {Lisp-Entry "walk-define-variable" method #f 97 11 97 31 ("walk-declarations" "exit-list" "walk-parameters" "get-marked" "define-variable" "'define-variable" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "enter-list" "when" "0" "char-forward" "eqv?" "list?" "forward-whites" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-define" method #f 63 11 63 22 ("code" "'code" "walk-expressions" "exit-list" "walk-parameters" "get-marked" "define" "'define" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "enter-list" "when" "0" "char-forward" "eqv?" "list?" "forward-whites" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-define-macro" method #f 80 11 80 28 ("exit-list" "code" "'code" "walk-expressions" "get-marked" "define-macro" "'define-macro" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "enter-list" "when" "0" "char-forward" "eqv?" "list?" "forward-whites" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
+        {Lisp-Entry "walk-define-variable" method #f 97 11 97 31 ("code" "'code" "walk-expressions" "exit-list" "walk-parameters" "get-marked" "define-variable" "'define-variable" "set!" "'symbol" "kind" "eq?" "forward-expr" "and" "enter-list" "when" "0" "char-forward" "eqv?" "list?" "forward-whites" "end" "start" "entry" "let" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}
         {Lisp-Entry "walk-eval-when" method #f 114 11 114 25 ("walk-declarations" "doc" "expression" "keyword" "declaration" "form" "symbol" "context")}}}})
 "CommonLisp-Parser"
- ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "parser" "CommonLisp-Parser.jazz"} 1257476340
+ ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "parser" "CommonLisp-Parser.jazz"} 1258811564
     {Lisp-Entry "jazz.editor.commonlisp.parser.CommonLisp-Parser" module #f 37 18 37 65 ("jazz")
       {Lisp-Entry "CommonLisp-Parser" class #f 44 7 44 24 ("Lisp-Parser")
         {Lisp-Entry "explorer-class" method #f 47 20 47 34 ("CommonLisp-Explorer" "file")}
         {Lisp-Entry "text-view-class" method #f 51 20 51 35 ("CommonLisp-Text-View")}}}})
 "CommonLisp-Text-Preferences"
- ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "text" "CommonLisp-Text-Preferences.jazz"} 1257476340
+ ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "text" "CommonLisp-Text-Preferences.jazz"} 1258811564
     {Lisp-Entry "jazz.editor.commonlisp.text.CommonLisp-Text-Preferences" module #f 37 18 37 73 ("jazz")
       {Lisp-Entry "CommonLisp-Text-Preferences" class #f 48 7 48 34 ("completions:" "quotation-style:" "named-string-style:" "delimited-string-style:" "string-style:" "boolean-style:" "number-style:" "Ochre" "char-style:" "keyword-style:" "Dark-Green" "declaration-style:" "Dark-Blue" "declaration-keyword-style:" "Text-Gray" "expr-comment-style:" "Purple" "comment-style:" "Dark-Red" "color:" "Text-Style-Preference" "title-style:" "title:" "Lisp-Text-Preferences")
-        {Lisp-Entry "get-categorized-properties" method #f 85 20 85 46 ("translate-keys?" "keyword-style" "declaration-style" "expr-comment-style" "comment-style" "title-style" "completions")}
-        {Lisp-Entry "get-row-instance" method #f 89 20 89 36 ("nextmethod" "else" "Boolean-Row" "translate-keys?" "Completion-List-Row" "completions" "Style-Row" "new" "keyword-style" "declaration-style" "expr-comment-style" "comment-style" "title-style" "field-name" "case" "property")}}}})
+        {Lisp-Entry "get-class-descriptor" method #f 85 25 85 45 ("CommonLisp-Text-Preferences-Descriptor" "new")}}
+      {Lisp-Entry "design" submodule #f 94 11 94 17 ()
+        {Lisp-Entry "CommonLisp-Text-Preferences-Descriptor" class #f 100 7 100 45 ("Document-Preferences-Descriptor")
+          {Lisp-Entry "component-get-categorized-properties" method #f 103 20 103 56 ("translate-keys?" "keyword-style" "declaration-style" "expr-comment-style" "comment-style" "title-style" "completions" "component")}
+          {Lisp-Entry "component-get-row-instance" method #f 107 20 107 46 ("nextmethod" "else" "Boolean-Row" "translate-keys?" "Completion-List-Row" "completions" "Style-Row" "new" "keyword-style" "declaration-style" "expr-comment-style" "comment-style" "title-style" "field-name" "case" "property" "component")}}}}})
 "CommonLisp-Text-View"
- ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "text" "CommonLisp-Text-View.jazz"} 1257476340
+ ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "text" "CommonLisp-Text-View.jazz"} 1265989215
     {Lisp-Entry "jazz.editor.commonlisp.text.CommonLisp-Text-View" module #f 37 18 37 66 ("jazz")
       {Lisp-Entry "CommonLisp-Text-View" class #f 50 7 50 27 ("tooltip?:" "Lisp-Text-View")
         {Lisp-Entry "install" method #f 57 20 57 27 ("Color" "frame:" "base:" "Reference" "'Reference" "name:" "Text-Style" "new" "add-style" "get-quotation-style" "Quotation" "'Quotation" "get-named-string-style" "Named-String" "'Named-String" "get-delimited-string-style" "Delimited-String" "'Delimited-String" "get-string-style" "String" "'String" "get-boolean-style" "Boolean" "'Boolean" "get-char-style" "Char" "'Char" "get-keyword-style" "Keyword" "'Keyword" "get-declaration-style" "Declaration" "'Declaration" "get-declaration-keyword-style" "Declaration-Keyword" "'Declaration-Keyword" "get-expr-comment-style" "Expr-Comment" "'Expr-Comment" "get-comment-style" "Comment" "'Comment" "get-title-style" "Title" "'Title" "add-style-preference" "default-style" "get-name" "default" "preferences" "pref" "let" "nextmethod" "rest")}
@@ -32,15 +35,15 @@
         {Lisp-Entry "preferences" method #f 114 20 114 31 ("commonlisp-text" "documents" "get-preferences")}
         {Lisp-Entry "declaration-style" method #f 118 20 118 37 ("Declaration" "'Declaration" "documented?")}
         {Lisp-Entry "explorer-class" method #f 127 20 127 34 ("CommonLisp-Explorer")}}
-      {Lisp-Entry "CommonLisp-Text-Menu" class #f 136 7 136 27 ("paste" "copy" "view" "french:" "english:" "Locales" "cut" "edit-references" "code-text" "Action" "action:" "Bitmap-Resource" "icon:" "title:" "edit-definitions" "name:" "Context-Menu")}}})
+      {Lisp-Entry "CommonLisp-Text-Menu" class #f 136 7 136 27 ("paste" "copy" "view" "french:" "english:" "Locales" "cut" "edit-references" "code-text" "Action" "action:" "Image-Resource" "icon:" "title:" "edit-definitions" "name:" "Context-Menu")}}})
 "_commonlisp"
- ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "_commonlisp.jazz"} 1257476701
+ ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "_commonlisp.jazz"} 1258811564
     {Lisp-Entry "jazz.editor.commonlisp" module #f 37 8 37 30 ("jazz")}})
 "autoload"
- ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "autoload.jazz"} 1257476757
+ ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "autoload.jazz"} 1258811564
     {Lisp-Entry "jazz.editor.commonlisp.autoload" module #f 37 18 37 49 ("jazz")}})
 "forms"
- ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "forms.jazz"} 1257476771
+ ({Lisp-File-Entry {File jazz.editor.commonlisp "src" "jazz" "editor" "commonlisp" "forms.jazz"} 1258811564
     {Lisp-Entry "jazz.editor.commonlisp.forms" module #f 37 8 37 36 ("jazz")
       {Lisp-Entry "defun" define ("form") 49 13 49 18 (":define" "walk:" "2" "tabulate:" "commonlisp" "dialect:")}
       {Lisp-Entry "defmethod" define ("form") 54 13 54 22 (":define" "walk:" "commonlisp" "dialect:")}

@@ -1,5 +1,5 @@
 "_game"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.game" "src" "jazz" "sample" "game" "_game.jazz"} 1257476712
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.game" "src" "jazz" "sample" "game" "_game.jazz"} 1258811565
     {Lisp-Entry "jazz.sample.game" module #f 38 8 38 24 ("jazz")
       {Lisp-Entry "Player" class #f 49 7 49 13 ("Object")
         {Lisp-Entry "player-kind" method #f 52 29 52 40 ()}
@@ -30,25 +30,25 @@
         {Lisp-Entry "add-move" method #f 137 21 137 29 ("History-Move" "new" "history-manager" "add-history" "move")}
         {Lisp-Entry "append-forward-history" method #f 141 21 141 43 ("History-Move" "new" "history-manager" "append-forward-history" "move")}
         {Lisp-Entry "get-moves" method #f 145 18 145 27 ("get-forward-moves" "get-backward-moves" "append")}
-        {Lisp-Entry "get-backward-moves" method #f 150 18 150 36 ("history-manager" "get-backward-history" "reverse" "get-move" "history-move" "lambda" "map")}
-        {Lisp-Entry "get-forward-moves" method #f 156 18 156 35 ("history-manager" "get-forward-history" "get-move" "history-move" "lambda" "map")}
-        {Lisp-Entry "play" method #f 167 29 167 33 ("move")}
-        {Lisp-Entry "unplay" method #f 171 29 171 35 ("move")}
-        {Lisp-Entry "play-move" method #f 180 26 180 35 ("move")}
-        {Lisp-Entry "inform-players" method #f 184 11 184 25 ("vector-ref" "move-played" "players" "vector-length" "below" "0" "from" "n" "for" "loop" "token" "move")}
-        {Lisp-Entry "check-status" method #f 189 29 189 41 ("draw" "'draw" "draw?" "winner" "win" "'win" "status" "set!" "win?" "cond" "token" "move" "player")}
-        {Lisp-Entry "win?" method #f 197 29 197 33 ("token" "move")}
-        {Lisp-Entry "draw?" method #f 201 29 201 34 ("token" "move")}
-        {Lisp-Entry "save" method #f 210 26 210 30 ()}
-        {Lisp-Entry "load" method #f 214 26 214 30 ()}
-        {Lisp-Entry "inspect" method #f 223 26 223 33 ()}}
-      {Lisp-Entry "History-Move" class #f 232 7 232 19 ("History-Item")
-        {Lisp-Entry "move" slot #f 235 8 235 12 ()}
-        {Lisp-Entry "get-move" accessor #f 235 20 235 28 ()}
-        {Lisp-Entry "initialize" method #f 238 20 238 30 ("move~self" "set!" "nextmethod" "move")}
-        {Lisp-Entry "print" method #f 243 20 243 25 ("move" "format" "lambda" "self" "print-unreadable" "readably" "printer")}}}})
+        {Lisp-Entry "get-backward-moves" method #f 150 18 150 36 ("history-manager" "get-backward-history" "reverse" "get-move" "map")}
+        {Lisp-Entry "get-forward-moves" method #f 154 18 154 35 ("history-manager" "get-forward-history" "get-move" "map")}
+        {Lisp-Entry "play" method #f 163 29 163 33 ("move")}
+        {Lisp-Entry "unplay" method #f 167 29 167 35 ("move")}
+        {Lisp-Entry "play-move" method #f 176 26 176 35 ("move")}
+        {Lisp-Entry "inform-players" method #f 180 11 180 25 ("vector-ref" "move-played" "players" "vector-length" "below" "0" "from" "n" "for" "loop" "token" "move")}
+        {Lisp-Entry "check-status" method #f 185 29 185 41 ("draw" "'draw" "draw?" "winner" "win" "'win" "status" "set!" "win?" "cond" "token" "move" "player")}
+        {Lisp-Entry "win?" method #f 193 29 193 33 ("token" "move")}
+        {Lisp-Entry "draw?" method #f 197 29 197 34 ("token" "move")}
+        {Lisp-Entry "save" method #f 206 26 206 30 ()}
+        {Lisp-Entry "load" method #f 210 26 210 30 ()}
+        {Lisp-Entry "inspect" method #f 219 26 219 33 ()}}
+      {Lisp-Entry "History-Move" class #f 228 7 228 19 ("History-Item")
+        {Lisp-Entry "move" slot #f 231 8 231 12 ()}
+        {Lisp-Entry "get-move" accessor #f 231 20 231 28 ()}
+        {Lisp-Entry "initialize" method #f 234 20 234 30 ("move~self" "set!" "nextmethod" "move")}
+        {Lisp-Entry "print" method #f 239 20 239 25 ("move" "format" "lambda" "self" "print-unreadable" "readably" "printer")}}}})
 "minimax"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.game" "src" "jazz" "sample" "game" "minimax.jazz"} 1257476788
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.game" "src" "jazz" "sample" "game" "minimax.jazz"} 1258811565
     {Lisp-Entry "jazz.sample.game.minimax" module #f 37 8 37 32 ("jazz")
       {Lisp-Entry "Minimax-Statistics" class #f 51 7 51 25 ("0" "initialize" "Object")
         {Lisp-Entry "last-eval" slot #f 54 8 54 17 ()}

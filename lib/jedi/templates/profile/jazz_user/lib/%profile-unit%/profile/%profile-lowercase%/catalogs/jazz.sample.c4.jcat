@@ -1,5 +1,5 @@
 "C4-AI"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "C4-AI.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "C4-AI.jazz"} 1259266728
     {Lisp-Entry "jazz.sample.c4.C4-AI" module #f 38 18 38 38 ("jazz")
       {Lisp-Entry "C4-AI" class #f 48 7 48 12 ("Search-Depth" "0" "initialize" "C4-Player")
         {Lisp-Entry "current-eval" slot #f 51 8 51 20 ()}
@@ -26,7 +26,7 @@
         {Lisp-Entry "evaluate-count" definition #f 146 15 146 29 ("0" "10" "1" "100" "2" "1000" "3" "1000000" "4" "case" "cast" "*" "token" "count")}
         {Lisp-Entry "setup-lines" method #f 161 11 161 22 ("get-lines" "cons" "line=?" "test:" "member?" "not" "when" "line" "lambda" "for-each" "board-ref" "square" "let" "game" "get-board-size" "below" "0" "from" "rank" "for" "loop" "all-lines" "set!")}}}})
 "C4-Application"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "C4-Application.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "C4-Application.jazz"} 1259266728
     {Lisp-Entry "jazz.sample.c4.C4-Application" module #f 38 18 38 47 ("jazz")
       {Lisp-Entry "C4-Application" class #f 53 7 53 21 ("Application")
         {Lisp-Entry "process-name" method #f 56 20 56 32 ()}
@@ -34,7 +34,7 @@
         {Lisp-Entry "finish-process" method #f 64 20 64 34 ("C4-Board" "new-frame" "get-stage" "maximize" "nextmethod")}}
       {Lisp-Entry "C4-Toplevel" class #f 75 7 75 18 ("625" "800" "Dimension" "size:" "100" "Point" "position:" "caption-base:" "Toplevel")}}})
 "C4-Board"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "C4-Board.jazz"} 1265989215
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "C4-Board.jazz"} 1264605818
     {Lisp-Entry "jazz.sample.c4.C4-Board" module #f 38 18 38 41 ("jazz")
       {Lisp-Entry "C4-Board" class #f 50 7 50 15 ("initialize" "View")
         {Lisp-Entry "game" slot #f 53 8 53 12 ()}
@@ -83,7 +83,7 @@
       {Lisp-Entry "test" definition #f 376 13 376 17 ()}
       {Lisp-Entry "inspect-board" definition #f 381 13 381 26 ("newline" "COMPUTER" "HUMAN" "EMPTY" "eq?" "cond" "display" "get-square" "get-token" "token" "let" "get-board-columns" "col" "get-board-rows" "below" "0" "from" "row" "for" "loop" "game")}}})
 "C4-Pages"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "C4-Pages.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "C4-Pages.jazz"} 1259266728
     {Lisp-Entry "jazz.sample.c4.C4-Pages" module #f 37 18 37 41 ("jazz")
       {Lisp-Entry "C4-Pages" class #f 46 7 46 15 ("Game-Pages")
         {Lisp-Entry "Pattern-Associations" definition #f 49 14 49 34 ()}
@@ -94,7 +94,7 @@
         {Lisp-Entry "serialize-move" method #f 234 20 234 34 ("format" "get-col" "col" "get-row" "row" "let" "move")}
         {Lisp-Entry "deserialize-move" method #f 240 20 240 36 ("get-square" "cardinality" "1" "+" "col" "0" "substring" "string->number" "row" "search" "pos" "let" "value" "game")}}}})
 "_c4"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "_c4.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "_c4.jazz"} 1259266728
     {Lisp-Entry "jazz.sample.c4" module #f 37 8 37 22 ("jazz")
       {Lisp-Entry "EMPTY" definition #f 45 20 45 25 ("0")}
       {Lisp-Entry "RED" definition #f 48 20 48 23 ("-1")}
@@ -184,13 +184,13 @@
         {Lisp-Entry "load-board" method #f 362 11 362 21 ("invalidate-view" ">=" "if" "set-available-move" "length" "move" "COMPUTER" "O" "X" "case" "set-token" "get-square" "square" "let" "downto" "1" "board-rows" "-" "row" "token" "board-columns" "below" "0" "from" "col" "saved-board" "in" "tokens" "for" "loop" "HUMAN" "initialize-game" "game")}
         {Lisp-Entry "inspect-board" method #f 383 11 383 24 ("newline" "GREEN" "RED" "EMPTY" "eq?" "cond" "display" "get-square" "get-token" "token" "let" "board-columns" "col" "board-rows" "below" "0" "from" "row" "for" "loop")}}}})
 "autoload"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "autoload.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "autoload.jazz"} 1259266728
     {Lisp-Entry "jazz.sample.c4.autoload" module #f 37 18 37 41 ("jazz")}})
 "graphics"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "graphics.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "graphics.jazz"} 1259266728
     {Lisp-Entry "jazz.sample.c4.graphics" module #f 38 8 38 31 ("jazz")
       {Lisp-Entry "C4-Images" definition #f 46 12 46 21 ("Jazz" "Directory")}
       {Lisp-Entry "generate-c4" definition #f 50 13 50 24 ("user-message" "format" "image-convert" "color" "name" "generate" "define" "10" "inner" "2" "1" "-" "/" "half" "71" "width" "let" "lambda" "C4-Images" "parse" "with-current-directory")}}})
 "run"
- ({Lisp-File-Entry {File jazz.sample.c4 "src" "jazz" "sample" "c4" "run.jazz"} 1258811565
+ ({Lisp-File-Entry {File jazz.sample.c4 "src" "jazz" "sample" "c4" "run.jazz"} 1259266728
     {Lisp-Entry "jazz.sample.c4.run" module #f 37 8 37 26 ("C4-Application" "new" "boot-environment" "jazz.sample.c4.C4-AI" "'jazz.sample.c4.C4-AI" "warn-minimax-interpreted" "descriptor" "lambda" "jazz.sample.c4" "'jazz.sample.c4" "register-product-run" "jazz")}})

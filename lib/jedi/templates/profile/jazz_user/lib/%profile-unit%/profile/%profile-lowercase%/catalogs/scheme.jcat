@@ -1,18 +1,18 @@
 "_dialect"
- ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "dialect" "_dialect.scm"} 1258811568
+ ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "dialect" "_dialect.scm"} 1259266729
     {Lisp-Entry "scheme.dialect" module #f 37 18 37 32 ("core")}})
 "_scheme"
- ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "_scheme.scm"} 1258811568
+ ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "_scheme.scm"} 1259266729
     {Lisp-Entry "scheme" module #f 37 8 37 14 ("core")}})
 "_syntax-rules"
- ({Lisp-File-Entry {File scheme "src" "scheme" "syntax-rules" "_syntax-rules.scm"} 1258811568
+ ({Lisp-File-Entry {File scheme "src" "scheme" "syntax-rules" "_syntax-rules.scm"} 1259266729
     {Lisp-Entry "scheme.syntax-rules" module #f 1 8 1 27 ("scheme")
       {Lisp-Entry "generate-symbol" native #f 3 16 3 36 ()}
       {Lisp-Entry "source?" native #f 4 16 4 28 ()}
       {Lisp-Entry "error" native #f 5 16 5 26 ()}
       {Lisp-Entry "syntax-rules" define-macro #f 7 22 7 34 ("clause" ",_or" ",_er-macro-transformer" "res" ",many" ",_append" "=" "-" "d" "do" "many" ",ell-vars" ",_lambda" ",_map" "nest" "ell-vars" "ell-dim" "depth" ",t" ",_rename" "<=" "t" ">=" "cell" "f" "free" "free-vars" "source?" "syntactic-closure?" "caar" "id" "assoc-id" "ellipse-tail" "ellipse-depth" "ellipse-quote?" ",_strip-source-info" ",_equal?" ",_vector->list" ",_vector?" ",once" ",_pair?" ",_reverse" ",_null?" ",_if" "list" ",l" ",_cons" ",_lp" "_" ",w" ",_car" "once" "symbol->string" "ls-vars" "all-vars" "new-vars" "w" ",_list?" "error" "not" "ellipse?" "else" ",p" ",_quote" ",_compare" ",_and" "l" "cond" ",x" ",v" ",_let" "v" ",_begin" "expand-template" "k" "vars" "dim" ",_expr" ",_unwrap-syntactic-closure" ",_cdr" "p" "tmpl" "pat" "expand-pattern" "ls" "pred" "any" "number->string" "string-append" "1" "+" "set!" "next-v" "_compare" "_rename" "generate-symbol" "_expr" "list->vector" "'list->vector" "_list->vector" "vector->list" "'vector->list" "_vector->list" "reverse" "'reverse" "_reverse" "lp" "'lp" "_lp" "list?" "'list?" "_list?" "vector?" "'vector?" "_vector?" "map" "'map" "_map" "append" "'append" "_append" "apply" "'apply" "_apply" "quote" "'quote" "_quote" "null?" "'null?" "_null?" "pair?" "'pair?" "_pair?" "cons" "'cons" "_cons" "cdr" "'cdr" "_cdr" "car" "'car" "_car" "equal?" "'equal?" "_equal?" "eq?" "'eq?" "_eq?" "or" "'or" "_or" "and" "'and" "_and" "'if" "_if" "begin" "'begin" "_begin" "let" "'let" "_let" "'lambda" "_lambda" "strip-syntactic-closures" "'strip-syntactic-closures" "_strip-syntactic-closures" "strip-source-info" "'strip-source-info" "_strip-source-info" "'unwrap-syntactic-closure" "_unwrap-syntactic-closure" "er-macro-transformer" "'er-macro-transformer" "_er-macro-transformer" "0" "count" "..." "'..." "ellipse" "cddr" "cdddr" "forms" "caddr" "if" "lits" "cadr" "identifier?" "srfi-46?" "unwrap-syntactic-closure" "let*" "identifier=?" "y" "compare" "make-syntactic-closure" "x" "rename" "define" "mac-env" "expr" "lambda" "rsc-macro-transformer")}}})
 "classes"
- ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "dialect" "classes.scm"} 1258811568
+ ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "dialect" "classes.scm"} 1259266729
     {Lisp-Entry "scheme.dialect.classes" unit #f 37 16 37 38 ()
       {Lisp-Entry "jazz.Define-Declaration" define-class ("class") 45 19 45 42 ("%%set-define-declaration-value" "%%get-define-declaration-value" "value" "%%get-define-declaration-signature" "signature" "jazz.allocate-define-declaration" "jazz.Object-Class" "source" "locator" "parent" "toplevel" "attributes" "compatibility" "access" "hits" "type" "name" "jazz.Declaration")}
       {Lisp-Entry "jazz.Define-Special-Form-Declaration" define-class ("class") 55 19 55 55 ("%%set-define-special-form-body" "%%get-define-special-form-body" "body" "%%set-define-special-form-signature" "%%get-define-special-form-signature" "signature" "jazz.allocate-define-special-form-declaration" "jazz.Object-Class" "source" "locator" "parent" "toplevel" "attributes" "compatibility" "access" "hits" "type" "name" "jazz.Declaration")}
@@ -20,9 +20,9 @@
       {Lisp-Entry "jazz.Scheme-Dialect" define-class ("class") 75 19 75 38 ("jazz.allocate-scheme-dialect" "jazz.Object-Class" "bindings" "jazz.Dialect")}
       {Lisp-Entry "jazz.Scheme-Walker" define-class ("class") 84 19 84 37 ("jazz.allocate-scheme-walker" "jazz.Object-Class" "autoloads" "inclusions" "references" "variables" "literals" "errors" "warnings" "jazz.Walker")}}})
 "dialect"
- ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "dialect" "dialect.scm"} 1260289835
+ ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "dialect" "dialect.scm"} 1260275384
     {Lisp-Entry "scheme.dialect.dialect" unit #f 37 16 37 38 ("jazz.Scheme-Walker" "jazz.Scheme-Dialect" "jazz.Define-Macro-Declaration" "jazz.Define-Special-Form-Declaration" "jazz.Define-Declaration" "jazz.encapsulate-class")
-      {Lisp-Entry "jazz.Define-Declaration" define-class ("class runtime") 45 27 45 50 ()}
+      {Lisp-Entry "jazz.Define-Declaration" define-class '("class runtime") 45 27 45 50 ()}
       {Lisp-Entry "jazz.new-define-declaration" define #f 48 9 48 36 ("jazz.setup-declaration" "uptodate" "'uptodate" "private" "'private" "jazz.Define-Declaration" "jazz.allocate-define-declaration" "new-declaration" "let" "signature" "parent" "type" "name")}
       {Lisp-Entry "jazz.walk-binding-validate-call" generic/specific ("jazz.Define-Declaration") 55 21 55 52 ("jazz.validate-arguments" "if" "declaration" "%%get-define-declaration-signature" "signature" "let" "form-src" "arguments" "operator" "source-declaration" "resume" "walker")}
       {Lisp-Entry "jazz.emit-declaration" generic/specific ("jazz.Define-Declaration") 61 21 61 42 ("%%get-declaration-source" "%%get-lexical-binding-type" "jazz.emit-expression" "jazz.emit-type-cast" ",locator" "define" "jazz.sourcify-if" "%%get-define-declaration-value" "value" "declaration" "%%get-declaration-locator" "locator" "let" "environment")}
@@ -32,23 +32,23 @@
       {Lisp-Entry "jazz.emit-binding-assignment" generic/specific ("jazz.Define-Declaration") 87 21 87 49 ("jazz.Any" "jazz.emit-expression" "jazz.sourcified-form" ",locator" "set!" "jazz.new-code" "declaration" "%%get-declaration-locator" "locator" "let" "environment" "source-declaration" "value")}
       {Lisp-Entry "jazz.fold-declaration" generic/specific ("jazz.Define-Declaration") 95 21 95 42 ("%%get-define-declaration-value" "jazz.fold-statement" "declaration" "s" "k" "f")}
       {Lisp-Entry "jazz.tree-fold" generic/specific ("jazz.Define-Declaration") 101 21 101 35 ("expression" "%%get-define-declaration-value" "jazz.tree-fold" "environment" "seed" "here" "up" "down")}
-      {Lisp-Entry "jazz.Define-Special-Form-Declaration" define-class ("class runtime") 113 27 113 63 ()}
+      {Lisp-Entry "jazz.Define-Special-Form-Declaration" define-class '("class runtime") 113 27 113 63 ()}
       {Lisp-Entry "jazz.new-define-special-form-declaration" define #f 116 9 116 49 ("jazz.setup-declaration" "uptodate" "'uptodate" "public" "'public" "jazz.Define-Special-Form-Declaration" "jazz.allocate-define-special-form-declaration" "new-declaration" "let" "signature" "parent" "type" "name")}
       {Lisp-Entry "jazz.walk-binding-expandable?" generic/specific ("jazz.Define-Special-Form-Declaration") 122 21 122 50 ()}
       {Lisp-Entry "jazz.walk-binding-expand-form" generic/specific ("jazz.Define-Special-Form-Declaration") 126 21 126 50 ("%%cdr" "%%apply" "jazz.need-macro" "expander" "jazz.load-unit" "%%get-declaration-parent" "parent-declaration" "jazz.walk-error" "%%get-declaration-toplevel" "%%eq?" "if" "binding" "%%get-declaration-locator" "locator" "%%desourcify" "form" "let" "form-src" "environment" "declaration" "resume" "walker")}
       {Lisp-Entry "jazz.emit-declaration" generic/specific ("jazz.Define-Special-Form-Declaration") 137 21 137 42 ("%%get-declaration-source" "jazz.emit-expression" "jazz.sourcified-form" "jazz.emit-signature" "%%cons" "jazz.define-special-form" "jazz.sourcify-if" "cons" "augmented-environment" "frame" "lambda" "jazz.annotate-signature" "jazz.with-annotated-frame" "%%get-define-special-form-body" "body" "%%get-define-special-form-signature" "signature" "declaration" "%%get-declaration-locator" "locator" "let" "environment")}
       {Lisp-Entry "jazz.fold-declaration" generic/specific ("jazz.Define-Special-Form-Declaration") 150 21 150 42 ("%%get-define-special-form-body" "jazz.fold-statement" "declaration" "s" "k" "f")}
-      {Lisp-Entry "jazz.Define-Macro-Declaration" define-class ("class runtime") 164 27 164 56 ()}
+      {Lisp-Entry "jazz.Define-Macro-Declaration" define-class '("class runtime") 164 27 164 56 ()}
       {Lisp-Entry "jazz.new-define-macro-declaration" define #f 167 9 167 42 ("jazz.setup-declaration" "uptodate" "'uptodate" "public" "'public" "jazz.Define-Macro-Declaration" "jazz.allocate-define-macro-declaration" "new-declaration" "let" "signature" "parent" "type" "name")}
       {Lisp-Entry "jazz.walk-binding-expandable?" generic/specific ("jazz.Define-Macro-Declaration") 173 21 173 50 ()}
       {Lisp-Entry "jazz.walk-binding-expand-form" generic/specific ("jazz.Define-Macro-Declaration") 177 21 177 50 ("%%cdr" "%%apply" "jazz.need-macro" "expander" "jazz.load-unit" "%%get-declaration-parent" "parent-declaration" "jazz.walk-error" "%%get-declaration-toplevel" "%%eq?" "if" "binding" "%%get-declaration-locator" "locator" "%%desourcify" "form" "let" "form-src" "environment" "declaration" "resume" "walker")}
       {Lisp-Entry "jazz.emit-declaration" generic/specific ("jazz.Define-Macro-Declaration") 188 21 188 42 ("%%get-declaration-source" "jazz.emit-expression" "jazz.sourcified-form" "jazz.emit-signature" "jazz.define-macro" "jazz.sourcify-if" "%%cons" "augmented-environment" "frame" "lambda" "jazz.annotate-signature" "jazz.with-annotated-frame" "%%get-define-macro-body" "body" "%%get-define-macro-signature" "signature" "declaration" "%%get-declaration-locator" "locator" "let" "environment")}
       {Lisp-Entry "jazz.fold-declaration" generic/specific ("jazz.Define-Macro-Declaration") 201 21 201 42 ("%%get-define-macro-body" "jazz.fold-statement" "declaration" "s" "k" "f")}
-      {Lisp-Entry "jazz.Scheme-Dialect" define-class ("class runtime") 215 27 215 46 ()}
+      {Lisp-Entry "jazz.Scheme-Dialect" define-class '("class runtime") 215 27 215 46 ()}
       {Lisp-Entry "jazz.new-scheme-dialect" define #f 218 9 218 32 ("jazz.Scheme-Dialect" "jazz.allocate-scheme-dialect")}
       {Lisp-Entry "jazz.dialect-name" generic/specific ("jazz.Scheme-Dialect") 222 21 222 38 ("scheme" "'scheme")}
       {Lisp-Entry "jazz.dialect-walker" generic/specific ("jazz.Scheme-Dialect") 226 21 226 40 ("jazz.new-scheme-walker")}
-      {Lisp-Entry "jazz.Scheme-Walker" define-class ("class runtime") 238 27 238 45 ()}
+      {Lisp-Entry "jazz.Scheme-Walker" define-class '("class runtime") 238 27 238 45 ()}
       {Lisp-Entry "jazz.new-scheme-walker" define #f 241 9 241 31 ("eq?" "test:" "%%make-table" "jazz.new-queue" "jazz.Scheme-Walker" "jazz.allocate-scheme-walker")}
       {Lisp-Entry "jazz.runtime-export" generic/specific ("jazz.Scheme-Walker") 245 21 245 40 ("%%get-declaration-locator" "jazz.Define-Declaration" "%%is?" "if" "walker" "nextmethod" "or" "declaration")}
       {Lisp-Entry "jazz.walk-declaration" generic/specific ("jazz.Scheme-Walker") 257 21 257 42 ("nextmethod" "else" "jazz.walk-define-macro-declaration" "define-macro" "walker" "jazz.walk-define-declaration" "define" "case" "%%car" "first" "let" "jazz.source-code" "%%pair?" "if" "form-src" "environment" "declaration" "resume")}
@@ -104,7 +104,7 @@
       {Lisp-Entry "delay" define ("special") 739 28 739 33 ("jazz.walk-delay" "scheme")}
       {Lisp-Entry "quasiquote" define ("special") 740 28 740 38 ("jazz.walk-quasiquote" "scheme")}}})
 "kernel"
- ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "dialect" "kernel.scm"} 1258811568
+ ({Lisp-File-Entry {File Jazz "lib" "scheme" "src" "scheme" "dialect" "kernel.scm"} 1259266729
     {Lisp-Entry "scheme.dialect.kernel" module #f 37 18 37 39 ("core")
       {Lisp-Entry "eq?" native #f 55 8 55 11 ()}
       {Lisp-Entry "eqv?" native #f 56 8 56 12 ()}

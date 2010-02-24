@@ -1,5 +1,5 @@
 "Bitmap"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "windows" "Bitmap.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "windows" "Bitmap.jazz"} 1259266728
     {Lisp-Entry "jazz.graphic.platform.windows.Bitmap" module #f 37 18 37 54 ("jazz")
       {Lisp-Entry "Bitmap" class #f 43 20 43 26 ("Object")
         {Lisp-Entry "handle" slot #f 46 8 46 14 ()}
@@ -8,14 +8,14 @@
         {Lisp-Entry "get-handle" method #f 65 11 65 21 ("handle")}
         {Lisp-Entry "get-size" method #f 69 18 69 26 ("BITMAP-bmHeight-ref" "BITMAP-bmWidth-ref" "Dimension" "new" "BITMAP-sizeof" "handle" "GetObject" "BITMAP-make" "info" "let")}}}})
 "Client-Surface"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "Client-Surface.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "Client-Surface.jazz"} 1259266728
     {Lisp-Entry "jazz.graphic.Client-Surface" module #f 38 18 38 45 ("jazz")
       {Lisp-Entry "Client-Surface" class #f 44 20 44 34 ("initialize" "Surface")
         {Lisp-Entry "window" slot #f 47 8 47 14 ()}
         {Lisp-Entry "initialize" method #f 50 20 50 30 ("get-handle" "GetDC" "nextmethod" "window" "set!" "wnd")}
         {Lisp-Entry "destroy-hdc" method #f 56 11 56 22 ("hdc" "window" "get-handle" "ReleaseDC")}}}})
 "Color"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "Color.jazz"} 1265989215
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "Color.jazz"} 1263914893
     {Lisp-Entry "jazz.graphic.Color" module #f 37 18 37 36 ("jazz")
       {Lisp-Entry "Color" class #f 43 7 43 12 ("Object")
         {Lisp-Entry "name" slot #f 46 8 46 12 ()}
@@ -43,7 +43,7 @@
         {Lisp-Entry "hls->rgb" method #f 185 18 185 26 ("colorref:" "Color" "new" "blue-part" "green-part" "red-part" "ColorHLSToRGB" "ref" "let")}
         {Lisp-Entry "color-cycle" method #f 196 23 196 34 ("hls->rgb" "blue:" "green:" "red:" "Color" "new" "hls" "round" "+" "n" "lambda" "map" "blue-part" "sat" "green-part" "lig" "red-part" "hue" "rgb->hls" "get-colorref" "ref" "240" "/" "inc" "*" "cardinality" "cycle-naturals" "seq" "let*" "subcycle" "cycle" "base")}}}})
 "DC-Snapshot"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "DC-Snapshot.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "DC-Snapshot.jazz"} 1259266728
     {Lisp-Entry "jazz.graphic.DC-Snapshot" module #f 37 18 37 42 ("jazz")
       {Lisp-Entry "DC-Snapshot" class #f 43 20 43 31 ("Viewable" "Object")}
       {Lisp-Entry "Snapshot-Size" constant #f 47 10 47 23 ("200" "Dimension")}
@@ -61,7 +61,7 @@
         {Lisp-Entry "client" property #f 104 12 104 18 ()}
         {Lisp-Entry "draw" method #f 107 11 107 15 ("get-size" "destination-size:" "size:" "bit-blit" "client" "get-memory-dc" "memory-dc" "Snapshot-Size" "size" "let" "lv" "lh" "context" "surface")}}}})
 "Font"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "font" "Font.jazz"} 1265989215
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "font" "Font.jazz"} 1265655681
     {Lisp-Entry "jazz.graphic.font.Font" module #f 37 18 37 40 ("jazz")
       {Lisp-Entry "Font" class #f 45 7 45 11 ("initialize" "Object")
         {Lisp-Entry "name" slot #f 48 8 48 12 ()}
@@ -111,7 +111,7 @@
         {Lisp-Entry "toggle-italic" method #f 280 18 280 31 ("monospace?" "monospace?:" "underline?" "underline?:" "italic?" "not" "italic?:" "bold?" "bold?:" "point-size" "point-size:" "font-name" "font-name:" "Font" "new")}
         {Lisp-Entry "toggle-underline" method #f 290 18 290 34 ("monospace?" "monospace?:" "underline?" "not" "underline?:" "italic?" "italic?:" "bold?" "bold?:" "point-size" "point-size:" "font-name" "font-name:" "Font" "new")}}}})
 "Font-Metrics"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "Font-Metrics.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "Font-Metrics.jazz"} 1259266728
     {Lisp-Entry "jazz.graphic.Font-Metrics" module #f 37 18 37 43 ("jazz")
       {Lisp-Entry "Font-Metrics" class #f 43 7 43 19 ("Object")
         {Lisp-Entry "metrics" slot #f 46 8 46 15 ()}
@@ -123,7 +123,7 @@
         {Lisp-Entry "get-ascent" method #f 79 18 79 28 ("metrics" "cairo_font_extents_t-ascent-ref" "fxround")}
         {Lisp-Entry "get-max-char-width" method #f 83 18 83 36 ("metrics" "cairo_font_extents_t-max_x_advance-ref" "fxround")}}}})
 "Memory-Surface"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "Memory-Surface.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "Memory-Surface.jazz"} 1259266728
     {Lisp-Entry "jazz.graphic.Memory-Surface" module #f 37 18 37 45 ("jazz")
       {Lisp-Entry "Memory-Surface" class #f 44 7 44 21 ("Surface")
         {Lisp-Entry "size" slot #f 47 8 47 12 ()}
@@ -131,7 +131,7 @@
         {Lisp-Entry "initialize" method #f 50 20 50 30 ("size~self" "set!" "nextmethod" "get-height" "get-width" "0" "cairo_image_surface_create" "surface" "let*" "10" "Dimension" "size" "size:" "compatibility-dc")}
         {Lisp-Entry "renew-context" method #f 56 19 56 32 ("surface" "cairo_create" "context" "set!" "destroy-context")}}}})
 "Picture"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "windows" "Picture.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "windows" "Picture.jazz"} 1259266728
     {Lisp-Entry "jazz.graphic.platform.windows.Picture" module #f 37 18 37 55 ("jazz")
       {Lisp-Entry "Picture" class #f 43 7 43 14 ("Surface")}
       {Lisp-Entry "Picture" class #f 49 7 49 14 ("Surface")
@@ -140,7 +140,7 @@
         {Lisp-Entry "get-metafile" method #f 66 18 66 30 ("set!" "CloseEnhMetaFile" "prog1" "hdc" "not" "unless")}
         {Lisp-Entry "delete-metafile" method #f 72 23 72 38 ("DeleteEnhMetaFile" "metafile")}}}})
 "Picture-Job"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "windows" "Picture-Job.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "windows" "Picture-Job.jazz"} 1259266728
     {Lisp-Entry "jazz.graphic.platform.windows.Picture-Job" module #f 37 18 37 59 ("jazz")
       {Lisp-Entry "Picture-Job" class #f 40 20 40 31 ("Object")}
       {Lisp-Entry "Picture-Job" class #f 44 20 44 31 ("Print-Job")
@@ -150,7 +150,7 @@
         {Lisp-Entry "start-page" method #f 62 11 62 21 ("1" "+" "filename" "format" "directory" "new-file" "file:" "Picture" "new" "surface" "set!" "no")}
         {Lisp-Entry "end-page" method #f 66 11 66 19 ("Picture" "delete-metafile" "close" "surface" "get-metafile" "metafile" "let" "no")}}}})
 "Region"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "carbon" "Region.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "carbon" "Region.jazz"} 1259266728
     {Lisp-Entry "jazz.graphic.platform.carbon.Region" module #f 37 18 37 53 ("jazz")
       {Lisp-Entry "Region" class #f 44 7 44 13 ("Object")
         {Lisp-Entry "handle" slot #f 47 8 47 14 ()}
@@ -162,7 +162,7 @@
         {Lisp-Entry "offset!" method #f 72 18 72 25 ("handle" "OffsetRgn" "v" "h")}
         {Lisp-Entry "combine!" method #f 76 18 76 26 ("get-rectangles" "append" "rectangles" "set!" "error" "else" "xor" "get-handle" "handle" "UnionRgn" "or" "case" "mode" "region")}
         {Lisp-Entry "get-box" method #f 84 18 84 25 ("Rect" "new" "handle" "GetRegionBounds" "r" "b" "t" "l" "receive")}}}}
-  {Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "windows" "Region.jazz"} 1258811565
+  {Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "windows" "Region.jazz"} 1259266728
     {Lisp-Entry "jazz.graphic.platform.windows.Region" module #f 37 18 37 54 ("jazz")
       {Lisp-Entry "Region" class #f 43 7 43 13 ("Object")
         {Lisp-Entry "handle" slot #f 46 8 46 14 ()}
@@ -174,7 +174,7 @@
         {Lisp-Entry "offset!" method #f 73 18 73 25 ("handle" "OffsetRgn" "v" "h")}
         {Lisp-Entry "combine!" method #f 77 18 77 26 ("get-rectangles" "append" "rectangles" "set!" "get-handle" "handle" "CombineRgn" "error" "else" "RGN_DIFF" "diff" "RGN_XOR" "xor" "RGN_OR" "or" "RGN_AND" "and" "case" "get-combine-mode" "define" "mode" "region")}
         {Lisp-Entry "get-box" method #f 90 18 90 25 ("RECT-free" "RECT->rect" "prog1" "handle" "GetRgnBox" "RECT-make" "rect" "with")}}}}
-  {Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "x11" "Region.jazz"} 1258811565
+  {Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "platform" "x11" "Region.jazz"} 1259266728
     {Lisp-Entry "jazz.graphic.platform.x11.Region" module #f 37 18 37 50 ("jazz")
       {Lisp-Entry "Region" class #f 43 7 43 13 ("Object")
         {Lisp-Entry "rectangles" slot #f 46 8 46 18 ()}
@@ -185,7 +185,7 @@
         {Lisp-Entry "combine!" method #f 75 18 75 26 ("get-rectangles" "append" "rectangles" "set!" "mode" "region")}
         {Lisp-Entry "get-box" method #f 79 18 79 25 ("get-box" "'get-box" "unimplemented")}}}})
 "Surface"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "Surface.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "Surface.jazz"} 1259266728
     {Lisp-Entry "jazz.graphic.Surface" module #f 38 18 38 38 ("jazz")
       {Lisp-Entry "Surface" class #f 52 7 52 14 ("0" "Rect" "new" "initialize" "Object")
         {Lisp-Entry "clipper" slot #f 55 8 55 15 ()}
@@ -283,44 +283,134 @@
         {Lisp-Entry "cairo-status" method #f 1038 18 1038 30 ("context" "cairo_status")}
         {Lisp-Entry "cairo-surface-status" method #f 1042 18 1042 38 ("surface" "cairo_surface_status")}}}})
 "Viewable"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "Viewable.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "Viewable.jazz"} 1259266728
     {Lisp-Entry "jazz.graphic.Viewable" module #f 37 18 37 39 ("jazz")
       {Lisp-Entry "Viewable" interface #f 40 24 40 32 ()
         {Lisp-Entry "get-title" method #f 43 35 43 44 ()}
         {Lisp-Entry "get-viewer-class" method #f 44 35 44 51 ()}}}})
 "_font"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "font" "_font.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "font" "_font.jazz"} 1259266728
     {Lisp-Entry "jazz.graphic.font" module #f 37 8 37 25 ("jazz")}})
 "_graphic"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "_graphic.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "_graphic.jazz"} 1267045799
     {Lisp-Entry "jazz.graphic" module #f 37 8 37 20 ("jazz")
-      {Lisp-Entry "registered-object" definition #f 48 13 48 30 ("table-set!" "object" "procedure?" "if" "table-ref" "procedure/object" "let" "name" "table")}
-      {Lisp-Entry "Colors" definition #f 62 12 62 18 ("eq?" "test:" "make-table")}
-      {Lisp-Entry "register-color" definition #f 66 21 66 35 ("Colors" "table-set!" "color" "name")}
-      {Lisp-Entry "registered-color" definition #f 70 21 70 37 ("set-alpha" "registered-color" "copy" "if" "error" "Colors" "registered-object" "either" "color" "let" "jazz.graphic.literals.colors" "'jazz.graphic.literals.colors" "load-unit" "alpha" "name")}
-      {Lisp-Entry "symbolic-colors" definition #f 81 20 81 35 ("value" "name" "lambda" "Colors" "map-table")}
-      {Lisp-Entry "symbolic-color" definition #f 87 20 87 34 ("registered-color" "symbol?" "if" "color")}
-      {Lisp-Entry "Fonts" definition #f 98 12 98 17 ("eq?" "test:" "make-table")}
-      {Lisp-Entry "register-font" definition #f 102 21 102 34 ("Fonts" "table-set!" "font" "name")}
-      {Lisp-Entry "registered-font" definition #f 106 21 106 36 ("error" "Fonts" "registered-object" "either" "jazz.graphic.literals.fonts" "'jazz.graphic.literals.fonts" "load-unit" "name")}
-      {Lisp-Entry "symbolic-fonts" definition #f 112 20 112 34 ("value" "name" "lambda" "Fonts" "map-table")}
-      {Lisp-Entry "symbolic-font" definition #f 118 20 118 33 ("registered-font" "symbol?" "if" "font")}}})
+      {Lisp-Entry "registered-object" definition #f 49 13 49 30 ("table-set!" "object" "procedure?" "if" "table-ref" "procedure/object" "let" "name" "table")}
+      {Lisp-Entry "Colors" definition #f 63 12 63 18 ("eq?" "test:" "make-table")}
+      {Lisp-Entry "register-color" definition #f 67 21 67 35 ("Colors" "table-set!" "color" "name")}
+      {Lisp-Entry "registered-color" definition #f 71 21 71 37 ("set-alpha" "registered-color" "copy" "if" "error" "Colors" "registered-object" "either" "color" "let" "jazz.graphic.literals.colors" "'jazz.graphic.literals.colors" "load-unit" "alpha" "name")}
+      {Lisp-Entry "symbolic-colors" definition #f 82 20 82 35 ("value" "name" "lambda" "Colors" "map-table")}
+      {Lisp-Entry "symbolic-color" definition #f 88 20 88 34 ("registered-color" "symbol?" "if" "color")}
+      {Lisp-Entry "Fonts" definition #f 99 12 99 17 ("eq?" "test:" "make-table")}
+      {Lisp-Entry "register-font" definition #f 103 21 103 34 ("Fonts" "table-set!" "font" "name")}
+      {Lisp-Entry "registered-font" definition #f 107 21 107 36 ("error" "Fonts" "registered-object" "either" "jazz.graphic.literals.fonts" "'jazz.graphic.literals.fonts" "load-unit" "name")}
+      {Lisp-Entry "symbolic-fonts" definition #f 113 20 113 34 ("value" "name" "lambda" "Fonts" "map-table")}
+      {Lisp-Entry "symbolic-font" definition #f 119 20 119 33 ("registered-font" "symbol?" "if" "font")}}})
 "_literals"
- ({Lisp-File-Entry {File jazz.graphic "src" "jazz" "graphic" "literals" "_literals.jazz"} 1258811565
+ ({Lisp-File-Entry {File jazz.graphic "src" "jazz" "graphic" "literals" "_literals.jazz"} 1259266728
     {Lisp-Entry "jazz.graphic.literals" module #f 37 8 37 29 ("jazz")
       {Lisp-Entry "construct-color" definition #f 48 21 48 36 ("Color" "new" "apply" "alpha:" "getf" "registered-color" "if" "others" "name" "bind-keywords" "rest")}
       {Lisp-Entry "construct-font" definition #f 60 21 60 35 ("Font" "new" "apply" "registered-font" "if" "others" "name" "bind-keywords" "rest")}}})
 "autoload"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "autoload.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "autoload.jazz"} 1259266728
     {Lisp-Entry "jazz.graphic.autoload" module #f 37 18 37 39 ("jazz")}})
 "colors"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "literals" "colors.jazz"} 1258811565
-    {Lisp-Entry "jazz.graphic.literals.colors" module #f 37 8 37 36 ("Reference" "'Reference" "Debug" "'Debug" "51" "Slide-Bullet" "'Slide-Bullet" "Slide-Title" "'Slide-Title" "Hyperlink" "'Hyperlink" "Unfocused-Selected-Text" "'Unfocused-Selected-Text" "Focused-Selected-Text" "'Focused-Selected-Text" "194" "222" "Unfocused-Selection" "'Unfocused-Selection" "49" "Focused-Selection" "'Focused-Selection" "207" "188" "167" "Uneditable-Border" "'Uneditable-Border" "185" "157" "127" "Entry-Border" "'Entry-Border" "Outline-Border" "'Outline-Border" "191" "209" "208" "Group-Border" "'Group-Border" "240" "248" "249" "Light-Background" "'Light-Background" "226" "239" "241" "Draw-Edge-Light" "'Draw-Edge-Light" "Draw-Edge-Medium" "'Draw-Edge-Medium" "100" "111" "113" "Draw-Edge-Dark" "'Draw-Edge-Dark" "227" "84" "Active-Caption" "'Active-Caption" "225" "Tooltip" "'Tooltip" "168" "172" "Dark" "'Dark" "216" "233" "Medium" "'Medium" "Light" "'Light" "161" "Dark-Purple" "'Dark-Purple" "Purple" "'Purple" "215" "Light-Purple" "'Light-Purple" "Dark-Blue" "'Dark-Blue" "Blue" "'Blue" "Light-Blue" "'Light-Blue" "31" "128" "18" "Dark-Green" "'Dark-Green" "Green" "'Green" "122" "254" "112" "Light-Green" "'Light-Green" "55" "197" "200" "Dark-Yellow" "'Dark-Yellow" "Yellow" "'Yellow" "153" "Light-Yellow" "'Light-Yellow" "193" "Soft-Yellow" "'Soft-Yellow" "91" "121" "Ochre" "'Ochre" "106" "213" "Dark-Orange" "'Dark-Orange" "140" "Orange" "'Orange" "102" "204" "Light-Orange" "'Light-Orange" "179" "Dark-Red" "'Dark-Red" "Red" "'Red" "171" "Light-Red" "'Light-Red" "90" "Text-Gray" "'Text-Gray" "132" "Dark-Gray" "'Dark-Gray" "218" "Gray" "'Gray" "236" "Light-Gray" "'Light-Gray" "255" "White" "'White" "blue:" "green:" "0" "red:" "name:" "Color" "new" "lambda" "Black" "'Black" "register-color" "jazz")}})
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "literals" "colors.jazz"} 1267045799
+    {Lisp-Entry "jazz.graphic.literals.colors" module #f 37 8 37 36 ("jazz")
+      {Lisp-Entry "Black" define ("color") 43 14 43 19 ("blue:" "green:" "0" "red:")}
+      {Lisp-Entry "White" define ("color") 44 14 44 19 ("blue:" "green:" "255" "red:")}
+      {Lisp-Entry "Light-Gray" define ("color") 45 14 45 24 ("blue:" "green:" "236" "red:")}
+      {Lisp-Entry "Gray" define ("color") 46 14 46 18 ("blue:" "green:" "218" "red:")}
+      {Lisp-Entry "Dark-Gray" define ("color") 47 14 47 23 ("blue:" "green:" "132" "red:")}
+      {Lisp-Entry "Text-Gray" define ("color") 48 14 48 23 ("blue:" "green:" "90" "red:")}
+      {Lisp-Entry "Light-Red" define ("color") 49 14 49 23 ("blue:" "171" "green:" "255" "red:")}
+      {Lisp-Entry "Red" define ("color") 50 14 50 17 ("blue:" "0" "green:" "255" "red:")}
+      {Lisp-Entry "Dark-Red" define ("color") 51 14 51 22 ("blue:" "0" "green:" "179" "red:")}
+      {Lisp-Entry "Light-Orange" define ("color") 52 14 52 26 ("102" "blue:" "204" "green:" "255" "red:")}
+      {Lisp-Entry "Orange" define ("color") 53 14 53 20 ("0" "blue:" "140" "green:" "255" "red:")}
+      {Lisp-Entry "Dark-Orange" define ("color") 54 14 54 25 ("0" "blue:" "106" "green:" "213" "red:")}
+      {Lisp-Entry "Ochre" define ("color") 55 14 55 19 ("0" "blue:" "91" "green:" "121" "red:")}
+      {Lisp-Entry "Soft-Yellow" define ("color") 56 14 56 25 ("193" "blue:" "green:" "255" "red:")}
+      {Lisp-Entry "Light-Yellow" define ("color") 57 14 57 26 ("153" "blue:" "green:" "255" "red:")}
+      {Lisp-Entry "Yellow" define ("color") 58 14 58 20 ("0" "blue:" "green:" "255" "red:")}
+      {Lisp-Entry "Dark-Yellow" define ("color") 59 14 59 25 ("55" "blue:" "197" "green:" "200" "red:")}
+      {Lisp-Entry "Light-Green" define ("color") 60 14 60 25 ("122" "blue:" "254" "green:" "112" "red:")}
+      {Lisp-Entry "Green" define ("color") 61 14 61 19 ("blue:" "255" "green:" "0" "red:")}
+      {Lisp-Entry "Dark-Green" define ("color") 62 14 62 24 ("31" "blue:" "128" "green:" "18" "red:")}
+      {Lisp-Entry "Light-Blue" define ("color") 63 14 63 24 ("blue:" "255" "green:" "128" "red:")}
+      {Lisp-Entry "Blue" define ("color") 64 14 64 18 ("255" "blue:" "green:" "0" "red:")}
+      {Lisp-Entry "Dark-Blue" define ("color") 65 14 65 23 ("179" "blue:" "green:" "0" "red:")}
+      {Lisp-Entry "Light-Purple" define ("color") 66 14 66 26 ("255" "blue:" "green:" "215" "red:")}
+      {Lisp-Entry "Purple" define ("color") 67 14 67 20 ("blue:" "0" "green:" "128" "red:")}
+      {Lisp-Entry "Dark-Purple" define ("color") 68 14 68 25 ("161" "blue:" "31" "green:" "102" "red:")}
+      {Lisp-Entry "Light" define ("color") 71 14 71 19 ("blue:" "green:" "255" "red:")}
+      {Lisp-Entry "Medium" define ("color") 72 14 72 20 ("216" "blue:" "233" "green:" "236" "red:")}
+      {Lisp-Entry "Dark" define ("color") 73 14 73 18 ("153" "blue:" "168" "green:" "172" "red:")}
+      {Lisp-Entry "Tooltip" define ("color") 74 14 74 21 ("225" "blue:" "green:" "255" "red:")}
+      {Lisp-Entry "Active-Caption" define ("color") 75 14 75 28 ("227" "blue:" "84" "green:" "0" "red:")}
+      {Lisp-Entry "Draw-Edge-Dark" define ("color") 77 14 77 28 ("100" "blue:" "111" "green:" "113" "red:")}
+      {Lisp-Entry "Draw-Edge-Medium" define ("color") 78 14 78 30 ("153" "blue:" "168" "green:" "172" "red:")}
+      {Lisp-Entry "Draw-Edge-Light" define ("color") 79 14 79 29 ("226" "blue:" "239" "green:" "241" "red:")}
+      {Lisp-Entry "Light-Background" define ("color") 80 14 80 30 ("240" "blue:" "248" "green:" "249" "red:")}
+      {Lisp-Entry "Group-Border" define ("color") 81 14 81 26 ("191" "blue:" "209" "green:" "208" "red:")}
+      {Lisp-Entry "Outline-Border" define ("color") 82 14 82 28 ("191" "blue:" "209" "green:" "208" "red:")}
+      {Lisp-Entry "Entry-Border" define ("color") 83 14 83 26 ("185" "blue:" "157" "green:" "127" "red:")}
+      {Lisp-Entry "Uneditable-Border" define ("color") 84 14 84 31 ("207" "blue:" "188" "green:" "167" "red:")}
+      {Lisp-Entry "Focused-Selection" define ("color") 85 14 85 31 ("197" "blue:" "106" "green:" "49" "red:")}
+      {Lisp-Entry "Unfocused-Selection" define ("color") 86 14 86 33 ("194" "blue:" "222" "green:" "226" "red:")}
+      {Lisp-Entry "Focused-Selected-Text" define ("color") 87 14 87 35 ("blue:" "green:" "255" "red:")}
+      {Lisp-Entry "Unfocused-Selected-Text" define ("color") 88 14 88 37 ("blue:" "green:" "0" "red:")}
+      {Lisp-Entry "Hyperlink" define ("color") 89 14 89 23 ("240" "blue:" "green:" "0" "red:")}
+      {Lisp-Entry "Slide-Title" define ("color") 90 14 90 25 ("102" "blue:" "204" "green:" "255" "red:")}
+      {Lisp-Entry "Slide-Bullet" define ("color") 91 14 91 26 ("255" "blue:" "102" "green:" "51" "red:")}
+      {Lisp-Entry "Debug" define ("color") 92 14 92 19 ("blue:" "green:" "90" "red:")}
+      {Lisp-Entry "Reference" define ("color") 93 14 93 23 ("0" "blue:" "132" "green:" "240" "red:")}}})
 "fonts"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "literals" "fonts.jazz"} 1258811565
-    {Lisp-Entry "jazz.graphic.literals.fonts" module #f 37 8 37 35 ("24" "36" "11.5" "vera-mono" "'vera-mono" "vera-serif" "'vera-serif" "10.5" "vera-sans" "'vera-sans" "Doc-Heading3" "'Doc-Heading3" "Doc-Heading2" "'Doc-Heading2" "14" "Doc-Heading1" "'Doc-Heading1" "Doc-Heading0" "'Doc-Heading0" "11" "Heading5" "'Heading5" "Heading4" "'Heading4" "13" "Heading3" "'Heading3" "16" "Heading2" "'Heading2" "18" "Heading1" "'Heading1" "28" "Heading0" "'Heading0" "9" "Password" "'Password" "Hyperlink-Small" "'Hyperlink-Small" "underline?:" "Hyperlink" "'Hyperlink" "Code-Bold" "'Code-Bold" "monospace?:" "10" "Code" "'Code" "Text" "'Text" "italic?:" "12" "Text-Italic" "'Text-Italic" "Caption" "'Caption" "none" "'none" "hint-style:" "Label-User" "'Label-User" "bold?:" "Label-Bold" "'Label-Bold" "8" "point-size:" "font-name:" "name:" "Font" "new" "lambda" "Label" "'Label" "register-font" "jazz")}})
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "literals" "fonts.jazz"} 1267045799
+    {Lisp-Entry "jazz.graphic.literals.fonts" module #f 37 8 37 35 ("jazz")
+      {Lisp-Entry "Label" define ("font") 46 19 46 24 ("8" "point-size:" "font-name:")}
+      {Lisp-Entry "Label-Bold" define ("font") 47 19 47 29 ("bold?:" "8" "point-size:" "font-name:")}
+      {Lisp-Entry "Label-User" define ("font") 48 19 48 29 ("none" "'none" "hint-style:" "8" "point-size:" "font-name:")}
+      {Lisp-Entry "Caption" define ("font") 49 19 49 26 ("bold?:" "8" "point-size:" "font-name:")}
+      {Lisp-Entry "Text-Italic" define ("font") 50 19 50 30 ("italic?:" "12" "point-size:" "font-name:")}
+      {Lisp-Entry "Text" define ("font") 51 19 51 23 ("12" "point-size:" "font-name:")}
+      {Lisp-Entry "Code" define ("font") 52 19 52 23 ("none" "'none" "hint-style:" "monospace?:" "10" "point-size:" "font-name:")}
+      {Lisp-Entry "Code-Bold" define ("font") 53 19 53 28 ("none" "'none" "hint-style:" "bold?:" "monospace?:" "10" "point-size:" "font-name:")}
+      {Lisp-Entry "Hyperlink" define ("font") 54 19 54 28 ("underline?:" "12" "point-size:" "font-name:")}
+      {Lisp-Entry "Hyperlink-Small" define ("font") 55 19 55 34 ("underline?:" "8" "point-size:" "font-name:")}
+      {Lisp-Entry "Password" define ("font") 56 19 56 27 ("monospace?:" "9" "point-size:" "font-name:")}
+      {Lisp-Entry "Heading0" define ("font") 57 19 57 27 ("28" "point-size:" "font-name:")}
+      {Lisp-Entry "Heading1" define ("font") 58 19 58 27 ("18" "point-size:" "font-name:")}
+      {Lisp-Entry "Heading2" define ("font") 59 19 59 27 ("italic?:" "16" "point-size:" "font-name:")}
+      {Lisp-Entry "Heading3" define ("font") 60 19 60 27 ("italic?:" "13" "point-size:" "font-name:")}
+      {Lisp-Entry "Heading4" define ("font") 61 19 61 27 ("12" "point-size:" "font-name:")}
+      {Lisp-Entry "Heading5" define ("font") 62 19 62 27 ("11" "point-size:" "font-name:")}
+      {Lisp-Entry "Doc-Heading0" define ("font") 63 19 63 31 ("28" "point-size:" "font-name:")}
+      {Lisp-Entry "Doc-Heading1" define ("font") 64 19 64 31 ("14" "point-size:" "font-name:")}
+      {Lisp-Entry "Doc-Heading2" define ("font") 65 19 65 31 ("italic?:" "12" "point-size:" "font-name:")}
+      {Lisp-Entry "Doc-Heading3" define ("font") 66 19 66 31 ("italic?:" "10" "point-size:" "font-name:")}
+      {Lisp-Entry "Label" define ("font") 70 19 70 24 ("10.5" "point-size:" "vera-sans" "'vera-sans" "font-name:")}
+      {Lisp-Entry "Label-Bold" define ("font") 71 19 71 29 ("bold?:" "10.5" "point-size:" "vera-sans" "'vera-sans" "font-name:")}
+      {Lisp-Entry "Label-User" define ("font") 72 19 72 29 ("none" "'none" "hint-style:" "10.5" "point-size:" "vera-sans" "'vera-sans" "font-name:")}
+      {Lisp-Entry "Caption" define ("font") 73 19 73 26 ("bold?:" "10.5" "point-size:" "vera-sans" "'vera-sans" "font-name:")}
+      {Lisp-Entry "Text-Italic" define ("font") 74 19 74 30 ("italic?:" "14" "point-size:" "vera-serif" "'vera-serif" "font-name:")}
+      {Lisp-Entry "Text" define ("font") 75 19 75 23 ("14" "point-size:" "vera-serif" "'vera-serif" "font-name:")}
+      {Lisp-Entry "Code" define ("font") 76 19 76 23 ("monospace?:" "11.5" "point-size:" "vera-mono" "'vera-mono" "font-name:")}
+      {Lisp-Entry "Code-Bold" define ("font") 77 19 77 28 ("bold?:" "monospace?:" "11.5" "point-size:" "vera-mono" "'vera-mono" "font-name:")}
+      {Lisp-Entry "Hyperlink" define ("font") 78 19 78 28 ("underline?:" "14" "point-size:" "vera-serif" "'vera-serif" "font-name:")}
+      {Lisp-Entry "Hyperlink-Small" define ("font") 79 19 79 34 ("underline?:" "10.5" "point-size:" "vera-sans" "'vera-sans" "font-name:")}
+      {Lisp-Entry "Password" define ("font") 80 19 80 27 ("monospace?:" "11.5" "point-size:" "vera-mono" "'vera-mono" "font-name:")}
+      {Lisp-Entry "Heading0" define ("font") 81 19 81 27 ("36" "point-size:" "vera-serif" "'vera-serif" "font-name:")}
+      {Lisp-Entry "Heading1" define ("font") 82 19 82 27 ("24" "point-size:" "vera-sans" "'vera-sans" "font-name:")}
+      {Lisp-Entry "Heading2" define ("font") 83 19 83 27 ("italic?:" "18" "point-size:" "vera-serif" "'vera-serif" "font-name:")}
+      {Lisp-Entry "Heading3" define ("font") 84 19 84 27 ("italic?:" "16" "point-size:" "vera-serif" "'vera-serif" "font-name:")}
+      {Lisp-Entry "Heading4" define ("font") 85 19 85 27 ("14" "point-size:" "vera-serif" "'vera-serif" "font-name:")}
+      {Lisp-Entry "Heading5" define ("font") 86 19 86 27 ("12" "point-size:" "vera-serif" "'vera-serif" "font-name:")}
+      {Lisp-Entry "Doc-Heading0" define ("font") 87 19 87 31 ("36" "point-size:" "vera-serif" "'vera-serif" "font-name:")}
+      {Lisp-Entry "Doc-Heading1" define ("font") 88 19 88 31 ("16" "point-size:" "vera-sans" "'vera-sans" "font-name:")}
+      {Lisp-Entry "Doc-Heading2" define ("font") 89 19 89 31 ("14" "point-size:" "vera-sans" "'vera-sans" "font-name:")}
+      {Lisp-Entry "Doc-Heading3" define ("font") 90 19 90 31 ("12" "point-size:" "vera-sans" "'vera-sans" "font-name:")}}})
 "freetype"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "font" "platform" "freetype.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "font" "platform" "freetype.jazz"} 1259266728
     {Lisp-Entry "jazz.graphic.font.platform.freetype" module #f 37 18 37 53 ("droid-serif" "'droid-serif" "droid-mono" "'droid-mono" "droid-sans" "'droid-sans" "vera-serif" "'vera-serif" "vera-mono" "'vera-mono" "vera-sans" "'vera-sans" "freetype-font-table" "table-set!" "jazz")
       {Lisp-Entry "freetype-font-table" definition #f 49 12 49 31 ("make-table")}
       {Lisp-Entry "get-freetype-font" definition #f 53 13 53 30 ("error" "freetype-font-table" "table-ref" "either" "name")}
@@ -330,12 +420,12 @@
       {Lisp-Entry "destroy-font-handle" definition #f 100 20 100 39 ("free-FT_Face" "handle")}
       {Lisp-Entry "destroy-cairo-font-handle" definition #f 104 20 104 45 ("cairo_font_face_destroy" "handle")}}})
 "install"
- ({Lisp-File-Entry {File jazz.graphic "src" "jazz" "graphic" "install.scm"} 1258811565
+ ({Lisp-File-Entry {File jazz.graphic "src" "jazz" "graphic" "install.scm"} 1259266728
     {Lisp-Entry "jazz.graphic.install" unit #f 37 6 37 26 ()
       {Lisp-Entry "Color" define ("literal") 40 21 40 26 ("jazz.graphic.literals.construct-color")}
       {Lisp-Entry "Font" define ("literal") 41 21 41 25 ("jazz.graphic.literals.construct-font")}}})
 "logfont"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "font" "platform" "logfont.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.graphic" "src" "jazz" "graphic" "font" "platform" "logfont.jazz"} 1259266728
     {Lisp-Entry "jazz.graphic.font.platform.logfont" module #f 37 18 37 52 ("jazz")
       {Lisp-Entry "create-font-handle" definition #f 44 20 44 38 ("DEFAULT_PITCH" "DEFAULT_QUALITY" "CLIP_DEFAULT_PRECIS" "OUT_DEFAULT_PRECIS" "ANSI_CHARSET" "1" "FW_NORMAL" "FW_BOLD" "if" "0" "calculate-height" "fxround" "CreateFont" "monospace?" "monospace?:" "underline?" "underline?:" "italic?" "italic?:" "bold?" "bold?:" "point-size" "point-size:" "font-name" "font-name:")}
       {Lisp-Entry "calculate-height" definition #f 68 20 68 36 ("72" "96" "*" "fxround/" "point-size")}
@@ -343,3 +433,8 @@
       {Lisp-Entry "get-logfont" definition #f 78 20 78 31 ("LOGFONTW*->PVOID" "LOGFONTW-sizeof" "GetObject" "LOGFONTW-make" "info" "let" "handle")}
       {Lisp-Entry "destroy-font-handle" definition #f 84 20 84 39 ("DeleteObject" "handle")}
       {Lisp-Entry "destroy-cairo-font-handle" definition #f 88 20 88 45 ("cairo_font_face_destroy" "handle")}}})
+"syntax"
+ ({Lisp-File-Entry {File jazz.graphic "src" "jazz" "graphic" "syntax.jazz"} 1267045799
+    {Lisp-Entry "jazz.graphic.syntax" module #f 37 8 37 27 ("jazz")
+      {Lisp-Entry "define-color" macro ("macro") 40 15 40 27 (",@rest" "name:" "Color" "new" "lambda" ",name" "',name" "register-color" "rest" "name")}
+      {Lisp-Entry "define-font" macro ("macro") 46 15 46 26 (",@rest" "name:" "Font" "new" "lambda" ",name" "',name" "register-font" "rest" "name")}}})

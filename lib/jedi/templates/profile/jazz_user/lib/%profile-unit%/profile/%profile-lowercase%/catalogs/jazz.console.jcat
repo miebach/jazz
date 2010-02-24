@@ -1,5 +1,5 @@
 "Console-Manager"
- ({Lisp-File-Entry {File jazz.console "src" "jazz" "console" "Console-Manager.jazz"} 1265989215
+ ({Lisp-File-Entry {File jazz.console "src" "jazz" "console" "Console-Manager.jazz"} 1264714816
     {Lisp-Entry "jazz.console.Console-Manager" module #f 37 18 37 46 ("jazz")
       {Lisp-Entry "Console-Manager" class #f 53 20 53 35 ("center" "pad" "on-clear-console" "22" "clear" "tail" "location:" "pick" "on-print-detail-menu" ":form" "Event-Handler" "action-handler:" "tooltip-text:" "tooltip?:" "Image-Resource" "resource:" ":images" "portfolio:" "body" "detail" "tools" "name:" "border" "layout-type:" "400" "650" "Dimension" "size:" "Layout-View")
         {Lisp-Entry "external-name" method #f 68 25 68 38 ("console-manager" "'console-manager" "rest")}
@@ -23,7 +23,7 @@
         {Lisp-Entry "draw-frame" method #f 248 20 248 30 ("pixel-to" "Medium" "name:" "Color" "set-color" "get-bottom" "bottom" "1" "get-right" "-" "right" "get-top" "top" "get-left" "left" "get-bounds" "rect" "let*" "nextmethod" "surface")}}
       {Lisp-Entry "Print-Detail-Menu" class #f 267 7 267 24 (":describe" ":reader" ":text" "detail:" "on-print-detail" ":client" ":form" "Event-Handler" "action-handler:" "title:" ":human" "name:" "Context-Menu")}}})
 "Console-Preferences"
- ({Lisp-File-Entry {File jazz.console "src" "jazz" "console" "Console-Preferences.jazz"} 1265989215
+ ({Lisp-File-Entry {File jazz.console "src" "jazz" "console" "Console-Preferences.jazz"} 1264605818
     {Lisp-Entry "jazz.console.Console-Preferences" module #f 37 18 37 50 ("jazz")
       {Lisp-Entry "Console-Preferences" class #f 46 20 46 39 ("Image-Resource" "icon:" "title:" ":reader" ":default" "initialize" "Frame-Preferences")
         {Lisp-Entry "wrap?" property #f 49 12 49 17 ()}
@@ -36,11 +36,11 @@
         {Lisp-Entry "get-print-detail" accessor #f 51 55 51 63 ()}
         {Lisp-Entry "set-print-detail" accessor #f 51 55 51 63 ()}}}})
 "Console-Text-Actions"
- ({Lisp-File-Entry {File jazz.console "src" "jazz" "console" "Console-Text-Actions.jazz"} 1258811564
+ ({Lisp-File-Entry {File jazz.console "src" "jazz" "console" "Console-Text-Actions.jazz"} 1259266727
     {Lisp-Entry "jazz.console.Console-Text-Actions" module #f 37 18 37 51 ("jazz")
       {Lisp-Entry "Console-Text-Actions" class #f 46 20 46 40 ("Down" "on-insert-next" "insert-next" "Up" "on-insert-previous" "insert-previous" ":alt" "on-fresh-prompt" "fresh-prompt" "Return" "Shortcut" "shortcut:" "on-console-evaluate" ":focus" "Event-Handler" "action-handler:" "console-evaluate" "name:" "Actions")}}})
 "Console-Text-Preferences"
- ({Lisp-File-Entry {File jazz.console "src" "jazz" "console" "Console-Text-Preferences.jazz"} 1258811564
+ ({Lisp-File-Entry {File jazz.console "src" "jazz" "console" "Console-Text-Preferences.jazz"} 1267024518
     {Lisp-Entry "jazz.console.Console-Text-Preferences" module #f 37 18 37 55 ("jazz")
       {Lisp-Entry "Console-Text-Preferences" class #f 46 20 46 44 ("Text-Gray" "comment-style:" "output-style:" "Dark-Green" "input-style:" "Dark-Red" "entry-style:" "Ochre" "prompt-style:" "Dark-Blue" "color:" "Text-Style-Preference" "banner-style:" "title:" "initialize" "Code-Text-Preferences")
         {Lisp-Entry "banner-style" property #f 49 12 49 24 ()}
@@ -67,7 +67,7 @@
           {Lisp-Entry "component-get-categorized-properties" method #f 91 20 91 56 ("comment-style" "output-style" "input-style" "entry-style" "prompt-style" "banner-style" "component")}
           {Lisp-Entry "component-get-row-instance" method #f 95 20 95 46 ("nextmethod" "else" "Style-Row" "new" "comment-style" "output-style" "input-style" "entry-style" "prompt-style" "banner-style" "field-name" "case" "property" "component")}}}}})
 "Console-Text-View"
- ({Lisp-File-Entry {File jazz.console "src" "jazz" "console" "Console-Text-View.jazz"} 1265989215
+ ({Lisp-File-Entry {File jazz.console "src" "jazz" "console" "Console-Text-View.jazz"} 1264605818
     {Lisp-Entry "jazz.console.Console-Text-View" module #f 37 18 37 48 ("jazz")
       {Lisp-Entry "Console-Text-View" class #f 50 20 50 37 ("2" "left-padding:" "wrap?:" "Code" "Font" "font:" "Default" "name:" "Text-Style" "default-style:" "initialize" "IDE-Text-View")
         {Lisp-Entry "inserted-rank" slot #f 53 8 53 21 ()}
@@ -135,18 +135,18 @@
         {Lisp-Entry "insert-next-block" method #f 479 11 479 28 ("new-range" "set!" "get-string" "remove-enclosing" "insert-string" "get-start" "start" "set-selection" "inserted-where" "empty-block?" "unless" "find-block" "block" "let" ">" "when" "1" "-" "next" "0" "inserted-rank" "either" "current" "let*")}}
       {Lisp-Entry "Console-Menu" class #f 498 7 498 19 ("insert-next" "insert-previous" "paste" "copy" "view" "french:" "english:" "Locales" "cut" "edit-references" "code-text" "edit-definitions" "fresh-prompt" "console-text" "Action" "action:" "Image-Resource" "icon:" "title:" "console-evaluate" "name:" "Context-Menu")}}})
 "Console-View"
- ({Lisp-File-Entry {File jazz.console "src" "jazz" "console" "Console-View.jazz"} 1258811564
+ ({Lisp-File-Entry {File jazz.console "src" "jazz" "console" "Console-View.jazz"} 1260807916
     {Lisp-Entry "jazz.console.Console-View" module #f 37 18 37 43 ("Console-View" "register-autoclass" "jazz")
       {Lisp-Entry "Console-View" class #f 45 20 45 32 ("text" "content" "name:" "flat?:" "hscroll?:" "vscroll?:" "initialize" "Scroller-View")
         {Lisp-Entry "button" property #f 48 12 48 18 ()}
         {Lisp-Entry "get-button" accessor #f 48 40 48 48 ()}
         {Lisp-Entry "get-text" method #f 57 11 57 19 ("text" "'text" "locate")}}}})
 "_console"
- ({Lisp-File-Entry {File jazz.console "src" "jazz" "console" "_console.jazz"} 1258811564
+ ({Lisp-File-Entry {File jazz.console "src" "jazz" "console" "_console.jazz"} 1259266727
     {Lisp-Entry "jazz.console" module #f 37 8 37 20 ("jazz")
       {Lisp-Entry "get-console-manager" definition #f 45 20 45 39 ("Lisp-Console-Manager" "singleton-docked" "get-guest")}
       {Lisp-Entry "get-console-text" definition #f 49 20 49 36 ("get-console-manager" "get-text")}
       {Lisp-Entry "get-console-text-manager" definition #f 53 21 53 45 ("get-parent" "get-creator" "text")}}})
 "autoload"
- ({Lisp-File-Entry {File jazz.console "src" "jazz" "console" "autoload.jazz"} 1258811564
+ ({Lisp-File-Entry {File jazz.console "src" "jazz" "console" "autoload.jazz"} 1259266727
     {Lisp-Entry "jazz.console.autoload" module #f 37 18 37 39 ("jazz")}})

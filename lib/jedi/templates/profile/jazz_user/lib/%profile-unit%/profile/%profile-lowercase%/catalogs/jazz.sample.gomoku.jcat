@@ -1,5 +1,5 @@
 "Gomoku-AI"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.gomoku" "src" "jazz" "sample" "gomoku" "Gomoku-AI.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.gomoku" "src" "jazz" "sample" "gomoku" "Gomoku-AI.jazz"} 1259266728
     {Lisp-Entry "jazz.sample.gomoku.Gomoku-AI" module #f 38 18 38 46 ("jazz")
       {Lisp-Entry "Gomoku-AI" class #f 48 7 48 16 ("Search-Depth" "0" "initialize" "Gomoku-Player")
         {Lisp-Entry "current-eval" slot #f 51 8 51 20 ()}
@@ -26,7 +26,7 @@
         {Lisp-Entry "evaluate-count" definition #f 145 15 145 29 ("0" "10" "1" "100" "2" "1000" "3" "10000" "4" "1000000" "5" "case" "cast" "*" "token" "count")}
         {Lisp-Entry "setup-lines" method #f 161 11 161 22 ("get-lines" "cons" "line=?" "test:" "member?" "not" "when" "line" "lambda" "for-each" "board-ref" "square" "let" "game" "get-board-size" "below" "0" "from" "rank" "for" "loop" "all-lines" "set!")}}}})
 "Gomoku-Application"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.gomoku" "src" "jazz" "sample" "gomoku" "Gomoku-Application.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.gomoku" "src" "jazz" "sample" "gomoku" "Gomoku-Application.jazz"} 1259266728
     {Lisp-Entry "jazz.sample.gomoku.Gomoku-Application" module #f 38 18 38 55 ("jazz")
       {Lisp-Entry "Gomoku-Application" class #f 53 7 53 25 ("Application")
         {Lisp-Entry "process-name" method #f 56 20 56 32 ()}
@@ -34,7 +34,7 @@
         {Lisp-Entry "finish-process" method #f 64 20 64 34 ("Gomoku-Board" "new-frame" "get-stage" "maximize" "nextmethod")}}
       {Lisp-Entry "Gomoku-Toplevel" class #f 75 7 75 22 ("775" "800" "Dimension" "size:" "100" "Point" "position:" "caption-base:" "Toplevel")}}})
 "Gomoku-Board"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.gomoku" "src" "jazz" "sample" "gomoku" "Gomoku-Board.jazz"} 1265989215
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.gomoku" "src" "jazz" "sample" "gomoku" "Gomoku-Board.jazz"} 1264605818
     {Lisp-Entry "jazz.sample.gomoku.Gomoku-Board" module #f 38 18 38 49 ("jazz")
       {Lisp-Entry "Gomoku-Board" class #f 55 7 55 19 ("White" "Black" "name:" "Color" "20" "50" "100" "initialize" "View")
         {Lisp-Entry "game" slot #f 58 8 58 12 ()}
@@ -75,7 +75,7 @@
       {Lisp-Entry "play-defeat" definition #f 313 13 313 24 ("play-sound" "when" "defeat-directory" "random-file" "sound" "let")}
       {Lisp-Entry "random-file" definition #f 319 13 319 24 ("random-element" "not-null?" "get-extension" "ci=?" "file" "lambda" "collect-files" "files" "let" "exists?" "if" "extension" "directory")}}})
 "Gomoku-Pages"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.gomoku" "src" "jazz" "sample" "gomoku" "Gomoku-Pages.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.gomoku" "src" "jazz" "sample" "gomoku" "Gomoku-Pages.jazz"} 1259266728
     {Lisp-Entry "jazz.sample.gomoku.Gomoku-Pages" module #f 37 18 37 49 ("jazz")
       {Lisp-Entry "Gomoku-Pages" class #f 46 7 46 19 ("Game-Pages")
         {Lisp-Entry "Pattern-Associations" definition #f 49 14 49 34 ()}
@@ -84,7 +84,7 @@
         {Lisp-Entry "serialize-move" method #f 281 20 281 34 ("format" "get-col" "col" "get-row" "row" "let" "move")}
         {Lisp-Entry "deserialize-move" method #f 287 20 287 36 ("get-square" "cardinality" "1" "+" "col" "0" "substring" "string->number" "row" "search" "pos" "let" "value" "game")}}}})
 "_gomoku"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.gomoku" "src" "jazz" "sample" "gomoku" "_gomoku.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.gomoku" "src" "jazz" "sample" "gomoku" "_gomoku.jazz"} 1259266728
     {Lisp-Entry "jazz.sample.gomoku" module #f 38 8 38 26 ("jazz")
       {Lisp-Entry "EMPTY" definition #f 46 20 46 25 ("0")}
       {Lisp-Entry "BLACK" definition #f 49 20 49 25 ("-1")}
@@ -173,14 +173,14 @@
         {Lisp-Entry "load-board" method #f 369 11 369 21 ("invalidate-view" ">=" "if" "set-column-move" "length" "move" "COMPUTER" "O" "X" "case" "set-token" "get-square" "square" "let" "downto" "1" "get-board-rows" "-" "row" "token" "get-board-columns" "below" "0" "from" "col" "saved-board" "in" "tokens" "for" "loop" "HUMAN" "initialize-game" "game")}
         {Lisp-Entry "inspect-board" method #f 391 11 391 24 ("newline" "COMPUTER" "HUMAN" "EMPTY" "eq?" "cond" "display" "get-square" "get-token" "token" "let" "get-board-columns" "col" "get-board-rows" "below" "0" "from" "row" "for" "loop" "game")}}}})
 "autoload"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.gomoku" "src" "jazz" "sample" "gomoku" "autoload.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.gomoku" "src" "jazz" "sample" "gomoku" "autoload.jazz"} 1259266728
     {Lisp-Entry "jazz.sample.gomoku.autoload" module #f 37 18 37 45 ("jazz")}})
 "graphics"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.gomoku" "src" "jazz" "sample" "gomoku" "graphics.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.gomoku" "src" "jazz" "sample" "gomoku" "graphics.jazz"} 1259266728
     {Lisp-Entry "jazz.sample.gomoku.graphics" module #f 38 8 38 35 ("jazz")
       {Lisp-Entry "Gomoku-Images" definition #f 46 12 46 25 ("Jazz" "Directory")}
       {Lisp-Entry "generate-gomoku" definition #f 50 13 50 28 ("large" "medium" "small" "generate-stone" "symbol->string" "new-directory" "create-directories" "user-message" "size" "for-each" "lambda" "Gomoku-Images" "parse" "with-current-directory")}
       {Lisp-Entry "generate-stone" definition #f 64 13 64 27 ("list" "error?:" "Gomoku-Images" "new-file" "delete-file" "location" "lambda" "for-each" "17" "13" "image-composite" "20" "30" "28" "format" "image-convert" "10" "inner" "5" "outer" "last" "0" "first" "2" "1" "-" "/" "half" "let" "*" "fxround/" "x" "prop" "shadow" "moku" "width" "receive" "8" "71" "large" "6" "49" "medium" "4" "3" "35" "values" "small" "case" "parameters" "define" "size" "color" "name")}}})
 "run"
- ({Lisp-File-Entry {File jazz.sample.gomoku "src" "jazz" "sample" "gomoku" "run.jazz"} 1258811565
+ ({Lisp-File-Entry {File jazz.sample.gomoku "src" "jazz" "sample" "gomoku" "run.jazz"} 1259266728
     {Lisp-Entry "jazz.sample.gomoku.run" module #f 37 8 37 30 ("Gomoku-Application" "new" "boot-environment" "jazz.sample.gomoku.Gomoku-AI" "'jazz.sample.gomoku.Gomoku-AI" "warn-minimax-interpreted" "descriptor" "lambda" "jazz.sample.gomoku" "'jazz.sample.gomoku" "register-product-run" "jazz")}})

@@ -1,5 +1,5 @@
 "HTML-Generator"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTML-Generator.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTML-Generator.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.HTML-Generator" module #f 37 18 37 50 ("jazz")
       {Lisp-Entry "HTML-Generator" class #f 40 7 40 21 ("Object")
         {Lisp-Entry "directory" slot #f 43 8 43 17 ()}
@@ -11,7 +11,7 @@
         {Lisp-Entry "generated-pagename" method #f 69 26 69 44 ("either" "format" "name" "substitute" "base" "error?:" "get-parameter" "essay" "action" "let*" "include-action?" "include-action?:" "pages" "resource" "request")}
         {Lisp-Entry "get-alias" method #f 81 26 81 35 ("error" "name")}}}})
 "HTML-Page"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTML-Page.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTML-Page.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.HTML-Page" module #f 37 18 37 45 ("jazz")
       {Lisp-Entry "HTML-Page" class #f 40 7 40 16 ("initialize" "Object")
         {Lisp-Entry "name" slot #f 43 8 43 12 ()}
@@ -25,7 +25,7 @@
         {Lisp-Entry "add-child" method #f 71 11 71 20 ("html" "set!" "child")}
         {Lisp-Entry "render" method #f 80 11 80 17 ("html" "render-node" "printer" "level" "simple?" "context" "renderer")}}}})
 "HTTP-Client"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Client.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Client.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.HTTP-Client" module #f 44 18 44 47 ("jazz")
       {Lisp-Entry "HTTP-Client" class #f 51 7 51 18 ("equal?" "test:" "make-table" "initialize" "Object")
         {Lisp-Entry "cookies" slot #f 54 8 54 15 ()}
@@ -36,7 +36,7 @@
         {Lisp-Entry "send-request" method #f 109 11 109 23 ("socket:" "HTTP-Response" "send-raw" "connect" "Heap-Block" "coerce" "block" "message-string" "string" "let*" "Socket" "new" "socket" "with-closed" "send-request" "'send-request" "unimplemented" "port" "host" "request")}
         {Lisp-Entry "build-request" method #f 120 11 120 24 ("parameters:" "resource:" "operation:" "HTTP-Request" "new" "let" "add-cookie" "cookie" "name" "lambda" "for-each-cookie" "add-cookies" "get-name" "add-header" "request" "add-headers" "define" "parameters" "resource" "operation" "port" "host")}}}})
 "HTTP-Cookie"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Cookie.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Cookie.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.HTTP-Cookie" module #f 37 18 37 47 ("jazz")
       {Lisp-Entry "HTTP-Cookie" class #f 40 7 40 18 ("Object")
         {Lisp-Entry "name" slot #f 43 8 43 12 ()}
@@ -46,7 +46,7 @@
         {Lisp-Entry "initialize" method #f 47 20 47 30 ("value~self" "name~self" "set!" "nextmethod" "value" "name")}
         {Lisp-Entry "print" method #f 53 20 53 25 ("value" "name" "format" "lambda" "self" "print-unreadable" "readably" "printer")}}}})
 "HTTP-File-Response"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-File-Response.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-File-Response.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.HTTP-File-Response" module #f 37 18 37 54 ("jazz")
       {Lisp-Entry "HTTP-File-Response" class #f 43 7 43 25 ("HTTP-Response")
         {Lisp-Entry "content" slot #f 46 8 46 15 ()}
@@ -54,7 +54,7 @@
         {Lisp-Entry "initialize" method #f 49 20 49 30 ("read-u8-content" "content" "set!" "port" "lambda" "parse" "call-with-input-file" "nextmethod" "apply" "others" "file" "bind-keywords" "rest")}
         {Lisp-Entry "send-message" method #f 62 20 62 32 ("content" "write-u8-content" "nextmethod" "port")}}}})
 "HTTP-Listener"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Listener.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Listener.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.HTTP-Listener" module #f 37 18 37 49 ("jazz")
       {Lisp-Entry "HTTP-Listener" interface #f 43 11 43 24 ()
         {Lisp-Entry "hit" method #f 46 35 46 38 ("server")}
@@ -62,7 +62,7 @@
         {Lisp-Entry "receive-pages-request" method #f 48 35 48 56 ("pages-class" "resource" "request" "server")}
         {Lisp-Entry "process-request" method #f 49 35 49 50 ("response" "request" "server")}}}})
 "HTTP-Message"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Message.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Message.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.HTTP-Message" module #f 37 18 37 48 ("jazz")
       {Lisp-Entry "HTTP-Message" class #f 43 7 43 19 ("equal?" "test:" "make-table" "initialize" "Object")
         {Lisp-Entry "headers" slot #f 46 8 46 15 ()}
@@ -87,7 +87,7 @@
         {Lisp-Entry "output-header" method #f 194 11 194 24 ("format" "printer" "value" "name")}
         {Lisp-Entry "output-cookies" method #f 198 11 198 25 ("format" "output-header" "get-value" "value" "let" "cookie" "name" "lambda" "for-each-cookie" "printer" "header")}}}})
 "HTTP-Pages"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Pages.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Pages.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.HTTP-Pages" module #f 37 18 37 46 ("jazz")
       {Lisp-Entry "HTTP-Pages" class #f 44 7 44 17 ("XHTML-Parser")
         {Lisp-Entry "server" slot #f 47 8 47 14 ()}
@@ -104,7 +104,7 @@
         {Lisp-Entry "debug-info" method #f 101 11 101 21 ("request" "all-details" "server" "get-debug?" "not" "if")}
         {Lisp-Entry "debug-values" method #f 108 11 108 23 ("->string" "value" "lambda" "map" "border:" "server" "get-debug?" "when" "values")}}}})
 "HTTP-Recorder"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Recorder.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Recorder.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.HTTP-Recorder" module #f 37 18 37 49 ("jazz")
       {Lisp-Entry "HTTP-Recorder" class #f 43 7 43 20 ("initialize" "HTTP-Listener" "Object")
         {Lisp-Entry "server" slot #f 46 8 46 14 ()}
@@ -119,7 +119,7 @@
         {Lisp-Entry "receive-pages-request" method #f 96 20 96 41 ("requests" "put" "record-pages?" "when" "pages-class" "resource" "request" "server")}
         {Lisp-Entry "process-request" method #f 101 20 101 35 ("response" "request" "server")}}}})
 "HTTP-Request"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Request.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Request.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.HTTP-Request" module #f 37 18 37 48 ("jazz")
       {Lisp-Entry "HTTP-Request" class #f 44 7 44 19 ("initialize" "HTTP-Message")
         {Lisp-Entry "Cookie-Header" definition #f 47 14 47 27 ()}
@@ -149,7 +149,7 @@
         {Lisp-Entry "output-control" method #f 190 11 190 25 ("output-parameters" "=" "when" "resource" "operation" "format" "printer")}
         {Lisp-Entry "output-parameters" method #f 198 11 198 28 ("url-encode" "format" "unless" "value" "name" "bind" "do" "then" "first" "first?" "parameters" "in" "parameter" "for" "loop" "printer")}}}})
 "HTTP-Response"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Response.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Response.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.HTTP-Response" module #f 37 18 37 49 ("jazz")
       {Lisp-Entry "HTTP-Response" class #f 43 7 43 20 ("HTTP-Message")
         {Lisp-Entry "Cookie-Header" definition #f 46 14 46 27 ()}
@@ -168,7 +168,7 @@
         {Lisp-Entry "output-control" method #f 140 11 140 25 ("format" "response-code-info" "text" "number" "code" "bind" "printer")}
         {Lisp-Entry "output-body" method #f 145 11 145 22 ("body" "when" "format" "printer")}}}})
 "HTTP-Server"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Server.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Server.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.HTTP-Server" module #f 37 18 37 47 ("jazz")
       {Lisp-Entry "HTTP-Server" class #f 44 7 44 18 ("initialize" "TCP-Server")
         {Lisp-Entry "listeners" slot #f 47 8 47 17 ()}
@@ -205,7 +205,7 @@
         {Lisp-Entry "session-details" method #f 381 11 381 26 ("session-content" "not" "if" "get-session" "session" "let" "request")}
         {Lisp-Entry "session-content" method #f 389 11 389 26 ("value" "property" "lambda" "map-property" "->string" "border:" "get-properties" "properties" "get-id" "id" "let" "session" "request")}}}})
 "HTTP-Session"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Session.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Session.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.HTTP-Session" module #f 37 18 37 48 ("jazz")
       {Lisp-Entry "Session-Id" definition #f 49 12 49 22 ("0")}
       {Lisp-Entry "Sessions" definition #f 53 12 53 20 ()}
@@ -224,7 +224,7 @@
         {Lisp-Entry "get-property" method #f 110 18 110 30 ("error" "when" "neq?" "if" "Not-Found" "not-found:" "properties" "getf" "value" "let" "error?" "error?:" "name")}
         {Lisp-Entry "set-property" method #f 118 18 118 30 ("addf" "set!" "setf" "properties" "getprop" "if" "value" "name")}}}})
 "Host"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "host" "Host.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "host" "Host.jazz"} 1259266728
     {Lisp-Entry "jazz.network.host.Host" module #f 37 18 37 40 ("jazz")
       {Lisp-Entry "Host" class #f 40 7 40 11 ("initialize" "Object")
         {Lisp-Entry "name" slot #f 43 8 43 12 ()}
@@ -242,11 +242,11 @@
         {Lisp-Entry "present-host" method #f 117 18 117 30 ("ip" "address" "format" "name" "origin" "case")}
         {Lisp-Entry "present-compact" method #f 124 18 124 33 ("->string" "ip" "address" "name" "origin" "case")}}}})
 "Server-Error"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Server-Error.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Server-Error.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.Server-Error" module #f 37 18 37 48 ("jazz")
       {Lisp-Entry "Server-Error" class #f 40 7 40 19 ("Error")}}})
 "Server-Panel"
- ({Lisp-File-Entry {File jazz.network "src" "jazz" "network" "server" "Server-Panel.jazz"} 1259335949
+ ({Lisp-File-Entry {File jazz.network "src" "jazz" "network" "server" "Server-Panel.jazz"} 1266250425
     {Lisp-Entry "jazz.network.server.Server-Panel" module #f 37 8 37 40 ("jazz")
       {Lisp-Entry "Server-Panel" class #f 44 7 44 19 ("Object")
         {Lisp-Entry "version" definition #f 52 14 52 21 ()}
@@ -254,12 +254,12 @@
         {Lisp-Entry "display-backtrace?" definition #f 58 14 58 32 ()}
         {Lisp-Entry "run-loop" method #f 62 11 62 19 ("continuation-return" "display-continuation-backtrace" "cont" "display-backtrace?" "display-exception" "exc" "with-exception-handler" "continuation-capture" "empty-string?" "eof-object?" "cond" "read-line" "prompt" "display" "newline" "when" "newline?" "loop" "server-version" "set-debug?" "debug?" "get-hits" "class-of" "category-name" "server-name" "wait-stopped" "started" "error?:" "wait-started" "stopped" "get-state" "state" "server-service" "server-host" "either" "server-at" "get-process" "exit-process" "force-output" "format" "car" "get-debug?" "not" "null?" "if" "server-debug" "server-info" "restart-server" "stop-server" "start-server" "error" "else" "quit-command" "quit" "help-command" "?" "help" "debug-command" "debug" "info-command" "info" "restart-command" "restart" "stop-command" "stop" "start-command" "start" "case" "read-all" "arguments" "read" "let" "lambda" "call-with-input-string" "command" "process-command" "console-output-port" "output" "console-input-port" "input" "define" "server")}}}})
 "TCP-Client"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "host" "TCP-Client.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "host" "TCP-Client.jazz"} 1259266728
     {Lisp-Entry "jazz.network.host.TCP-Client" module #f 37 18 37 46 ("jazz")
       {Lisp-Entry "TCP-Client" class #f 40 7 40 17 ("Object")
         {Lisp-Entry "port" slot #f 43 8 43 12 ()}}}})
 "TCP-Server"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "host" "TCP-Server.jazz"} 1259335949
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "host" "TCP-Server.jazz"} 1259266728
     {Lisp-Entry "jazz.network.host.TCP-Server" module #f 37 18 37 46 ("jazz")
       {Lisp-Entry "TCP-Server" class #f 43 7 43 17 ("0" "stopped" "'stopped" "initialize" "Object")
         {Lisp-Entry "name" slot #f 46 8 46 12 ()}
@@ -300,12 +300,12 @@
         {Lisp-Entry "accept-connection" method #f 199 29 199 46 ("close-port" "process-connection" "unwind-protect" "server-hit" "port")}
         {Lisp-Entry "process-connection" method #f 206 29 206 47 ("port")}}}})
 "Web-Context"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Web-Context.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Web-Context.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.Web-Context" module #f 37 18 37 47 ("jazz")
       {Lisp-Entry "Web-Context" class #f 40 7 40 18 ("Object")
         {Lisp-Entry "get-pages-associations" method #f 43 26 43 48 ()}}}})
 "Web-Page"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Web-Page.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Web-Page.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.Web-Page" module #f 37 18 37 44 ("jazz")
       {Lisp-Entry "Web-Page" class #f 40 7 40 15 ("Object")
         {Lisp-Entry "input" slot #f 43 8 43 13 ()}
@@ -317,7 +317,7 @@
         {Lisp-Entry "initialize" method #f 47 20 47 30 ("output~self" "input~self" "set!" "nextmethod" "output" "input")}
         {Lisp-Entry "print" method #f 53 20 53 25 ("output" "input" "format" "lambda" "self" "print-unreadable" "readably" "printer")}}}})
 "Web-Server"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Web-Server.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Web-Server.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.Web-Server" module #f 37 18 37 46 ("jazz")
       {Lisp-Entry "Web-Server" class #f 44 7 44 17 ("HTTP-Server")
         {Lisp-Entry "root-directory" slot #f 47 8 47 22 ()}
@@ -337,7 +337,7 @@
         {Lisp-Entry "resource" slot #f 211 8 211 16 ()}
         {Lisp-Entry "initialize" method #f 214 20 214 30 ("resource" "set!" "nextmethod" "res")}}}})
 "Web-Server-Configuration"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Web-Server-Configuration.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Web-Server-Configuration.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.Web-Server-Configuration" module #f 37 18 37 60 ("jazz")
       {Lisp-Entry "Web-Server-Configuration" class #f 43 7 43 31 ("initialize" "Component")
         {Lisp-Entry "unit" property #f 46 12 46 16 ()}
@@ -369,15 +369,15 @@
         {Lisp-Entry "set-debug?" accessor #f 54 60 54 68 ()}
         {Lisp-Entry "toggle-debug?" method #f 62 18 62 31 ("not" "debug?" "set!")}}}})
 "Web-Server-Configurations"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Web-Server-Configurations.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Web-Server-Configurations.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.Web-Server-Configurations" module #f 37 18 37 61 ("jazz")
       {Lisp-Entry "Web-Server-Configurations" class #f 43 20 43 45 ("Component")}}})
 "Web-Servers-Actions"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Web-Servers-Actions.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Web-Servers-Actions.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.Web-Servers-Actions" module #f 37 18 37 55 ("jazz")
       {Lisp-Entry "Web-Servers-Actions" class #f 45 20 45 39 ("on-debug-server" "debug-server" "on-restart-server" "restart-server" "on-stop-server" "stop-server" "on-start-server" "start-server" "on-edit-server" ":focus-guest" "Event-Handler" "action-handler:" "edit-server" "name:" "Actions")}}})
 "Web-Servers-Manager"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Web-Servers-Manager.jazz"} 1265989215
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Web-Servers-Manager.jazz"} 1264714816
     {Lisp-Entry "jazz.network.http.Web-Servers-Manager" module #f 37 18 37 55 ("jazz")
       {Lisp-Entry "Web-Servers-Manager" class #f 50 20 50 39 ("debugged" "hits" "250" "75" "port" "100" "host" "150" "state" "toplevel-controls?:" "200" "width:" "title:" "name" "on-context-menu" "context-menu-handler:" "on-double-click" "double-click-handler:" "on-selection-change" "selection-handler:" "multiple-selection?:" "row" "selection-mode:" "description" "filled-column:" "servers" "shown?:" "header" "fill" "content" "flat?:" "hscroll?:" "vscroll?:" "center" "scroller" "on-refresh" "refresh" "on-debug-server" "debug" "on-restart-server" "restart" "on-stop-server" "stop" "on-start-server" "start" "edit-separator" "on-edit-server" ":form" "Event-Handler" "action-handler:" ":images" "portfolio:" "Image-Resource" "resource:" "tooltip-text:" "tooltip?:" "enabled?:" "tail" "location:" "22" "Dimension" "size:" "edit" "tools" "name:" "border" "layout-type:" "eq?" "test:" "make-table" "initialize" "Layout-View")
         {Lisp-Entry "configurations" slot #f 53 8 53 22 ()}
@@ -413,12 +413,12 @@
         {Lisp-Entry "selected-configuration" method #f 381 11 381 33 ("Web-Server-Configuration" "is?" "and" "when" "selected-object" "object" "let")}}
       {Lisp-Entry "Server-Menu" class #f 392 7 392 18 ("debug-server" "debug" "restart-server" "restart" "stop-server" "stop" "start-server" "start" "edit-server" "web-servers" "Action" "action:" "Image-Resource" "icon:" "title:" "edit" "name:" "Context-Menu")}}})
 "_http"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "_http.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "_http.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http" module #f 37 8 37 25 ("jazz")
       {Lisp-Entry "url-decode" definition #f 45 20 45 30 ("get-output-string" "else" "integer->char" "3" "1" "+" "subseq" "parse-hexadecimal" "value" "increase!" "write-char" "eqv?" "cond" "element" "c" "<" "while" "0" "n" "cardinality" "len" "open-output-string" "printer" "let" "string")}
       {Lisp-Entry "url-encode" definition #f 64 20 64 30 ("get-output-string" "write-char" "else" "char->integer" "memv?" "format" "eqv?" "cond" "c" "lambda" "for-each" "open-output-string" "printer" "let" "string")}}})
 "_network"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "_network.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "_network.jazz"} 1259266728
     {Lisp-Entry "jazz.network" module #f 37 8 37 20 ("jazz")
       {Lisp-Entry "host->string" definition #f 43 20 43 32 ("3" "2" "1" "0" "u8vector-ref" "format" "host")}
       {Lisp-Entry "string->host" definition #f 51 20 51 32 ("string->number" "map" "u8vector" "apply" "numeric?" "every?" "if" "split" "parts" "let" "string")}
@@ -431,13 +431,13 @@
       {Lisp-Entry "Port-Numbers" definition #f 110 12 110 24 ("32000" "router-server" "80" "http" "7" "echo" "0" "any")}
       {Lisp-Entry "resolve-service" definition #f 117 20 117 35 ("error" "cdr" "Port-Numbers" "assq" "pair" "let" "integer?" "if" "service")}}})
 "autoload"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "autoload.jazz"} 1258811565
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "autoload.jazz"} 1259266728
     {Lisp-Entry "jazz.network.autoload" module #f 37 18 37 39 ("jazz")}})
 "install"
- ({Lisp-File-Entry {File jazz.network "src" "jazz" "network" "install.scm"} 1258811565
+ ({Lisp-File-Entry {File jazz.network "src" "jazz" "network" "install.scm"} 1259266728
     {Lisp-Entry "jazz.network.install" unit #f 37 6 37 26 ()
       {Lisp-Entry "Host" define ("literal") 40 21 40 25 ("jazz.network.literals.construct-host")}}})
 "literals"
- ({Lisp-File-Entry {File jazz.network "src" "jazz" "network" "literals.jazz"} 1258811565
+ ({Lisp-File-Entry {File jazz.network "src" "jazz" "network" "literals.jazz"} 1259266728
     {Lisp-Entry "jazz.network.literals" module #f 37 8 37 29 ("jazz")
       {Lisp-Entry "construct-host" definition #f 48 21 48 35 ("Host" "new" "apply" "rest")}}})

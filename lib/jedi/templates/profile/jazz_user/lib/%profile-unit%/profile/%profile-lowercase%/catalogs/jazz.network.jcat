@@ -168,42 +168,42 @@
         {Lisp-Entry "output-control" method #f 140 11 140 25 ("format" "response-code-info" "text" "number" "code" "bind" "printer")}
         {Lisp-Entry "output-body" method #f 145 11 145 22 ("body" "when" "format" "printer")}}}})
 "HTTP-Server"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Server.jazz"} 1259266728
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Server.jazz"} 1267117175
     {Lisp-Entry "jazz.network.http.HTTP-Server" module #f 37 18 37 47 ("jazz")
       {Lisp-Entry "HTTP-Server" class #f 44 7 44 18 ("initialize" "TCP-Server")
         {Lisp-Entry "listeners" slot #f 47 8 47 17 ()}
         {Lisp-Entry "server-name" method #f 50 20 50 31 ("http-server" "'http-server")}
         {Lisp-Entry "connection-name" method #f 54 20 54 35 ("http-connection" "'http-connection")}
-        {Lisp-Entry "accept-connection" method #f 63 20 63 37 ("close-port" "send-message" "Server-Error" "catch" "unwind-protect" "server-hit" "call-listeners-process-request" "not-found" "'not-found" "code:" "generate-not-found" "request-response" "if" "response" "generate-response" "response/html" "let*" "setup-session" "self" "set-server" "lambda" "with-error-reporting" "call-listeners-receive-request" "port:" "HTTP-Request" "new" "request" "let" "request-html" "define" "port")}
-        {Lisp-Entry "server-hit" method #f 90 20 90 30 ("call-listeners-hit" "hits" "increase!")}
-        {Lisp-Entry "with-error-reporting" method #f 95 11 95 31 ("debugger" "'debugger" "select-workspace" "read-string-element" "get-processes-view" "add-snapshot" "IDE" "is?" "when" "get-application" "appl" ":string" "print-stack" "set!" "Exception" "call-with-catch" "server-error" "'server-error" "code:" "request-response" "html" "5" "depth:" "lexical-environment?:" "execution-stack" "pretty-print" "display" "exc" "with-exception-handler" "return" "lambda" "continuation-capture" ",stack" ",text" ",msg" "format" "msg" "debug?" "not" "if" "exception-reason" "text" "let" "stack" "err" "present-error" "define" "thunk" "request")}
-        {Lisp-Entry "SessionID" definition #f 147 14 147 23 ()}
-        {Lisp-Entry "NoSession" definition #f 150 14 150 23 ()}
-        {Lisp-Entry "setup-session" method #f 154 11 154 24 ("set-session" "HTTP-Session" "find-session" "session" "parse-integer" "session-id" "let*" "NoSession" "nu/=?" "and" "when" "SessionID" "get-cookie-value" "sessionid" "let" "request")}
-        {Lisp-Entry "add-session-cookie" method #f 163 11 163 29 ("HTTP-Cookie" "new" "add-cookie" "get-id" "->string" "NoSession" "not" "if" "value" "SessionID" "name" "let" "session" "response")}
-        {Lisp-Entry "request-response" method #f 176 11 176 27 ("add-session-cookie" "add-content-length" "add-content-type" "add-connection-close" "body:" "new" "response" "get-session" "session" "let*" "HTTP-Response" "is?" "if" "count" "cardinality" "+" "body" "calculate-content-length" "error" "else" "process-jml" "pair?" "string?" "cond" "html" "effective-html" "define" "code" "code:" "response/html" "request")}
-        {Lisp-Entry "add-connection-close" method #f 201 11 201 31 ("add-header" "response")}
-        {Lisp-Entry "add-content-type" method #f 205 11 205 27 ("add-header" "type" "response")}
-        {Lisp-Entry "add-location" method #f 209 11 209 23 ("add-header" "location" "response")}
-        {Lisp-Entry "add-content-length" method #f 213 11 213 29 ("format" "add-header" "length" "response")}
-        {Lisp-Entry "generate-response" method #f 222 29 222 46 ("request")}
-        {Lisp-Entry "generate-not-found" method #f 226 11 226 29 ("request-content" "request")}
-        {Lisp-Entry "jml-preferences" method #f 242 29 242 44 ("JML-Preferences" "new")}
-        {Lisp-Entry "jml-parser" method #f 246 29 246 39 ("preferences:" "XHTML-Parser" "new" "pref")}
-        {Lisp-Entry "jml-renderer" method #f 250 29 250 41 ("XHTML-Renderer" "new" "pref")}
-        {Lisp-Entry "process-jml" method #f 254 11 254 22 ("get-output-string" "render" "open-output-string" "printer" "parse" "jml-renderer" "renderer" "jml-parser" "parser" "jml-preferences" "pref" "let*" "jml" "request")}
-        {Lisp-Entry "add-listener" method #f 269 18 269 30 ("cons" "listeners" "set!" "listener")}
-        {Lisp-Entry "remove-listener" method #f 273 18 273 33 ("remove!" "listeners" "set!" "listener")}
-        {Lisp-Entry "call-listeners-hit" method #f 277 11 277 29 ("listeners" "self" "hit" "listener" "lambda" "for-each")}
-        {Lisp-Entry "call-listeners-receive-request" method #f 283 11 283 41 ("listeners" "self" "receive-request" "listener" "lambda" "for-each" "request")}
-        {Lisp-Entry "call-listeners-receive-pages-request" method #f 289 11 289 47 ("listeners" "self" "receive-pages-request" "listener" "lambda" "for-each" "pages-class" "resource" "request")}
-        {Lisp-Entry "call-listeners-process-request" method #f 295 11 295 41 ("listeners" "self" "process-request" "listener" "lambda" "for-each" "response" "request")}
-        {Lisp-Entry "all-details" method #f 306 18 306 29 ("session-details" "request-details" "request")}
-        {Lisp-Entry "debug-request" method #f 311 18 311 31 ("request-details" "request")}
-        {Lisp-Entry "request-details" method #f 319 11 319 26 ("request-content" "request")}
-        {Lisp-Entry "request-content" method #f 324 11 324 26 ("bind" "parameter" "map" "null?" "if" "get-value" "cookie" ",value" ",name" "value" "name" "lambda" "map-table" ",version" ",resource" ",operation" "->string" "border:" "get-parameters" "parameters" "get-cookies" "cookies" "get-headers" "headers" "get-version" "version" "get-resource" "resource" "get-operation" "operation" "get-port" "port" "get-host" "host" "let" "request")}
-        {Lisp-Entry "session-details" method #f 381 11 381 26 ("session-content" "not" "if" "get-session" "session" "let" "request")}
-        {Lisp-Entry "session-content" method #f 389 11 389 26 ("value" "property" "lambda" "map-property" "->string" "border:" "get-properties" "properties" "get-id" "id" "let" "session" "request")}}}})
+        {Lisp-Entry "accept-connection" method #f 63 20 63 37 ("send-message" "Server-Error" "catch" "server-hit" "call-listeners-process-request" "not-found" "'not-found" "code:" "generate-not-found" "request-response" "if" "response" "generate-response" "response/html" "let*" "setup-session" "self" "set-server" "lambda" "with-error-reporting" "call-listeners-receive-request" "port:" "HTTP-Request" "new" "request" "let" "request-html" "define" "port")}
+        {Lisp-Entry "server-hit" method #f 88 20 88 30 ("call-listeners-hit" "hits" "increase!")}
+        {Lisp-Entry "with-error-reporting" method #f 93 11 93 31 ("debugger" "'debugger" "select-workspace" "read-string-element" "get-processes-view" "add-snapshot" "IDE" "is?" "when" "get-application" "appl" ":string" "print-stack" "set!" "Exception" "call-with-catch" "server-error" "'server-error" "code:" "request-response" "html" "5" "depth:" "lexical-environment?:" "execution-stack" "pretty-print" "display" "exc" "with-exception-handler" "return" "lambda" "continuation-capture" ",stack" ",text" ",msg" "format" "msg" "debug?" "not" "if" "exception-reason" "text" "let" "stack" "err" "present-error" "define" "thunk" "request")}
+        {Lisp-Entry "SessionID" definition #f 145 14 145 23 ()}
+        {Lisp-Entry "NoSession" definition #f 148 14 148 23 ()}
+        {Lisp-Entry "setup-session" method #f 152 11 152 24 ("set-session" "HTTP-Session" "find-session" "session" "parse-integer" "session-id" "let*" "NoSession" "nu/=?" "and" "when" "SessionID" "get-cookie-value" "sessionid" "let" "request")}
+        {Lisp-Entry "add-session-cookie" method #f 161 11 161 29 ("HTTP-Cookie" "new" "add-cookie" "get-id" "->string" "NoSession" "not" "if" "value" "SessionID" "name" "let" "session" "response")}
+        {Lisp-Entry "request-response" method #f 174 11 174 27 ("add-session-cookie" "add-content-length" "add-content-type" "add-connection-close" "body:" "new" "response" "get-session" "session" "let*" "HTTP-Response" "is?" "if" "count" "cardinality" "+" "body" "calculate-content-length" "error" "else" "process-jml" "pair?" "string?" "cond" "html" "effective-html" "define" "code" "code:" "response/html" "request")}
+        {Lisp-Entry "add-connection-close" method #f 199 11 199 31 ("add-header" "response")}
+        {Lisp-Entry "add-content-type" method #f 203 11 203 27 ("add-header" "type" "response")}
+        {Lisp-Entry "add-location" method #f 207 11 207 23 ("add-header" "location" "response")}
+        {Lisp-Entry "add-content-length" method #f 211 11 211 29 ("format" "add-header" "length" "response")}
+        {Lisp-Entry "generate-response" method #f 220 29 220 46 ("request")}
+        {Lisp-Entry "generate-not-found" method #f 224 11 224 29 ("request-content" "request")}
+        {Lisp-Entry "jml-preferences" method #f 240 29 240 44 ("JML-Preferences" "new")}
+        {Lisp-Entry "jml-parser" method #f 244 29 244 39 ("preferences:" "XHTML-Parser" "new" "pref")}
+        {Lisp-Entry "jml-renderer" method #f 248 29 248 41 ("XHTML-Renderer" "new" "pref")}
+        {Lisp-Entry "process-jml" method #f 252 11 252 22 ("get-output-string" "render" "open-output-string" "printer" "parse" "jml-renderer" "renderer" "jml-parser" "parser" "jml-preferences" "pref" "let*" "jml" "request")}
+        {Lisp-Entry "add-listener" method #f 267 18 267 30 ("cons" "listeners" "set!" "listener")}
+        {Lisp-Entry "remove-listener" method #f 271 18 271 33 ("remove!" "listeners" "set!" "listener")}
+        {Lisp-Entry "call-listeners-hit" method #f 275 11 275 29 ("listeners" "self" "hit" "listener" "lambda" "for-each")}
+        {Lisp-Entry "call-listeners-receive-request" method #f 281 11 281 41 ("listeners" "self" "receive-request" "listener" "lambda" "for-each" "request")}
+        {Lisp-Entry "call-listeners-receive-pages-request" method #f 287 11 287 47 ("listeners" "self" "receive-pages-request" "listener" "lambda" "for-each" "pages-class" "resource" "request")}
+        {Lisp-Entry "call-listeners-process-request" method #f 293 11 293 41 ("listeners" "self" "process-request" "listener" "lambda" "for-each" "response" "request")}
+        {Lisp-Entry "all-details" method #f 304 18 304 29 ("session-details" "request-details" "request")}
+        {Lisp-Entry "debug-request" method #f 309 18 309 31 ("request-details" "request")}
+        {Lisp-Entry "request-details" method #f 317 11 317 26 ("request-content" "request")}
+        {Lisp-Entry "request-content" method #f 322 11 322 26 ("bind" "parameter" "map" "null?" "if" "get-value" "cookie" ",value" ",name" "value" "name" "lambda" "map-table" ",version" ",resource" ",operation" "->string" "border:" "get-parameters" "parameters" "get-cookies" "cookies" "get-headers" "headers" "get-version" "version" "get-resource" "resource" "get-operation" "operation" "get-port" "port" "get-host" "host" "let" "request")}
+        {Lisp-Entry "session-details" method #f 379 11 379 26 ("session-content" "not" "if" "get-session" "session" "let" "request")}
+        {Lisp-Entry "session-content" method #f 387 11 387 26 ("value" "property" "lambda" "map-property" "->string" "border:" "get-properties" "properties" "get-id" "id" "let" "session" "request")}}}})
 "HTTP-Session"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "HTTP-Session.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.HTTP-Session" module #f 37 18 37 48 ("jazz")
@@ -224,7 +224,7 @@
         {Lisp-Entry "get-property" method #f 110 18 110 30 ("error" "when" "neq?" "if" "Not-Found" "not-found:" "properties" "getf" "value" "let" "error?" "error?:" "name")}
         {Lisp-Entry "set-property" method #f 118 18 118 30 ("addf" "set!" "setf" "properties" "getprop" "if" "value" "name")}}}})
 "Host"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "host" "Host.jazz"} 1259266728
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "host" "Host.jazz"} 1267117175
     {Lisp-Entry "jazz.network.host.Host" module #f 37 18 37 40 ("jazz")
       {Lisp-Entry "Host" class #f 40 7 40 11 ("initialize" "Object")
         {Lisp-Entry "name" slot #f 43 8 43 12 ()}
@@ -234,7 +234,7 @@
         {Lisp-Entry "get-origin" accessor #f 46 37 46 45 ()}
         {Lisp-Entry "initialize" method #f 49 20 49 30 ("error" "else" "'ip" "ip~self" "'address" "address~self" "'name" "origin~self" "name~self" "set!" "cond" "nextmethod" "ip" "ip:" "address" "address:" "name" "name:")}
         {Lisp-Entry "compare-object" method #f 64 20 64 34 (":not-equal" "else" ":equal" "get-ip" "=" ":incompatible" "Host" "is-not?" "cond" "target")}
-        {Lisp-Entry "print" method #f 73 20 73 25 ("present-host" "self" "class-of" "category-name" "identifier-name" "format" "readably" "printer")}
+        {Lisp-Entry "print" method #f 73 20 73 25 ("present-host" "self" "class-of" "category-name" "format" "readably" "printer")}
         {Lisp-Entry "get-name" method #f 84 18 84 26 ("address" "address->ip" "ip" "either" "ip->name" "set!" "name" "unless")}
         {Lisp-Entry "get-address" method #f 92 18 92 29 ("name" "name->ip" "ip" "either" "ip->address" "set!" "address" "unless")}
         {Lisp-Entry "get-ip" method #f 100 18 100 24 ("get-address" "address->ip" "set!" "ip" "unless")}
@@ -246,20 +246,20 @@
     {Lisp-Entry "jazz.network.http.Server-Error" module #f 37 18 37 48 ("jazz")
       {Lisp-Entry "Server-Error" class #f 40 7 40 19 ("Error")}}})
 "Server-Panel"
- ({Lisp-File-Entry {File jazz.network "src" "jazz" "network" "server" "Server-Panel.jazz"} 1266250425
+ ({Lisp-File-Entry {File jazz.network "src" "jazz" "network" "server" "Server-Panel.jazz"} 1267117175
     {Lisp-Entry "jazz.network.server.Server-Panel" module #f 37 8 37 40 ("jazz")
       {Lisp-Entry "Server-Panel" class #f 44 7 44 19 ("Object")
         {Lisp-Entry "version" definition #f 52 14 52 21 ()}
         {Lisp-Entry "prompt" definition #f 55 14 55 20 ()}
         {Lisp-Entry "display-backtrace?" definition #f 58 14 58 32 ()}
-        {Lisp-Entry "run-loop" method #f 62 11 62 19 ("continuation-return" "display-continuation-backtrace" "cont" "display-backtrace?" "display-exception" "exc" "with-exception-handler" "continuation-capture" "empty-string?" "eof-object?" "cond" "read-line" "prompt" "display" "newline" "when" "newline?" "loop" "server-version" "set-debug?" "debug?" "get-hits" "class-of" "category-name" "server-name" "wait-stopped" "started" "error?:" "wait-started" "stopped" "get-state" "state" "server-service" "server-host" "either" "server-at" "get-process" "exit-process" "force-output" "format" "car" "get-debug?" "not" "null?" "if" "server-debug" "server-info" "restart-server" "stop-server" "start-server" "error" "else" "quit-command" "quit" "help-command" "?" "help" "debug-command" "debug" "info-command" "info" "restart-command" "restart" "stop-command" "stop" "start-command" "start" "case" "read-all" "arguments" "read" "let" "lambda" "call-with-input-string" "command" "process-command" "console-output-port" "output" "console-input-port" "input" "define" "server")}}}})
+        {Lisp-Entry "run-loop" method #f 62 11 62 19 ("continuation-return" "display-continuation-backtrace" "cont" "display-backtrace?" "display-exception" "exc" "with-exception-handler" "continuation-capture" "empty-string?" "eof-object?" "cond" "read-line" "prompt" "display" "newline" "when" "newline?" "loop" "server-version" "set-debug?" "debug?" "get-hits" "class-of" "category-identifier" "server-name" "wait-stopped" "started" "error?:" "wait-started" "stopped" "get-state" "state" "server-service" "server-host" "either" "server-at" "get-process" "exit-process" "force-output" "format" "car" "get-debug?" "not" "null?" "if" "server-debug" "server-info" "restart-server" "stop-server" "start-server" "error" "else" "quit-command" "quit" "help-command" "?" "help" "debug-command" "debug" "info-command" "info" "restart-command" "restart" "stop-command" "stop" "start-command" "start" "case" "read-all" "arguments" "read" "let" "lambda" "call-with-input-string" "command" "process-command" "console-output-port" "output" "console-input-port" "input" "define" "server")}}}})
 "TCP-Client"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "host" "TCP-Client.jazz"} 1259266728
     {Lisp-Entry "jazz.network.host.TCP-Client" module #f 37 18 37 46 ("jazz")
       {Lisp-Entry "TCP-Client" class #f 40 7 40 17 ("Object")
         {Lisp-Entry "port" slot #f 43 8 43 12 ()}}}})
 "TCP-Server"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "host" "TCP-Server.jazz"} 1259266728
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "host" "TCP-Server.jazz"} 1267117175
     {Lisp-Entry "jazz.network.host.TCP-Server" module #f 37 18 37 46 ("jazz")
       {Lisp-Entry "TCP-Server" class #f 43 7 43 17 ("0" "stopped" "'stopped" "initialize" "Object")
         {Lisp-Entry "name" slot #f 46 8 46 12 ()}
@@ -294,10 +294,10 @@
         {Lisp-Entry "server-service" method #f 152 29 152 43 ("get-service")}
         {Lisp-Entry "server-hit" method #f 156 29 156 39 ("hits" "increase!")}
         {Lisp-Entry "connection-name" method #f 160 29 160 44 ("tcp-connection" "'tcp-connection")}
-        {Lisp-Entry "start-listener" method #f 164 11 164 25 ("stopped" "'stopped" "close-port" "connection-name" "accept-connection" "lambda" "create-thread" "thread-start!" "read" "port" "loop" "started" "'started" "set-state" "tcp-server-socket-info" "socket-info" "set!" "begin" "unwind-protect" "cr-lf" "'cr-lf" "eol-encoding:" "port-number:" "server-address:" "list" "open-tcp-server" "server-port" "server-service" "resolve-service" "number" "server-host" "resolve-host" "address" "let")}
-        {Lisp-Entry "listening-host" method #f 186 11 186 25 ("socket-info-address" "socket-info" "essay")}
-        {Lisp-Entry "listening-port" method #f 190 11 190 25 ("socket-info-port-number" "socket-info" "essay")}
-        {Lisp-Entry "accept-connection" method #f 199 29 199 46 ("close-port" "process-connection" "unwind-protect" "server-hit" "port")}
+        {Lisp-Entry "start-listener" method #f 164 11 164 25 ("stopped" "'stopped" "connection-name" "close-port" "accept-connection" "lambda" "create-thread" "thread-start!" "read" "port" "loop" "started" "'started" "set-state" "tcp-server-socket-info" "socket-info" "set!" "begin" "unwind-protect" "cr-lf" "'cr-lf" "eol-encoding:" "port-number:" "server-address:" "list" "open-tcp-server" "server-port" "server-service" "resolve-service" "number" "server-host" "resolve-host" "address" "let")}
+        {Lisp-Entry "listening-host" method #f 188 11 188 25 ("socket-info-address" "socket-info" "essay")}
+        {Lisp-Entry "listening-port" method #f 192 11 192 25 ("socket-info-port-number" "socket-info" "essay")}
+        {Lisp-Entry "accept-connection" method #f 201 29 201 46 ("process-connection" "server-hit" "port")}
         {Lisp-Entry "process-connection" method #f 206 29 206 47 ("port")}}}})
 "Web-Context"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Web-Context.jazz"} 1259266728
@@ -317,25 +317,25 @@
         {Lisp-Entry "initialize" method #f 47 20 47 30 ("output~self" "input~self" "set!" "nextmethod" "output" "input")}
         {Lisp-Entry "print" method #f 53 20 53 25 ("output" "input" "format" "lambda" "self" "print-unreadable" "readably" "printer")}}}})
 "Web-Server"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Web-Server.jazz"} 1259266728
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Web-Server.jazz"} 1268082663
     {Lisp-Entry "jazz.network.http.Web-Server" module #f 37 18 37 46 ("jazz")
-      {Lisp-Entry "Web-Server" class #f 44 7 44 17 ("HTTP-Server")
-        {Lisp-Entry "root-directory" slot #f 47 8 47 22 ()}
-        {Lisp-Entry "get-root-directory" accessor #f 47 39 47 47 ()}
-        {Lisp-Entry "default-resource" slot #f 48 8 48 24 ()}
-        {Lisp-Entry "get-default-resource" accessor #f 48 39 48 47 ()}
-        {Lisp-Entry "unauthentified-resource" slot #f 49 8 49 31 ()}
-        {Lisp-Entry "get-unauthentified-resource" accessor #f 49 39 49 47 ()}
-        {Lisp-Entry "html-generator" slot #f 50 8 50 22 ()}
-        {Lisp-Entry "get-html-generator" accessor #f 50 42 50 50 ()}
-        {Lisp-Entry "set-html-generator" accessor #f 50 42 50 50 ()}
-        {Lisp-Entry "initialize" method #f 53 20 53 30 ("html-generator~self" "unauthentified-resource~self" "default-resource~self" "root-directory~self" "set!" "nextmethod" "apply" "others" "unauthentified-resource" "default-resource" "root-directory" "bind-keywords" "rest")}
-        {Lisp-Entry "generate-response" method #f 67 20 67 37 ("else" "test:" "member?" "ci=?" "cond" "get-extension" "ext" "nextmethod" "bind-optionals" "rest" "bind" "pages-info" "generator" "default-resource" "request-content" "process-unknown-file" "process-resource-file" "u8-content-size" "add-content-length" "get-content" "content" "file:" "HTTP-File-Response" "process-html-file" "process-jml" "read" "reader" "jazz-readtable" "readtable:" "cr-lf" "'cr-lf" "eol-encoding:" "path:" "list" "call-with-input-file" "process-jml-file" "add-session-cookie" "format" "add-location" "add-content-type" "add-connection-close" "see-other" "'see-other" "code:" "HTTP-Response" "response" "session" "get-header" "host" "throw" "cdr" "if" "get-associations" "pair" "find-generator" "lambda" "parse" "call-with-output-file" "create-directories" "generated-page" "static-file" "setup-directory" "generate-page?" "get-output-string" "render" "open-output-string" "printer" "process-request" "jml" "jml-renderer" "renderer" "self" "autoload" "new" "pages" "jml-preferences" "pref" "let*" "call-listeners-receive-pages-request" "generate-static-page" "html-generator" "unauthentified-resource" "redirect-pages" "get-session" "null?" "generate-pages" "validate-authentification" "get-resource" "redirect-response" "redirect" "HTTP-Redirect" "catch" "needs-authentification?" "pages-class" "process-pages" "exists?" "tokenise-filename" "new-file" "file" "empty-string?" "not" "root-directory" "and" "when" "find-file-resource" "assoc" "get-pages-associations" "associations" "let" "resource" "find-pages-info" "define" "request")}
-        {Lisp-Entry "get-associations" method #f 190 29 190 45 ()}
-        {Lisp-Entry "get-pages-associations" method #f 199 29 199 51 ()}}
-      {Lisp-Entry "HTTP-Redirect" class #f 208 7 208 20 ("Exception")
-        {Lisp-Entry "resource" slot #f 211 8 211 16 ()}
-        {Lisp-Entry "initialize" method #f 214 20 214 30 ("resource" "set!" "nextmethod" "res")}}}})
+      {Lisp-Entry "Web-Server" class #f 45 7 45 17 ("HTTP-Server")
+        {Lisp-Entry "root-directory" slot #f 48 8 48 22 ()}
+        {Lisp-Entry "get-root-directory" accessor #f 48 39 48 47 ()}
+        {Lisp-Entry "default-resource" slot #f 49 8 49 24 ()}
+        {Lisp-Entry "get-default-resource" accessor #f 49 39 49 47 ()}
+        {Lisp-Entry "unauthentified-resource" slot #f 50 8 50 31 ()}
+        {Lisp-Entry "get-unauthentified-resource" accessor #f 50 39 50 47 ()}
+        {Lisp-Entry "html-generator" slot #f 51 8 51 22 ()}
+        {Lisp-Entry "get-html-generator" accessor #f 51 42 51 50 ()}
+        {Lisp-Entry "set-html-generator" accessor #f 51 42 51 50 ()}
+        {Lisp-Entry "initialize" method #f 54 20 54 30 ("html-generator~self" "unauthentified-resource~self" "default-resource~self" "root-directory~self" "set!" "nextmethod" "apply" "others" "unauthentified-resource" "default-resource" "root-directory" "bind-keywords" "rest")}
+        {Lisp-Entry "generate-response" method #f 68 20 68 37 ("else" "test:" "member?" "ci=?" "cond" "get-extension" "ext" "nextmethod" "bind-optionals" "rest" "bind" "pages-info" "generator" "default-resource" "request-content" "process-unknown-file" "process-resource-file" "u8-content-size" "add-content-length" "get-content" "content" "file:" "HTTP-File-Response" "process-html-file" "process-jml" "read" "reader" "jazz-readtable" "readtable:" "cr-lf" "'cr-lf" "eol-encoding:" "path:" "list" "call-with-input-file" "process-jml-file" "add-session-cookie" "format" "add-location" "add-content-type" "add-connection-close" "see-other" "'see-other" "code:" "HTTP-Response" "response" "session" "get-header" "host" "throw" "cdr" "if" "get-associations" "pair" "find-generator" "lambda" "parse" "call-with-output-file" "create-directories" "generated-page" "static-file" "setup-directory" "generate-page?" "get-output-string" "render" "open-output-string" "printer" "process-request" "jml" "jml-renderer" "renderer" "self" "autoload-class" "new" "pages" "jml-preferences" "pref" "let*" "call-listeners-receive-pages-request" "generate-static-page" "html-generator" "unauthentified-resource" "redirect-pages" "get-session" "null?" "generate-pages" "validate-authentification" "get-resource" "redirect-response" "redirect" "HTTP-Redirect" "catch" "needs-authentification?" "pages-class" "process-pages" "exists?" "tokenise-filename" "new-file" "file" "empty-string?" "not" "root-directory" "and" "when" "find-file-resource" "assoc" "get-pages-associations" "associations" "let" "resource" "find-pages-info" "define" "request")}
+        {Lisp-Entry "get-associations" method #f 191 29 191 45 ()}
+        {Lisp-Entry "get-pages-associations" method #f 200 29 200 51 ()}}
+      {Lisp-Entry "HTTP-Redirect" class #f 209 7 209 20 ("Exception")
+        {Lisp-Entry "resource" slot #f 212 8 212 16 ()}
+        {Lisp-Entry "initialize" method #f 215 20 215 30 ("resource" "set!" "nextmethod" "res")}}}})
 "Web-Server-Configuration"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.network" "src" "jazz" "network" "http" "Web-Server-Configuration.jazz"} 1259266728
     {Lisp-Entry "jazz.network.http.Web-Server-Configuration" module #f 37 18 37 60 ("jazz")

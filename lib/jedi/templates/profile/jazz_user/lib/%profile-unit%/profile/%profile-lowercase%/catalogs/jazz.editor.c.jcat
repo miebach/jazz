@@ -1,9 +1,9 @@
 "C-Category-Entry"
- ({Lisp-File-Entry {File jazz.editor.c "src" "jazz" "editor" "c" "catalog" "C-Category-Entry.jazz"} 1264605818
+ ({Lisp-File-Entry {File jazz.editor.c "src" "jazz" "editor" "c" "catalog" "C-Category-Entry.jazz"} 1267117175
     {Lisp-Entry "jazz.editor.c.catalog.C-Category-Entry" module #f 37 18 37 56 ("jazz")
       {Lisp-Entry "C-Category-Entry" class #f 44 7 44 23 ("C-Entry")
         {Lisp-Entry "initialize" method #f 47 20 47 30 ("nextmethod" "name")}
-        {Lisp-Entry "print-catalog" method #f 51 20 51 33 ("name" "self" "class-of" "category-name" "identifier-name" "2" "*" "format" "printer" "level")}
+        {Lisp-Entry "print-catalog" method #f 51 20 51 33 ("name" "self" "class-of" "category-name" "2" "*" "format" "printer" "level")}
         {Lisp-Entry "get-image" method #f 63 20 63 29 ("Image-Resource")}
         {Lisp-Entry "update-indexes" method #f 72 20 72 34 ("name" "update-index" "references-index" "definitions-index")}}}})
 "C-Define-Entry"
@@ -11,11 +11,11 @@
     {Lisp-Entry "jazz.editor.c.catalog.C-Define-Entry" module #f 37 18 37 54 ("jazz")
       {Lisp-Entry "C-Define-Entry" class #f 43 7 43 21 ("C-Definition-Entry")}}})
 "C-Definition-Entry"
- ({Lisp-File-Entry {File jazz.editor.c "src" "jazz" "editor" "c" "catalog" "C-Definition-Entry.jazz"} 1259266728
+ ({Lisp-File-Entry {File jazz.editor.c "src" "jazz" "editor" "c" "catalog" "C-Definition-Entry.jazz"} 1267117175
     {Lisp-Entry "jazz.editor.c.catalog.C-Definition-Entry" module #f 37 18 37 58 ("jazz")
       {Lisp-Entry "C-Definition-Entry" class #f 43 7 43 25 ("C-Entry")
         {Lisp-Entry "initialize" method #f 46 20 46 30 ("nextmethod" "end-column" "end-line" "column" "line" "name")}
-        {Lisp-Entry "print-catalog" method #f 50 20 50 33 ("end-column" "end-line" "column" "line" "name" "self" "class-of" "category-name" "identifier-name" "2" "*" "format" "printer" "level")}
+        {Lisp-Entry "print-catalog" method #f 50 20 50 33 ("end-column" "end-line" "column" "line" "name" "self" "class-of" "category-name" "2" "*" "format" "printer" "level")}
         {Lisp-Entry "update-indexes" method #f 62 20 62 34 ("name" "update-index" "references-index" "definitions-index")}}}})
 "C-Entry"
  ({Lisp-File-Entry {File jazz.editor.c "src" "jazz" "editor" "c" "catalog" "C-Entry.jazz"} 1259266728
@@ -72,7 +72,7 @@
         {Lisp-Entry "get-title" method #f 67 20 67 29 ()}
         {Lisp-Entry "get-source?" method #f 71 18 71 29 ("header?" "not")}}}})
 "C-Include-Entry"
- ({Lisp-File-Entry {File jazz.editor.c "src" "jazz" "editor" "c" "catalog" "C-Include-Entry.jazz"} 1264605818
+ ({Lisp-File-Entry {File jazz.editor.c "src" "jazz" "editor" "c" "catalog" "C-Include-Entry.jazz"} 1267117175
     {Lisp-Entry "jazz.editor.c.catalog.C-Include-Entry" module #f 37 18 37 55 ("jazz")
       {Lisp-Entry "C-Include-Entry" class #f 45 7 45 22 ("C-Entry")
         {Lisp-Entry "include" slot #f 48 8 48 15 ()}
@@ -80,18 +80,18 @@
         {Lisp-Entry "include-base" slot #f 49 8 49 20 ()}
         {Lisp-Entry "initialize" method #f 52 20 52 30 ("extract-base" "include-base~self" "include~self" "set!" "nextmethod" "end-column" "end-line" "column" "line" "include")}
         {Lisp-Entry "print" method #f 58 20 58 25 ("include" "format" "lambda" "self" "print-unreadable" "readably" "printer")}
-        {Lisp-Entry "print-catalog" method #f 64 20 64 33 ("end-column" "end-line" "column" "line" "include" "self" "class-of" "category-name" "identifier-name" "2" "*" "format" "printer" "level")}
+        {Lisp-Entry "print-catalog" method #f 64 20 64 33 ("end-column" "end-line" "column" "line" "include" "self" "class-of" "category-name" "2" "*" "format" "printer" "level")}
         {Lisp-Entry "get-image" method #f 76 20 76 29 ("Image-Resource")}
         {Lisp-Entry "present-name" method #f 80 20 80 32 ("include")}
         {Lisp-Entry "get-include-file" method #f 89 18 89 34 ("include-base" "get-catalog" "get-file-definitions" "get-header?" "find-if" "name" "catalog" "get-header" "define")}}}})
 "C-Method-Entry"
- ({Lisp-File-Entry {File jazz.editor.c "src" "jazz" "editor" "c" "catalog" "C-Method-Entry.jazz"} 1264605818
+ ({Lisp-File-Entry {File jazz.editor.c "src" "jazz" "editor" "c" "catalog" "C-Method-Entry.jazz"} 1267117175
     {Lisp-Entry "jazz.editor.c.catalog.C-Method-Entry" module #f 37 18 37 54 ("jazz")
       {Lisp-Entry "C-Method-Entry" class #f 44 7 44 21 ("C-Definition-Entry")
         {Lisp-Entry "class" slot #f 47 8 47 13 ()}
         {Lisp-Entry "initialize" method #f 50 20 50 30 ("class~self" "set!" "nextmethod" "end-column" "end-line" "column" "line" "name" "class")}
         {Lisp-Entry "print" method #f 55 20 55 25 ("class" "format" "lambda" "self" "print-unreadable" "readably" "printer")}
-        {Lisp-Entry "print-catalog" method #f 61 20 61 33 ("end-column" "end-line" "column" "line" "name" "class" "self" "class-of" "category-name" "identifier-name" "2" "*" "format" "printer" "level")}
+        {Lisp-Entry "print-catalog" method #f 61 20 61 33 ("end-column" "end-line" "column" "line" "name" "class" "self" "class-of" "category-name" "2" "*" "format" "printer" "level")}
         {Lisp-Entry "get-image" method #f 73 20 73 29 ("Image-Resource")}}}})
 "C-Parser"
  ({Lisp-File-Entry {File jazz.editor.c "src" "jazz" "editor" "c" "parser" "C-Parser.jazz"} 1259266728

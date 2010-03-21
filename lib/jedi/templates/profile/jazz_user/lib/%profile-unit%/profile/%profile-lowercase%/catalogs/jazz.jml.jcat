@@ -1,7 +1,7 @@
 "Experiments"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "experiments" "Experiments.jazz"} 1258817627})
 "JML-Element"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "model" "JML-Element.jazz"} 1259266728
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "model" "JML-Element.jazz"} 1268833945
     {Lisp-Entry "jazz.jml.model.JML-Element" module #f 37 18 37 44 ("jazz")
       {Lisp-Entry "JML-Element" class #f 44 7 44 18 ("initialize" "JML-Node")
         {Lisp-Entry "tag" slot #f 47 8 47 11 ()}
@@ -21,34 +21,36 @@
         {Lisp-Entry "remove-property" method #f 106 18 106 33 ("get-output" "set!" "properties" "put" "neq?" "when" "value" "property" "lambda" "for-each-property" "List-Factory" "new" "fact" "symbolize-property" "symbol" "let" "target")}
         {Lisp-Entry "Flattened-Tags" definition #f 122 14 122 28 ("span" "input" "img" "div")}
         {Lisp-Entry "first-child" method #f 126 18 126 29 ("car" "children" "null?" "if")}
-        {Lisp-Entry "add-child" method #f 132 26 132 35 ("list" "append!" "children" "set!" "node")}
-        {Lisp-Entry "composite?" method #f 136 18 136 28 ("simple?" "not")}
-        {Lisp-Entry "simple?" method #f 140 18 140 25 ("JML-Text" "sub" "lambda" "every?" "simple?" "Flattened-Tags" "get-tag" "memq?" "JML-Element" "is?" "car" "child" "length" "1" "=" "and" "or" "effective-children" "children" "let")}
-        {Lisp-Entry "effective-children" method #f 152 11 152 29 ("children")}
-        {Lisp-Entry "find-by" method #f 156 18 156 25 ("children" "find-if" "predicate")}
-        {Lisp-Entry "find-node" method #f 160 18 160 27 ("get-tag" "eq?" "JML-Element" "is?" "and" "child" "lambda" "find-by" "tag")}
-        {Lisp-Entry "find-name" method #f 167 26 167 35 ("'name" "get-property" "eq?" "JML-Element" "is?" "and" "child" "lambda" "find-by" "name")}
-        {Lisp-Entry "find-property" method #f 174 18 174 31 ("get-property" "equal?" "JML-Element" "is?" "and" "child" "lambda" "find-by" "value" "property")}
-        {Lisp-Entry "get-child-text" method #f 181 18 181 32 ("first-child" "get-text")}
-        {Lisp-Entry "get-child-location" method #f 190 20 190 38 ("children" "get-rank" "properties" "length" "1" "+" "list" "child")}
-        {Lisp-Entry "->jml" method #f 201 20 201 25 ("children->jml" "properties->jml" "tag->jml")}
-        {Lisp-Entry "tag->jml" method #f 205 18 205 26 ("tag" "format" "string->symbol")}
-        {Lisp-Entry "properties->jml" method #f 209 18 209 33 ("get-output" "properties" "put" "value" "lambda" "for-each-property" "List-Factory" "new" "fact" "let" "symbol->keyword" "property" "property->jml" "define")}
-        {Lisp-Entry "children->jml" method #f 221 18 221 31 ("children" "->jml" "child" "lambda" "map")}}}})
+        {Lisp-Entry "remove-child" method #f 132 26 132 38 ("remove!" "children" "set!" "node")}
+        {Lisp-Entry "add-child" method #f 136 26 136 35 ("list" "append!" "children" "set!" "node")}
+        {Lisp-Entry "composite?" method #f 140 18 140 28 ("simple?" "not")}
+        {Lisp-Entry "simple?" method #f 144 18 144 25 ("JML-Text" "sub" "lambda" "every?" "simple?" "Flattened-Tags" "get-tag" "memq?" "JML-Element" "is?" "car" "child" "length" "1" "=" "and" "or" "effective-children" "children" "let")}
+        {Lisp-Entry "effective-children" method #f 156 11 156 29 ("children")}
+        {Lisp-Entry "find-by" method #f 160 18 160 25 ("children" "find-if" "predicate")}
+        {Lisp-Entry "find-node" method #f 164 18 164 27 ("get-tag" "eq?" "JML-Element" "is?" "and" "child" "lambda" "find-by" "tag")}
+        {Lisp-Entry "find-name" method #f 171 26 171 35 ("'name" "get-property" "eq?" "JML-Element" "is?" "and" "child" "lambda" "find-by" "name")}
+        {Lisp-Entry "find-property" method #f 178 18 178 31 ("get-property" "equal?" "JML-Element" "is?" "and" "child" "lambda" "find-by" "value" "property")}
+        {Lisp-Entry "get-child-text" method #f 185 18 185 32 ("first-child" "get-text")}
+        {Lisp-Entry "get-child-location" method #f 194 20 194 38 ("children" "get-rank" "properties" "length" "1" "+" "list" "child")}
+        {Lisp-Entry "->jml" method #f 205 20 205 25 ("children->jml" "properties->jml" "tag->jml")}
+        {Lisp-Entry "tag->jml" method #f 209 18 209 26 ("tag" "format" "string->symbol")}
+        {Lisp-Entry "properties->jml" method #f 213 18 213 33 ("get-output" "properties" "put" "value" "lambda" "for-each-property" "List-Factory" "new" "fact" "let" "symbol->keyword" "property" "property->jml" "define")}
+        {Lisp-Entry "children->jml" method #f 225 18 225 31 ("children" "->jml" "child" "lambda" "map")}}}})
 "JML-Node"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "model" "JML-Node.jazz"} 1259266728
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "model" "JML-Node.jazz"} 1268833945
     {Lisp-Entry "jazz.jml.model.JML-Node" module #f 37 18 37 41 ("jazz")
       {Lisp-Entry "JML-Node" class #f 43 7 43 15 ("Object")
         {Lisp-Entry "parent" slot #f 46 8 46 14 ()}
         {Lisp-Entry "initialize" method #f 49 20 49 30 ("self" "add-child" "when" "parent~self" "set!" "nextmethod" "parent")}
         {Lisp-Entry "get-parent" method #f 61 18 61 28 ("parent")}
-        {Lisp-Entry "set-parent" method #f 65 18 65 28 ("self" "add-child" "when" "parent" "set!" "value")}
-        {Lisp-Entry "set-parent-value" method #f 71 18 71 34 ("parent" "set!" "value")}
-        {Lisp-Entry "get-toplevel" method #f 80 18 80 30 ("get-toplevel" "self" "parent" "not" "if")}
-        {Lisp-Entry "get-location" method #f 91 18 91 30 ("self" "get-child-location" "get-location" "append" "parent" "not" "if")}
-        {Lisp-Entry "get-child-location" method #f 98 26 98 44 ("child")}
-        {Lisp-Entry "->jml" method #f 107 35 107 40 ()}
-        {Lisp-Entry "pretty-print" method #f 116 18 116 30 ("car" "null?" "=" "children" "neq?" "length" "pres" "get-property" "7" "has-property?" "-" "pad" "not-null?" "and" ":human" "case" "properties" "single-line?" "get-text" "text" "JML-Text" "if" "receive" "first?" "with-printer" "values" "self" "get-children" "1" "child" "for-each" "get-properties" "table-set!" "table-ref" "max" "'name" "eq?" "format" "cast" "value" "property" "for-each-property" "set!" ">" "not" "or" "2" "*" "cardinality" "+" "width" "cons" "symbol->string" "name" "get-tag" "tag" "let*" "JML-Element" "is?" "when" "level" "path" "node" "lambda" "iter" "letrec" "equal?" "test:" "make-table" "essay" "maxes" "max-name" "max-tag" "let" "compute-maxes" "define" ":reader" "readably" "readably:" "align-properties?" "align-properties?:" "align-name?" "align-name?:" "space-properties?" "space-properties?:" "0" "base" "base:" "indent-first?" "indent-first?:" "form?" "form?:" "printer")}}}})
+        {Lisp-Entry "set-parent" method #f 65 18 65 28 ("add-child" "set!" "self" "remove-child" "parent" "when" "value")}
+        {Lisp-Entry "append-parent" method #f 73 18 73 31 ("append-child" "set!" "self" "remove-child" "parent" "when" "value")}
+        {Lisp-Entry "set-parent-value" method #f 81 18 81 34 ("parent" "set!" "value")}
+        {Lisp-Entry "get-toplevel" method #f 90 18 90 30 ("get-toplevel" "self" "parent" "not" "if")}
+        {Lisp-Entry "get-location" method #f 101 18 101 30 ("self" "get-child-location" "get-location" "append" "parent" "not" "if")}
+        {Lisp-Entry "get-child-location" method #f 108 26 108 44 ("child")}
+        {Lisp-Entry "->jml" method #f 117 35 117 40 ()}
+        {Lisp-Entry "pretty-print" method #f 126 18 126 30 ("car" "null?" "=" "children" "neq?" "length" "pres" "get-property" "7" "has-property?" "-" "pad" "not-null?" "and" ":human" "case" "properties" "single-line?" "get-text" "text" "JML-Text" "if" "receive" "first?" "with-printer" "values" "self" "get-children" "1" "child" "for-each" "get-properties" "table-set!" "table-ref" "max" "'name" "eq?" "format" "cast" "value" "property" "for-each-property" "set!" ">" "not" "or" "2" "*" "cardinality" "+" "width" "cons" "symbol->string" "name" "get-tag" "tag" "let*" "JML-Element" "is?" "when" "level" "path" "node" "lambda" "iter" "letrec" "equal?" "test:" "make-table" "essay" "maxes" "max-name" "max-tag" "let" "compute-maxes" "define" ":reader" "readably" "readably:" "align-properties?" "align-properties?:" "align-name?" "align-name?:" "space-properties?" "space-properties?:" "0" "base" "base:" "indent-first?" "indent-first?:" "form?" "form?:" "printer")}}}})
 "JML-Parser"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "parser" "JML-Parser.jazz"} 1259266728
     {Lisp-Entry "jazz.jml.parser.JML-Parser" module #f 37 18 37 44 ("jazz")
@@ -61,7 +63,7 @@
         {Lisp-Entry "validate-tag" method #f 194 29 194 41 ("error" "tag-valid?" "unless" "tag")}
         {Lisp-Entry "get-alias" method #f 204 29 204 38 ("error" "rest" "name")}}}})
 "JML-Preferences"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "preference" "JML-Preferences.jazz"} 1267024518
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "preference" "JML-Preferences.jazz"} 1268082672
     {Lisp-Entry "jazz.jml.preference.JML-Preferences" module #f 37 18 37 53 ("jazz")
       {Lisp-Entry "JML-Preferences" class #f 44 7 44 22 ("2" "initialize" "Component")
         {Lisp-Entry "target" property #f 47 12 47 18 ()}
@@ -146,7 +148,7 @@
         {Lisp-Entry "output-text" method #f 164 19 164 30 ("format" "when" "text" "printer" "context")}
         {Lisp-Entry "end-tag" definition #f 169 15 169 22 ("format" "tag")}}}})
 "_jml"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "_jml.jazz"} 1259266728
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.jml" "src" "jazz" "jml" "_jml.jazz"} 1267117175
     {Lisp-Entry "jazz.jml" module #f 37 8 37 16 ("jazz")
       {Lisp-Entry "tag?" definition #f 51 20 51 24 ("symbol->string" "tag-string?" "symbol?" "and" "expr")}
       {Lisp-Entry "tag-string?" definition #f 56 20 56 31 ("ends-with?" "starts-with?" "2" "string-length" ">" "and" "string")}
@@ -158,7 +160,7 @@
       {Lisp-Entry "Autoclasses" definition #f 100 12 100 23 ("eq?" "test:" "make-table")}
       {Lisp-Entry "get-autoclass" definition #f 104 20 104 33 ("Autoclasses" "table-ref" "name")}
       {Lisp-Entry "set-autoclass" definition #f 108 20 108 33 ("Autoclasses" "table-set!" "class" "name")}
-      {Lisp-Entry "register-autoclass" definition #f 112 20 112 38 ("category-name" "identifier-name" "set-autoclass" "class")}
+      {Lisp-Entry "register-autoclass" definition #f 112 20 112 38 ("category-name" "set-autoclass" "class")}
       {Lisp-Entry "autoload-class" definition #f 116 20 116 34 ("autoload" "get-autoload" "when" "get-autoclass" "either" "name")}
       {Lisp-Entry "parse-jml" definition #f 127 20 127 29 ("parse" "preferences:" "JML-Parser" "parser" "JML-Preferences" "either" "new" "pref" "let*" "parser-class" "parser-class:" "preferences-class" "preferences-class:" "jml")}
       {Lisp-Entry "transform-jml" definition #f 138 20 138 33 ("transform" "transformation" "node")}

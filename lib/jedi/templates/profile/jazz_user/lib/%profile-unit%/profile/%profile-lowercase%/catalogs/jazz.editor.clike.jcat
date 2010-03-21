@@ -1,5 +1,5 @@
 "CLike-Text-Preferences"
- ({Lisp-File-Entry {File jazz.editor.clike "src" "jazz" "editor" "clike" "text" "CLike-Text-Preferences.jazz"} 1267024518
+ ({Lisp-File-Entry {File jazz.editor.clike "src" "jazz" "editor" "clike" "text" "CLike-Text-Preferences.jazz"} 1268082672
     {Lisp-Entry "jazz.editor.clike.text.CLike-Text-Preferences" module #f 37 18 37 63 ("jazz")
       {Lisp-Entry "CLike-Text-Preferences" class #f 45 7 45 29 ("title:" "initialize" "Code-Text-Preferences")
         {Lisp-Entry "title-style" property #f 48 12 48 23 ()}
@@ -47,31 +47,30 @@
           {Lisp-Entry "get-subrow-class" method #f 111 20 111 36 ("Macro/Keyword/Type-Row")}}
         {Lisp-Entry "Macro/Keyword/Type-Row" class #f 120 7 120 29 ("Value-Row")}}}})
 "CLike-Text-View"
- ({Lisp-File-Entry {File jazz.editor.clike "src" "jazz" "editor" "clike" "text" "CLike-Text-View.jazz"} 1264454265
+ ({Lisp-File-Entry {File jazz.editor.clike "src" "jazz" "editor" "clike" "text" "CLike-Text-View.jazz"} 1268935370
     {Lisp-Entry "jazz.editor.clike.text.CLike-Text-View" module #f 37 18 37 56 ("jazz")
       {Lisp-Entry "CLike-Text-View" class #f 46 7 46 22 ("Code-Text-View")
         {Lisp-Entry "install" method #f 49 20 49 27 ("get-profile-type-style" "Profile-Type" "'Profile-Type" "get-profile-keyword-style" "Profile-Keyword" "'Profile-Keyword" "get-profile-macro-style" "Profile-Macro" "'Profile-Macro" "get-keyword-style" "Keyword" "'Keyword" "get-balanced-comment-style" "Balanced-Comment" "'Balanced-Comment" "get-line-comment-style" "Line-Comment" "'Line-Comment" "get-definition-style" "Definition" "'Definition" "get-title-style" "Title" "'Title" "add-style-preference" "default-style" "get-name" "default" "preferences" "pref" "let" "nextmethod" "rest")}
         {Lisp-Entry "new-syntax" method #f 63 20 63 30 ("C-Syntax" "new")}
-        {Lisp-Entry "flash-character?" method #f 73 20 73 36 ("char")}
-        {Lisp-Entry "return-press" method #f 82 20 82 32 ("tabulate" "nextmethod" "key")}
-        {Lisp-Entry "commented?" method #f 92 20 92 30 ("Balanced-Comment" "'Balanced-Comment" "Line-Comment" "'Line-Comment" "Title" "'Title" "inherits?" "or" "and" "get-style-at" "style" "let" "pos")}
-        {Lisp-Entry "get-keywords" method #f 105 29 105 41 ()}
-        {Lisp-Entry "get-profile-macros" method #f 114 29 114 47 ("profile")}
-        {Lisp-Entry "get-profile-keywords" method #f 118 29 118 49 ("profile")}
-        {Lisp-Entry "get-profile-types" method #f 122 29 122 46 ("profile")}
-        {Lisp-Entry "mouse-insert" method #f 131 20 131 32 ("insert-string" "last" "text-ending" "concatenate" "set!" "memq?" "not" "0" "element" "syntax" "text-constituent?" "and" "previous-cell" "get-char" "sc" "text-beginning" "/=" "when" "get-end" "end" "get-start" "start" "let" "copy")}
-        {Lisp-Entry "compute-syntax-targets" method #f 150 20 150 42 ("get-profile-types" "profile-type" "'profile-type" "get-profile-keywords" "profile-keyword" "'profile-keyword" "get-profile-macros" "profile-macro" "'profile-macro" "get-keywords" "keyword" "'keyword" "str" "lambda" "map" "line-comment" "'line-comment" "balanced-comment-backward" "'balanced-comment-backward" "balanced-comment" "'balanced-comment" "list" "append" "get-application" "get-profile" "profile" "let")}
-        {Lisp-Entry "compute-syntax-automata" method #f 161 20 161 43 ("c-constituent?" "syntax-targets" "build-search-automata")}
-        {Lisp-Entry "colorize-type" method #f 165 20 165 33 ("Profile-Type" "'Profile-Type" "profile-type" "Profile-Keyword" "'Profile-Keyword" "profile-keyword" "Profile-Macro" "'Profile-Macro" "profile-macro" "Keyword" "'Keyword" "colorize-keyword" "keyword" "Title" "'Title" "Line-Comment" "'Line-Comment" "colorize-line-comment" "line-comment" "colorize-balanced-comment-backward" "balanced-comment-backward" "Balanced-Comment" "'Balanced-Comment" "colorize-balanced-comment" "balanced-comment" "case" "recolorize?" "colorizer" "end" "start" "type" "found")}
-        {Lisp-Entry "explorer-class" method #f 182 20 182 34 ("C-Explorer")}
-        {Lisp-Entry "get-context" method #f 191 20 191 31 ("c")}
-        {Lisp-Entry "current-name" method #f 195 20 195 32 ("current-expr-range" "name-at")}
-        {Lisp-Entry "name-at" method #f 199 11 199 18 ("read-string-element" "0" "element" "eqv?" "if" "get-string" "name" "let" "when" "range")}
-        {Lisp-Entry "current-expr" method #f 207 20 207 32 ("current-name")}
-        {Lisp-Entry "current-expr-range" method #f 211 20 211 38 ("get-end" "expr-range" "get-selection" "has-selection?" "completion-active?" "not" "and" "if")}
-        {Lisp-Entry "expr-at" method #f 217 20 217 27 ("expr-range" "name-at" "pos")}
-        {Lisp-Entry "headers" constant #f 226 12 226 19 ("string" "concatenate" "list")}
-        {Lisp-Entry "get-headers" method #f 232 20 232 31 ("headers")}}}})
+        {Lisp-Entry "return-press" method #f 72 20 72 32 ("tabulate" "nextmethod" "key")}
+        {Lisp-Entry "commented?" method #f 82 20 82 30 ("Balanced-Comment" "'Balanced-Comment" "Line-Comment" "'Line-Comment" "Title" "'Title" "inherits?" "or" "and" "get-style-at" "style" "let" "pos")}
+        {Lisp-Entry "get-keywords" method #f 95 29 95 41 ()}
+        {Lisp-Entry "get-profile-macros" method #f 104 29 104 47 ("profile")}
+        {Lisp-Entry "get-profile-keywords" method #f 108 29 108 49 ("profile")}
+        {Lisp-Entry "get-profile-types" method #f 112 29 112 46 ("profile")}
+        {Lisp-Entry "mouse-insert" method #f 121 20 121 32 ("insert-string" "last" "text-ending" "concatenate" "set!" "memq?" "not" "0" "element" "syntax" "text-constituent?" "and" "previous-cell" "get-char" "sc" "text-beginning" "/=" "when" "get-end" "end" "get-start" "start" "let" "copy")}
+        {Lisp-Entry "compute-syntax-targets" method #f 140 20 140 42 ("get-profile-types" "profile-type" "'profile-type" "get-profile-keywords" "profile-keyword" "'profile-keyword" "get-profile-macros" "profile-macro" "'profile-macro" "get-keywords" "keyword" "'keyword" "str" "lambda" "map" "line-comment" "'line-comment" "balanced-comment-backward" "'balanced-comment-backward" "balanced-comment" "'balanced-comment" "list" "append" "get-application" "get-profile" "profile" "let")}
+        {Lisp-Entry "compute-syntax-automata" method #f 151 20 151 43 ("c-constituent?" "syntax-targets" "build-search-automata")}
+        {Lisp-Entry "colorize-type" method #f 155 20 155 33 ("Profile-Type" "'Profile-Type" "profile-type" "Profile-Keyword" "'Profile-Keyword" "profile-keyword" "Profile-Macro" "'Profile-Macro" "profile-macro" "Keyword" "'Keyword" "colorize-keyword" "keyword" "Title" "'Title" "Line-Comment" "'Line-Comment" "colorize-line-comment" "line-comment" "colorize-balanced-comment-backward" "balanced-comment-backward" "Balanced-Comment" "'Balanced-Comment" "colorize-balanced-comment" "balanced-comment" "case" "recolorize?" "colorizer" "end" "start" "type" "found")}
+        {Lisp-Entry "explorer-class" method #f 172 20 172 34 ("C-Explorer")}
+        {Lisp-Entry "get-context" method #f 181 20 181 31 ("c")}
+        {Lisp-Entry "current-name" method #f 185 20 185 32 ("current-expr-range" "name-at")}
+        {Lisp-Entry "name-at" method #f 189 11 189 18 ("read-string-element" "0" "element" "eqv?" "if" "get-string" "name" "let" "when" "range")}
+        {Lisp-Entry "current-expr" method #f 197 20 197 32 ("current-name")}
+        {Lisp-Entry "current-expr-range" method #f 201 20 201 38 ("get-end" "expr-range" "get-selection" "has-selection?" "completion-active?" "not" "and" "if")}
+        {Lisp-Entry "expr-at" method #f 207 20 207 27 ("expr-range" "name-at" "pos")}
+        {Lisp-Entry "headers" constant #f 216 12 216 19 ("string" "concatenate" "list")}
+        {Lisp-Entry "get-headers" method #f 222 20 222 31 ("headers")}}}})
 "_clike"
  ({Lisp-File-Entry {File jazz.editor.clike "src" "jazz" "editor" "clike" "_clike.jazz"} 1259266728
     {Lisp-Entry "jazz.editor.clike" module #f 37 8 37 25 ("jazz")}})

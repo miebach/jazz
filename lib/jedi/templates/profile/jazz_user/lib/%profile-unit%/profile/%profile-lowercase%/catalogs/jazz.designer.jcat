@@ -56,7 +56,7 @@
         {Lisp-Entry "get-designer" method #f 85 18 85 30 ("editor" "get-designer" "set!" "designer" "unless")}
         {Lisp-Entry "set-designer" method #f 91 18 91 30 ("designer" "set!" "value")}}}})
 "Book-View"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "book" "Book-View.jazz"} 1259266728
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "book" "Book-View.jazz"} 1268318349
     {Lisp-Entry "jazz.designer.book.Book-View" module #f 37 18 37 46 ("jazz")
       {Lisp-Entry "Book-View" class #f 47 20 47 29 ("eq?" "test:" "make-table" "initialize" "Document" "Layout-View")
         {Lisp-Entry "sections" slot #f 50 8 50 16 ()}
@@ -85,33 +85,33 @@
         {Lisp-Entry "clients-update" method #f 139 26 139 40 ("set-client" "get-section" "section" "let" "client" "name" "lambda" "book" "for-each-client")}
         {Lisp-Entry "update-names" method #f 146 11 146 23 ("branch:" "set-name" "get-designer" "designer" "get-client" "client" "let" "section" "name" "lambda" "for-each-section" "book-name")}
         {Lisp-Entry "new-event" method #f 160 25 160 34 ("set-visible?" "bring-to-front" "update-names" "clients-update" "update-status" "set-newname" "List-Factory" "new" "fact" "get-controller" "controller" "collect-names" "unique-domain-name" "book-name" "get-guest" "book-view" "rest" "new-frame" "apply" "frame" "let*" "host-visible?" "host-visible?:")}
-        {Lisp-Entry "collect-names" method #f 176 16 176 29 ("get-children" "get-book-name" "neq?" "and" "get-guest" "guest" "Frame-Host" "is?" "when" "frame" "lambda" "collect" "get-stage" "stage" "class-of" "model" "let" "book")}
-        {Lisp-Entry "empty-sections" method #f 192 18 192 32 ("clients-update" "set-name" "get-designer" "designer" "let" "set-client" "self" "book:" "instantiate" "client" "get-model-name" "model-name:" "'new" "action:" "textual?:" "Form" "new" "form" "get-name" "old-name" "get-client" "old-client" "get-section" "section" "let*" "name" "lambda" "for-each" "sections")}
-        {Lisp-Entry "install-in-host" method #f 211 20 211 35 ("get-controller" "install-in-host" "nextmethod" "host")}
-        {Lisp-Entry "get-controller" method #f 221 20 221 34 ("new-controller" "set!" "controller" "unless")}
-        {Lisp-Entry "new-controller" method #f 227 20 227 34 ("self" "Book-Controller" "new")}
-        {Lisp-Entry "save" method #f 231 20 231 24 ("get-controller" "save")}
-        {Lisp-Entry "save-as" method #f 235 20 235 27 ("get-controller" "save-as")}
-        {Lisp-Entry "save-to" method #f 239 20 239 27 ("get-controller" "save-to" "moniker")}
-        {Lisp-Entry "save-all" method #f 243 26 243 34 ("get-controller" "save-all")}
-        {Lisp-Entry "install-scroller?" method #f 247 20 247 37 ()}
-        {Lisp-Entry "get-moniker" method #f 251 11 251 22 ("get-controller" "get-moniker")}
-        {Lisp-Entry "set-moniker" method #f 255 11 255 22 ("get-controller" "set-moniker" "moniker")}
-        {Lisp-Entry "verify-reload" method #f 259 20 259 33 ()}
-        {Lisp-Entry "reload-moniker" method #f 263 20 263 34 ("update-moniker-time" "reload-content" "lambda" "with-locked-update" "when" "moniker")}
-        {Lisp-Entry "reload-content" method #f 271 11 271 25 ("update-status" "set-modified?" "load-content" "empty-content" "moniker")}
-        {Lisp-Entry "empty-content" method #f 278 29 278 42 ()}
-        {Lisp-Entry "get-modified?" method #f 282 20 282 33 ("get-controller" "get-modified?")}
-        {Lisp-Entry "set-modified?" method #f 286 20 286 33 ("get-controller" "set-modified?" "state")}
-        {Lisp-Entry "update-status" method #f 290 11 290 24 ("get-controller" "update-status")}
-        {Lisp-Entry "update-moniker-time" method #f 294 11 294 30 ("get-controller" "update-moniker-time" "moniker")}
-        {Lisp-Entry "confirm-close" method #f 298 20 298 33 ("get-controller" "confirm-close" "rest")}
-        {Lisp-Entry "tool-update" method #f 302 20 302 31 ("tool?")}
-        {Lisp-Entry "console-update" method #f 306 20 306 34 ("console?")}
-        {Lisp-Entry "load-content" method #f 315 20 315 32 ("update-status" "clients-update" "book" "load-content" "moniker")}
-        {Lisp-Entry "save-content" method #f 326 20 326 32 ("process-saved" "update-status" "set-modified?" "update-moniker-time" "-1" "print-to" "format" "get-title" "output-section" "set!" "output-properties" "output-version" "get-description" "output-header" "when" "first?" "printer" "UTF-8" "'UTF-8" "char-encoding:" "parse" "path:" "list" "call-with-output-file" "get-editor" "process-saving" "branch:" "get-client" "set-name" "get-form" "set-origin" "get-designer" "designer" "section" "name" "for-each-section" "get-base" "base" "let" "lambda" ":wait" "with-cursor" "moniker")}
-        {Lisp-Entry "output-version" method #f 358 11 358 25 ("get-version" "format" "printer")}
-        {Lisp-Entry "output-properties" method #f 362 20 362 37 ("null?" "if" "format" "get-properties" "properties" "let" "printer")}}}})
+        {Lisp-Entry "collect-names" method #f 176 16 176 29 ("all-frames" "get-book-name" "neq?" "and" "get-guest" "guest" "Frame-Host" "is?" "when" "frame" "lambda" "collect" "class-of" "model" "let" "book")}
+        {Lisp-Entry "empty-sections" method #f 191 18 191 32 ("clients-update" "set-name" "get-designer" "designer" "let" "set-client" "self" "book:" "instantiate" "client" "get-model-name" "model-name:" "'new" "action:" "textual?:" "Form" "new" "form" "get-name" "old-name" "get-client" "old-client" "get-section" "section" "let*" "name" "lambda" "for-each" "sections")}
+        {Lisp-Entry "install-in-host" method #f 210 20 210 35 ("get-controller" "install-in-host" "nextmethod" "host")}
+        {Lisp-Entry "get-controller" method #f 220 20 220 34 ("new-controller" "set!" "controller" "unless")}
+        {Lisp-Entry "new-controller" method #f 226 20 226 34 ("self" "Book-Controller" "new")}
+        {Lisp-Entry "save" method #f 230 20 230 24 ("get-controller" "save")}
+        {Lisp-Entry "save-as" method #f 234 20 234 27 ("get-controller" "save-as")}
+        {Lisp-Entry "save-to" method #f 238 20 238 27 ("get-controller" "save-to" "moniker")}
+        {Lisp-Entry "save-all" method #f 242 26 242 34 ("get-controller" "save-all")}
+        {Lisp-Entry "install-scroller?" method #f 246 20 246 37 ()}
+        {Lisp-Entry "get-moniker" method #f 250 11 250 22 ("get-controller" "get-moniker")}
+        {Lisp-Entry "set-moniker" method #f 254 11 254 22 ("get-controller" "set-moniker" "moniker")}
+        {Lisp-Entry "verify-reload" method #f 258 20 258 33 ()}
+        {Lisp-Entry "reload-moniker" method #f 262 20 262 34 ("update-moniker-time" "reload-content" "lambda" "with-locked-update" "when" "moniker")}
+        {Lisp-Entry "reload-content" method #f 270 11 270 25 ("update-status" "set-modified?" "load-content" "empty-content" "moniker")}
+        {Lisp-Entry "empty-content" method #f 277 29 277 42 ()}
+        {Lisp-Entry "get-modified?" method #f 281 20 281 33 ("get-controller" "get-modified?")}
+        {Lisp-Entry "set-modified?" method #f 285 20 285 33 ("get-controller" "set-modified?" "state")}
+        {Lisp-Entry "update-status" method #f 289 11 289 24 ("get-controller" "update-status")}
+        {Lisp-Entry "update-moniker-time" method #f 293 11 293 30 ("get-controller" "update-moniker-time" "moniker")}
+        {Lisp-Entry "confirm-close" method #f 297 20 297 33 ("get-controller" "confirm-close" "rest")}
+        {Lisp-Entry "tool-update" method #f 301 20 301 31 ("tool?")}
+        {Lisp-Entry "console-update" method #f 305 20 305 34 ("console?")}
+        {Lisp-Entry "load-content" method #f 314 20 314 32 ("update-status" "clients-update" "book" "load-content" "moniker")}
+        {Lisp-Entry "save-content" method #f 325 20 325 32 ("process-saved" "update-status" "set-modified?" "update-moniker-time" "-1" "print-to" "format" "get-title" "output-section" "set!" "output-properties" "output-version" "get-description" "output-header" "when" "first?" "printer" "UTF-8" "'UTF-8" "char-encoding:" "parse" "path:" "list" "call-with-output-file" "get-editor" "process-saving" "branch:" "get-client" "set-name" "get-form" "set-origin" "get-designer" "designer" "section" "name" "for-each-section" "get-base" "base" "let" "lambda" ":wait" "with-cursor" "moniker")}
+        {Lisp-Entry "output-version" method #f 357 11 357 25 ("get-version" "format" "printer")}
+        {Lisp-Entry "output-properties" method #f 361 20 361 37 ("null?" "if" "format" "get-properties" "properties" "let" "printer")}}}})
 "Boolean-Domain"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "domain" "Boolean-Domain.jazz"} 1259266728
     {Lisp-Entry "jazz.designer.domain.Boolean-Domain" module #f 37 18 37 53 ("jazz")
@@ -120,7 +120,7 @@
         {Lisp-Entry "present" method #f 62 20 62 27 ("if" "value")}
         {Lisp-Entry "setup-entry" method #f 73 20 73 31 ("self" "domain:" "parent:" "Boolean-Entry" "new" "client" "view")}}}})
 "Boolean-Entry"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "entry" "Boolean-Entry.jazz"} 1265059250
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "entry" "Boolean-Entry.jazz"} 1268082663
     {Lisp-Entry "jazz.designer.entry.Boolean-Entry" module #f 37 18 37 51 ("Entry-Check-Box" "register-autoclass" "jazz")
       {Lisp-Entry "Boolean-Entry" class #f 45 7 45 20 ("selectable?:" "checkbox" "name:" "auto-size?:" "Property-Entry")
         {Lisp-Entry "preferred-size" method #f 53 20 53 34 ("16" "Dimension")}
@@ -137,7 +137,7 @@
         {Lisp-Entry "editor" property #f 127 12 127 18 ()}
         {Lisp-Entry "get-editor" accessor #f 127 43 127 51 ()}
         {Lisp-Entry "set-editor" accessor #f 127 43 127 51 ()}
-        {Lisp-Entry "focus-gain" method #f 130 20 130 30 ("editor-focus-gain" "get-manager" "manager" "let" "selectable?" "editor" "and" "when" "nextmethod")}
+        {Lisp-Entry "focus-gained" method #f 130 20 130 32 ("editor-focus-gained" "get-manager" "manager" "let" "selectable?" "editor" "and" "when" "nextmethod")}
         {Lisp-Entry "focus-lose" method #f 138 20 138 30 ("editor-focus-lose" "get-manager" "manager" "let" "selectable?" "editor" "and" "when" "nextmethod")}}}})
 "Boolean-Row"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "row" "Boolean-Row.jazz"} 1259266728
@@ -354,7 +354,7 @@
         {Lisp-Entry "focus-lose" method #f 201 20 201 30 ("value-row" "editor-focus-lose" "nextmethod")}
         {Lisp-Entry "focus-master" method #f 206 20 206 32 ("value-row" "get-tree")}}}})
 "Column-Detail"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "choosers" "Column-Detail.jazz"} 1259266728
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "choosers" "Column-Detail.jazz"} 1267117175
     {Lisp-Entry "jazz.designer.choosers.Column-Detail" module #f 37 18 37 54 ("jazz")
       {Lisp-Entry "Column-Detail" class #f 43 20 43 33 ("0" "initialize" "Object")
         {Lisp-Entry "name" property #f 46 12 46 16 ()}
@@ -372,7 +372,7 @@
         {Lisp-Entry "construct-literal" method #f 53 16 53 33 ("self" "new" "displayed?" "filled?" "width" "name" "context")}
         {Lisp-Entry "initialize" method #f 57 20 57 30 ("displayed?" "filled?" "width" "name" "set!" "nextmethod" "d?" "f?" "w" "n")}
         {Lisp-Entry "copy-object" method #f 65 20 65 31 ("displayed?" "filled?" "width" "name" "Column-Detail" "new" "deep?")}
-        {Lisp-Entry "print" method #f 69 20 69 25 ("displayed?" "filled?" "width" "name" "self" "class-of" "category-name" "identifier-name" "format" "readably" "printer")}}}})
+        {Lisp-Entry "print" method #f 69 20 69 25 ("displayed?" "filled?" "width" "name" "self" "class-of" "category-name" "format" "readably" "printer")}}}})
 "Combo-Row"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "row" "Combo-Row.jazz"} 1265747956
     {Lisp-Entry "jazz.designer.row.Combo-Row" module #f 37 18 37 45 ("jazz")
@@ -423,7 +423,7 @@
         {Lisp-Entry "focus-lose" method #f 124 20 124 30 ("value-row" "editor-focus-lose" "nextmethod")}
         {Lisp-Entry "focus-master" method #f 129 20 129 32 ("value-row" "get-tree")}}}})
 "Component-Descriptor"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "descriptor" "Component-Descriptor.jazz"} 1267024518
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "descriptor" "Component-Descriptor.jazz"} 1268082672
     {Lisp-Entry "jazz.designer.descriptor.Component-Descriptor" module #f 37 18 37 63 ("jazz")
       {Lisp-Entry "Component-Descriptor" class #f 47 20 47 40 ("properties" "name:" "initialize" "Component")
         {Lisp-Entry "title" property #f 50 12 50 17 ()}
@@ -447,7 +447,7 @@
         {Lisp-Entry "get-property-domain" definition #f 87 15 87 34 ("property-domains" "table-ref" "property")}
         {Lisp-Entry "set-property-domain" definition #f 90 15 90 34 ("property-domains" "table-set!" "domain" "property")}
         {Lisp-Entry "component-property-domain" method #f 94 26 94 51 ("set-property-domain" "domain" "self" "class" "get-property-domain" "either" "get-domain" "essay" "descriptor-domain" "field-name" "class-of" "get-property-descriptor" "descriptor" "let*" "property" "component")}
-        {Lisp-Entry "class-presentation" method #f 110 26 110 44 ("category-name" "identifier-name" "->string" "title" "either" "class")}
+        {Lisp-Entry "class-presentation" method #f 110 26 110 44 ("category-name" "->string" "title" "either" "class")}
         {Lisp-Entry "class-image" method #f 114 26 114 37 ("Image-Resource" "image" "either" "class")}
         {Lisp-Entry "class-name-prohibited?" method #f 118 26 118 48 ("name-prohibited?" "class")}
         {Lisp-Entry "class-name-mandatory?" method #f 122 26 122 47 ("name-mandatory?" "class")}
@@ -539,7 +539,7 @@
         {Lisp-Entry "set-selection" method #f 121 18 121 31 ("editor" "set-selection" "selection")}
         {Lisp-Entry "acquire-selection" method #f 125 18 125 35 ("client" "list" "set-selection")}}}})
 "Components-Tree"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "editor" "Components-Tree.jazz"} 1259788340
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "editor" "Components-Tree.jazz"} 1268318349
     {Lisp-Entry "jazz.designer.editor.Components-Tree" module #f 37 18 37 54 ("jazz")
       {Lisp-Entry "Components-Tree" class #f 52 20 52 35 ("initialize" "Components-Viewer")
         {Lisp-Entry "last-class" slot #f 55 8 55 18 ()}
@@ -549,7 +549,7 @@
         {Lisp-Entry "on-rename-component" method #f 77 11 77 30 ("rename-selection" "evt")}
         {Lisp-Entry "on-export-text" method #f 81 11 81 25 ("user-message" "export-text" "lambda" ":wait" "with-cursor" "bell" "not" "if" "selected-component" "component" "let" "evt")}
         {Lisp-Entry "on-properties" method #f 91 20 91 33 ("show-properties" "evt")}
-        {Lisp-Entry "focus-gain" method #f 100 20 100 30 ("selected-components" "get-editor" "get-application" "set-selected" "nextmethod")}
+        {Lisp-Entry "focus-gained" method #f 100 20 100 32 ("selected-components" "get-editor" "get-application" "set-selected" "nextmethod")}
         {Lisp-Entry "focus-update-actions" method #f 105 20 105 40 ("can-rename?" "rename" "components-tree" "Action" "set-action-enabled?")}
         {Lisp-Entry "on-editor" method #f 114 20 114 29 ("nextmethod" "else" "get-user-origin?" "get-force-parent?" "get-origin" "get-old" "get-selection" "selection-changed" ":selection-changed" "branch-changed" ":branch-changed" "end-edition" ":saving" "get-kind" "case" "evt")}
         {Lisp-Entry "branch-changed" method #f 122 29 122 43 ()}
@@ -594,7 +594,7 @@
         {Lisp-Entry "rename-selection" method #f 465 20 465 36 ("rename-component" "when" "selected-component" "component" "let")}
         {Lisp-Entry "rename-component" method #f 471 18 471 34 ("end-rename" "0" "Cell" "new" "cell" "row-rank" "rank" "get-presentation-property" "initial-value:" "get-brothers" "class-of" "component-presentation-request" "presentation" "let*" "ensure-expanded" "when" "component-row" "row" "let" "component")}
         {Lisp-Entry "end-rename" method #f 481 11 481 21 ("select-component" "acquire-focus" "reorder-component" "sort-components?" "and" "when" "get-parent" "parent" "let" "designer" "set-presentation-property" "get-cell-data" "set-title" "lambda" "with-update-locked" "presentation" "cell" "component")}
-        {Lisp-Entry "move-components" method #f 498 11 498 26 ("send-component-before" "send-before" "for-each" "essay" "target-data" "element" "cardinality" "<" "1" "+" "after" "before" "case" "position" "son-rank" "rank" "get-sons" "sons" "get-father" "father" "select-components" "move-components" "new-components" "bell" "not" "class-of" "relocation-parent" "component" "key:" "uniform" "parent" "let" "row" "'row" "eq?" "if" "lambda" "with-update-locked" "get-user-data" "destination" "get-part" "part" "get-row" "dst" "get-view" "get-selected-data" "components" "get-designer" "designer" "let*" "target" "source")}
+        {Lisp-Entry "move-components" method #f 498 11 498 26 ("send-component-before" "send-before" "for-each" "essay" "target-data" "element" "cardinality" "<" "1" "+" "after" "before" "case" "position" "son-rank" "rank" "get-sons" "sons" "get-father" "father" "select-components" "transfer-components" "new-components" "bell" "not" "class-of" "relocation-parent" "component" "key:" "uniform" "parent" "let" "row" "'row" "eq?" "if" "lambda" "with-update-locked" "get-user-data" "destination" "get-part" "part" "get-row" "dst" "get-view" "get-selected-data" "components" "get-designer" "designer" "let*" "target" "source")}
         {Lisp-Entry "move-component-row" method #f 524 11 524 29 ("find-component-position" "not" "if" "lambda" "move-row" "sort-components?" "sort?" "client" "either" "destination" "get-user-data" "source" "let*" "get-sons" "cardinality" "1" "=" "get-father" "eq?" "and" "unless" "position" "position:" "father" "row")}
         {Lisp-Entry "reorder-component" method #f 536 18 536 35 ("get-father" "move-component-row" "find-row" "row" "let" "component")}
         {Lisp-Entry "find-component-position" method #f 541 29 541 52 ("get-presentation-property" "find-ordered-position" "father" "row" "component")}
@@ -827,7 +827,7 @@
         {Lisp-Entry "get-highlighted?" accessor #f 381 55 381 63 ()}
         {Lisp-Entry "set-highlighted?" accessor #f 381 55 381 63 ()}}}})
 "Designer"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "designer" "Designer.jazz"} 1266250425
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "designer" "Designer.jazz"} 1268833945
     {Lisp-Entry "jazz.designer.designer.Designer" module #f 37 18 37 49 ("jazz")
       {Lisp-Entry "Designer" class #f 55 7 55 15 ("initialize" "Object")
         {Lisp-Entry "form" slot #f 58 8 58 12 ()}
@@ -846,7 +846,7 @@
         {Lisp-Entry "Default-Extensions" definition #f 126 14 126 32 ()}
         {Lisp-Entry "save-as" method #f 130 11 130 18 ("save-content" "Default-Extensions" "Default-Extension" "either" "choose-new-file" "form" "set-origin" "extensions" "extensions:" "default-extension" "default-extension:")}
         {Lisp-Entry "save-content" method #f 135 11 135 23 ("set-modified?" "save-to-class" "save-to-file" "file?" "if" "form" "get-origin" "origin" "let")}
-        {Lisp-Entry "save-to-class" method #f 143 11 143 24 ("focus-host" "bring-to-front" "set-visible?" "close" "save" "begin" "not" "format" "insert-string" "set-selection" "lambda" "with-update-locked" "find-location" "range" "text" "frame" "receive" "set-class-form" "Language" "Interpreter" "evaluate" "when" "2" "saved-form" "output" "find-document" "being-edited?" "find-source" "code-source" "Jazz-Code-Location" "new" "code-location" "list" "location" ":new-form" ":form" "get-self-form" "form" "eq?" "if" "where" "category-name" "class-name" "get-application" "appl" "let*" "class")}
+        {Lisp-Entry "save-to-class" method #f 143 11 143 24 ("focus-host" "bring-to-front" "set-visible?" "close" "save" "begin" "not" "format" "insert-string" "set-selection" "lambda" "with-update-locked" "find-location" "range" "text" "frame" "receive" "set-class-form" "Language" "Interpreter" "evaluate" "when" "2" "saved-form" "output" "find-document" "being-edited?" "find-source" "code-source" "Jazz-Code-Location" "new" "code-location" "list" "location" ":new-form" ":form" "get-self-form" "form" "eq?" "if" "where" "category-identifier" "class-name" "get-application" "appl" "let*" "class")}
         {Lisp-Entry "save-to-file" method #f 175 11 175 23 ("0" "print-to" "form" "get-model-name" "output-header" "printer" "lambda" "get-eol-encoding" "eol-encoding:" "UTF-8" "'UTF-8" "char-encoding:" "parse" "path:" "list" "call-with-output-file" "format" "message-box" "read-only?" "exists?" "and" "if" "file")}
         {Lisp-Entry "saved-form" method #f 185 18 185 28 ("get-output-string" "print-to" "open-output-string" "printer" "let" "lambda" "with-jazz-readtable" "align-name?" "align-name?:" "space-properties?" "space-properties?:" "level" "class-form?")}
         {Lisp-Entry "print-to" method #f 193 18 193 26 ("base:" "form?:" "pretty-print" "if" "base" "form" "form->node" "node" "let" "format" "when" "align-name?" "align-name?:" "space-properties?" "space-properties?:" "printer" "level" "class-form?")}
@@ -855,64 +855,67 @@
         {Lisp-Entry "set-tag-unit" method #f 237 26 237 38 ("set-modified?" "set-tag-unit" "find-form" "form" "let" "tag-unit" "parent" "component")}
         {Lisp-Entry "set-property" method #f 243 26 243 38 ("set-modified?" "get-property" "fire-property-change" "fire-presentation-change" "presentation" "write-property" "get-presentation-property" "old-presentation" "presentation-property?" "essay" "fire-presentation?" "has-property?" "read-property" "old-value" "find-next-branch" "next-restore" "next-form" "restore?:" "find-form" "restore" "receive" "designer-error" "neq?" "get-creator-branch" "creator-branch" "when" "assert" "class-of" "property-field" "reference" "follow-component" "component" "let*" "get-client-form" "follow-form" "form" "and" "Path" "is?" "path?" "not" "or" "installed?" "set-property" "eq?" "if" "target-branch" "let" "undoable?" "undoable?:" "design-events?" "design-events?:" "branch" "branch:" "value" "property" "component/path")}
         {Lisp-Entry "remove-property" method #f 285 26 285 41 ("set-modified?" "remove-property" "set-property" "fire-property-change" "write-property" "begin" "get-property" "value" "let" "has-property?" "when" "find-next-branch" "next-restore" "next-form" "restore?:" "find-form" "restore" "form" "receive" "assert" "class-of" "property-field" "reference" "follow-component" "if" "component" "Path" "is?" "path?" "not" "or" "installed?" "target-branch" "let*" "undoable?" "undoable?:" "design-events?" "design-events?:" "branch" "branch:" "default-value" "property" "component/path")}
-        {Lisp-Entry "add-child" method #f 309 26 309 35 ("set-modified?" "fire-child-add" "set-property" "value" "property" "lambda" "for-each-property" "get-name" "add-to-index" "reference" "set-creator" "set-name" "self" "remember-creation" "when" "add-form" "set-form" "class-of" "category-name" "identifier-name" "model-name:" "'new" "action:" "get-context" "context:" "textual?:" "Form" "new" "child-form" "restore?:" "find-form" "restore" "form" "receive" "set-parent" "target-branch" "let" "descendant?" "descendant?:" "design-events?" "design-events?:" "properties" "properties:" "name" "name:" "branch" "branch:" "parent" "child")}
-        {Lisp-Entry "remove-child" method #f 335 26 335 38 ("set-modified?" "fire-child-remove" "close" "get-restore-form" "get-client-form" "for-each-branch" "remove-child" "find-child" "child-form" "owned-form" "component-ancestry" "parent-ancestry" "when" "lambda" "purge-references" "form" "find-form" "parent-form" "get-parent" "parent" "get-name" "name" "let*" "get-presentation-property" "neq?" "and" "find-owner" "owner" "either" "effective" "designer-error" "reference" "eq?" "if" "target-branch" "let" "design-events?" "design-events?:" "branch" "branch:" "child")}
+        {Lisp-Entry "add-child" method #f 309 26 309 35 ("set-modified?" "fire-child-add" "set-property" "value" "property" "lambda" "for-each-property" "get-name" "add-to-index" "reference" "set-creator" "set-name" "self" "remember-creation" "when" "add-form" "set-form" "class-of" "category-name" "model-name:" "'new" "action:" "get-context" "context:" "textual?:" "Form" "new" "child-form" "restore?:" "find-form" "restore" "form" "receive" "set-parent" "target-branch" "let" "descendant?" "descendant?:" "design-events?" "design-events?:" "properties" "properties:" "name" "name:" "branch" "branch:" "parent" "child")}
+        {Lisp-Entry "remove-child" method #f 335 26 335 38 ("set-modified?" "fire-child-remove" "close" "get-restore-form" "get-client-form" "lambda" "for-each-branch" "remove-child" "find-child" "child-form" "owned-form" "component-ancestry" "parent-ancestry" "when" "purge-references" "define" "form" "find-form" "parent-form" "get-parent" "parent" "get-name" "name" "let*" "get-presentation-property" "neq?" "and" "find-owner" "owner" "either" "effective" "designer-error" "reference" "eq?" "if" "target-branch" "let" "design-events?" "design-events?:" "branch" "branch:" "child")}
         {Lisp-Entry "remove-children" method #f 368 18 368 33 ("get-children" "remove-child" "child" "lambda" "for-each" "design-events?" "design-events?:" "branch" "branch:" "parent")}
-        {Lisp-Entry "purge-branch" method #f 376 26 376 38 ("remove-child" "install-form" "restore?:" "restore-form" "form" "receive" "find-form" "parent-form" "get-parent" "parent" "target-branch" "let*" "design-events?" "design-events?:" "branch" "branch:" "component")}
-        {Lisp-Entry "move-components" method #f 385 26 385 41 ("set-modified?" "descendant?:" "design-events?:" "name-resolution:" "instantiate-parcels" "prog1" "delete-components" "verify-name-conflicts" "name-resolution" "package-components" "parcels" "remove-redundant-descendants" "let*" "branch" "branch:" "destination" "components")}
-        {Lisp-Entry "send-before" method #f 394 26 394 37 ("set-modified?" "fire-send-before" "send-child-before" "send-before" "essay" "target-form" "child-form" "find-form" "parent-form" "get-parent" "parent" "target-branch" "let*" "branch" "branch:" "target" "child")}
-        {Lisp-Entry "send-to-back" method #f 406 18 406 30 ("get-parent" "first-child" "send-before" "branch" "branch:" "child")}
-        {Lisp-Entry "bring-to-front" method #f 410 18 410 32 ("send-before" "branch" "branch:" "child")}
-        {Lisp-Entry "cut-components" method #f 419 26 419 40 ("delete-components" "copy-components" "remove-redundant-descendants" "let" "components")}
-        {Lisp-Entry "copy-components" method #f 425 26 425 41 ("jazz-parcels" "'jazz-parcels" "format:" "set-clipboard-text" "copy-components-text" "text" "remove-redundant-descendants" "let" "components")}
-        {Lisp-Entry "copy-components-text" method #f 431 18 431 38 ("get-output-string" "get-content" "0" "print-form" "form" "get-object-id" "get-process-id" "class-of" "category-name" "identifier-name" "parcel" "lambda" "for-each" "format" "package-components" "parcels" "open-output-string" "output" "let" "branch" "branch:" "components")}
-        {Lisp-Entry "paste-clipboard" method #f 450 26 450 41 ("paste-parcels" "get-jazz-parcels" "parcels" "let" "design-events?" "design-events?:" "branch" "branch:" "parent")}
-        {Lisp-Entry "paste-parcels" method #f 455 26 455 39 ("set-modified?" "descendant?:" "name-resolution:" "instantiate-parcels" "prog1" "verify-name-conflicts" "name-resolution" "determine-paster" "let*" "reporter" "reporter:" "design-events?" "design-events?:" "branch" "branch:" "parent" "parcels")}
-        {Lisp-Entry "paste-properties" method #f 462 26 462 42 ("paste-parcel-properties" "get-jazz-parcels" "car" "parcel" "let" "design-events?" "design-events?:" "branch" "branch:" "components")}
-        {Lisp-Entry "paste-parcel-properties" method #f 467 18 467 41 ("set-modified?" "get-properties" "instantiate-properties" "form" "component" "lambda" "for-each" "get-content" "forms" "let" "design-events?" "design-events?:" "branch" "branch:" "components" "parcel")}
-        {Lisp-Entry "delete-components" method #f 477 26 477 43 ("delete-component" "component" "lambda" "for-each" "remove-redundant-descendants" "let" "design-events?" "design-events?:" "branch" "branch:" "components")}
-        {Lisp-Entry "delete-component" method #f 484 26 484 42 ("remove-child" "design-events?" "design-events?:" "branch" "branch:" "component")}
-        {Lisp-Entry "remove-redundant-descendants" method #f 490 11 490 39 ("has-parent?" "neq?" "and" "target" "some?" "not" "component" "lambda" "collect-if" "components")}
-        {Lisp-Entry "package-components" method #f 507 11 507 29 ("map" "designer-error" "object->serial" "current-process-id" "Component-Parcel" "install" "new" "car" "get-action" "memq?" "not-null?" "and" "if" "cons" "set!" "when" "owned-form" "form" "owner" "lambda" "reference" "iterate-branch-spine" "forms" "component-ancestry" "ancestry" "let" "component" "package-component" "define" "branch" "branch:" "components")}
-        {Lisp-Entry "instantiate-parcels" method #f 531 26 531 45 ("step-it" "instantiate-parcel" "prog1" "get-master-name" "user-message" "when" "parcel" "lambda" "map" "reporter" "reporter:" "descendant?" "descendant?:" "design-events?" "design-events?:" "name-resolution" "name-resolution:" "branch" "branch:" "parent" "parcels")}
-        {Lisp-Entry "instantiate-parcel" method #f 541 26 541 44 ("cdr" "instantiate-form" "component" "delete-components" "list" "name-conflicts" "conflicts" "let" "override" "set-name" "form" "lambda" "for-each" "unique-name" "set!" "rename" "case" "when" "test:" "member?" "and" "conflict?" "'equal" "sort-predicate" "equal" "map" "domain" "get-children" "brothers" "get-name" "name" "car" "master" "get-content" "forms" "let*" "descendant?" "descendant?:" "design-events?" "design-events?:" "name-resolution" "name-resolution:" "branch" "branch:" "parent" "parcel")}
-        {Lisp-Entry "instantiate-form" method #f 564 26 564 42 ("get-children" "instantiate-children" "get-properties" "instantiate-properties" "when" "instantiate-component" "component" "let" "descendant?" "design-events?" "branch" "parent" "form" "name-resolution" "name")}
-        {Lisp-Entry "instantiate-component" method #f 572 26 572 47 ("designer-error" "else" "equal" "'equal" "sort-predicate" "get-name" "find-to-modify" "locate" "modify" "instantiate-new-component" "new" "case" "get-action" "action" "let" "descendant?" "design-events?" "branch" "parent" "form" "name-resolution" "name")}
-        {Lisp-Entry "instantiate-new-component" method #f 580 26 580 51 ("descendant?:" "design-events?:" "name:" "branch:" "add-child" "parent:" "instantiate-component" "component" "let" "descendant?" "design-events?" "branch" "parent" "form" "name")}
-        {Lisp-Entry "instantiate-properties" method #f 586 26 586 48 ("undoable?:" "design-events?:" "branch:" "set-property" "value" "property" "lambda" "for-each-property" "design-events?" "branch" "properties" "component")}
-        {Lisp-Entry "instantiate-children" method #f 592 26 592 46 ("get-name" "instantiate-form" "form" "lambda" "for-each" "design-events?" "branch" "children" "component")}
-        {Lisp-Entry "unique-name" method #f 603 29 603 40 ("string->symbol" "symbol?" "if" "unique-separator" "separator:" "map" "->string" "unique-domain-name" "unique-name" "let" "domain" "name")}
-        {Lisp-Entry "unique-separator" method #f 610 29 610 45 ()}
-        {Lisp-Entry "name-conflicts" definition #f 619 15 619 29 ("name" "some?" "and" "get-name" "child-name" "child" "lambda" "collect-if" "'equal" "sort-predicate" "equal" "let" "children" "names")}
-        {Lisp-Entry "verify-name-conflicts" method #f 630 18 630 39 ("not-null?" "when" "name-conflicts" "get-children" "map" "names" "throw-cancel" "no" "override" "'override" "yes" "case" "question" "'question" "type:" "message-box" "code" "text" "let*" "rename" "'rename" "object->serial" "child" "some?" "current-process-id" "=" "and" "get-master-name" "name" "get-object-id" "component-id" "get-process-id" "process-id" "'equal" "sort-predicate" "equal" "parcel" "every?" "if" "get-output" "get-name" "->string" ":bulleted" "list" "conflict" "lambda" "for-each" "put" "List-Factory" "new" "fact" "let" "header" "present-conflicts" "conflicts" "children" "confirm-name-resolution" "define" "destination" "parcels")}
-        {Lisp-Entry "add-view" method #f 673 26 673 34 ("set-modified?" "set-visible?" "get-height" "2" "get-width" "quotient" "-" "move-figure" "get-size" "size" "let" "'position" "set-property" "when" "add-child" "apply" "others" "visible?" "visible?:" "centered?" "centered?:" "position" "position:" "name" "name:" "parent" "child")}
-        {Lisp-Entry "find-form" method #f 691 19 691 28 ("values" "and" "restore" "get-restore-form" "get-client-form" "branch-form" "component-ancestry" "let*" "add-child" "name:" "modify" "'modify" "action:" "Form" "new" "equal?" "test:" "subform" "designer-error" "get-name" "name" "get-component" "Restore-Form" "is?" "essay" "key:" "find-in" "restore-form" "set!" "memq?" "embed-new-form" "not" "if" "get-form" "cpn-form" "get-children" "children" "let" "cpn" "lambda" "for-each" "ancestry" "form" "embed-form" "define" "error?" "error?:" "restore?" "restore?:" "branch" "component")}
-        {Lisp-Entry "target-branch" method #f 730 11 730 24 ("else" "follow-component" "Path" "is?" "reference" "get-active-branch" "eq?" "cond" "branch")}
-        {Lisp-Entry "component-ancestry" method #f 736 11 736 29 ("designer-error" "not" "when" "get-parent-component" "cons" "set!" "reference" "neq?" "while" "scan" "ancestry" "let" "component")}
-        {Lisp-Entry "find-owner" method #f 752 18 752 28 ("continuation-return" "has-property?" "new" "'new" "get-action" "eq?" "not" "or" "and" "owned-form" "when" "form" "owner" "reference" "iterate-branch-spine" "return" "lambda" "continuation-capture" "component-ancestry" "ancestry" "let" "property" "component")}
-        {Lisp-Entry "find-next-branch" method #f 767 11 767 27 ("get-restore-form" "continuation-return" "has-property?" "owned-form" "form" "when" "get-client-form" "client-form" "for-each" "return" "lambda" "continuation-capture" "component-ancestry" "ancestry" "reference" "either" "get-installed-branches" "lower" "let" "values" "installed?" "not" "and" "if" "property" "component" "branch")}
-        {Lisp-Entry "owned-form" definition #f 784 15 784 25 ("equal?" "test:" "key:" "find-in" "subform" "get-name" "name" "set!" "memq?" "continuation-return" "not" "if" "get-form" "cpn-form" "get-children" "children" "let" "cpn" "for-each" "return" "lambda" "continuation-capture" "ancestry" "form")}
-        {Lisp-Entry "get-name" method #f 814 18 814 26 ("follow-form" "get-name" "get-client-form" "if" "form" "target-branch" "let*" "branch" "branch:" "path")}
-        {Lisp-Entry "get-property" method #f 820 18 820 30 ("follow-form" "get-property" "get-client-form" "if" "form" "target-branch" "let*" "branch" "branch:" "property" "path")}
-        {Lisp-Entry "edit-form" method #f 831 18 831 27 ("get-name" "locator->entry" "edit" "else" "Jazz-Text-View" "class:" "edit-document" "file?" "bell" "not" "cond" "form" "get-origin" "origin" "get-application" "appl" "let")}
-        {Lisp-Entry "designer-error" method #f 847 11 847 25 ("format" "apply" "message:" "Designer-Error" "new" "signal" "rest")}
-        {Lisp-Entry "safe-set-property" method #f 851 18 851 35 ("set-property" "apply" "lambda" "with-safe-design" "rest")}
-        {Lisp-Entry "fire-name-change" definition #f 862 15 862 31 ("get-designers" "process-name-change" "designer" "lambda" "for-each" "undoable?" "old-name" "name" "component")}
-        {Lisp-Entry "fire-presentation-change" definition #f 868 15 868 39 ("get-designers" "process-presentation-change" "designer" "lambda" "for-each" "undoable?" "old-presentation" "presentation" "component")}
-        {Lisp-Entry "fire-property-change" definition #f 874 15 874 35 ("get-designers" "process-property-change" "designer" "lambda" "for-each" "undoable?" "value" "property" "component" "branch")}
-        {Lisp-Entry "fire-child-add" definition #f 880 15 880 29 ("get-designers" "process-child-add" "designer" "lambda" "for-each" "descendant?" "parent" "child")}
-        {Lisp-Entry "fire-child-remove" definition #f 886 15 886 32 ("get-designers" "process-child-remove" "designer" "lambda" "for-each" "parent" "child")}
-        {Lisp-Entry "fire-send-before" definition #f 892 15 892 31 ("get-designers" "process-send-before" "designer" "lambda" "for-each" "target" "parent" "child")}
-        {Lisp-Entry "add-designer-listener" method #f 903 18 903 39 ("add-listener" "listeners" "set!" "listener")}
-        {Lisp-Entry "remove-designer-listener" method #f 907 18 907 42 ("remove-listener" "listeners" "set!" "listener")}
-        {Lisp-Entry "process-name-change" method #f 911 11 911 30 ("invoke" "listener" "lambda" "for-each" "undoable?:" "old-name:" "name:" "component:" "self" ":name-change" "Designer-Event" "new" "evt" "let" "listeners" "not-null?" "when" "undoable?" "old-name" "name" "component")}
-        {Lisp-Entry "process-presentation-change" method #f 919 11 919 38 ("invoke" "listener" "lambda" "for-each" "undoable?:" "old-presentation:" "presentation:" "component:" "self" ":presentation-change" "Designer-Event" "new" "evt" "let" "listeners" "not-null?" "when" "undoable?" "old-presentation" "presentation" "component")}
-        {Lisp-Entry "process-property-change" method #f 927 11 927 34 ("invoke" "listener" "lambda" "for-each" "undoable?:" "value:" "property:" "component:" "branch:" "self" ":property-change" "Designer-Event" "new" "evt" "let" "listeners" "not-null?" "when" "undoable?" "value" "property" "component" "branch")}
-        {Lisp-Entry "process-child-add" method #f 935 11 935 28 ("invoke" "listener" "lambda" "for-each" "descendant?:" "parent:" "child:" "self" ":child-add" "Designer-Event" "new" "evt" "let" "listeners" "not-null?" "when" "descendant?" "parent" "child")}
-        {Lisp-Entry "process-child-remove" method #f 943 11 943 31 ("invoke" "listener" "lambda" "for-each" "parent:" "child:" "self" ":child-remove" "Designer-Event" "new" "evt" "let" "listeners" "not-null?" "when" "parent" "child")}
-        {Lisp-Entry "process-send-before" method #f 951 11 951 30 ("invoke" "listener" "lambda" "for-each" "target:" "parent:" "child:" "self" ":send-before" "Designer-Event" "new" "evt" "let" "listeners" "not-null?" "when" "target" "parent" "child")}
-        {Lisp-Entry "process-refresh" method #f 959 18 959 33 ("invoke" "listener" "lambda" "for-each" "what:" "component:" "self" ":refresh" "Designer-Event" "new" "evt" "let" "listeners" "not-null?" "when" "what" "component")}
-        {Lisp-Entry "process-user-event" method #f 967 18 967 36 ("self" "invoke" "listener" "lambda" "for-each" "listeners" "not-null?" "when" "event")}}}})
+        {Lisp-Entry "move-component" method #f 374 18 374 32 ("list" "move-components" "branch" "branch:" "destination" "component")}
+        {Lisp-Entry "move-components" method #f 378 26 378 41 ("set-modified?" "component-form" "set-parent" "component" "lambda" "for-each" "destination-form" "let" "form" "get-creator" "get-form" "eq?" "assert" "branch" "branch:" "destination" "components")}
+        {Lisp-Entry "can-move-component?" method #f 390 18 390 37 ("form" "get-creator" "get-form" "eq?" "and" "destination" "component")}
+        {Lisp-Entry "transfer-components" method #f 395 26 395 45 ("set-modified?" "descendant?:" "design-events?:" "name-resolution:" "instantiate-parcels" "prog1" "delete-components" "verify-name-conflicts" "name-resolution" "package-components" "parcels" "remove-redundant-descendants" "let*" "branch" "branch:" "destination" "components")}
+        {Lisp-Entry "send-before" method #f 404 26 404 37 ("set-modified?" "fire-send-before" "send-child-before" "send-before" "essay" "target-form" "child-form" "find-form" "parent-form" "get-parent" "parent" "target-branch" "let*" "branch" "branch:" "target" "child")}
+        {Lisp-Entry "send-to-back" method #f 416 18 416 30 ("get-parent" "first-child" "send-before" "branch" "branch:" "child")}
+        {Lisp-Entry "bring-to-front" method #f 420 18 420 32 ("send-before" "branch" "branch:" "child")}
+        {Lisp-Entry "purge-branch" method #f 426 26 426 38 ("remove-child" "install-form" "restore?:" "restore-form" "form" "receive" "find-form" "parent-form" "get-parent" "parent" "target-branch" "let*" "design-events?" "design-events?:" "branch" "branch:" "component")}
+        {Lisp-Entry "cut-components" method #f 440 26 440 40 ("delete-components" "copy-components" "remove-redundant-descendants" "let" "components")}
+        {Lisp-Entry "copy-components" method #f 446 26 446 41 ("jazz-parcels" "'jazz-parcels" "format:" "set-clipboard-text" "copy-components-text" "text" "remove-redundant-descendants" "let" "components")}
+        {Lisp-Entry "copy-components-text" method #f 452 18 452 38 ("get-output-string" "get-content" "0" "print-form" "form" "get-object-id" "get-process-id" "class-of" "category-name" "parcel" "lambda" "for-each" "format" "package-components" "parcels" "open-output-string" "output" "let" "branch" "branch:" "components")}
+        {Lisp-Entry "paste-clipboard" method #f 471 26 471 41 ("paste-parcels" "get-jazz-parcels" "parcels" "let" "design-events?" "design-events?:" "branch" "branch:" "parent")}
+        {Lisp-Entry "paste-parcels" method #f 476 26 476 39 ("set-modified?" "descendant?:" "name-resolution:" "instantiate-parcels" "prog1" "verify-name-conflicts" "name-resolution" "determine-paster" "let*" "reporter" "reporter:" "design-events?" "design-events?:" "branch" "branch:" "parent" "parcels")}
+        {Lisp-Entry "paste-properties" method #f 483 26 483 42 ("paste-parcel-properties" "get-jazz-parcels" "car" "parcel" "let" "design-events?" "design-events?:" "branch" "branch:" "components")}
+        {Lisp-Entry "paste-parcel-properties" method #f 488 18 488 41 ("set-modified?" "get-properties" "instantiate-properties" "form" "component" "lambda" "for-each" "get-content" "forms" "let" "design-events?" "design-events?:" "branch" "branch:" "components" "parcel")}
+        {Lisp-Entry "delete-components" method #f 498 26 498 43 ("delete-component" "component" "lambda" "for-each" "remove-redundant-descendants" "let" "design-events?" "design-events?:" "branch" "branch:" "components")}
+        {Lisp-Entry "delete-component" method #f 505 26 505 42 ("remove-child" "design-events?" "design-events?:" "branch" "branch:" "component")}
+        {Lisp-Entry "remove-redundant-descendants" method #f 511 11 511 39 ("has-parent?" "neq?" "and" "target" "some?" "not" "component" "lambda" "collect-if" "components")}
+        {Lisp-Entry "package-components" method #f 528 11 528 29 ("map" "designer-error" "object->serial" "current-process-id" "Component-Parcel" "install" "new" "car" "get-action" "memq?" "not-null?" "and" "if" "cons" "set!" "when" "owned-form" "form" "owner" "lambda" "reference" "iterate-branch-spine" "forms" "component-ancestry" "ancestry" "let" "component" "package-component" "define" "branch" "branch:" "components")}
+        {Lisp-Entry "instantiate-parcels" method #f 552 26 552 45 ("step-it" "instantiate-parcel" "prog1" "get-master-name" "user-message" "when" "parcel" "lambda" "map" "reporter" "reporter:" "descendant?" "descendant?:" "design-events?" "design-events?:" "name-resolution" "name-resolution:" "branch" "branch:" "parent" "parcels")}
+        {Lisp-Entry "instantiate-parcel" method #f 562 26 562 44 ("cdr" "instantiate-form" "component" "delete-components" "list" "name-conflicts" "conflicts" "let" "override" "set-name" "form" "lambda" "for-each" "unique-name" "set!" "rename" "case" "when" "test:" "member?" "and" "conflict?" "'equal" "sort-predicate" "equal" "map" "domain" "get-children" "brothers" "get-name" "name" "car" "master" "get-content" "forms" "let*" "descendant?" "descendant?:" "design-events?" "design-events?:" "name-resolution" "name-resolution:" "branch" "branch:" "parent" "parcel")}
+        {Lisp-Entry "instantiate-form" method #f 585 26 585 42 ("get-children" "instantiate-children" "get-properties" "instantiate-properties" "when" "instantiate-component" "component" "let" "descendant?" "design-events?" "branch" "parent" "form" "name-resolution" "name")}
+        {Lisp-Entry "instantiate-component" method #f 593 26 593 47 ("designer-error" "else" "equal" "'equal" "sort-predicate" "get-name" "find-to-modify" "locate" "modify" "instantiate-new-component" "new" "case" "get-action" "action" "let" "descendant?" "design-events?" "branch" "parent" "form" "name-resolution" "name")}
+        {Lisp-Entry "instantiate-new-component" method #f 601 26 601 51 ("descendant?:" "design-events?:" "name:" "branch:" "add-child" "parent:" "instantiate-component" "component" "let" "descendant?" "design-events?" "branch" "parent" "form" "name")}
+        {Lisp-Entry "instantiate-properties" method #f 607 26 607 48 ("undoable?:" "design-events?:" "branch:" "set-property" "value" "property" "lambda" "for-each-property" "design-events?" "branch" "properties" "component")}
+        {Lisp-Entry "instantiate-children" method #f 613 26 613 46 ("get-name" "instantiate-form" "form" "lambda" "for-each" "design-events?" "branch" "children" "component")}
+        {Lisp-Entry "unique-name" method #f 624 29 624 40 ("string->symbol" "symbol?" "if" "unique-separator" "separator:" "map" "->string" "unique-domain-name" "unique-name" "let" "domain" "name")}
+        {Lisp-Entry "unique-separator" method #f 631 29 631 45 ()}
+        {Lisp-Entry "name-conflicts" definition #f 640 15 640 29 ("name" "some?" "and" "get-name" "child-name" "child" "lambda" "collect-if" "'equal" "sort-predicate" "equal" "let" "children" "names")}
+        {Lisp-Entry "verify-name-conflicts" method #f 651 18 651 39 ("not-null?" "when" "name-conflicts" "get-children" "map" "names" "throw-cancel" "no" "override" "'override" "yes" "case" "question" "'question" "type:" "message-box" "code" "text" "let*" "rename" "'rename" "object->serial" "child" "some?" "current-process-id" "=" "and" "get-master-name" "name" "get-object-id" "component-id" "get-process-id" "process-id" "'equal" "sort-predicate" "equal" "parcel" "every?" "if" "get-output" "get-name" "->string" ":bulleted" "list" "conflict" "lambda" "for-each" "put" "List-Factory" "new" "fact" "let" "header" "present-conflicts" "conflicts" "children" "confirm-name-resolution" "define" "destination" "parcels")}
+        {Lisp-Entry "add-view" method #f 694 26 694 34 ("set-modified?" "set-visible?" "get-height" "2" "get-width" "quotient" "-" "move-figure" "get-size" "size" "let" "'position" "set-property" "when" "add-child" "apply" "others" "visible?" "visible?:" "centered?" "centered?:" "position" "position:" "name" "name:" "parent" "child")}
+        {Lisp-Entry "find-form" method #f 712 19 712 28 ("values" "and" "restore" "get-restore-form" "get-client-form" "branch-form" "component-ancestry" "let*" "add-child" "name:" "modify" "'modify" "action:" "Form" "new" "equal?" "test:" "subform" "designer-error" "get-name" "name" "get-component" "Restore-Form" "is?" "essay" "key:" "find-in" "restore-form" "set!" "memq?" "embed-new-form" "not" "if" "get-form" "cpn-form" "get-children" "children" "let" "cpn" "lambda" "for-each" "ancestry" "form" "embed-form" "define" "error?" "error?:" "restore?" "restore?:" "branch" "component")}
+        {Lisp-Entry "target-branch" method #f 751 11 751 24 ("else" "follow-component" "Path" "is?" "reference" "get-active-branch" "eq?" "cond" "branch")}
+        {Lisp-Entry "component-ancestry" method #f 757 11 757 29 ("designer-error" "not" "when" "get-parent-component" "cons" "set!" "reference" "neq?" "while" "scan" "ancestry" "let" "component")}
+        {Lisp-Entry "find-owner" method #f 773 18 773 28 ("continuation-return" "has-property?" "new" "'new" "get-action" "eq?" "not" "or" "and" "owned-form" "when" "form" "owner" "reference" "iterate-branch-spine" "return" "lambda" "continuation-capture" "component-ancestry" "ancestry" "let" "property" "component")}
+        {Lisp-Entry "find-next-branch" method #f 788 11 788 27 ("get-restore-form" "continuation-return" "has-property?" "owned-form" "form" "when" "get-client-form" "client-form" "for-each" "return" "lambda" "continuation-capture" "component-ancestry" "ancestry" "reference" "either" "get-installed-branches" "lower" "let" "values" "installed?" "not" "and" "if" "property" "component" "branch")}
+        {Lisp-Entry "owned-form" definition #f 805 15 805 25 ("equal?" "test:" "key:" "find-in" "subform" "get-name" "name" "set!" "memq?" "continuation-return" "not" "if" "get-form" "cpn-form" "get-children" "children" "let" "cpn" "for-each" "return" "lambda" "continuation-capture" "ancestry" "form")}
+        {Lisp-Entry "get-name" method #f 835 18 835 26 ("follow-form" "get-name" "get-client-form" "if" "form" "target-branch" "let*" "branch" "branch:" "path")}
+        {Lisp-Entry "get-property" method #f 841 18 841 30 ("follow-form" "get-property" "get-client-form" "if" "form" "target-branch" "let*" "branch" "branch:" "property" "path")}
+        {Lisp-Entry "edit-form" method #f 852 18 852 27 ("get-name" "locator->entry" "edit" "else" "Jazz-Text-View" "class:" "edit-document" "file?" "bell" "not" "cond" "form" "get-origin" "origin" "get-application" "appl" "let")}
+        {Lisp-Entry "designer-error" method #f 868 11 868 25 ("format" "apply" "message:" "Designer-Error" "new" "signal" "rest")}
+        {Lisp-Entry "safe-set-property" method #f 872 18 872 35 ("set-property" "apply" "lambda" "with-safe-design" "rest")}
+        {Lisp-Entry "fire-name-change" definition #f 883 15 883 31 ("get-designers" "process-name-change" "designer" "lambda" "for-each" "undoable?" "old-name" "name" "component")}
+        {Lisp-Entry "fire-presentation-change" definition #f 889 15 889 39 ("get-designers" "process-presentation-change" "designer" "lambda" "for-each" "undoable?" "old-presentation" "presentation" "component")}
+        {Lisp-Entry "fire-property-change" definition #f 895 15 895 35 ("get-designers" "process-property-change" "designer" "lambda" "for-each" "undoable?" "value" "property" "component" "branch")}
+        {Lisp-Entry "fire-child-add" definition #f 901 15 901 29 ("get-designers" "process-child-add" "designer" "lambda" "for-each" "descendant?" "parent" "child")}
+        {Lisp-Entry "fire-child-remove" definition #f 907 15 907 32 ("get-designers" "process-child-remove" "designer" "lambda" "for-each" "parent" "child")}
+        {Lisp-Entry "fire-send-before" definition #f 913 15 913 31 ("get-designers" "process-send-before" "designer" "lambda" "for-each" "target" "parent" "child")}
+        {Lisp-Entry "add-designer-listener" method #f 924 18 924 39 ("add-listener" "listeners" "set!" "listener")}
+        {Lisp-Entry "remove-designer-listener" method #f 928 18 928 42 ("remove-listener" "listeners" "set!" "listener")}
+        {Lisp-Entry "process-name-change" method #f 932 11 932 30 ("invoke" "listener" "lambda" "for-each" "undoable?:" "old-name:" "name:" "component:" "self" ":name-change" "Designer-Event" "new" "evt" "let" "listeners" "not-null?" "when" "undoable?" "old-name" "name" "component")}
+        {Lisp-Entry "process-presentation-change" method #f 940 11 940 38 ("invoke" "listener" "lambda" "for-each" "undoable?:" "old-presentation:" "presentation:" "component:" "self" ":presentation-change" "Designer-Event" "new" "evt" "let" "listeners" "not-null?" "when" "undoable?" "old-presentation" "presentation" "component")}
+        {Lisp-Entry "process-property-change" method #f 948 11 948 34 ("invoke" "listener" "lambda" "for-each" "undoable?:" "value:" "property:" "component:" "branch:" "self" ":property-change" "Designer-Event" "new" "evt" "let" "listeners" "not-null?" "when" "undoable?" "value" "property" "component" "branch")}
+        {Lisp-Entry "process-child-add" method #f 956 11 956 28 ("invoke" "listener" "lambda" "for-each" "descendant?:" "parent:" "child:" "self" ":child-add" "Designer-Event" "new" "evt" "let" "listeners" "not-null?" "when" "descendant?" "parent" "child")}
+        {Lisp-Entry "process-child-remove" method #f 964 11 964 31 ("invoke" "listener" "lambda" "for-each" "parent:" "child:" "self" ":child-remove" "Designer-Event" "new" "evt" "let" "listeners" "not-null?" "when" "parent" "child")}
+        {Lisp-Entry "process-send-before" method #f 972 11 972 30 ("invoke" "listener" "lambda" "for-each" "target:" "parent:" "child:" "self" ":send-before" "Designer-Event" "new" "evt" "let" "listeners" "not-null?" "when" "target" "parent" "child")}
+        {Lisp-Entry "process-refresh" method #f 980 18 980 33 ("invoke" "listener" "lambda" "for-each" "what:" "component:" "self" ":refresh" "Designer-Event" "new" "evt" "let" "listeners" "not-null?" "when" "what" "component")}
+        {Lisp-Entry "process-user-event" method #f 988 18 988 36 ("self" "invoke" "listener" "lambda" "for-each" "listeners" "not-null?" "when" "event")}}}})
 "Designer-Error"
  ({Lisp-File-Entry {File jazz.designer "src" "jazz" "designer" "designer" "Designer-Error.jazz"} 1259266728
     {Lisp-Entry "jazz.designer.designer.Designer-Error" module #f 37 18 37 55 ("jazz")
@@ -922,7 +925,7 @@
     {Lisp-Entry "jazz.designer.event.Designer-Event" module #f 37 18 37 52 ("jazz")
       {Lisp-Entry "Designer-Event" class #f 43 7 43 21 ("Event")}}})
 "Designer-Manager"
- ({Lisp-File-Entry {File jazz.designer "src" "jazz" "designer" "manager" "Designer-Manager.jazz"} 1265747956
+ ({Lisp-File-Entry {File jazz.designer "src" "jazz" "designer" "manager" "Designer-Manager.jazz"} 1267117175
     {Lisp-Entry "jazz.designer.manager.Designer-Manager" module #f 37 18 37 56 ("jazz")
       {Lisp-Entry "Designer-Manager" class #f 48 7 48 23 ("on-edit-form" "edit-form" "on-toggle-try-out" "try-out" "on-toggle-content" "content" "on-toggle-frames" "frames" "rect" "mode-rect" "0" "2" "select" "mode:" "on-mode" ":form" "Event-Handler" "action-handler:" "tooltip-text:" "tooltip?:" "selected?:" ":images" "portfolio:" "Image-Resource" "resource:" "22" "Dimension" "size:" "mode-select" "name:" "explicit" "initialize" "View")
         {Lisp-Entry "client" property #f 51 12 51 18 ()}
@@ -945,9 +948,9 @@
         {Lisp-Entry "get-client" method #f 161 18 161 28 ("client")}
         {Lisp-Entry "set-client" method #f 165 18 165 28 ("client-update" "client" "set!" "clt")}
         {Lisp-Entry "client-update" method #f 170 11 170 24 ("trying-out?" "get-show-content?" "get-show-frames?" "and" "set-selected?" "try-out" "'try-out" "try-out-button" "content" "'content" "content-button" "frames" "'frames" "frames-button" "let" "edit-form" "'edit-form" "mode-rect" "'mode-rect" "client" "mode-select" "'mode-select" "locate" "set-enabled?")}
-        {Lisp-Entry "set-designer" method #f 191 11 191 23 ("class-of" "category-name" "format" "get-reference" "reference" "let" "set-title" "not" "if" "designer")}}}})
+        {Lisp-Entry "set-designer" method #f 191 11 191 23 ("class-of" "category-identifier" "format" "get-reference" "reference" "let" "set-title" "not" "if" "designer")}}}})
 "Designer-Preferences"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "preference" "Designer-Preferences.jazz"} 1267024518
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "preference" "Designer-Preferences.jazz"} 1268082672
     {Lisp-Entry "jazz.designer.preference.Designer-Preferences" module #f 37 18 37 63 ("jazz")
       {Lisp-Entry "Designer-Preferences" class #f 46 20 46 40 ("Image-Resource" "icon:" "title:" "initialize" "Preferences")
         {Lisp-Entry "aligned-properties" property #f 49 12 49 30 ()}
@@ -967,11 +970,6 @@
           {Lisp-Entry "component-get-row-instance" method #f 103 20 103 46 ("nextmethod" "else" "Boolean-Row" "new-requests-name?" "List-Row" "new" "aligned-properties" "field-name" "case" "property" "component")}
           {Lisp-Entry "component-get-categorized-properties" method #f 110 20 110 56 ("new-requests-name?" "component")}
           {Lisp-Entry "component-get-addable-classes" method #f 115 20 115 49 ("Indented-Column-Preferences" "Aligned-Column-Preferences" "list" "component")}}}}})
-"Designer-Workspace"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "workspace" "Designer-Workspace.jazz"} 1264605818
-    {Lisp-Entry "jazz.designer.workspace.Designer-Workspace" module #f 37 18 37 60 ("jazz")
-      {Lisp-Entry "Designer-Workspace" class #f 46 20 46 38 ("Lisp-Console-Manager" "Properties-Manager" "-20" "caption?:" "Text-Palette" "-37" "maximized?:" "Containment-Editor" "Alignment-Editor" "Designer-Manager" "170" "146" "58" "-300" "View-Descendants-Editor" "Branches-Editor" "second" "Toolbox-Manager" "model-name:" "65" "52" "vert" "5" "Rect" "insets:" "18" "division:" "relative" "mode:" "horz" "orientation:" "first" "location:" "top" "status" "toolbar" "menubar" "name:" "View-Editor" "frame-model:" ":shift" ":alt" "Shortcut" "shortcut:" "Image-Resource" "icon:" "title:" "Standard-Workspace")
-        {Lisp-Entry "default-name" method #f 79 20 79 32 ("designer" "'designer")}}}})
 "Details-Card"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "details" "Details-Card.jazz"} 1259266728
     {Lisp-Entry "jazz.designer.details.Details-Card" module #f 37 18 37 52 ("jazz")
@@ -1028,7 +1026,7 @@
         {Lisp-Entry "get-edited-value" method #f 89 20 89 36 ("=" "empty-string?" "or" "if" "editor" "get-body" "get-string-content" "string" "let")}
         {Lisp-Entry "set-edited-value" method #f 96 20 96 36 ("present" "editor" "get-body" "set-string-content" "value")}}}})
 "Details-Tree"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "editor" "Details-Tree.jazz"} 1267045799
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "editor" "Details-Tree.jazz"} 1267100196
     {Lisp-Entry "jazz.designer.editor.Details-Tree" module #f 37 18 37 51 ("jazz")
       {Lisp-Entry "Details-Tree" class #f 47 20 47 32 ("on-selection-change" ":self" "Event-Handler" "selection-handler:" "row" "selection-mode:" "multiple-selection?:" ":images" "portfolio:" "reorderable?:" "draggable?:" "initialize" "Components-Tree")
         {Lisp-Entry "base" property #f 50 12 50 16 ()}
@@ -1074,7 +1072,7 @@
         {Lisp-Entry "initialize" method #f 52 20 52 30 ("dir" "'dir" "editor" "set-protocol" "nextmethod" "apply" "others" "parameters" "bind-keywords" "rest")}
         {Lisp-Entry "combo-choose" method #f 63 11 63 23 ("focus-editor" "enter-edited-value" "set-edited-value" "choose-directory" "dir" "let")}}}})
 "Dispatch-Designer"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "designer" "Dispatch-Designer.jazz"} 1259266728
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "designer" "Dispatch-Designer.jazz"} 1268318349
     {Lisp-Entry "jazz.designer.designer.Dispatch-Designer" module #f 37 18 37 58 ("jazz")
       {Lisp-Entry "Dispatch-Designer" class #f 43 20 43 37 ("Designer")}
       {Lisp-Entry "Dispatch-Designer" class #f 49 20 49 37 ("initialize" "Designer")
@@ -1095,8 +1093,8 @@
         {Lisp-Entry "add-child" method #f 145 11 145 20 ("add-child" "" "get-project-designer" "designer" "nextmethod" "apply" "reference" "eq?" "not" "or" "if" "find-modification-owner" "owner" "let" "others" "use-owner?" "bind-keywords" "rest" "parent" "child")}
         {Lisp-Entry "remove-child" method #f 154 11 154 23 ("remove-child" "" "get-project-designer" "designer" "let" "nextmethod" "apply" "reference" "eq?" "if" "find-modification-owner" "owner" "get-parent" "parent" "let*" "rest" "child")}
         {Lisp-Entry "instantiate-parcels" method #f 164 11 164 30 ("instantiate-parcels" "" "get-project-designer" "designer" "nextmethod" "apply" "reference" "eq?" "if" "find-modification-owner" "owner" "let" "rest" "parent" "parcels")}
-        {Lisp-Entry "move-components" method #f 173 11 173 26 ("move-components" "" "get-project-designer" "designer" "rest" "nextmethod" "apply" "reference" "eq?" "if" "verify-name-conflicts" "package-components" "let*" "set-modified?" "descendant?:" "design-events?:" "name-resolution" "name-resolution:" "parcels" "instantiate-parcels" "prog1" "delete-components" "destination-owner" "get-parent" "find-modification-owner" "component" "lambda" "key:" "uniform" "owner" "let" "branch" "branch:" "destination" "components")}
-        {Lisp-Entry "move-components" method #f 189 11 189 26 ("set-modified?" "descendant?:" "design-events?:" "name-resolution:" "instantiate-parcels" "prog1" "delete-components" "verify-name-conflicts" "name-resolution" "package-components" "parcels" "let*" "branch" "branch:" "destination" "components")}
+        {Lisp-Entry "transfer-components" method #f 173 11 173 30 ("transfer-components" "" "get-project-designer" "designer" "rest" "nextmethod" "apply" "reference" "eq?" "if" "verify-name-conflicts" "package-components" "let*" "set-modified?" "descendant?:" "design-events?:" "name-resolution" "name-resolution:" "parcels" "instantiate-parcels" "prog1" "delete-components" "destination-owner" "get-parent" "find-modification-owner" "component" "lambda" "key:" "uniform" "owner" "let" "branch" "branch:" "destination" "components")}
+        {Lisp-Entry "transfer-components" method #f 189 11 189 30 ("set-modified?" "descendant?:" "design-events?:" "name-resolution:" "instantiate-parcels" "prog1" "delete-components" "verify-name-conflicts" "name-resolution" "package-components" "parcels" "let*" "branch" "branch:" "destination" "components")}
         {Lisp-Entry "cut-components" method #f 202 11 202 25 ("cut-components" "get-project-designer" "designer" "let" "nextmethod" "reference" "eq?" "if" "find-modification-owner" "owner" "get-parents" "parents" "let*" "components")}
         {Lisp-Entry "copy-components" method #f 211 11 211 26 ("copy-components" "get-project-designer" "designer" "let" "nextmethod" "reference" "eq?" "if" "find-modification-owner" "owner" "get-parents" "parents" "let*" "components")}
         {Lisp-Entry "paste-clipboard" method #f 220 11 220 26 ("paste-clipboard" "" "get-project-designer" "designer" "nextmethod" "apply" "reference" "eq?" "if" "find-modification-owner" "owner" "let" "rest" "parent")}
@@ -1105,7 +1103,7 @@
         {Lisp-Entry "find-modification-owner" method #f 244 11 244 34 ("car" "error" "1" "length" ">" "map" "remove-duplicates" "owners" "let" "pair?" "get-parent" "install-designer?" "reference" "eq?" "or" "if" "component" "lambda" "find-owner-project" "letrec" "components")}
         {Lisp-Entry "save-designer" method #f 263 21 263 34 ("designer" "project" "lambda" "for-each-designer" "save" "set!" "get-modified?" "when" "some-modified?" "let")}}}})
 "Domain"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "domain" "Domain.jazz"} 1267024518
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "domain" "Domain.jazz"} 1268082672
     {Lisp-Entry "jazz.designer.domain.Domain" module #f 37 18 37 45 ("jazz")
       {Lisp-Entry "Domain" class #f 45 7 45 13 ("attributes" "Node")
         {Lisp-Entry "nullable?" definition #f 49 5 49 14 ()}
@@ -1114,7 +1112,7 @@
         {Lisp-Entry "validate" method #f 57 26 57 34 ("validate-value" "field-name" "property:" "class-of" "property-presentation" "localize" "format" "message:" "Integrity-Violation" "new" "add-violation" "nullable?" "when" "not" "if" "manager" "context" "client" "root" "component" "value" "property")}
         {Lisp-Entry "validate-value" method #f 64 26 64 40 ("manager" "context" "client" "root" "component" "value" "property")}
         {Lisp-Entry "validate-text" method #f 68 26 68 39 ("text")}
-        {Lisp-Entry "present" method #f 77 26 77 33 ("present" "'present" "unimplemented" "value")}
+        {Lisp-Entry "present" method #f 77 26 77 33 ("self" "class-of" "category-name" "error" "value")}
         {Lisp-Entry "setup-entry" method #f 86 26 86 37 ("client" "view")}
         {Lisp-Entry "setup-list-entry" method #f 90 26 90 42 ("client" "view")}
         {Lisp-Entry "get-property-presentation" method #f 99 26 99 51 ("get-entry" "get-presentation" "view")}
@@ -1144,7 +1142,7 @@
         {Lisp-Entry "setup-names" method #f 126 11 126 22 ("names" "list" "children:" "add-row" "user-data:" "color:" "checked?:" "title:" "parent:" "font:" "Check-Box" "checkbox" "selected" "member?" "checked?" "cadr" "localize" "title" "car" "string?" "name" "Label" "Label-Bold" "Font" "filled" "'filled" "size" "eq?" "if" "font" "Black" "name:" "Color" "color" "4" "Rect" "layout-insets:" "fill" "'fill" "layout-type:" "Layout-View" "new" "layout" "0" "border" "let*" "info" "for-each" "remove-every-row" "lambda" "with-update-locked" "tree")}
         {Lisp-Entry "get-modal-result" method #f 148 20 148 36 ("get-output" "put" "name" "get-checked?" "Check-Box" "is?" "and" "when" "get-user-data" "checkbox" "rank" "row" "lambda" "for-each-row" "List-Factory" "new" "fact" "get-tree" "tree" "let")}}}})
 "Domain-Row"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "row" "Domain-Row.jazz"} 1267024518
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "row" "Domain-Row.jazz"} 1268082672
     {Lisp-Entry "jazz.designer.row.Domain-Row" module #f 37 18 37 46 ("jazz")
       {Lisp-Entry "Domain-Row" class #f 45 20 45 30 ("initialize" "Value-Row")
         {Lisp-Entry "domain" property #f 48 12 48 18 ()}
@@ -1179,7 +1177,7 @@
         {Lisp-Entry "layout" method #f 63 20 63 26 ("get-height" "get-width" "-" "Dimension" "set-size" "0" "Point" "new" "set-position" "1" "get-indentation" "level" "*" "12" "+" "width" "get-size" "size" "get-tree" "tree" "let*" "editor" "when")}
         {Lisp-Entry "draw" method #f 77 20 77 24 ("get-height" "get-width" "self" "draw-level" "get-node-column" "column" "get-tree" "tree" "let*" "lv" "lh" "context" "surface")}}}})
 "Editor-View"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "editor" "Editor-View.jazz"} 1265747956
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "editor" "Editor-View.jazz"} 1267117175
     {Lisp-Entry "jazz.designer.editor.Editor-View" module #f 37 18 37 50 ("jazz")
       {Lisp-Entry "Editor-View" class #f 52 20 52 31 ("explicit" "initialize" "Document" "Layout-View")
         {Lisp-Entry "client" property #f 55 12 55 18 ()}
@@ -1272,15 +1270,15 @@
         {Lisp-Entry "process-property-selected" method #f 640 18 640 43 ("invoke" "listener" "lambda" "for-each" "property:" "self" ":property-selected" "Editor-Event" "new" "evt" "let" "listeners" "when" "property")}
         {Lisp-Entry "process-saving" method #f 648 18 648 32 ("invoke" "listener" "lambda" "for-each" "self" ":saving" "Editor-Event" "new" "evt" "let" "listeners" "when")}
         {Lisp-Entry "process-saved" method #f 656 18 656 31 ("invoke" "listener" "lambda" "for-each" "self" ":saved" "Editor-Event" "new" "evt" "let" "listeners" "when")}
-        {Lisp-Entry "editor-title" method #f 669 26 669 38 ("class-of" "category-name" "format" "not" "if" "get-reference" "reference" "let")}}
+        {Lisp-Entry "editor-title" method #f 669 26 669 38 ("class-of" "category-identifier" "format" "not" "if" "get-reference" "reference" "let")}}
       {Lisp-Entry "Editor-Undoer" class #f 681 7 681 20 ("Undoer")
         {Lisp-Entry "play-action" method #f 684 20 684 31 ("play-action" "'play-action" "unimplemented" "action")}}}})
 "Editor-View-Controller"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "editor" "Editor-View-Controller.jazz"} 1259266728
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "editor" "Editor-View-Controller.jazz"} 1267117175
     {Lisp-Entry "jazz.designer.editor.Editor-View-Controller" module #f 37 18 37 61 ("jazz")
       {Lisp-Entry "Editor-View-Controller" class #f 45 20 45 42 ("Document-Controller")
         {Lisp-Entry "save" method #f 49 20 49 24 ("document" "save-content-patch")}
-        {Lisp-Entry "name-status" method #f 53 20 53 31 ("category-name" "identifier-name" "else" "get-name" "file?" "effective-newname" "not" "cond" "format" "origin" "get-origin" "get-form" "form" "when" "document" "get-designer" "designer" "let" "find-origin" "define")}
+        {Lisp-Entry "name-status" method #f 53 20 53 31 ("category-name" "else" "get-name" "file?" "effective-newname" "not" "cond" "format" "origin" "get-origin" "get-form" "form" "when" "document" "get-designer" "designer" "let" "find-origin" "define")}
         {Lisp-Entry "update-moniker-time" method #f 71 20 71 39 ("moniker")}}}})
 "Enumeration-Domain"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "domain" "Enumeration-Domain.jazz"} 1264085224
@@ -1798,7 +1796,7 @@
         {Lisp-Entry "on-selected-change" method #f 137 11 137 29 ("else" "get-designer" "let*" "Editor-View" "force?:" "set-client" "set-designer" "set-editor" "get-force?" "force?" "get-selected" "client" "designer" "editor" "Designer" "typecase" "get-owner" "owner" "let" "evt")}
         {Lisp-Entry "on-editor" method #f 167 20 167 29 ("nextmethod" "else" ":selection-changed" "get-kind" "case" "evt")}}}})
 "Properties-Tree"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "card" "Properties-Tree.jazz"} 1265747956
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "card" "Properties-Tree.jazz"} 1268082663
     {Lisp-Entry "jazz.designer.card.Properties-Tree" module #f 37 18 37 52 ("Value-Column" "Property-Column" "register-autoclass" "jazz")
       {Lisp-Entry "Filter-Width" definition #f 50 12 50 24 ("20")}
       {Lisp-Entry "Properties-Tree" class #f 54 20 54 35 ("center" "justification:" "25" "owner" "192" "toplevel-controls?:" "140" "width:" "title:" "property" "name:" "on-context-menu" ":form" "Event-Handler" "context-menu-handler:" ":images" "portfolio:" "focused-on-descendants?:" "row-spacing:" "0" "column-spacing:" "auto-expand/collapse?:" "row" "selection-mode:" "multiple-selection?:" "draggable?:" "value" "filled-column:" "explicit" "categorized" "'categorized" "initialize" "Tree-View")
@@ -1819,7 +1817,7 @@
         {Lisp-Entry "double-click" method #f 96 20 96 32 ("self" "acquire" "double-click" "when" "get-selected-row" "row" "let" "pos")}
         {Lisp-Entry "on-context-menu" method #f 102 11 102 26 ("context-menu" "else" "5" "Point" "self" "client:" "Filter-Menu" "new" "track-popup-menu" "get-v" "Filter-Width" "get-h" "<" "and" "when" "16" "header-height" "filter-visible?" "not" "filter-locked?" "or" "unless" "Tree-Header" "is?" "cond" "get-position" "pos" "get-sender" "sender" "let" "evt")}
         {Lisp-Entry "new-property-menu" method #f 114 11 114 28 ("layout-menu" "consolidate" "'consolidate" "distribute" "'distribute" "end-consolidate-group" "'end-consolidate-group" "locate" "set-visible?" "begin" "branch-installed?" "if" "get-creator" "creator" "car" "any" "self" "client:" "Property-Menu" "new" "menu" "let*" "client")}
-        {Lisp-Entry "focus-gain" method #f 133 20 133 30 ("focus-delegate" "nextmethod")}
+        {Lisp-Entry "focus-gained" method #f 133 20 133 32 ("focus-delegate" "nextmethod")}
         {Lisp-Entry "focus-delegate" method #f 138 20 138 34 ("editor-focus-delegate" "when" "selected-row" "row" "let")}
         {Lisp-Entry "save-edition" method #f 149 21 149 33 ("save-edition" "in-edition?" "Value-Row" "is?" "and" "when" "auto-expanded-row" "row" "let")}
         {Lisp-Entry "notify-property-change" method #f 160 18 160 40 ("property:" ":property-change" "Event" "new" "self" "invoke" "property-handler" "when" "property")}
@@ -1915,10 +1913,10 @@
           {Lisp-Entry "component-get-presentation" method #f 126 20 126 46 ("get-value" "component")}
           {Lisp-Entry "component-set-presentation" method #f 131 20 131 46 ("set-value" "presentation" "component")}}}}})
 "Property-Manager"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "property" "Property-Manager.jazz"} 1263323927
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "property" "Property-Manager.jazz"} 1268082663
     {Lisp-Entry "jazz.designer.property.Property-Manager" module #f 37 18 37 57 ("jazz")
       {Lisp-Entry "Property-Manager" interface #f 40 11 40 27 ()
-        {Lisp-Entry "editor-focus-gain" method #f 43 35 43 52 ("editor")}
+        {Lisp-Entry "editor-focus-gained" method #f 43 35 43 54 ("editor")}
         {Lisp-Entry "editor-focus-lose" method #f 44 35 44 52 ("editor")}
         {Lisp-Entry "editor-invalidate" method #f 45 35 45 52 ("editor")}
         {Lisp-Entry "editor-left-arrow" method #f 46 35 46 52 ("editor")}
@@ -1968,7 +1966,7 @@
         {Lisp-Entry "load-lines" method #f 167 20 167 30 ("property" "get-component-property" "JzLoadLines" "rest")}
         {Lisp-Entry "save-lines" method #f 172 20 172 30 ("join-lines" "property" "set-component-property" "rest" "lines")}}}})
 "Property-View"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "property" "Property-View.jazz"} 1267045799
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "property" "Property-View.jazz"} 1267100196
     {Lisp-Entry "jazz.designer.property.Property-View" module #f 37 18 37 54 ("jazz")
       {Lisp-Entry "Property-View" class #f 46 7 46 20 ("fill" "layout-type:" "White" "name:" "Color" "background:" "initialize" "Layout-View")
         {Lisp-Entry "id" property #f 49 12 49 14 ()}
@@ -1983,13 +1981,13 @@
         {Lisp-Entry "add-child" method #f 63 20 63 29 ("set-editable?" "editable?" "not" "when" "nextmethod" "child")}
         {Lisp-Entry "get-entry" method #f 69 26 69 35 ("first-child")}}}})
 "Property-Violation"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "property" "Property-Violation.jazz"} 1259266728
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "property" "Property-Violation.jazz"} 1267117175
     {Lisp-Entry "jazz.designer.property.Property-Violation" module #f 37 18 37 59 ("jazz")
       {Lisp-Entry "Property-Violation" class #f 40 20 40 38 ("Object")
         {Lisp-Entry "message" slot #f 43 8 43 15 ()}
         {Lisp-Entry "get-message" accessor #f 43 23 43 31 ()}
         {Lisp-Entry "initialize" method #f 46 20 46 30 ("message~self" "set!" "nextmethod" "message" "message:")}
-        {Lisp-Entry "print" method #f 51 20 51 25 ("message" "self" "class-of" "category-name" "identifier-name" "format" "readably" "printer")}}}})
+        {Lisp-Entry "print" method #f 51 20 51 25 ("message" "self" "class-of" "category-name" "format" "readably" "printer")}}}})
 "Range-Row"
  ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "row" "Range-Row.jazz"} 1259266728
     {Lisp-Entry "jazz.designer.row.Range-Row" module #f 37 18 37 45 ("jazz")
@@ -2091,14 +2089,14 @@
         {Lisp-Entry "update" method #f 109 20 109 26 ("1" "self" "row-rank" "Cell" "new" "invalidate-cell" "present" "set-title" "set-property-modified?" "get-children" "second" "data" "get-tree" "tree" "let" "set-value" "value")}
         {Lisp-Entry "in-edition?" method #f 118 20 118 31 ("0" "get-sons" "cardinality" ">")}}}})
 "Text-View-Surrogate"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "surrogate" "Text-View-Surrogate.jazz"} 1259788340
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "surrogate" "Text-View-Surrogate.jazz"} 1268082663
     {Lisp-Entry "jazz.designer.surrogate.Text-View-Surrogate" module #f 37 18 37 61 ("jazz")
       {Lisp-Entry "Text-View-Surrogate" class #f 43 20 43 39 ("initialize" "View-Surrogate")
         {Lisp-Entry "edit?" slot #f 46 8 46 13 ()}
         {Lisp-Entry "editing?" method #f 54 20 54 28 ("edit?")}
         {Lisp-Entry "start-edit" method #f 58 11 58 21 ("client" "invalidate-view" "edit?" "set!")}
         {Lisp-Entry "stop-edit" method #f 63 11 63 20 ("client" "invalidate-view" "edit?" "set!")}
-        {Lisp-Entry "focus-gain" method #f 73 20 73 30 ("nextmethod" "client" "focus-gain" "editing?" "if")}
+        {Lisp-Entry "focus-gained" method #f 73 20 73 32 ("nextmethod" "client" "focus-gained" "editing?" "if")}
         {Lisp-Entry "focus-lose" method #f 79 20 79 30 ("nextmethod" "stop-edit" "client" "focus-lose" "begin" "editing?" "if")}
         {Lisp-Entry "cursor-update" method #f 92 20 92 33 ("nextmethod" "client" "cursor-update" "editing?" "if" "pos")}
         {Lisp-Entry "mouse-down" method #f 103 20 103 30 ("nextmethod" "client" "mouse-down" "select-in-editor" "select?" "when" "begin" "editing?" "if" "pos")}
@@ -2422,11 +2420,11 @@
     {Lisp-Entry "jazz.designer.editor.View-Editor-Actions" module #f 37 18 37 58 ("jazz")
       {Lisp-Entry "View-Editor-Actions" class #f 46 20 46 39 ("on-save" "save" "on-open" "open" ":shift" "on-new" ":frame" "new" ":control" "Shortcut" "shortcut:" "on-edit-form" ":document" "Event-Handler" "action-handler:" "edit-form" "name:" "Actions")}}})
 "View-Surrogate"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "surrogate" "View-Surrogate.jazz"} 1264605818
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "surrogate" "View-Surrogate.jazz"} 1268082663
     {Lisp-Entry "jazz.designer.surrogate.View-Surrogate" module #f 37 18 37 56 ("jazz")
       {Lisp-Entry "View-Surrogate" class #f 56 20 56 34 ("initialize" "Renderer" "Component-Surrogate")
         {Lisp-Entry "client-renderer" slot #f 59 18 59 33 ()}
-        {Lisp-Entry "client-focus-gain-handler" slot #f 60 18 60 43 ()}
+        {Lisp-Entry "client-focus-gained-handler" slot #f 60 18 60 45 ()}
         {Lisp-Entry "client-focus-lose-handler" slot #f 61 18 61 43 ()}
         {Lisp-Entry "client-cursor-update-handler" slot #f 62 18 62 46 ()}
         {Lisp-Entry "client-mouse-down-handler" slot #f 63 18 63 43 ()}
@@ -2446,8 +2444,8 @@
         {Lisp-Entry "current-part" slot #f 79 8 79 20 ()}
         {Lisp-Entry "start-position" slot #f 80 8 80 22 ()}
         {Lisp-Entry "old-position" slot #f 81 8 81 20 ()}
-        {Lisp-Entry "install-handlers" method #f 89 20 89 36 ("invalidate-border" "on-return-press" "'on-return-press" "set-return-press-handler" "on-backspace-press" "'on-backspace-press" "set-backspace-press-handler" "on-arrow-press" "'on-arrow-press" "set-arrow-press-handler" "on-key-press" "'on-key-press" "set-key-press-handler" "on-context-menu" "'on-context-menu" "set-context-menu-handler" "on-receive-drop" "'on-receive-drop" "set-receive-drop-handler" "on-current-drop" "'on-current-drop" "set-current-drop-handler" "on-double-click" "'on-double-click" "set-double-click-handler" "on-drag-up" "'on-drag-up" "set-drag-up-handler" "on-drag-move" "'on-drag-move" "set-drag-move-handler" "on-mouse-up" "'on-mouse-up" "set-mouse-up-handler" "on-mouse-down" "'on-mouse-down" "set-mouse-down-handler" "on-cursor-update" "'on-cursor-update" "set-cursor-update-handler" "on-focus-lose" "'on-focus-lose" "set-focus-lose-handler" "preserved:" "on-focus-gain" "'on-focus-gain" "method-name:" "target:" "Surrogate-Handler" "new" "set-focus-gain-handler" "self" "set-renderer" "get-return-press-handler" "client-return-press-handler" "get-backspace-press-handler" "client-backspace-press-handler" "get-arrow-press-handler" "client-arrow-press-handler" "get-key-press-handler" "client-key-press-handler" "get-context-menu-handler" "client-context-menu-handler" "get-receive-drop-handler" "client-receive-drop-handler" "get-current-drop-handler" "client-current-drop-handler" "get-double-click-handler" "client-double-click-handler" "get-drag-up-handler" "client-drag-up-handler" "get-drag-move-handler" "client-drag-move-handler" "get-mouse-up-handler" "client-mouse-up-handler" "get-mouse-down-handler" "client-mouse-down-handler" "get-cursor-update-handler" "client-cursor-update-handler" "get-focus-lose-handler" "client-focus-lose-handler" "get-focus-gain-handler" "client-focus-gain-handler" "client" "get-renderer" "client-renderer" "set!" "nextmethod")}
-        {Lisp-Entry "remove-handlers" method #f 126 20 126 35 ("invalidate-border" "client-return-press-handler" "set-return-press-handler" "client-backspace-press-handler" "set-backspace-press-handler" "client-arrow-press-handler" "set-arrow-press-handler" "client-key-press-handler" "set-key-press-handler" "client-context-menu-handler" "set-context-menu-handler" "client-receive-drop-handler" "set-receive-drop-handler" "client-current-drop-handler" "set-current-drop-handler" "client-double-click-handler" "set-double-click-handler" "client-drag-up-handler" "set-drag-up-handler" "client-drag-move-handler" "set-drag-move-handler" "client-mouse-up-handler" "set-mouse-up-handler" "client-mouse-down-handler" "set-mouse-down-handler" "client-cursor-update-handler" "set-cursor-update-handler" "client-focus-lose-handler" "set-focus-lose-handler" "client-focus-gain-handler" "set-focus-gain-handler" "client-renderer" "client" "set-renderer" "nextmethod")}
+        {Lisp-Entry "install-handlers" method #f 89 20 89 36 ("invalidate-border" "on-return-press" "'on-return-press" "set-return-press-handler" "on-backspace-press" "'on-backspace-press" "set-backspace-press-handler" "on-arrow-press" "'on-arrow-press" "set-arrow-press-handler" "on-key-press" "'on-key-press" "set-key-press-handler" "on-context-menu" "'on-context-menu" "set-context-menu-handler" "on-receive-drop" "'on-receive-drop" "set-receive-drop-handler" "on-current-drop" "'on-current-drop" "set-current-drop-handler" "on-double-click" "'on-double-click" "set-double-click-handler" "on-drag-up" "'on-drag-up" "set-drag-up-handler" "on-drag-move" "'on-drag-move" "set-drag-move-handler" "on-mouse-up" "'on-mouse-up" "set-mouse-up-handler" "on-mouse-down" "'on-mouse-down" "set-mouse-down-handler" "on-cursor-update" "'on-cursor-update" "set-cursor-update-handler" "on-focus-lose" "'on-focus-lose" "set-focus-lose-handler" "preserved:" "on-focus-gained" "'on-focus-gained" "method-name:" "target:" "Surrogate-Handler" "new" "set-focus-gained-handler" "self" "set-renderer" "get-return-press-handler" "client-return-press-handler" "get-backspace-press-handler" "client-backspace-press-handler" "get-arrow-press-handler" "client-arrow-press-handler" "get-key-press-handler" "client-key-press-handler" "get-context-menu-handler" "client-context-menu-handler" "get-receive-drop-handler" "client-receive-drop-handler" "get-current-drop-handler" "client-current-drop-handler" "get-double-click-handler" "client-double-click-handler" "get-drag-up-handler" "client-drag-up-handler" "get-drag-move-handler" "client-drag-move-handler" "get-mouse-up-handler" "client-mouse-up-handler" "get-mouse-down-handler" "client-mouse-down-handler" "get-cursor-update-handler" "client-cursor-update-handler" "get-focus-lose-handler" "client-focus-lose-handler" "get-focus-gained-handler" "client-focus-gained-handler" "client" "get-renderer" "client-renderer" "set!" "nextmethod")}
+        {Lisp-Entry "remove-handlers" method #f 126 20 126 35 ("invalidate-border" "client-return-press-handler" "set-return-press-handler" "client-backspace-press-handler" "set-backspace-press-handler" "client-arrow-press-handler" "set-arrow-press-handler" "client-key-press-handler" "set-key-press-handler" "client-context-menu-handler" "set-context-menu-handler" "client-receive-drop-handler" "set-receive-drop-handler" "client-current-drop-handler" "set-current-drop-handler" "client-double-click-handler" "set-double-click-handler" "client-drag-up-handler" "set-drag-up-handler" "client-drag-move-handler" "set-drag-move-handler" "client-mouse-up-handler" "set-mouse-up-handler" "client-mouse-down-handler" "set-mouse-down-handler" "client-cursor-update-handler" "set-cursor-update-handler" "client-focus-lose-handler" "set-focus-lose-handler" "client-focus-gained-handler" "set-focus-gained-handler" "client-renderer" "client" "set-renderer" "nextmethod")}
         {Lisp-Entry "Focused-Background" definition #f 152 14 152 32 ("0.15" "alpha:" "Dark-Purple" "name:" "Color")}
         {Lisp-Entry "Unfocused-Background" definition #f 155 14 155 34 ("0.15" "alpha:" "Dark" "name:" "Color")}
         {Lisp-Entry "Selected-Colors" definition #f 159 14 159 29 ("Yellow" "Orange" "Red" "name:" "Color")}
@@ -2460,8 +2458,8 @@
         {Lisp-Entry "invalidate-border" method #f 253 20 253 37 ("2" "Rect" "insets:" "outer-client" "invalidate-border")}
         {Lisp-Entry "redraw-border" method #f 257 20 257 33 ("2" "Rect" "insets:" "outer-client" "redraw-border")}
         {Lisp-Entry "selected-color" method #f 261 18 261 32 ("1" "length" "-" "min" "element" "Selected-Colors" "colors" "let" "rank")}
-        {Lisp-Entry "on-focus-gain" method #f 271 11 271 24 ("focus-gain" "evt")}
-        {Lisp-Entry "focus-gain" method #f 275 29 275 39 ("invalidate-selection")}
+        {Lisp-Entry "on-focus-gained" method #f 271 11 271 26 ("focus-gained" "evt")}
+        {Lisp-Entry "focus-gained" method #f 275 29 275 41 ("invalidate-selection")}
         {Lisp-Entry "on-focus-lose" method #f 279 11 279 24 ("focus-lose" "evt")}
         {Lisp-Entry "focus-lose" method #f 283 29 283 39 ("invalidate-selection")}
         {Lisp-Entry "focus-actions" method #f 287 20 287 33 ("client" "focus-actions" "view-surrogate" "'view-surrogate" "find-actions" "cons")}
@@ -2548,7 +2546,7 @@
     {Lisp-Entry "jazz.designer.menu" module #f 37 8 37 26 ("jazz")
       {Lisp-Entry "update-component-menu" definition #f 46 21 46 42 ("layout-menu" "cleanup-separators" "properties" "'properties" "rename-selected" "'rename-selected" "delete-selection" "'delete-selection" "'paste-properties" "'paste" "'copy" "'cut" "locate" "end-add-group" "'end-add-group" "set-before" "set-parent" ":control" "Shortcut" "set-shortcut" "get-title" "set-title" "get-icon" "set-icon" "unique" "when" "set!" "set-visible?" "begin" "null?" "get-children" "collect-type" "children" "=" "'add-item" "add-item" "'add-menu" "locate-component" "empty-add?" "can-view-properties?" "Component" "is?" "and" "can-properties?" "rename" "components-tree" "can-rename?" "delete" "can-delete?" "paste-properties" "can-paste-properties?" "paste" "can-paste?" "copy" "can-copy?" "cut" "view" "Action" "get-action-enabled?" "can-cut?" "car" "1" ">=" "essay" "component" "length" "count" "let*" "evt" "execute:" "Event-Handler" "action-handler:" "title:" "icon:" "Label-Item" "get-class-presentation" "localize" "format" "title" "get-class-image" "icon" "let" "parent:" "Separator-Item" "new" "not" "if" "class" "for-each" "lambda" "with-update-locked" "add-menu" "add-components" "define" "add" "classes" "components" "menu")}}})
 "autoload"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "autoload.jazz"} 1259788340
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.designer" "src" "jazz" "designer" "autoload.jazz"} 1268836682
     {Lisp-Entry "jazz.designer.autoload" module #f 37 18 37 40 ("jazz")}})
 "view"
  ({Lisp-File-Entry {File jazz.designer "src" "jazz" "designer" "view.jazz"} 1260287915

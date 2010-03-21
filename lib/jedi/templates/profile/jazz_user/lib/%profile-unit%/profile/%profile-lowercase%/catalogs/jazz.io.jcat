@@ -1,5 +1,5 @@
 "_io"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.io" "src" "jazz" "io" "_io.jazz"} 1264714816
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.io" "src" "jazz" "io" "_io.jazz"} 1268082663
     {Lisp-Entry "jazz.io" module #f 37 8 37 15 ("jazz")
       {Lisp-Entry "*eol-encoding*" definition #f 51 15 51 29 ("cr-lf" "'cr-lf")}
       {Lisp-Entry "*eol-encoding*" definition #f 54 15 54 29 ("lf" "'lf")}
@@ -14,175 +14,175 @@
       {Lisp-Entry "register-alias" definition #f 100 20 100 34 ("error" "set-alias" "equal?" "not" "or" "get-aliases" "table-ref" "actual" ":up" "second" "eq?" "2" "length" ">=" "pair?" "and" "if" "process-up" "get-list" "append" "cddr" "sub" "ignored-anchors:" "car" "list" "Directory" "new" "get-parent" "anchorize" "dir" "let" "expand-up" "define" "path" "name")}
       {Lisp-Entry "unregister-alias" definition #f 120 20 120 36 ("get-aliases" "table-clear" "name")}
       {Lisp-Entry "set-alias" definition #f 124 20 124 29 ("get-aliases" "table-set!" "path" "name")}
-      {Lisp-Entry "initialize-aliases" definition #f 128 20 128 38 ("pathname-normalize" "Home" "'Home" "initialize-platform-aliases" "get-repositories" "repository-packages" ",name" "package-root" "package-name" "package" "lambda" "for-each" "repository-binary?" "unless" "tokenise-filename" "register-alias" "repository-directory" "remove-trailing-char" "directory" "repository-name" "name" "let" "repository" "register-repository" "register-repositories-aliases" "define")}
-      {Lisp-Entry "initialize-platform-aliases" definition #f 151 17 151 44 ("Network" "'Network" "register-alias")}
-      {Lisp-Entry "initialize-platform-aliases" definition #f 154 17 154 44 ()}
-      {Lisp-Entry "validate-alias" definition #f 158 13 158 27 ("error" "Directory" "new" "exists?" "if" "path" "name")}
-      {Lisp-Entry "extract-name" definition #f 169 20 169 32 ("cardinality" "1" "+" "subseq" "not" "if" "reversed?:" "find" "pos" "let" "filename")}
-      {Lisp-Entry "extract-base" definition #f 176 20 176 32 ("0" "subseq" "not" "if" "reversed?:" "find" "pos" "let" "filename")}
-      {Lisp-Entry "extract-extension" definition #f 183 20 183 37 ("cardinality" "1" "+" "subseq" "when" "reversed?:" "find" "pos" "let" "filename")}
-      {Lisp-Entry "normalize-filename-separators" definition #f 191 16 191 45 ("substitute" "filename")}
-      {Lisp-Entry "normalize-filename-separators" definition #f 194 16 194 45 ("filename")}
-      {Lisp-Entry "tokenise-filename" definition #f 198 20 198 37 ("cdr" "remove-empty-strings" ":root" "cons" "car" "empty-string?" "if" "normalize-filename-separators" "split" "lst" "let" "filename")}
-      {Lisp-Entry "tokenise-windows" definition #f 205 20 205 36 ("cardinality" "2" "subseq" "split" "remove-empty-strings" "Network" "'Network" "cons" "starts-with?" "if" "filename")}
-      {Lisp-Entry "make-filename" definition #f 211 20 211 33 ("format" "extension" "base")}
-      {Lisp-Entry "get-tmp-directory" definition #f 215 20 215 37 ("tokenise-windows" "Directory" "new" "make-string" "path" "NULL" "0" "GetTempPath" "size" "let*" "get-tmp-directory" "'get-tmp-directory" "unimplemented")}
-      {Lisp-Entry "get-protocol-handler" definition #f 229 20 229 40 ("format" "message:" "Parse-Error" "new" "signal" "when" "else" "Directory" "dir" "File" "file" "case" "keyword->symbol" "keyword?" "if" "let" "error?" "error?:" "protocol")}
-      {Lisp-Entry "Moniker-Class" class #f 243 7 243 20 ("Class")
-        {Lisp-Entry "get-protocol" method #f 246 26 246 38 ()}}
-      {Lisp-Entry "Moniker" class #f 250 7 250 14 ("Object" "Moniker-Class")
-        {Lisp-Entry "compare-pathname" method #f 253 26 253 42 ("object")}
-        {Lisp-Entry "present" method #f 262 26 262 33 ()}
-        {Lisp-Entry "present-base" method #f 266 26 266 38 ("get-base" "->string")}
-        {Lisp-Entry "present-name" method #f 270 26 270 38 ("get-name" "->string")}
-        {Lisp-Entry "present-location" method #f 274 26 274 42 ("get-list" "format")}
-        {Lisp-Entry "exists?" method #f 283 26 283 33 ()}
-        {Lisp-Entry "read-only?" method #f 287 18 287 28 ("get-writable?" "not")}
-        {Lisp-Entry "read/write?" method #f 291 18 291 29 ("get-writable?")}
-        {Lisp-Entry "set-read-only" method #f 295 18 295 31 ("set-writable?")}
-        {Lisp-Entry "set-read/write" method #f 299 18 299 32 ("set-writable?")}
-        {Lisp-Entry "get-writable?" method #f 303 26 303 39 ()}
-        {Lisp-Entry "set-writable?" method #f 307 26 307 39 ("flag")}
-        {Lisp-Entry "writable?" method #f 311 26 311 35 ()}
-        {Lisp-Entry "get-modification-time" method #f 315 26 315 47 ()}
-        {Lisp-Entry "get-file" method #f 319 26 319 34 ()}
-        {Lisp-Entry "get-name" method #f 323 26 323 34 ()}
-        {Lisp-Entry "get-base" method #f 327 26 327 34 ()}
-        {Lisp-Entry "get-extension" method #f 331 26 331 39 ()}
-        {Lisp-Entry "get-list" method #f 335 26 335 34 ()}
-        {Lisp-Entry "get-parent" method #f 339 26 339 36 ()}
-        {Lisp-Entry "get-hierarchy" method #f 343 18 343 31 ("cons" "get-parent" "not" "if" "hierarchy" "self" "moniker" "loop" "let")}
-        {Lisp-Entry "get-content" method #f 350 26 350 37 ("rest")}
-        {Lisp-Entry "get-children" method #f 355 26 355 38 ("rest")}
-        {Lisp-Entry "is-different?" method #f 359 26 359 39 ("moniker")}
-        {Lisp-Entry "relocated-list" method #f 363 18 363 32 ("length" "tail" "get-list" "append" "new-root" "old-root")}
-        {Lisp-Entry "load-lines" method #f 372 26 372 36 ("rest")}
-        {Lisp-Entry "save-lines" method #f 376 26 376 36 ("rest" "lines")}
-        {Lisp-Entry "load-form" method #f 380 26 380 35 ()}}
-      {Lisp-Entry "platform-separator" definition #f 391 16 391 34 ()}
-      {Lisp-Entry "platform-separator" definition #f 394 16 394 34 ()}
-      {Lisp-Entry "Pathname-Class" class #f 398 7 398 21 ("Moniker" ":class")}
-      {Lisp-Entry "Pathname" class #f 401 7 401 15 ("Moniker" "Pathname-Class")
-        {Lisp-Entry "path" slot #f 404 8 404 12 ()}
-        {Lisp-Entry "initialize" method #f 407 20 407 30 ("set-list" "validate-component" "nextmethod" "lst")}
-        {Lisp-Entry "validate-component" definition #f 413 15 413 33 ("else" "cdr" "error" "car" "if" "pair?" "symbol?" "string?" "null?" "cond" "lambda" "validate" "letrec" "original" "let" "object")}
-        {Lisp-Entry "parse" method #f 429 18 429 23 ("get-output-string" "pathname-expand" "add-suffix" "get-list" "else" "cdr" "car" "pair?" "get-alias" "is-alias?" "cons" "self" "error" "memq?" "symbol?" "set!" "if" "string?" "display" ":root" "eq?" "null?" "cond" "path" "lambda" "parse" "letrec" "aliases" "first?" "open-output-string" "printer" "let" "separator" "bind-optionals" "rest")}
-        {Lisp-Entry "platform-parse" method #f 461 18 461 32 ("platform-separator" "parse")}
-        {Lisp-Entry "add-suffix" method #f 465 29 465 39 ("printer")}
-        {Lisp-Entry "relocated-pathname" method #f 469 18 469 36 ("length" "tail" "get-list" "append" "new-root" "old-root")}
-        {Lisp-Entry "create" method #f 473 26 473 32 ()}
-        {Lisp-Entry "move-pathname" method #f 477 18 477 31 ("parse" "file-rename" "error?" "error?:" "dst")}
-        {Lisp-Entry "compare-object" method #f 481 20 481 34 (":not-equal" "else" ":equal" "get-list" "=" ":incompatible" "self" "class-of" "is-not?" "cond" "target")}
-        {Lisp-Entry "compare-pathname" method #f 490 20 490 36 ("parse" "ci=?" "Pathname" "is?" "and" "object")}
-        {Lisp-Entry "valid-aliases?" method #f 495 18 495 32 ("get-list" "get-alias" "is-alias?" "and" "symbol?" "not" "item" "every?" "eq?" "or" "list" "lambda" "valid?" "letrec")}
-        {Lisp-Entry "expand" method #f 507 18 507 24 ("get-output" "get-list" "cdr" "car" "pair?" "get-alias" "symbol?" "string?" "put" ":root" "eq?" "cond" "object" "lambda" "expand" "letrec" "List-Factory" "new" "fact" "let")}
-        {Lisp-Entry "get-list" method #f 522 20 522 28 ("path")}
-        {Lisp-Entry "set-list" method #f 526 18 526 26 ("path" "set!" "value")}
-        {Lisp-Entry "get-name" method #f 530 20 530 28 ("get-list" "effective-name")}
-        {Lisp-Entry "effective-name" method #f 534 11 534 25 ("else" "get-alias" "effective-name" "symbol?" ":root" "eq?" "cond" "last" "name" "let" "lst")}
-        {Lisp-Entry "get-base" method #f 544 20 544 28 ("extract-base" "symbol?" "if" "get-name" "name" "let")}
-        {Lisp-Entry "get-extension" method #f 551 20 551 33 ("get-name" "extract-extension")}
-        {Lisp-Entry "get-parent" method #f 555 20 555 30 ("butlast" "Directory" "new" "cdr" "null?" "or" "expand" "1" "path" "length" "=" "if" "effective-path" "let")}
-        {Lisp-Entry "get-brother" method #f 562 18 562 29 ("list" "get-parent" "get-list" "append" "self" "class-of" "new" "name")}
-        {Lisp-Entry "new-brother" method #f 566 26 566 37 ("name")}
-        {Lisp-Entry "get-directory" method #f 570 26 570 39 ()}
-        {Lisp-Entry "get-attributes" method #f 574 18 574 32 ("self" "error" "when" "-1" "=" "if" "parse" "GetFileAttributes" "attributes" "let" "get-attributes" "'get-attributes" "unimplemented" "error?" "error?:")}
-        {Lisp-Entry "set-attributes" method #f 584 18 584 32 ("self" "error" "not" "when" "parse" "SetFileAttributes" "ok?" "let" "set-attributes" "'set-attributes" "unimplemented" "flags")}
-        {Lisp-Entry "get-writable?" method #f 592 20 592 33 ("FILE_ATTRIBUTE_READONLY" "get-attributes" "mask-bit-set?" "not")}
-        {Lisp-Entry "set-writable?" method #f 598 20 598 33 ("not" "FILE_ATTRIBUTE_READONLY" "get-attributes" "mask-bit-set" "set-attributes" "set-writable?" "'set-writable?" "unimplemented" "flag")}
-        {Lisp-Entry "exists?" method #f 604 20 604 27 ("parse" "file-exists?")}
-        {Lisp-Entry "create-directories" method #f 608 18 608 36 ("create" "exists?" "unless" "dir" "lambda" "for-each" "get-parent" "cons" "set!" "while" "dirs" "expand" "Directory" "new" "scan" "get-directory" "base" "let*")}
-        {Lisp-Entry "anchor-to" method #f 627 18 627 27 ("class-of" "new" "subseq" "append" "else" "continuation-return" "self" "error" "if" "<" "set!" "not" "cond" "return" "lambda" "continuation-capture" "unspecified" "result-list" "ci=?" "test:" "mismatch" "rank" "expd" "length" "base-length" "expand" "base-expd" "get-list" "base-list" "let*" "error?" "error?:" "anchor")}
-        {Lisp-Entry "anchorize" method #f 647 18 647 27 ("car" "self" "null?" "if" "get-list" "length" "path" "key:" "<" "sort" "sorted" "error?:" "list" "Directory" "new" "anchor-to" "valid-alias?" "when" "anchor" "lambda" "collect" "anchored" "either" "difference" "let*" "get-application" "application-anchors" "default-anchors" "define" "ignored-anchors" "ignored-anchors:" "anchors" "anchors:")}}
-      {Lisp-Entry "pathname?" definition #f 659 27 659 36 ("Pathname" "is?" "object")}
-      {Lisp-Entry "pathname=?" definition #f 663 27 663 37 ("compare-pathname" "y" "x")}
-      {Lisp-Entry "pathname-exists?" definition #f 667 27 667 43 ("parse" "file-exists?" "pathname")}
-      {Lisp-Entry "pathname-delete" definition #f 671 27 671 42 ("parse" "file-delete" "pathname")}
-      {Lisp-Entry "pathname-modification-time" definition #f 675 27 675 53 ("parse" "file-modification-time" "pathname")}
-      {Lisp-Entry "File-Class" class #f 684 7 684 17 ("Pathname" ":class")
-        {Lisp-Entry "get-protocol" method #f 687 20 687 32 ("file" "'file")}}
-      {Lisp-Entry "create-temporary-file" definition #f 691 20 691 41 ("tokenise-windows" "File" "new" "adjust-string" "0" "GetTempFileName" "MAX_PATH" "make-string" "filename" "let" "error" "empty-string?" "if" "parse" "dir" "get-tmp-directory" "either" "let*" "create-temporary-file" "'create-temporary-file" "unimplemented" "prefix" "prefix:" "directory" "directory:")}
-      {Lisp-Entry "File" class #f 704 7 704 11 ("Pathname" "File-Class")
-        {Lisp-Entry "print" method #f 707 20 707 25 ("get-list" "format" "readably" "printer")}
-        {Lisp-Entry "new-brother" method #f 718 20 718 31 ("get-parent" "new-file" "name")}
-        {Lisp-Entry "present" method #f 722 20 722 27 ("get-list" "format")}
-        {Lisp-Entry "get-file" method #f 731 20 731 28 ("self")}
-        {Lisp-Entry "get-directory" method #f 735 20 735 33 ("get-parent")}
-        {Lisp-Entry "create" method #f 739 20 739 26 ("output" "lambda" "parse" "call-with-output-file" "create-directories" "exists?" "unless")}
-        {Lisp-Entry "copy-file" method #f 748 18 748 27 ("parse" "file-copy" "delete-file" "exists?" "and" "when" "overwrite-read-only" "overwrite-read-only?" "overwrite-read-only?:" "overwrite?" "overwrite?:" "dst")}
-        {Lisp-Entry "delete-file" method #f 755 18 755 29 ("parse" "file-delete" "overwrite-read-only" "self" "error" "when" "exists?" "not" "if" "error?" "error?:" "overwrite-read-only?" "overwrite-read-only?:")}
-        {Lisp-Entry "overwrite-read-only" method #f 763 11 763 30 ("set-read/write" "read-only?" "exists?" "and" "when" "overwrite-read-only?")}
-        {Lisp-Entry "get-size" method #f 769 18 769 26 ("readable?:" "self" "File-Reader" "new" "reader" "with-closed" "get-size" "'get-size" "unimplemented")}
-        {Lisp-Entry "get-modification-time" method #f 776 20 776 41 ("parse" "file-modification-time" "floor" "inexact->exact" "seconds->time")}
-        {Lisp-Entry "set-modification-time" method #f 780 18 780 39 ("set-attributes" "NULL" "get-handle" "SetFileTime" "printer" "lambda" "append" "'append" "mode:" "parse" "list" "call-with-output-file" "set-read/write" "get-attributes" "at" "get-filetime" "ft" "let" "set-modification-time" "'set-modification-time" "unimplemented" "time")}
-        {Lisp-Entry "touch" method #f 793 18 793 23 ("universal-date" "get-time" "set-modification-time" "touch" "'touch" "unimplemented")}
-        {Lisp-Entry "get-hidden?" method #f 799 18 799 29 ("FILE_ATTRIBUTE_HIDDEN" "get-attributes" "mask-bit-set?" "get-hidden?" "'get-hidden?" "unimplemented")}
-        {Lisp-Entry "set-hidden?" method #f 805 18 805 29 ("FILE_ATTRIBUTE_HIDDEN" "get-attributes" "mask-bit-set" "set-attributes" "set-hidden?" "'set-hidden?" "unimplemented" "flag")}
-        {Lisp-Entry "writable?" method #f 811 20 811 29 ("CloseHandle" "INVALID_HANDLE_VALUE" "=" "if" "FILE_ATTRIBUTE_NORMAL" "OPEN_EXISTING" "NULL" "0" "GENERIC_WRITE" "parse" "CreateFile" "handle" "let" "writable?" "'writable?" "unimplemented")}
-        {Lisp-Entry "clone-file" method #f 821 18 821 28 ("get-base" "format" "list" "get-directory" "get-list" "append" "File" "new" "extension")}
-        {Lisp-Entry "load-lines" method #f 830 20 830 30 ("read-lines" "cr-lf" "'cr-lf" "eol-encoding:" "UTF" "'UTF" "either" "parse" "path:" "list" "call-with-input-file" "char-encoding-errors" "char-encoding-errors:" "char-encoding" "char-encoding:")}
-        {Lisp-Entry "save-lines" method #f 835 20 835 30 ("write-lines" "printer" "lambda" "get-eol-encoding" "UTF-8" "'UTF-8" "either" "parse" "path:" "list" "call-with-output-file" "eol-encoding" "eol-encoding:" "char-encoding" "char-encoding:" "lines")}}
-      {Lisp-Entry "file?" definition #f 841 27 841 32 ("File" "is?" "object")}
-      {Lisp-Entry "timestamped-file" definition #f 845 20 845 36 ("1" "+" "exists?" "new-file" "file" "=" "suffix" "0" "n" "iterate" "current-date" "date->string" "timestamp" "format" "if" "prefix" "let" "ext" "base" "dir")}
-      {Lisp-Entry "Directory-Class" class #f 862 7 862 22 ("Pathname" ":class")
-        {Lisp-Entry "get-protocol" method #f 865 20 865 32 ("dir" "'dir")}}
-      {Lisp-Entry "Directory" class #f 869 7 869 16 ("Pathname" "Directory-Class")
-        {Lisp-Entry "print" method #f 872 20 872 25 ("get-list" "format" "readably" "printer")}
-        {Lisp-Entry "new-brother" method #f 883 20 883 31 ("get-parent" "new-directory" "name")}
-        {Lisp-Entry "present" method #f 887 20 887 27 ("get-list" "format")}
-        {Lisp-Entry "get-directory" method #f 896 20 896 33 ("self")}
-        {Lisp-Entry "get-modification-time" method #f 900 20 900 41 ()}
-        {Lisp-Entry "get-parent" method #f 907 24 907 34 ("nextmethod" "Windows-Meta-Root" "new" "expand" "1" "path" "length" "=" "if" "effective-path" "let")}
-        {Lisp-Entry "create" method #f 915 20 915 26 ("parse" "directory-create")}
-        {Lisp-Entry "new-file" method #f 919 18 919 26 ("list" "null/pair?" "if" "get-list" "append" "File" "new" "name")}
-        {Lisp-Entry "new-directory" method #f 923 18 923 31 ("list" "null/pair?" "if" "get-list" "append" "Directory" "new" "name")}
-        {Lisp-Entry "new-unique-file" method #f 927 18 927 33 ("increase!" "either" "format" "set!" "while" "1" "suffix" "extract-extension" "ext" "extract-base" "base" "exists?" "not" "if" "new-file" "file" "let" "separator" "separator:" "name")}
-        {Lisp-Entry "copy-directory" method #f 940 18 940 32 ("recursive?:" "directories?:" "files?:" "Directory" "copy-directory" "touch" "copy-file" "new" "dest" "File" "is?" "if" "eq?" "or" "iterate-directory" "get-name" "list" "get-list" "append" "path" "lambda" "destination" "let" "create-directories" "self" "when" "copy?" "copy?:" "touch-files?" "touch-files?:" "feedback" "feedback:" "copier" "copier:" "dst")}
-        {Lisp-Entry "delete-directory" method #f 964 26 964 42 ("remove-directory" "empty-directory" "feedback" "feedback:" "overwrite-read-only?" "overwrite-read-only?:")}
-        {Lisp-Entry "empty-directory" method #f 969 18 969 33 ("recursive?:" "directories?:" "files?:" "delete-directory" "delete-file" "File" "is?" "if" "path" "lambda" "iterate-directory" "feedback" "feedback:" "overwrite-read-only?" "overwrite-read-only?:")}
-        {Lisp-Entry "remove-directory" method #f 980 18 980 34 ("parse" "directory-delete")}
-        {Lisp-Entry "get-content" method #f 984 20 984 31 ("get-output" "when" "List-Factory" "new" "let" "collect-leaves" "recursive?:" "directories?:" "files?:" "put" "item" "lambda" "iterate-directory" "fact" "collect-nodes" "define" "leaves?" "leaves?:" "nodes?" "nodes?:")}
-        {Lisp-Entry "add-suffix" method #f 1012 20 1012 30 ("write-char" "printer")}
-        {Lisp-Entry "collect-files" method #f 1021 18 1021 31 ("get-output" "recursive?:" "put" "when" "file" "lambda" "iterate-directory" "List-Factory" "new" "fact" "let" "predicate")}
-        {Lisp-Entry "iterate-directory" method #f 1036 26 1036 43 ("Directory" "File" "new" "case" "parse" "get-list" "directory-content-patch" "member?" "regular" "'regular" "eq?" "and" "or" "pathname-type" "type" "file-exists?" "string-append" "path" "for-each" "ci<?" "sort" "sorted" "cons" "set!" "object" "let" "iterate-content-unsorted" "not" "if" "kind" "file" "'file" "files" "'files" "directory" "'directory" "concatenate" "list" "append" "when" "name" "lambda" "directories" "'directories" "iterate-content" "base" "prefix" "iterate-directory-content" "define" "ignored-directories" "ignored-directories:" "recursive?" "recursive?:" "sort?" "sort?:" "directories?" "directories?:" "files?" "files?:" "full?" "full?:" "proc")}
-        {Lisp-Entry "directory-content-patch" definition #f 1082 19 1082 42 ("directory-content" "path")}
-        {Lisp-Entry "directory-content-patch" definition #f 1085 19 1085 42 ("dot-and-dot-dot" "'dot-and-dot-dot" "ignore-hidden:" "path:" "list" "directory-content" "path")}
-        {Lisp-Entry "count-files" method #f 1089 18 1089 29 ("continuation-return" ">" "and" "increase!" "not" "or" "when" "file" "iterate-directory" "return" "lambda" "continuation-capture" "0" "count" "let" "max-count" "max-count:" "filter" "filter:")}}
-      {Lisp-Entry "Windows-Meta-Root" class #f 1105 24 1105 41 ("Pathname")
-        {Lisp-Entry "initialize" method #f 1108 24 1108 34 ()}
-        {Lisp-Entry "get-name" method #f 1112 24 1112 32 ()}
-        {Lisp-Entry "present" method #f 1116 24 1116 31 ("get-name")}
-        {Lisp-Entry "get-parent" method #f 1120 24 1120 34 ()}
-        {Lisp-Entry "get-directory" method #f 1124 24 1124 37 ("list" "Directory" "new")}
-        {Lisp-Entry "exists?" method #f 1128 24 1128 31 ()}
-        {Lisp-Entry "get-content" method #f 1132 24 1132 35 ("get-output" "string" "list" "Directory" "put" "lambda" "for-each" "when" "List-Factory" "new" "fact" "integer->char" "cons" "bitwise-and" "/=" "1" "+" "-1" "arithmetic-shift" "0" "=" "if" "result" "char->integer" "letter" "jazz.platform.windows.GetLogicalDrives" "drives" "loop" "let" "reverse!" "enumerate-drives" "define" "leaves?" "leaves?:" "nodes?" "nodes?:")}}
-      {Lisp-Entry "directory?" definition #f 1155 27 1155 37 ("Directory" "is?" "obj")}
-      {Lisp-Entry "get-current-directory" definition #f 1159 20 1159 41 ("current-directory" "tokenise-filename" "Directory" "new")}
-      {Lisp-Entry "set-current-directory" definition #f 1163 20 1163 41 ("parse" "current-directory-set!" "directory")}
-      {Lisp-Entry "with-preserved-current-directory" definition #f 1167 20 1167 52 ("set-current-directory" "unwind-protect" "get-current-directory" "preserved" "let" "proc")}
-      {Lisp-Entry "Scheme-Extensions" definition #f 1179 19 1179 36 ()}
-      {Lisp-Entry "CommonLisp-Extensions" definition #f 1182 19 1182 40 ()}
-      {Lisp-Entry "Jazz-Extensions" definition #f 1185 19 1185 34 ()}
-      {Lisp-Entry "C-Extensions" definition #f 1188 19 1188 31 ()}
-      {Lisp-Entry "SQL-Extensions" definition #f 1191 19 1191 33 ()}
-      {Lisp-Entry "Textual-Extensions" definition #f 1194 19 1194 37 ()}
-      {Lisp-Entry "Text-Extensions" definition #f 1197 19 1197 34 ("Textual-Extensions" "C-Extensions" "Jazz-Extensions" "CommonLisp-Extensions" "Scheme-Extensions" "append")}
-      {Lisp-Entry "effective-extensions" definition #f 1205 20 1205 40 ("else" "Text-Extensions" ":text" "C-Extensions" ":c" "Jazz-Extensions" ":jazz" "CommonLisp-Extensions" ":commonlisp" "Scheme-Extensions" ":scheme" "case" "extensions")}
-      {Lisp-Entry "Scheme-Include-Extensions" definition #f 1215 12 1215 37 ("Scheme-Extensions")}
-      {Lisp-Entry "CommonLisp-Include-Extensions" definition #f 1218 12 1218 41 ("CommonLisp-Extensions")}
-      {Lisp-Entry "Jazz-Include-Extensions" definition #f 1221 12 1221 35 ("Scheme-Include-Extensions" "append")}
-      {Lisp-Entry "C-Include-Extensions" definition #f 1225 12 1225 32 ("C-Extensions")}
-      {Lisp-Entry "Textual-Include-Extensions" definition #f 1228 12 1228 38 ("Textual-Extensions")}
-      {Lisp-Entry "Text-Include-Extensions" definition #f 1231 12 1231 35 ("Textual-Include-Extensions" "C-Include-Extensions" "Jazz-Include-Extensions" "CommonLisp-Include-Extensions" "Scheme-Include-Extensions" "append")}
-      {Lisp-Entry "effective-include-extensions" definition #f 1239 21 1239 49 ("else" "Text-Include-Extensions" ":text" "C-Include-Extensions" ":c" "Jazz-Include-Extensions" ":jazz" "CommonLisp-Include-Extensions" ":commonlisp" "Scheme-Include-Extensions" ":scheme" "case" "extensions")}
-      {Lisp-Entry "Scheme-Catalog-Extensions" definition #f 1249 12 1249 37 ("Scheme-Extensions")}
-      {Lisp-Entry "CommonLisp-Catalog-Extensions" definition #f 1252 12 1252 41 ("CommonLisp-Extensions")}
-      {Lisp-Entry "Jazz-Catalog-Extensions" definition #f 1255 12 1255 35 ("Scheme-Catalog-Extensions" "append")}
-      {Lisp-Entry "C-Catalog-Extensions" definition #f 1259 12 1259 32 ("C-Extensions")}
-      {Lisp-Entry "Textual-Catalog-Extensions" definition #f 1262 12 1262 38 ("Textual-Extensions")}
-      {Lisp-Entry "Text-Catalog-Extensions" definition #f 1265 12 1265 35 ("Textual-Catalog-Extensions" "C-Catalog-Extensions" "Jazz-Catalog-Extensions" "CommonLisp-Catalog-Extensions" "Scheme-Catalog-Extensions" "append")}
-      {Lisp-Entry "effective-catalog-extensions" definition #f 1273 21 1273 49 ("else" "Text-Catalog-Extensions" ":text" "C-Catalog-Extensions" ":c" "Jazz-Catalog-Extensions" ":jazz" "CommonLisp-Catalog-Extensions" ":commonlisp" "Scheme-Catalog-Extensions" ":scheme" "case" "extensions")}
-      {Lisp-Entry "extension-constituent-test" definition #f 1283 20 1283 46 ("word-constituent?" "else" "sql-constituent?" "SQL-Extensions" "c-constituent?" "C-Extensions" "scheme-constituent?" "Scheme-Extensions" "jazz-constituent?" "ci=?" "test:" "Jazz-Extensions" "member?" "cond" "ext")}}})
+      {Lisp-Entry "initialize-aliases" definition #f 128 20 128 38 ("register-platform-aliases" "when" "get-build-repository" "register-build-repository" "repository-packages" ",name" "package-root" "package-name" "package" "lambda" "repository-directory" "remove-trailing-char" "directory" "repository-name" "name" "let" "register-repository-packages" "register-repository-alias" "repository-binary?" "unless" "repository" "get-repositories" "register-repository" "for-each" "register-repositories" "pathname-normalize" "tokenise-filename" "Home" "'Home" "register-alias" "register-home" "define")}
+      {Lisp-Entry "register-platform-aliases" definition #f 167 17 167 42 ("Network" "'Network" "register-alias")}
+      {Lisp-Entry "register-platform-aliases" definition #f 170 17 170 42 ()}
+      {Lisp-Entry "validate-alias" definition #f 174 13 174 27 ("error" "Directory" "new" "exists?" "if" "path" "name")}
+      {Lisp-Entry "extract-name" definition #f 185 20 185 32 ("cardinality" "1" "+" "subseq" "not" "if" "reversed?:" "find" "pos" "let" "filename")}
+      {Lisp-Entry "extract-base" definition #f 192 20 192 32 ("0" "subseq" "not" "if" "reversed?:" "find" "pos" "let" "filename")}
+      {Lisp-Entry "extract-extension" definition #f 199 20 199 37 ("cardinality" "1" "+" "subseq" "when" "reversed?:" "find" "pos" "let" "filename")}
+      {Lisp-Entry "normalize-filename-separators" definition #f 207 16 207 45 ("substitute" "filename")}
+      {Lisp-Entry "normalize-filename-separators" definition #f 210 16 210 45 ("filename")}
+      {Lisp-Entry "tokenise-filename" definition #f 214 20 214 37 ("cdr" "remove-empty-strings" ":root" "cons" "car" "empty-string?" "if" "normalize-filename-separators" "split" "lst" "let" "filename")}
+      {Lisp-Entry "tokenise-windows" definition #f 221 20 221 36 ("cardinality" "2" "subseq" "split" "remove-empty-strings" "Network" "'Network" "cons" "starts-with?" "if" "filename")}
+      {Lisp-Entry "make-filename" definition #f 227 20 227 33 ("format" "extension" "base")}
+      {Lisp-Entry "get-tmp-directory" definition #f 231 20 231 37 ("tokenise-windows" "Directory" "new" "make-string" "path" "NULL" "0" "GetTempPath" "size" "let*" "get-tmp-directory" "'get-tmp-directory" "unimplemented")}
+      {Lisp-Entry "get-protocol-handler" definition #f 245 20 245 40 ("format" "message:" "Parse-Error" "new" "signal" "when" "else" "Directory" "dir" "File" "file" "case" "keyword->symbol" "keyword?" "if" "let" "error?" "error?:" "protocol")}
+      {Lisp-Entry "Moniker-Class" class #f 259 7 259 20 ("Class")
+        {Lisp-Entry "get-protocol" method #f 262 26 262 38 ()}}
+      {Lisp-Entry "Moniker" class #f 266 7 266 14 ("Object" "Moniker-Class")
+        {Lisp-Entry "compare-pathname" method #f 269 26 269 42 ("object")}
+        {Lisp-Entry "present" method #f 278 26 278 33 ()}
+        {Lisp-Entry "present-base" method #f 282 26 282 38 ("get-base" "->string")}
+        {Lisp-Entry "present-name" method #f 286 26 286 38 ("get-name" "->string")}
+        {Lisp-Entry "present-location" method #f 290 26 290 42 ("get-list" "format")}
+        {Lisp-Entry "exists?" method #f 299 26 299 33 ()}
+        {Lisp-Entry "read-only?" method #f 303 18 303 28 ("get-writable?" "not")}
+        {Lisp-Entry "read/write?" method #f 307 18 307 29 ("get-writable?")}
+        {Lisp-Entry "set-read-only" method #f 311 18 311 31 ("set-writable?")}
+        {Lisp-Entry "set-read/write" method #f 315 18 315 32 ("set-writable?")}
+        {Lisp-Entry "get-writable?" method #f 319 26 319 39 ()}
+        {Lisp-Entry "set-writable?" method #f 323 26 323 39 ("flag")}
+        {Lisp-Entry "writable?" method #f 327 26 327 35 ()}
+        {Lisp-Entry "get-modification-time" method #f 331 26 331 47 ()}
+        {Lisp-Entry "get-file" method #f 335 26 335 34 ()}
+        {Lisp-Entry "get-name" method #f 339 26 339 34 ()}
+        {Lisp-Entry "get-base" method #f 343 26 343 34 ()}
+        {Lisp-Entry "get-extension" method #f 347 26 347 39 ()}
+        {Lisp-Entry "get-list" method #f 351 26 351 34 ()}
+        {Lisp-Entry "get-parent" method #f 355 26 355 36 ()}
+        {Lisp-Entry "get-hierarchy" method #f 359 18 359 31 ("cons" "get-parent" "not" "if" "hierarchy" "self" "moniker" "loop" "let")}
+        {Lisp-Entry "get-content" method #f 366 26 366 37 ("rest")}
+        {Lisp-Entry "get-children" method #f 371 26 371 38 ("rest")}
+        {Lisp-Entry "is-different?" method #f 375 26 375 39 ("moniker")}
+        {Lisp-Entry "relocated-list" method #f 379 18 379 32 ("length" "tail" "get-list" "append" "new-root" "old-root")}
+        {Lisp-Entry "load-lines" method #f 388 26 388 36 ("rest")}
+        {Lisp-Entry "save-lines" method #f 392 26 392 36 ("rest" "lines")}
+        {Lisp-Entry "load-form" method #f 396 26 396 35 ()}}
+      {Lisp-Entry "platform-separator" definition #f 407 16 407 34 ()}
+      {Lisp-Entry "platform-separator" definition #f 410 16 410 34 ()}
+      {Lisp-Entry "Pathname-Class" class #f 414 7 414 21 ("Moniker" ":class")}
+      {Lisp-Entry "Pathname" class #f 417 7 417 15 ("Moniker" "Pathname-Class")
+        {Lisp-Entry "path" slot #f 420 8 420 12 ()}
+        {Lisp-Entry "initialize" method #f 423 20 423 30 ("set-list" "validate-component" "nextmethod" "lst")}
+        {Lisp-Entry "validate-component" definition #f 429 15 429 33 ("else" "cdr" "error" "car" "if" "pair?" "symbol?" "string?" "null?" "cond" "lambda" "validate" "letrec" "original" "let" "object")}
+        {Lisp-Entry "parse" method #f 445 18 445 23 ("get-output-string" "pathname-expand" "add-suffix" "get-list" "else" "cdr" "car" "pair?" "get-alias" "is-alias?" "cons" "self" "error" "memq?" "symbol?" "set!" "if" "string?" "display" ":root" "eq?" "null?" "cond" "path" "lambda" "parse" "letrec" "aliases" "first?" "open-output-string" "printer" "let" "separator" "bind-optionals" "rest")}
+        {Lisp-Entry "platform-parse" method #f 477 18 477 32 ("platform-separator" "parse")}
+        {Lisp-Entry "add-suffix" method #f 481 29 481 39 ("printer")}
+        {Lisp-Entry "relocated-pathname" method #f 485 18 485 36 ("length" "tail" "get-list" "append" "new-root" "old-root")}
+        {Lisp-Entry "create" method #f 489 26 489 32 ()}
+        {Lisp-Entry "move-pathname" method #f 493 18 493 31 ("parse" "file-rename" "error?" "error?:" "dst")}
+        {Lisp-Entry "compare-object" method #f 497 20 497 34 (":not-equal" "else" ":equal" "get-list" "=" ":incompatible" "self" "class-of" "is-not?" "cond" "target")}
+        {Lisp-Entry "compare-pathname" method #f 506 20 506 36 ("parse" "ci=?" "Pathname" "is?" "and" "object")}
+        {Lisp-Entry "valid-aliases?" method #f 511 18 511 32 ("get-list" "get-alias" "is-alias?" "and" "symbol?" "not" "item" "every?" "eq?" "or" "list" "lambda" "valid?" "letrec")}
+        {Lisp-Entry "expand" method #f 523 18 523 24 ("get-output" "get-list" "cdr" "car" "pair?" "get-alias" "symbol?" "string?" "put" ":root" "eq?" "cond" "object" "lambda" "expand" "letrec" "List-Factory" "new" "fact" "let")}
+        {Lisp-Entry "get-list" method #f 538 20 538 28 ("path")}
+        {Lisp-Entry "set-list" method #f 542 18 542 26 ("path" "set!" "value")}
+        {Lisp-Entry "get-name" method #f 546 20 546 28 ("get-list" "effective-name")}
+        {Lisp-Entry "effective-name" method #f 550 11 550 25 ("else" "get-alias" "effective-name" "symbol?" ":root" "eq?" "cond" "last" "name" "let" "lst")}
+        {Lisp-Entry "get-base" method #f 560 20 560 28 ("extract-base" "symbol?" "if" "get-name" "name" "let")}
+        {Lisp-Entry "get-extension" method #f 567 20 567 33 ("get-name" "extract-extension")}
+        {Lisp-Entry "get-parent" method #f 571 20 571 30 ("butlast" "Directory" "new" "cdr" "null?" "or" "expand" "1" "path" "length" "=" "if" "effective-path" "let")}
+        {Lisp-Entry "get-brother" method #f 578 18 578 29 ("list" "get-parent" "get-list" "append" "self" "class-of" "new" "name")}
+        {Lisp-Entry "new-brother" method #f 582 26 582 37 ("name")}
+        {Lisp-Entry "get-directory" method #f 586 26 586 39 ()}
+        {Lisp-Entry "get-attributes" method #f 590 18 590 32 ("self" "error" "when" "-1" "=" "if" "parse" "GetFileAttributes" "attributes" "let" "get-attributes" "'get-attributes" "unimplemented" "error?" "error?:")}
+        {Lisp-Entry "set-attributes" method #f 600 18 600 32 ("self" "error" "not" "when" "parse" "SetFileAttributes" "ok?" "let" "set-attributes" "'set-attributes" "unimplemented" "flags")}
+        {Lisp-Entry "get-writable?" method #f 608 20 608 33 ("FILE_ATTRIBUTE_READONLY" "get-attributes" "mask-bit-set?" "not")}
+        {Lisp-Entry "set-writable?" method #f 614 20 614 33 ("not" "FILE_ATTRIBUTE_READONLY" "get-attributes" "mask-bit-set" "set-attributes" "set-writable?" "'set-writable?" "unimplemented" "flag")}
+        {Lisp-Entry "exists?" method #f 620 20 620 27 ("parse" "file-exists?")}
+        {Lisp-Entry "create-directories" method #f 624 18 624 36 ("create" "exists?" "unless" "dir" "lambda" "for-each" "get-parent" "cons" "set!" "while" "dirs" "expand" "Directory" "new" "scan" "get-directory" "base" "let*")}
+        {Lisp-Entry "anchor-to" method #f 643 18 643 27 ("class-of" "new" "subseq" "append" "else" "continuation-return" "self" "error" "if" "<" "set!" "not" "cond" "return" "lambda" "continuation-capture" "unspecified" "result-list" "ci=?" "test:" "mismatch" "rank" "expd" "length" "base-length" "expand" "base-expd" "get-list" "base-list" "let*" "error?" "error?:" "anchor")}
+        {Lisp-Entry "anchorize" method #f 663 18 663 27 ("car" "self" "null?" "if" "get-list" "length" "path" "key:" "<" "sort" "sorted" "error?:" "list" "Directory" "new" "anchor-to" "valid-alias?" "when" "anchor" "lambda" "collect" "anchored" "either" "difference" "let*" "get-application" "application-anchors" "default-anchors" "define" "ignored-anchors" "ignored-anchors:" "anchors" "anchors:")}}
+      {Lisp-Entry "pathname?" definition #f 675 27 675 36 ("Pathname" "is?" "object")}
+      {Lisp-Entry "pathname=?" definition #f 679 27 679 37 ("compare-pathname" "y" "x")}
+      {Lisp-Entry "pathname-exists?" definition #f 683 27 683 43 ("parse" "file-exists?" "pathname")}
+      {Lisp-Entry "pathname-delete" definition #f 687 27 687 42 ("parse" "file-delete" "pathname")}
+      {Lisp-Entry "pathname-modification-time" definition #f 691 27 691 53 ("parse" "file-modification-time" "pathname")}
+      {Lisp-Entry "File-Class" class #f 700 7 700 17 ("Pathname" ":class")
+        {Lisp-Entry "get-protocol" method #f 703 20 703 32 ("file" "'file")}}
+      {Lisp-Entry "create-temporary-file" definition #f 707 20 707 41 ("tokenise-windows" "File" "new" "adjust-string" "0" "GetTempFileName" "MAX_PATH" "make-string" "filename" "let" "error" "empty-string?" "if" "parse" "dir" "get-tmp-directory" "either" "let*" "create-temporary-file" "'create-temporary-file" "unimplemented" "prefix" "prefix:" "directory" "directory:")}
+      {Lisp-Entry "File" class #f 720 7 720 11 ("Pathname" "File-Class")
+        {Lisp-Entry "print" method #f 723 20 723 25 ("get-list" "format" "readably" "printer")}
+        {Lisp-Entry "new-brother" method #f 734 20 734 31 ("get-parent" "new-file" "name")}
+        {Lisp-Entry "present" method #f 738 20 738 27 ("get-list" "format")}
+        {Lisp-Entry "get-file" method #f 747 20 747 28 ("self")}
+        {Lisp-Entry "get-directory" method #f 751 20 751 33 ("get-parent")}
+        {Lisp-Entry "create" method #f 755 20 755 26 ("output" "lambda" "parse" "call-with-output-file" "create-directories" "exists?" "unless")}
+        {Lisp-Entry "copy-file" method #f 764 18 764 27 ("parse" "file-copy" "delete-file" "exists?" "and" "when" "overwrite-read-only" "overwrite-read-only?" "overwrite-read-only?:" "overwrite?" "overwrite?:" "dst")}
+        {Lisp-Entry "delete-file" method #f 771 18 771 29 ("parse" "file-delete" "overwrite-read-only" "self" "error" "when" "exists?" "not" "if" "error?" "error?:" "overwrite-read-only?" "overwrite-read-only?:")}
+        {Lisp-Entry "overwrite-read-only" method #f 779 11 779 30 ("set-read/write" "read-only?" "exists?" "and" "when" "overwrite-read-only?")}
+        {Lisp-Entry "get-size" method #f 785 18 785 26 ("readable?:" "self" "File-Reader" "new" "reader" "with-closed" "get-size" "'get-size" "unimplemented")}
+        {Lisp-Entry "get-modification-time" method #f 792 20 792 41 ("parse" "file-modification-time" "floor" "inexact->exact" "seconds->time")}
+        {Lisp-Entry "set-modification-time" method #f 796 18 796 39 ("set-attributes" "NULL" "get-handle" "SetFileTime" "printer" "lambda" "append" "'append" "mode:" "parse" "list" "call-with-output-file" "set-read/write" "get-attributes" "at" "get-filetime" "ft" "let" "set-modification-time" "'set-modification-time" "unimplemented" "time")}
+        {Lisp-Entry "touch" method #f 809 18 809 23 ("universal-date" "get-time" "set-modification-time" "touch" "'touch" "unimplemented")}
+        {Lisp-Entry "get-hidden?" method #f 815 18 815 29 ("FILE_ATTRIBUTE_HIDDEN" "get-attributes" "mask-bit-set?" "get-hidden?" "'get-hidden?" "unimplemented")}
+        {Lisp-Entry "set-hidden?" method #f 821 18 821 29 ("FILE_ATTRIBUTE_HIDDEN" "get-attributes" "mask-bit-set" "set-attributes" "set-hidden?" "'set-hidden?" "unimplemented" "flag")}
+        {Lisp-Entry "writable?" method #f 827 20 827 29 ("CloseHandle" "INVALID_HANDLE_VALUE" "=" "if" "FILE_ATTRIBUTE_NORMAL" "OPEN_EXISTING" "NULL" "0" "GENERIC_WRITE" "parse" "CreateFile" "handle" "let" "writable?" "'writable?" "unimplemented")}
+        {Lisp-Entry "clone-file" method #f 837 18 837 28 ("get-base" "format" "list" "get-directory" "get-list" "append" "File" "new" "extension")}
+        {Lisp-Entry "load-lines" method #f 846 20 846 30 ("read-lines" "cr-lf" "'cr-lf" "eol-encoding:" "UTF" "'UTF" "either" "parse" "path:" "list" "call-with-input-file" "char-encoding-errors" "char-encoding-errors:" "char-encoding" "char-encoding:")}
+        {Lisp-Entry "save-lines" method #f 851 20 851 30 ("write-lines" "printer" "lambda" "get-eol-encoding" "UTF-8" "'UTF-8" "either" "parse" "path:" "list" "call-with-output-file" "eol-encoding" "eol-encoding:" "char-encoding" "char-encoding:" "lines")}}
+      {Lisp-Entry "file?" definition #f 857 27 857 32 ("File" "is?" "object")}
+      {Lisp-Entry "timestamped-file" definition #f 861 20 861 36 ("1" "+" "exists?" "new-file" "file" "=" "suffix" "0" "n" "iterate" "current-date" "date->string" "timestamp" "format" "if" "prefix" "let" "ext" "base" "dir")}
+      {Lisp-Entry "Directory-Class" class #f 878 7 878 22 ("Pathname" ":class")
+        {Lisp-Entry "get-protocol" method #f 881 20 881 32 ("dir" "'dir")}}
+      {Lisp-Entry "Directory" class #f 885 7 885 16 ("Pathname" "Directory-Class")
+        {Lisp-Entry "print" method #f 888 20 888 25 ("get-list" "format" "readably" "printer")}
+        {Lisp-Entry "new-brother" method #f 899 20 899 31 ("get-parent" "new-directory" "name")}
+        {Lisp-Entry "present" method #f 903 20 903 27 ("get-list" "format")}
+        {Lisp-Entry "get-directory" method #f 912 20 912 33 ("self")}
+        {Lisp-Entry "get-modification-time" method #f 916 20 916 41 ()}
+        {Lisp-Entry "get-parent" method #f 923 24 923 34 ("nextmethod" "Windows-Meta-Root" "new" "expand" "1" "path" "length" "=" "if" "effective-path" "let")}
+        {Lisp-Entry "create" method #f 931 20 931 26 ("parse" "directory-create")}
+        {Lisp-Entry "new-file" method #f 935 18 935 26 ("list" "null/pair?" "if" "get-list" "append" "File" "new" "name")}
+        {Lisp-Entry "new-directory" method #f 939 18 939 31 ("list" "null/pair?" "if" "get-list" "append" "Directory" "new" "name")}
+        {Lisp-Entry "new-unique-file" method #f 943 18 943 33 ("increase!" "either" "format" "set!" "while" "1" "suffix" "extract-extension" "ext" "extract-base" "base" "exists?" "not" "if" "new-file" "file" "let" "separator" "separator:" "name")}
+        {Lisp-Entry "copy-directory" method #f 956 18 956 32 ("recursive?:" "directories?:" "files?:" "Directory" "copy-directory" "touch" "copy-file" "new" "dest" "File" "is?" "if" "eq?" "or" "iterate-directory" "get-name" "list" "get-list" "append" "path" "lambda" "destination" "let" "create-directories" "self" "when" "copy?" "copy?:" "touch-files?" "touch-files?:" "feedback" "feedback:" "copier" "copier:" "dst")}
+        {Lisp-Entry "delete-directory" method #f 980 26 980 42 ("remove-directory" "empty-directory" "feedback" "feedback:" "overwrite-read-only?" "overwrite-read-only?:")}
+        {Lisp-Entry "empty-directory" method #f 985 18 985 33 ("recursive?:" "directories?:" "files?:" "delete-directory" "delete-file" "File" "is?" "if" "path" "lambda" "iterate-directory" "feedback" "feedback:" "overwrite-read-only?" "overwrite-read-only?:")}
+        {Lisp-Entry "remove-directory" method #f 996 18 996 34 ("parse" "directory-delete")}
+        {Lisp-Entry "get-content" method #f 1000 20 1000 31 ("get-output" "when" "List-Factory" "new" "let" "collect-leaves" "recursive?:" "directories?:" "files?:" "put" "item" "lambda" "iterate-directory" "fact" "collect-nodes" "define" "leaves?" "leaves?:" "nodes?" "nodes?:")}
+        {Lisp-Entry "add-suffix" method #f 1028 20 1028 30 ("write-char" "printer")}
+        {Lisp-Entry "collect-files" method #f 1037 18 1037 31 ("get-output" "recursive?:" "put" "when" "file" "lambda" "iterate-directory" "List-Factory" "new" "fact" "let" "predicate")}
+        {Lisp-Entry "iterate-directory" method #f 1052 26 1052 43 ("Directory" "File" "new" "case" "parse" "get-list" "directory-content-patch" "member?" "regular" "'regular" "eq?" "and" "or" "pathname-type" "type" "file-exists?" "string-append" "path" "for-each" "ci<?" "sort" "sorted" "cons" "set!" "object" "let" "iterate-content-unsorted" "not" "if" "kind" "file" "'file" "files" "'files" "directory" "'directory" "concatenate" "list" "append" "when" "name" "lambda" "directories" "'directories" "iterate-content" "base" "prefix" "iterate-directory-content" "define" "ignored-directories" "ignored-directories:" "recursive?" "recursive?:" "sort?" "sort?:" "directories?" "directories?:" "files?" "files?:" "full?" "full?:" "proc")}
+        {Lisp-Entry "directory-content-patch" definition #f 1098 19 1098 42 ("directory-content" "path")}
+        {Lisp-Entry "directory-content-patch" definition #f 1101 19 1101 42 ("dot-and-dot-dot" "'dot-and-dot-dot" "ignore-hidden:" "path:" "list" "directory-content" "path")}
+        {Lisp-Entry "count-files" method #f 1105 18 1105 29 ("continuation-return" ">" "and" "increase!" "not" "or" "when" "file" "iterate-directory" "return" "lambda" "continuation-capture" "0" "count" "let" "max-count" "max-count:" "filter" "filter:")}}
+      {Lisp-Entry "Windows-Meta-Root" class #f 1121 24 1121 41 ("Pathname")
+        {Lisp-Entry "initialize" method #f 1124 24 1124 34 ()}
+        {Lisp-Entry "get-name" method #f 1128 24 1128 32 ()}
+        {Lisp-Entry "present" method #f 1132 24 1132 31 ("get-name")}
+        {Lisp-Entry "get-parent" method #f 1136 24 1136 34 ()}
+        {Lisp-Entry "get-directory" method #f 1140 24 1140 37 ("list" "Directory" "new")}
+        {Lisp-Entry "exists?" method #f 1144 24 1144 31 ()}
+        {Lisp-Entry "get-content" method #f 1148 24 1148 35 ("get-output" "string" "list" "Directory" "put" "lambda" "for-each" "when" "List-Factory" "new" "fact" "integer->char" "cons" "bitwise-and" "/=" "1" "+" "-1" "arithmetic-shift" "0" "=" "if" "result" "char->integer" "letter" "jazz.platform.windows.GetLogicalDrives" "drives" "loop" "let" "reverse!" "enumerate-drives" "define" "leaves?" "leaves?:" "nodes?" "nodes?:")}}
+      {Lisp-Entry "directory?" definition #f 1171 27 1171 37 ("Directory" "is?" "obj")}
+      {Lisp-Entry "get-current-directory" definition #f 1175 20 1175 41 ("current-directory" "tokenise-filename" "Directory" "new")}
+      {Lisp-Entry "set-current-directory" definition #f 1179 20 1179 41 ("parse" "current-directory-set!" "directory")}
+      {Lisp-Entry "with-preserved-current-directory" definition #f 1183 20 1183 52 ("set-current-directory" "unwind-protect" "get-current-directory" "preserved" "let" "proc")}
+      {Lisp-Entry "Scheme-Extensions" definition #f 1195 19 1195 36 ()}
+      {Lisp-Entry "CommonLisp-Extensions" definition #f 1198 19 1198 40 ()}
+      {Lisp-Entry "Jazz-Extensions" definition #f 1201 19 1201 34 ()}
+      {Lisp-Entry "C-Extensions" definition #f 1204 19 1204 31 ()}
+      {Lisp-Entry "SQL-Extensions" definition #f 1207 19 1207 33 ()}
+      {Lisp-Entry "Textual-Extensions" definition #f 1210 19 1210 37 ()}
+      {Lisp-Entry "Text-Extensions" definition #f 1213 19 1213 34 ("Textual-Extensions" "C-Extensions" "Jazz-Extensions" "CommonLisp-Extensions" "Scheme-Extensions" "append")}
+      {Lisp-Entry "effective-extensions" definition #f 1221 20 1221 40 ("else" "Text-Extensions" ":text" "C-Extensions" ":c" "Jazz-Extensions" ":jazz" "CommonLisp-Extensions" ":commonlisp" "Scheme-Extensions" ":scheme" "case" "extensions")}
+      {Lisp-Entry "Scheme-Include-Extensions" definition #f 1231 12 1231 37 ("Scheme-Extensions")}
+      {Lisp-Entry "CommonLisp-Include-Extensions" definition #f 1234 12 1234 41 ("CommonLisp-Extensions")}
+      {Lisp-Entry "Jazz-Include-Extensions" definition #f 1237 12 1237 35 ("Scheme-Include-Extensions" "append")}
+      {Lisp-Entry "C-Include-Extensions" definition #f 1241 12 1241 32 ("C-Extensions")}
+      {Lisp-Entry "Textual-Include-Extensions" definition #f 1244 12 1244 38 ("Textual-Extensions")}
+      {Lisp-Entry "Text-Include-Extensions" definition #f 1247 12 1247 35 ("Textual-Include-Extensions" "C-Include-Extensions" "Jazz-Include-Extensions" "CommonLisp-Include-Extensions" "Scheme-Include-Extensions" "append")}
+      {Lisp-Entry "effective-include-extensions" definition #f 1255 21 1255 49 ("else" "Text-Include-Extensions" ":text" "C-Include-Extensions" ":c" "Jazz-Include-Extensions" ":jazz" "CommonLisp-Include-Extensions" ":commonlisp" "Scheme-Include-Extensions" ":scheme" "case" "extensions")}
+      {Lisp-Entry "Scheme-Catalog-Extensions" definition #f 1265 12 1265 37 ("Scheme-Extensions")}
+      {Lisp-Entry "CommonLisp-Catalog-Extensions" definition #f 1268 12 1268 41 ("CommonLisp-Extensions")}
+      {Lisp-Entry "Jazz-Catalog-Extensions" definition #f 1271 12 1271 35 ("Scheme-Catalog-Extensions" "append")}
+      {Lisp-Entry "C-Catalog-Extensions" definition #f 1275 12 1275 32 ("C-Extensions")}
+      {Lisp-Entry "Textual-Catalog-Extensions" definition #f 1278 12 1278 38 ("Textual-Extensions")}
+      {Lisp-Entry "Text-Catalog-Extensions" definition #f 1281 12 1281 35 ("Textual-Catalog-Extensions" "C-Catalog-Extensions" "Jazz-Catalog-Extensions" "CommonLisp-Catalog-Extensions" "Scheme-Catalog-Extensions" "append")}
+      {Lisp-Entry "effective-catalog-extensions" definition #f 1289 21 1289 49 ("else" "Text-Catalog-Extensions" ":text" "C-Catalog-Extensions" ":c" "Jazz-Catalog-Extensions" ":jazz" "CommonLisp-Catalog-Extensions" ":commonlisp" "Scheme-Catalog-Extensions" ":scheme" "case" "extensions")}
+      {Lisp-Entry "extension-constituent-test" definition #f 1299 20 1299 46 ("word-constituent?" "else" "sql-constituent?" "SQL-Extensions" "c-constituent?" "C-Extensions" "scheme-constituent?" "Scheme-Extensions" "jazz-constituent?" "ci=?" "test:" "Jazz-Extensions" "member?" "cond" "ext")}}})
 "install"
  ({Lisp-File-Entry {File jazz.io "src" "jazz" "io" "install.scm"} 1259266728
     {Lisp-Entry "jazz.io.install" unit #f 37 6 37 21 ()

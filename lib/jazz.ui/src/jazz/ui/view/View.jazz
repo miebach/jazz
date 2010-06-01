@@ -108,8 +108,6 @@
   (slot offscreen                                initialize #f)
   (slot scroller                                 initialize #f)
   (slot renderer                                 initialize #f accessors generate)
-  (slot scaled?                     <bool>       initialize #f)
-  (slot scaling                     <fl>         initialize 1.0)
   (slot previous-size               <Dimension+> initialize #f)
   (slot update-locked?              <bool>       initialize #f getter generate)
   (slot scrollee-locked?            <bool>       initialize #f)
@@ -626,34 +624,6 @@
   
   
   ;;;
-  ;;;; Scaling
-  ;;;
-  
-
-  (method override (get-scaled?)
-    scaled?)
-
-
-  (method override (set-scaled? value)
-    (set! scaled? value)
-    (update-displayed)
-    (update-scrollbars)
-    ;; Depending on whether it's the view's point of vue or it's parent
-    ;; we either have to invalidate the view or its parent...
-    (if parent
-        (invalidate-view~ parent)
-      (invalidate-view)))
-  
-
-  (method override (get-scaling)
-    scaling)
-
-
-  (method override (set-scaling value <fl>)
-    (set! scaling (/ (round (* value 1000)) 1000)))
-
-  
-  ;;;
   ;;;; Actionable
   ;;;
   
@@ -727,23 +697,12 @@
 
   
   ;;;
-  ;;;; Lie
-  ;;;
-  
-  
-  (method override (get-lie-parent h <fl> v <fl> sc <fl>)
-    (if (or (not parent) (not scaled?))
-        (nextmethod h v sc)
-      (get-lie-parent~ parent (+ (get-h~ position) (* h scaling)) (+ (get-v~ position) (* v scaling)) (* sc scaling))))
-
-  
-  ;;;
   ;;;; Global
   ;;;
   
   
   (method public (get-global) <Point>
-    (+ (get-position-in-root~ (cast <Window> player)) (get-lie)))
+    (point+ (get-position-in-root~ (cast <Window> player)) (get-absolute-position)))
 
   
   ;;;
@@ -751,13 +710,11 @@
   ;;;
   
   
-  (method override (get-delta origin <View>)
+  (method override (find-offset origin <View>)
     (let ((origin-player (get-player~ origin)))
       (if (and player origin-player (neq? player origin-player))
-          (receive (h <fl> v <fl> sc <fl>) (get-lie-parent 0.0 0.0 1.0)
-            (let ((delta <Point> (- (get-global~ origin) (get-global))))
-              (values (* (get-h~ delta) sc) (* (get-v~ delta) sc) sc)))
-        (nextmethod origin))))
+          (point- (get-global~ origin) (get-global))
+          (nextmethod origin))))
   
   
   ;;;
@@ -963,10 +920,10 @@
   ;;;
   
 
-  (method override (render surface draw-self? nodes context lh lv sh sv sc sc?)
+  (method override (render surface draw-self? nodes context lh lv)
     (if renderer
-        (render~ renderer self surface draw-self? nodes context lh lv sh sv sc sc?)
-      (nextmethod surface draw-self? nodes context lh lv sh sv sc sc?)))
+        (render~ renderer self surface draw-self? nodes context lh lv)
+      (nextmethod surface draw-self? nodes context lh lv)))
 
   
   ;;;
@@ -986,7 +943,6 @@
   
   
   (method override (draw-content surface context lh lv)
-    (set-font~ surface (effective-font))
     (draw surface context lh lv))
   
   
@@ -1073,42 +1029,31 @@
 
   
   (method public virtual (print-layout (from-preview?: from-preview? #f))
-    (with-locked-update
-      (lambda ()
-        (let* ((client (current-document))
-               (current (selected-workspace))
-               (ws (new Page-Workspace name: 'page previous: current)))
-          (apply-preferences~ ws)
-          (let* ((toplevel (get-toplevel))
-                 (toolbar (find-docked~ toplevel Page-Toolbar)))
-            (set-visible?~ (locate~ toolbar 'print-preview) (not from-preview?))
-            (layout-view~ toolbar))
-          (let* ((frame (new-frame Page-Editor host-title: "Print Layout" client: client))
-                 (pane (get-guest~ frame)))
-            (acquire-focus~ pane))))))
-
-  
-  (method public virtual (print-layout-debug (from-preview?: from-preview? #f))
-    (let ((client (current-document)))
-      (let ((frame (new-frame Page-Editor host-title: "Print Layout" client: client)))
-        (let ((pane (get-guest~ frame)))
-          (acquire-focus~ pane)))))
+    (let* ((client (current-document))
+           (current (selected-workspace))
+           (ws (new Page-Workspace name: 'page previous: current)))
+      (apply-preferences~ ws)
+      (let* ((toplevel (get-toplevel))
+             (toolbar (find-docked~ toplevel Page-Toolbar)))
+        (set-visible?~ (locate~ toolbar 'print-preview) (not from-preview?))
+        (layout-view~ toolbar))
+      (let* ((frame (new-frame Page-Editor host-title: "Print Layout" client: client))
+             (pane (get-guest~ frame)))
+        (acquire-focus~ pane))))
   
 
   (method public virtual (print-preview (from-layout?: from-layout? #f))
-    (with-locked-update
-      (lambda ()
-        (let* ((frame (new-frame Preview-Pane host-title: "Print Preview" host-visible?: #f client: self))
-               (pane (get-guest~ frame))
-               (current (selected-workspace))
-               (ws (new Preview-Workspace name: 'preview previous: current pane: pane)))
-          (apply-preferences~ ws)
-          (let* ((toplevel (get-toplevel))
-                 (toolbar (find-docked~ toplevel Preview-Toolbar)))
-            (set-visible?~ (locate~ toolbar 'print-layout) (not from-layout?))
-            (layout-view~ toolbar))
-          (set-visible?~ frame #t)
-          (acquire-focus~ pane)))))
+    (let* ((frame (new-frame Preview-Pane host-title: "Print Preview" host-visible?: #f client: self))
+           (pane (get-guest~ frame))
+           (current (selected-workspace))
+           (ws (new Preview-Workspace name: 'preview previous: current pane: pane)))
+      (apply-preferences~ ws)
+      (let* ((toplevel (get-toplevel))
+             (toolbar (find-docked~ toplevel Preview-Toolbar)))
+        (set-visible?~ (locate~ toolbar 'print-layout) (not from-layout?))
+        (layout-view~ toolbar))
+      (set-visible?~ frame #t)
+      (acquire-focus~ pane)))
   
 
   (method public virtual (print-preview-debug (from-layout?: from-layout? #f))
@@ -1151,17 +1096,14 @@
   
   
   (method protected virtual (setup-printing)
-    (let ((pos position)
-          (sc? scaled?))
+    (let ((pos position))
       (set! position (new Point 0 0))
-      (set! scaled? #f)
       (update-displayed)
-      (list position: pos scaled?: sc?)))
+      (list position: pos)))
   
   
   (method protected virtual (restore-printing preserved)
     (set! position (getf preserved position:))
-    (set! scaled? (getf preserved scaled?:))
     (update-displayed))
   
   
@@ -1172,8 +1114,8 @@
   
   (method public (export-picture (context: context '()) (where: where 'file) (destination: destination #f))
     (with ((surface (new Memory-Surface #f (get-size))))
-      (set-clipper~ surface (new Rect 0 0 (get-width) (get-height)))
-      (paint-drawing surface context 0 0 0 0 1.0 #f)
+      (with-clipper~ surface (new Rect 0 0 (get-width) (get-height))
+        (lambda () (paint-drawing surface context 0 0)))
       (export-to-png~ surface (or destination (choose-new-file default-extension: "png")))))
 
 
@@ -1189,13 +1131,11 @@
               (with-printing
                 (lambda ()
                   (let* ((area (get-print-area context))
-                         (lie (get-lie))
-                         (lh (get-h~ lie))
-                         (lv (get-v~ lie)))
-                    (let ((content (offset-rect area lh lv)))
-                      (with-clipper~ picture content
-                        (lambda ()
-                          (paint-drawing picture context lh lv (get-left~ content) (get-top~ content) 1.0 #f)))))))
+                         (pos (get-absolute-position))
+                         (content (offset-rect area (get-h~ pos) (get-v~ pos))))
+                    (with-clipper~ picture content
+                      (lambda ()
+                        (paint-drawing picture context (get-h~ pos) (get-v~ pos)))))))
               (set! metafile (get-metafile~ picture)))
             (if (eq? where 'clipboard)
                 (set-clipboard-metafile metafile)
@@ -1287,11 +1227,6 @@
       (scroll-to (+ (get-scrolled-position) delta) redraw?: redraw?)))
   
   
-  (method public (scroll2 delta <Point> (redraw?: redraw? #f))
-    (unless (= delta {Point 0 0})
-      (scroll-to2 (+ (get-scrolled-position) delta) redraw?: redraw?)))
-  
-  
   (method public (scroll-to dest <Point> (redraw?: redraw? #f))
     (when (get-scroller)
       (let ((pos (get-scrolled-position)))
@@ -1300,16 +1235,15 @@
           (let* ((size (get-size))
                  (display (get-display))
                  (display-size (get-size~ display))
-                 (sc (if scaled? scaling 1.0))
-                 (min-h (- (fl/ (get-width~ display-size) sc) (get-width~ size)))
-                 (min-v (- (fl/ (get-height~ display-size) sc) (get-height~ size)))
+                 (min-h (- (get-width~ display-size) (get-width~ size)))
+                 (min-v (- (get-height~ display-size) (get-height~ size)))
                  (max-h 0)
                  (max-v 0)
                  (h (fxround (min (max (get-h~ dest) min-h) max-h)))
                  (v (fxround (min (max (get-v~ dest) min-v) max-v)))
-                 (new-pos (new Point (fxround (* h sc)) (fxround (* v sc)))))
+                 (new-pos (new Point (fxround h) (fxround v))))
             (when (/= new-pos position)
-              (set! position (new Point (fxround (* h sc)) (fxround (* v sc))))
+              (set! position (new Point (fxround h) (fxround v)))
               (let ((scrolled (get-scrolled-position)))
                 (set-scroll-pos 'horz (- h) redraw?: redraw?)
                 (set-scroll-pos 'vert (- v) redraw?: redraw?))
@@ -1317,45 +1251,10 @@
               (let ((dh (- h (get-h~ pos)))
                     (dv (- v (get-v~ pos))))
                 (scroll-invalidate dh dv)
-                ;; temp for testing...
-                (if scaled?
-                    ;; convert to-fix scroll-view bugs when used from thumb-track
-                    (invalidate-view~ scroller)
-                  (let ((rect (get-bounds~ display))
-                        (clip-rect (acquire~ display self (get-view-clipper))))
-                    (scroll-view~ display dh dv rect clip-rect: clip-rect))))))))))
-  
-  
-  (method public (scroll-to2 dest <Point> (redraw?: redraw? #f))
-    (let ((pos (get-scrolled-position)))
-      ;; dest and pos are in this view coordinates
-      (when (/= dest pos)
-        (let* ((size (get-size))
-               (display (get-display))
-               (display-size (get-size~ display))
-               (sc (if scaled? scaling 1.0))
-               (min-h (- (fl/ (get-width~ display-size) sc) (get-width~ size)))
-               (min-v (- (fl/ (get-height~ display-size) sc) (get-height~ size)))
-               (max-h 0)
-               (max-v 0)
-               (h (fxround (min (max (get-h~ dest) min-h) max-h)))
-               (v (fxround (min (max (get-v~ dest) min-v) max-v)))
-               (new-pos (new Point (fxround (* h sc)) (fxround (* v sc)))))
-          (when (/= new-pos position)
-            (set! position (new Point (fxround (* h sc)) (fxround (* v sc))))
-            (let ((scrolled (get-scrolled-position)))
-              (set-scroll-pos 'horz (- h) redraw?: redraw?)
-              (set-scroll-pos 'vert (- v) redraw?: redraw?))
-            (update-scrollbars)
-            (let ((dh (- h (get-h~ pos)))
-                  (dv (- v (get-v~ pos))))
-              (scroll-invalidate dh dv)
-              ;; temp for testing...
-              (if scaled?
-                  ;; convert to-fix scroll-view bugs when used from thumb-track
-                  (invalidate-view~ scroller)
-                (scroll-view2 dh dv (get-bounds)))))))))
-  
+                (let ((rect (get-bounds~ display))
+                      (clip-rect (acquire~ display self (get-clipper))))
+                  (scroll-view~ display dh dv rect clip-rect: clip-rect)))))))))
+
   
   (method protected virtual (redraw-scrollbars)
     )
@@ -1366,14 +1265,9 @@
     
   
   (method public (scroll-view dh dv rect (clip-rect: clip-rect #f))
-    (let ((player (get-player))
-          (root (get-root))
-          (display (get-display)))
-      (when (and player (view-visible?))
-        (let ((acquired (acquire~ root self rect))
-              (clip-rect (acquire~ root self (or clip-rect (get-view-clipper)))))
-          (receive (h v sc) (get-lie-parent 0.0 0.0 1.0)
-            (scroll-window~ player (fxround (* dh sc)) (fxround (* dv sc)) acquired clip-rect))))))
+    (let ((root (get-root)))
+      (when (and (get-player) (view-visible?))
+        (scroll-window~ (get-player) dh dv (acquire~ root self rect) (acquire~ root self (or clip-rect (get-clipper)))))))
   
   
   ;; an attempt at a platform-independant scroll-view
@@ -1386,19 +1280,15 @@
           (scroll-offscreen~ root dh dv acquired clip-rect)))))
   
   
-  (method (scroll-offscreen dh dv src-rect clip-rect)
+  (method (scroll-offscreen dh dv src clip-rect)
     (with ((surface (get-surface)))
-      (let* ((src-rect (rect-intersection src-rect clip-rect))
+      (let* ((src-rect (rect-intersection src clip-rect))
              (dst-rect (offset-rect src-rect dh dv))
              (modified-rect (rect-intersection (rect-union src-rect dst-rect) clip-rect))
-             (new-clipper (rect-intersection modified-rect dst-rect))
+             (new-clipper (rect-intersection clip-rect dst-rect))
              (offscreen (get-offscreen #f)))
-        (set-source-surface~ surface offscreen dh dv)
-        (draw-rectangle~ surface new-clipper)
-        (fill~ surface)
-        (set-source-surface~ offscreen offscreen dh dv)
-        (draw-rectangle~ offscreen new-clipper)
-        (fill~ offscreen)
+        (blit-surface~ surface offscreen dh dv new-clipper)
+        (blit-surface~ offscreen offscreen dh dv new-clipper)
         (let ((ml (get-left~ modified-rect))
               (mt (get-top~ modified-rect))
               (mr (get-right~ modified-rect))
@@ -1569,10 +1459,8 @@
   
   (method public (view->display pos <Point>) <Point>
     (if scroller
-        (if (not scaled?)
-            (+ pos position)
-          (new Point (fxround (+ (get-h~ pos) (/ (get-h~ position) scaling))) (fxround (+ (get-v~ pos) (/ (get-v~ position) scaling)))))
-      pos))
+        (+ pos position)
+        pos))
 
   
   (method public (h-view->display h <fx>) <fx>
@@ -3276,15 +3164,8 @@
   
   
   (method override (get-parent/child-clipper child h v)
-    (if (not scaled?)
-        (nextmethod child h v)
-      (let ((p (get-translated-clipper (- (* h scaling) (get-h~ (get-position~ child))) (- (* v scaling) (get-v~ (get-position~ child)))))
-            (c (offset-rect (get-bounds~ child) (fxround h) (fxround v))))
-        (set-left~ p (fxround/ (get-left~ p) scaling))
-        (set-top~ p (fxround/ (get-top~ p) scaling))
-        (set-right~ p (fxround/ (get-right~ p) scaling))
-        (set-bottom~ p (fxround/ (get-bottom~ p) scaling))
-        (rect-intersection p c))))
+    (rect-intersection (get-translated-clipper (- h (get-h~ (get-position~ child))) (- v (get-v~ (get-position~ child))))
+                       (offset-rect (get-bounds~ child) (fxround h) (fxround v))))
   
   
   ;;;
@@ -3293,13 +3174,9 @@
 
 
   (method public (get-surface)
-    (let ((surface (new Surface (get-window-surface (get-player))))
-          (lie (get-lie)))
-      (set-transform~ surface (get-h~ lie) (get-v~ lie) (get-width) (get-height) 0 0 1.0 #f)
-      (set-clipper~ surface (get-bounds))
-      surface))
+    (new Surface (get-window-surface (get-player))))
 
-
+  
   ;;;
   ;;;; Invalidation
   ;;;
@@ -3314,17 +3191,20 @@
     (when (view-visible?)
       (let ((acquired (acquire~ (get-root) self (rect-intersection rect (get-view-clipper)))))
         (invalidate-rect~ player acquired))))
+
+
+  (method protected (update-invalidated-region! region)
+    (let* ((root (get-root))
+           (offset (point- (get-absolute-position) (get-absolute-position~ root))))
+      (offset!~ region (get-h~ offset) (get-v~ offset))
+      (with ((clipper (new Region (acquire~ root self (get-clipper)))))
+        (combine!~ region clipper 'and))))
   
   
-  ;; todo: not using acquire is a potentiel scaling bug...
   (method public (invalidate-region region)
     (when (view-visible?)
-      (let ((root (cast <View> (get-root))))
-        (let ((delta (- (get-lie) (get-lie~ root))))
-          (offset!~ region (get-h~ delta) (get-v~ delta))
-          (with ((clipper (new Region (acquire~ root self (get-view-clipper)))))
-            (combine!~ region clipper 'and))
-          (invalidate-region~ player region)))))
+      (update-invalidated-region! region)
+      (invalidate-region~ player region)))
   
   
   (method public (redraw-view (rect: rect #f) (region: region #f))
@@ -3334,13 +3214,9 @@
           (cond (rect
                   (let ((acquired (acquire~ root self (rect-intersection rect (get-view-clipper)))))
                     (redraw-window~ player rect: acquired)))
-                ;; todo: not using acquire is a potentiel scaling bug...
                 (region
-                  (let ((delta (- (get-lie) (get-lie~ root))))
-                    (offset!~ region (get-h~ delta) (get-v~ delta))
-                    (with ((clipper (new Region (acquire~ root self (get-view-clipper)))))
-                      (combine!~ region clipper 'and))
-                    (redraw-window~ player region: region)))
+                 (update-invalidated-region! region)
+                 (redraw-window~ player region: region))
                 (else
                  (let ((acquired (acquire~ root self (rect-intersection (get-bounds) (get-view-clipper)))))
                    (redraw-window~ player rect: acquired))))))))

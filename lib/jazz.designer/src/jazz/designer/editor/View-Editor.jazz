@@ -270,8 +270,8 @@
   ;;;
   
   
-  (method override (render surface draw-self? nodes context lh lv sh sv sc sc?)
-    (nextmethod surface draw-self? nodes context lh lv sh sv sc sc?)
+  (method override (render surface draw-self? nodes context lh lv)
+    (nextmethod surface draw-self? nodes context lh lv)
     (for-each (lambda (view rank)
                 (when (is? view View)
                   (let* ((surrogate (get-surrogate~ view))
@@ -351,33 +351,45 @@
   ;;;
   ;;;; Alignment
   ;;;
+
+  (define (outer-surrogate view)
+    (outer-client~ (get-surrogate~ view)))
   
-  
-  (method public (align-left)
-    (if (< (length selection) 2)
+
+  (method protected (map-selection-tail selection size func)
+    (if (< (length selection) size)
         (bell)
       (with-alignment
         (lambda ()
           (let* ((reference (outer-client~ (get-surrogate~ (car selection))))
-                 (h (lie-left reference)))
+                 (h (abs-left reference)))
             (for-each (lambda (view)
                         (let* ((view (outer-client~ (get-surrogate~ view)))
-                               (lie (get-lie~ view)))
-                          (set-view-lie view (new Point h (get-v~ lie)))))
+                               (lie (get-absolute-position~ view)))
+                          (set-view-abs-pos~ view (new Point h (get-v~ lie)))))
                       (cdr selection)))))))
+
+
+  (method protected (align compute-new-position)
+    (map-selection-tail selection 2 (lambda (os view) (set-view-abs-pos os (compute-new-position os)))))
   
   
+  (method public (align-left)
+    (let ((h (abs-left (outer-surrogate (car selection)))))
+      (align (lambda (view) (new Point h (abs-top view))))))
+  
+    
   (method public (align-top)
     (if (< (length selection) 2)
         (bell)
       (with-alignment
         (lambda ()
           (let* ((reference (outer-client~ (get-surrogate~ (car selection))))
-                 (v (lie-top reference)))
+                 (v (abs-top reference)))
             (for-each (lambda (view)
                         (let* ((view (outer-client~ (get-surrogate~ view)))
-                               (lie (get-lie~ view)))
-                          (set-view-lie view (new Point (get-h~ lie) v))))
+                               (lie (get-absolute-position~ view)))
+                          (set-view-abs-pos view (new Point (get-h~ lie) v))))
                       (cdr selection)))))))
   
   
@@ -387,12 +399,12 @@
       (with-alignment
         (lambda ()
           (let* ((reference (outer-client~ (get-surrogate~ (car selection))))
-                 (h (lie-right reference)))
+                 (h (abs-right reference)))
             (for-each (lambda (view)
                         (let* ((view (outer-client~ (get-surrogate~ view)))
-                               (lie (get-lie~ view))
+                               (lie (get-absolute-position~ view))
                                (h (- h (get-width~ view))))
-                          (set-view-lie view (new Point h (get-v~ lie)))))
+                          (set-view-abs-pos view (new Point h (get-v~ lie)))))
                       (cdr selection)))))))
   
   
@@ -402,12 +414,12 @@
       (with-alignment
         (lambda ()
           (let* ((reference (outer-client~ (get-surrogate~ (car selection))))
-                 (v (lie-bottom reference)))
+                 (v (abs-bottom reference)))
             (for-each (lambda (view)
                         (let* ((view (outer-client~ (get-surrogate~ view)))
-                               (lie (get-lie~ view))
+                               (lie (get-absolute-position~ view))
                                (v (- v (get-height~ view))))
-                          (set-view-lie view (new Point (get-h~ lie) v))))
+                          (set-view-abs-pos view (new Point (get-h~ lie) v))))
                       (cdr selection)))))))
   
   
@@ -417,13 +429,13 @@
       (with-alignment
         (lambda ()
           (let* ((reference (outer-client~ (get-surrogate~ (car selection))))
-                 (h (lie-left reference))
+                 (h (abs-left reference))
                  (width (get-width~ reference)))
             (for-each (lambda (view)
                         (let* ((view (outer-client~ (get-surrogate~ view)))
-                               (lie (get-lie~ view))
+                               (lie (get-absolute-position~ view))
                                (h (+ h (fxround/ (- width (get-width~ view)) 2))))
-                          (set-view-lie view (new Point h (get-v~ lie)))))
+                          (set-view-abs-pos view (new Point h (get-v~ lie)))))
                       (cdr selection)))))))
   
   
@@ -433,13 +445,13 @@
       (with-alignment
         (lambda ()
           (let* ((reference (outer-client~ (get-surrogate~ (car selection))))
-                 (v (lie-top reference))
+                 (v (abs-top reference))
                  (height (get-height~ reference)))
             (for-each (lambda (view)
                         (let* ((view (outer-client~ (get-surrogate~ view)))
-                               (lie (get-lie~ view))
+                               (lie (get-absolute-position~ view))
                                (v (+ v (fxround/ (- height (get-height~ view)) 2))))
-                          (set-view-lie view (new Point (get-h~ lie) v))))
+                          (set-view-abs-pos view (new Point (get-h~ lie) v))))
                       (cdr selection)))))))
   
   
@@ -450,12 +462,12 @@
         (lambda ()
           (let* ((first (outer-client~ (get-surrogate~ (first selection))))
                  (second (outer-client~ (get-surrogate~ (second selection))))
-                 (dh (- (lie-left second) (lie-right first)))
-                 (h (+ (lie-right second) dh)))
+                 (dh (- (abs-left second) (abs-right first)))
+                 (h (+ (abs-right second) dh)))
             (for-each (lambda (view)
                         (let* ((view (outer-client~ (get-surrogate~ view)))
-                               (lie (get-lie~ view)))
-                          (set-view-lie view (new Point h (get-v~ lie))))
+                               (lie (get-absolute-position~ view)))
+                          (set-view-abs-pos view (new Point h (get-v~ lie))))
                         (increase! h (+ (get-width~ view) dh)))
                       (cddr selection)))))))
   
@@ -467,12 +479,12 @@
         (lambda ()
           (let* ((first (outer-client~ (get-surrogate~ (first selection))))
                  (second (outer-client~ (get-surrogate~ (second selection))))
-                 (dv (- (lie-top second) (lie-bottom first)))
-                 (v (+ (lie-bottom second) dv)))
+                 (dv (- (abs-top second) (abs-bottom first)))
+                 (v (+ (abs-bottom second) dv)))
             (for-each (lambda (view)
                         (let* ((view (outer-client~ (get-surrogate~ view)))
-                               (lie (get-lie~ view)))
-                          (set-view-lie view (new Point (get-h~ lie) v)))
+                               (lie (get-absolute-position~ view)))
+                          (set-view-abs-pos view (new Point (get-h~ lie) v)))
                         (increase! v (+ (get-height~ view) dv)))
                       (cddr selection)))))))
   
@@ -532,25 +544,25 @@
                 selection)))
   
   
-  (definition (lie-left view)
-    (get-h~ (get-lie~ view)))
+  (definition (abs-left view)
+    (get-h~ (get-absolute-position~ view)))
   
   
-  (definition (lie-top view)
-    (get-v~ (get-lie~ view)))
+  (definition (abs-top view)
+    (get-v~ (get-absolute-position~ view)))
   
   
-  (definition (lie-right view)
-    (+ (get-h~ (get-lie~ view)) (get-width~ view)))
+  (definition (abs-right view)
+    (+ (get-h~ (get-absolute-position~ view)) (get-width~ view)))
   
   
-  (definition (lie-bottom view)
-    (+ (get-v~ (get-lie~ view)) (get-height~ view)))
+  (definition (abs-bottom view)
+    (+ (get-v~ (get-absolute-position~ view)) (get-height~ view)))
   
   
-  (method (set-view-lie view lie)
+  (method (set-view-abs-pos view lie)
     (safe-set-property~ designer view 'position (get-position~ view))
-    (set-lie~ view lie))
+    (set-absolute-position~ view lie))
 
 
   ;;;
@@ -672,14 +684,6 @@
 ;;;; Overlay
 ;;;
 
-
-(definition Overlay-Outside
-  {Color red: 96 green: 158 blue: 234 alpha: 0.8})
-
-(definition Overlay-Inside
-  {Color red: 96 green: 158 blue: 234 alpha: 0.4})
-
-
 (class Client-Overlay extends View
   
   
@@ -687,9 +691,9 @@
   
   
   (method override (draw surface context lh lv)
-    (let ((base (get-base-position~ editor))
-          (current (get-current-position~ editor)))
+    (let ((current (get-current-position~ editor)))
       (when current
-        (let ((rect (normalize-rect (corners->rect base current))))
-          (set-line-width~ surface 1)
-          (rectangle~ surface rect Overlay-Outside Overlay-Inside)))))))
+        (let ((rect (corners->rect (get-base-position~ editor) current)))
+          (fill-rect~ surface rect {Color red: 96 green: 158 blue: 234 alpha: 0.4})
+          (frame-rect~ surface rect {Color red: 96 green: 158 blue: 234 alpha: 0.8})))))))
+

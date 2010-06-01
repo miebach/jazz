@@ -89,7 +89,7 @@
   
   
   (method override (draw surface context lh lv)
-    (draw-edge~ surface (get-bounds) outer: 'sunken edges: 'rectangle)
+    (draw-edge surface (get-bounds) outer: 'sunken edges: 'rectangle)
     (draw-icon surface context)
     (draw-body surface))
   
@@ -104,12 +104,7 @@
   
   (method (draw-body surface)
     (when title
-      (let ((title (localize title))
-            (left (if icon 20 3))
-            (top 4))
-        (set-font~ surface {Font Caption})
-        (set-text-color~ surface (or (get-text-color~ (get-look)) {Color Black}))
-        (draw-text~ surface left top title))))
+      (draw-text~ surface (if icon 20 3) 4 (localize title) {Font Caption} {Color Black})))
   
   
   ;;;

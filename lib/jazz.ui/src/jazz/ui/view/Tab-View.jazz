@@ -180,7 +180,7 @@
                                          (or (not keep-one-sheet?)
                                              (and keep-one-sheet?
                                                   (> (length children) 1)))))
-                         (next (+ h padding (if title (+ (get-width~ (text-extent~ (effective-font) title)) (if closable? 8 0)) 10) padding)))
+                         (next (+ h padding (if title (+ (get-text-width title (effective-font)) (if closable? 8 0)) 10) padding)))
                     (set-borders~ header (cons h next))
                     (increase! n)
                     (set! h next)))
@@ -317,13 +317,13 @@
              (right   (get-width~ size))
              (bottom  (get-height~ size))
              (content (if (null? children) top (+ top headers-height -1))))
-        (set-font~ surface {Font Label})
         (set-color~ surface {Color Light})
         (set-line-width~ surface 1)
-        (draw-edge~ surface (new Rect left content right bottom) inner: 'raised outer: 'raised edges: '(right bottom))
+        (draw-edge surface (new Rect left content right bottom) inner: 'raised outer: 'raised edges: '(right bottom))
         (set-color~ surface {Color Light})
         (move-to~ surface 0 content)
         (line-to~ surface 0 bottom)
+        (stroke~ surface)
         (for-each (lambda (header n)
                     (let* ((title (localize (get-title~ header)))
                            (title-color (get-title-color~ header))
@@ -350,32 +350,35 @@
                         (when border-color
                           (set-color~ surface border-color)
                           (move-to~ surface (+ lf 2) (+ top 2))
-                          (line-to-preserve~ surface (- rg 4) (+ top 2))
-                          (line-to-preserve~ surface (- rg 4) (- content 2))
-                          (line-to-preserve~ surface (+ lf 2) (- content 2))
-                          (line-to~ surface (+ lf 2) (+ top 2)))
+                          (line-to~ surface (- rg 4) (+ top 2))
+                          (line-to~ surface (- rg 4) (- content 2))
+                          (line-to~ surface (+ lf 2) (- content 2))
+                          (line-to~ surface (+ lf 2) (+ top 2))
+                          (stroke~ surface))
                         ;; right
                         (unless previous?
-                          (draw-edge~ surface (new Rect lf (+ top 2) rg content) inner: 'raised outer: 'raised edges: '(right))
+                          (draw-edge surface (new Rect lf (+ top 2) rg content) inner: 'raised outer: 'raised edges: '(right))
                           (set-color~ surface background)
                           (move-to~ surface (- rg 2) (+ top 1))
-                          (line-to~ surface (- rg 1) (+ top 2)))
+                          (line-to~ surface (- rg 1) (+ top 2))
+                          (stroke~ surface))
                         ;; top
                         (set-color~ surface (if selected? {Color Light} {Color red: 243 green: 243 blue: 241}))
                         (move-to~ surface (- rg 2) top)
-                        (line-to-preserve~ surface (+ lf (if next? 1 2)) top)
+                        (line-to~ surface (+ lf (if next? 1 2)) top)
                         ;; left
                         (unless next?
-                          (line-to-preserve~ surface lf (+ top 2))
+                          (line-to~ surface lf (+ top 2))
                           (line-to~ surface lf content))
+                        (stroke~ surface)
                         ;; bottom
                         (unless selected?
                           (move-to~ surface lf content)
-                          (line-to~ surface rg content))
+                          (line-to~ surface rg content)
+                          (stroke~ surface))
                         ;; title
                         (when title
-                          (set-text-color~ surface (or title-color {Color Black}))
-                          (draw-text~ surface (+ lf 5) (+ top 3) title))
+                          (draw-text~ surface (+ lf 5) (+ top 3) title {Font Label} (or title-color {Color Black})))
                         ;; close
                         (when (and (get-closable?~ header)
                                    selected?
@@ -383,7 +386,7 @@
                                        (and keep-one-sheet?
                                             (> (length children) 1))))
                           (let ((rect (get-close-button-borders header)))
-                            (draw-caption~ surface rect 'close (get-close-button-down?~ header) (get-close-button-enter?~ header)))))))
+                            (draw-caption surface rect 'close (get-close-button-down?~ header) (get-close-button-enter?~ header)))))))
                   children
                   (naturals 0 (length children)))
         (set-color~ surface {Color Light})
@@ -393,17 +396,12 @@
             (line~ surface h content (- right 1) content)))))
     
     (define (draw-bottom surface size)
-      (let* ((left    0)
-             (top     0)
-             (right   (- (get-width~ size) 1))
-             (bottom  (- (get-height~ size) 1))
-             (content (- bottom headers-height)))
-        (set-font~ surface {Font Label})
-        (set-color~ surface {Color Light})
-        (set-line-width~ surface 1)
-        (move-to~ surface left content)
-        (line-to~ surface left top)
-        (line-to~ surface right top)))
+      (set-color~ surface {Color Light})
+      (set-line-width~ surface 1)
+      (move-to~ surface 0 (- (get-height~ size) headers-height 1))
+      (line-to~ surface 0 0)
+      (line-to~ surface (- (get-width~ size) 1) 0)
+      (stroke~ surface))
     
     (let ((size (get-size)))
       (case orientation

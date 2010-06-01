@@ -617,10 +617,10 @@
 (class Rect metaclass Rect-Class extends Object
   
   
-  (slot left   <fx> accessors generate)
-  (slot top    <fx> accessors generate)
-  (slot right  <fx> accessors generate)
-  (slot bottom <fx> accessors generate)
+  (slot left   <fx> getter generate)
+  (slot top    <fx> getter generate)
+  (slot right  <fx> getter generate)
+  (slot bottom <fx> getter generate)
   
   
   (method override (initialize l <fx> t <fx> r <fx> b <fx>)
@@ -695,10 +695,10 @@
 (class Rect$fl$ metaclass Rect$fl$-Class extends Object
   
   
-  (slot left   <fl> accessors generate)
-  (slot top    <fl> accessors generate)
-  (slot right  <fl> accessors generate)
-  (slot bottom <fl> accessors generate)
+  (slot left   <fl> getter generate)
+  (slot top    <fl> getter generate)
+  (slot right  <fl> getter generate)
+  (slot bottom <fl> getter generate)
   
   
   (method override (initialize l <fl> t <fl> r <fl> b <fl>)

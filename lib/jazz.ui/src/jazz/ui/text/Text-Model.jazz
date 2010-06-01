@@ -282,7 +282,7 @@
       (set-runs~ paragraph runs)
       (set-father~ paragraph root-row)
       (set-level~ paragraph 0)
-      (set-row-height~ paragraph (get-height~ (get-metrics~ (get-font~ (get-default-style)))))
+      (set-row-height~ paragraph (compute-font-height (get-font~ (get-default-style))))
       (fix-view-style-parent paragraph)
       paragraph))
   

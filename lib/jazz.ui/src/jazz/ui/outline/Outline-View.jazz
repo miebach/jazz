@@ -249,8 +249,8 @@
           (fill-rect~ surface bounds background)))))
   
   
-  (method override (draw-children surface nodes context lh lv sh sv sc sc?)
-    (draw-outline~ model surface context lh lv sh sv sc sc? outline (get-scrolled-position)))
+  (method override (draw-children surface nodes context lh lv)
+    (draw-outline~ model surface context lh lv outline (get-scrolled-position)))
 
   
   ;;;
@@ -347,8 +347,8 @@
       (update-displayed)
       (layout-scrollee)
       (invalidate-view)))
-  
-  
+
+
   (method protected virtual (reset-selection)
     (set! selection '()))
   
@@ -418,17 +418,16 @@
   (method public virtual (invalidate-selection sel)
     (when (view-visible?)
       (let ((root (get-root)))
-        (receive (dh dv sc) (get-delta~ root self)
-          (with ((region (selection-region sel dh dv sc)))
-            (invalidate-region~ player region))))))
+        (with ((region (selection-region sel (find-offset~ (get-root) self))))
+          (invalidate-region~ player region)))))
   
   
-  (method protected virtual (selection-region sel dh dv sc)
-    (selection-row-region sel dh dv sc))
+  (method protected virtual (selection-region sel offset)
+    (selection-row-region sel offset))
   
   
-  (method protected (selection-row-region line dh dv sc)
-    (new Region (acquire-delta dh dv sc (selection-row-rect line))))
+  (method protected (selection-row-region line offset)
+    (new Region (acquire-delta offset (selection-row-rect line))))
     
   
   (method protected virtual (selection-row-rect line)

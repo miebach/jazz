@@ -117,7 +117,7 @@
   
   (method override (get-tooltip-position text rect h v)
     (+ (rect-position rect)
-       (center (new Dimension (+ (text-width~ (effective-font) text) 6) 16) (rect-size rect))))
+       (center (new Dimension (+ (get-text-width text (effective-font)) 6) 16) (rect-size rect))))
   
 
   ;;;
@@ -132,7 +132,7 @@
   (method (display-table table)
     (define (compute-widths columns font max-char)
       (map (lambda (column)
-             (min 250 (+ (max (text-width~ font (get-name~ column)) (* (get-prefered-width~ column) max-char)) 24)))
+             (min 250 (+ (max (get-text-width  (get-name~ column) font) (* (get-prefered-width~ column) max-char)) 24)))
            columns))
     
     (let* ((columns (get-columns~ table))

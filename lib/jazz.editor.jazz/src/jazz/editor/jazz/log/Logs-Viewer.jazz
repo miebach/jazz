@@ -315,17 +315,8 @@
   
   
   (method override (draw surface context lh lv)
-    (define Background-Font
-      {Font Heading2})
-    
-    (define (draw-no-data surface)
-      (set-font~ surface Background-Font)
-      (let* ((title (localize "No Data"))
-             (extent (get-text-extent~ surface title))
-             (pos (center extent (get-display-size))))
-        ;; text
-        (set-text-color~ surface {Color Medium-Gray})
-        (draw-text~ surface (get-h~ pos) (get-v~ pos) title #t)))
-    
     (nextmethod surface context lh lv)
-    (draw-no-data surface))))
+    (let* ((title (localize "No Data"))
+           (extent (get-text-extent~ surface title {Font Heading1}))
+           (pos (center extent (get-display-size))))
+      (draw-text~ surface (get-h~ pos) (get-v~ pos) title {Font Heading1} {Color Dark-Gray})))))

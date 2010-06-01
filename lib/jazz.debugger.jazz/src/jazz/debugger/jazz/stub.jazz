@@ -53,7 +53,7 @@
   (method public exec (select-console console))
   (method public exec (console-output console line))
   (method public exec (status-message message))
-  (method public call (get-toplevel-hwnd))
+  (method public call (get-toplevel-window-handle))
   (method public post (debuggee-stop process thread stop kind reason))
   (method public post (register-stop process thread stop . rest))
   (method public post (unregister-stop process thread stop))

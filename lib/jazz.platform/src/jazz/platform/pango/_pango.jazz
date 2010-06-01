@@ -1,0 +1,106 @@
+;;;==============
+;;;  JazzScheme
+;;;==============
+;;;
+;;;; Pango
+;;;
+;;;  The contents of this file are subject to the Mozilla Public License Version
+;;;  1.1 (the "License"); you may not use this file except in compliance with
+;;;  the License. You may obtain a copy of the License at
+;;;  http://www.mozilla.org/MPL/
+;;;
+;;;  Software distributed under the License is distributed on an "AS IS" basis,
+;;;  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+;;;  for the specific language governing rights and limitations under the
+;;;  License.
+;;;
+;;;  The Original Code is JazzScheme.
+;;;
+;;;  Contributor(s):
+;;;  Vladimir Sedach <vsedach@gmail.com>
+;;;
+;;;  Alternatively, the contents of this file may be used under the terms of
+;;;  the GNU General Public License Version 2 or later (the "GPL"), in which
+;;;  case the provisions of the GPL are applicable instead of those above. If
+;;;  you wish to allow use of your version of this file only under the terms of
+;;;  the GPL, and not to allow others to use your version of this file under the
+;;;  terms of the MPL, indicate your decision by deleting the provisions above
+;;;  and replace them with the notice and other provisions required by the GPL.
+;;;  If you do not delete the provisions above, a recipient may use your version
+;;;  of this file under the terms of any one of the MPL or the GPL.
+;;;
+;;;  See www.jazzscheme.org for details.
+
+(module jazz.platform.pango jazz
+
+
+(import (jazz.platform.types)
+        (jazz.platform.cairo)
+        (jazz.io))
+
+
+(c-include "<pango/pango.h>")
+(c-include "<pango/pangocairo.h>")
+(c-include "<glib-object.h>")
+
+
+(c-type PangoContext          (native "PangoContext"))
+(c-type PangoContext*         (pointer PangoContext PangoContext*))
+(c-type PangoLayout           (native "PangoLayout"))
+(c-type PangoLayout*          (pointer PangoLayout PangoLayout*))
+(c-type PangoFontDescription  (native "PangoFontDescription"))
+(c-type PangoFontDescription* (pointer PangoFontDescription PangoFontDescription*))
+(c-type PangoFontMetrics      (native "PangoFontMetrics"))
+(c-type PangoFontMetrics*     (pointer PangoFontMetrics PangoFontMetrics*))
+(c-type PangoFont             (native "PangoFont"))
+(c-type PangoFont*            (pointer PangoFont PangoFont*))
+(c-type PangoLanguage         (native "PangoLanguage"))
+(c-type PangoLanguage*        (pointer PangoLanguage PangoLanguage*))
+
+
+(c-external (pango_cairo_create_layout cairo_t*) PangoLayout*)
+(c-external (pango_layout_get_context PangoLayout*) PangoContext*)
+(c-external (pango_layout_set_font_description PangoLayout* PangoFontDescription*) void)
+(c-external (pango_cairo_update_layout cairo_t* PangoLayout*) void)
+(c-external (pango_cairo_show_layout cairo_t* PangoLayout*) void)
+(c-external (pango_font_description_from_string UTF-8-string) PangoFontDescription*)
+(c-external (pango_context_get_metrics PangoContext* PangoFontDescription* PangoLanguage*) PangoFontMetrics*)
+(c-external (pango_font_metrics_get_ascent PangoFontMetrics*) int)
+(c-external (pango_font_metrics_get_descent PangoFontMetrics*) int)
+(c-external (pango_layout_get_pixel_size PangoLayout* int* int*) void)
+(c-external (g_object_unref PangoLayout*) void)
+(c-external (pango_font_metrics_unref PangoFontMetrics*) void)
+(c-external (pango_font_description_free PangoFontDescription*) void)
+
+
+(define pango-set-text-segment
+  (c-function (PangoLayout* UTF-8-string int int) void
+    "pango_layout_set_text(___arg1, ___arg2 + ___arg3, ___arg4);"))
+
+
+(definition public (pango-set-text layout str from to)
+  (let ((byte-offset (loop (for i from 0 below from)
+                           (sum (char-number-bytes-utf8 (char->integer (string-ref str i)))))))
+    (pango-set-text-segment layout str byte-offset (if (= -1 to) to (- to from)))))
+
+
+(define w (int*-alloc 1)) ;; really, really not thread safe
+(define h (int*-alloc 1))
+(definition public (pango-get-extents pango-layout)
+  (pango_layout_get_pixel_size pango-layout w h)
+  (new Dimension (int*-ref w 0) (int*-ref h 0)))
+
+
+(definition public (pango-font-description font-name size italic? bold?)
+  (pango_font_description_from_string (format "{a} {?:italic~} {?:bold~} {a}" font-name italic? bold? size)))
+
+
+(definition public (pango-font-height pango-layout font-description)
+  (let ((metrics (pango_context_get_metrics (pango_layout_get_context pango-layout) font-description #f)))
+    (prog1 (fxceiling/ (+ (pango_font_metrics_get_ascent metrics) (pango_font_metrics_get_descent metrics)) 1024) ;; PANGO_SCALE
+           (pango_font_metrics_unref metrics))))
+           
+
+(definition public (pango-layout-set-font pango-layout font-description)
+  (pango_layout_set_font_description pango-layout font-description))
+)

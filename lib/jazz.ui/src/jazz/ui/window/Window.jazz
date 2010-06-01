@@ -204,9 +204,8 @@
     0)
   
 
-  (definition (draw-placeholder surface)
-    (set-color~ surface (cycle-debug-color!))
-    (paint~ surface))
+  (definition (draw-placeholder surface) ;; fill current clip region w/ debug color
+    (bucket-fill-surface~ surface (cycle-debug-color!)))
   
 
   (method protected virtual (draw surface)

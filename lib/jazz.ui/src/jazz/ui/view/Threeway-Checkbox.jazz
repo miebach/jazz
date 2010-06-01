@@ -96,19 +96,10 @@
     (invalidate-view))
   
   
-  (definition Validated-Color
-    {Color Dark-Red})
-  
-  (definition Validated-Color-Grayed
-    {Color red: 154 green: 101 blue: 101})
-  
-  
-  (method override (draw-check surface h v grayed?)
-    (define (state-color grayed?)
-      (case state
-        ((displayed) (if grayed? {Color Dark} {Color Black}))
-        ((validated) (if grayed? Validated-Color-Grayed Validated-Color))))
-    
+  (method override (draw-checkbox-check surface h v grayed?)
     (unless (eq? state 'none)
-      (set-color~ surface (state-color grayed?))
-      (draw-check~ surface h v)))))
+      (set-color~ surface
+                  (case state
+                    ((displayed) (if grayed? {Color Dark} {Color Black}))
+                    ((validated) (if grayed? {Color red: 154 green: 101 blue: 101} {Color Dark-Red}))))
+      (draw-check surface h v)))))

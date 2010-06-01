@@ -366,7 +366,7 @@
 ;;;
 
 
-(definition (get-toplevel-hwnd)
+(definition (get-toplevel-window-handle)
   (let ((toplevel (get-toplevel)))
     (when toplevel
       (get-handle~ toplevel))))

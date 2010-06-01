@@ -1544,4 +1544,16 @@
         ((member? ext Scheme-Extensions test: extension=?) scheme-constituent?)
         ((member? ext C-Extensions test: extension=?) c-constituent?)
         ((member? ext SQL-Extensions test: extension=?) sql-constituent?)
-        (else word-constituent?))))
+        (else word-constituent?)))
+
+;;;
+;;;; Encoding
+;;;
+
+
+(definition public (char-number-bytes-utf8 char)
+  (let ((ccode (char->integer char)))
+    (cond ((< ccode #x80) 1)
+          ((< ccode #x800) 2)
+          ((< ccode #x10000) 3)
+          (#t 4)))))

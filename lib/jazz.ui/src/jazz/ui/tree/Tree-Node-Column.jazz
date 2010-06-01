@@ -143,14 +143,15 @@
   
   
   (method protected (text-rect row data width height force-node?)
-    (let* ((title (localize (get-title~ data)))
-           (h (- (text-h (get-level~ row)) 1))
-           (max (- width h 2))
-           (font (or (get-font~ data) (effective-font~ parent))))
-      (let ((extent (text-extent~ font title)))
-        (let* ((title-width (get-width~ extent))
-               (width (min (if (or force-node? (<= (get-columns-count~ parent) 1)) title-width width) max)))
-          (new Rect h 0 (+ h width 4) height)))))
+    (let ((h (- (text-h (get-level~ row)) 1)))
+      (new Rect
+           h
+           0
+           (+ 4 h (min (- width h 2)
+                       (if (or force-node? (<= (get-columns-count~ parent) 1))
+                           (get-text-width (localize (get-title~ data)) (or (get-font~ data) (effective-font~ parent)))
+                           width)))
+           height)))
   
 
   ;;;
@@ -262,9 +263,9 @@
                 (fill-rect~ surface rect background))))
           (set-color~ surface line-color)
           (set-line-width~ surface 1)
-          (line~ surface (+ h 6) 8 (+ h 11) 8)
+          (line~ surface (+ h 5.5) 8 (+ h 10.5) 8)
           (when (neq? (get-state~ row) 'expanded)
-            (line~ surface (+ h 8) 6 (+ h 8) 11))))))
+            (line~ surface (+ h 8) 5.5 (+ h 8) 10.5))))))
   
   
   (method (draw-image surface context row data width height)
@@ -277,12 +278,11 @@
   
   (method override (draw-title surface context row data h v width height)
     (let ((title (localize (or (get-title~ data) ""))))
-      (let ((h (text-h (get-level~ row)))
-            (v (get-v~ (title-position surface width height title)))
-            (font (or (get-font~ data) (effective-font~ parent))))
-        (set-text-color~ surface (cell-color (get-color~ data) context))
-        (set-font~ surface font)
-        (draw-text~ surface h v title))))
+      (draw-text~ surface (text-h (get-level~ row))
+                  (get-v~ (title-position surface width height title))
+                  title
+                  (or (get-font~ data) (effective-font~ parent))
+                  (cell-color (get-color~ data) context))))
   
   
   (method (level-h level)

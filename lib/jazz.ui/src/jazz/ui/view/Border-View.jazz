@@ -196,9 +196,9 @@
                     (let ((inner (inflate-rect bounds -1 -1)))
                       (frame-rect~ surface inner {Color Outline-Border})))
                    (else
-                    (draw-edge~ surface bounds outer: 'sunken inner: (case (get-left~ border-insets) ((1) #f) ((2) 'sunken)) edges: 'rectangle)))))
+                    (draw-edge surface bounds outer: 'sunken inner: (case (get-left~ border-insets) ((1) #f) ((2) 'sunken)) edges: 'rectangle)))))
           ((raised)
-           (draw-edge~ surface bounds inner: 'raised outer: 'raised edges: 'rectangle))
+           (draw-edge surface bounds inner: 'raised outer: 'raised edges: 'rectangle))
           ((shadow)
            (let ((inner (expand-rect bounds 0 0 (- 1 (get-right~ border-insets)) (- 1 (get-bottom~ border-insets)))))
              (frame-rect~ surface inner border-color)
@@ -210,8 +210,8 @@
              (line~ surface 2 (+ (get-bottom~ inner) 1) (get-right~ bounds) (+ (get-bottom~ inner) 1))))))))
   
   
-  (method override (draw-children surface nodes context lh lv sh sv sc sc?)
-    (nextmethod surface nodes context lh lv sh sv sc sc?)
+  (method override (draw-children surface nodes context lh lv)
+    (nextmethod surface nodes context lh lv)
     (case border-type
       ((palette)
        (let ((bounds (get-bounds)))

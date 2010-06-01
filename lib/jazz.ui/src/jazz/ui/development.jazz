@@ -142,7 +142,7 @@
       (lambda (view level)
         (when (is? view View)
           (let ((type (category-identifier (class-of view)))
-                (lie (get-lie~ view))
+                (lie (get-absolute-position~ view))
                 (position (get-position~ view))
                 (size (get-size~ view)))
             (output~ classes type level)

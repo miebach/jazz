@@ -193,15 +193,11 @@
   
   
   (method override (split-view)
-    (let ((host (new-frame (class-of self) host-visible?: #f)))
+    (let ((host (new-frame (class-of self))))
       (let ((view (get-guest~ host)))
         (set-model~ view model)
-        (change-moniker~ (get-controller~ view) (get-moniker))
         (scroll-to~ view (get-scrolled-position))
-        (set-selection~ view (get-selection) ensure-displayed?: #f)
-        (update-status~ view)
-        (focus-host~ host)
-        host)))
+        (set-selection~ view (get-selection) ensure-displayed?: #f))))
   
   
   ;;;
@@ -282,8 +278,7 @@
   
   
   (method override (confirm-close . rest)
-    (when (last-client?)
-      (confirm-close~ (get-controller))))
+    (confirm-close~ (get-controller)))
   
   
   (method override (tool-update tool?)
@@ -340,8 +335,13 @@
   
   
   (method override (reload-moniker moniker)
+    (reload-moniker~ model moniker))
+  
+  
+  @mvc
+  (method protected (reload-content lst)
     (let ((line (get-line~ (get-start))))
-      (reload-moniker~ model moniker)
+      (reload-content~ model lst)
       (set-caret (new Cell (min line (cardinality (get-paragraphs))) 0))
       (set-modified?~ model #f)))
   
@@ -560,10 +560,6 @@
   
   (method protected (model-update)
     (remove-all-text-actions))
-  
-  
-  (method protected (last-client?)
-    (= (length (get-clients~ model)) 1))
   
   
   ;;;
@@ -862,14 +858,13 @@
                (parts (range-difference range (get-selection)))
                (player (get-player))
                (root (get-root)))
-          (receive (dh dv sc) (get-delta~ root self)
-            (change-selection pos)
-            (with ((region (multi-part-region parts dh dv sc)))
-              (when region
-                (if final?
-                    (invalidate-region~ player region)
-                  (redraw-window~ player region: region)
-                  (set! previous-position pos)))))))))
+          (change-selection pos)
+          (with ((region (multi-part-region parts (find-offset~ root self))))
+                (when region
+                  (if final?
+                      (invalidate-region~ player region)
+                      (redraw-window~ player region: region)
+                      (set! previous-position pos))))))))
   
   
   (method override (double-click view)
@@ -1001,12 +996,12 @@
                  (get-output~ parts)))))))
   
   
-  (method (multi-part-region parts dh dv sc)
+  (method (multi-part-region parts offset)
     (case (length parts)
       ((0) #f)
-      ((1) (range-region (car parts) dh dv sc))
-      ((2) (with ((region (range-region (first parts) dh dv sc)))
-             (let ((union (range-region (second parts) dh dv sc)))
+      ((1) (range-region (car parts) offset))
+      ((2) (with ((region (range-region (first parts) offset)))
+             (let ((union (range-region (second parts) offset)))
                (when (and region union)
                  (combine!~ union region 'or)
                  union))))))
@@ -1375,14 +1370,14 @@
   ;;;
   
   
-  (method (range-region range <Range$Cell$> dh dv sc (top: top #f) (bottom: bottom #f))
+  (method (range-region range <Range$Cell$> offset (top: top #f) (bottom: bottom #f))
     (let ((root (get-root))
           (region (new Region))
           (width (and scroller (get-display-width))))
       (keep-rectangles~ region)
       (for-each-logical-range range
         (lambda (line paragraph start end)
-          (with ((sub (range-region~ paragraph left-padding start end dh dv sc width)))
+          (with ((sub (range-region~ paragraph left-padding start end offset width)))
             (combine!~ region sub 'or))))
       (let ((root-clipper (get-root-clipper)))
         (when root-clipper
@@ -1403,18 +1398,17 @@
   (method (invalidate-range range <Range$Cell$>)
     (when (view-visible?)
       (let ((root (get-root)))
-        (receive (dh dv sc) (get-delta~ root self)
-          (with ((region (range-region range dh dv sc)))
-            (invalidate-region~ player region))))))
+        (with ((region (range-region range (find-offset~ root self))))
+          (invalidate-region~ player region)))))
   
   
   ;; this should be unified with selection-region
-  (method (text-selection-region dh dv sc top bottom)
-    (range-region (get-selection) dh dv sc top: top bottom: bottom))
+  (method (text-selection-region offset top bottom)
+    (range-region (get-selection) offset top: top bottom: bottom))
   
   
-  (method (selection-region-all dh dv sc)
-    (text-selection-region dh dv sc 0 (get-display-height)))
+  (method (selection-region-all offset)
+    (text-selection-region offset 0 (get-display-height)))
   
   
   (method protected virtual (get-selection-color)
@@ -1663,10 +1657,10 @@
     (if (not (view-visible?))
         (set-range~ selection range)
       (let ((root (get-root)))
-        (receive (dh dv sc) (get-delta~ root self)
-          (with ((old (selection-region-all dh dv sc)))
+        (let ((offset (find-offset~ root self)))
+          (with ((old (selection-region-all offset)))
             (set-range~ selection range)
-            (with ((new (selection-region-all dh dv sc)))
+            (with ((new (selection-region-all offset)))
               (if (and old new)
                   (begin
                     (combine!~ new old 'xor)
@@ -1783,8 +1777,8 @@
     (invalidate-range sel))
   
   
-  (method override (selection-region sel dh dv sc)
-    (range-region self dh dv sc))
+  (method override (selection-region sel offset)
+    (range-region self offset))
   
   
   (method public (get-char pos <Cell>) <char>
@@ -2089,7 +2083,7 @@
             (nextmethod context)))))
   
   
-  (method override (draw-children surface nodes context lh lv sh sv sc sc?)
+  (method override (draw-children surface nodes context lh lv)
     (define (draw-highlights)
       (let ((focus? (has-focus?))
             (tabs (get-tabs~ model)))
@@ -2116,15 +2110,15 @@
           (printing? (getf context printing?:)))
       (unless printing?
         (draw-selection surface top bottom))
-      (nextmethod surface nodes context lh lv sh sv sc sc?)
+      (nextmethod surface nodes context lh lv)
       (draw-highlights)
       (unless printing?
-        (draw-caret surface sc sc?))))
+        (draw-caret surface))))
   
   
   (method protected (draw-selection surface top bottom)
     (when (and (or (has-focus?) show-unfocused-selection?) selectable?)
-      (with ((region (text-selection-region 0.0 0.0 1.0 top bottom)))
+      (with ((region (text-selection-region {Point 0 0} top bottom)))
         (when region
           (fill-region~ surface region
             (if (has-focus?)
@@ -2132,23 +2126,14 @@
               (get-inactive-selection-color)))))))
   
   
-  (method protected (draw-caret surface sc <fl> sc? <bool>)
+  (method protected (draw-caret surface)
     (when (and caret-visible? (empty-selection?) (or (not mouse-down?) (not (alt-down?))))
       (let ((proc
              (lambda (rect)
                (set-color~ surface (or (get-caret-color~ (get-look)) {Color Black}))
                (set-line-width~ surface 1)
                (line~ surface (get-left~ rect) (get-top~ rect) (get-right~ rect) (get-bottom~ rect)))))
-        (let ((rect <Rect> (caret-rect (get-caret) 0)))
-          (if (not sc?)
-              (proc rect)
-            ;; this could use some improvements!
-            (let ((scaled (new Rect
-                            (fxround (if sc? (* (get-left~ rect) sc) (get-left~ rect)))
-                            (fxround (if sc? (* (get-top~ rect) sc) (get-top~ rect)))
-                            (fxround (if sc? (* (get-right~ rect) sc) (get-right~ rect)))
-                            (fxround (if sc? (* (get-bottom~ rect) sc) (get-bottom~ rect))))))
-              (proc scaled)))))))
+        (proc (caret-rect (get-caret) 0)))))
   
   
   ;;;

@@ -115,12 +115,10 @@
   
   
   (method (with-orientation surface page clipper proc)
-    (let ((landscape? (print-landscape?)))
-      (define (clip-proc)
-        (with-clipper~ surface (if landscape? (inverse-rect clipper) clipper)
-          (lambda ()
-            (proc))))
-      
+    (let* ((landscape? (print-landscape?))
+           (clip-proc (lambda ()
+                        (with-clipper~ surface (if landscape? (inverse-rect clipper) clipper)
+                                       proc))))
       (if (not landscape?)
           (clip-proc)
         (let ((orientation 'counterclockwise)

@@ -55,6 +55,5 @@
 
   
   (method override (draw surface context lh lv)
-    (let ((height (get-height))
-          (color {Color Medium}))
-      (draw-edge~ surface (new Rect 0 0 2 height) inner: 'raised outer: 'sunken edges: '(left))))))
+   (draw-edge surface (new Rect 0 0 2 (get-height)) inner: 'raised outer: 'sunken edges: '(left)))))
+

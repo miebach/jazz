@@ -77,19 +77,13 @@
   
   
   (method override (layout)
-    (let* ((size (get-size))
-           (box-width (get-width~ size))
-           (box-height (get-height~ size))
-           (metrics (get-metrics~ (effective-font)))
-           (ascent (get-ascent~ metrics))
-           (left (if flat? 1 2))
-           (top (cond (title (+ ascent 1)) (flat? 1) (else 2)))
-           (width (- box-width (if flat? 2 4)))
-           (height (- box-height (if title (+ ascent 1) (if flat? 1 2)) (if flat? 1 2)))
-           (content (get-content)))
-      (set-position~ content (new Point left top))
-      (set-size~ content (new Dimension width height))))
-      
+    (let ((height (line-height~ (effective-font))))
+      (set-position~ (get-content) (new Point (if flat? 1 2)
+                                              (cond (title height) (flat? 1) (else 2))))
+      (set-size~ (get-content)
+                 (new Dimension (- (get-width~ (get-size)) (if flat? 2 4))
+                                (- (get-height~ (get-size)) (if title height (if flat? 1 2)) (if flat? 1 2))))))
+     
   
   ;;;
   ;;;; Drawing
@@ -102,21 +96,17 @@
            (width (get-width~ size))
            (height (get-height~ size))
            (offset 9)
-           (color {Color Medium})
-           (flat? (flat-look?))
-           (frame-color (case style ((entry) {Color Entry-Border}) (else {Color Group-Border})))
-           (rect (get-bounds)))
-      (let* ((metrics (get-text-metrics~ surface))
-             (extent (and title (get-text-extent~ surface title)))
-             (top (if title (fxceiling/ (cairo_font_extents_t-ascent-ref metrics) 2)) 0))
-        (cairo_font_extents_t-free metrics)
-        (if flat?
-            (frame-rect~ surface (new Rect 0 top width height) frame-color)
-          (draw-edge~ surface (new Rect 0 top width height) inner: 'raised outer: 'sunken edges: 'rectangle))
-        (when title
-          (fill-rect~ surface (new Rect (- offset 2) 0 (+ offset (get-width~ extent) 2) (get-height~ extent)) color)
-          (set-text-color~ surface {Color Black})
-          (draw-text~ surface offset 0 title)))))
+           (frame-color (case style
+                          ((entry) {Color Entry-Border})
+                          (else {Color Group-Border})))
+           (extent (and title (get-text-extent~ surface title (effective-font))))
+           (top (if title (fxceiling/ (line-height~ (effective-font)) 2) 0)))
+      (if (flat-look?)
+          (frame-rect~ surface (new Rect 0 top width height) frame-color)
+          (draw-edge surface (new Rect 0 top width height) inner: 'raised outer: 'sunken edges: 'rectangle))
+      (when title
+        (fill-rect~ surface (new Rect (- offset 2) 0 (+ offset (get-width~ extent) 2) (get-height~ extent)) {Color Medium})
+        (draw-text~ surface offset 0 title (effective-font) {Color Black}))))
 
   
   ;;;

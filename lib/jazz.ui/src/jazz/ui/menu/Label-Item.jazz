@@ -153,21 +153,14 @@
   
   
   (method override (preferred-body-width)
-    (let* ((font (effective-font))
-           (title (localize (get-title)))
-           (extent (text-extent~ font title))
-           (left (if (menubar-label?) 6 10)))
-      (+ left (get-width~ extent) left)))
+    (let ((margin (if (menubar-label?) 6 10)))
+      (+ margin (get-text-width (localize (get-title)) (effective-font)) margin)))
   
   
   (method override (preferred-shortcut-width)
     (if (not shortcut)
         0
-      (let* ((font (effective-font))
-             (extent (text-extent~ font (present-shortcut~ shortcut)))
-             (left 6)
-             (right 12))
-        (+ left (get-width~ extent) right))))
+        (+ 6 (get-text-width (present-shortcut~ shortcut) (effective-font)) 12)))
   
   
   (method override (preferred-arrow-width)
@@ -177,10 +170,7 @@
   
   
   (method override (preferred-height)
-    (let* ((font (effective-font))
-           (title (localize (get-title)))
-           (height (font-height~ font)))
-      (+ height 4)))
+    (+ (get-height~ (effective-font)) 4))
   
   
   ;;;
@@ -228,9 +218,8 @@
     (when (item-selected?)
       (let ((bounds (get-bounds)))
         (if (menubar-label?)
-            (draw-edge~ surface bounds inner: (if (highlight-flag) #f 'raised) outer: (if (highlight-flag) 'sunken #f) edges: 'rectangle)
-          (let ((highlight (get-highlight~ (get-look))))
-            (fill-background~ surface bounds (or highlight {Color Focused-Selection})))))))
+            (draw-edge surface bounds inner: (if (highlight-flag) #f 'raised) outer: (if (highlight-flag) 'sunken #f) edges: 'rectangle)
+            (fill-background~ surface bounds (or (get-highlight~ (find-look 'menu) ) {Color Focused-Selection}))))))
   
   
   (method protected virtual (draw-prefix surface context)
@@ -251,32 +240,28 @@
   (method (draw-body surface)
     (let ((title (localize (get-title))))
       (when title
-        (let* ((height (get-font-height~ surface))
-               (left (if (menubar-label?) 6 10))
-               (top (if (menubar-label?) 0 1))
-               (h (+ prefix-width icon-width left))
-               (v (- (quotient (- (get-height) height) 2) top)))
-          (set-text-color~ surface (text-color))
-          (set-font~ surface (effective-font))
-          (draw-text~ surface h v title (text-enabled?))))))
+        (draw-text~ surface
+                    (+ prefix-width icon-width (if (menubar-label?) 6 10))
+                    (- (quotient (- (get-height) (get-height~ (effective-font))) 2)
+                       (if (menubar-label?) 0 1))
+                    title (effective-font) (text-color)))))
   
   
   (method (draw-shortcut surface)
     (when shortcut
-      (let* ((text (present-shortcut~ shortcut))
-             (height (get-font-height~ surface))
-             (left 6)
-             (top 1)
-             (h (+ prefix-width icon-width body-width left))
-             (v (- (quotient (- (get-height) height) 2) top)))
-        (draw-text~ surface h v text (text-enabled?)))))
+      (draw-text~ surface
+                  (+ prefix-width icon-width body-width 6)
+                  (- (quotient (- (get-height) (get-height~ (effective-font))) 2) 1)
+                  (present-shortcut~ shortcut)
+                  (effective-font)
+                  (text-color))))
   
   
   (method (draw-arrow surface)
     (when (and content (not (menubar-label?)))
       (let ((width (get-width)))
         (set-color~ surface (tip-color))
-        (draw-arrow-tip~ surface (- width 10) 5 4 'right))))
+        (draw-arrow-tip surface (- width 10) 5 4 'right))))
   
   
   (method (item-selected?)

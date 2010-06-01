@@ -257,6 +257,23 @@
 
 
 ;;;
+;;;; Text measurement
+;;;
+
+
+(define measurement-surface #f)
+(definition public (get-text-width text <string> font) ;; not thread safe!!!
+  (unless measurement-surface
+    (set! measurement-surface (new Memory-Surface #f {Dimension 0 0})))
+  (get-width~ (get-text-extent~ measurement-surface text font)))
+
+(definition protected (compute-font-height font)
+  (unless measurement-surface
+    (set! measurement-surface (new Memory-Surface #f {Dimension 0 0})))
+  (get-font-height~ measurement-surface font))
+
+
+;;;
 ;;;; Region
 ;;;
 

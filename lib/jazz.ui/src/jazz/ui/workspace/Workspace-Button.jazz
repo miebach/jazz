@@ -82,7 +82,7 @@
   (method override (preferred-size)
     (if (not title)
         (default-size)
-      (new Dimension (+ 32 (text-width~ (effective-font) (localize title))) 22)))
+      (new Dimension (+ 32 (get-text-width (localize title) (effective-font))) 22)))
   
   
   ;;;
@@ -102,7 +102,22 @@
 
   (method override (draw-frame surface)
     (if problem?
-        (frame-round-rect~ surface (get-bounds) problem-border)
+        (let ((rect (get-bounds))
+              (color problem-border))
+          (set-line-width~ surface 1)
+          (set-color~ surface color)
+          (let ((left (get-left~ rect))
+                (top (get-top~ rect))
+                (right (get-right~ rect))
+                (bottom (get-bottom~ rect)))
+            (move-to~ surface (+ left 1) top)
+            (line-to~ surface (- right 1) top)
+            (move-to~ surface (- right 1) (+ top 1))
+            (line-to~ surface (- right 1) (- bottom 1))
+            (move-to~ surface left (+ top 1))
+            (line-to~ surface left (- bottom 1))
+            (move-to~ surface (+ left 1) (- bottom 1))
+            (line-to~ surface (- right 1) (- bottom 1))))
       (nextmethod surface)))
   
 
@@ -111,13 +126,12 @@
       (if (not title)
           (draw-image surface context offset offset)
         (let ((title (localize title))
-              (offset (if (or selected? (eq? (get-state) 'pushed)) 1 0)))
-          (let ((center (justify-lazy (lambda () (nu+ {Dimension 24 0} (get-text-extent~ surface title)))
-                                      (lambda () (get-size))
-                                      '(center center))))
-            (draw-image surface context (+ offset (get-h~ center)) offset)
-            (set-text-color~ surface {Color Black})
-            (draw-text~ surface (+ (+ 20 offset) (get-h~ center)) (+ offset (get-v~ center)) title (view-enabled?)))))))
+              (offset (if (or selected? (eq? (get-state) 'pushed)) 1 0))
+              (center (justify-lazy (lambda () (nu+ {Dimension 24 0} (get-text-extent~ surface title (effective-font))))
+                                    (lambda () (get-size))
+                                    '(center center))))
+          (draw-image surface context (+ offset (get-h~ center)) offset)
+          (draw-text~ surface (+ (+ 20 offset) (get-h~ center)) (+ offset (get-v~ center)) title (effective-font) {Color Black})))))
 
   
   (method override (draw-background surface context)

@@ -256,12 +256,14 @@
     (with-platform-painting self platform-data
       (lambda (surface)
         (let ((update-rect (get-box~ update-region)))
-          (set-clipper~ surface update-rect)
-          (if in-error?
-              (paint-in-error surface update-rect)
-            (set! in-error? #t)
-            (paint-root~ root surface update-region)
-            (set! in-error? #f))))))
+          (set-update-region~ surface update-region)
+          (with-clipper~ surface update-rect
+            (lambda ()
+              (if in-error?
+                  (paint-in-error surface update-rect)
+                  (set! in-error? #t)
+                  (paint-root~ root surface)
+                  (set! in-error? #f))))))))
   
   
   ;;;

@@ -316,7 +316,7 @@
   (method (display-table table max-display not-displayed)
     (define (compute-widths columns font max-char)
       (map (lambda (column)
-             (min 250 (+ (max (text-width~ font (get-name~ column)) (* (get-prefered-width~ column) max-char)) 24)))
+             (min 250 (+ (max (get-text-width (get-name~ column) font) (* (get-prefered-width~ column) max-char)) 24)))
            columns))
     
     (define (display-text columns rows affected max-display not-displayed widths)

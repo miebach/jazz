@@ -109,18 +109,10 @@
 
 
 (definition public (offset-rect rect <Rect> h <fx> v <fx>) <Rect>
-  (new Rect
-    (+ (get-left~ rect)   h)
-    (+ (get-top~ rect)    v)
-    (+ (get-right~ rect)  h)
-    (+ (get-bottom~ rect) v)))
-
-
-(definition public (offset-rect! rect <Rect> h <fx> v <fx>) <void>
-  (set-left~   rect (+ (get-left~ rect)   h))
-  (set-top~    rect (+ (get-top~ rect)    v))
-  (set-right~  rect (+ (get-right~ rect)  h))
-  (set-bottom~ rect (+ (get-bottom~ rect) v)))
+  (new Rect (+ (get-left~ rect)   h)
+            (+ (get-top~ rect)    v)
+            (+ (get-right~ rect)  h)
+            (+ (get-bottom~ rect) v)))
 
 
 (definition public (inflate-rect rect <Rect> w <number> h <number>) <Rect>

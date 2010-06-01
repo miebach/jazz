@@ -82,7 +82,7 @@
     (define (draw-border surface width height)
       (let* ((outer (new Rect 0 0 width height))
              (inner (inflate-rect outer -1 -1)))
-        (draw-edge~ surface outer inner: 'raised edges: 'rectangle)
+        (draw-edge surface outer inner: 'raised edges: 'rectangle)
         (fill-rect~ surface inner {Color Medium})))
     
     (define (draw-measurements surface width height)
@@ -103,7 +103,8 @@
                                (offset (if major? 5 8)))
                           (set-color~ surface (if tab? Tabbed-Color Untabbed-Color))
                           (move-to~ surface pixel offset)
-                          (line-to~ surface pixel (- height offset))))))
+                          (line-to~ surface pixel (- height offset))
+                          (stroke~ surface)))))
                   (naturals 0 (+ number 1)))))
     
     (let ((clipper (get-logical-clipper~ surface)))

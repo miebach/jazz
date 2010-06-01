@@ -155,7 +155,7 @@
   
   (method package (calculate-node-width)
     (let ((node (car children)))
-      (text-width~ (effective-font~ parent) (localize (get-title~ node)))))
+      (get-text-width (localize (get-title~ node)) (effective-font~ parent))))
 
   
   ;;;
@@ -261,7 +261,7 @@
   ;;;
   
   
-  (method override (draw-children surface nodes context lh lv sh sv sc sc?)
+  (method override (draw-children surface nodes context lh lv)
     (let* ((h 0)
            (v 0)
            (tree (get-tree))
@@ -276,12 +276,11 @@
                         (let ((cell-h (+ lh h))
                               (cell-v (+ lv v)))
                           (if (is-not? data View)
-                              (paint-data~ column surface context cell-h cell-v h v width height self data sh sv sc sc?)
+                              (paint-data~ column surface context cell-h cell-v h v width height self data)
                             (when node?
                               (draw-level~ column surface self data width height)
                               (draw-control~ column surface self data width height))
-                            (let ((pos (if node? (get-position~ data) {Point 0 0})))
-                              (paint-drawing~ data surface context (+ cell-h (get-h~ pos)) (+ cell-v (get-v~ pos)) sh sv sc sc?)))))
+                            (paint-drawing~ data surface context cell-h cell-v))))
                       (increase! h (+ width cs)))))
                 (get-columns~ tree)
                 children)))
@@ -302,8 +301,7 @@
            (inner (inflate-rect outer -1 -1)))
       (set-color~ surface {Color Dark})
       (frame-rect~ surface outer {Color Dark})
-      (fill-rect~ surface inner (or background (header-color~ parent)))
-      (set-text-color~ surface {Color Black})))
+      (fill-rect~ surface inner (or background (header-color~ parent)))))
   
   
   (method (draw-raised-button surface h v width height flat?)
@@ -312,9 +310,8 @@
       (let* ((outer (new Rect h v (+ h width) (+ v height)))
              (inner (expand-rect outer 1 1 thick thick)))
         (let ((smaller (expand-rect outer 0 0 0 -1)))
-             (draw-edge~ surface smaller inner: 'raised edges: '(top left)))
-        (fill-rect~ surface inner (or background (header-color~ parent)))
-        (set-text-color~ surface {Color Black}))))
+             (draw-edge surface smaller inner: 'raised edges: '(top left)))
+        (fill-rect~ surface inner (or background (header-color~ parent))))))
 
   
   ;;;

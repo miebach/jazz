@@ -59,13 +59,11 @@
   
   
   (method override (get-height)
-    (get-height~ (get-metrics~ (get-font))))
+    (line-height~ (get-font)))
   
   
   (method override (run-width run)
-    (let ((string (get-string~ run)))
-      ;; warning this coerce could become inefficient
-      (text-width~ (get-font) (coerce string String))))
+    (get-text-width (coerce (get-string~ run) String) (get-font))) ;; warning this coerce could become inneficient
   
   
   ;;;
@@ -74,13 +72,13 @@
   
   
   (method override (scan h <fx> start <fx> end <fx> tabs run <Run> proc)
-    (let ((string (get-string~ run)))
+    (let ((str (get-string~ run)))
       (let ((left #f)
             (mid #f)
             (right h)
-            (len <fx> (cardinality string)))
+            (len <fx> (cardinality str)))
         (loop (for n from start below (max start (min end len)))
-              (let ((c (element string n)))
+              (let ((c (element str n)))
                 (if (eqv? c #\tab)
                     (begin
                       (while (<= (car tabs) right)
@@ -89,7 +87,7 @@
                         (set! left right)
                         (set! mid (+ right (fxround/ width 2)))
                         (set! right (+ left width))))
-                  (let ((width (get-char-width~ (get-font) c)))
+                  (let ((width (get-text-width (string c) (get-font))))
                     (set! left right)
                     (set! mid (+ right (fxround/ width 2)))
                     (increase! right width)))
@@ -144,25 +142,40 @@
   ;;;
   ;;;; Drawing
   ;;;
+
+
+  (method (draw-tabbed-text surface h <fx> v <fx> str <string> tabs origin text-color highlight-color)
+    (define (draw-substring h v from to)
+      (let ((extents (delay (get-text-extent~ surface str (get-font) from to))))
+        (when highlight-color
+          (fill-rect~ surface (new Rect h v (+ h (get-width~ (force extents))) (+ v (get-height~ (force extents)))) highlight-color))
+        (draw-text~ surface h v str (get-font) text-color from to)
+        extents))
+
+    (let ((uph h)
+          (beginning 0)
+          (stops tabs))
+      (loop (for i from 0 below (cardinality str))
+            (when (eqv? (element str i) #\tab)
+              (when (/= beginning i)
+                (set! uph (+ uph (get-width~ (force (draw-substring uph v beginning i))))))
+              (while (<= (+ origin (cast <fx> (car stops))) (+ uph 1))
+                (set! stops (cdr stops)))
+              (set! uph (+ origin (cast <fx> (car stops))))
+              (set! beginning (+ i 1))
+              (set! stops (cdr stops))))
+      (draw-substring uph v beginning (cardinality str))))
   
   
-  (method override (draw-style surface <Surface> context string <Sequence> h <fx> v <fx> line-height <fx> tabs left <fx> enabled? <bool>) <fx>
-    (let ((font (get-font)))
-      (set-font~ surface font)
-      (let* ((font-height (get-height~ (get-metrics~ font)))
-             (v (+ v (justify-element font-height line-height)))
-             (color (if (getf context print-black/white?:)
-                        (registered-color 'Black)
-                      (or (get-color) (registered-color 'Black))))
-             (highlight (get-highlight))
-             (frame (get-frame)))
-        (if (not enabled?)
-            (begin
-              (set-text-color~ surface {Color Dark})
-              (draw-text~ surface h v (coerce string String) #f)
-              0)
-          (let ((width (draw-tabbed-text~ surface h v string tabs left color highlight)))
-            (when frame
-              (let ((rect (new Rect h v (+ h width) (+ v line-height))))
-                (frame-rect~ surface rect frame)))
-            width)))))))
+  (method override (draw-style surface <Surface> context text <Sequence> h <fx> v <fx> line-height <fx> tabs left <fx> enabled? <bool>)
+    (let ((str (coerce text String))
+          (v (+ v (justify-element (get-height~ (get-font)) line-height)))
+          (text-color (if (getf context print-black/white?:)
+                          (registered-color 'Black)
+                          (or (get-color) (registered-color 'Black)))))
+      (if (not enabled?)
+          (draw-text~ surface h v str (get-font) {Color Dark})
+          (begin
+            (draw-tabbed-text surface h v str tabs left text-color (get-highlight))
+            (when (get-frame)
+              (frame-rect~ surface (new Rect h v (+ h (get-width~ (get-text-extent~ surface str (get-font)))) (+ v line-height)) (get-frame)))))))))

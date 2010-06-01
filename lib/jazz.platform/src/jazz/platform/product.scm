@@ -56,6 +56,9 @@
     (jazz.platform.types)))
 
 
+(define cairo-windows-include (jazz:quote-jazz-pathname "foreign/cairo/include"))
+(define cairo-windows-lib (jazz:quote-jazz-pathname "foreign/cairo/lib/windows"))
+
 (cond-expand
   (carbon
     (define jazz:cairo-units
@@ -66,14 +69,11 @@
                 (ld-flags (jazz:pkg-config-libs "cairo-ft")))
             `((jazz.platform.cairo                cc-options: ,cc-flags ld-options: ,ld-flags)
               (jazz.platform.cairo.cairo-base     cc-options: ,cc-flags ld-options: ,ld-flags)
-              (jazz.platform.cairo.cairo-carbon   cc-options: ,cc-flags ld-options: ,ld-flags)
-              (jazz.platform.cairo.cairo-freetype cc-options: ,cc-flags ld-options: ,ld-flags)))))))
+              (jazz.platform.cairo.cairo-carbon   cc-options: ,cc-flags ld-options: ,ld-flags)))))))
   (windows
     (define jazz:cairo-units
-      (let ((cairo-include-path (jazz:quote-jazz-pathname "foreign/cairo/include"))
-            (cairo-lib-path     (jazz:quote-jazz-pathname "foreign/cairo/lib/windows")))
-        `((jazz.platform.cairo            cc-options: ,(string-append "-I" cairo-include-path) ld-options: ,(string-append "-L" cairo-lib-path " -lcairo"))
-          (jazz.platform.cairo.cairo-base cc-options: ,(string-append "-I" cairo-include-path) ld-options: ,(string-append "-L" cairo-lib-path " -lcairo"))))))
+        `((jazz.platform.cairo            cc-options: ,(string-append "-I" cairo-windows-include) ld-options: ,(string-append "-L" cairo-windows-lib " -llibcairo-2"))
+          (jazz.platform.cairo.cairo-base cc-options: ,(string-append "-I" cairo-windows-include) ld-options: ,(string-append "-L" cairo-windows-lib " -llibcairo-2")))))
   (x11
     (define jazz:cairo-units
       (receive (major minor build) (jazz:parse-dot-version (jazz:pkg-config-version "cairo-ft"))
@@ -93,19 +93,20 @@
     `((jazz.platform.freetype cc-options: ,cc-flags ld-options: ,ld-flags))))
 
 
-(define (jazz:logfont-units)
-  (let ((cairo-include-path (jazz:quote-jazz-pathname "foreign/cairo/include"))
-        (cairo-lib-path     (jazz:quote-jazz-pathname "foreign/cairo/lib/windows")))
-    `((jazz.platform.cairo.cairo-logfont cc-options: ,(string-append "-I" cairo-include-path) ld-options: ,(string-append "-L" cairo-lib-path " -lcairo")))))
-
-
 (cond-expand
-  (windows
-    (define jazz:font-units
-      (jazz:logfont-units)))
-  (else
-    (define jazz:font-units
-      (jazz:freetype-units))))
+ (windows
+  (define jazz:pango-units
+      (let ((pango-include-path (jazz:quote-jazz-pathname "foreign/pango/include"))
+            (glib-include-path  (jazz:quote-jazz-pathname "foreign/glib/include"))
+            (pango-lib-path     (jazz:quote-jazz-pathname "foreign/pango/lib/windows"))
+            (glib-lib-path      (jazz:quote-jazz-pathname "foreign/glib/lib/windows")))
+        `((jazz.platform.pango cc-options: ,(string-append "-I" pango-include-path " -I" glib-include-path " -I" cairo-windows-include) ld-options: ,(string-append "-L" pango-lib-path " -L" glib-lib-path " -llibglib-2.0-0 -llibgobject-2.0-0 -llibpango-1.0-0 -llibpangocairo-1.0-0"))))))
+
+ ((or carbon x11)
+   (define jazz:pango-units
+     (let ((cc-flags (string-append (jazz:pkg-config-cflags "pango") " " (jazz:pkg-config-cflags "pangocairo")))
+           (ld-flags (string-append (jazz:pkg-config-libs "pango") " " (jazz:pkg-config-libs "pangocairo"))))
+       `((jazz.platform.pango cc-options: ,cc-flags ld-options: ,ld-flags))))))
 
 
 (define jazz:windows-units
@@ -172,7 +173,7 @@
                           ,@jazz:crash-units
                           ,@jazz:types-units
                           ,@jazz:cairo-units
-                          ,@jazz:font-units
+                          ,@jazz:pango-units
                           ,@jazz:carbon-units
                           ,@jazz:clipboard-units)))
         (jazz:custom-compile/build unit-specs unit: unit force?: force?)
@@ -193,14 +194,26 @@
           (jazz:copy-file (source-file "foreign/cairo/lib/windows/freetype6.dll") (build-file "freetype6.dll") feedback: jazz:feedback)
           (jazz:copy-file (source-file "foreign/cairo/lib/windows/libexpat-1.dll") (build-file "libexpat-1.dll") feedback: jazz:feedback)
           (jazz:copy-file (source-file "foreign/png/lib/windows/libpng14-14.dll") (build-file "libpng14-14.dll") feedback: jazz:feedback)
-          (jazz:copy-file (source-file "foreign/zlib/lib/windows/zlib1.dll") (build-file "zlib1.dll") feedback: jazz:feedback))
+          (jazz:copy-file (source-file "foreign/zlib/lib/windows/zlib1.dll") (build-file "zlib1.dll") feedback: jazz:feedback)
+          (jazz:copy-file (source-file "foreign/glib/lib/windows/libglib-2.0-0.dll") (build-file "libglib-2.0-0.dll") feedback: jazz:feedback)
+          (jazz:copy-file (source-file "foreign/glib/lib/windows/libgobject-2.0-0.dll") (build-file "libgobject-2.0-0.dll") feedback: jazz:feedback)
+          (jazz:copy-file (source-file "foreign/glib/lib/windows/libgmodule-2.0-0.dll") (build-file "libgmodule-2.0-0.dll") feedback: jazz:feedback)
+          (jazz:copy-file (source-file "foreign/glib/lib/windows/libgthread-2.0-0.dll") (build-file "libgthread-2.0-0.dll") feedback: jazz:feedback)
+          (jazz:copy-file (source-file "foreign/pango/lib/windows/libpango-1.0-0.dll") (build-file "libpango-1.0-0.dll") feedback: jazz:feedback)
+          (jazz:copy-file (source-file "foreign/pango/lib/windows/libpangowin32-1.0-0.dll") (build-file "libpangowin32-1.0-0.dll") feedback: jazz:feedback)
+          (jazz:copy-file (source-file "foreign/pango/lib/windows/libpangoft2-1.0-0.dll") (build-file "libpangoft2-1.0-0.dll") feedback: jazz:feedback)
+          (jazz:copy-file (source-file "foreign/pango/lib/windows/libfontconfig-1.dll") (build-file "libfontconfig-1.dll") feedback: jazz:feedback)
+          (jazz:copy-file (source-file "foreign/pango/lib/windows/libexpat-1.dll") (build-file "libexpat-1.dll") feedback: jazz:feedback)
+          (jazz:copy-file (source-file "foreign/pango/lib/windows/freetype6.dll") (build-file "freetype6.dll") feedback: jazz:feedback)
+          (jazz:copy-file (source-file "foreign/pango/lib/windows/libpangocairo-1.0-0.dll") (build-file "libpangocairo-1.0-0.dll") feedback: jazz:feedback)
+          (jazz:copy-file (source-file "foreign/png/lib/windows/libpng14-14.dll") (build-file "libpng14-14.dll") feedback: jazz:feedback))
         
         (let ((unit-specs `((jazz.platform)
                             (jazz.platform.crash)
                             ,@jazz:crash-units
                             ,@jazz:types-units
                             ,@jazz:cairo-units
-                            ,@jazz:font-units
+                            ,@jazz:pango-units
                             ,@jazz:windows-units
                             ,@jazz:com-units)))
           (jazz:custom-compile/build unit-specs unit: unit pre-build: copy-platform-files force?: force?)
@@ -212,7 +225,7 @@
                           ,@jazz:crash-units
                           ,@jazz:types-units
                           ,@jazz:cairo-units
-                          ,@jazz:font-units
+                          ,@jazz:pango-units
                           ,@jazz:x11-units
                           ,@jazz:clipboard-units)))
         (jazz:custom-compile/build unit-specs unit: unit force?: force?)

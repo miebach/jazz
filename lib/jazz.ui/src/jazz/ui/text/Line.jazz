@@ -110,14 +110,15 @@
   ;;;
 
 
-  (method protected (range-region paragraph-left paragraph-top paragraph-width start end paragraph dh dv sc)
-    (let ((left (get-h~ (col->view (or start 0) #f)))
-          (right (if (not end) paragraph-width (get-h~ (col->view end #f)))))
-      (let* ((rect (new Rect left top right (get-bottom)))
-             (offset (offset-rect rect paragraph-left paragraph-top)))
-        (let ((region (new Region (acquire-delta~ paragraph dh dv sc offset))))
-          (keep-rectangles~ region)
-          region))))
+  (method protected (range-region paragraph-left paragraph-top paragraph-width start end paragraph offset-pos)
+    (let ((region (new Region (acquire-delta~ paragraph offset-pos
+                                              (offset-rect (new Rect (get-h~ (col->view (or start 0) #f))
+                                                                     top
+                                                                     (if (not end) paragraph-width (get-h~ (col->view end #f)))
+                                                                     (get-bottom))
+                                                           paragraph-left paragraph-top)))))
+        (keep-rectangles~ region)
+        region))
   
   
   ;;;
@@ -156,8 +157,8 @@
     (let ((h (+ left~self h))
           (enabled? (draw-enabled?~ model)))
       (for-each (lambda (run)
-                  (let ((width (draw-run~ run surface context h v height tabs left enabled?)))
-                    (increase! h width)))
+                  (draw-run~ run surface context h v height tabs left enabled?)
+                  (increase! h (compute-width~ run)))
                 runs)))
   
   

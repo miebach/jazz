@@ -1740,6 +1740,12 @@
   (sequence-butlast~ seq))
 
 
+(definition public (nthcdr n list)
+  (if (= 0 n)
+      list
+      (nthcdr (- n 1) (cdr list))))
+
+
 (definition public (compare-sequence s1 s2 compare)
   (let ((l1 (cardinality s1))
         (l2 (cardinality s2)))

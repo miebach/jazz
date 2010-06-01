@@ -494,23 +494,21 @@
           (nextmethod context))))
 
   
-  (method override (draw-outline surface context clipper lh lv sh sv sc sc?)
-    (nextmethod surface context clipper lh lv sh sv sc sc?)
+  (method override (draw-outline surface context clipper lh lv)
+    (nextmethod surface context clipper lh lv)
     (let* ((pos (get-position))
            (left (+ (get-left~ clipper) (get-h~ pos)))
            (right (+ (get-right~ clipper) (get-h~ pos)))
            (height (get-height)))
       ;; probably buggy in ftx fix with alain
       (when (and (view-enabled?) empty-background (<= columns-right right))
-        (let ((rect (new Rect (if sc? (fxround (* columns-right sc)) columns-right) 0 (if sc? (fxround (* right sc)) right) (if sc? (fxround (* height sc)) height))))
-          (fill-rect~ surface rect (if (debug-paint?) (cycle-debug-color!) empty-background)))))
+        (fill-rect~ surface (new Rect columns-right 0 right height) (if (debug-paint?) (cycle-debug-color!) empty-background))))
     (draw-highlighted surface))
   
   
-  ;; probably still buggy when scaling, so limit to tree-view for now
-  (method override (draw-empty surface top bottom sh sv sc sc? rt width)
+  (method override (draw-empty surface top bottom rt width)
     (when (and (view-enabled?) empty-background (<= rt bottom))
-      (let ((rect (new Rect 0 (fxround (if sc? (* rt sc) rt)) (fxround (if sc? (* width sc) width)) (fxround (if sc? (* bottom sc) bottom)))))
+      (let ((rect (new Rect 0 (fxround rt) (fxround width) (fxround bottom))))
         (fill-rect~ surface rect (if (debug-paint?) (cycle-debug-color!) empty-background)))))
   
   
@@ -552,13 +550,13 @@
     {Color Medium})
   
   
-  (method override (draw-children surface <Surface> nodes context lh <fx> lv <fx> sh sv sc sc?)
+  (method override (draw-children surface <Surface> nodes context lh <fx> lv <fx>)
     (define (paint-data context column row lh lv h v width height data)
       (let ((cell-h (+ lh h))
             (cell-v (+ lv v)))
         (if (is-not? data View)
-            (paint-data~ column surface context cell-h cell-v h v width height row data sh sv sc sc?)
-          (paint-drawing~ data surface context cell-h cell-v sh sv sc sc?))))
+            (paint-data~ column surface context cell-h cell-v h v width height row data)
+          (paint-drawing~ data surface context cell-h cell-v))))
     
     (define (merge-geometry top-left bottom-right)
       (let ((top-left-rect (unmerged-site-rect top-left))
@@ -580,7 +578,7 @@
               (let ((new-context (cons selected?: (cons selected? (cons line: (cons (row->line top-row) context))))))
                 (paint-data new-context left-column top-row (+ lh left) (+ lv top) 0 0 width height data)))))))
     
-    (nextmethod surface nodes context lh lv sh sv sc sc?)
+    (nextmethod surface nodes context lh lv)
     (for-each paint-merge-cell-data merge-cell-list))
   
   
@@ -1043,9 +1041,10 @@
               (let* ((width (column-width (get-col~ cell)))
                      (height (get-height~ row))
                      (content-rect (content-rect~ column row cell width height))
-                     (formatted? (get-formatted-tooltip?))
-                     (text-width (if formatted? 0 (+ (text-width~ (effective-font) text) 2))))
-                (when (or (cell-tooltips? cell) (> text-width (rect-width content-rect)))
+                     (formatted? (get-formatted-tooltip?)))
+                (when (or (cell-tooltips? cell)
+                          (> (if formatted? 0 (+ (get-text-width text (effective-font)) 2))
+                             (rect-width content-rect)))
                   (let ((rect (calculate-tooltip-bounds cell))
                         (h (+ (content-h~ column (get-level~ row)) (if (= (get-col~ cell) 0) 2 -2))))
                     (new Tooltip-Context
@@ -1126,12 +1125,8 @@
         (fill-rect~ maskdc (new Rect 0 0 width height) {Color Tree-Background})
         (draw-image~ portfolio memdc #f image 0 0)
         (draw-mask~ portfolio maskdc image 0 0)
-        (set-font~ memdc font)
-        (set-text-color~ memdc {Color Black})
-        (draw-text~ memdc 19 2 title)
-        (set-font~ maskdc font)
-        (set-text-color~ maskdc {Color Black})
-        (draw-text~ maskdc 19 2 title)
+        (draw-text~ memdc 19 2 title font {Color Black})
+        (draw-text~ maskdc 19 2 title font {Color Black})
         (set! bitmap (get-bitmap~ memdc))
         (set! mask (get-bitmap~ maskdc)))
       (let* ((portfolio (new Portfolio))
@@ -1745,10 +1740,8 @@
   
   (method public (invalidate-merge-cell merge-cell)
     (when (view-visible?)
-      (let ((root (get-root)))
-        (receive (dh dv sc) (get-delta~ root self)
-          (with ((region (new Region (acquire-delta dh dv sc (rect-intersection (merge-cell-rect merge-cell) (get-view-clipper))))))
-            (invalidate-region~ player region))))))
+      (with ((region (new Region (acquire-delta (find-offset~ (get-root) self) (rect-intersection (merge-cell-rect merge-cell) (get-clipper))))))
+        (invalidate-region~ player region))))
   
   
   (method public (get-master-cell cell)
@@ -2219,7 +2212,7 @@
   
   
   (method (selection-position selection)
-    (with ((region (selection-region selection 0 0 1.0)))
+    (with ((region (selection-region selection {Point 0 0})))
       (rect-position (get-box~ region))))
   
   
@@ -2370,17 +2363,17 @@
         removed)))
 
   
-  (method override (selection-region sel dh dv sc)
+  (method override (selection-region sel offset)
     (define (element-region element)
       (case selection-mode
-        ((cell) (new Region (acquire-delta dh dv sc (cell-rect element))))
-        (else (selection-row-region element dh dv sc))))
+        ((cell) (new Region (acquire-delta offset (cell-rect element))))
+        (else (selection-row-region element offset))))
     
     (let ((region (new Region)))
       (loop (for element in sel)
             (let ((merge-cell (safe-get-merge-cell (cell->site element))))
               (if merge-cell
-                  (with ((row-region (new Region (acquire-delta dh dv sc (merge-cell-rect merge-cell)))))
+                  (with ((row-region (new Region (acquire-delta offset (merge-cell-rect merge-cell)))))
                     (combine!~ region row-region 'or))
                 (with ((row-region (element-region element)))
                   (combine!~ region row-region 'or)))))

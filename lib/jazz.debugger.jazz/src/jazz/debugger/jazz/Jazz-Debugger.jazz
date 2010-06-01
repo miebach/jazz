@@ -474,7 +474,7 @@
   ;;;
   
   
-  (method public (get-toplevel-hwnd)
+  (method public (get-toplevel-window-handle) ;; why does this assume toplevel exists?
     (get-handle~ (get-toplevel)))
   
   

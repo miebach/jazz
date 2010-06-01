@@ -363,16 +363,50 @@
         color)))
   
   
+  (method (flat-look?)
+    (case style
+      ((tool) (get-element~ (get-look) 'tool/scrollbar/flat?))
+      ((document) (get-element~ (get-look) 'document/scrollbar/flat?))
+      (else flat?)))
+
+  
+  (method (draw-scroll-bar surface rect <Rect> direction)
+    (fill-rect~ surface rect {Color Draw-Edge-Light})
+    (draw-edge surface rect inner: 'raised outer: 'raised edges: 'rectangle)
+    (let ((dh (cond ((eq? direction 'left) 1)
+                    ((eq? direction 'right) 2)
+                    ((eq? direction 'up) 1)
+                    ((eq? direction 'down) 1)))
+          (dv (cond ((eq? direction 'up) 1)
+                    ((eq? direction 'down) 1)
+                    (else 0))))
+      (set-color~ surface {Color Black})
+      (draw-arrow-tip surface (+ (get-left~ rect) 3 dh) (+ (get-top~ rect) 4 dv) 3 direction)))
+  
+  
   (method override (draw surface <Surface> context lh lv)
+    (define (draw-raised surface rect <Rect>)
+      (set-color~ surface {Color Light-Background})
+      (set-line-width~ surface 1)
+      (move-to~ surface (get-left~ rect) (- (get-bottom~ rect) 1))
+      (line-to~ surface (get-left~ rect) (get-top~ rect))
+      (line-to~ surface (- (get-right~ rect) 1) (get-top~ rect))
+      (stroke~ surface)
+      (set-color~ surface {Color Dark})
+      (move-to~ surface (- (get-right~ rect) 1) (get-top~ rect))
+      (line-to~ surface (- (get-right~ rect) 1) (- (get-bottom~ rect) 1))
+      (line-to~ surface (get-left~ rect) (- (get-bottom~ rect) 1))
+      (stroke~ surface))
+    
     (define (draw-button rect direction)
-      (draw-raised~ surface rect)
+      (draw-raised surface rect)
       (let ((inflated (inflate-rect rect -1 -1)))
         (fill-rect~ surface inflated {Color Medium})
         (set-color~ surface {Color Black})
         (let ((dh (if (eq? orientation 'horz) 1 0))
               (dv (if (eq? orientation 'horz) -1 0)))
-          (draw-arrow-tip~ surface (+ (get-left~ inflated) 3 dh) (+ (get-top~ inflated) 4 dv) 3 direction))))
-    
+          (draw-arrow-tip surface (+ (get-left~ inflated) 3 dh) (+ (get-top~ inflated) 4 dv) 3 direction))))
+
     (let ((look (get-look)))
       (let ((bounds (get-bounds))
             (up-rect (up-rect))
@@ -381,34 +415,21 @@
             (background (get-background~ look))
             (thumb (get-thumb~ look))
             (flat? (get-flat?~ look)))
-        (fill-background~ surface bounds (if (debug-paint?) (cycle-debug-color!) (or background (get-background-color))))
+        (fill-rect~ surface bounds (if (debug-paint?) (cycle-debug-color!) (get-background-color)))
         (cond (flat?
                (draw-button up-rect (case orientation ((vert) 'up) ((horz) 'left)))
                (draw-button down-rect (case orientation ((vert) 'down) ((horz) 'right))))
               (else
-               (draw-scroll-bar~ surface up-rect (case orientation ((vert) 'up) ((horz) 'left)))
-               (draw-scroll-bar~ surface down-rect (case orientation ((vert) 'down) ((horz) 'right)))))
+               (draw-scroll-bar surface up-rect (case orientation ((vert) 'up) ((horz) 'left)))
+               (draw-scroll-bar surface down-rect (case orientation ((vert) 'down) ((horz) 'right)))))
         (when thumb-rect
           (if flat?
-              @interesting
-              (frame-rect~ surface thumb-rect {Color Entry-Border})
-              (draw-raised~ surface thumb-rect)
-            (draw-edge~ surface thumb-rect inner: 'raised outer: 'raised edges: 'rectangle))
+              (draw-raised surface thumb-rect)
+            (draw-edge surface thumb-rect inner: 'raised outer: 'raised edges: 'rectangle))
           (let ((width (if flat? 1 2)))
             (let ((inflated (inflate-rect thumb-rect (- width) (- width))))
-              (fill-background~ surface inflated (or thumb {Color Medium}))))
-          @interesting
-          (let* ((height (rect-height thumb-rect))
-                 (v (+ (get-top~ thumb-rect) (quotient (- height 8) 2))))
-            (set-color~ surface {Color Light})
-            (set-line-width~ surface 1)
-            (line~ surface 3 v 8 v)
-            (line~ surface 3 (+ v 3) 8 (+ v 3))
-            (line~ surface 3 (+ v 6) 8 (+ v 6))
-            (set-color~ surface {Color Dark})
-            (line~ surface 4 (+ v 1) 9 (+ v 1))
-            (line~ surface 4 (+ v 4) 9 (+ v 4))
-            (line~ surface 4 (+ v 7) 9 (+ v 7)))))))
+              (fill-rect~ surface inflated (or thumb {Color Medium}))))
+          ))))
 
   
   ;;;
@@ -421,7 +442,7 @@
       ((tool) (find-look 'scrollbar/tool))
       ((document) (find-look 'scrollbar/document))
       (else (find-look 'scrollbar))))
-
+  
   
   ;;;
   ;;;; Transparency

@@ -75,35 +75,6 @@
     (invalidate-border))
   
   
-  ;; This version which is not complete really closes the docked.
-  ;; For this to work correctly code will have to be modified not
-  ;; to rely on any palette being there.
-  @code-will-have-to-be-modified-for-this-to-work
-  (method (on-close evt)
-    (let* ((parent (get-parent))
-           (grand (get-parent~ parent)))
-      (with-locked-update
-        (lambda ()
-          (set-visible? #f)
-          (set-parent (get-toplevel))
-          (cond ((is? parent Splitter-View)
-                 (let ((other (first-view~ parent)))
-                   (when other
-                     (if (is? parent Workspace-Splitter)
-                         (begin
-                           (set-mode~ parent 'zoom)
-                           (layout-view~ parent))
-                       (set-location~ other (get-location~ parent))
-                       (set-parent~ other grand)
-                       (close~ parent)
-                       (layout-view~ grand)))))
-                ((is? parent Pad-View)
-                 (close)
-                 (let ((other (first-child~ parent)))
-                   (set-location~ other 'selection)
-                   (layout-view~ parent))))))))
-  
-  
   (method (on-close evt)
     (hide-splitted))
   
@@ -111,8 +82,6 @@
   (method public (hide-splitted)
     (let* ((parent (get-parent))
            (grand (get-parent~ parent)))
-      (with-locked-update
-        (lambda ()
           (set-visible? #f)
           (set-parent (get-toplevel))
           (cond ((is? parent Splitter-View)
@@ -130,7 +99,7 @@
                  (close)
                  (let ((other (first-child~ parent)))
                    (set-location~ other 'selection)
-                   (layout-view~ parent))))))))
+                   (layout-view~ parent))))))
 
   
   ;;;
@@ -283,7 +252,7 @@
                           (selected? (eq? docked self)))
                       (let* ((left (- h .5))
                              (top .5)
-                             (width (+ (get-text-width~ surface title) 37))
+                             (width (+ (get-width~ (get-text-extent~ surface title {Font Label})) 37))
                              (height 24)
                              (right (+ left width))
                              (bottom (+ top height)))
@@ -292,16 +261,15 @@
                           (set-color~ surface (if focused? {Color Dark} {Color red: 230 green: 225 blue: 204}))
                           (set-line-width~ surface 1)
                           (when (not first?)
-                            (cairo-move-to~ surface left bottom)
-                            (cairo-line-to~ surface left 1)
+                            (move-to~ surface left bottom)
+                            (line-to~ surface left 1)
                             (stroke~ surface))
-                          (cairo-move-to~ surface right 1)
-                          (cairo-line-to~ surface right bottom)
+                          (move-to~ surface right 1)
+                          (line-to~ surface right bottom)
                           (stroke~ surface))
                         (draw-image~ (get-images-portfolio~ (get-application)) surface context icon (+ h 3) 5)
-                        (set-font~ surface {Font Label})
-                        (set-text-color~ surface (if selected? (get-focused-text-color~ look) (get-unfocused-text-color~ look)))
-                        (draw-text~ surface (+ h 21) 7 title)
+                        (draw-text~ surface (+ h 21) 7 title {Font Label}
+                                    (if selected? (get-focused-text-color~ look) (get-unfocused-text-color~ look)))
                         (increase! h width))))
                   all))
       (set-color~ surface {Color Dark})
@@ -343,16 +311,10 @@
               (focus-host~ docked)))))))
   
   
-  (method (toggle-docked pos)
-    (let ((parent (get-parent)))
-      (when (is? parent Pad-View)
-        (let* ((title (localize (get-title)))
-               (font {Font Label})
-               (h (+ 28 (text-width~ font title))))
-          (when (< (get-h~ pos) h)
-            (with-locked-update
-              (lambda ()
-                (select-next~ parent))))))))
+  (method (toggle-docked pos) ;; duplicated w/ toggle-docked in toolbar-host
+    (when (and (is? (get-parent) Pad-View)
+               (< (get-h~ pos) (+ 28 (get-text-width (localize (get-title)) {Font Label}))))
+      (select-next~ (get-parent))))
   
   
   (method override (double-click pos)
@@ -363,11 +325,9 @@
             (toggle-full-screen~ (get-application) target)
           (let ((splitter (if (is? parent Pad-View) (get-parent~ parent) parent)))
             (when (is? splitter Splitter-View)
-              (with-locked-update
-                (lambda ()
                   (if (eq? (get-state~ splitter) 'split)
                       (zoom~ splitter target)
-                    (unzoom~ splitter))))))))))
+                    (unzoom~ splitter))))))))
 
 
   ;;;
@@ -395,14 +355,10 @@
       (let ((h 0)
             (first (first all)))
         (for-each (lambda (docked)
-                    (let ((title (get-title~ docked))
-                          (first? (eq? docked first)))
-                      (let ((left (if first? (+ h 1) h))
-                            (top 1)
-                            (width (+ (text-width~ {Font Label} title) 37))
-                            (height 23))
-                        (proc docked (new Rect left top (+ h width) (+ top height)))
-                        (increase! h width))))
+                    (let ((top 1)
+                          (width (+ 37 (get-text-width (get-title~ docked) {Font Label}))))
+                      (proc docked (new Rect (if (eq? docked first) (+ h 1) h) top (+ h width) (+ top 23)))
+                      (increase! h width)))
                   all))))
   
   
@@ -443,7 +399,5 @@
   (method (on-select evt)
     (let ((pad (get-parent))
           (host (get-property~ evt host:)))
-      (with-locked-update
-        (lambda ()
-          (set-selection~ pad host)
-          (focus-host~ host)))))))
+      (set-selection~ pad host)
+      (focus-host~ host)))))

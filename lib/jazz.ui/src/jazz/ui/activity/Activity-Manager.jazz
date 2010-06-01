@@ -209,5 +209,5 @@
   
   (method override (draw surface context lh lv)
     (let ((bounds (get-bounds)))
-      (draw-edge~ surface bounds inner: 'raised outer: 'raised edges: '(left top right))
-      (draw-edge~ surface bounds outer: 'sunken edges: '(bottom))))))
+      (draw-edge surface bounds inner: 'raised outer: 'raised edges: '(left top right))
+      (draw-edge surface bounds outer: 'sunken edges: '(bottom))))))

@@ -103,7 +103,7 @@
 
 
   ;; All these special cases need major cleanup!
-  (method protected (range-region left-padding <fx> start end dh dv sc (width #f))
+  (method protected (range-region left-padding <fx> start end offset-pos (width #f))
     (let ((rs <fx> (or start 0))
           (re <fx> (or end (cardinality string)))
           (left <fx> (paragraph-left))
@@ -111,20 +111,19 @@
           (width <fx> (or width (get-width~ size))))
       (cond ;; full paragraph
             ((and (= rs 0) (not end))
-             (let ((rect (new Rect left top (+ left width) (+ top (get-height~ size)))))
-               (let ((region (new Region (acquire-delta dh dv sc rect))))
-                 (keep-rectangles~ region)
-                 region)))
+             (let ((region (new Region (acquire-delta offset-pos (new Rect left top (+ left width) (+ top (get-height~ size)))))))
+               (keep-rectangles~ region)
+               region))
             ;; end of the last line
             ((and (= rs re) (not end))
-             (let* ((line <Line> (last lines))
-                    (beginning (get-h~ (col->view~ line re #f)))
-                    (right (+ left-padding (- width left))))
-               (let* ((rect (new Rect beginning (get-top~ line) right (get-bottom~ line)))
-                      (offset (offset-rect rect left top)))
-                 (let ((region (new Region (acquire-delta dh dv sc offset))))
-                   (keep-rectangles~ region)
-                   region))))
+             (let* ((line (last lines))
+                    (region (new Region (acquire-delta offset-pos (offset-rect (new Rect (get-h~ (col->view~ line re #f))
+                                                                                         (get-top~ line)
+                                                                                         (+ left-padding (- width left))
+                                                                                         (get-bottom~ line))
+                                                                               left top)))))
+               (keep-rectangles~ region)
+               region))
             ;; partial range
             (else
              (let ((s (col->text rs))
@@ -134,7 +133,7 @@
                (keep-rectangles~ region)
                (for-each-logical-range s e 0
                  (lambda (line <Line> beginning limit)
-                   (with ((sub (range-region~ line left top w beginning (if (not end) #f limit) self dh dv sc)))
+                   (with ((sub (range-region~ line left top w beginning (if (not end) #f limit) self offset-pos)))
                      (combine!~ region sub 'or))))
                region)))))
   
@@ -287,7 +286,7 @@
     (modify-style start end
       (lambda (style <Style>)
         (when (supports?~ style 'font)
-          (extend~ style font: (extend~ (get-font~ style) font-name: name))))))
+          (extend~ style font: (extend~ (get-font~ style) name: name))))))
   
   
   (method protected (set-point-size start <fx> end <fx> size)

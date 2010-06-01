@@ -81,10 +81,8 @@
   
   (method public virtual (offset! h v)
     (when keep-rectangles?
-      (for-each (lambda (rect)
-                  (offset-rect! rect h v))
-                rectangles)
-      (offset-rect! bounding-box h v)))
+      (set! rectangles (map (lambda (rect) (offset-rect rect h v)) rectangles))
+      (set! bounding-box (offset-rect bounding-box h v))))
 
 
   (method public virtual (combine! region mode)

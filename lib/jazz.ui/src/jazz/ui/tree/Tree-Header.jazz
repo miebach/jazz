@@ -238,9 +238,8 @@
         (let* ((outer (new Rect h v (+ h width) (+ v height)))
                (inner (expand-rect outer 1 1 thick thick)))
           (let ((smaller (expand-rect outer 0 0 0 -1)))
-            (draw-edge~ surface smaller inner: 'raised edges: '(top left)))
-          (fill-rect~ surface inner (or background (header-color~ client)))
-          (set-text-color~ surface {Color Black}))))
+            (draw-edge surface smaller inner: 'raised edges: '(top left)))
+          (fill-rect~ surface inner (or background (header-color~ client))))))
     
     (let ((client (get-client)))
       (let ((clipper (get-logical-clipper~ surface))
@@ -439,22 +438,19 @@
   
   
   (method (autofit-column column)
-    (let ((client (get-client)))
-      (let ((tree client)
-            (col (column->col~ client column))
-            (max-width 0))
-        (for-each-visible-row~ tree
-          (lambda (row rank)
-            (let ((data (get-child~ row col)))
-              (when (is? data Tree-Label)
-                (let ((title (get-title~ data)))
-                  (when title
-                    (let ((width (+ (text-h~ column (get-level~ row))
-                                    (text-width~ (effective-font~ tree) title)
-                                    2)))
-                      (when (> width max-width)
-                        (set! max-width width)))))))))
-        (resize-column column (max max-width min-column-width)))))
+    (let* ((client (get-client))
+           (col (column->col~ client column))
+           (max-width 0))
+      (for-each-visible-row~ client
+        (lambda (row rank)
+          (when (and (is? (get-child~ row col) Tree-Label)
+                     (get-title~ (get-child~ row col)))
+                (let ((width (+ (text-h~ column (get-level~ row))
+                                (get-text-width (get-title~ (get-child~ row col)) (effective-font~ client))
+                                2)))
+                  (when (> width max-width)
+                    (set! max-width width))))))
+      (resize-column column (max max-width min-column-width))))
   
   
   (method (header-coordinates col pos)

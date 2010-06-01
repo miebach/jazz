@@ -64,7 +64,7 @@
   (method override (preferred-size)
     (if (not title)
         (default-size)
-      (new Dimension (+ (text-width~ (effective-font) (localize title)) 24) 21)))
+      (new Dimension (+ (get-text-width (localize title) (effective-font)) 24) 21)))
   
   
   ;;;
@@ -83,11 +83,10 @@
       (if (not title)
           (draw-image surface context offset offset)
         (let ((title (localize title))
-              (center (justify-lazy (lambda () (get-text-extent~ surface title))
+              (center (justify-lazy (lambda () (get-text-extent~ surface title (effective-font)))
                                     (lambda () (get-size))
                                     '(center center))))
-          (set-text-color~ surface (or (get-focused-text-color~ (get-look)) {Color Black}))
-          (draw-text~ surface (+ offset (get-h~ center)) (+ offset (get-v~ center)) title (view-enabled?))))))
+          (draw-text~ surface (+ offset (get-h~ center)) (+ offset (get-v~ center)) title (effective-font) {Color Black})))))
   
   
   (method override (draw-background surface context)

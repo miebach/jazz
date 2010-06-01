@@ -180,14 +180,26 @@
                (fill-rect~ surface bar-bounds {Color Medium}))
               ((edge)
                (case orientation
-                 ((horz) (draw-edge~ surface bar-bounds inner: 'raised outer: 'sunken edges: '(left)))
-                 ((vert) (draw-edge~ surface bar-bounds inner: 'raised outer: 'sunken edges: '(top)))))
+                 ((horz) (draw-edge surface bar-bounds inner: 'raised outer: 'sunken edges: '(left)))
+                 ((vert) (draw-edge surface bar-bounds inner: 'raised outer: 'sunken edges: '(top)))))
               ((line)
                (case orientation
-                 ((horz) (draw-edge~ surface bar-bounds inner: 'raised edges: '(left)))
-                 ((vert) (draw-edge~ surface bar-bounds inner: 'raised edges: '(top))))))))
+                 ((horz) (draw-edge surface bar-bounds inner: 'raised edges: '(left)))
+                 ((vert) (draw-edge surface bar-bounds inner: 'raised edges: '(top))))))))
         (when (not (empty-rect? insets))
-          (fill-insets~ surface (get-bounds) insets (or background {Color Medium}))))))
+          (let* ((rect (get-bounds))
+                 (l (get-left~ rect))
+                 (t (get-top~ rect))
+                 (r (get-right~ rect))
+                 (b (get-bottom~ rect))
+                 (tti (+ t (get-top~ insets)))
+                 (bbi (- b (get-bottom~ insets))))
+            (set-color~ surface (or background {Color Medium}))
+            (rectangle-path~ surface (new Rect l t r tti))
+            (rectangle-path~ surface (new Rect l bbi r b))
+            (rectangle-path~ surface (new Rect l tti (+ l (get-left~ insets)) bbi))
+            (rectangle-path~ surface (new Rect (- r (get-right~ insets)) tti r bbi))
+            (fill~ surface))))))
   
   
   ;;;

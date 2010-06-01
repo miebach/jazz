@@ -73,20 +73,18 @@
                                 (obscure-unhighlighted?: obscure-unhighlighted? #t)
                                 (tooltips?: tooltips? #t))
   (unless In-Pick?
-    (with-locked-update
-      (lambda ()
-        (let ((windows (process-windows)))
-          (when (not-null? windows)
-            (setup-pick)
-            (set! All-Overlays '())
-            (for-each (lambda (overlapped)
-                        (when (and (or (not include) (memq? overlapped include))
-                                   (or (not exclude) (not (memq? overlapped exclude))))
+    (let ((windows (process-windows)))
+      (when (not-null? windows)
+        (setup-pick)
+        (set! All-Overlays '())
+        (for-each (lambda (overlapped)
+                    (when (and (or (not include) (memq? overlapped include))
+                               (or (not exclude) (not (memq? overlapped exclude))))
                           (let ((overlay (install-overlay overlapped click menu highlight highlight-root-only? report-figure? obscure-unhighlighted? tooltips?)))
                             (invalidate-view~ overlay)
                             (set! All-Overlays (cons overlay All-Overlays)))))
-                      windows)
-            (set! In-Pick? #t)))))))
+                  windows)
+        (set! In-Pick? #t)))))
 
 
 (definition (install-overlay overlapped click menu highlight highlight-root-only? report-figure? obscure-unhighlighted? tooltips?)
@@ -123,10 +121,8 @@
 
 (definition (shortcut-hook shortcut)
   (cond ((shortcut=? shortcut {Shortcut Escape})
-         (with-locked-update
-           (lambda ()
-             (end-pick)
-             (clear-user-message)))
+         (end-pick)
+         (clear-user-message)
          #f)
         ((not *highlighted-overlay*)
          #f)
@@ -310,10 +306,8 @@
   (method override (mouse-up pos)
     (nextmethod pos)
     (receive (view pos) (find-view-info pos)
-      (with-locked-update
-        (lambda ()
-          (end-pick)
-          (click view pos)))))
+      (end-pick)
+      (click view pos)))
   
   
   (method (find-view-info pos)
@@ -406,21 +400,9 @@
   ;;;
   
   
-  (definition Overlay-Color
-    {Color Black alpha: 0.25})
-  
-  (definition Highlight-Color
-    {Color red: 109 green: 109 blue: 177})
-  
-  
   (method override (draw surface context lh lv)
-    (define (highlighter surface)
-      (set-style~ surface 'solid)
-      (set-line-width~ surface 2)
-      (set-color~ surface Highlight-Color))
-    
     (cond ((or (not *highlighted-overlay*) (neq? (get-root) (get-root~ *highlighted-overlay*)))
            (when obscure-unhighlighted?
-             (fill-rect~ surface (get-bounds) Overlay-Color)))
+             (fill-rect~ surface (get-bounds) {Color Black alpha: 0.25})))
           (highlighted-rect
-           (rectangle~ surface highlighted-rect highlighter #f))))))
+           (frame-rect~ surface (get-bounds) {Color red: 109 green: 109 blue: 177} 2))))))

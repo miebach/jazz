@@ -131,10 +131,7 @@
     (let ((title (localize (label-title))))
       (if (not title)
           (default-size)
-        (let ((extent (text-extent~ (effective-font) title)))
-          (new Dimension
-            (get-width~ extent)
-            (max 16 (get-height~ extent)))))))
+          (new Dimension (get-text-width title (effective-font)) (max 16 (line-height~ (effective-font)))))))
   
   
   ;;;
@@ -159,7 +156,7 @@
   
   (method override (draw surface context lh lv)
     (let ((title (localize (or (label-title) ""))))
-      (let ((pos (justify-lazy (lambda () (get-text-extent~ surface title))
+      (let ((pos (justify-lazy (lambda () (get-text-extent~ surface title (effective-font)))
                                (lambda () (get-size))
                                (if (pair? justification) justification (list justification 'center)))))
         (if style
@@ -171,11 +168,9 @@
                   (enabled? (view-enabled?)))
               (draw-style~ style surface context title h v line-height tabs left enabled?))
           (when shadow?
-            (set-text-color~ surface {Color Medium-Gray})
-            (draw-text~ surface (+ (get-h~ pos) 2) (+ (get-v~ pos) 2) title))
+            (draw-text~ surface (+ (get-h~ pos) 2) (+ (get-v~ pos) 2) title (effective-font) {Color Medium-Gray}))
           (let ((enabled? (view-enabled?)))
-            (set-text-color~ surface (if enabled? color {Color Dark}))
-            (draw-text~ surface (get-h~ pos) (get-v~ pos) title enabled?))))))
+            (draw-text~ surface (get-h~ pos) (get-v~ pos) title (effective-font) (if enabled? color {Color Dark})))))))
   
   
   ;;;

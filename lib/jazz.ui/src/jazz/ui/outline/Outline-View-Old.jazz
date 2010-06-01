@@ -336,7 +336,7 @@
     )
   
   
-  (method override (draw-children surface nodes context lh lv sh sv sc sc?)
+  (method override (draw-children surface nodes context lh lv)
     (let ((clipper (get-logical-clipper~ surface)))
       (let ((background (cond ((debug-paint?)
                                (cycle-debug-color!))
@@ -346,10 +346,10 @@
                                (get-drawing-background context)))))
         (when background
           (fill-rect~ surface clipper background)))
-      (draw-outline surface context clipper lh lv sh sv sc sc?)))
+      (draw-outline surface context clipper lh lv)))
   
   
-  (method protected virtual (draw-outline surface context clipper lh lv sh sv sc sc?)
+  (method protected virtual (draw-outline surface context clipper lh lv)
     (define (draw-rows top bottom)
       (define (draw-row row line)
         (let* ((width (get-width))
@@ -357,9 +357,9 @@
                (total-height (+ height row-spacing))
                (selected? (line-draw-selected? line))
                (pos <Point> (get-position~ row)))
-          (set-font~ surface (effective-font))
+          (update-font~ surface (effective-font))
           (let ((new-context (optimize-context selected? line context)))
-            (paint-content~ row surface #t '() new-context (+ lh (get-h~ pos)) (+ lv (get-v~ pos)) sh sv sc sc?))))
+            (paint-content~ row surface #t '() new-context (+ lh (get-h~ pos)) (+ lv (get-v~ pos))))))
       
       (let ((row (get-first-displayed~ outline))
             (line <fx> (get-first-displayed-line~ outline))
@@ -374,7 +374,7 @@
             (set! rt rb)
             (set! row (get-next~ row))
             (increase! rt row-spacing)))
-        (draw-empty surface top bottom sh sv sc sc? rt width)))
+        (draw-empty surface top bottom rt width)))
     
     (let ((pos (get-scrolled-position)))
       (let ((top (+ (get-top~ clipper) (get-v~ pos)))
@@ -382,7 +382,7 @@
         (draw-rows top bottom))))
   
   
-  (method protected virtual (draw-empty surface top bottom sh sv sc sc? rt width)
+  (method protected virtual (draw-empty surface top bottom rt width)
     )
   
   
@@ -691,17 +691,16 @@
   (method public virtual (invalidate-selection sel)
     (when (view-visible?)
       (let ((root (get-root)))
-        (receive (dh dv sc) (get-delta~ root self)
-          (with ((region (selection-region sel dh dv sc)))
-            (invalidate-region~ player region))))))
+        (with ((region (selection-region sel (find-offset~ (get-root) self))))
+          (invalidate-region~ player region)))))
   
   
-  (method protected virtual (selection-region sel dh dv sc)
-    (selection-row-region sel dh dv sc))
+  (method protected virtual (selection-region sel offset)
+    (selection-row-region sel offset))
   
   
-  (method protected (selection-row-region line dh dv sc)
-    (new Region (acquire-delta dh dv sc (selection-row-rect line))))
+  (method protected (selection-row-region line offset)
+    (new Region (acquire-delta offset (selection-row-rect line))))
     
   
   (method protected virtual (selection-row-rect line)

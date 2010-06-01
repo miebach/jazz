@@ -107,7 +107,7 @@
     (let ((title (localize title)))
       (if (not title)
           (default-size)
-        (new Dimension (+ (get-width~ (text-extent~ (effective-font) title)) 50) 22))))
+        (new Dimension (+ (get-text-width title (effective-font)) 50) 22))))
   
   
   ;;;
@@ -154,24 +154,48 @@
   
   
   (method override (draw surface context lh lv)
-    (let ((title (or (localize title) ""))
-          (offset (case state ((pushed) 1) (else 0)))
-          (rect (get-bounds))
-          (enabled? (view-enabled?)))
+    (let ((rect (get-bounds)))
       (when default?
-        (frame-rect~ surface rect (if enabled? {Color Black} {Color Dark}))
+        (frame-rect~ surface rect (if (get-enabled?) {Color Black} {Color Dark}))
         (set! rect (inflate-rect rect -1 -1)))
       (if flat?
-          (draw-edge~ surface rect outer: 'raised edges: 'rectangle)
-        (draw-push-button~ surface rect (if (eq? state 'pushed) #t #f)))
-      (let* ((size (get-size))
-             (width (get-width~ size))
-             (height (get-height~ size))
-             (extent (get-text-extent~ surface title))
-             (h (quotient (- width (get-width~ extent)) 2))
-             (v (quotient (- height (get-height~ extent)) 2)))
-        (set-text-color~ surface (if enabled? {Color Black} {Color Dark}))
-        (draw-text~ surface (+ h offset) (+ v offset) title enabled?))))
+          (draw-edge surface rect outer: 'raised edges: 'rectangle)
+          (begin
+            (set-line-width~ surface 1)
+            (if (eq? state 'pushed)
+                (begin
+                  (set-color~ surface {Color Draw-Edge-Dark})
+                  (line~ surface (get-left~ rect) (get-top~ rect) (- (get-right~ rect) 1) (get-top~ rect))
+                  (line~ surface (get-left~ rect) (get-top~ rect) (get-left~ rect) (- (get-bottom~ rect) 1))
+                  (set-color~ surface {Color Draw-Edge-Medium})
+                  (line~ surface (+ (get-left~ rect) 1) (+ (get-top~ rect) 1) (- (get-right~ rect) 2) (+ (get-top~ rect) 1))
+                  (line~ surface (+ (get-left~ rect) 1) (+ (get-left~ rect) 1) (+ (get-left~ rect) 1) (- (get-bottom~ rect) 2))
+                  (set-color~ surface {Color White})
+                  (line~ surface (- (get-right~ rect) 1) (get-top~ rect) (- (get-right~ rect) 1) (get-bottom~ rect))
+                  (line~ surface (- (get-right~ rect) 1) (- (get-bottom~ rect) 1) (get-left~ rect) (- (get-bottom~ rect) 1)))
+                (begin
+                  (set-color~ surface {Color White})
+                  (move-to~ surface (get-left~ rect) (- (get-bottom~ rect) 1))
+                  (line-to~ surface (get-left~ rect) (get-top~ rect))
+                  (line-to~ surface (- (get-right~ rect) 1) (get-top~ rect))
+                  (stroke~ surface)
+                  (set-line-width~ surface 1)
+                  (set-color~ surface {Color Draw-Edge-Dark})
+                  (line~ surface (- (get-right~ rect) 1) (get-top~ rect) (- (get-right~ rect) 1) (get-bottom~ rect))
+                  (line~ surface (- (get-right~ rect) 1) (- (get-bottom~ rect) 1) (get-left~ rect) (- (get-bottom~ rect) 1))
+                  (set-color~ surface {Color Draw-Edge-Medium})
+                  (line~ surface (- (get-right~ rect) 2) (+ (get-top~ rect) 1) (- (get-right~ rect) 2) (- (get-bottom~ rect) 1))
+                  (line~ surface (- (get-right~ rect) 2) (- (get-bottom~ rect) 2) (+ (get-left~ rect) 1) (- (get-bottom~ rect) 2))))))
+      (let* ((title (or (localize title) ""))
+             (offset (case state ((pushed) 1) (else 0)))
+             (size (get-size))
+             (extent (get-text-extent~ surface title (effective-font))))
+        (draw-text~ surface
+                    (+ (quotient (- (get-width~ size) (get-width~ extent)) 2) offset)
+                    (+ (quotient (- (get-height~ size) (get-height~ extent)) 2) offset)
+                    title
+                    (effective-font)
+                    (if (get-enabled?) {Color Black} {Color Dark})))))
   
   
   ;;;

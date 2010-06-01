@@ -68,8 +68,6 @@
   (method (on-close evt)
     (let* ((parent (get-parent))
            (grand (get-parent~ parent)))
-      (with-locked-update
-        (lambda ()
           (set-visible? #f)
           (set-parent (get-toplevel))
           (cond ((is? parent Splitter-View)
@@ -87,7 +85,7 @@
                  (close)
                  (let ((other (first-child~ parent)))
                    (set-location~ other 'selection)
-                   (layout-view~ parent))))))))
+                   (layout-view~ parent))))))
 
   
   ;;;
@@ -163,29 +161,20 @@
           ((in-rect? pos (caption-rect))
            (toggle-docked pos))))
   
-  
-  (method (toggle-docked pos)
-    (let ((parent (get-parent)))
-      (when (is? parent Pad-View)
-        (let* ((title (get-title))
-               (font {Font Label})
-               (h (+ 28 (text-width~ font title))))
-          (when (< (get-h~ pos) h)
-            (with-locked-update
-              (lambda ()
-                (select-next~ parent))))))))
+
+  (method (toggle-docked pos) ;; duplicated w/ toggle-docked in docked-host
+    (when (and (is? (get-parent) Pad-View)
+               (< (get-h~ pos) (+ 28 (get-text-width (get-title) {Font Label}))))
+      (select-next~ (get-parent))))
   
   
   (method override (double-click pos)
     (let* ((parent (get-parent))
-           (target (if (is? parent Pad-View) parent self))
            (splitter (if (is? parent Pad-View) (get-parent~ parent) parent)))
       (when (is? splitter Splitter-View)
-        (with-locked-update
-          (lambda ()
             (if (= (get-state~ splitter) 'split)
-                (zoom~ splitter target)
-              (unzoom~ splitter)))))))
+                (zoom~ splitter (if (is? parent Pad-View) parent self))
+              (unzoom~ splitter)))))
   
 
   ;;;
@@ -216,9 +205,6 @@
   
   
   (method (on-select evt)
-    (let ((parent (get-parent))
-          (host (get-property~ evt host:)))
-      (with-locked-update
-        (lambda ()
-          (set-selection~ parent host)
-          (focus-host~ host)))))))
+    (let ((host (get-property~ evt host:)))
+      (set-selection~ (get-parent) host)
+      (focus-host~ host)))))

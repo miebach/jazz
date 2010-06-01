@@ -54,8 +54,6 @@
   (property bold?      accessors generate)
   (property italic?    accessors generate)
   (property underline? accessors generate)
-  (property antialias  accessors generate)
-  (property hint-style accessors generate)
   
   
   (form
@@ -75,9 +73,7 @@
               ,@(if (specified? color) (list color: color) '())
               ,@(if (specified? bold?) (list bold?: bold?) '())
               ,@(if (specified? italic?) (list italic?: italic?) '())
-              ,@(if (specified? underline?) (list underline?: underline?) '())
-              ,@(if (specified? antialias) (list antialias: antialias) '())
-              ,@(if (specified? hint-style) (list hint-style: hint-style) '()))))
+              ,@(if (specified? underline?) (list underline?: underline?) '()))))
       (apply new Font arguments)))
   
   
@@ -106,13 +102,10 @@
   
   (form
     (<install>                 can-rename?: #f can-delete?: #f can-move?: #f can-copy?: #f
-      (<properties~>           categorized: (base font-name point-size color bold? italic? underline? antialias hint-style)
+      (<properties~>           categorized: (base font-name point-size bold? italic? underline?)
         (<Property-Descriptor> name: base)
         (<Property-Descriptor> name: font-name)
         (<Property-Descriptor> name: point-size)
-        (<Property-Descriptor> name: color)
         (<Property-Descriptor> name: bold?)
         (<Property-Descriptor> name: italic?)
-        (<Property-Descriptor> name: underline?)
-        (<Property-Descriptor> name: antialias)
-        (<Property-Descriptor> name: hint-style)))))))
+        (<Property-Descriptor> name: underline?)))))))

@@ -164,17 +164,15 @@
           (visibilities (collect-visibilities))
           (focus (get-focus))
           (stage (current-stage)))
-      (with-locked-update
-        (lambda ()
-          (close-palettes)
-          (full-screen-stage~ appl #f)
-          (hide-frames visibilities)
-          (reset-current-stage)
-          (let ((root-preferences (find-located 'root)))
-            (when root-preferences
+      (close-palettes)
+      (full-screen-stage~ appl #f)
+      (hide-frames visibilities)
+      (reset-current-stage)
+      (let ((root-preferences (find-located 'root)))
+        (when root-preferences
               (let ((previous-root (get-root~ toplevel)))
                 (when previous-root
-                  (set-offscreen?~ previous-root #f)))
+                      (set-offscreen?~ previous-root #f)))
               (apply-root~ root-preferences toplevel)))
           (process-palettes)
           (set-workspace-preferences self)
@@ -192,9 +190,9 @@
           (process-activation)
           (when (and stage (in-player?~ stage))
             (set-current-stage stage))
-          (if (and restore-focus? focus (in-player?~ focus))
-              (acquire-focus~ focus)
-            (focus-stage))))))
+      (if (and restore-focus? focus (in-player?~ focus))
+          (acquire-focus~ focus)
+          (focus-stage))))
   
   
   (method (deactivate)

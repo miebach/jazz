@@ -152,7 +152,7 @@
   ;;;
 
 
-  (method override (render drawing surface draw-self? nodes context lh lv sh sv sc sc?)
+  (method override (render drawing surface draw-self? nodes context lh lv)
     (define (default-render)
       (let ((content? (get-show-content?~ editor)))
         (when (eq? client (get-client~ editor)) @w (is? (get-parent~ client) View-Workbench)
@@ -162,8 +162,8 @@
         (when content?
           (draw-content~ drawing surface context lh lv))
         (when (or content? (is-not? drawing Outline-View))
-          (draw-children~ drawing surface nodes context lh lv sh sv sc sc?))))
-    
+          (draw-children~ drawing surface nodes context lh lv))))
+
     (default-render)
     (draw surface))
   
@@ -230,17 +230,13 @@
   (method public (draw-showed-property surface)
     (let ((property (get-showed-property~ editor)))
       (when (and property (property? (category-field (class-of client) property)))
-        (let* ((value (read-property client property))
-               (string (->string value))
-               (extent (get-text-extent~ surface string))
-               (size (nu+ extent {Dimension 7 4}))
+        (let* ((string (->string (read-property client property)))
+               (size (nu+ (get-text-extent~ surface string {Font Label}) {Dimension 7 4}))
                (pos (center size (get-size~ client)))
                (rect (position/size->rect pos size)))
           (frame-rect~ surface rect {Color Black})
           (fill-rect~ surface (inflate-rect rect -1 -1) {Color White})
-          (set-font~ surface {Font Label})
-          (set-text-color~ surface {Color Dark-Red})
-          (draw-text~ surface (+ (get-h~ pos) 3) (+ (get-v~ pos) 2) string)))))
+          (draw-text~ surface (+ (get-h~ pos) 3) (+ (get-v~ pos) 2) string {Font Label} {Color Dark-Red})))))
   
   
   (method public virtual (draw-selected surface rank)
@@ -645,8 +641,16 @@
   (method public virtual (get-context-menu)
     (let ((components (get-selection))
           (menu (new (context-menu-class))))
-      ;; Add submenu is too long to generate and not useful
-      (update-component-menu menu (get-selection) '() (lambda (_) #f))
+      (define (categorized-addable-classes)
+        (let ((component (car components)))
+          (if (is? component Component)
+              (or (component-categorized-toolbox-addable-classes component)
+                  (component-categorized-addable-classes component (get-parent~ component)))
+            '())))
+      
+      (update-component-menu menu (get-selection) (categorized-addable-classes)
+        (lambda (model)
+          (add-new (resolve-runtime-reference model) {Point 0 0} centered?: #f)))
       menu))
   
   

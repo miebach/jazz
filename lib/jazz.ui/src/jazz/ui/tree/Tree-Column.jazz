@@ -251,8 +251,8 @@
   ;;;
 
   
-  (method public (paint-data surface context lh <fx> lv <fx> h v width height row data sh <fx> sv <fx> sc <fl> sc? <bool>)
-    (with-transform~ surface lh lv width height sh sv sc sc?
+  (method public (paint-data surface context lh <fx> lv <fx> h v width height row data)
+    (with-transform~ surface lh lv width height
       (lambda ()
         (draw-data surface context row data width height))))
 
@@ -325,16 +325,15 @@
         (if flat?
             (if spaced?
                 (let ((smaller (expand-rect outer 0 0 0 -1)))
-                  (draw-edge~ surface smaller inner: 'raised edges: '(top left)))
-              (draw-edge~ surface outer inner: 'raised edges: 'rectangle))
-          (draw-edge~ surface outer inner: 'raised outer: 'raised edges: '(right bottom))
+                  (draw-edge surface smaller inner: 'raised edges: '(top left)))
+              (draw-edge surface outer inner: 'raised edges: 'rectangle))
+          (draw-edge surface outer inner: 'raised outer: 'raised edges: '(right bottom))
           (let ((rect (expand-rect outer 0 0 -1 -1)))
-            (draw-edge~ surface rect inner: 'raised edges: '(top left))))
+            (draw-edge surface rect inner: 'raised edges: '(top left))))
         (fill-rect~ surface inner (or background (header-color~ parent)))
-        (set-text-color~ surface (if enabled? {Color Black} {Color Dark}))
-        (with-transform~ surface (+ lh h) (+ lv v) width (- height 1) 0 0 1.0 #f
+        (with-transform~ surface (+ lh h) (+ lv v) width (- height 1)
           (lambda ()
-            (draw-text~ surface text-h 1 title)
+            (draw-text~ surface text-h 1 title {Font Label} (if enabled? {Color Black} {Color Dark}))
             (draw-sorted surface text-h 0 title sorted))))))
     
   
@@ -344,7 +343,7 @@
   
   (method protected (justify-title surface width height title justification)
     (justify-lazy (lambda ()
-                    (get-text-extent~ surface title))
+                    (get-text-extent~ surface title {Font Label}))
                   (lambda ()
                     (new Dimension width height))
                   (if (pair? justification)
@@ -355,26 +354,24 @@
   (definition (draw-sorted surface h v title sorted)
     (when sorted
       (set-color~ surface {Color Dark})
-      (let* ((width (get-text-width~ surface title))
+      (let* ((width (get-width~ (get-text-extent~ surface title {Font Label})))
              (h (+ h (+ width 6)))
              (v (+ v 6))
              (size 4))
         (case sorted
-          ((ascending) (draw-arrow-tip~ surface h v size 'up))
-          ((descending) (draw-arrow-tip~ surface h v size 'down))))))
+          ((ascending) (draw-arrow-tip surface h v size 'up))
+          ((descending) (draw-arrow-tip surface h v size 'down))))))
   
   
   (method (draw-sunken-button surface lh lv h v width height title sorted spaced? flat? enabled?)
     (let* ((outer (new Rect h v (+ h width) (+ v height)))
            (inner (inflate-rect outer -1 -1))
            (text-h (+ (header-title-h surface width height title) 1)))
-      (set-color~ surface {Color Dark})
       (frame-rect~ surface outer {Color Dark})
       (fill-rect~ surface inner (or background (header-color~ parent)))
-      (set-text-color~ surface (if enabled? {Color Black} {Color Dark}))
-      (with-transform~ surface (+ lh h) (+ lv v) width (- height 1) 0 0 1.0 #f
+      (with-transform~ surface (+ lh h) (+ lv v) width (- height 1)
         (lambda ()
-          (draw-text~ surface text-h 2 title)
+          (draw-text~ surface text-h 2 title {Font Label} (if enabled? {Color Black} {Color Dark}))
           (draw-sorted surface (+ text-h 1) 1 title sorted)))))
 
   

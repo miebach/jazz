@@ -41,20 +41,14 @@
 (export (jazz.platform.cairo.cairo-base)
         (jazz.platform.cairo.cairo-carbon   (cond carbon))
         (jazz.platform.cairo.cairo-windows  (cond windows))
-        (jazz.platform.cairo.cairo-x11      (cond x11))
-        (jazz.platform.cairo.cairo-freetype (cond carbon))
-        (jazz.platform.cairo.cairo-logfont  (cond windows))
-        (jazz.platform.cairo.cairo-freetype (cond x11)))
+        (jazz.platform.cairo.cairo-x11      (cond x11)))
 
 
 (import (jazz.platform.types)
         (jazz.platform.cairo.cairo-base)
         (jazz.platform.cairo.cairo-carbon   (cond carbon))
         (jazz.platform.cairo.cairo-windows  (cond windows))
-        (jazz.platform.cairo.cairo-x11      (cond x11))
-        (jazz.platform.cairo.cairo-freetype (cond carbon))
-        (jazz.platform.cairo.cairo-logfont  (cond windows))
-        (jazz.platform.cairo.cairo-freetype (cond x11)))
+        (jazz.platform.cairo.cairo-x11      (cond x11)))
 
 
 (c-include "<stdlib.h>")
@@ -106,21 +100,6 @@
 (c-type cairo_operator_t int)
 
 
-(c-enumeration cairo_font_slant_t
-  (CAIRO_FONT_SLANT_NORMAL  0)
-  (CAIRO_FONT_SLANT_ITALIC  1)
-  (CAIRO_FONT_SLANT_OBLIQUE 2))
-
-(c-type cairo_font_slant_t int)
-
-
-(c-enumeration cairo_font_weight_t
-  (CAIRO_FONT_WEIGHT_NORMAL 0)
-  (CAIRO_FONT_WEIGHT_BOLD   1))
-
-(c-type cairo_font_weight_t int)
-
-
 (c-enumeration cairo_status_t
   (CAIRO_STATUS_SUCCESS                 0)
   (CAIRO_STATUS_NO_MEMORY               1)
@@ -149,23 +128,6 @@
 (c-type cairo_status_t int)
 
 
-(c-structure cairo_font_extents_t
-  (double ascent)
-  (double descent)
-  (double height)
-  (double max_x_advance)
-  (double max_y_advance))
-
-
-(c-structure cairo_text_extents_t
-  (double x_bearing)
-  (double y_bearing)
-  (double width)
-  (double height)
-  (double x_advance)
-  (double y_advance))
-
-
 (c-structure cairo_matrix_t
   (double xx)
   (double yx)
@@ -173,12 +135,6 @@
   (double yy)
   (double x0)
   (double y0))
-
-
-(c-structure cairo_glyph_t
-  (ulong index)
-  (double x)
-  (double y))
 
 
 (c-enumeration cairo_extend_t
@@ -201,62 +157,18 @@
 
 
 ;;;
-;;;; Current Point
-;;;
-
-
-(definition package (cairo_current_point context)
-  (let ((fn (c-function (cairo_t* F64PTR) void
-              "cairo_get_current_point(___arg1, ___arg2, ___arg2+1);"))
-        (pt (make-f64vector 2)))
-    (fn context pt)
-    (new Point (fxfloor (f64vector-ref pt 0)) (fxfloor (f64vector-ref pt 1)))))
-
-
-;;;
 ;;;; Device to User
 ;;;
 
 
-(definition package (cairo_device_to_user context pt)
+(definition package (cairo_device_to_user context x y)
   (let ((fn (c-function (cairo_t* F64PTR) void
               "cairo_device_to_user(___arg1,___arg2,___arg2+1);"))
-        (vec (f64vector (cast <fl> (get-h~ pt)) (cast <fl> (get-v~ pt)))))
+        (vec (f64vector (cast <fl> x) (cast <fl> y))))
     (fn context vec)
-    (new Point (fxfloor (f64vector-ref vec 0)) (fxfloor (f64vector-ref vec 1)))))
+    (values (fxfloor (f64vector-ref vec 0)) (fxfloor (f64vector-ref vec 1)))))
 
      
-(definition package (cairo_user_to_device context pt)
-  (let ((fn (c-function (cairo_t* F64PTR) void
-              "cairo_user_to_device(___arg1,___arg2,___arg2+1);"))
-        (vec (f64vector (cast <fl> (get-h~ pt)) (cast <fl> (get-v~ pt)))))
-    (fn context vec)
-    (new Point (fxfloor (f64vector-ref vec 0)) (fxfloor (f64vector-ref vec 1)))))
-
-
-;;;
-;;;; Glyph Arrays
-;;;
-
-
-(definition package glyph-array-make  (c-function (int) cairo_glyph_t* "___result_voidstar = calloc(___arg1,sizeof(cairo_glyph_t));"))
-(definition package glyph-array-ref   (c-function (cairo_glyph_t* int) cairo_glyph_t* "___result_voidstar = (void*)(___arg1+___arg2);"))
-(definition package glyph-array-free  (c-function (cairo_glyph_t*) void "free(___arg1);"))
-
-
-;;;
-;;;; Version
-;;;
-
-
-(c-external (cairo_version) int)
-
-
-(definition public cairo_version_string
-  (c-function () char-string
-    "___result = (char*) cairo_version_string();"))
-
-
 ;;;
 ;;;; Surface
 ;;;
@@ -330,93 +242,6 @@
 (c-external (cairo_pattern_add_color_stop_rgb cairo_pattern_t* double double double double) void)
 (c-external (cairo_pattern_add_color_stop_rgba cairo_pattern_t* double double double double double) void)
 (c-external (cairo_pattern_set_extend cairo_pattern_t* cairo_extend_t) void)
-
-
-;;;
-;;;; Text
-;;;
-
-
-(c-external (cairo_show_text cairo_t* UTF-8-string) void)
-(c-external (cairo_set_font_face cairo_t* cairo_font_face_t*) void)
-(c-external (cairo_get_font_face cairo_t*) cairo_font_face_t*)
-(c-external (cairo_set_font_size cairo_t* double) void)
-(c-external (cairo_set_scaled_font cairo_t* cairo_scaled_font_t*) void)
-(c-external (cairo_font_extents cairo_t* cairo_font_extents_t*) void)
-(c-external (cairo_glyph_extents cairo_t* cairo_glyph_t* int cairo_text_extents_t*) void)
-(c-external (cairo_select_font_face cairo_t* char-string cairo_font_slant_t cairo_font_weight_t) void)
-(c-external (cairo_show_glyphs cairo_t* cairo_glyph_t* int) void)
-(c-external (cairo_text_extents cairo_t* UTF-8-string cairo_text_extents_t*) void)
-
-
-;;;
-;;;; Muli-page
-;;;
-
-
-(c-external (cairo_show_page cairo_t*) void)
-
-
-;;;
-;;;; Font
-;;;
-
-
-(c-enumeration cairo_antialias_t
-  (CAIRO_ANTIALIAS_DEFAULT 0)
-  (CAIRO_ANTIALIAS_NONE 1)
-  (CAIRO_ANTIALIAS_GRAY 2)
-  (CAIRO_ANTIALIAS_SUBPIXEL 3))
-
-(c-type cairo_antialias_t int)
-
-
-(c-enumeration cairo_subpixel_order_t
-  (CAIRO_SUBPIXEL_ORDER_DEFAULT 0)
-  (CAIRO_SUBPIXEL_ORDER_RGB 1)
-  (CAIRO_SUBPIXEL_ORDER_BGR 2)
-  (CAIRO_SUBPIXEL_ORDER_VRGB 3)
-  (CAIRO_SUBPIXEL_ORDER_VBGR 4))
-
-(c-type cairo_subpixel_order_t int)
-
-
-(c-enumeration cairo_hint_style_t
-  (CAIRO_HINT_STYLE_DEFAULT 0)
-  (CAIRO_HINT_STYLE_NONE 1)
-  (CAIRO_HINT_STYLE_SLIGHT 2)
-  (CAIRO_HINT_STYLE_MEDIUM 3)
-  (CAIRO_HINT_STYLE_FULL 4))
-
-(c-type cairo_hint_style_t int)
-
-
-(c-enumeration cairo_hint_metrics_t
-  (CAIRO_HINT_METRICS_DEFAULT 0)
-  (CAIRO_HINT_METRICS_OFF 1)
-  (CAIRO_HINT_METRICS_ON 2))
-
-(c-type cairo_hint_metrics_t int)
-
-
-(c-type cairo_font_options_t  (native "cairo_font_options_t"))
-(c-type cairo_font_options_t* (pointer cairo_font_options_t cairo_font_options_t*))
-
-(c-external (cairo_font_options_create) cairo_font_options_t*)
-(c-external (cairo_font_options_destroy cairo_font_options_t*) void)
-(c-external (cairo_font_options_get_antialias cairo_font_options_t*) cairo_antialias_t)
-(c-external (cairo_font_options_set_antialias cairo_font_options_t* cairo_antialias_t) void)
-(c-external (cairo_font_options_get_subpixel_order cairo_font_options_t*) cairo_subpixel_order_t)
-(c-external (cairo_font_options_set_subpixel_order cairo_font_options_t* cairo_subpixel_order_t) void)
-(c-external (cairo_font_options_get_hint_style cairo_font_options_t*) cairo_hint_style_t)
-(c-external (cairo_font_options_set_hint_style cairo_font_options_t* cairo_hint_style_t) void)
-(c-external (cairo_font_options_get_hint_metrics cairo_font_options_t*) cairo_hint_metrics_t)
-(c-external (cairo_font_options_set_hint_metrics cairo_font_options_t* cairo_hint_metrics_t) void)
-(c-external (cairo_set_font_options cairo_t* cairo_font_options_t*) void)
-
-
-(c-external (cairo_scaled_font_create cairo_font_face_t* cairo_matrix_t* cairo_matrix_t* cairo_font_options_t*) cairo_scaled_font_t*)
-(c-external (cairo_scaled_font_destroy cairo_scaled_font_t*) void)
 
 
 ;;;

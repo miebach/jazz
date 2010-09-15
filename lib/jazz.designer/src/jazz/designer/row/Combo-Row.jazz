@@ -157,15 +157,11 @@
   
   (method override (set-edited-modified? flag)
     (set-modified?~ editor flag))
-  
-  
-  (method override (show-cursor)
-    (show-text-cursor~ (get-body~ editor)))
-  
-  
+
+
   (method override (focused-editor)
     (get-body~ editor))
-  
-  
+
+
   (method protected virtual (combo-choose)
     #f)))

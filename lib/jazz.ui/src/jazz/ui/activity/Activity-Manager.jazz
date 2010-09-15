@@ -53,11 +53,6 @@
         (<Activities-Border> name: border))))
 
 
-  @windows-specific
-  (method (window-style rest)
-    (bitwise-ior WS_POPUP WS_CLIPCHILDREN))
-
-
   (method override (show)
     (set-visible-flag #t)
     (when (get-active?~ (get-application))

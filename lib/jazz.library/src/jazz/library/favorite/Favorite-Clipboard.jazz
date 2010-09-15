@@ -41,7 +41,8 @@
 (import (jazz.library)
         (jazz.system)
         (jazz.ui)
-        (jazz.ui.clipboard))
+        (jazz.ui.clipboard)
+        (jazz.ui.window))
 
 
 (class Favorite-Clipboard extends Favorite
@@ -57,7 +58,7 @@
   
   (method override (launch)
     (when string
-      (set-clipboard-text string)
+      (set-clipboard-text~ (*window-manager*) string)
       (user-message "{s} put to clipboard" string)))
   
   

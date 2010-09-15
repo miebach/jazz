@@ -1650,7 +1650,7 @@
     @convert
     (let ((output (open-output-string)))
       (generate-text output)
-      (set-clipboard-text (get-output-string output))))
+      (set-clipboard-text~ (*window-manager*) (get-output-string output))))
   
   
   (method public virtual (generate-text output)

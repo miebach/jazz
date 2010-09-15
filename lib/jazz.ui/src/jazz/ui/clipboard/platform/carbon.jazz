@@ -46,10 +46,6 @@
 ;;;
 
 
-(definition package (initialize-clipboard)
-  )
-
-
 (definition internal-clipboard "")
 
 
@@ -60,45 +56,4 @@
 (definition public (set-clipboard-text text (format: format #f))
   (set! internal-clipboard text))
 
-
-(definition public undocumented (register-clipboard-format name format)
-  @unimplemented
-  (let ((id (RegisterClipboardFormat format)))
-    (table-set! Formats name id)))
-
-
-(definition public undocumented (clipboard-format-available? format)
-  #f
-  @unimplemented
-  (define (get-format format)
-    (or (table-ref Formats format #f)
-        (error "Unknown clipboard format: {t}" format)))
-  @unimplemented
-  (member? (get-format format) (available-clipboard-formats)))
-
-
-(definition public undocumented (available-clipboard-formats)
-  '()
-  @unimplemented
-  (with-opened-clipboard
-    (lambda ()
-      (let ((formats (new List-Factory)))
-        (let (iter (previous 0))
-          (let ((format (EnumClipboardFormats previous)))
-            (when (/= format 0)
-              (put~ formats format)
-              (iter format))))
-        (get-output~ formats)))))
-
-
-;;;
-;;;; Mouse
-;;;
-
-
-(definition package (mouse-select-copy proc)
-  #f)
-
-
-(definition package (middle-mouse-paste proc)
-  #f))
+)

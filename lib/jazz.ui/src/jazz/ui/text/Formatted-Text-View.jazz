@@ -120,7 +120,6 @@
 
 
   (method override (cursor-update view <Point>)
-    (show-text-cursor)
     (when (and (view-enabled?) selectable?)
       (let* ((pos (view->text view))
              (par (get-paragraph (get-line~ pos))))

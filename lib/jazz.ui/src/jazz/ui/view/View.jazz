@@ -155,7 +155,7 @@
         (call-mouse-leave~ mouse-in)))
     (let ((focus (get-focus)))
       (when (and focus (has-ascendant?~ focus self))
-        (let ((window-focus (get-window-focus)))
+        (let ((window-focus (get-focused-window~ (*window-manager*))))
           (when (eq? player window-focus)
             (reset-focus~ window-focus)))))
     (nextmethod))
@@ -212,9 +212,7 @@
       (let ((focus (own-focus))
             (mouse (own-mouse)))
         (when focus
-          (let ((window-focus (get-window-focus)))
-            (when (eq? player window-focus)
-              (reset-focus~ window-focus))))
+          (reset-focus~ player))
         (when (and mouse (not plr))
           (reset-mouse-in)
           (call-mouse-leave))
@@ -1167,15 +1165,13 @@
                       (lambda ()
                         (paint-drawing picture context (get-h~ pos) (get-v~ pos)))))))
               (set! metafile (get-metafile~ picture)))
-            (if (eq? where 'clipboard)
-                (set-clipboard-metafile metafile)
               (delete-metafile~ Picture metafile)
               (catch (Cancel-Signal
                        (delete-file~ file))
                 (let ((dest (or destination (choose-new-file default-extension: "emf" extensions: '(("Enhanced metafiles" . "emf"))))))
                   (when (exists?~ dest)
                     (delete-file~ dest))
-                  (move-pathname~ file dest)))))))))
+                  (move-pathname~ file dest))))))))
 
 
   ;;;
@@ -1356,13 +1352,9 @@
   
   
   (method public virtual (get-page-size orientation) <fx>
-    (let ((size
-           (case orientation
-             ((vert) (get-height~ parent))
-             ((horz) (get-width~ parent)))))
-      (if (not scaled?)
-          size
-        (fxround/ size scaling))))
+    (case orientation
+      ((vert) (get-height~ parent))
+      ((horz) (get-width~ parent))))
   
   
   (method public (with-scrollee-locked proc)
@@ -1443,12 +1435,7 @@
   
   (method public (get-display-position) <Point>
     (if scroller
-        (let ((pos <Point> (- (get-position))))
-          (if (not scaled?)
-              pos
-            (new Point
-              (fxround/ (get-h~ pos) scaling)
-              (fxround/ (get-v~ pos) scaling))))
+        (- (get-position))
       {Point 0 0}))
     
   
@@ -1462,10 +1449,7 @@
   
   (method public (get-display-size) <Dimension>
     (if scroller
-        (let ((size <Dimension> (get-size~ parent)))
-          (if (not scaled?)
-              size
-            (new Dimension (fxround/ (get-width~ size) scaling) (fxround/ (get-height~ size) scaling))))
+        (get-size~ parent)
       (get-size)))
     
   
@@ -1795,12 +1779,7 @@
   (method protected virtual (resize dh <fx> dv <fx>)
     )
 
-  
-  ;;;
-  ;;;; Focus
-  ;;;
-  
-  
+
   (method public (acquire-focus)
     (set-focus self))
 
@@ -2019,13 +1998,13 @@
               (when (neq? view (get-mouse-in))
                 (when (get-mouse-in)
                   (call-mouse-leave~ (get-mouse-in))
-                  (cancel-mouse-leave-tracking (get-handle~ player))
+                  (cancel-mouse-leave-tracking~ (*window-manager*) (get-handle~ player))
                   (unless (or (is? player Tooltip) (in-tooltip? pos))
                     (cancel-tooltip-tracking)))
                 (set-mouse-in view)
                 (when (get-mouse-in)
                   (call-mouse-enter~ (get-mouse-in)))
-                (track-mouse-leave (get-handle~ player)))
+                (track-mouse-leave~ (*window-manager*) (get-handle~ player)))
               (unless (or *current-tooltip-context* (current-drag-drop))
                 (track-tooltip~ (get-mouse-in)))
               (if mouse-down?
@@ -2395,7 +2374,7 @@
           (popup view position padding: padding class: Tooltip border: border))))
     
     (define (get-cursor-height)
-      (let ((cursor (get-cursor)))
+      (let ((cursor (get-cursor~ (*window-manager*))))
         (case cursor
           ((:ibeam) 9)
           (else 21))))
@@ -2490,7 +2469,7 @@
       (every? (lambda (item)
                 (not (get-visible?~ item)))
               (get-children~ menu)))
-    
+
     (if (is-not? menu Context-Menu)
         (error "{t} is not of the expected Context-Menu class" menu)
       (unless (all-invisible? menu)
@@ -2536,17 +2515,11 @@
   
   
   (method public (to-desktop shape)
-    (let ((desktop (get-desktop))
-          (player (get-player))
-          (root (get-root)))
-      (acquire~ desktop player (acquire~ root self shape))))
+    (acquire~ (get-desktop) (get-player) (acquire~ (get-root) self shape)))
   
   
   (method public (from-desktop shape)
-    (let ((desktop (get-desktop))
-          (player (get-player))
-          (root (get-root)))
-      (acquire root (acquire~ player desktop shape))))
+    (acquire~ (get-root) (acquire~ (get-player) (get-desktop) shape)))
   
   
   ;;;
@@ -2556,7 +2529,7 @@
   
   (method public (popup view <View> position <Point> (padding: padding #f) (alternate-position: alternate-position #f) (initiator: initiator self) (class: class Popup) (border: border #f) (fade-speed: fade-speed #f) (effect: effect #f) (close-behavior: close-behavior #f))
     (let* ((player (get-player))
-           (max (rect-size (get-work-area)))
+           (max (rect-size (get-work-area~ (*window-manager*))))
            (alternate (and alternate-position (to-desktop alternate-position)))
            (position (to-desktop position))
            (size (+ (get-size~ view) {Dimension 4 4}))
@@ -2571,7 +2544,6 @@
       (set-visible?~ view #t)
       (layout-view~ border)
       (set-effect~ (get-root~ popup) effect)
-      (fade-in~ popup fade-speed: fade-speed)
       popup))
   
   
@@ -2855,18 +2827,19 @@
   
   (method package virtual (on-tab-press evt)
     (call-tab-press #\tab))
-  
-  
+
+
   (method (call-tab-press key)
     (if tab-press-handler
         (invoke-handler self tab-press-handler (new Keyboard-Event :char self key))
-      (tab-press key (modifiers-keys))))
+      (tab-press key (receive (shift ctrl alt) (modifiers-down)
+                       (modifiers-keys shift ctrl alt)))))
 
 
   (method public virtual (tab-press key modifiers)
     (navigate-view (shift-key? modifiers)))
-  
-  
+
+
   (method package (on-key-press evt)
     (key-press (get-property~ evt key:)))
 
@@ -3204,7 +3177,7 @@
 
 
   (method public (get-surface)
-    (new Surface (get-window-surface (get-player))))
+    (new Surface (get-window-surface~ (*window-manager*) (get-player))))
 
   
   ;;;
@@ -3254,12 +3227,10 @@
 
   ;; Mainly used by the scrollbar to only redraw itself when scrolling
   (method public (redraw-view-only)
-    (let ((player (get-player)))
-      (when player
-        (let ((hwnd (get-handle~ player)))
-          (platform-redraw-view-only self hwnd)))))
-  
-  
+    (when (get-player)
+      (wm-redraw-view-only~ (*window-manager*) self (get-handle~ (get-player)))))
+
+
   (method public (update-view (effect: effect #f))
     (let ((player (get-player)))
       (when player

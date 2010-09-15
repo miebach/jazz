@@ -153,7 +153,6 @@
   
   
   (method override (destroy)
-    (show-text-cursor)
     (nextmethod))
   
   
@@ -394,7 +393,6 @@
   
   (method override (focus-gained)
     (nextmethod)
-    (show-text-cursor)
     (update-caret)
     (when (and focus-selects-all? (not (activating-window?)))
       (select-all))
@@ -405,7 +403,6 @@
   
   (method override (focus-lose)
     (nextmethod)
-    (show-text-cursor)
     (end-completion)
     (hide-caret))
   
@@ -423,12 +420,8 @@
   
   (method override (focus-document)
     (acquire-focus))
-  
-  
-  (method override (mouse-leave)
-    (show-text-cursor))
-  
-  
+
+
   (method override (on-backspace-press evt)
     (backspace-press #f word?: (get-property~ evt word?:)))
   
@@ -568,7 +561,6 @@
   
   
   (method override (key-press key)
-    (hide-text-cursor)
     (char-press (translate-key~ syntax key)))
 
   
@@ -607,15 +599,15 @@
         (let ((string (get-string range)))
           (define (replace-clipboard)
             (add-clipboard~ (get-application))
-            (set-clipboard-text string)
+            (set-clipboard-text~ (*window-manager*) string)
             (set! special-mode 'kill-line))
           
           (define (append-clipboard actual)
-            (set-clipboard-text (string-append actual string)))
+            (set-clipboard-text~ (*window-manager*) (string-append actual string)))
       
           (if (neq? special-mode 'kill-line)
               (replace-clipboard)
-            (let ((actual (get-clipboard-text)))
+            (let ((actual (get-clipboard-text~ (*window-manager*))))
               (if (not actual)
                   (replace-clipboard)
                 (append-clipboard actual))))
@@ -671,20 +663,9 @@
   ;;;
   ;;;; Cursor
   ;;;
-  
-  
-  (method public (hide-text-cursor)
-    (when (and (view-enabled?) selectable? editable? (mouse-over?))
-      (hide-cursor)))
-  
-  
-  (method public (show-text-cursor)
-    (when (and (view-enabled?) selectable? editable?)
-      (show-cursor)))
-  
-  
+
+
   (method override (cursor-update view <Point>)
-    (show-text-cursor)
     (when (and (view-enabled?) selectable?)
       (if (alt-down?)
           (set-cursor :finger)
@@ -692,8 +673,8 @@
           (if (< (get-h~ view) (paragraph-left~ par))
               (set-cursor :left-arrow)
             (set-cursor :ibeam))))))
-  
-  
+
+
   ;;;
   ;;;; Caret
   ;;;
@@ -826,10 +807,6 @@
         (update-caret)
         (set! selection-mode 'char)
         (process-selection-change)
-        @cant-replace-a-selection-by-pasting!
-        (mouse-select-copy
-          (lambda ()
-            (get-selected-string)))
         (if mouse-copy-selection
             (let ((range (if (has-selection?) (get-selection) (expr-range (get-start)))))
               (when range
@@ -883,15 +860,13 @@
                   (reset-mode)
                   (set! previous-position pos))))))
       (call-mouse-down view)))
-  
-  
+
+
   (method override (middle-mouse-down pos)
-    (unless (middle-mouse-paste
-              (lambda (text)
-                (paste-clipboard-string text)))
+    (unless (middle-mouse-paste~ (*window-manager*) paste-clipboard-string)
       (mouse-down pos)))
-  
-  
+
+
   (method protected (context-menu-click pos (move-caret: move-caret #f))
     (when (and (view-enabled?) selectable?)
       (acquire-focus)
@@ -1498,11 +1473,11 @@
     (if (empty-selection?)
         (bell)
       (add-clipboard~ (get-application))
-      (set-clipboard-text (join-lines (selection-lines)))))
+      (set-clipboard-text~ (*window-manager*) (join-lines (selection-lines)))))
   
   
   (method override (paste-clipboard)
-    (let ((text (get-clipboard-text)))
+    (let ((text (get-clipboard-text~ (*window-manager*))))
       (when text
         (paste-clipboard-string text))))
   

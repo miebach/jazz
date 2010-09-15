@@ -90,13 +90,9 @@
                  WS_SYSMENU)))
 
 
-(specific (window-ex-style (<OpenGL-Window> window) rest)
-  WS_EX_APPWINDOW)
-
-
 (specific (create-handle (<OpenGL-Window> window) rest)
   (CreateWindowEx
-    (window-ex-style window rest)
+    WS_EX_APPWINDOW
     CLASS_ATOM
     NULL
     (window-style window rest)

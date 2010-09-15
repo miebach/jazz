@@ -3961,10 +3961,6 @@
   primordial-thread-object)
 
 
-(definition public (primordial-thread?)
-  (eq? (current-thread) (primordial-thread)))
-
-
 (definition public (new-thread thunk . rest)
   (apply make-root-thread
          thunk

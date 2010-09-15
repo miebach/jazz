@@ -207,4 +207,7 @@
 
 
 (definition public (start-repl . rest)
-  (apply (module-ref 'jazz.debuggee 'start-repl-internal) rest)))
+  (apply (module-ref 'jazz.debuggee 'start-repl-internal) rest))
+
+(definition public (bell) ;; why was this in jazz.dialect?
+  ))

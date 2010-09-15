@@ -41,10 +41,6 @@
 (import (jazz.platform))
 
 
-(definition package (initialize-clipboard)
-  )
-
-
 ;;;
 ;;;; Text
 ;;;
@@ -68,41 +64,6 @@
         (display text output)
         (let ((u8vect (get-output-u8vector output)))
           (SetClipboardText u8vect (get-clipboard-format format)))))
-    empty?: #t))
-
-
-;;;
-;;;; Mouse
-;;;
-
-
-(definition package (mouse-select-copy proc)
-  #f)
-
-
-(definition package (middle-mouse-paste proc)
-  #f)
-
-
-;;;
-;;;; Metafile
-;;;
-
-
-(definition package (get-clipboard-metafile)
-  (unimplemented 'get-clipboard-metafile)
-  @convert
-  (with-opened-clipboard
-    (lambda ()
-      (GetClipboardData CF_ENHMETAFILE))))
-
-
-(definition package (set-clipboard-metafile metafile)
-  (unimplemented 'set-clipboard-metafile)
-  @convert
-  (with-opened-clipboard
-    (lambda ()
-      (SetClipboardData CF_ENHMETAFILE metafile))
     empty?: #t))
 
 
@@ -146,19 +107,16 @@
 
 
 (definition public undocumented (clipboard-format-available? format)
-  (member? (get-clipboard-format format) (available-clipboard-formats)))
-
-
-(definition public undocumented (available-clipboard-formats)
-  (with-opened-clipboard
-    (lambda ()
-      (let ((formats (new List-Factory)))
-        (let (iter (previous 0))
-          (let ((format (EnumClipboardFormats previous)))
-            (when (/= format 0)
-              (put~ formats format)
-              (iter format))))
-        (get-output~ formats)))))
+  (member? (get-clipboard-format format)
+           (with-opened-clipboard
+            (lambda ()
+              (let ((formats (new List-Factory)))
+                (let (iter (previous 0))
+                  (let ((format (EnumClipboardFormats previous)))
+                    (when (/= format 0)
+                          (put~ formats format)
+                          (iter format))))
+                (get-output~ formats))))))
 
 
 (register-clipboard-format 'unicode-text CF_UNICODETEXT))

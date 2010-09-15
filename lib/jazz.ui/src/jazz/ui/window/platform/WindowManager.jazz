@@ -1,0 +1,371 @@
+;;;==============
+;;;  JazzScheme
+;;;==============
+;;;
+;;;; Platform-specific Window code
+;;;
+;;;  The contents of this file are subject to the Mozilla Public License Version
+;;;  1.1 (the "License"); you may not use this file except in compliance with
+;;;  the License. You may obtain a copy of the License at
+;;;  http://www.mozilla.org/MPL/
+;;;
+;;;  Software distributed under the License is distributed on an "AS IS" basis,
+;;;  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+;;;  for the specific language governing rights and limitations under the
+;;;  License.
+;;;
+;;;  The Original Code is JazzScheme.
+;;;
+;;;  The Initial Developer of the Original Code is Guillaume Cartier.
+;;;  Portions created by the Initial Developer are Copyright (C) 1996-2008
+;;;  the Initial Developer. All Rights Reserved.
+;;;
+;;;  Contributor(s):
+;;;    Jeremie Lasalle Ratelle
+;;;    Vladimir Sedach
+;;;
+;;;  Alternatively, the contents of this file may be used under the terms of
+;;;  the GNU General Public License Version 2 or later (the "GPL"), in which
+;;;  case the provisions of the GPL are applicable instead of those above. If
+;;;  you wish to allow use of your version of this file only under the terms of
+;;;  the GPL, and not to allow others to use your version of this file under the
+;;;  terms of the MPL, indicate your decision by deleting the provisions above
+;;;  and replace them with the notice and other provisions required by the GPL.
+;;;  If you do not delete the provisions above, a recipient may use your version
+;;;  of this file under the terms of any one of the MPL or the GPL.
+;;;
+;;;  See www.jazzscheme.org for details.
+
+
+(module protected jazz.ui.window.platform.WindowManager jazz
+
+
+(import (jazz.graphic)
+        (jazz.ui.window.platform.independant))
+
+
+(class WindowManager extends Object
+
+
+  (slot Current-Cursor initialize #f)
+  ;; wm-focused-window implements our own focus tracking via View-Player.focus-gain/lose callbacks
+  ;; necessary since X11 xsetinputfocus is asynchronous
+  (slot focused-window initialize #f accessors generate)
+  (slot current-modal  initialize #f accessors generate)
+
+
+  (method public virtual (get-window handle)
+    (unimplemented 'get-window))
+
+
+  (method public virtual (register-window handle window)
+    (unimplemented 'register-window))
+
+
+  (method public virtual (get-window-handle-title handle)
+    (unimplemented 'get-window-handle-title))
+
+
+  (method public virtual (set-window-title handle title)
+    (unimplemented 'set-window-title))
+
+
+  (method public virtual (window-parent window) ;; only needed by opengl, consider removing
+    (unimplemented 'window-parent))
+
+
+  (method public virtual (window-default-parent window)
+    #f)
+
+
+  (method public virtual (prepare-handle window rest)
+    (unimplemented 'prepare-handle))
+
+
+  (method public virtual (destroy-window handle) ;; this really needs to be an around or after method
+    (register-window handle #f))
+
+
+  (method public virtual (show-window handle)
+    (unimplemented 'show-window))
+
+
+  (method public virtual (show-maximized handle)
+    (unimplemented 'show-maximized))
+
+
+  (method public virtual (show-restored handle)
+    (unimplemented 'show-restored))
+
+
+  (method public virtual (hide-window handle)
+    (unimplemented 'hide-window))
+
+
+  (method public virtual (window-state handle)
+    'restored)
+
+
+  (method public virtual (set-window-placement handle position size)
+    (wm-set-position handle position)
+    (wm-set-window-size handle size))
+
+
+  (method public virtual (minimize-window handle)
+    (unimplemented 'minimize-window))
+
+
+  (method public virtual (maximize-window handle)
+    (unimplemented 'maximize-window))
+
+
+  (method public virtual (restore-window handle)
+    (unimplemented 'restore-window))
+
+
+  (method public virtual (process-messages-single-threaded thunk)
+    (unimplemented 'process-messages-single-threaded))
+
+
+  ;;;
+  ;;;; set/unset capture are only implemented for windows.
+  ;;;; what are x11 and carbon equivalents, and if there aren't any, is this really needed on windows?
+  ;;;
+
+
+  (method public virtual (set-capture handle)
+    #f)
+
+
+  (method public virtual (unset-capture)
+    #f)
+
+
+  ;;; need to get rid of platform data, currently only used by Carbon
+  ;;; for passing CGContext around, which may not be necessary (test)
+  (method public virtual (with-platform-painting window platform-data proc)
+    (let ((surface (new Surface (make-platform-surface window platform-data))))
+      (unwind-protect
+       (proc surface)
+       (close~ surface)))
+    processed)
+
+
+  (method protected virtual (make-platform-surface window platform-data)
+    )
+
+
+  (method public virtual (get-window-surface window)
+    (unimplemented 'get-window-surface))
+
+
+  (method public virtual (set-alpha-blending handle n)
+    )
+
+
+  (method public virtual (track-mouse-leave handle)
+    )
+
+
+  (method public virtual (cancel-mouse-leave-tracking handle)
+    )
+
+
+  (method public virtual (wm-set-parent handle parent)
+    (unimplemented 'wm-set-parent))
+
+
+  (method public virtual (acquire-point to-handle from-handle shape) ;; WTF does this mean?
+    (unimplemented 'acquire-point))
+
+
+  (method public virtual (acquire-rect to-handle from-handle shape)
+    (unimplemented 'acquire-rect))
+
+
+  (method public virtual (wm-translate-to-root handle pt)
+    (unimplemented 'wm-translate-to-root))
+
+
+  (method public virtual (wm-get-position handle parent-handle)
+    (unimplemented 'wm-get-position))
+
+
+  (method public virtual (wm-set-position handle pos)
+    (unimplemented 'wm-set-position))
+
+
+  (method public virtual (wm-get-size handle)
+    (unimplemented 'wm-get-size))
+
+
+  (method public virtual (wm-get-window-size handle)
+    (unimplemented 'wm-get-window-size))
+
+
+  (method public virtual (wm-set-window-size handle size)
+    (unimplemented 'wm-set-window-size))
+
+
+  (method public virtual (wm-get-rect handle parent-handle) ;; WTF does this mean?
+    (unimplemented 'wm-get-rect))
+
+
+  (method public virtual (wm-set-rect handle rect)
+    (unimplemented 'wm-set-rect))
+
+
+  (method public virtual (wm-get-bounds handle)
+    (unimplemented 'wm-get-bounds))
+  
+
+  (method public virtual (wm-window-from-point point)
+    (unimplemented 'wm-window-from-point))
+
+
+  (method public virtual (wm-move-window handle x y cx cy)
+    (unimplemented 'wm-move-window))
+
+
+  (method public virtual (wm-enable-window handle)
+    #f)
+
+
+  (method public virtual (wm-disable-window handle)
+    #f)
+
+
+  (method public virtual (wm-get-client-rect handle)
+    (unimplemented 'wm-get-client-rect)) ;; wtf does this mean?
+
+
+  (method public virtual (wm-scroll-window handle dh dv rect clip-rect)
+    (wm-invalidate-rect handle clip-rect))
+
+
+  (method public virtual (wm-invalidate-rect handle rect)
+    (unimplemented 'wm-invalidate-rect))
+
+
+  (method public virtual (wm-invalidate-region handle region)
+    (for-each (lambda (rect)
+                (wm-invalidate-rect handle rect))
+              (get-rectangles~ region)))
+
+
+  (method public virtual (wm-invalidate-window handle)
+    (unimplemented 'wm-invalidate-window))
+
+
+  (method public virtual (wm-redraw-window handle rect region)
+    (unimplemented 'wm-redraw-window))
+
+
+  (method public virtual (wm-redraw-view-only view handle)
+    (unimplemented 'wm-redraw-view-only))
+
+
+  (method public virtual (wm-update-window handle)
+    (unimplemented 'wm-update-window))
+
+
+  (method public virtual (wm-show-noactivate handle)
+    (show-window handle))
+
+
+  (method public virtual (bring-window-to-front handle)
+    (unimplemented 'wm-bring-window-to-front))
+
+
+  (method public virtual (send-window-to-back handle)
+    (unimplemented 'wm-send-window-to-back))
+
+
+  (method public virtual (select-foreground-window handle)
+    (unimplemented 'select-foreground-window))
+
+
+  (method public virtual (wm-set-focus handle)
+    (unimplemented 'wm-set-focus))
+
+
+  (method public virtual (wm-get-focus)
+    (unimplemented 'wm-get-focus))
+
+
+  (method public virtual (load-cursor cursor)
+    (unimplemented 'load-cursor))
+
+
+  (method public virtual (get-cursor)
+    Current-Cursor)
+
+
+  (method public virtual (wm-set-cursor cursor)
+    )
+
+
+  (method public virtual (wm-get-desktop)
+    (unimplemented 'wm-get-desktop))
+
+
+  (method public virtual (get-work-area)
+    (unimplemented 'get-work-area))
+
+
+  (method public virtual (wm-drop-files window temp)
+    (unimplemented 'wm-drop-files))
+
+
+  (method public virtual (bell-internal)
+    (unimplemented 'bell-internal))
+
+
+  ;;;
+  ;;;; Input
+  ;;;
+
+
+  (method public virtual (wm-shift-down?)
+    (unimplemented 'wm-shift-down?))
+
+
+  (method public virtual (wm-ctrl-down?)
+    (unimplemented 'wm-ctrl-down?))
+
+
+  (method public virtual (wm-alt-down?)
+    (unimplemented 'wm-alt-down?))
+
+
+  (method public virtual (wm-mouse-position)
+    (unimplemented 'wm-mouse-position))
+
+
+  (method public virtual (wm-mouse-clicked?)
+    (unimplemented 'wm-mouse-clicked?))
+  
+
+  ;;;
+  ;;;; Clipboard
+  ;;;
+
+
+  (method public virtual (get-clipboard-text (format: format #f) (selection: selection #f))
+    (unimplemented 'get-clipboard-text))
+
+
+  (method public virtual (set-clipboard-text text (format: format #f) (selection: selection #f))
+    (unimplemented 'set-clipboard-text))
+
+
+  (method public virtual (middle-mouse-paste proc)
+    #f)
+
+
+  (method public virtual (register-clipboard-format name format)
+    )
+
+
+  (method public virtual (clipboard-format-available? format)
+    #f)))

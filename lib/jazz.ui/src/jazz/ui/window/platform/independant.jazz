@@ -39,51 +39,8 @@
 (module protected jazz.ui.window.platform.independant jazz
 
 
-;;;
-;;;; Single Thread
-;;;
+(definition public *window-manager* (make-parameter #f))
 
 
-(definition *events-single-threaded?*
-  #t)
-
-
-(definition public (get-events-single-threaded?)
-  *events-single-threaded?*)
-
-
-(definition public (set-events-single-threaded? flag)
-  (set! *events-single-threaded?* flag))
-
-
-;;;
-;;;; Event
-;;;
-
-
-(definition public (event-thread)
-  (primordial-thread))
-
-
-(definition public (event-thread?)
-  (eq? (current-thread) (event-thread)))
-
-
-(definition public (delay-event thunk)
-  (thread-write (event-thread)
-    thunk))
-
-
-(definition public (post-event thunk)
-  (thread-post (event-thread) 'post-event
-    thunk))
-
-
-(definition public (execute-event thunk)
-  (thread-execute (event-thread) 'execute-event
-    thunk))
-
-
-(definition public (call-event thunk)
-  (thread-call (event-thread) 'call-event
-    thunk)))
+(definition public unprocessed '(unprocessed))
+(definition public processed '(processed)))

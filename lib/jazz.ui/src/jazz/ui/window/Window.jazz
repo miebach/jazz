@@ -50,12 +50,13 @@
 
 
 (class Window extends Figure
- 
+
 
   (property title initialize #f accessors explicit)
-  
 
-  (slot handle initialize #f accessors generate)
+
+  (slot handle         initialize #f                 accessors generate)
+  (slot window-manager initialize (*window-manager*) getter generate) ;; keep this around in case this window ever winds up under a different binding of *window-manager* (although if that happens, focus functions in _view.jazz should break horribly)
 
 
   ;;;
@@ -68,23 +69,21 @@
 
 
   (method override (default-parent)
-    (window-default-parent self))
+    (window-default-parent~ window-manager self))
 
 
   (method override (prepare rest)
-    (define (setup-handle handle)
-      (set-window handle self)
-      (set-handle handle))
-    
     (nextmethod rest)
-    (setup-handle (prepare-handle self rest)))
-  
-  
+    (let ((handle (prepare-handle~ window-manager self rest)))
+      (register-window~ window-manager handle self)
+      (set! handle~self handle)))
+
+
   (method override (conclude rest)
     (nextmethod rest)
     (size-change 'restored (get-size)))
-  
-  
+
+
   (method public (open?)
     (boolean handle))
 
@@ -92,52 +91,51 @@
   (method override (show)
     (nextmethod)
     (assert handle)
-    (show-window handle))
+    (show-window~ window-manager handle))
 
 
   (method override (hide)
     (nextmethod)
     (assert handle)
-    (hide-window handle))
-  
-  
+    (hide-window~ window-manager handle))
+
+
   (method public (minimize)
     (assert handle)
-    (minimize-window handle))
-  
-  
+    (minimize-window~ window-manager handle))
+
+
   (method public (get-state)
     (assert handle)
-    (window-state handle))
-  
-  
+    (window-state~ window-manager handle))
+
+
   (method public (set-state state)
     (assert handle)
     (case state
-      ((minimized) (minimize-window handle))
-      ((maximized) (maximize-window handle))
-      ((restored) (restore-window handle))
+      ((minimized) (minimize-window~ window-manager handle))
+      ((maximized) (maximize-window~ window-manager handle))
+      ((restored) (restore-window~ window-manager handle))
       (else (error "Unknown window state: {s}" state))))
-  
-  
+
+
   (method public (set-placement position size)
     (assert handle)
-    (set-window-placement handle position size))
-  
-  
+    (set-window-placement~ window-manager handle position size))
+
+
   (method public (maximize)
     (assert handle)
-    (show-maximized handle))
+    (show-maximized~ window-manager handle))
 
 
   (method override (close)
     (set-visible? #f)
     (destroy-component)
-    (destroy-window handle)
-    (set-window handle #f)
-    (set-handle #f))
+    (destroy-window~ window-manager handle)
+    (set! handle~self #f))
 
-  
+
   (method override (print output readably)
     (print-unreadable self output
       (lambda (output)
@@ -148,7 +146,7 @@
             (if (or (not title) (empty-string? title))
                 (format output "{a} {a}" position size)
               (format output "{s} {a} {a}" title position size)))))))
-  
+
   
   ;;;
   ;;;; Component
@@ -157,8 +155,8 @@
 
   (method override (add-child child)
     (set! children (cons child children)))
-  
-  
+
+
   (method override (add-form parent-form child-form)
     (set-parent~ parent-form child-form))
 
@@ -166,8 +164,8 @@
   ;;;
   ;;;; Unprocessed
   ;;;
-  
-  
+
+
   (method protected virtual (unprocessed-message)
     unprocessed)
 
@@ -177,17 +175,10 @@
   ;;;
 
 
-  (method protected virtual (erase-background handle)
-    (assert handle)
-    (platform-erase-background handle))
-  
-
   (method protected virtual (paint region . platform-data)
-    (with-platform-painting self platform-data
-      (lambda (surface)
-        (draw surface))))
-  
-  
+    (with-platform-painting~ window-manager self platform-data draw))
+
+
   (definition *colors*
     '({Color Dark-Red}
       {Color Dark-Orange}
@@ -199,14 +190,14 @@
   
   (definition *nb-colors*
     (length *colors*))
-  
+
   (definition *current-color*
     0)
-  
+
 
   (definition (draw-placeholder surface) ;; fill current clip region w/ debug color
     (bucket-fill-surface~ surface (cycle-debug-color!)))
-  
+
 
   (method protected virtual (draw surface)
     )
@@ -215,8 +206,8 @@
   ;;;
   ;;;; Mouse
   ;;;
-  
-  
+
+
   (method protected virtual (mouse-wheel h v delta)
     (let ((view (get-mouse-in)))
       (if view
@@ -225,45 +216,45 @@
             processed)
         unprocessed)))
 
-  
+
   (method protected virtual (mouse-down h v)
     unprocessed)
-  
-  
+
+
   (method protected virtual (mouse-move h v)
     unprocessed)
-  
-  
+
+
   (method protected virtual (mouse-up h v)
     unprocessed)
-  
-  
+
+
   (method protected virtual (double-click h v)
     (mouse-down h v))
-  
-  
+
+
   (method protected virtual (middle-mouse-down h v)
     unprocessed)
-  
-  
+
+
   (method protected virtual (middle-mouse-up h v)
     unprocessed)
-  
-  
+
+
   (method protected virtual (right-mouse-down h v)
     unprocessed)
-  
-  
+
+
   (method protected virtual (right-mouse-up h v)
     unprocessed)
-  
-  
+
+
   ;; tofix : window-specific
   (method (call-context-menu h v)
     (let ((pos (acquire (get-desktop) (new Point h v))))
       (context-menu (get-h~ pos) (get-v~ pos))))
-  
-  
+
+
   (method protected virtual (context-menu h v)
     unprocessed)
 
@@ -271,22 +262,22 @@
   ;;;
   ;;;; Capture
   ;;;
-  
-  
+
+
   (method public (acquire-capture)
     (assert handle)
-    (set-capture handle))
-  
-  
+    (set-capture~ window-manager handle))
+
+
   (method public (release-capture)
-    (unset-capture))
+    (unset-capture~ window-manager))
 
 
   ;;;
   ;;;; Cursor
   ;;;
 
-  
+
   (method protected virtual (cursor-update hit)
     (if hit
         processed
@@ -296,17 +287,16 @@
   ;;;
   ;;;; Keyboard
   ;;;
-  
-  
+
+
   (method (system-key-down)
     (update-cursor)
     processed)
-  
-  
+
+
   (method (system-key-up)
     (update-cursor)
     processed)
-    
   
   (method protected virtual (key-down code)
     unprocessed)
@@ -314,8 +304,8 @@
   
   (method protected virtual (key-up code)
     unprocessed)
-  
-  
+
+
   (method (call-key-press char)
     (unless (invalid-character? char)
       (key-press char)))
@@ -335,23 +325,14 @@
 
 
   ;;;
-  ;;;; Timer
-  ;;;
-  
-  
-  (method protected virtual (timer-pulse)
-    (thread-yield!))
-
-
-  ;;;
   ;;;; Handlers
   ;;;
-  
-  
+
+
   (method public (call-position-change h v)
     (position-change (new Point h v)))
-  
-  
+
+
   (method protected virtual (position-change position)
     unprocessed)
 
@@ -364,12 +345,12 @@
 
   (method protected virtual (size-change state size)
     unprocessed)
-  
-  
+
+
   (method protected virtual (mouse-leave)
     unprocessed)
-  
-  
+
+
   (method protected virtual (mouse-activate?)
     #f)
 
@@ -385,11 +366,11 @@
       (on-activate-palette))
     unprocessed)
 
-  
+
   (method protected virtual (on-activate-palette)
     )
-  
-  
+
+
   (method protected virtual (on-deactivate-palette)
     )
 
@@ -408,8 +389,8 @@
 
   (method protected virtual (on-close evt)
     (close-window))
-  
-  
+
+
   (method public virtual (close-window)
     (close))
 
@@ -420,55 +401,19 @@
 
   (method protected virtual (focus-lose)
     unprocessed)
-  
-  
+
+
   ;;;
   ;;;; Drop Files
   ;;;
-  
-  
+
+
   (method (drop-files wparam)
-    (platform-drop-files self wparam))
-  
-  
+    (wm-drop-files~ window-manager self wparam))
+
+
   (method protected virtual (receive-files pos files)
     )
-  
-  
-  ;;;
-  ;;;; Fade
-  ;;;
-  
-  
-  ;; tofix : this will need a complete rethinking for multi-platform...
-  ;; should use cairo...
-  ;; also the menubar should only fade-in the first menu so that wiggling
-  ;; between all the menus is zero delay after the first one popped
-  (method public (fade-in (fade-speed: fade-speed #f))
-    @w
-    (set-alpha-blending handle 0)
-    (set-visible? #t)
-    @w(
-    (update-window)
-    (let* ((max 255)
-           (delay 0.15)
-           (now (time->seconds (current-time)))
-           (start now))
-      (while (< now (+ start delay))
-        (set-alpha-blending handle (fxceiling (* (- now start) (fl/ max delay))))
-        (set! now (time->seconds (current-time))))
-      (set-alpha-blending handle max))
-    (set-layered? handle #f)))
-  
-  
-  (method public (fade-out (to: to 0) (step: step 5))
-    @need-to-get-layered-attributes
-    (let ((alpha))
-      (loop (for n from 0 to to by step)
-            (set-alpha-blending handle n)
-            (set! alpha n))
-      (unless (= alpha to)
-        (set-alpha-blending handle to))))
 
 
   ;;;
@@ -483,7 +428,7 @@
   (method override (set-parent parent)
     (nextmethod parent)
     (assert handle)
-    (platform-set-parent handle parent))
+    (wm-set-parent~ window-manager handle parent))
 
 
   (method public (get-external-frame)
@@ -491,93 +436,93 @@
         self
       (when parent
         (get-frame~ parent))))
-  
-  
+
+
   (method public (get-overlapped)
     (if (is? self Overlapped)
         self
       (get-overlapped~ parent)))
-  
+
 
   (method public virtual (get-title)
     title)
-  
+
 
   (method public virtual (set-title value)
     (set! title value)
     (assert handle)
-    (set-window-title handle (localize title)))
-  
+    (set-window-title~ window-manager handle (localize title)))
+
 
   (method public (get-window-title)
     (assert handle)
-    (get-window-handle-title handle))
-  
+    (get-window-handle-title~ window-manager handle))
+
 
   (method public (acquire window <Window> shape)
     (assert handle)
     (typecase shape
       ((Point)
-       (acquire-point handle (get-handle~ window) shape))
+       (acquire-point~ window-manager handle (get-handle~ window) shape))
       ((Rect)
-       (acquire-rect handle (get-handle~ window) shape))
+       (acquire-rect~ window-manager handle (get-handle~ window) shape))
       (else
         (error "Unable to translate {t}" shape))))
-  
-  
+
+
   (method public (get-position-in-root) <Point>
     (assert handle)
-    (platform-translate-to-root handle (get-position)))
-  
-  
+    (wm-translate-to-root~ window-manager handle (get-position)))
+
+
   (method override (get-position) <Point>
     (assert handle)
-    (platform-get-position handle #f))
-  
-  
+    (wm-get-position~ window-manager handle #f))
+
+
   (method override (set-position pos <Point>) <void>
     (assert handle)
     (unless (nu=? pos (get-position))
-      (platform-set-position handle pos)))
-  
-  
+      (wm-set-position~ window-manager handle pos)))
+
+
   (method public (move-window dh <fx> dv <fx>)
     (let ((pos (get-position)))
       (set-position (new Point (+ (get-h~ pos) dh) (+ (get-v~ pos) dv)))))
-  
-  
+
+
   (method override (get-size) <Dimension>
     (assert handle)
-    (platform-get-size handle))
-  
-  
+    (wm-get-size~ window-manager handle))
+
+
   (method override (set-size new-size <Dimension>) <void>
     (assert handle)
-    (let ((delta (nu- new-size (platform-get-size handle))))
+    (let ((delta (nu- new-size (wm-get-size~ window-manager handle))))
       (unless (nu=? delta {Dimension 0 0})
         (set-window-size (nu+ (get-window-size) delta)))))
-  
-  
+
+
   (method public (size-window dwidth <fx> dheight <fx>)
     (let ((size (get-size)))
       (set-size (new Dimension (+ (get-width~ size) dwidth) (+ (get-height~ size) dheight)))))
-  
-  
+
+
   (method public (get-window-size) <Dimension>
     (assert handle)
-    (platform-get-window-size handle))
+    (wm-get-window-size~ window-manager handle))
 
 
   (method public (set-window-size size)
     (assert handle)
-    (platform-set-window-size handle size))
-  
-  
+    (wm-set-window-size~ window-manager handle size))
+
+
   (method public (set-rect rect)
     (assert handle)
-    (platform-set-rect handle rect))
-  
-  
+    (wm-set-rect~ window-manager handle rect))
+
+
   (method public (grow-rect dh dv dwidth dheight)
     (let ((pos (+ (get-position) (new Point dh dv)))
           (size (+ (get-window-size) (new Dimension dwidth dheight))))
@@ -588,21 +533,21 @@
   (method public (get-width) <fx>
     (get-width~ (get-size)))
 
-  
+
   (method public (get-height) <fx>
     (get-height~ (get-size)))
-  
+
 
   (method public (get-rect) <Rect>
     (assert handle)
-    (platform-get-rect handle (if (get-parent) (get-handle~ (get-parent)) #f)))
-  
+    (wm-get-rect~ window-manager handle (if (get-parent) (get-handle~ (get-parent)) #f)))
+
 
   (method public (get-bounds) <Rect>
     (assert handle)
-    (platform-get-bounds handle))
+    (wm-get-bounds~ window-manager handle))
 
-  
+
   (method public (ensure-displayed)
     (let ((outer (if (not parent) (get-size~ (get-desktop)) (get-size~ parent)))
           (rect (get-rect)))
@@ -612,7 +557,7 @@
 
 
   (method public (mouse-position) <Point>
-    (acquire (get-desktop) (platform-mouse-position)))
+    (acquire (get-desktop) (wm-mouse-position~ window-manager)))
 
 
   (method public (mouse-window)
@@ -630,73 +575,59 @@
 
 
   (method public (find-window point)
-    (get-window (platform-window-from-point point)))
-
-
-  (method public (flash-window)
-    (unimplemented 'flash-window)
-    @FlashWindow
-    (loop (repeat 3)
-          (FlashWindow handle #t)
-          (sleep .1)
-          (FlashWindow handle #f)
-          (sleep .1)))
+    (get-window~ window-manager (wm-window-from-point~ window-manager point)))
 
 
   (method public (move x y cx cy)
     (assert handle)
-    (platform-move-window handle x y cx cy))
+    (wm-move-window~ window-manager handle x y cx cy))
 
 
   (method public (acquire-focus)
-    (set-window-focus self))
-  
-  
-  (method public (get-enabled?)
     (assert handle)
-    (platform-window-enabled? handle))
-  
-  
+    (wm-set-focus~ window-manager handle))
+
+
   (method public (enable-window)
     (assert handle)
-    (platform-enable-window handle))
-  
-  
+    (wm-enable-window~ window-manager handle))
+
+
   (method public (disable-window)
     (assert handle)
-    (platform-disable-window handle))
+    (wm-disable-window~ window-manager handle))
 
 
   (method public (get-client-rect)
     (assert handle)
-    (platform-get-client-rect handle))
+    (wm-get-client-rect~ window-manager handle))
 
 
   (method public (scroll-window dh dv rect clip-rect)
     (assert handle)
     (if (inhibit-updates?)
         (invalidate-window)
-      (platform-scroll-window handle dh dv rect clip-rect))
+      (wm-scroll-window~ window-manager handle dh dv rect clip-rect))
     (let ((proc (debug-flicker)))
       (when proc
         (proc))))
 
-  
+
   (method public (invalidate-rect rect)
     (assert handle)
-    (platform-invalidate-rect handle rect))
+    (wm-invalidate-rect~ window-manager handle rect))
 
-  
+
   (method public (invalidate-region region)
     (assert handle)
-    (platform-invalidate-region handle region))
+    (wm-invalidate-region~ window-manager handle region))
 
-  
+
   (method public (invalidate-window)
     (assert handle)
-    (platform-invalidate-window handle))
+    (wm-invalidate-window~ window-manager handle))
 
-  
+
   (method public (redraw-window (rect: rect #f) (region: region #f))
     (assert handle)
     (if (inhibit-updates?)
@@ -704,8 +635,8 @@
               (region (invalidate-region region))
               (else (invalidate-window)))
       (if (or rect region)
-          (platform-redraw-window handle rect region)
-        (platform-redraw-window handle (get-client-rect) #f))))
+          (wm-redraw-window~ window-manager handle rect region)
+        (wm-redraw-window~ window-manager handle (get-client-rect) #f))))
 
 
   (method public (invalidate-border (insets: insets {Rect 1 1 1 1}))
@@ -726,17 +657,12 @@
     (assert handle)
     (if (inhibit-updates?)
         (invalidate-window)
-      (platform-update-window handle)))
-  
-  
+      (wm-update-window~ window-manager handle)))
+
+
   (method public (show-noactivate)
     (assert handle)
-    (platform-show-noactivate handle))
-  
-  
-  (method public (hide-noactivate)
-    (assert handle)
-    (platform-hide-noactivate handle))
+    (wm-show-noactivate~ window-manager handle))
 
 
   ;;;
@@ -749,8 +675,8 @@
       (if (null? windows)
           #f
         (first windows))))
-  
-  
+
+
   (method public (get-windows (include-invisibles?: include-invisibles? #f))
     (collect-if (lambda (child)
                   (and (is? child Window)
@@ -765,23 +691,23 @@
   ;;;
   ;;;; Layer
   ;;;
-  
-  
+
+
   (method override (bring-to-front)
     (nextmethod)
     (assert handle)
-    (platform-bring-window-to-front handle))
+    (bring-window-to-front~ window-manager handle))
 
 
   (method override (send-to-back)
     (nextmethod)
     (assert handle)
-    (platform-send-window-to-back handle))
-  
-  
+    (send-window-to-back~ window-manager handle))
+
+
   (method public (select-foreground)
-    (platform-select-foreground-window handle))
-  
+    (select-foreground-window~ window-manager handle))
+
 
   ;;;
   ;;;; Layout
@@ -794,32 +720,28 @@
 
   (method override (set-location loc)
     (set! location loc))
-  
-  
-  (method public (layout-window)
-    (layout))
-  
-  
+
+
   (method public virtual (layout)
     )
-  
-  
+
+
   ;;;
   ;;;; View
   ;;;
-  
-  
+
+
   (method public (mouse-view)
     (find-view (mouse-position)))
-  
-  
+
+
   (method public (find-view pos)
     (let ((window (find-window pos)))
       (when (is? window View-Player)
         (let ((root (get-root~ window)))
           (find-drawing~ root (acquire~ window self pos))))))
-  
-  
+
+
   (method public (to-view shape view)
     (let* ((player (get-player~ view))
            (acquired (acquire~ player self shape)))
@@ -829,8 +751,8 @@
   ;;;
   ;;;; Debugging
   ;;;
-  
-  
+
+
   (method public virtual (debug-window pos)
     (unimplemented 'debug-window)
     @Development
@@ -838,17 +760,4 @@
 
 
   (method public virtual (describe-window pos)
-    (unimplemented 'describe-window)
-    @WINSTYLE(
-    (format :console "{%}")
-    (format :console "Class:            {s}{%}" (class-of self))
-    (format :console "Name:             {s}{%}" (get-name))
-    (format :console "Class Background: {s}{%}" (get-class-background))
-    (format :console "Clip Children?:   {s}{%}" (mask-bit-set? (get-style) WS_CLIPCHILDREN))
-    (format :console "Clip Siblings?:   {s}{%}" (mask-bit-set? (get-style) WS_CLIPSIBLINGS))
-    (format :console "Position:         {s}{%}" (get-position))
-    (format :console "Size:             {s}{%}" (get-size))
-    (format :console "Window rect:      {s}{%}" (get-bounds))
-    (format :console "Client rect:      {s}{%}" (get-client-rect))
-    (format :console "Style:            {s}{%}" (bits->names (get-style) WINSTYLE))
-    (format :console "Extended Style:   {s}{%}" (bits->names (get-ex-style) WINEXSTYLE))))))
+    (unimplemented 'describe-window))))

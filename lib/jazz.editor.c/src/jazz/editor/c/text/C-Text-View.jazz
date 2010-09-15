@@ -45,6 +45,7 @@
         (jazz.locale)
         (jazz.system)
         (jazz.ui)
+        (jazz.ui.window)
         (jazz.ui.clipboard))
 
 
@@ -82,7 +83,7 @@
            (start (get-start))
            (line (+ (get-line~ start) 1))
            (break-command (format "break {a}:{a}" (get-name~ file) line)))
-      (set-clipboard-text break-command)
+      (set-clipboard-text~ (*window-manager*) break-command)
       (user-message "Clipboard set to {a}" break-command)))
   
   

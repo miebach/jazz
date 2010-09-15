@@ -119,12 +119,8 @@
   
   (method override (set-edited-modified? flag)
     (set-modified?~ editor flag))
-  
-  
-  (method override (show-cursor)
-    (show-text-cursor~ (get-text~ editor)))
-  
-  
+
+
   (method override (focused-editor)
     (get-text~ editor)))
 

@@ -65,10 +65,6 @@
 ;;;
 
 
-(definition public (relinquish-process)
-  (thread-yield!))
-
-
 (definition public (current-process-id)
   (GetCurrentProcessId))
 

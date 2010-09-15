@@ -138,7 +138,7 @@
       (add-debugger-release 'modal
         (lambda ()
           (enable-window~ (get-toplevel))
-          (set-current-modal #f)
+          (set-current-modal~ (*window-manager*) #f)
           (update-modal-actions)))
       (attach-to-controller (get-local-register) #t)
       (with-system-exception-debugger
@@ -872,7 +872,7 @@
 
   
   (method package (on-edit-clipboard evt)
-    (let ((clipboard (get-clipboard-text)))
+    (let ((clipboard (get-clipboard-text~ (*window-manager*))))
       (if (string? clipboard)
           (edit-definitions clipboard)
         (bell))))

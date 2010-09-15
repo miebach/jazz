@@ -39,8 +39,12 @@
 
 
 (import (jazz.platform.types)
-        (jazz.platform.x11.x11-types))
+        (jazz.debuggee))
 
+
+;;;
+;;;; Windowing stuff
+;;;
 
 (c-include "<X11/Xlib.h>")
 (c-include "<X11/Xutil.h>")
@@ -51,9 +55,39 @@
 (c-include "<unistd.h>")
 
 
-(c-constant None                     #x00000000)
-(c-constant PointerRoot              1)
-(c-constant CopyFromParent           #x00000000)
+(c-type Display    (native "Display"))
+(c-type Display*   (pointer Display))
+(c-type Screen     (native "Screen"))
+(c-type Screen*    (pointer Screen))
+(c-type Visual     (native "Visual"))
+(c-type Visual*    (pointer Visual))
+(c-type XID        (native unsigned-long))
+(c-type Drawable   XID)
+(c-type Pixmap     XID)
+(c-type Colormap   XID)
+(c-type Cursor     XID)
+(c-type KeySym     XID)
+(c-type Time       (native unsigned-long))
+(c-type Status     int)
+
+(c-type GC         (native "GC"))
+
+(c-type KeyCode    (native unsigned-char))
+
+(c-type Atom       XID)
+(c-type Atom*      (pointer Atom))
+
+
+(c-type fd_set     (type "fd_set"))
+(c-type fd_set*    (pointer fd_set))
+
+(c-type XIM         (pointer (struct "_XIM")))
+(c-type XIC         (pointer (struct "_XIC")))
+(c-type XrmDatabase (pointer (struct "_XrmHashBucketRec")))
+
+
+(c-constant None                     0)
+(c-constant CopyFromParent           0)
 (c-constant InputOutput              1)
 (c-constant CurrentTime              0)
 
@@ -373,8 +407,6 @@
 ;;;
 
 
-(c-constant IsUnmapped   0)
-(c-constant IsUnviewable 1)
 (c-constant IsViewable   2)
 
 
@@ -389,12 +421,10 @@
 (c-constant NotifyNonlinear        3)
 (c-constant NotifyNonlinearVirtual 4)
 (c-constant NotifyPointer          5)
-(c-constant NotifyPointerRoot      6)
 (c-constant NotifyDetailNone       7)
 
 
 (c-constant RevertToNone           None)
-(c-constant RevertToPointerRoot    PointerRoot)
 (c-constant RevertToParent         2)
 
 
@@ -403,7 +433,6 @@
 ;;;
 
 
-(c-constant XC_X_cursor 0)
 (c-constant XC_arrow 2)
 (c-constant XC_crosshair 34)
 (c-constant XC_hand2 60)
@@ -413,19 +442,9 @@
 (c-constant XC_watch 150)
 (c-constant XC_xterm 152)
 
-
 ;;;
 ;;;; XIM and XIC
 ;;;
-
-
-(definition package default-XIM #f)
-(definition package default-XIC #f)
-
-
-(constant XNInputStyle "inputStyle")
-(constant XNFocusWindow "focusWindow")
-(constant XNClientWindow "clientWindow")
 
 
 (c-constant LC_ALL 0)
@@ -440,68 +459,8 @@
 (c-constant XLookupBoth 4)
 
 
-(definition package (initialize-locale)
-  (unless (setlocale LC_ALL "")
-    (error "setlocale failed"))
-  (unless (XSupportsLocale)
-    (error "XSupportsLocale failed")))
-
-
-(definition package (initialize-xim)
-  (unless (XSetLocaleModifiers "@im=none")
-    (error "XSetLocaleModifiers failed"))
-  (let ((xim (XOpenIM x11-default-display #f "Jazz" "Jazz")))
-    (unless xim
-      (error "Error creating XIM"))
-    (set! default-XIM xim)))
-
-
-(definition package (create-xic handle)
-  (let ((xic ((c-function (XIM char-string int char-string Window char-string Window) XIC
-                "___result_voidstar = XCreateIC(___arg1, ___arg2, ___arg3, ___arg4, ___arg5, ___arg6, ___arg7, NULL);")
-              default-XIM
-              XNInputStyle (bitwise-ior XIMPreeditNothing XIMStatusNothing)
-              XNClientWindow handle
-              XNFocusWindow handle)))
-    (unless xic
-      (error "Error creating XIC"))
-    xic))
-
-
-;;;
-;;;; XChangeProperty modes
-;;;
-
-
-(constant PropModeReplace 0)
-
-
-(definition package (x11-generate-atoms)
-  (set! XA_CLIPBOARD                      (XInternAtom x11-default-display "CLIPBOARD" #f))
-  (set! XA_TIMESTAMP                      (XInternAtom x11-default-display "TIMESTAMP" #f))
-  (set! XA_TARGETS                        (XInternAtom x11-default-display "TARGETS" #f))
-  (set! WM_PROTOCOLS                      (XInternAtom x11-default-display "WM_PROTOCOLS" #f))
-  (set! WM_DELETE_WINDOW                  (XInternAtom x11-default-display "WM_DELETE_WINDOW" #f))
-  (set! _NET_WM_WINDOW_TYPE               (XInternAtom x11-default-display "_NET_WM_WINDOW_TYPE" #f))
-  (set! _NET_WM_WINDOW_TYPE_DIALOG        (XInternAtom x11-default-display "_NET_WM_WINDOW_TYPE_DIALOG" #f))
-  (set! _NET_WM_WINDOW_TYPE_DROPDOWN_MENU (XInternAtom x11-default-display "_NET_WM_WINDOW_TYPE_DROPDOWN_MENU" #f))
-  (set! _NET_WM_WINDOW_TYPE_TOOLTIP       (XInternAtom x11-default-display "_NET_WM_WINDOW_TYPE_TOOLTIP" #f))
-  (set! _NET_WM_WINDOW_TYPE_NORMAL        (XInternAtom x11-default-display "_NET_WM_WINDOW_TYPE_NORMAL" #f))
-  (set! _NET_WM_STATE                     (XInternAtom x11-default-display "_NET_WM_STATE" #f))
-  (set! _NET_WM_STATE_MODAL               (XInternAtom x11-default-display "_NET_WM_STATE_MODAL" #f))
-  (set! _NET_WM_STATE_STICKY              (XInternAtom x11-default-display "_NET_WM_STATE_STICKY" #f))
-  (set! _NET_WM_STATE_FULLSCREEN          (XInternAtom x11-default-display "_NET_WM_STATE_FULLSCREEN" #f))
-  (set! XdndAware                         (XInternAtom x11-default-display "XdndAware" #f))
-  (set! XdndEnter                         (XInternAtom x11-default-display "XdndEnter" #f))
-  (set! XdndLeave                         (XInternAtom x11-default-display "XdndLeave" #f))
-  (set! XdndSelection                     (XInternAtom x11-default-display "XdndSelection" #f))
-  (set! XdndPosition                      (XInternAtom x11-default-display "XdndPosition" #f))
-  (set! XdndDrop                          (XInternAtom x11-default-display "XdndDrop" #f))
-  (set! XdndStatus                        (XInternAtom x11-default-display "XdndStatus" #f))
-  (set! XdndFinished                      (XInternAtom x11-default-display "XdndFinished" #f))
-  (set! XdndTypeList                      (XInternAtom x11-default-display "XdndTypeList" #f))
-  (set! XdndActionCopy                    (XInternAtom x11-default-display "XdndActionCopy" #f))
-  (set! text/uri-list                     (XInternAtom x11-default-display "text/uri-list" #f)))
+(c-constant PropModeReplace 0)
+(c-constant XdndVersion 5)
 
 
 ;;;
@@ -509,103 +468,9 @@
 ;;;
 
 
-(constant AnyPropertyType 0)
-
-(constant XA_PRIMARY 1)
-(constant XA_ATOM    4)
-(constant XA_STRING 31)
-
-(definition package XA_CLIPBOARD #f)
-(definition package XA_TIMESTAMP #f)
-(definition package XA_TARGETS   #f)
-
-
-;;;
-;;;; Drag and Drop
-;;;
-
-
-(constant XdndVersion 5)
-
-(definition package XdndAware #f)
-(definition package XdndEnter #f)
-(definition package XdndLeave #f)
-(definition package XdndSelection #f)
-(definition package XdndPosition #f)
-(definition package XdndDrop #f)
-(definition package XdndStatus #f)
-(definition package XdndFinished #f)
-(definition package XdndTypeList #f)
-(definition package XdndActionCopy #f)
-
-
-;;;
-;;;; Drag and Drop MIME
-;;;
-
-
-(definition package text/uri-list #f)
-
-
-;;;
-;;;; _NET_WM_WINDOW_TYPE
-;;;
-
-
-(definition package _NET_WM_WINDOW_TYPE #f)
-(definition package _NET_WM_WINDOW_TYPE_DIALOG #f)
-(definition package _NET_WM_WINDOW_TYPE_DROPDOWN_MENU #f)
-(definition package _NET_WM_WINDOW_TYPE_TOOLTIP #f)
-(definition package _NET_WM_WINDOW_TYPE_NORMAL #f)
-
-
-;;;
-;;;; _NET_WM_STATE
-;;;
-
-
-(definition package _NET_WM_STATE #f)
-(definition package _NET_WM_STATE_MODAL #f)
-(definition package _NET_WM_STATE_STICKY #f)
-(definition package _NET_WM_STATE_FULLSCREEN #f)
-
-(definition package _NET_WM_STATE_ADD 1)
-
-
-;;;
-;;;; WM_PROTOCOLS
-;;;
-
-
-(definition package WM_PROTOCOLS #f)
-(definition package WM_DELETE_WINDOW #f)
-
-
-;;;
-;;;; Latest event timestamp
-;;;
-
-
-(definition x11-latest-timestamp #f)
-
-
-(definition public (x11-set-latest-timestamp stamp)
-  (set! x11-latest-timestamp stamp))
-
-
-(definition public (x11-get-latest-timestamp)
-  x11-latest-timestamp)
-
-
-;;;
-;;;; Clipboard
-;;;
-
-
-(definition package clipboard-string "")
-
-
-(definition package clipboard-stamp #f)
+(c-constant XA_PRIMARY 1)
+(c-constant XA_ATOM    4)
+(c-constant XA_STRING 31)
 
 
 ;;;
@@ -633,7 +498,7 @@
   (int border_width)
   (int depth)
   (Visual* visual)
-  (Window root)
+  (XID root)
   (int class)
   (int bit_gravity)
   (int win_gravity)
@@ -679,7 +544,7 @@
   (ulong serial)
   (bool send_event)
   (Display* display)
-  (Window window))
+  (XID window))
 
 
 (c-structure XButtonEvent
@@ -687,9 +552,9 @@
   (ulong serial)
   (bool send_event)
   (Display* display)
-  (Window window)
-  (Window root)
-  (Window subwindow)
+  (XID window)
+  (XID root)
+  (XID subwindow)
   (Time time)
   (int x)
   (int y)
@@ -705,7 +570,7 @@
   (ulong serial)
   (bool send_event)
   (Display* display)
-  (Window window)
+  (XID window)
   (Atom message_type)
   (int format))
 
@@ -723,16 +588,16 @@
 (definition package XClientMessageEvent-l-ref
   (c-function (XClientMessageEvent*) long*
     "___result_voidstar = ___arg1->data.l;"))
-  
-  
+
+
 (c-structure XKeyEvent
   (int type)
   (ulong serial)
   (bool send_event)
   (Display* display)
-  (Window window)
-  (Window root)
-  (Window subwindow)
+  (XID window)
+  (XID root)
+  (XID subwindow)
   (Time time)
   (int x)
   (int y)
@@ -748,9 +613,9 @@
   (ulong serial)
   (bool send_event)
   (Display* display)
-  (Window window)
-  (Window root)
-  (Window subwindow)
+  (XID window)
+  (XID root)
+  (XID subwindow)
   (Time time)
   (int x)
   (int y)
@@ -766,7 +631,7 @@
   (ulong serial)
   (bool send_event)
   (Display* display)
-  (Window window)
+  (XID window)
   (int mode)
   (int detail))
 
@@ -776,7 +641,7 @@
   (ulong serial)
   (bool send_event)
   (Display* display)
-  (Window window)
+  (XID window)
   (int x)
   (int y)
   (int width)
@@ -789,14 +654,14 @@
   (ulong serial)
   (bool send_event)
   (Display* display)
-  (Window event)
-  (Window window)
+  (XID event)
+  (XID window)
   (int x)
   (int y)
   (int width)
   (int height)
   (int border_width)
-  (Window above)
+  (XID above)
   (bool override_redirect))
 
 
@@ -805,7 +670,7 @@
   (ulong serial)
   (bool send_event)
   (Display* display)
-  (Window window)
+  (XID window)
   (Atom selection)
   (Time time))
 
@@ -815,8 +680,8 @@
   (ulong serial)
   (bool send_event)
   (Display* display)
-  (Window owner)
-  (Window requestor)
+  (XID owner)
+  (XID requestor)
   (Atom selection)
   (Atom target)
   (Atom property)
@@ -828,7 +693,7 @@
   (ulong serial)
   (bool send_event)
   (Display* display)
-  (Window requestor)
+  (XID requestor)
   (Atom selection)
   (Atom target)
   (Atom property)
@@ -863,49 +728,44 @@
 (c-type XERRORPROC (function (Display* XErrorEvent*) int))
 
 
-;; Incomplete
-(c-structure XGCValues
-  (int function))
-
-
 ;;;
 ;;;; Functions
 ;;;
 
 
-(c-external (XClearArea             Display* Window int int uint uint bool) void)
+(c-external (XClearArea             Display* XID int int uint uint bool) void)
 (c-external (XCopyArea              Display* Drawable Drawable GC int int uint uint int int) void)
 (c-external (XOpenDisplay           char-string) Display*)
 (c-external (XCloseDisplay          Display*) int)
 (c-external (XDefaultScreen         Display*) int)
 (c-external (XScreenOfDisplay       Display* int) Screen*)
-(c-external (XRootWindow            Display* int) Window)
+(c-external (XRootXID            Display* int) XID)
 (c-external (XBlackPixel            Display* int) ulong)
 (c-external (XWhitePixel            Display* int) ulong)
-(c-external (XCreateSimpleWindow    Display* Window int int uint uint uint ulong ulong) Window)
-(c-external (XMapWindow             Display* Window) int)
+(c-external (XCreateSimpleXID    Display* XID int int uint uint uint ulong ulong) XID)
+(c-external (XMapXID             Display* XID) int)
 (c-external (XFlush                 Display*) int)
 (c-external (XDefaultVisual         Display* int) Visual*)
 (c-external (XNextEvent             Display* XEvent*) void)
-(c-external (XSelectInput           Display* Window long) void)
-(c-external (XDestroyWindow         Display* Window) void)
-(c-external (XUnmapWindow           Display* Window) void)
-(c-external (XCreateWindow          Display* Window int int uint uint uint int uint Visual* ulong XSetWindowAttributes*) Window)
-(c-external (XGetWindowAttributes   Display* Window XWindowAttributes*) Status)
-(c-external (XMoveWindow            Display* Window int int) void)
-(c-external (XResizeWindow          Display* Window uint uint) void)
+(c-external (XSelectInput           Display* XID long) void)
+(c-external (XDestroyXID         Display* XID) void)
+(c-external (XUnmapXID           Display* XID) void)
+(c-external (XCreateXID          Display* XID int int uint uint uint int uint Visual* ulong XSetXIDAttributes*) XID)
+(c-external (XGetXIDAttributes   Display* XID XXIDAttributes*) Status)
+(c-external (XMoveXID            Display* XID int int) void)
+(c-external (XResizeXID          Display* XID uint uint) void)
 (c-external (XKeysymToKeycode       Display* KeySym) KeyCode)
 (c-external (XKeycodeToKeysym       Display* KeyCode int) KeySym)
-(c-external (XReparentWindow        Display* Window Window int int) void)
-(c-external (XSetInputFocus         Display* Window int Time) void)
+(c-external (XReparentXID        Display* XID XID int int) void)
+(c-external (XSetInputFocus         Display* XID int Time) void)
 (c-external (XPending               Display*) int)
-(c-external (XRaiseWindow           Display* Window) void)
+(c-external (XRaiseXID           Display* XID) void)
 (c-external (XSync                  Display* bool) void)
 (c-external (XSynchronize           Display* bool) void)
 (c-external (XBell                  Display* int) void)
 (c-external (XWhitePixel            Display* int) ulong)
-(c-external (XMoveResizeWindow      Display* Window int int uint uint) void)
-(c-external (XLowerWindow           Display* Window) void)
+(c-external (XMoveResizeXID      Display* XID int int uint uint) void)
+(c-external (XLowerXID           Display* XID) void)
 (c-external (XSetErrorHandler       XERRORPROC) void)
 (c-external (XInternAtom            Display* char-string bool) Atom)
 (c-external (XGetAtomName           Display* int) char-string)
@@ -913,12 +773,12 @@
 (c-external (ConnectionNumber       Display*) int)
 (c-external (XCheckTypedEvent       Display* int XEvent*) bool)
 (c-external (XCreateFontCursor      Display* uint) Cursor)
-(c-external (XDefineCursor          Display* Window Cursor) void)
-(c-external (XSetSelectionOwner     Display* Atom Window Time) void)
-(c-external (XChangeProperty        Display* Window Atom Atom int int uint8* int) void)
-(c-external (XGetSelectionOwner     Display* Atom) Window)
-(c-external (XConvertSelection      Display* Atom Atom Atom Window Time) void)
-(c-external (XSendEvent             Display* Window bool long XEvent*) Status)
+(c-external (XDefineCursor          Display* XID Cursor) void)
+(c-external (XSetSelectionOwner     Display* Atom XID Time) void)
+(c-external (XChangeProperty        Display* XID Atom Atom int int uint8* int) void)
+(c-external (XGetSelectionOwner     Display* Atom) XID)
+(c-external (XConvertSelection      Display* Atom Atom Atom XID Time) void)
+(c-external (XSendEvent             Display* XID bool long XEvent*) Status)
 (c-external (XCreateGC              Display* Drawable ulong XGCValues*) GC)
 (c-external (XFreeGC                Display* GC) void)
 (c-external (XSetClipRectangles     Display* GC int int XRectangle* int int) void)
@@ -927,42 +787,52 @@
 (c-external (setlocale              int char-string) char*)
 (c-external (XSetLocaleModifiers    char-string) char*)
 (c-external (XSupportsLocale) bool)
-(c-external (XFilterEvent           XEvent* Window) bool)
+(c-external (XFilterEvent           XEvent* XID) bool)
 (c-external (XLookupKeysym          XKeyEvent* int) KeySym)
-(c-external (XSetTransientForHint   Display* Window Window) void)
+(c-external (XSetTransientForHint   Display* XID XID) void)
 
 
-(definition package (x11-get-atom-name atom)
-  (if (= atom None)
-      "None"
-    (XGetAtomName x11-default-display atom)))
-
-
-;;;
-;;;; Custom functions
-;;;
-
-
-(definition public (XQueryTree-root display window)
-  ((c-function (Display* Window) Window
-     "Window root, parent, *children;
+(definition package (XQueryTree-root display window)
+  ((c-function (Display* XID) XID
+     "XID root, parent, *children;
 	unsigned int n;
 	XQueryTree(___arg1, ___arg2, &root, &parent, &children, &n);
 	___result = root;")
 display window))
 
 
-(definition public (XQueryTree-parent display window)
-  ((c-function (Display* Window) Window
-     "Window root, parent, *children;
+(definition package (XQueryTree-parent display window)
+  ((c-function (Display* XID) XID
+     "XID root, parent, *children;
 	unsigned int n;
 	XQueryTree(___arg1, ___arg2, &root, &parent, &children, &n);
 	___result = parent;")
 display window))
 
 
-(definition protected (bell-internal)
-  (XBell x11-default-display 50))
+(definition package XSetWMName
+  (c-function (Display* XID char-string) void
+    "XTextProperty textProp;
+     XStringListToTextProperty(&___arg3, 1, &textProp);
+     XSetWMName(___arg1, ___arg2, &textProp);"))
+
+
+(definition package XGetErrorText
+  (c-function (Display* int) char-string
+    "char buffer[255];
+     XGetErrorText(___arg1, ___arg2, buffer, 255);
+     ___result = buffer;"))
+
+
+(definition package XSetWMProtocols
+  (c-function (Display* XID Atom) void
+    "XSetWMProtocols( ___arg1, ___arg2, &___arg3, 1 );"))
+
+
+(c-definition package (x11-error-handler display xerror) (Display* XErrorEvent*) int "x11_error_handler" ""
+  (without-local-debugger
+    (lambda ()
+      (error "X11 Error: {a}" (XGetErrorText display (XErrorEvent-error_code-ref xerror))))))
 
 
 (definition package (x11-change-property display window property type mode data)
@@ -1027,15 +897,15 @@ display window))
 
 
 (definition package (XWindowEvent display window mask event)
-  (let ((func (c-function (Display* Window int XEvent*) void
+  (let ((func (c-function (Display* XID int XEvent*) void
                 "XWindowEvent(___arg1, ___arg2, ___arg3, ___arg4);")))
     (func display window mask event)))
 
 
 (definition package (XTranslateCoordinates disp src_win dst_win x y)
-  (let* ((pt ((c-function (Display* Window Window int int) int*
+  (let* ((pt ((c-function (Display* XID XID int int) int*
                   "int *point = malloc(2*sizeof(int));
-                  Window tmp;
+                  XID tmp;
                   XTranslateCoordinates( ___arg1, ___arg2, ___arg3, ___arg4, ___arg5, point, point+1, &tmp);
                   ___result_voidstar = point;") disp src_win dst_win x y))
          (x (int*-ref pt 0))
@@ -1045,24 +915,24 @@ display window))
 
 
 (definition package XNumberOfChildren
-  (c-function (Display* Window) uint
-    "Window root;
-     Window parent;
-     Window *children;
+  (c-function (Display* XID) uint
+    "XID root;
+     XID parent;
+     XID *children;
      unsigned int num;
-     Window ret;
+     XID ret;
      XQueryTree( ___arg1, ___arg2, &root, &parent, &children, &num);
      if( num != 0) { XFree(children); }
      ___result = num;"))
 
 
 (definition package XGetChildHandle
-  (c-function (Display* Window int) Window
-    "Window root;
-     Window parent;
-     Window *children;
+  (c-function (Display* XID int) XID
+    "XID root;
+     XID parent;
+     XID *children;
      unsigned int num;
-     Window ret;
+     XID ret;
      XQueryTree( ___arg1, ___arg2, &root, &parent, &children, &num);
      ret = *(children+num-___arg3-1);
      if( num != 0) { XFree(children); }
@@ -1071,8 +941,8 @@ display window))
 
 (definition package XButtonDown?
   (c-function (Display*) bool
-    "Window root_return;
-     Window child_return;
+    "XID root_return;
+     XID child_return;
      int root_x_return, root_y_return, win_x_return, win_y_return;
      unsigned int mods;
      XQueryPointer( ___arg1, DefaultRootWindow(___arg1), &root_return, &child_return, &win_x_return, &win_y_return,
@@ -1088,9 +958,9 @@ display window))
 
 
 (definition package (XMousePosition disp win)
-  (let ((coords ((c-function (Display* Window) int*
+  (let ((coords ((c-function (Display* XID) int*
                           "int *coords = calloc(2, sizeof(int));
-                           Window x,y;
+                           XID x,y;
                            int a,b;
                            unsigned int c;
                            XQueryPointer( ___arg1, ___arg2, &x, &y, coords, coords+1, &a, &b, &c);
@@ -1102,8 +972,8 @@ display window))
 
 
 (definition package XMouseWindow
-  (c-function (Display* Window) Window
-     "Window root_return, child_return;
+  (c-function (Display* XID) XID
+     "XID root_return, child_return;
       int root_x_return, root_y_return, win_x_return, win_y_return;
       unsigned int mask_return;
       XQueryPointer( ___arg1, ___arg2, &root_return, &child_return, &root_x_return, &root_y_return, &win_x_return, &win_y_return, &mask_return );
@@ -1111,7 +981,7 @@ display window))
 
 
 (definition package XInvalidateRect
-  (c-function (Display* Window int int int int) void
+  (c-function (Display* XID int int int int) void
     "XEvent exp;
      exp.xexpose.type = Expose;
      exp.xexpose.window = ___arg2;
@@ -1125,7 +995,7 @@ display window))
 
 (definition package (XGetInputFocus display)
   (let ((ret ((c-function (Display*) int*
-                  "Window win;
+                  "XID win;
                    int *ret = calloc(2, sizeof(int));
                    XGetInputFocus(___arg1, &win, ret+1);
                    *ret = (int)win;
@@ -1142,7 +1012,7 @@ display window))
         (nitems_return-pt        (ulong*-alloc 1))
         (bytes_after_return-pt   (ulong*-alloc 1))
         (prop_return-pt          (uint8**-alloc 1))
-        (func                    (c-function (Display* Window Atom long long bool Atom Atom* int* ulong* ulong* uint8**) int "XGetWindowProperty")))
+        (func                    (c-function (Display* XID Atom long long bool Atom Atom* int* ulong* ulong* uint8**) int "XGetWindowProperty")))
   (func display window property long_offset long_length delete req_type actual_type_return-pt actual_format_return-pt nitems_return-pt bytes_after_return-pt prop_return-pt)
   (let ((nitems_return        (ulong*-ref nitems_return-pt 0))
         (prop_return          (uint8**-ref prop_return-pt 0))
@@ -1175,41 +1045,6 @@ display window))
              (iterate (+ i 1) (XCheckTypedEvent display SelectionNotify ev)))))))
 
 
-(definition package (x11-get-clipboard-string display window selection)
-  (let ((owner (XGetSelectionOwner display selection)))
-    (if (= owner window)
-        clipboard-string
-      (let ((data (x11-retrieve-selection display window selection XA_STRING (x11-get-latest-timestamp))))
-        (when data
-          (prog1 (uint8*->char-string data)
-            (XFree data)))))))
-
-
-(definition package (x11-set-clipboard-string display window string selection)
-  (set! clipboard-string string)
-  (set! clipboard-stamp (x11-get-latest-timestamp))
-  (XSetSelectionOwner display selection window clipboard-stamp))
-
-
-(definition package XSetWMName
-  (c-function (Display* Window char-string) void
-    "XTextProperty textProp;
-     XStringListToTextProperty(&___arg3, 1, &textProp);
-     XSetWMName(___arg1, ___arg2, &textProp);"))
-
-
-(definition package XGetErrorText
-  (c-function (Display* int) char-string
-    "char buffer[255];
-     XGetErrorText(___arg1, ___arg2, buffer, 255);
-     ___result = buffer;"))
-
-
-(definition public XSetWMProtocols
-  (c-function (Display* Window Atom) void
-    "XSetWMProtocols( ___arg1, ___arg2, &___arg3, 1 );"))
-
-
 (definition package (x11-utf8-lookup-string xic event)
   (let ((func (c-function (XIC XKeyEvent* char* int ulong* int*) int "Xutf8LookupString"))
         (str-buffer (char*-alloc 20))
@@ -1231,10 +1066,10 @@ display window))
       (ulong*-free sym-buffer)
       (int*-free status-buffer)
       (values sym str))))
-      
-      
+
+
 (definition package set-modal
-  (c-function (Display* Window) void
+  (c-function (Display* XID) void
      "XClientMessageEvent xclient;
       Atom _NET_WM_STATE = XInternAtom( ___arg1, \"_NET_WM_STATE\", False );
       Atom _NET_WM_STATE_MODAL = XInternAtom( ___arg1, \"_NET_WM_STATE_MODAL\", False );
@@ -1292,8 +1127,7 @@ display window))
 ;;;
 
 
-(definition public (relinquish-process)
-  )
+(c-external int          (getpid))
 
 
 (definition public (current-process-id)
@@ -1310,32 +1144,6 @@ display window))
   (newline))
 
 
-;;;
-;;;; Cursors
-;;;
-
-
-(definition public Cursors
-  #f)
-
-
-(definition package (x11-create-cursors)
-  (set! Cursors (list
-                  (list :arrow               (XCreateFontCursor x11-default-display XC_left_ptr))
-                  (list :wait                (XCreateFontCursor x11-default-display XC_watch))
-                  (list :west-east           (XCreateFontCursor x11-default-display XC_sb_h_double_arrow))
-                  (list :vertical-splitter   (XCreateFontCursor x11-default-display XC_sb_h_double_arrow))
-                  (list :horizontal-splitter (XCreateFontCursor x11-default-display XC_sb_v_double_arrow))
-                  (list :ibeam               (XCreateFontCursor x11-default-display XC_xterm))
-                  (list :finger              (XCreateFontCursor x11-default-display XC_hand2))
-                  (list :cross               (XCreateFontCursor x11-default-display XC_crosshair))
-                  (list :left-arrow          (XCreateFontCursor x11-default-display XC_arrow))
-                  @wait((list :all                 IDC_SIZEALL)
-                     (list :no                  IDC_NO)
-                     (list :move                (new Cursor-Resource "Move"))
-                     (list :opened-hand         (new Cursor-Resource "OpenedHand"))
-                     (list :closed-hand         (new Cursor-Resource "ClosedHand"))
-                     (list :zoom                (new Cursor-Resource "Zoom"))
-                     (list :zoom-in             (new Cursor-Resource "ZoomIn"))
-                     (list :zoom-out            (new Cursor-Resource "ZoomOut"))
-                     (list :spy                 (new Cursor-Resource "Spy")))))))
+(definition package make-xic
+  (c-function (XIM char-string int char-string XID char-string XID) XIC
+    "___result_voidstar = XCreateIC(___arg1, ___arg2, ___arg3, ___arg4, ___arg5, ___arg6, ___arg7, NULL);")))

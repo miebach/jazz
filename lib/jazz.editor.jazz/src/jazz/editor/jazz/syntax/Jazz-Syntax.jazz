@@ -47,6 +47,7 @@
         (jazz.system)
         (jazz.ui)
         (jazz.ui.clipboard)
+        (jazz.ui.window)
         (jazz.ui.view))
 
 
@@ -195,7 +196,7 @@
       (case (present-imports imports)
         ((yes)
          (unless (null? imports)
-           (set-clipboard-text (join (map symbol->string imports) " "))))
+           (set-clipboard-text~ (*window-manager*) (join (map symbol->string imports) " "))))
         ((no)
          (unless (null? imports)
            (let ((expl (new (explorer-class) model)))

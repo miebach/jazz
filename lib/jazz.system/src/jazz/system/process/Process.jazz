@@ -119,7 +119,6 @@
       (update-debuggee)
       (initialize-aliases)
       (initialize-settings)
-      (register-versions)
       (prepare-phase)
       (install-phase)
       (finalize-phase)
@@ -141,20 +140,11 @@
       (current-process-title-set! (process-name)))
     (current-process-version-set! (present~ (process-version)))
     (update-debuggee-process))
-  
-  
+
+
   (method protected virtual (initialize-settings)
     )
-  
-  
-  (method protected virtual (settings-version)
-    )
-  
-  
-  (method (register-versions)
-    @unimplemented
-    (register-crash-info windows-version: #f (present~ (get-windows-version))))
-  
+
   
   (method (prepare-phase)
     (prepare-settings)
@@ -192,10 +182,10 @@
 
   (method protected virtual (install-environment)
     )
-  
+
   
   (method public virtual (install-process)
-    (initialize-platform))
+    )
   
   
   (method (finalize-phase)

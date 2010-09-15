@@ -44,7 +44,8 @@
         (jazz.platform)
         (jazz.system)
         (jazz.ui)
-        (jazz.ui.view))
+        (jazz.ui.view)
+        (jazz.ui.window))
 
 
 (class undocumented Value-Row extends Tree-Row
@@ -192,12 +193,8 @@
   
   (method public virtual (set-edited-modified? flag)
     (set-modified?~ (get-controller~ editor) flag))
-  
-  
-  (method public virtual (show-cursor)
-    (show-text-cursor~ editor))
-  
-  
+
+
   (method public (validate-value)
     (catch (Parse-Error err
              (case (message-box (exception-reason err) type: 'question yes: "Change It" no: "Revert")
@@ -280,17 +277,16 @@
       (if (shift-down?)
           (up-arrow-press~ (get-tree) modifiers)
         (down-arrow-press~ (get-tree) modifiers))))
-  
-  
+
+
   (method public (editor-return)
-    (show-cursor)
     (with-cursor :wait
       (lambda ()
         (set-edited-modified? #t)
         (save-edition))
       duration: .150))
-  
-  
+
+
   (method public (editor-focus-delegate)
     (when (and (auto-in-place?) (not (in-edition?)))
       (auto-expand/collapse~ (get-tree) self))

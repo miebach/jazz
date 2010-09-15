@@ -42,7 +42,8 @@
         (jazz.ui.dialog.platform.windows (cond windows))
         (jazz.ui.dialog.platform.x11     (cond x11)))
 
-(import (jazz.system))
+(import (jazz.system)
+        (jazz.ui.window))
 
 
 ;;;
@@ -50,32 +51,11 @@
 ;;;
 
 
-(definition *current-modal*
-  #f)
-
-
-(definition public (current-modal)
-  *current-modal*)
-
-(definition public (set-current-modal dialog)
-  (set! *current-modal* dialog))
-
-
-(definition public (in-modal?)
-  (current-modal))
-
-
-(definition public (current-window)
-  (let ((modal (current-modal)))
-    (or (and modal (get-player~ modal))
-        (get-toplevel))))
-
-
 (definition public (end-modal-dialog result)
-  (end-modal~ (current-modal) result))
+  (end-modal~ (get-current-modal~ (*window-manager*)) result))
 
 
 (definition public (close-modal-dialog (action #f))
-  (let ((dialog (current-modal)))
+  (let ((dialog (get-current-modal~ (*window-manager*))))
     (when dialog
       (close-modal~ dialog action)))))

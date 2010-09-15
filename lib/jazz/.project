@@ -10,7 +10,7 @@
 
 
 (import (jazz.project)
-(jazz.editor.jazz))
+        (jazz.editor.jazz))
 
 
 (form
@@ -57,8 +57,7 @@
             (<Jazz-File>       name: geometry           source: {File :context "src" "jazz" "dialect" "language" "geometry.jazz"})
             (<Jazz-File>       name: homogeneous        source: {File :context "src" "jazz" "dialect" "language" "homogeneous.jazz"})
             (<Jazz-File>       name: object             source: {File :context "src" "jazz" "dialect" "language" "object.jazz"})
-            (<Jazz-File>       name: parse              source: {File :context "src" "jazz" "dialect" "language" "parse.jazz"})
-            (<Jazz-File>       name: platform           source: {File :context "src" "jazz" "dialect" "language" "platform.jazz"}))
+            (<Jazz-File>       name: parse              source: {File :context "src" "jazz" "dialect" "language" "parse.jazz"}))
           (<Project-Directory>                          directory: {Directory :context "src" "jazz" "dialect" "syntax"}
             (<Project-File>                             source: {File :context "src" "jazz" "dialect" "syntax" "_syntax.scm"})
             (<Project-File>                             source: {File :context "src" "jazz" "dialect" "syntax" "attributes.scm"})

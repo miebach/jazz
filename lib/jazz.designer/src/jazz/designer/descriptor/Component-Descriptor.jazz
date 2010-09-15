@@ -42,6 +42,7 @@
         (jazz.designer.descriptor)
         (jazz.jml)
         (jazz.library)
+        (jazz.ui.window)
         (jazz.ui.clipboard))
 
 
@@ -249,10 +250,11 @@
   
   (method public (component-determine-can-paste component (try-parent? #t))
     (boolean (determine-paster~ component try-parent?)))
-  
-  
+
+
   (method public (component-determine-paster component (try-parent? #t))
-    (when (and (can-paste-component?~ component) (clipboard-format-available? 'jazz-parcels))
+    (when (and (can-paste-component?~ component)
+               (clipboard-format-available?~ (*window-manager*) 'jazz-parcels))
       (let* ((parcels (get-jazz-parcels))
              (models (remove-duplicates (map get-master-model~ parcels))))
         (cond ((memq? #f models)

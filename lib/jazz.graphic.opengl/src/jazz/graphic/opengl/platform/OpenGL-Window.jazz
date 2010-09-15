@@ -97,5 +97,6 @@
   
   
   (method override (timer-pulse)
+    @fixme ;; timer pulses were only generated on windows, and at 1ms intervals
     (unless (> (current-repl-level) 0)
       (render-scene)))))

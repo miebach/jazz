@@ -39,19 +39,39 @@
 
 
 (export (jazz.ui.window.platform.independant)
-        (jazz.ui.window.platform.carbon  (cond carbon))
-        (jazz.ui.window.platform.windows (cond windows))
-        (jazz.ui.window.platform.x11     (cond x11)))
+        (jazz.ui.window.platform.WindowManager))
 
 
 (import (jazz.ui)
         (jazz.ui.window.platform.independant)
+        (jazz.ui.window.platform.WindowManager)
         (jazz.ui.window.platform.carbon  (cond carbon))
         (jazz.ui.window.platform.windows (cond windows))
         (jazz.ui.window.platform.x11     (cond x11))
         (jazz.debuggee)
         (jazz.graphic)
         (jazz.system))
+
+
+
+(cond-expand
+ (carbon
+  (definition public (initialize-window-manager)
+    (*window-manager* (new CarbonWindowManager))))
+ (windows
+  (definition public (initialize-window-manager)
+    (*window-manager* (new WindowsWindowManager))))
+ (x11
+  (definition public (initialize-window-manager)
+    (*window-manager* (new X11WindowManager)))))
+
+
+;; (definition public (initialize-window-manager)
+;; ;  (jazz.debuggee.trace-internal X11WindowManager)
+;; ;  (jazz.debuggee.trace-internal Popup)
+;;   (*window-manager* (new X11WindowManager))
+;;   (x11-synchronize~ (*window-manager*) #t)
+;;   )
 
 
 ;;;
@@ -63,7 +83,7 @@
 
 
 (definition Desktop-DC #f)
-  
+
 
 (definition public (desktop-dc)
   (unless Desktop-DC
@@ -91,93 +111,31 @@
 ;;;
 
 
-(definition public (select-foreground-window handle)
-  (assert handle)
-  (platform-select-foreground-window handle))
-
-
-(definition public (get-window-handle-title handle)
-  (assert handle)
-  (platform-get-window-handle-title handle))
-
-
-;;;
-;;;; Loop
-;;;
+(definition public (set-cursor cursor) ;; hack
+  (wm-set-cursor~ (*window-manager*) cursor))
 
 
 (definition public (process-events)
-  (define (process-events-single-threaded)
-    (declare (proper-tail-calls))
-    (let (loop)
-      (with-restart-catcher 'resume-loop (present-event-loop-restart) #f
-        (lambda ()
-          (catch Cancel-Signal
-            (process-messages-single-threaded
-              (lambda ()
-                (let (loop)
-                  (let ((thunk (thread-read-non-blocking)))
-                    (when (not (eof-object? thunk))
-                      (with-exception-debugger (get-exception-debugger)
-                        thunk)
-                      (loop)))))))))
+  (declare (proper-tail-calls))
+  (let (loop)
+    (with-restart-catcher 'resume-loop (let ((loop (current-loop)))
+                                         (when loop
+                                               (let ((level (get-level~ loop)))
+                                                 (format "Resume event loop{a}"
+                                                         (if (= level 0)
+                                                             ""
+                                                             (format " {a}" level))))))
+                          #f
+      (lambda ()
+        (catch Cancel-Signal
+          (process-messages-single-threaded~ (*window-manager*)
+           (lambda ()
+             (let (loop)
+               (let ((thunk (thread-read-non-blocking)))
+                 (when (not (eof-object? thunk))
+                   (with-exception-debugger (get-exception-debugger) thunk)
+                   (loop)))))))))
       (loop)))
-  
-  (define (process-events-multi-threaded)
-    (declare (proper-tail-calls))
-    (let ((pump (process-messages-multi-threaded)))
-      (when pump
-        (thread-start-loop pump)
-        (thread-start! pump))
-      (unwind-protect
-          (let (loop)
-            (with-restart-catcher 'resume-loop (present-event-loop-restart) #f
-              (lambda ()
-                (catch Cancel-Signal
-                  (let ((thunk (thread-read)))
-                    (with-exception-debugger (get-exception-debugger)
-                      thunk)))))
-            (loop))
-        (when pump
-          (thread-stop-loop pump)))))
-  
-  (define (present-event-loop-restart)
-    (let ((loop (current-loop)))
-      (when loop
-        (let ((level (get-level~ loop)))
-          (format "Resume event loop{a}"
-                  (if (= level 0)
-                      ""
-                    (format " {a}" level)))))))
-  
-  (if (get-events-single-threaded?)
-      (process-events-single-threaded)
-    (process-events-multi-threaded)))
-
-
-;;;
-;;;; Update
-;;;
-
-
-(definition locked-update?
-  #f)
-
-
-(definition public (with-locked-update proc)
-  (if locked-update?
-      (proc)
-    (let ((toplevel (get-toplevel)))
-      (unwind-protect
-          (begin
-            (platform-lock-window-update (get-handle~ toplevel))
-            (set! locked-update? #t)
-            (proc))
-        (when locked-update?
-          (platform-lock-window-update #f)
-          (set! locked-update? #f)
-          (when (open?~ toplevel)
-            (update-window~ toplevel)))))))
 
 
 ;;;
@@ -196,6 +154,29 @@
 (definition public (set-key-hook hook)
   (set! Key-Hook hook))
 
+
+;; hacks
+
+(definition public (shift-down?)
+  (wm-shift-down?~ (*window-manager*)))
+
+
+(definition public (control-down?)
+  (wm-ctrl-down?~ (*window-manager*)))
+
+
+(definition public (alt-down?)
+  (wm-alt-down?~ (*window-manager*)))
+
+
+(definition public (modifiers-down)
+  (values (shift-down?)
+          (control-down?)
+          (alt-down?)))
+
+
+(definition public (mouse-clicked?)
+  (wm-mouse-clicked?~ (*window-manager*)))
 
 ;;;
 ;;;; Overlappeds
@@ -298,34 +279,16 @@
               (get-overlappeds)))
 
 
-;;;
-;;;; Window Focus
-;;;
+(definition public (current-window)
+  (let ((modal (get-current-modal~ (*window-manager*))))
+    (or (and modal (get-player~ modal))
+        (get-toplevel))))
 
 
 (definition public (get-window-focus)
-  (let ((focus (platform-get-focus)))
+  (let ((focus (wm-get-focus~ (*window-manager*))))
     (when focus
-      (get-window focus))))
-
-
-(definition public (set-window-focus window)
-  (when (neq? window (get-focused-window))
-    (platform-set-focus (and window (get-handle~ window)))))
-
-
-;; It is critical that this variable be used instead of calling get-window-focus
-;; because on X11 the callback to focus-gain is asynchronous and we want to know
-;; the window that has actually received and processed the focus-gain event.
-(definition *focused-window*
-  #f)
-
-
-(definition public (get-focused-window)
-  *focused-window*)
-
-(definition public (set-focused-window window)
-  (set! *focused-window* window))
+      (get-window~ (*window-manager*) focus))))
 
 
 ;;;

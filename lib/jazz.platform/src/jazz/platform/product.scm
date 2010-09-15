@@ -139,8 +139,7 @@
 
 
 (define jazz:x11-units
-  '((jazz.platform.x11 cc-options: "-I/usr/X11R6/include" ld-options: "-L/usr/X11R6/lib -lX11")
-    (jazz.platform.x11.x11-types)))
+  '((jazz.platform.x11 cc-options: "-I/usr/X11R6/include" ld-options: "-L/usr/X11R6/lib -lX11")))
 
 
 (cond-expand

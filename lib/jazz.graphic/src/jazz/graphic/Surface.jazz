@@ -69,7 +69,7 @@
   (slot landscape?         <bool>       initialize #f)
   (slot landscape-rotation <symbol+>    initialize #f)
   (slot landscape-page     <Dimension+> initialize #f)
-
+  (slot update-region      <Region+>    initialize #f                 accessors generate) ;; what does this do?
   
   (method override (initialize surface . rest)
     (nextmethod)
@@ -207,7 +207,7 @@
 
 
   ;;;
-  ;;;; Region
+  ;;;; Fills
   ;;;
   
   
@@ -244,42 +244,8 @@
       (cairo_set_source context pattern)
       (fill)
       (cairo_pattern_destroy pattern)))
-  
-   
-  (method public (ellipse rect <Rect> stroke-color fill-color)
-    (let* ((left (get-left~ rect))
-           (top (get-top~ rect))
-           (w1/2 (fl/ (- (get-right~ rect) left) 2.0))
-           (h1/2 (fl/ (- (get-bottom~ rect) top) 2.0)))
-      (cairo_save context)
-      (cairo_translate context (+ left w1/2) (+ top h1/2))
-      (cairo_scale context w1/2 h1/2)
-      (cairo_arc context 0.0 0.0 1.0 0.0 (* 2 PI))
-      (cairo_restore context))
-    (when stroke-color
-      (set-color stroke-color)
-      (cairo_stroke_preserve context))
-    (when fill-color
-      (set-color fill-color)
-      (fill)))
 
-  
-  (method public (draw-image handle x y)
-    (cairo_set_source_surface context handle (cast <fl> x) (cast <fl> y))
-    (cairo_paint context))
-  
-  
-  (method public (fill-background rect background)
-    (typecase background
-      ((Color) (fill-rect rect background))
-      ((Gradient) (fill-gradient rect background))
-      ((Texture) (fill-texture rect background))
-      ((List) (for-each (lambda (background)
-                          (fill-background rect background))
-                        background))
-      (else (error "Unable to fill background with {s}" background))))
-  
-  
+
   (method public (fill-gradient rect gradient)
     (let ((parts (get-parts~ gradient)))
       (let ((stops (if (every? (lambda (part)
@@ -294,8 +260,8 @@
                      parts))
             (direction (get-kind~ gradient)))
         (gradient-fill rect stops direction: direction))))
-  
-  
+
+
   (method public (fill-texture rect texture)
     (define (texture-image)
       (let ((content (get-content~ texture)))
@@ -339,6 +305,22 @@
             ((fill) (draw-filled image))
             ((tile) (draw-tiled image))
             (else (error "Unknown texture mode: {s}" mode)))))))
+
+
+  (method public (draw-image handle x y)
+    (cairo_set_source_surface context handle (cast <fl> x) (cast <fl> y))
+    (cairo_paint context))
+
+  
+  (method public (fill-background rect background)
+    (typecase background
+      ((Color) (fill-rect rect background))
+      ((Gradient) (fill-gradient rect background))
+      ((Texture) (fill-texture rect background))
+      ((List) (for-each (lambda (background)
+                          (fill-background rect background))
+                        background))
+      (else (error "Unable to fill background with {s}" background))))
   
   
   ;;;
@@ -386,7 +368,30 @@
     (rectangle-path$fl$
       (new Rect$fl$ (+ (get-left~ rect) 0.5) (+ (get-top~ rect) 0.5) (- (get-right~ rect) 0.5) (- (get-bottom~ rect) 0.5)))
     (stroke))
+
+
+  ;;;
+  ;;;; Ellipse
+  ;;;
+
   
+  (method public (ellipse rect <Rect> stroke-color fill-color)
+    (let* ((left (get-left~ rect))
+           (top (get-top~ rect))
+           (w1/2 (fl/ (- (get-right~ rect) left) 2.0))
+           (h1/2 (fl/ (- (get-bottom~ rect) top) 2.0)))
+      (cairo_save context)
+      (cairo_translate context (+ left w1/2) (+ top h1/2))
+      (cairo_scale context w1/2 h1/2)
+      (cairo_arc context 0.0 0.0 1.0 0.0 PI*2)
+      (cairo_restore context))
+    (when stroke-color
+      (set-color stroke-color)
+      (cairo_stroke_preserve context))
+    (when fill-color
+      (set-color fill-color)
+      (fill)))
+    
   
   ;;;
   ;;;; Primitives

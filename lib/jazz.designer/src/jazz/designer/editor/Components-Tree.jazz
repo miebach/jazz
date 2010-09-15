@@ -48,6 +48,7 @@
         (jazz.system)
         (jazz.ui)
         (jazz.ui.view)
+        (jazz.ui.window)
         (jazz.ui.clipboard))
 
 
@@ -234,7 +235,7 @@
   (method override (can-paste-properties?)
     (let ((components (selected-components)))
       (when components
-        (when (clipboard-format-available? 'jazz-parcels)
+        (when (clipboard-format-available?~ (*window-manager*) 'jazz-parcels)
           (let ((parcels (get-jazz-parcels)))
             (when (= (length parcels) 1)
               (let* ((parcel (car parcels))

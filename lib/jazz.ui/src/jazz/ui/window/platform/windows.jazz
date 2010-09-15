@@ -53,231 +53,207 @@
         (jazz.system)
         (jazz.ui)
         (jazz.ui.window.platform.independant)
-        (profiler))
+        (jazz.ui.window.platform.WindowManager))
 
 
-;;;
-;;;; Processed
-;;;
+(class WindowsWindowManager extends WindowManager
+
+  (slot Windows-Table  initialize (make-table test: eqv?))
+  ;; So that the window<->hwnd association can be made on the very first windows message
+  (slot in-creation    initialize #f                      accessors generate)
+  (slot Cursor-Cache   initialize (make-table test: eqv?))
+  (slot callback-level initialize 0)
+  (slot callback-thread-mutex initialize (make-mutex 'callback-thread-mutex))
+  (slot callback-thread-condition initialize (make-condition 'callback-thread-condition))
+  (slot CLASS_ATOM initialize #f) ;; some debugging BS
+  (slot Symbolic-Keys initialize
+        (list->table
+         (list
+          (cons VK_OEM_MINUS  #\-)
+          (cons VK_OEM_PLUS   #\+)
+          (cons VK_OEM_COMMA  #\,)
+          (cons VK_OEM_PERIOD #\.)
+          (cons VK_OEM_1      #\;)
+          (cons VK_OEM_2      #\/)
+          (cons VK_OEM_3      #\~)
+          (cons VK_OEM_4      #\[)
+          (cons VK_OEM_5      #\\)
+          (cons VK_OEM_6      #\])
+          (cons VK_OEM_7      #\')
+          (cons VK_F1         'F1)
+          (cons VK_F2         'F2)
+          (cons VK_F3         'F3)
+          (cons VK_F4         'F4)
+          (cons VK_F5         'F5)
+          (cons VK_F6         'F6)
+          (cons VK_F7         'F7)
+          (cons VK_F8         'F8)
+          (cons VK_F9         'F9)
+          (cons VK_F10        'F10)
+          (cons VK_F11        'F11)
+          (cons VK_F12        'F12)
+          (cons VK_ESCAPE     'Escape)
+          (cons VK_BACK       'Backspace)
+          (cons VK_RETURN     'Return)
+          (cons VK_SPACE      'Space)
+          (cons VK_TAB        'Tab)
+          (cons VK_HOME       'Home)
+          (cons VK_END        'End)
+          (cons VK_LEFT       'Left)
+          (cons VK_UP         'Up)
+          (cons VK_RIGHT      'Right)
+          (cons VK_DOWN       'Down)
+          (cons VK_PRIOR      'Prior)
+          (cons VK_NEXT       'Next)
+          (cons VK_INSERT     'Insert)
+          (cons VK_PAUSE      'Pause)
+          (cons VK_DELETE     'Delete)
+          (cons VK_ADD        'Add)
+          (cons VK_SUBTRACT   'Subtract)
+          (cons VK_MULTIPLY   'Multiply)
+          (cons VK_DIVIDE     'Divide))
+         test: eqv?))
+  (slot Cursors initialize
+        (list
+         (list :arrow               IDC_ARROW)
+         (list :wait                IDC_WAIT)
+         (list :ibeam               IDC_IBEAM)
+         (list :cross               IDC_CROSS)
+         (list :finger              IDC_HAND)
+         (list :all                 IDC_SIZEALL)
+         (list :west-east           IDC_SIZEWE)
+         (list :no                  IDC_NO)
+         (list :move                {Cursor-Resource "Move"})
+         (list :opened-hand         {Cursor-Resource "OpenedHand"})
+         (list :closed-hand         {Cursor-Resource "ClosedHand"})
+         (list :zoom                {Cursor-Resource "Zoom"})
+         (list :zoom-in             {Cursor-Resource "ZoomIn"})
+         (list :zoom-out            {Cursor-Resource "ZoomOut"})
+         (list :spy                 {Cursor-Resource "Spy"})
+         (list :left-arrow          {Cursor-Resource "LeftArrow"})
+         (list :vertical-splitter   {Cursor-Resource "VerticalSplitter"})
+         (list :horizontal-splitter {Cursor-Resource "HorizontalSplitter"})))
 
 
-(definition public unprocessed '(unprocessed))
-(definition public processed '(processed))
-
-
-(definition (processed-result return)
-  (if (and (pair? return) (eq? (car return) 'processed))
-      (if (null? (cdr return))
-          0
-        (cadr return))
-    0))
-
+  (method override (initialize . rest)
+    (define (load-product-icon cx cy)
+      (let ((product (or (jazz-product) 'jazz)))
+        (let ((file (string-append kernel-install (format "build/products/{a}/{a}.ico" product product))))
+          (if (file-exists? file)
+              (LoadImage NULL file IMAGE_ICON cx cy LR_LOADFROMFILE)
+              NULL))))
+          
+    (let ((instance (current-instance))
+          (background (GetSysColorBrush COLOR_BTNFACE))
+          (wc (WNDCLASSEX-make)))
+      (WNDCLASSEX-cbSize-set! wc         (WNDCLASSEX-sizeof))
+      (WNDCLASSEX-style-set! wc          (bitwise-ior CS_DBLCLKS))
+      (WNDCLASSEX-lpfnWndProc-set! wc    call-process-hwnd-message)
+      (WNDCLASSEX-cbClsExtra-set! wc     0)
+      (WNDCLASSEX-cbWndExtra-set! wc     0)
+      (WNDCLASSEX-hInstance-set! wc      instance)
+      (WNDCLASSEX-hIcon-set! wc          (load-product-icon 32 32))
+      (WNDCLASSEX-hCursor-set! wc        NULL)
+      (WNDCLASSEX-hbrBackground-set! wc  background)
+      (WNDCLASSEX-lpszMenuName-set! wc   NULL)
+      (WNDCLASSEX-lpszClassName-set! wc  "JWindow")
+      (WNDCLASSEX-hIconSm-set! wc        (load-product-icon 16 16))
+      (set! CLASS_ATOM (RegisterClassEx wc)))
+    (set-process-hwnd-message message-callback)
+    (apply nextmethod rest))
+  
 
 ;;;
 ;;;; Window
 ;;;
 
 
-(definition public Windows-Table
-  (make-table test: eqv?))
-
-
-(definition public inline (get-window hwnd)
+(method public override (get-window hwnd)
   (let ((hwnd (if (foreign? hwnd) (foreign-address hwnd) hwnd)))
     (table-ref Windows-Table hwnd #f)))
 
 
-(definition public inline (set-window hwnd window)
+(method public override (register-window hwnd window)
   (if window
       (table-set! Windows-Table (foreign-address hwnd) window)
     (table-clear Windows-Table (foreign-address hwnd))))
 
 
-;; So that the window<->hwnd association can be made on the very first windows message
-(definition in-creation #f)
-
-
-(definition (set-in-creation in)
-  (set! in-creation in))
-
-
-(definition (get-in-creation)
-  in-creation)
-
-
-(generic (window-class (<Window> window))
-  CLASS_ATOM)
-
-
-(definition package (class-style)
-  (bitwise-ior CS_DBLCLKS))
-
-
-(definition package (class-background)
-  (GetSysColorBrush COLOR_BTNFACE))
-
-
-(definition package (get-class-background handle)
-  (GetClassLong handle GCL_HBRBACKGROUND))
-
-
-(definition package (platform-erase-background handle)
-  unprocessed)
-
-
-(definition package CLASS_ATOM
-  #f)
-
-
-(definition (register-window-class)
-  (let ((instance (current-instance))
-        (background (class-background))
-        (wc (WNDCLASSEX-make)))
-    (WNDCLASSEX-cbSize-set! wc         (WNDCLASSEX-sizeof))
-    (WNDCLASSEX-style-set! wc          (class-style))
-    (WNDCLASSEX-lpfnWndProc-set! wc    call-process-hwnd-message)
-    (WNDCLASSEX-cbClsExtra-set! wc     0)
-    (WNDCLASSEX-cbWndExtra-set! wc     0)
-    (WNDCLASSEX-hInstance-set! wc      instance)
-    (WNDCLASSEX-hIcon-set! wc          (load-product-icon 32 32))
-    (WNDCLASSEX-hCursor-set! wc        NULL)
-    (WNDCLASSEX-hbrBackground-set! wc  background)
-    (WNDCLASSEX-lpszMenuName-set! wc   NULL)
-    (WNDCLASSEX-lpszClassName-set! wc  "JWindow")
-    (WNDCLASSEX-hIconSm-set! wc        (load-product-icon 16 16))
-    (set! CLASS_ATOM (RegisterClassEx wc))))
-
-
-(definition package (load-product-icon cx cy)
-  (let ((product (or (jazz-product) 'jazz)))
-    (let ((file (string-append kernel-install (format "build/products/{a}/{a}.ico" product product))))
-      (if (file-exists? file)
-          (LoadImage NULL file IMAGE_ICON cx cy LR_LOADFROMFILE)
-        NULL))))
-
-
-(register-window-class)
-
-
-(generic (window-style (<Window> window) rest)
-  (bitwise-ior WS_CHILD
-               WS_CLIPCHILDREN
-               WS_CLIPSIBLINGS))
-
-
-(specific (window-style (<External-Frame> frame) rest)
-  (bitwise-ior WS_POPUP
-               WS_OVERLAPPEDWINDOW
-               WS_SYSMENU
-               WS_CLIPCHILDREN
-               WS_CLIPSIBLINGS))
-
-
-(specific (window-style (<Popup> popup) rest)
-  (bitwise-ior WS_POPUP
-               WS_CLIPCHILDREN))
-
-
-(specific (window-style (<Palette> palette) rest)
-  (bitwise-ior WS_POPUP
-               WS_OVERLAPPEDWINDOW
-               WS_CLIPCHILDREN))
-
-
-(specific (window-style (<Toplevel> toplevel) rest)
-  (bitwise-ior WS_CLIPSIBLINGS
-               WS_CLIPCHILDREN
-               WS_POPUP
-               WS_OVERLAPPEDWINDOW
-               WS_MINIMIZEBOX
-               WS_SYSMENU))
-
-
-(specific (window-style (<Dialog> dialog) rest)
-  (bitwise-ior WS_CLIPCHILDREN
-               WS_CLIPSIBLINGS
-               WS_POPUP
-               WS_BORDER
-               WS_OVERLAPPED
-               WS_CAPTION
-               WS_DLGFRAME
-               (if (getf rest sizable?: not-found: #t) WS_THICKFRAME 0)
-               (if (getf rest closable?: not-found: #t) WS_SYSMENU 0)))
-
-
-(generic (window-ex-style (<Window> window) rest)
-  0)
-
-
-(specific (window-ex-style (<External-Frame> frame) rest)
-  0)
-
-
-(specific (window-ex-style (<Popup> window) rest)
-  WS_EX_TOOLWINDOW)
-
-
-(specific (window-ex-style (<Palette> palette) rest)
-  WS_EX_TOOLWINDOW)
-
-
-(specific (window-ex-style (<Toplevel> toplevel) rest)
-  WS_EX_APPWINDOW)
-
-
-(specific (window-ex-style (<Dialog> dialog) rest)
-  WS_EX_DLGMODALFRAME)
-
-
-(definition package (window-parent window)
+(method public override (window-parent window)
   (let ((parent (get-parent~ window)))
     (if parent
         (get-handle~ parent)
       NULL)))
 
 
-(definition package (window-default-parent window)
+(method public override (window-default-parent window)
   (typecase window
     ((Dialog) (get-toplevel))
     (else #f)))
 
 
-(generic (create-handle (<Window> window) rest)
-  (CreateWindowEx
-    (window-ex-style window rest)
-    CLASS_ATOM
-    @temp
-    (window-class window)
-    NULL
-    (window-style window rest)
-    0 0 500 500
-    (window-parent window)
-    NULL
-    (current-instance)
-    NULL))
+  (method public override (prepare-handle window rest)
+    (define (create-handle window rest)
+      (if (instance-of? window Desktop)
+          (GetDesktopWindow)
+          (CreateWindowEx
+           (typecase window
+                     ((Popup) WS_EX_TOOLWINDOW)
+                     ((Palette) WS_EX_TOOLWINDOW)
+                     ((Dialog) WS_EX_DLGMODALFRAME)
+                     ((Toplevel) WS_EX_APPWINDOW)
+                     ((External-Frame) 0)
+                     ((Window) 0))
+           CLASS_ATOM
+           NULL
+           ;;    (window-style window rest)
+           (typecase window
+                     ((Popup) (bitwise-ior WS_POPUP
+                                           WS_CLIPCHILDREN))
+                     ((Palette) (bitwise-ior WS_POPUP
+                                             WS_OVERLAPPEDWINDOW
+                                             WS_CLIPCHILDREN))
+                     ((Dialog) (bitwise-ior WS_CLIPCHILDREN
+                                            WS_CLIPSIBLINGS
+                                            WS_POPUP
+                                            WS_BORDER
+                                            WS_OVERLAPPED
+                                            WS_CAPTION
+                                            WS_DLGFRAME
+                                            (if (getf rest sizable?: not-found: #t) WS_THICKFRAME 0)
+                                            (if (getf rest closable?: not-found: #t) WS_SYSMENU 0)))
+                     ((Toplevel) (bitwise-ior WS_CLIPSIBLINGS
+                                              WS_CLIPCHILDREN
+                                              WS_POPUP
+                                              WS_OVERLAPPEDWINDOW
+                                              WS_MINIMIZEBOX
+                                              WS_SYSMENU))
+                     ((External-Frame) (bitwise-ior WS_POPUP
+                                                    WS_OVERLAPPEDWINDOW
+                                                    WS_SYSMENU
+                                                    WS_CLIPCHILDREN
+                                                    WS_CLIPSIBLINGS))
+                     ((Window) (bitwise-ior WS_CHILD
+                                            WS_CLIPCHILDREN
+                                            WS_CLIPSIBLINGS)))
+           0 0 500 500
+           (window-parent window)
+           NULL
+           (current-instance)
+           NULL)))
+        
+    (bind-keywords ((hwnd #f) . others) rest
+      (set-in-creation window)
+      (let ((hwnd (create-handle window rest)))
+        (if (not hwnd)
+            (error "Unable to create window {t} error {t}"
+                   (list class: CLASS_ATOM parent: (window-parent window))
+                   (GetLastError))
+            (DragAcceptFiles hwnd #t)
+            hwnd))))
 
 
-(specific (create-handle (<Desktop> desktop) rest)
-  (GetDesktopWindow))
-
-
-(definition package (prepare-handle window rest)
-  (bind-keywords ((hwnd #f) . others) rest
-    (set-in-creation window)
-    (let ((hwnd (create-handle window rest)))
-      (if (not hwnd)
-          (error "Unable to create window {t} error {t}"
-                 (list class: (window-class window) style: (window-style window rest) ex-style: (window-ex-style window rest) parent: (window-parent window))
-                 (GetLastError))
-        (DragAcceptFiles hwnd #t)
-        hwnd))))
-
-
-(definition package (bring-window-to-top hwnd)
-  (BringWindowToTop hwnd))
-
-
-(definition package (window-state handle)
+(method public override (window-state handle)
   (let ((placement (WINDOWPLACEMENT-make)))
     (WINDOWPLACEMENT-length-set! placement (WINDOWPLACEMENT-sizeof))
     (GetWindowPlacement handle placement)
@@ -288,7 +264,7 @@
       (WINDOWPLACEMENT-free placement))))
 
 
-(definition package (set-window-placement handle position size)
+(method public override (set-window-placement handle position size)
   (let ((placement (WINDOWPLACEMENT-make)))
     (WINDOWPLACEMENT-length-set! placement (WINDOWPLACEMENT-sizeof))
     (WINDOWPLACEMENT-showCmd-set! placement SW_SHOWNORMAL)
@@ -301,58 +277,37 @@
     (WINDOWPLACEMENT-free placement)))
 
 
-(definition package (show-window handle)
+(method public override (show-window handle)
   (ShowWindow handle SW_SHOWNORMAL))
 
 
-(definition package (show-maximized handle)
+(method public override (show-maximized handle)
   (ShowWindow handle SW_MAXIMIZE))
 
 
-(definition package (show-restored handle)
+(method public override (show-restored handle)
   (ShowWindow handle SW_RESTORE))
 
 
-(definition package (hide-window handle)
+(method public override (hide-window handle)
   (ShowWindow handle SW_HIDE))
  
  
-(definition package (minimize-window handle)
+(method public override (minimize-window handle)
   (ShowWindow handle SW_MINIMIZE))
 
 
-(definition package (maximize-window handle)
+(method public override (maximize-window handle)
   (ShowWindow handle SW_MAXIMIZE))
 
  
-(definition package (restore-window handle)
+(method public override (restore-window handle)
   (ShowWindow handle SW_RESTORE))
 
 
-(definition package (destroy-window handle)
-  (DestroyWindow handle))
-
-
-(definition (dispatch-message window msg <int> wparam <int> lparam <int>)
-  (let ((return (process-window-message window msg wparam lparam)))
-    (if (eq? return unprocessed)
-        (DefWindowProc (get-handle~ window) msg wparam lparam)
-      (processed-result return))))
-
-
-;;;
-;;;; Events
-;;;
-
-
-(definition package (setup-events)
-  ;; one millisecond
-  (define events-heartbeat
-    1)
-  
-  (if (get-events-single-threaded?)
-      (SetTimer (get-toplevel-window-handle) 0 events-heartbeat NULL)
-    (thread-priority-boost-set! (event-thread) 1)))
+(method public override (destroy-window handle)
+  (DestroyWindow handle)
+  (nextmethod handle))
 
 
 ;;;
@@ -396,7 +351,7 @@
 ;;;
 
 
-(definition package (process-messages-single-threaded thunk)
+(method public override (process-messages-single-threaded thunk)
   (define (process-message msg)
     (unless (translate-shortcut msg)
       (TranslateMessage msg)
@@ -417,214 +372,29 @@
     (MSG-free msg)))
 
 
-(definition package (process-messages-multi-threaded)
-  (define (process-message msg)
-    (execute-event
-      (lambda ()
-        (unless (translate-shortcut msg)
-          (TranslateMessage msg)
-          (DispatchMessage msg)))))
-  
-  (define (process)
-    (declare (proper-tail-calls))
-    
-    ;; put back here to see if moving it before the read was the cause of many
-    ;; intermittent bugs
-    
-    ;; because MsgWaitForMultipleObjects will *not* remove messages already present
-    ;; in the message queue, we need to process those before the blocking call to read
-    (let ((msg (MSG-make)))
-      (while (PeekMessage msg NULL 0 0 PM_REMOVE)
-        (process-message msg))
-      (MSG-free msg))
-    
-    (let ((port (open-event-queue QS_ALLINPUT))
-          (thread (current-thread)))
-      (let (loop)
-        (let ((msg (read port)))
-          (process-message msg)
-          (MSG-free msg))
-        (when (thread-loop? thread)
-          (loop)))))
-  
-  (new-thread process 'message-pump))
-
-
 ;;;
 ;;;; Dispatch
 ;;;
 
 
-(definition callback-level
-  0)
-
-(definition callback-thread-mutex
-  (make-mutex 'callback-thread-mutex))
-
-(definition callback-thread-condition
-  (make-condition 'callback-thread-condition))
-
-
-(definition (message-callback hwnd <foreign> msg <int> wparam <int> lparam <int>)
-  (define (process)
-    (let ((window (get-window hwnd)))
-      (when (and (not window) (get-in-creation))
-        (set! window (get-in-creation))
-        (set-handle~ window hwnd)
-        (set-window hwnd window)
-        (set-in-creation #f))
-      (if (not window)
-          (DefWindowProc hwnd msg wparam lparam)
-        (dispatch-message window msg wparam lparam))))
-  
-  (with-c-stack-unwinding-exit
-    (lambda ()
-      (if (get-events-single-threaded?)
-          (if (primordial-thread?)
-              (process)
-            (snapshot-process reason: "Message callback from non-primordial thread")
-            (exit 1))
-        (let ((level (begin
-                       (mutex-lock! callback-thread-mutex)
-                       (increase! callback-level)
-                       (prog1 callback-level
-                         (mutex-unlock! callback-thread-mutex)))))
-          (unwind-protect
-              (call-event process)
-            (let (iterate)
-              (mutex-lock! callback-thread-mutex)
-              (if (= level callback-level)
-                  (begin
-                    (decrease! callback-level)
-                    (mutex-unlock! callback-thread-mutex))
-                @debug
-                (terminal 'interleaved-problem-detected (current-thread) level callback-level hwnd msg wparam lparam)
-                (mutex-unlock! callback-thread-mutex callback-thread-condition)
-                (iterate)))))))
-    (lambda ()
-      (DefWindowProc hwnd msg wparam lparam))))
-
-
-(set-process-hwnd-message message-callback)
-
-
-;;;
-;;;; Shortcuts
-;;;
-
-
-;; - standard usage -
-;; ()                     : letters
-;; (:shift)               : capital letters
-;; (:control)             : mostly for focus
-;; (:alt)                 : mostly for focus
-;; (:control :alt)        : mostly for platform standards and window selection
-;; (:control :shift)      : mostly for window selection
-;; (:alt :shift)          : workspace management
-;; (:control :alt :shift) : favorite files
-
-
-(definition public Symbolic-Keys
-  (list->table
-    (list
-      (cons VK_OEM_MINUS  #\-)
-      (cons VK_OEM_PLUS   #\+)
-      (cons VK_OEM_COMMA  #\,)
-      (cons VK_OEM_PERIOD #\.)
-      (cons VK_OEM_1      #\;)
-      (cons VK_OEM_2      #\/)
-      (cons VK_OEM_3      #\~)
-      (cons VK_OEM_4      #\[)
-      (cons VK_OEM_5      #\\)
-      (cons VK_OEM_6      #\])
-      (cons VK_OEM_7      #\')
-      (cons VK_F1         'F1)
-      (cons VK_F2         'F2)
-      (cons VK_F3         'F3)
-      (cons VK_F4         'F4)
-      (cons VK_F5         'F5)
-      (cons VK_F6         'F6)
-      (cons VK_F7         'F7)
-      (cons VK_F8         'F8)
-      (cons VK_F9         'F9)
-      (cons VK_F10        'F10)
-      (cons VK_F11        'F11)
-      (cons VK_F12        'F12)
-      (cons VK_ESCAPE     'Escape)
-      (cons VK_BACK       'Backspace)
-      (cons VK_RETURN     'Return)
-      (cons VK_SPACE      'Space)
-      (cons VK_TAB        'Tab)
-      (cons VK_HOME       'Home)
-      (cons VK_END        'End)
-      (cons VK_LEFT       'Left)
-      (cons VK_UP         'Up)
-      (cons VK_RIGHT      'Right)
-      (cons VK_DOWN       'Down)
-      (cons VK_PRIOR      'Prior)
-      (cons VK_NEXT       'Next)
-      (cons VK_INSERT     'Insert)
-      (cons VK_PAUSE      'Pause)
-      (cons VK_DELETE     'Delete)
-      (cons VK_ADD        'Add)
-      (cons VK_SUBTRACT   'Subtract)
-      (cons VK_MULTIPLY   'Multiply)
-      (cons VK_DIVIDE     'Divide))
-    test: eqv?))
-
-
-(definition (translate-shortcut msg)
-  (define (modifiers)
-    (let ((modifiers '()))
-      (let ((try
-              (lambda (down? modifier)
-                (when down?
-                  (set! modifiers (cons modifier modifiers))))))
-        (try (alt-down?) :alt)
-        (try (shift-down?) :shift)
-        (try (control-down?) :control)
-        modifiers)))
-  
-  (define (key code)
-    (and (/= code VK_SHIFT)
-         (/= code VK_CONTROL)
-         (/= code VK_MENU)
-         (/= code VK_LMENU)
-         (or (table-ref Symbolic-Keys code #f)
-             (integer->char code))))
-  
-  (let ((appl (get-application)))
-    (if (not appl)
-        #f
-      (let ((message (MSG-message-ref msg)))
-        (if (or (= message WM_KEYDOWN)
-                (= message WM_SYSKEYDOWN))
-            (let ((key (key (MSG-wParam-ref msg))))
-              (if key
-                  (dispatch-shortcut~ appl (new Shortcut (modifiers) key))
-                #f))
-          #f)))))
-
-
-;;;
-;;;; Messages
-;;;
-
-
-(definition (process-window-message window msg <int> wparam <int> lparam <int>)
+(method (process-window-message window msg <int> wparam <int> lparam <int>)
   (define get-x-lparam signed-loword)
   (define get-y-lparam signed-hiword)
   (define get-wheel-delta-wparam signed-hiword)
-  
+
+  (define (wm-get-update-region handle)
+    (let ((region (new Region)))
+      (GetUpdateRgn handle (get-handle~ region) #f)
+      region))
+
   (define (convert-state wparam)
     (ecase wparam
       ((SIZE_MINIMIZED) 'minimized)
       ((SIZE_MAXIMIZED) 'maximized)
       (else             'restored)))
-  
+
   (ecase msg
-    ((WM_ERASEBKGND)      (erase-background~ window wparam))
-    ((WM_PAINT)           (with ((region (platform-get-update-region (get-handle~ window))))
+    ((WM_PAINT)           (with ((region (wm-get-update-region (get-handle~ window))))
                             (paint~ window region)))
     ((WM_SETCURSOR)       (cursor-update~ window (= (loword lparam) HTCLIENT)))
     ((WM_MOUSEMOVE)       (mouse-move~ window (get-x-lparam lparam) (get-y-lparam lparam)))
@@ -663,22 +433,131 @@
     ((WM_SETFOCUS)        (focus-gain~ window))
     ((WM_KILLFOCUS)       (focus-lose~ window))
     ((WM_DROPFILES)       (drop-files~ window wparam))
-    ((WM_SETTINGCHANGE)   (settings-change window wparam))
-    ((WM_TIMER)           (timer-pulse~ window))
     (else                 (unprocessed-message~ window))))
 
 
-(definition public (set-capture handle)
+(method (message-callback hwnd <foreign> msg <int> wparam <int> lparam <int>)
+  (define (process)
+    (let ((window (get-window hwnd)))
+      (when (and (not window) (get-in-creation))
+        (set! window (get-in-creation))
+        (set-handle~ window hwnd)
+        (register-window hwnd window)
+        (set-in-creation #f))
+      (if (not window)
+          (DefWindowProc hwnd msg wparam lparam)
+        (dispatch-message window msg wparam lparam))))
+  
+  (with-c-stack-unwinding-exit
+    (lambda ()
+      (if (eq? (current-thread) (primordial-thread))
+          (process)
+          (snapshot-process reason: "Message callback from non-primordial thread")
+          (exit 1)))
+    (lambda ()
+      (DefWindowProc hwnd msg wparam lparam))))
+
+
+(method (dispatch-message window msg <int> wparam <int> lparam <int>)
+  (let ((return (process-window-message window msg wparam lparam)))
+    (if (eq? return unprocessed)
+        (DefWindowProc (get-handle~ window) msg wparam lparam)
+        (if (and (pair? return) (eq? (car return) 'processed))
+            (if (null? (cdr return))
+                0
+                (cadr return))
+            0))))
+
+;;;
+;;;; Shortcuts
+;;;
+
+
+;; - standard usage -
+;; ()                     : letters
+;; (:shift)               : capital letters
+;; (:control)             : mostly for focus
+;; (:alt)                 : mostly for focus
+;; (:control :alt)        : mostly for platform standards and window selection
+;; (:control :shift)      : mostly for window selection
+;; (:alt :shift)          : workspace management
+;; (:control :alt :shift) : favorite files
+
+
+(method (translate-shortcut msg)
+  (define (modifiers)
+    (let ((modifiers '()))
+      (let ((try
+              (lambda (down? modifier)
+                (when down?
+                  (set! modifiers (cons modifier modifiers))))))
+        (try (wm-alt-down?) :alt)
+        (try (wm-shift-down?) :shift)
+        (try (wm-ctrl-down?) :control)
+        modifiers)))
+  
+  (define (key code)
+    (and (/= code VK_SHIFT)
+         (/= code VK_CONTROL)
+         (/= code VK_MENU)
+         (/= code VK_LMENU)
+         (or (table-ref Symbolic-Keys code #f)
+             (integer->char code))))
+  
+  (let ((appl (get-application)))
+    (if (not appl)
+        #f
+      (let ((message (MSG-message-ref msg)))
+        (if (or (= message WM_KEYDOWN)
+                (= message WM_SYSKEYDOWN))
+            (let ((key (key (MSG-wParam-ref msg))))
+              (if key
+                  (dispatch-shortcut~ appl (new Shortcut (modifiers) key))
+                #f))
+          #f)))))
+
+
+;;;
+;;;; Input
+;;;
+
+
+  (method (key-down? key)
+    (/= (hibyte (GetAsyncKeyState key)) 0))
+
+
+  (method public override (wm-shift-down?)
+    (key-down? VK_SHIFT))
+
+
+  (method public override (wm-ctrl-down?)
+    (and (key-down? VK_CONTROL) (not (key-down? VK_RMENU))))
+
+
+  (method public override (wm-alt-down?)
+    (key-down? VK_LMENU))
+
+
+  (method public override (wm-mouse-clicked?)
+    (key-down? VK_LBUTTON))
+
+
+;;;
+;;;; Messages
+;;;
+
+
+(method public override (set-capture handle)
   (SetCapture handle))
 
 
-(definition public (unset-capture)
+(method public override (unset-capture)
   (ReleaseCapture))
 
 
-(definition package (with-platform-painting window platform-data proc)
+(method public override (with-platform-painting window wm-data proc)
   (if (debug-painting?)
-      (debugging-with-platform-painting window platform-data proc)
+      (debugging-with-wm-painting window proc)
     (let ((handle (get-handle~ window)))
       (let ((ps (PAINTSTRUCT-make)))
         (let ((hdc (BeginPaint handle ps)))
@@ -691,7 +570,7 @@
     processed))
 
 
-(definition (debugging-with-platform-painting window platform-data proc)
+(definition (debugging-with-wm-painting window proc)
   (let ((handle (get-handle~ window)))
     (let ((hdc (GetDC handle)))
       (ValidateRgn handle NULL)
@@ -702,52 +581,8 @@
   processed)
 
 
-(definition public (get-window-surface window)
+(method public override (get-window-surface window)
   (cairo_win32_surface_create (GetDC (get-handle~ window))))
-
-
-(definition (settings-change window wparam)
-  (ecase wparam
-    ((SPI_SETWORKAREA)
-     @not-correct-to-call-set-fullscreen?
-     (when (is? window Toplevel)
-       (set-fullscreen?~ window #t)))))
-
-
-;;;
-;;;; Style
-;;;
-
-
-(definition (get-style handle)
-  (GetWindowLong handle GWL_STYLE))
-
-
-(definition (set-style handle style)
-  (SetWindowLong handle GWL_STYLE style))
-
-
-(definition (get-ex-style handle)
-  (GetWindowLong handle GWL_EXSTYLE))
-
-
-(definition (set-ex-style handle style)
-  (SetWindowLong handle GWL_EXSTYLE style))
-
-
-(definition (child-window? handle)
-  (mask-bit-set? (get-style handle) WS_CHILD))
-
-
-;;;
-;;;; Toplevel
-;;;
-
-
-(definition (get-toplevel-window-handle)
-  (let ((toplevel (get-toplevel)))
-    (when toplevel
-      (get-handle~ toplevel))))
 
 
 ;;;
@@ -755,16 +590,8 @@
 ;;;
 
 
-(definition (get-layered? handle)
-  (mask-bit-set? (get-ex-style handle) WS_EX_LAYERED))
-
-
-(definition (set-layered? handle flag)
-  (SetWindowLong handle GWL_EXSTYLE (mask-bit-set (GetWindowLong handle GWL_EXSTYLE) WS_EX_LAYERED flag)))
-
-
-(definition (set-alpha-blending handle n)
-  (set-layered? handle #t)
+(method public override (set-alpha-blending handle n)
+  (SetWindowLong handle GWL_EXSTYLE (mask-bit-set (GetWindowLong handle GWL_EXSTYLE) WS_EX_LAYERED #t))
   (SetLayeredWindowAttributes handle 0 n LWA_ALPHA)
   (RedrawWindow handle NULL NULL (bitwise-ior RDW_ERASE RDW_INVALIDATE)))
 
@@ -774,15 +601,7 @@
 ;;;
 
 
-(definition public (track-mouse-leave handle)
-  (track-mouse-event handle TME_LEAVE))
-
-
-(definition public (cancel-mouse-leave-tracking handle)
-  (track-mouse-event handle (bitwise-ior TME_CANCEL TME_LEAVE)))
-
-
-(definition (track-mouse-event handle flags (time: time HOVER_DEFAULT))
+(method (track-mouse-event handle flags (time: time HOVER_DEFAULT))
   (let ((rec (TRACKMOUSEEVENT-make)))
     (TRACKMOUSEEVENT-cbSize-set! rec (TRACKMOUSEEVENT-sizeof))
     (TRACKMOUSEEVENT-dwFlags-set! rec flags)
@@ -792,49 +611,28 @@
     (TRACKMOUSEEVENT-free rec)))
 
 
+(method public override (track-mouse-leave handle)
+  (track-mouse-event handle TME_LEAVE))
+
+
+(method public override (cancel-mouse-leave-tracking handle)
+  (track-mouse-event handle (bitwise-ior TME_CANCEL TME_LEAVE)))
+
+
 ;;;
 ;;;; Management
 ;;;
 
 
-(definition package (platform-set-parent handle parent)
+(method public override (wm-set-parent handle parent)
   (SetParent handle (if parent (get-handle~ parent) NULL)))
 
 
-(definition package (set-window-title handle title)
+(method public override (set-window-title handle title)
   (SetWindowText handle title))
 
   
-(definition package (get-window-owner-handle handle)
-  (GetWindow handle GW_OWNER))
-
-
-(definition package (platform-get-first-child handle)
-  (GetWindow handle GW_CHILD))
-
-
-(definition package (platform-get-first-visible-child handle)
-  (let loop ((child-handle (platform-get-first-child handle)))
-    (if child-handle
-        (if (platform-is-window-visible? child-handle)
-            child-handle
-            (loop (platform-get-next-window-handle handle)))
-        #f)))
-
-
-(definition package (platform-get-next-window-handle handle)
-  (GetWindow handle GW_HWNDNEXT))
-
-
-(definition package (platform-is-window-visible? handle)
-  (IsWindowVisible handle))
-
-
-(definition (get-top-window-handle handle)
-  (GetTopWindow handle))
-
-
-(definition public (acquire-point to-handle from-handle shape)
+(method public override (acquire-point to-handle from-handle shape)
   (when (not to-handle)
     (error "No window handle"))
   (let ((acquired (point->POINT shape)))
@@ -843,41 +641,41 @@
       (POINT-free acquired))))
 
 
-(definition public (acquire-rect to-handle from-handle shape)
+(method public override (acquire-rect to-handle from-handle shape)
   (let ((acquired (rect->RECT shape)))
     (MapWindowPoints from-handle to-handle (RECT->POINTS acquired) 2)
     (prog1 (RECT->rect acquired)
       (RECT-free acquired))))
 
 
-(definition package (platform-translate-to-root handle pt)
+(method public override (wm-translate-to-root handle pt)
   (let ((pos (point->POINT pt)))
     (MapWindowPoints handle NULL pos 1)
     (prog1 (new Point (POINT-x-ref pos) (POINT-y-ref pos))
       (POINT-free pos))))
 
 
-(definition package (platform-get-position handle parent-handle) <Point>
+(method public override (wm-get-position handle parent-handle) <Point>
   (let ((rect (RECT-make)))
     (GetWindowRect handle rect)
-    (when (and parent-handle (child-window? handle))
+    (when (and parent-handle (mask-bit-set? (GetWindowLong handle GWL_STYLE) WS_CHILD))
       (MapWindowPoints NULL parent-handle (RECT->POINTS rect) 2))
     (prog1 (new Point (RECT-left-ref rect) (RECT-top-ref rect))
       (RECT-free rect))))
 
 
-(definition package (platform-set-position handle pos)
+(method public override (wm-set-position handle pos)
   (SetWindowPos handle NULL (get-h~ pos) (get-v~ pos) 0 0 (bitwise-ior SWP_NOSIZE SWP_NOZORDER SWP_NOACTIVATE)))
 
 
-(definition package (platform-get-size handle) <Dimension>
+(method public override (wm-get-size handle) <Dimension>
   (let ((rect (RECT-make)))
     (GetClientRect handle rect)
     (prog1 (new Dimension (RECT-right-ref rect) (RECT-bottom-ref rect))
       (RECT-free rect))))
 
 
-(definition package (platform-get-window-size handle) <Dimension>
+(method public override (wm-get-window-size handle) <Dimension>
   (let ((rect (RECT-make)))
     (GetWindowRect handle rect)
     (prog1 (new Dimension (- (RECT-right-ref rect)  (RECT-left-ref rect))
@@ -885,11 +683,11 @@
       (RECT-free rect))))
 
 
-(definition package (platform-set-window-size handle size)
+(method public override (wm-set-window-size handle size)
   (SetWindowPos handle NULL 0 0 (get-width~ size) (get-height~ size) (bitwise-ior SWP_NOCOPYBITS SWP_NOMOVE SWP_NOZORDER SWP_NOACTIVATE)))
 
 
-(definition package (platform-get-rect handle parent-handle) <Rect>
+(method public override (wm-get-rect handle parent-handle) <Rect>
   (let ((rect (RECT-make)))
     (GetWindowRect handle rect)
     (when parent-handle
@@ -898,11 +696,11 @@
       (RECT-free rect))))
 
 
-(definition package (platform-set-rect handle rect)
+(method public override (wm-set-rect handle rect)
   (SetWindowPos handle NULL (get-left~ rect) (get-top~ rect) (rect-width rect) (rect-height rect) (bitwise-ior SWP_NOZORDER SWP_NOACTIVATE)))
 
 
-(definition package (platform-get-bounds handle) <Rect>
+(method public override (wm-get-bounds handle) <Rect>
   (let ((rect (RECT-make)))
     (GetWindowRect handle rect)
     (MapWindowPoints NULL handle rect 2)
@@ -910,14 +708,14 @@
       (RECT-free rect))))
 
 
-(definition package (platform-mouse-position) <Point>
+(method public override (wm-mouse-position) <Point>
   (let ((point (POINT-make)))
     (GetCursorPos point)
     (prog1 (new Point (POINT-x-ref point) (POINT-y-ref point))
       (POINT-free point))))
 
 
-(definition package (platform-window-from-point point)
+(method public override (wm-window-from-point point)
   (let ((pt (POINT-make)))
     (POINT-x-set! pt (get-h~ point))
     (POINT-y-set! pt (get-v~ point))
@@ -925,38 +723,26 @@
       (POINT-free pt))))
 
 
-(definition package (platform-child-window-from-point handle point)
-  (let ((pt (POINT-make)))
-    (POINT-x-set! pt (get-h~ point))
-    (POINT-y-set! pt (get-v~ point))
-    (prog1 (ChildWindowFromPointEx handle pt (bitwise-ior CWP_SKIPINVISIBLE CWP_SKIPDISABLED CWP_SKIPTRANSPARENT))
-      (POINT-free pt))))
-
-
-(definition package (platform-move-window handle x y cx cy)
+(method public override (wm-move-window handle x y cx cy)
   (MoveWindow handle x y cx cy #t))
 
 
-(definition package (platform-window-enabled? handle)
-  (IsWindowEnabled handle))
-
-
-(definition package (platform-enable-window handle)
+(method public override (wm-enable-window handle)
   (EnableWindow handle #t))
 
 
-(definition package (platform-disable-window handle)
+(method public override (wm-disable-window handle)
   (EnableWindow handle #f))
 
 
-(definition package (platform-get-client-rect handle)
+(method public override (wm-get-client-rect handle)
   (let ((rect (RECT-make)))
     (GetClientRect handle rect)
     (prog1 (RECT->rect rect)
       (RECT-free rect))))
 
 
-(definition package (platform-scroll-window handle dh dv rect clip-rect)
+(method public override (wm-scroll-window handle dh dv rect clip-rect)
   (let ((flags SW_INVALIDATE))
     (let ((rect (rect->RECT rect))
           (clip-rect (rect->RECT clip-rect)))
@@ -965,7 +751,7 @@
         (RECT-free clip-rect)))))
 
 
-(definition package (platform-invalidate-rect handle rect)
+(method public override (wm-invalidate-rect handle rect)
   ;; is this test correct or was it a patch made during the port
   (when handle
     (with-RECT rect
@@ -973,19 +759,19 @@
         (InvalidateRect handle rect #f)))))
 
 
-(definition package (platform-invalidate-region handle region)
+(method public override (wm-invalidate-region handle region)
   ;; is this test correct or was it a patch made during the port
   (when handle
     (InvalidateRgn handle (get-handle~ region) #f)))
 
 
-(definition package (platform-invalidate-window handle)
+(method public override (wm-invalidate-window handle)
   ;; is this test correct or was it a patch made during the port
   (when handle
     (InvalidateRect handle NULL #f)))
 
 
-(definition package (platform-redraw-window handle rect region)
+(method public override (wm-redraw-window handle rect region)
   ;; is this test correct or was it a patch made during the port
   (when handle
     ;; Changed RDW_NOCHILDREN to RDW_ALLCHILDREN so that a redraw-window on the
@@ -997,44 +783,27 @@
             (RECT-free rect)))))))
 
 
-(definition package (platform-get-update-rect handle)
-  (let ((rect (RECT-make)))
-    (GetUpdateRect handle rect #f)
-    (prog1 (RECT->rect rect)
-      (RECT-free rect))))
-
-
-(definition package (platform-get-update-region handle)
-  (let ((region (new Region)))
-    (GetUpdateRgn handle (get-handle~ region) #f)
-    region))
-
-
-(definition package (platform-update-window handle)
+(method public override (wm-update-window handle)
   (UpdateWindow handle))
   
   
-(definition package (platform-show-noactivate handle)
+(method public override (wm-show-noactivate handle)
   (SetWindowPos handle HWND_TOP 0 0 0 0 (bitwise-ior SWP_SHOWWINDOW SWP_NOACTIVATE SWP_NOMOVE SWP_NOSIZE)))
-  
-  
-(definition package (platform-hide-noactivate handle)
-  (SetWindowPos handle 0 0 0 0 0 (bitwise-ior SWP_HIDEWINDOW SWP_NOACTIVATE SWP_NOMOVE SWP_NOSIZE)))
 
 
-(definition package (platform-bring-window-to-front handle)
+(method public override (bring-window-to-front handle)
   (BringWindowToTop handle))
 
 
-(definition package (platform-send-window-to-back handle)
+(method public override (send-window-to-back handle)
   (SetWindowPos handle HWND_BOTTOM 0 0 0 0 (bitwise-ior SWP_NOMOVE SWP_NOSIZE)))
 
 
-(definition package (platform-select-foreground-window handle)
+(method public override (select-foreground-window handle)
   (SetForegroundWindow handle))
 
 
-(definition package (platform-get-window-handle-title handle)
+(method public override (get-window-handle-title handle)
   (let* ((size (+ (GetWindowTextLength handle) 1))
          (buffer (WCHAR-array-make size)))
     (GetWindowText handle buffer size)
@@ -1043,23 +812,19 @@
       str)))
 
 
-(definition package (platform-lock-window-update handle)
-  (LockWindowUpdate handle))
-
-
 ;;;
 ;;;; Focus
 ;;;
 
 
-(definition package (platform-get-focus)
-  (GetFocus))
-
-
-(definition package (platform-set-focus handle)
+(method public override (wm-set-focus handle)
   ;; Note that setting the focus on an inactive is not correct
   ;; An explicit call to BringWindowToTop must be made beforehand
   (SetFocus handle))
+
+
+(method public override (wm-get-focus)
+  (GetFocus))
 
 
 ;;;
@@ -1067,38 +832,7 @@
 ;;;
 
 
-;;; We need a platform independant interface for this.
-
-(definition public Current-Cursor
-  #f)
-
-(definition public Cursor-Cache
-  (make-table test: eqv?))
-
-
-(definition public Cursors
-  (list
-    (list :arrow               IDC_ARROW)
-    (list :wait                IDC_WAIT)
-    (list :ibeam               IDC_IBEAM)
-    (list :cross               IDC_CROSS)
-    (list :finger              IDC_HAND)
-    (list :all                 IDC_SIZEALL)
-    (list :west-east           IDC_SIZEWE)
-    (list :no                  IDC_NO)
-    (list :move                {Cursor-Resource "Move"})
-    (list :opened-hand         {Cursor-Resource "OpenedHand"})
-    (list :closed-hand         {Cursor-Resource "ClosedHand"})
-    (list :zoom                {Cursor-Resource "Zoom"})
-    (list :zoom-in             {Cursor-Resource "ZoomIn"})
-    (list :zoom-out            {Cursor-Resource "ZoomOut"})
-    (list :spy                 {Cursor-Resource "Spy"})
-    (list :left-arrow          {Cursor-Resource "LeftArrow"})
-    (list :vertical-splitter   {Cursor-Resource "VerticalSplitter"})
-    (list :horizontal-splitter {Cursor-Resource "HorizontalSplitter"})))
-
-
-(definition (load-cursor cursor)
+(method public override (load-cursor cursor)
   (define (cursor-name cursor)
     (if (number? cursor)
         cursor
@@ -1117,32 +851,17 @@
           cursor))))
 
 
-(definition (get-named-cursor name)
-  (let ((info (assq name Cursors)))
-    (if (not info)
-        (error "Unknown cursor: {t}" name)
-      (cadr info))))
+(method public override (wm-set-cursor cursor)
+  (define (get-named-cursor name)
+    (let ((info (assq name Cursors)))
+      (if (not info)
+          (error "Unknown cursor: {t}" name)
+          (cadr info))))
 
-
-(definition public (get-cursor)
-  Current-Cursor)
-
-
-(definition public (set-cursor cursor)
   (unless #f @to-fix-this-doesnt-work-when-switching-overlapped-windows! (= cursor Current-Cursor)
           (set! Current-Cursor cursor)
           (let ((cursor (if (symbol? cursor) (get-named-cursor cursor) cursor)))
             (SetCursor (load-cursor cursor)))))
-
-
-(definition public (hide-cursor)
-  (while (>= (ShowCursor #f) 0)
-    ))
-
-
-(definition public (show-cursor)
-  (while (< (ShowCursor #t) 0)
-    ))
 
 
 ;;;
@@ -1150,7 +869,7 @@
 ;;;
 
 
-(definition package (platform-redraw-view-only view hwnd)
+(method public override (wm-redraw-view-only view hwnd)
   (let ((hrgn (CreateRectRgn 0 0 0 0)))
     ;; preserve the current update region
     (GetUpdateRgn hwnd hrgn #f)
@@ -1163,7 +882,7 @@
     (DeleteObject hrgn)))
 
 
-(definition package (platform-get-desktop)
+(method public override (wm-get-desktop)
   (GetDesktopWindow))
 
 
@@ -1172,7 +891,7 @@
 ;;;
 
 
-(definition public (get-work-area) <Rect>
+(method public override (get-work-area) <Rect>
   ;; Because Window's SPI_GETWORKAREA doesn't take autohide into account
   (define (adjust-work-area-with-taskbar rect)
     rect
@@ -1186,30 +905,11 @@
             ((ABE_RIGHT)  (expand-rect rect  0  0 -1  0))
             ((ABE_BOTTOM) (expand-rect rect  0  0  0 -1)))
         rect)))
-  
+
   (let ((area (RECT-make)))
     (SystemParametersInfo SPI_GETWORKAREA 0 area 0)
     (prog1 (adjust-work-area-with-taskbar (RECT->rect area))
       (RECT-free area))))
-
-
-(definition public (get-taskbar-state)
-  (unimplemented 'get-taskbar-state)
-  @convert
-  (let ((data (new APPBARDATA)))
-    (set data 'cbSize (size-of APPBARDATA))
-    (prog1 (SHAppBarMessage ABM_GETSTATE data)
-      (APPBARDATA-free data))))
-
-
-(definition public (get-taskbar-edge)
-  (unimplemented 'get-taskbar-edge)
-  @convert
-  (let ((data (new APPBARDATA)))
-    (set data 'cbSize (size-of APPBARDATA))
-    (SHAppBarMessage ABM_GETTASKBARPOS data)
-    (prog1 (get data 'uEdge)
-      (APPBARDATA-free data))))
 
 
 ;;;
@@ -1217,7 +917,7 @@
 ;;;
 
 
-(definition package (platform-drop-files window wparam)
+(method public override (wm-drop-files window wparam)
   (define (received-files hdrop)
     (let ((count (DragQueryFile hdrop #xFFFFFFFF NULL 0)))
       (map (lambda (n)
@@ -1237,4 +937,4 @@
       (DragQueryPoint hdrop pt)
       (DragFinish hdrop)
       (receive-files~ window (POINT->point pt) files)
-      (POINT-free pt)))))
+      (POINT-free pt))))))

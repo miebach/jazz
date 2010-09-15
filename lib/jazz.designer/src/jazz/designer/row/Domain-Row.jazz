@@ -153,12 +153,7 @@
          (typecase view
            ((Text-View) (arrow-move~ view evt))
            (else (arrow-press~ view evt)))))))
-  
-  
-  (method override (show-cursor)
-    @w
-    (show-text-cursor~ (locate~ editor 'body)))
-  
+
   
   (method override (focused-editor)
     #f

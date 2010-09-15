@@ -119,23 +119,22 @@
     (nextmethod)
     (set-application self)
     (setup-shortcuts)
-    (initialize-windowing get-setting)
     (initialize-system)
+    (initialize-window-manager)
     (prepare-skins)
     (prepare-colors)
     (prepare-fonts)
     (prepare-formats)
     (prepare-styles))
 
-  
+
   (method override (install-environment)
     (nextmethod)
     (install-skins)
     (install-bindings)
     (install-workspaces)
     (initialize-toplevel)
-    (initialize-clipboard)
-    (register-clipboard-formats))
+    (register-jazz-clipboard-formats (clipboard-prefix)))
 
 
   (method override (finalize-environment)
@@ -246,10 +245,9 @@
 
 
   (method override (start-loop)
-    (setup-events)
     (process-events))
-  
-  
+
+
   (method override (resume-loop-action)
     (when toplevel
       (select-foreground~ toplevel)))
@@ -264,10 +262,6 @@
     (format "{a}_{a}_"
             (process-name)
             (present~ (process-version))))
-  
-  
-  (method protected virtual (register-clipboard-formats)
-    (register-jazz-clipboard-formats (clipboard-prefix)))
 
 
   ;;;
@@ -291,7 +285,7 @@
   
   
   (method public (add-clipboard)
-    (let ((text (get-clipboard-text)))
+    (let ((text (get-clipboard-text~ (*window-manager*))))
       (when text
         (set! Clipboard-Stack (cons text Clipboard-Stack))
         (trim-clipboard)
@@ -315,13 +309,13 @@
   (method (pop-clipboard)
     (let ((string (car Clipboard-Stack)))
       (set! Clipboard-Stack (cdr Clipboard-Stack))
-      (set-clipboard-text string)
+      (set-clipboard-text~ (*window-manager*) string)
       (update-focus-actions)
       string))
   
   
   (method public (cycle-clipboard)
-    (let ((string (get-clipboard-text)))
+    (let ((string (get-clipboard-text~ (*window-manager*))))
       (let ((res (pop-clipboard)))
         (if (null? Clipboard-Stack)
             (set! Clipboard-Stack (list string))
@@ -330,10 +324,10 @@
   
   
   (method public (cycle-clipboard-reversed)
-    (let ((string (get-clipboard-text)))
+    (let ((string (get-clipboard-text~ (*window-manager*))))
       (let ((res (last Clipboard-Stack)))
         (set! Clipboard-Stack (cons string (butlast Clipboard-Stack)))
-        (set-clipboard-text res)
+        (set-clipboard-text~ (*window-manager*) res)
         res)))
 
   
@@ -341,7 +335,7 @@
     (let ((focus (get-focus)))
       (if (or (is-not? focus Text-View) (null? Clipboard-Stack))
           (bell)
-        (let ((text (get-clipboard-text)))
+        (let ((text (get-clipboard-text (*window-manager*))))
           (if (not text)
               (bell)
             (let ((model (get-model~ focus)))
@@ -451,10 +445,9 @@
     
     (define (install-new-profile name unit bindings)
       (let ((associations (list (cons 'jazz-settings-version (present-version jazz-settings-version))
-                                (cons 'settings-version (present-version (settings-version)))
-                                (cons 'profile name)
-                                (cons 'profile-lowercase (downcase (symbol->string name)))
-                                (cons 'profile-unit unit)
+                                (cons 'profile profile-name)
+                                (cons 'profile-lowercase (downcase (symbol->string profile-name)))
+                                (cons 'profile-unit profile-unit)
                                 (cons 'profile-bindings (or bindings 'jazz))
                                 (cons 'active-skin (case kernel-windowing ((carbon) 'mac) ((x11) 'x11) (else 'jazz))))))
         (copy-template (new-directory~ (templates-directory) "profile")
@@ -485,17 +478,15 @@
             (unit-name (string->symbol (format "profile.{a}" (downcase title))))
             (bindings 'jazz))
         (values name unit-name bindings)))
-    
+
     (define (system-profile)
-      (values 'Me 'jazz.profile 'jazz)
-      @convert
-      (standard-profile (get-system-user-name)))
-    
+      (values 'Me 'jazz.profile))
+
     (define (load-profile-jazzini)
       (let ((file {File Profile ".jazzini"}))
         (when (exists?~ file)
           (load (parse~ file)))))
-    
+
     (define (profile-parameter)
       (let ((profile (string-parameter "profile" 'profile #f)))
         (when profile
@@ -1330,7 +1321,7 @@
                                       ((is? msg Locales) msg)
                                       (else (->string msg))))
             (set-action-handler~ message action-handler)))
-        (when (and update? (primordial-thread?))
+        (when (and update? (eq? (current-thread) (primordial-thread)))
           (update-view~ message)))))
 
 
@@ -1783,13 +1774,12 @@
   ;;;
   ;;;; Debug
   ;;;
-  
-  
+
+
   (method override (process-debuggee-loop)
     (if (and (local-proxy? (get-controller-debugger))
-             (event-thread?))
-        (with-jazz-exception-debugger
-          process-events)
+             (eq? (current-thread) (event-thread)))
+        (with-jazz-exception-debugger process-events)
       (nextmethod)))
 
 
@@ -1883,7 +1873,7 @@
            (tab-view (locate~ manager 'tab))
            (same-tab? (eq? tab (get-selection-name~ tab-view))))
       (if (and (not domain)
-               (eq? (get-focused-window~ player) player)
+               (eq? (get-focused-window~ (*window-manager*)) player)
                same-tab?)
           (next-radio~ (get-search~ manager))
         (when tab
@@ -2417,7 +2407,7 @@
     (let ((all-frames (length (all-frames)))
           (frames (length (current-stage-frames)))
           (stages (length (get-active-stages)))
-          (in-modal? (in-modal?)))
+          (in-modal? (get-current-modal~ (*window-manager*))))
       (set-action-enabled? {Action application close}             (and (>= frames 1) (not in-modal?)))
       (set-action-enabled? {Action application close-all}         (and (>= all-frames 1) (not in-modal?)))
       (set-action-enabled? {Action guest save}                    (and (>= frames 1) (not in-modal?)))

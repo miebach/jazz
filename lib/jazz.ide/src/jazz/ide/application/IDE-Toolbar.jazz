@@ -45,6 +45,7 @@
         (jazz.ui)
         (jazz.ui.clipboard)
         (jazz.ui.history)
+        (jazz.ui.window)
         (jazz.ui.view))
 
 
@@ -59,7 +60,7 @@
   (method (on-clipboard-menu evt)
     (let* ((sender (get-sender~ evt))
            (pos (nu+ (get-position~ sender) (new Point 0 (get-height~ (get-size~ sender)))))
-           (text (get-clipboard-text))
+           (text (get-clipboard-text~ (*window-manager*)))
            (stack (get-clipboard-stack~ (get-application)))
            (clipboards (if text (cons text stack) stack)))
       (when (not-null? clipboards)

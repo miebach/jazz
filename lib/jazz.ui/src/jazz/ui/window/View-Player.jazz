@@ -164,27 +164,16 @@
     
     (set-title (effective-title)))
 
-  
-  ;;;
-  ;;;; Window
-  ;;;
 
-
-  (method override (erase-background surface)
-    (if (and root (get-offscreen?~ root))
-        processed
-      (nextmethod surface)))
-
-  
   ;;;
   ;;;; Root
   ;;;
-  
+
   
   (method public (get-root)
     root)
-  
-  
+
+
   (method public (set-root value (detach?: detach? #t))
     (when (neq? value root)
       (when detach?
@@ -194,7 +183,7 @@
       (set-parent~ root #f)
       (set-player~ root self)
       (set-offscreen?~ root #t)
-      (layout-window)))
+      (layout)))
   
   
   (method (detach-root)
@@ -211,7 +200,7 @@
   
   (method override (size-change state size)
     (nextmethod state size)
-    (layout-window))
+    (layout))
   
   
   (method override (layout)
@@ -253,7 +242,7 @@
     (let ((proc (debug-flicker)))
       (when proc
         (proc)))
-    (with-platform-painting self platform-data
+    (with-platform-painting~ window-manager self platform-data
       (lambda (surface)
         (let ((update-rect (get-box~ update-region)))
           (set-clipper~ surface update-rect)
@@ -308,7 +297,7 @@
   
   
   (method (simulate-global-mouse-move)
-    (let ((pos (platform-mouse-position)))
+    (let ((pos (wm-mouse-position~ (*window-manager*))))
       (let ((player (find-window pos)))
         (when (is? player View-Player)
           (let ((root (get-root~ player))
@@ -390,7 +379,6 @@
     (define (new-popup)
       (apply new class
         owner: (get-overlapped)
-        visible?: #f
         initargs))
     
     (let ((popup (new-popup)))
@@ -411,20 +399,20 @@
   ;;;
   ;;;; Focus
   ;;;
-  
-  
+
+
   (method override (focus-gain)
-    (set-focused-window self)
+    (set-focused-window~ window-manager self)
     (when (and view-focus (in-player?~ view-focus))
       (parameterize ((activating-window? #t))
         (focus-view view-focus)
         (focus-delegate~ view-focus)))
     processed)
-  
-  
+
+
   (method override (focus-lose)
     (unfocus-view)
-    (set-focused-window #f)
+    (set-focused-window~ window-manager #f)
     processed)
   
   

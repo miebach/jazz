@@ -22,6 +22,7 @@
 ;;;
 ;;;  Contributor(s):
 ;;;    Guillaume Cartier
+;;;    Vladimir Sedach
 ;;;
 ;;;  Alternatively, the contents of this file may be used under the terms of
 ;;;  the GNU General Public License Version 2 or later (the "GPL"), in which
@@ -43,374 +44,294 @@
 
 
 (import (jazz.geometry)
+        (jazz.debuggee)
         (jazz.graphic)
         (jazz.io)
         (jazz.library)
-        (jazz.platform)
+        (jazz.platform.x11)
         (jazz.platform.cairo)
+        (jazz.platform.cairo.cairo-x11)
         (jazz.system)
         (jazz.ui)
         (jazz.ui.window.platform.independant)
-        (time))
+        (jazz.ui.window.platform.WindowManager)
+        (time)
+        (jazz.platform.types))
 
 
-(definition public unprocessed '(unprocessed))
-(definition public processed '(processed))
+(class X11WindowManager extends WindowManager
 
 
-(definition (processed-result return)
-  (if (and (pair? return) (eq? (car return) 'processed))
-      (if (null? (cdr return))
-          0
-        (cadr return))
-    0))
+  (slot x11-display        initialize #f)
+  (slot Windows-Table      initialize (make-table test: eqv?))
+  (slot Window-Title-Table initialize (make-table test: eqv?))
+  (slot XIC-Table          initialize (make-table test: eqv?))
+  (slot last-click         initialize (time->seconds (current-time)))
+  (slot DndSource          initialize #f)
+  (slot DndAccept?         initialize #f)
+  (slot DndPosition        initialize #f)
+  (slot expose-store       initialize (make-table))
+  (slot inval-rects        initialize (make-table))
+  (slot default-XIM        initialize #f)
+  (slot default-XIC        initialize #f)
+  (slot Cursors            initialize #f)
+  (slot XA_CLIPBOARD       initialize #f)
+  (slot XA_TIMESTAMP       initialize #f)
+  (slot XA_TARGETS         initialize #f)
+  (slot timestamp          initialize #f)
+
+  ;; drag and drop
+  (slot XdndAware initialize #f)
+  (slot XdndEnter initialize #f)
+  (slot XdndLeave initialize #f)
+  (slot XdndSelection initialize #f)
+  (slot XdndPosition initialize #f)
+  (slot XdndDrop initialize #f)
+  (slot XdndStatus initialize #f)
+  (slot XdndFinished initialize #f)
+  (slot XdndTypeList initialize #f)
+  (slot XdndActionCopy initialize #f)
+
+  (slot text/uri-list initialize #f)
+
+  ;;;
+  ;;;; _NET_WM_WINDOW_TYPE
+  ;;;
 
 
-(definition *locked-update* #f)
+  (slot _NET_WM_WINDOW_TYPE initialize #f)
+  (slot _NET_WM_WINDOW_TYPE_DIALOG initialize #f)
+  (slot _NET_WM_WINDOW_TYPE_DROPDOWN_MENU initialize #f)
+  (slot _NET_WM_WINDOW_TYPE_TOOLTIP initialize #f)
+  (slot _NET_WM_WINDOW_TYPE_NORMAL initialize #f)
 
 
-(cond-expand
-  (mac
-    (definition (alt-key)
-      Mod2Mask))
-  (unix
-    (definition (alt-key)
-      Mod1Mask)))
+  ;;;
+  ;;;; _NET_WM_STATE
+  ;;;
 
 
-(definition public Symbolic-Keys
-  (list
-    (cons XK_a                   #\a)
-    (cons XK_b                   #\b)
-    (cons XK_c                   #\c)
-    (cons XK_d                   #\d)
-    (cons XK_e                   #\e)
-    (cons XK_f                   #\f)
-    (cons XK_g                   #\g)
-    (cons XK_h                   #\h)
-    (cons XK_i                   #\i)
-    (cons XK_j                   #\j)
-    (cons XK_k                   #\k)
-    (cons XK_l                   #\l)
-    (cons XK_m                   #\m)
-    (cons XK_n                   #\n)
-    (cons XK_o                   #\o)
-    (cons XK_p                   #\p)
-    (cons XK_q                   #\q)
-    (cons XK_r                   #\r)
-    (cons XK_s                   #\s)
-    (cons XK_t                   #\t)
-    (cons XK_u                   #\u)
-    (cons XK_v                   #\v)
-    (cons XK_w                   #\w)
-    (cons XK_x                   #\x)
-    (cons XK_y                   #\y)
-    (cons XK_z                   #\z)
-    (cons XK_A                   #\A)
-    (cons XK_B                   #\B)
-    (cons XK_C                   #\C)
-    (cons XK_D                   #\D)
-    (cons XK_E                   #\E)
-    (cons XK_F                   #\F)
-    (cons XK_G                   #\G)
-    (cons XK_H                   #\H)
-    (cons XK_I                   #\I)
-    (cons XK_J                   #\J)
-    (cons XK_K                   #\K)
-    (cons XK_L                   #\L)
-    (cons XK_M                   #\M)
-    (cons XK_N                   #\N)
-    (cons XK_O                   #\O)
-    (cons XK_P                   #\P)
-    (cons XK_Q                   #\Q)
-    (cons XK_R                   #\R)
-    (cons XK_S                   #\S)
-    (cons XK_T                   #\T)
-    (cons XK_U                   #\U)
-    (cons XK_V                   #\V)
-    (cons XK_W                   #\W)
-    (cons XK_X                   #\X)
-    (cons XK_Y                   #\Y)
-    (cons XK_Z                   #\Z)
-    (cons XK_0                   #\0)
-    (cons XK_1                   #\1)
-    (cons XK_2                   #\2)
-    (cons XK_3                   #\3)
-    (cons XK_4                   #\4)
-    (cons XK_5                   #\5)
-    (cons XK_6                   #\6)
-    (cons XK_7                   #\7)
-    (cons XK_8                   #\8)
-    (cons XK_9                   #\9)
-    (cons XK_F1                  'F1)
-    (cons XK_F2                  'F2)
-    (cons XK_F3                  'F3)
-    (cons XK_F4                  'F4)
-    (cons XK_F5                  'F5)
-    (cons XK_F6                  'F6)
-    (cons XK_F7                  'F7)
-    (cons XK_F8                  'F8)
-    (cons XK_F9                  'F9)
-    (cons XK_F10                 'F10)
-    (cons XK_F11                 'F11)
-    (cons XK_F12                 'F12)
-    (cons XK_Escape              'Escape)
-    (cons XK_BackSpace           'Backspace)
-    (cons XK_minus               #\-)
-    (cons XK_plus                #\+)
-    (cons XK_comma               #\,)
-    (cons XK_period              #\.)
-    (cons XK_colon               #\:)
-    (cons XK_semicolon           #\;)
-    (cons XK_less                #\<)
-    (cons XK_equal               #\=)
-    (cons XK_greater             #\>)
-    (cons XK_slash               #\/)
-    (cons XK_asciitilde          #\~)
-    (cons XK_bracketleft         #\[)
-    (cons XK_backslash           #\\)
-    (cons XK_bracketright        #\])
-    (cons XK_apostrophe          #\')
-    (cons XK_exclam              #\!)
-    (cons XK_quotedbl            #\")
-    (cons XK_numbersign          #\#)
-    (cons XK_dollar              #\$)
-    (cons XK_percent             #\%)
-    (cons XK_ampersand           #\&)
-    (cons XK_parenleft           #\()
-    (cons XK_parenright          #\))
-    (cons XK_asterisk            #\*)
-    (cons XK_question            #\?)
-    (cons XK_at                  #\@)
-    (cons XK_braceleft           #\{)
-    (cons XK_braceright          #\})
-    (cons XK_bar                 #\|)
-    (cons XK_asciicircum         #\^)
-    (cons XK_underscore          #\_)
-    (cons XK_grave               #\`)
-    (cons XK_Return              'Return)
-    (cons XK_KP_Enter            'Return)
-    (cons XK_space               'Space)
-    (cons XK_Tab                 'Tab)
-    (cons XK_Home                'Home)
-    (cons XK_End                 'End)
-    (cons XK_Left                'Left)
-    (cons XK_Up                  'Up)
-    (cons XK_Right               'Right)
-    (cons XK_Down                'Down)
-    (cons XK_Prior               'Prior)
-    (cons XK_Next                'Next)
-    (cons XK_Insert              'Insert)
-    (cons XK_Pause               'Pause)
-    (cons XK_Delete              'Delete)
-    (cons XK_KP_Add              'Add)
-    (cons XK_KP_Subtract         'Subtract)
-    (cons XK_KP_Decimal          'Multiply)
-    (cons XK_KP_Divide           'Divide)
-    (cons XK_Mode_switch         'Mode)))
+  (slot _NET_WM_STATE initialize #f)
+  (slot _NET_WM_STATE_MODAL initialize #f)
+  (slot _NET_WM_STATE_STICKY initialize #f)
+  (slot _NET_WM_STATE_FULLSCREEN initialize #f)
+
+  (slot _NET_WM_STATE_ADD initialize 1)
 
 
-;;;
-;;;; Window
-;;;
+  ;;;
+  ;;;; WM_PROTOCOLS
+  ;;;
 
 
-(definition public Windows-Table
-  (make-table test: eqv?))
+  (slot WM_PROTOCOLS initialize #f)
+  (slot WM_DELETE_WINDOW initialize #f)
+
+  ;;;
+  ;;;; Clipboard
+  ;;;
 
 
-(definition public Window-Title-Table
-  (make-table test: eqv?))
+  (slot clipboard-string initialize "")
+  (slot clipboard-stamp initialize #f)
 
 
-(definition public XIC-Table
-  (make-table test: eqv?))
+  ;;;
+  ;;;; Initialization
+  ;;;
 
 
-(definition last-click
-  (time->seconds (current-time)))
+  (method override (initialize . rest)
+    (unless (setlocale LC_ALL "") (error "setlocale failed"))
+    (unless (XSupportsLocale) (error "XSupportsLocale failed"))
+    (set! x11-display (or (XOpenDisplay (command-argument "display"))
+                          (error "Can't open X11 display")))
+    (x11-generate-atoms)
+    (unless (XSetLocaleModifiers "@im=none") (error "XSetLocaleModifiers failed"))
+    (let ((xim (XOpenIM x11-display #f "Jazz" "Jazz")))
+      (unless xim (error "Error creating XIM"))
+      (set! default-XIM xim))
+    (XSetErrorHandler x11-error-handler)
+    (x11-create-cursors)
+    (apply nextmethod rest))
 
 
-(definition public inline (get-window handle)
-  (table-ref Windows-Table handle #f))
+  (method (x11-generate-atoms)
+    (set! XA_CLIPBOARD                      (XInternAtom x11-display "CLIPBOARD" #f))
+    (set! XA_TIMESTAMP                      (XInternAtom x11-display "TIMESTAMP" #f))
+    (set! XA_TARGETS                        (XInternAtom x11-display "TARGETS" #f))
+    (set! WM_PROTOCOLS                      (XInternAtom x11-display "WM_PROTOCOLS" #f))
+    (set! WM_DELETE_WINDOW                  (XInternAtom x11-display "WM_DELETE_WINDOW" #f))
+    (set! _NET_WM_WINDOW_TYPE               (XInternAtom x11-display "_NET_WM_WINDOW_TYPE" #f))
+    (set! _NET_WM_WINDOW_TYPE_DIALOG        (XInternAtom x11-display "_NET_WM_WINDOW_TYPE_DIALOG" #f))
+    (set! _NET_WM_WINDOW_TYPE_DROPDOWN_MENU (XInternAtom x11-display "_NET_WM_WINDOW_TYPE_DROPDOWN_MENU" #f))
+    (set! _NET_WM_WINDOW_TYPE_TOOLTIP       (XInternAtom x11-display "_NET_WM_WINDOW_TYPE_TOOLTIP" #f))
+    (set! _NET_WM_WINDOW_TYPE_NORMAL        (XInternAtom x11-display "_NET_WM_WINDOW_TYPE_NORMAL" #f))
+    (set! _NET_WM_STATE                     (XInternAtom x11-display "_NET_WM_STATE" #f))
+    (set! _NET_WM_STATE_MODAL               (XInternAtom x11-display "_NET_WM_STATE_MODAL" #f))
+    (set! _NET_WM_STATE_STICKY              (XInternAtom x11-display "_NET_WM_STATE_STICKY" #f))
+    (set! _NET_WM_STATE_FULLSCREEN          (XInternAtom x11-display "_NET_WM_STATE_FULLSCREEN" #f))
+    (set! XdndAware                         (XInternAtom x11-display "XdndAware" #f))
+    (set! XdndEnter                         (XInternAtom x11-display "XdndEnter" #f))
+    (set! XdndLeave                         (XInternAtom x11-display "XdndLeave" #f))
+    (set! XdndSelection                     (XInternAtom x11-display "XdndSelection" #f))
+    (set! XdndPosition                      (XInternAtom x11-display "XdndPosition" #f))
+    (set! XdndDrop                          (XInternAtom x11-display "XdndDrop" #f))
+    (set! XdndStatus                        (XInternAtom x11-display "XdndStatus" #f))
+    (set! XdndFinished                      (XInternAtom x11-display "XdndFinished" #f))
+    (set! XdndTypeList                      (XInternAtom x11-display "XdndTypeList" #f))
+    (set! XdndActionCopy                    (XInternAtom x11-display "XdndActionCopy" #f))
+    (set! text/uri-list                     (XInternAtom x11-display "text/uri-list" #f)))
 
 
-(definition public inline (set-window handle window)
-  (table-set! Windows-Table handle window))
+  (method (create-xic handle)
+    (or (make-xic default-XIM
+                  "inputStyle"   (bitwise-ior XIMPreeditNothing XIMStatusNothing)
+                  "clientWindow" handle
+                  "focusWindow"  handle)
+        (error "Error creating XIC")))
 
 
-(definition public inline (get-xic handle)
-  (table-ref XIC-Table handle #f))
+  (method (x11-create-cursors)
+    (set! Cursors
+          (list
+           (list :arrow               (XCreateFontCursor x11-display XC_left_ptr))
+           (list :wait                (XCreateFontCursor x11-display XC_watch))
+           (list :west-east           (XCreateFontCursor x11-display XC_sb_h_double_arrow))
+           (list :vertical-splitter   (XCreateFontCursor x11-display XC_sb_h_double_arrow))
+           (list :horizontal-splitter (XCreateFontCursor x11-display XC_sb_v_double_arrow))
+           (list :ibeam               (XCreateFontCursor x11-display XC_xterm))
+           (list :finger              (XCreateFontCursor x11-display XC_hand2))
+           (list :cross               (XCreateFontCursor x11-display XC_crosshair))
+           (list :left-arrow          (XCreateFontCursor x11-display XC_arrow)))))
 
 
-(definition public inline (set-xic handle xic)
-  (table-set! XIC-Table handle xic))
+  ;;;
+  ;;;; Window
+  ;;;
 
 
-(definition public inline (clear-xic handle)
-  (table-set! XIC-Table handle))
+  (method public override (get-window handle)
+    (table-ref Windows-Table handle #f))
 
 
-(definition package (platform-get-window-handle-title handle)
-  (table-ref Window-Title-Table handle #f))
+  (method public override (register-window handle window)
+    (table-set! Windows-Table handle window))
 
 
-(definition public (set-window-title handle title)
-  (table-set! Window-Title-Table handle title)
-  (XSetWMName x11-default-display handle title))
+  (method public override (get-window-handle-title handle)
+    (table-ref Window-Title-Table handle #f))
 
 
-(definition package (window-parent window)
-  (let ((parent (get-parent~ window)))
-    (if parent
-        (get-handle~ parent)
-      (XRootWindow x11-default-display (XDefaultScreen x11-default-display)))))
+  (method public override (set-window-title handle title)
+    (table-set! Window-Title-Table handle title)
+    (XSetWMName x11-display handle title))
 
 
-(definition package (window-default-parent window)
-  #f)
-
-
-(definition package (prepare-handle window rest)
-  (bind-keywords ((handle #f) . others) rest
-    (let ((handle (create-handle window rest)))
-      (if (not handle)
-          (error "Unable to create x11 window")
-        handle))))
-
-
-(definition (create-handle window rest)
-  (let* ((screen-no (XDefaultScreen x11-default-display))
-         (screen    (XScreenOfDisplay x11-default-display screen-no))
-         (parent    (window-parent window))
-         (attr      (XSetWindowAttributes-make))
-         (visual    (XDefaultVisual x11-default-display screen-no)))
-    (XSetWindowAttributes-bit_gravity-set! attr StaticGravity)
-    (XSetWindowAttributes-override_redirect-set! attr (is? window Popup))
-    (XSetWindowAttributes-background_pixel-set! attr (rgb-pixel x11-default-display 236 233 216))
-    (if (is? window Desktop)
-        (platform-get-desktop)
-      (let ((handle
-              (XCreateWindow
-                x11-default-display
-                parent
-                0
-                0
-                500
-                500
-                0
-                CopyFromParent
-                InputOutput
-                visual
-                (+ CWBitGravity CWOverrideRedirect CWBackPixel)
-                attr)))
-        (x11-change-property x11-default-display handle _NET_WM_WINDOW_TYPE XA_ATOM PropModeReplace
-          (u32vector (cond ((is? window Menu-Transient)
-                            _NET_WM_WINDOW_TYPE_NORMAL)
-                           ((is? window Tooltip)
-                            _NET_WM_WINDOW_TYPE_TOOLTIP)
-                           ((is? window Dialog)
-                            _NET_WM_WINDOW_TYPE_DIALOG)
-                           (else
-                            _NET_WM_WINDOW_TYPE_NORMAL))))
-        (when (is? window Dialog)
-          (set-modal x11-default-display handle)
-          @wait
-          (wm-change-state x11-default-display handle _NET_WM_STATE_FULLSCREEN)
-          (when (get-toplevel)
-            (XSetTransientForHint x11-default-display handle (get-handle~ (get-toplevel)))))
-        (x11-change-property x11-default-display handle XdndAware XA_ATOM PropModeReplace (u32vector XdndVersion))
-        (XSetWMProtocols x11-default-display handle WM_DELETE_WINDOW)
-        (XSelectInput
-          x11-default-display
-          handle
-          (+ FocusChangeMask ButtonReleaseMask ButtonPressMask StructureNotifyMask ExposureMask PointerMotionMask KeyPressMask))
-        (set-xic handle (create-xic handle))
-        handle))))
-
-
-(definition (wm-change-state display handle atom)
-  (let* ((msg (XEvent-make))
-         (ev (XEvent-xclient-ref msg)))
-    (XClientMessageEvent-type-set! ev ClientMessage)
-    (XClientMessageEvent-window-set! ev handle)
-    (XClientMessageEvent-message_type-set! ev _NET_WM_STATE)
-    (XClientMessageEvent-format-set! ev 32)
-    (let ((l (XClientMessageEvent-l-ref ev)))
-      (long*-set! l 0 _NET_WM_STATE_ADD)
-      (long*-set! l 1 atom)
-      (long*-set! l 2 0)
-      (long*-set! l 3 1)
-      (long*-set! l 4 0))
-    (XSendEvent
-      display
-      (XRootWindow display (XDefaultScreen display))
-      #f
-      (bitwise-ior SubstructureRedirectMask SubstructureNotifyMask)
-      msg)
-    (XEvent-free msg)))
-
-
-(definition package (destroy-window handle)
-  (let ((window (get-window handle)))
-    (table-set! expose-store window)
-    (clear-xic handle)
-    (when (= handle (platform-get-focus))
-      (focus-lose~ window))
+  (method public override (window-parent window)
     (let ((parent (get-parent~ window)))
-      (when parent (platform-set-focus (get-handle~ parent))))
-    (XDestroyWindow x11-default-display handle)))
+      (if parent
+          (get-handle~ parent)
+          (XRootWindow x11-display (XDefaultScreen x11-display)))))
 
 
-(definition (dispatch-message window msg)
-  (process-window-message window msg))
+  (method public override (prepare-handle window rest)
+    (let* ((screen-no (XDefaultScreen x11-display))
+           (screen    (XScreenOfDisplay x11-display screen-no))
+           (parent    (window-parent window))
+           (attr      (XSetWindowAttributes-make))
+           (visual    (XDefaultVisual x11-display screen-no)))
+      (XSetWindowAttributes-bit_gravity-set! attr StaticGravity)
+      (XSetWindowAttributes-override_redirect-set! attr (is? window Popup))
+      (XSetWindowAttributes-background_pixel-set! attr (rgb-pixel x11-display 236 233 216))
+      (if (is? window Desktop)
+          (wm-get-desktop)
+          (let ((handle
+                 (XCreateWindow
+                  x11-display
+                  parent
+                  0
+                  0
+                  500
+                  500
+                  0
+                  CopyFromParent
+                  InputOutput
+                  visual
+                  (+ CWBitGravity CWOverrideRedirect CWBackPixel)
+                  attr)))
+            (x11-change-property x11-display handle _NET_WM_WINDOW_TYPE XA_ATOM PropModeReplace
+                                 (u32vector (cond ((is? window Menu-Transient)
+                                                   _NET_WM_WINDOW_TYPE_NORMAL)
+                                                  ((is? window Tooltip)
+                                                   _NET_WM_WINDOW_TYPE_TOOLTIP)
+                                                  ((is? window Dialog)
+                                                   _NET_WM_WINDOW_TYPE_DIALOG)
+                                                  (else
+                                                   _NET_WM_WINDOW_TYPE_NORMAL))))
+            (when (is? window Dialog)
+                  (set-modal x11-display handle)
+                  (when (get-toplevel)
+                        (XSetTransientForHint x11-display handle (get-handle~ (get-toplevel)))))
+            (x11-change-property x11-display handle XdndAware XA_ATOM PropModeReplace (u32vector XdndVersion))
+            (XSetWMProtocols x11-display handle WM_DELETE_WINDOW)
+            (XSelectInput
+             x11-display
+             handle
+             (+ FocusChangeMask ButtonReleaseMask ButtonPressMask StructureNotifyMask ExposureMask PointerMotionMask KeyPressMask))
+            (table-set! XIC-Table handle (create-xic handle))
+            handle))))
 
 
-(definition package (show-window handle)
-  (XMapWindow x11-default-display handle))
+  (method (wm-change-state display handle atom)
+    (let* ((msg (XEvent-make))
+           (ev (XEvent-xclient-ref msg)))
+      (XClientMessageEvent-type-set! ev ClientMessage)
+      (XClientMessageEvent-window-set! ev handle)
+      (XClientMessageEvent-message_type-set! ev _NET_WM_STATE)
+      (XClientMessageEvent-format-set! ev 32)
+      (let ((l (XClientMessageEvent-l-ref ev)))
+        (long*-set! l 0 _NET_WM_STATE_ADD)
+        (long*-set! l 1 atom)
+        (long*-set! l 2 0)
+        (long*-set! l 3 1)
+        (long*-set! l 4 0))
+      (XSendEvent
+       display
+       (XRootWindow display (XDefaultScreen display))
+       #f
+       (bitwise-ior SubstructureRedirectMask SubstructureNotifyMask)
+       msg)
+      (XEvent-free msg)))
 
 
-(definition package (show-maximized handle)
-  (platform-set-position handle (rect-position (get-work-area)))
-  (platform-set-window-size handle (rect-size (get-work-area)))
+  (method public override (destroy-window handle)
+    (let ((window (get-window handle)))
+      (table-set! expose-store window)
+      (table-set! XIC-Table handle)
+      ;; (when (= handle (receive (handle state) (XGetInputFocus x11-display)
+      ;;                   handle))
+      ;;   (focus-lose~ window))
+      (XDestroyWindow x11-display handle)
+      (nextmethod handle)))
+
+
+  (method public override (show-window handle)
+    (XMapWindow x11-display handle))
+
+
+  (method public override (show-maximized handle)
+    (wm-set-position handle (rect-position (get-work-area)))
+    (wm-set-window-size handle (rect-size (get-work-area)))
+    (show-window handle))
+
+
+  (method public override (show-restored handle)
   (show-window handle))
 
 
-(definition package (show-restored handle)
-  (show-window handle))
-
-
-(definition package (hide-window handle)
-  (XUnmapWindow x11-default-display handle))
-
-
-(definition package (bring-window-to-top handle)
-  (XRaiseWindow x11-default-display handle))
-
-
-(definition package (window-state handle)
-  'restored)
-
-
-(definition package (set-window-placement handle position size)
-  (platform-set-position handle position)
-  (platform-set-window-size handle size))
-
-
-(definition package (minimize-window handle)
-  (unimplemented 'minimize-window))
-
-
-(definition package (maximize-window handle)
-  (unimplemented 'maximize-window))
-
- 
-(definition package (restore-window handle)
-  (unimplemented 'restore-window))
-
-
-(definition package (platform-erase-background handle)
-  (unimplemented 'platform-erase-background))
+  (method public override (hide-window handle)
+  (XUnmapWindow x11-display handle))
 
 
 ;;;
@@ -418,46 +339,49 @@
 ;;;
 
 
-(definition package (setup-events)
-  )
-
-
-(definition expose-store (make-table))
-
-
-(definition (process-message msg)
-  (execute-event
-    (lambda ()
-      (let* ((any-event (XEvent-xany-ref msg))
-             (handle (XAnyEvent-window-ref any-event)))
-        (let ((window (get-window handle)))
+  (method (process-message msg)
+    (execute-event
+      (lambda ()
+        (let ((window (get-window (XAnyEvent-window-ref (XEvent-xany-ref msg)))))
           (when window
-            (dispatch-message window msg)))))))
+            (ecase (XEvent-type-ref msg)
+              ((Expose)           (process-expose-message window msg))
+              ((ButtonPress)      (process-button-press-message window msg))
+              ((ButtonRelease)    (process-button-release-message window msg))
+              ((FocusIn)          (process-focus-in-message window msg))
+              ((FocusOut)         (process-focus-out-message window msg))
+              ((MotionNotify)     (process-motion-notify-message window msg))
+              ((KeyPress)         (process-key-press-message window msg))
+              ((ConfigureNotify)  (process-configure-notify-message window msg))
+              ((SelectionNotify)  (process-selection-notify-message window msg))
+              ((SelectionRequest) (process-selection-request-message window msg))
+              ((ClientMessage)    (process-client-message window msg))
+              (else               unprocessed)))))))
 
 
-(definition (process-expose)
-  (execute-event
-    (lambda ()
-      (iterate-table expose-store
-        (lambda (win region)
-          (table-set! expose-store win)
-          (when region
-            (paint~ win region)))))))
+  (method (process-expose)
+    (execute-event
+      (lambda ()
+        (iterate-table expose-store
+          (lambda (win region)
+            (table-set! expose-store win)
+            (when region
+              (paint~ win region)))))))
 
 
-(definition package (process-messages-single-threaded thunk)
+(method public override (process-messages-single-threaded thunk)
   (declare (proper-tail-calls))
   (let* ((msg (XEvent-make))
-         (display-fd (ConnectionNumber x11-default-display))
+         (display-fd (ConnectionNumber x11-display))
          (fdset (setup-fdset display-fd)))
     (let (loop)
       (process-inval-rects)
       (select (+ display-fd 1) fdset #f #f 0 1000)
-      (if (= 0 (XPending x11-default-display))
+      (if (= 0 (XPending x11-display))
           (thread-sleep! 0.01)
-        (XNextEvent x11-default-display msg)
+        (XNextEvent x11-display msg)
         (process-message msg)
-        (when (= 0 (XPending x11-default-display))
+        (when (= 0 (XPending x11-display))
           (process-expose)))
       (thunk)
       (when (thread-loop? (current-thread))
@@ -466,44 +390,12 @@
     (free-fdset fdset)))
 
 
-(definition package (process-messages-multi-threaded)
-  (define (process)
-    (declare (proper-tail-calls))
-    (let ((msg (XEvent-make)))
-      (let (loop)
-        (XNextEvent x11-default-display msg)
-        (process-message msg)
-        (when (= 0 (XPending x11-default-display))
-          (process-expose))
-        (when (thread-loop? (current-thread))
-          (loop)))
-      (XEvent-free msg)))
-  
-  (new-thread process 'message-pump))
-
-
 ;;;
 ;;;; Process
 ;;;
 
 
-(definition (process-window-message window msg)
-  (ecase (XEvent-type-ref msg)
-    ((Expose)           (process-expose-message window msg))
-    ((ButtonPress)      (process-button-press-message window msg))
-    ((ButtonRelease)    (process-button-release-message window msg))
-    ((FocusIn)          (process-focus-in-message window msg))
-    ((FocusOut)         (process-focus-out-message window msg))
-    ((MotionNotify)     (process-motion-notify-message window msg))
-    ((KeyPress)         (process-key-press-message window msg))
-    ((ConfigureNotify)  (process-configure-notify-message window msg))
-    ((SelectionNotify)  (process-selection-notify-message window msg))
-    ((SelectionRequest) (process-selection-request-message window msg))
-    ((ClientMessage)    (process-client-message-message window msg))
-    (else               unprocessed)))
-
-
-(definition (process-expose-message window msg)
+(method (process-expose-message window msg)
   (let ((msg (XEvent-xexpose-ref msg)))
     (let ((left (XExposeEvent-x-ref msg))
           (top  (XExposeEvent-y-ref msg)))
@@ -518,13 +410,12 @@
             processed))))))
 
 
-(definition (process-button-press-message window msg)
+(method (process-button-press-message window msg)
   (let ((msg (XEvent-xbutton-ref msg)))
     (let ((h (XButtonEvent-x-ref msg))
           (v (XButtonEvent-y-ref msg))
-          (button (XButtonEvent-button-ref msg))
-          (stamp (XButtonEvent-time-ref msg)))
-      (x11-set-latest-timestamp stamp)
+          (button (XButtonEvent-button-ref msg)))
+      (set! timestamp (XButtonEvent-time-ref msg))
       (cond ((= button Button1)
              (let ((click (time->seconds (current-time))))
                (if (< (- click last-click) 0.4)
@@ -537,7 +428,7 @@
              (middle-mouse-down~ window h v))
             ((= button Button3)
              (right-mouse-down~ window h v)
-             (let ((pt (acquire-point (platform-get-desktop) (get-handle~ window) (new Point h v))))
+             (let ((pt (acquire-point (wm-get-desktop) (get-handle~ window) (new Point h v))))
                (call-context-menu~ window (get-h~ pt) (get-v~ pt))))
             ((or (= button Button4) (= button Button6))
              (mouse-wheel~ window h v 120))
@@ -545,13 +436,12 @@
              (mouse-wheel~ window h v -120))))))
 
 
-(definition (process-button-release-message window msg)
+(method (process-button-release-message window msg)
   (let ((msg (XEvent-xbutton-ref msg)))
     (let ((h (XButtonEvent-x-ref msg))
           (v (XButtonEvent-y-ref msg))
-          (button (XButtonEvent-button-ref msg))
-          (stamp (XButtonEvent-time-ref msg)))
-      (x11-set-latest-timestamp stamp)
+          (button (XButtonEvent-button-ref msg)))
+      (set! timestamp (XButtonEvent-time-ref msg))
       (cond ((= button Button1)
              (mouse-up~ window h v))
             ((= button Button2)
@@ -560,7 +450,7 @@
              (right-mouse-up~ window h v))))))
 
 
-(definition (process-focus-in-message window msg)
+(method (process-focus-in-message window msg)
   (let ((msg (XEvent-xfocus-ref msg)))
     (let ((detail (XFocusChangeEvent-detail-ref msg)))
       (when (or (= detail NotifyAncestor)
@@ -570,7 +460,7 @@
         (activate-application~ window)))))
 
 
-(definition (process-focus-out-message window msg)
+(method (process-focus-out-message window msg)
   (let ((msg (XEvent-xfocus-ref msg)))
     (let ((detail (XFocusChangeEvent-detail-ref msg)))
       (when (or (= detail NotifyAncestor)
@@ -580,10 +470,10 @@
         (focus-lose~ window)))))
 
 
-(definition (process-motion-notify-message window msg)
+(method (process-motion-notify-message window msg)
   ;; ignore all but last motion event
   (let (loop)
-    (when (XCheckTypedEvent x11-default-display MotionNotify msg)
+    (when (XCheckTypedEvent x11-display MotionNotify msg)
       (loop)))
   (let ((msg (XEvent-xmotion-ref msg)))
     (let ((h (XMotionEvent-x-ref msg))
@@ -592,21 +482,158 @@
       (process-expose))))
 
 
-(definition (process-key-press-message window msg)
+(method (process-key-press-message window msg)
+  (define key-table
+    (list
+     (cons XK_a                   #\a)
+     (cons XK_b                   #\b)
+     (cons XK_c                   #\c)
+     (cons XK_d                   #\d)
+     (cons XK_e                   #\e)
+     (cons XK_f                   #\f)
+     (cons XK_g                   #\g)
+     (cons XK_h                   #\h)
+     (cons XK_i                   #\i)
+     (cons XK_j                   #\j)
+     (cons XK_k                   #\k)
+     (cons XK_l                   #\l)
+     (cons XK_m                   #\m)
+     (cons XK_n                   #\n)
+     (cons XK_o                   #\o)
+     (cons XK_p                   #\p)
+     (cons XK_q                   #\q)
+     (cons XK_r                   #\r)
+     (cons XK_s                   #\s)
+     (cons XK_t                   #\t)
+     (cons XK_u                   #\u)
+     (cons XK_v                   #\v)
+     (cons XK_w                   #\w)
+     (cons XK_x                   #\x)
+     (cons XK_y                   #\y)
+     (cons XK_z                   #\z)
+     (cons XK_A                   #\A)
+     (cons XK_B                   #\B)
+     (cons XK_C                   #\C)
+     (cons XK_D                   #\D)
+     (cons XK_E                   #\E)
+     (cons XK_F                   #\F)
+     (cons XK_G                   #\G)
+     (cons XK_H                   #\H)
+     (cons XK_I                   #\I)
+     (cons XK_J                   #\J)
+     (cons XK_K                   #\K)
+     (cons XK_L                   #\L)
+     (cons XK_M                   #\M)
+     (cons XK_N                   #\N)
+     (cons XK_O                   #\O)
+     (cons XK_P                   #\P)
+     (cons XK_Q                   #\Q)
+     (cons XK_R                   #\R)
+     (cons XK_S                   #\S)
+     (cons XK_T                   #\T)
+     (cons XK_U                   #\U)
+     (cons XK_V                   #\V)
+     (cons XK_W                   #\W)
+     (cons XK_X                   #\X)
+     (cons XK_Y                   #\Y)
+     (cons XK_Z                   #\Z)
+     (cons XK_0                   #\0)
+     (cons XK_1                   #\1)
+     (cons XK_2                   #\2)
+     (cons XK_3                   #\3)
+     (cons XK_4                   #\4)
+     (cons XK_5                   #\5)
+     (cons XK_6                   #\6)
+     (cons XK_7                   #\7)
+     (cons XK_8                   #\8)
+     (cons XK_9                   #\9)
+     (cons XK_F1                  'F1)
+     (cons XK_F2                  'F2)
+     (cons XK_F3                  'F3)
+     (cons XK_F4                  'F4)
+     (cons XK_F5                  'F5)
+     (cons XK_F6                  'F6)
+     (cons XK_F7                  'F7)
+     (cons XK_F8                  'F8)
+     (cons XK_F9                  'F9)
+     (cons XK_F10                 'F10)
+     (cons XK_F11                 'F11)
+     (cons XK_F12                 'F12)
+     (cons XK_Escape              'Escape)
+     (cons XK_BackSpace           'Backspace)
+     (cons XK_minus               #\-)
+     (cons XK_plus                #\+)
+     (cons XK_comma               #\,)
+     (cons XK_period              #\.)
+     (cons XK_colon               #\:)
+     (cons XK_semicolon           #\;)
+     (cons XK_less                #\<)
+     (cons XK_equal               #\=)
+     (cons XK_greater             #\>)
+     (cons XK_slash               #\/)
+     (cons XK_asciitilde          #\~)
+     (cons XK_bracketleft         #\[)
+     (cons XK_backslash           #\\)
+     (cons XK_bracketright        #\])
+     (cons XK_apostrophe          #\')
+     (cons XK_exclam              #\!)
+     (cons XK_quotedbl            #\")
+     (cons XK_numbersign          #\#)
+     (cons XK_dollar              #\$)
+     (cons XK_percent             #\%)
+     (cons XK_ampersand           #\&)
+     (cons XK_parenleft           #\()
+     (cons XK_parenright          #\))
+     (cons XK_asterisk            #\*)
+     (cons XK_question            #\?)
+     (cons XK_at                  #\@)
+     (cons XK_braceleft           #\{)
+     (cons XK_braceright          #\})
+     (cons XK_bar                 #\|)
+     (cons XK_asciicircum         #\^)
+     (cons XK_underscore          #\_)
+     (cons XK_grave               #\`)
+     (cons XK_Return              'Return)
+     (cons XK_KP_Enter            'Return)
+     (cons XK_space               'Space)
+     (cons XK_Tab                 'Tab)
+     (cons XK_Home                'Home)
+     (cons XK_End                 'End)
+     (cons XK_Left                'Left)
+     (cons XK_Up                  'Up)
+     (cons XK_Right               'Right)
+     (cons XK_Down                'Down)
+     (cons XK_Prior               'Prior)
+     (cons XK_Next                'Next)
+     (cons XK_Insert              'Insert)
+     (cons XK_Pause               'Pause)
+     (cons XK_Delete              'Delete)
+     (cons XK_KP_Add              'Add)
+     (cons XK_KP_Subtract         'Subtract)
+     (cons XK_KP_Decimal          'Multiply)
+     (cons XK_KP_Divide           'Divide)
+     (cons XK_Mode_switch         'Mode)))
+
+  (define (translate-shortcut mods keysym)
+    (let* ((key (assv-value keysym key-table #f))
+           (app (get-application)))
+      (if (and key app)
+          (dispatch-shortcut~ app (new Shortcut mods key))
+          #f)))
+
   (let* ((key-msg (XEvent-xkey-ref msg))
          (keycode (XKeyEvent-keycode-ref key-msg))
-         (keysym (XKeycodeToKeysym x11-default-display (integer->char keycode) 0))
+         (keysym (XKeycodeToKeysym x11-display (integer->char keycode) 0))
          (state (XKeyEvent-state-ref key-msg))
-         (mod  '())
-         (stamp (XKeyEvent-time-ref key-msg)))
-    (x11-set-latest-timestamp stamp)
+         (mod  '()))
+    (set! timestamp (XKeyEvent-time-ref key-msg))
     (when (bit-set? ShiftMask state) (set! mod (cons :shift mod)))
     (when (bit-set? ControlMask state) (set! mod (cons :control mod)))
-    (when (bit-set? (alt-key) state) (set! mod (cons :alt mod)))
+    (when (bit-set? Mod1Mask state) (set! mod (cons :alt mod)))
     (unless (or (translate-shortcut mod keysym)
                 ;; XIM filter for dead keys and composition
                 (XFilterEvent msg None))
-      (receive (sym str) (x11-utf8-lookup-string (get-xic (get-handle~ window)) key-msg)
+      (receive (sym str) (x11-utf8-lookup-string (table-ref XIC-Table (get-handle~ window) #f) key-msg)
         (if str
             (iterate str
               (lambda (c)
@@ -614,7 +641,7 @@
           unprocessed)))))
 
 
-(definition (process-configure-notify-message window msg)
+(method (process-configure-notify-message window msg)
   (let ((msg (XEvent-xconfigure-ref msg)))
     (let ((width (XConfigureEvent-width-ref msg))
           (height (XConfigureEvent-height-ref msg))
@@ -624,54 +651,52 @@
       (call-position-change~ window x y))))
 
 
-(definition (process-selection-notify-message window msg)
+(method (process-selection-notify-message window msg)
   unprocessed)
 
 
-(definition (process-selection-request-message window msg)
+(method (process-selection-request-message window msg)
+  (define (send-clipboard-selection display window requestor selection target property time)
+    (define (send-event property)
+      (let* ((ev (XEvent-make))
+             (xselection (XEvent-xselection-ref ev)))
+        (XSelectionEvent-type-set! xselection SelectionNotify)
+        (XSelectionEvent-send_event-set! xselection #t)
+        (XSelectionEvent-display-set! xselection display)
+        (XSelectionEvent-requestor-set! xselection requestor)
+        (XSelectionEvent-selection-set! xselection selection)
+        (XSelectionEvent-target-set! xselection target)
+        (XSelectionEvent-property-set! xselection property)
+        (XSelectionEvent-time-set! xselection time)
+        (XSendEvent display requestor #f NoEventMask ev)
+        (XEvent-free ev)))
+
+    (ecase target
+           ((XA_TIMESTAMP)
+            (x11-change-property display requestor property target PropModeReplace (u32vector clipboard-stamp))
+            (send-event property))
+           ((XA_TARGETS)
+            (x11-change-property display requestor property XA_ATOM PropModeReplace (u32vector XA_TIMESTAMP XA_TARGETS XA_STRING))
+            (send-event property))
+           ((XA_STRING)
+            (let ((data (char-string->uint8* clipboard-string))
+                  (nitems (+ (string-length clipboard-string) 1)))
+              (XChangeProperty display requestor property target 8 PropModeReplace data nitems)
+              (send-event property)
+              (uint8*-free data)))
+           (else
+            (send-event None))))
+
   (let ((msg (XEvent-xselectionrequest-ref msg)))
     (let ((requestor (XSelectionRequestEvent-requestor-ref msg))
           (selection (XSelectionRequestEvent-selection-ref msg))
           (target    (XSelectionRequestEvent-target-ref msg))
           (property  (XSelectionRequestEvent-property-ref msg))
           (time      (XSelectionRequestEvent-time-ref msg)))
-      (send-clipboard-selection x11-default-display (get-handle~ window) requestor selection target property time))))
+      (send-clipboard-selection x11-display (get-handle~ window) requestor selection target property time))))
 
 
-(definition (send-clipboard-selection display window requestor selection target property time)
-  (define (send-event property)
-    (let* ((ev (XEvent-make))
-           (xselection (XEvent-xselection-ref ev)))
-      (XSelectionEvent-type-set! xselection SelectionNotify)
-      (XSelectionEvent-send_event-set! xselection #t)
-      (XSelectionEvent-display-set! xselection display)
-      (XSelectionEvent-requestor-set! xselection requestor)
-      (XSelectionEvent-selection-set! xselection selection)
-      (XSelectionEvent-target-set! xselection target)
-      (XSelectionEvent-property-set! xselection property)
-      (XSelectionEvent-time-set! xselection time)
-      (XSendEvent display requestor #f NoEventMask ev)
-      (XEvent-free ev)))
-  
-  (ecase target
-    ((XA_TIMESTAMP)
-     (x11-change-property display requestor property target PropModeReplace (u32vector clipboard-stamp))
-     (send-event property))
-    ((XA_TARGETS)
-     (x11-change-property display requestor property XA_ATOM PropModeReplace (u32vector XA_TIMESTAMP XA_TARGETS XA_STRING))
-     (send-event property))
-    ((XA_STRING)
-     (let ((data (char-string->uint8* clipboard-string))
-           (nitems (+ (string-length clipboard-string) 1)))
-       (XChangeProperty display requestor property target 8 PropModeReplace data nitems)
-       (send-event property)
-       (uint8*-free data)))
-    (else
-     ;; (terminal unknown-target: (x11-get-atom-name target))
-     (send-event None))))
-
-
-(definition (process-client-message-message window msg)
+(method (process-client-message window msg)
   (let ((msg (XEvent-xclient-ref msg)))
     (let ((type (XClientMessageEvent-message_type-ref msg)))
       (cond ((equal? type WM_PROTOCOLS)
@@ -684,42 +709,36 @@
              (process-xdnd-drop window msg))
             ((equal? type XdndLeave)
              (process-xdnd-leave window msg))))))
-          
 
-(definition (process-wm-protocols window msg)
+
+(method (process-wm-protocols window msg)
   (let ((data (XClientMessageEvent-l-ref msg)))
     (let ((protocol (long*-ref data 0)))
       (cond ((equal? protocol WM_DELETE_WINDOW)
              (on-close~ window #f))))))
 
 
-(definition DndSource #f)
-(definition DndAccept? #f)
-(definition DndPosition #f)
-    
+(method (process-xdnd-enter window msg)
+  (define (Dnd-type-supported? type typelist size)
+    (let loop ((i 0))
+      (if (= i size)
+          #f
+          (if (equal? type (ulong*-ref typelist i))
+              #t
+              (loop (+ i 1))))))
 
-(definition (Dnd-type-supported? type typelist size)
-  (let loop ((i 0))
-     (if (= i size)
-         #f
-       (if (equal? type (ulong*-ref typelist i))
-           #t
-         (loop (+ i 1))))))
-
-
-(definition (process-xdnd-enter window msg)
   (let* ((data (XClientMessageEvent-l-ref msg))
          (source (long*-ref data 0))
          (version (arithmetic-shift (bitwise-and (long*-ref data 1) #xff000000) -24))
          (typelist? (= 1 (bitwise-and (long*-ref data 1) #x00000001))))
     (unless (or (> version XdndVersion) DndSource)
       (set! DndSource source)
-      (receive (type_return format_return nitems bytes-after prop) (XGetWindowProperty x11-default-display source XdndTypeList 0 100000 #f XA_ATOM)
+      (receive (type_return format_return nitems bytes-after prop) (XGetWindowProperty x11-display source XdndTypeList 0 100000 #f XA_ATOM)
         (let ((data (uint8*->ulong* prop)))
           (set! DndAccept? (Dnd-type-supported? text/uri-list data nitems)))))))
-      
-      
-(definition (process-xdnd-position window msg)
+
+
+(method (process-xdnd-position window msg)
   (let* ((data (XClientMessageEvent-l-ref msg))
          (source (long*-ref data 0))
          (position (long*-ref data 2)))
@@ -738,16 +757,16 @@
             (long*-set! l 2 0)
             (long*-set! l 3 0)
             (long*-set! l 4 (if DndAccept? XdndActionCopy None))
-            (XSendEvent x11-default-display source #f NoEventMask ev)
+            (XSendEvent x11-display source #f NoEventMask ev)
             (XEvent-free ev))))))
-           
 
-(definition (process-xdnd-drop window msg)
+
+(method (process-xdnd-drop window msg)
   (let* ((data (XClientMessageEvent-l-ref msg))
          (source (long*-ref data 0))
          (stamp (long*-ref data 2)))
     (when (equal? source DndSource)
-      (let ((prop (x11-retrieve-selection x11-default-display (get-handle~ window) XdndSelection text/uri-list stamp)))
+      (let ((prop (x11-retrieve-selection x11-display (get-handle~ window) XdndSelection text/uri-list stamp)))
         (let ((files (collect (lambda (x)
                                 (and (not (equal? x ""))
                                      (let ((splitted (split x "://")))
@@ -755,7 +774,7 @@
                                             (new (case (pathname-type (cadr splitted)) ((directory) Directory) (else File)) (tokenise-windows (cadr splitted)))))))
                               (split (uint8*->char-string prop) "\r\n"))))
           (XFree prop)
-          (receive-files~ window (acquire-point (get-handle~ window) (platform-get-desktop) DndPosition) files)))
+          (receive-files~ window (acquire-point (get-handle~ window) (wm-get-desktop) DndPosition) files)))
       (set! DndSource #f)
       (set! DndAccept? #f)
       (set! DndPosition #f)
@@ -763,18 +782,18 @@
              (mess (XEvent-xclient-ref ev))
              (l (XClientMessageEvent-l-ref mess)))
         (XClientMessageEvent-type-set! mess ClientMessage)
-        (XClientMessageEvent-display-set! mess x11-default-display)
+        (XClientMessageEvent-display-set! mess x11-display)
         (XClientMessageEvent-window-set! mess source)
         (XClientMessageEvent-message_type-set! mess XdndFinished)
         (XClientMessageEvent-format-set! mess 32)
         (long*-set! l 0 (get-handle~ window))
         (long*-set! l 1 #x00000001)
         (long*-set! l 2 XdndActionCopy)
-        (XSendEvent x11-default-display source #f NoEventMask ev)
+        (XSendEvent x11-display source #f NoEventMask ev)
         (XEvent-free ev)))))
-  
 
-(definition (process-xdnd-leave window msg)
+
+(method (process-xdnd-leave window msg)
   (let* ((data (XClientMessageEvent-l-ref msg))
          (source (long*-ref data 0)))
     (when (equal? source DndSource)
@@ -782,81 +801,23 @@
       (set! DndAccept? #f)
       (set! DndPosition #f))))
 
-
-(definition (translate-shortcut mods keysym)
-  (let ((key (assv-value keysym Symbolic-Keys #f))
-        (app (get-application)))
-    (if (and key app)
-        (dispatch-shortcut~ app (new Shortcut mods key))
-      #f)))
-
-
-;;;
-;;;; Toplevel
-;;;
-
-
-(definition (get-toplevel-window-handle)
-  (let ((toplevel (get-toplevel)))
-    (when toplevel
-      (get-handle~ toplevel))))
-
-
-;;;
-;;;; Capture
-;;;
-
-
-(definition public (set-capture handle)
-  ;; todo
-  #f)
-
-
-(definition public (unset-capture)
-  ;; todo
-  #f)
-
-
 ;;;
 ;;;; Painting
 ;;;
 
 
-(definition package (with-platform-painting window platform-data proc)
-  (let* ((screen-no (XDefaultScreen x11-default-display))
-         (visual    (XDefaultVisual x11-default-display screen-no)))
-    (let ((surface (new Surface (cairo_xlib_surface_create x11-default-display (get-handle~ window) visual (get-width~ window) (get-height~ window)))))
-      (unwind-protect
-          (proc surface)
-        (close~ surface))))
-  processed)
+(method override (make-platform-surface window platform-data)
+    (cairo_xlib_surface_create x11-display
+                               (get-handle~ window)
+                               (XDefaultVisual x11-display (XDefaultScreen x11-display))
+                               (get-width~ window)
+                               (get-height~ window)))
 
 
-(definition public (get-window-surface window)
-  (let* ((screen-no (XDefaultScreen x11-default-display))
-         (visual    (XDefaultVisual x11-default-display screen-no)))
-    (cairo_xlib_surface_create x11-default-display (get-handle~ window) visual (get-width~ window) (get-height~ window))))
-
-
-(definition (set-alpha-blending handle n)
-  #f
-  @windows
-  ((set-layered? handle #t)
-   (SetLayeredWindowAttributes handle 0 n LWA_ALPHA)
-   (RedrawWindow handle NULL NULL (bitwise-ior RDW_ERASE RDW_INVALIDATE))))
-
-
-;;;
-;;;; Tracking
-;;;
-
-
-(definition public (track-mouse-leave handle)
-  )
-
-
-(definition public (cancel-mouse-leave-tracking handle)
-  )
+(method public override (get-window-surface window)
+  (let* ((screen-no (XDefaultScreen x11-display))
+         (visual    (XDefaultVisual x11-display screen-no)))
+    (cairo_xlib_surface_create x11-display (get-handle~ window) visual (get-width~ window) (get-height~ window))))
 
 
 ;;;
@@ -864,110 +825,78 @@
 ;;;
 
 
-(definition package (platform-set-parent handle parent)
-  (XReparentWindow x11-default-display handle (get-handle~ parent) 0 0))
+(method public override (wm-set-parent handle parent)
+  (XReparentWindow x11-display handle (get-handle~ parent) 0 0))
 
 
-(definition package (platform-get-first-child handle)
-  (let ((num-of-children (XNumberOfChildren x11-default-display handle)))
-    (if (= 0 num-of-children)
-        #f
-      (XGetChildHandle x11-default-display handle 0))))
-
-
-(definition package (platform-get-first-visible-child handle)
-  (let ((num-of-children (XNumberOfChildren x11-default-display handle)))
-    (if (= 0 num-of-children)
-        #f
-      (let loop ((n 0))
-           (if (= n num-of-children)
-               #f
-             (let ((child-handle (XGetChildHandle x11-default-display handle n)))
-               (if (platform-is-window-visible? child-handle)
-                   child-handle
-                 (loop (+ n 1)))))))))
-
-
-(definition package (platform-is-window-visible? handle)
-  (let ((infos (XWindowAttributes-make)))
-    (XGetWindowAttributes x11-default-display handle infos)
-    (prog1 (= (XWindowAttributes-map_state-ref infos) IsViewable)
-      (XWindowAttributes-free infos))))
-
-
-(definition public (acquire-point to-handle from-handle shape)
-  (receive (x y) (XTranslateCoordinates x11-default-display from-handle to-handle (get-h~ shape) (get-v~ shape))
+(method public override (acquire-point to-handle from-handle shape)
+  (receive (x y) (XTranslateCoordinates x11-display from-handle to-handle (get-h~ shape) (get-v~ shape))
     (new Point x y)))
 
 
-(definition public (acquire-rect to-handle from-handle shape)
+(method public override (acquire-rect to-handle from-handle shape)
   (let ((left-top (acquire-point to-handle from-handle (new Point (get-left~ shape) (get-top~ shape))))
         (right-bottom (acquire-point to-handle from-handle (new Point (get-right~ shape) (get-bottom~ shape)))))
     (corners->rect left-top right-bottom)))
 
 
-(definition package (platform-translate-to-root handle pt)
-  (receive (x y) (XTranslateCoordinates x11-default-display handle (XRootWindow x11-default-display (XDefaultScreen x11-default-display)) (get-h~ pt) (get-v~ pt))
+(method public override (wm-translate-to-root handle pt)
+  (receive (x y) (XTranslateCoordinates x11-display handle (XRootWindow x11-display (XDefaultScreen x11-display)) (get-h~ pt) (get-v~ pt))
     (new Point x y)))
 
 
-(definition package (platform-get-position-in-root handle)
-  (let ((pt (platform-get-position handle #f)))
-    (platform-translate-to-root handle pt)))
-
-
-(definition package (platform-get-position handle parent-handle)
+(method public override (wm-get-position handle parent-handle)
   (define (top-parent)
-    (let ((root (XQueryTree-root x11-default-display handle)))
+    (let ((root (XQueryTree-root x11-display handle)))
       (if (neq? root handle)
           (let (iterate (handle handle))
-            (let ((parent (XQueryTree-parent x11-default-display handle)))
+            (let ((parent (XQueryTree-parent x11-display handle)))
               (if (neq? root parent)
                   (iterate parent)
                 handle)))
         handle)))
-  
+
   (let ((top-parent (top-parent))
         (infos (XWindowAttributes-make)))
-    (XGetWindowAttributes x11-default-display top-parent infos)
+    (XGetWindowAttributes x11-display top-parent infos)
     (let ((x (XWindowAttributes-x-ref infos))
           (y (XWindowAttributes-y-ref infos)))
       (XWindowAttributes-free infos)
       (new Point x y))))
 
 
-(definition package (platform-set-position handle pos)
+(method public override (wm-set-position handle pos)
   (let ((event (XEvent-make)))
-    (XMoveWindow x11-default-display handle (get-h~ pos) (get-v~ pos))
-    (XWindowEvent x11-default-display handle StructureNotifyMask event)
+    (XMoveWindow x11-display handle (get-h~ pos) (get-v~ pos))
+    (XWindowEvent x11-display handle StructureNotifyMask event)
     (process-message event)
     (XEvent-free event)))
-  
 
-(definition package (platform-get-size handle)
+
+(method public override (wm-get-size handle)
   (let ((infos (XWindowAttributes-make)))
-    (XGetWindowAttributes x11-default-display handle infos)
+    (XGetWindowAttributes x11-display handle infos)
     (let ((width (XWindowAttributes-width-ref infos))
           (height (XWindowAttributes-height-ref infos)))
       (XWindowAttributes-free infos)
       (new Dimension width height))))
 
 
-(definition package (platform-get-window-size handle)
-  (platform-get-size handle))
+(method public override (wm-get-window-size handle)
+  (wm-get-size handle))
 
 
-(definition package (platform-set-window-size handle size)
+(method public override (wm-set-window-size handle size)
   (let ((event (XEvent-make)))
-    (XResizeWindow x11-default-display handle (get-width~ size) (get-height~ size))
-    (XWindowEvent x11-default-display handle StructureNotifyMask event)
+    (XResizeWindow x11-display handle (get-width~ size) (get-height~ size))
+    (XWindowEvent x11-display handle StructureNotifyMask event)
     (process-message event)
     (XEvent-free event)))
 
 
-(definition package (platform-get-rect handle parent-handle)
-  (let ((position (platform-get-position handle parent-handle))
-        (size     (platform-get-size handle)))
+(method public override (wm-get-rect handle parent-handle)
+  (let ((position (wm-get-position handle parent-handle))
+        (size     (wm-get-size handle)))
     (let* ((l (get-h~ position))
            (t (get-v~ position))
            (r (+ l (get-width~ size)))
@@ -975,102 +904,25 @@
       (new Rect l t r b))))
 
 
-(definition package (platform-set-rect handle rect)
-  (unimplemented 'platform-set-rect)
-  @windows
-  (SetWindowPos handle NULL (get-left~ rect) (get-top~ rect) (rect-width rect) (rect-height rect) (bitwise-ior SWP_NOZORDER SWP_NOACTIVATE)))
-
-
-(definition package (platform-get-bounds handle)
-  (unimplemented 'platform-get-bounds)
-  @windows
-  (let ((rect (RECT-make)))
-    (GetWindowRect handle rect)
-    (MapWindowPoints NULL handle rect 2)
-    (prog1 (new Rect (RECT-left-ref rect) (RECT-top-ref rect) (RECT-right-ref rect) (RECT-bottom-ref rect))
-      (RECT-free rect))))
-
-
-(definition package (platform-mouse-position)
-  (receive (x y) (XMousePosition x11-default-display (XRootWindow x11-default-display (XDefaultScreen x11-default-display)))
+(method public override (wm-mouse-position)
+  (receive (x y) (XMousePosition x11-display (XRootWindow x11-display (XDefaultScreen x11-display)))
     (new Point x y)))
 
 
-(definition package (platform-window-from-point point)
-  (get-window (XMouseWindow x11-default-display (XRootWindow x11-default-display (XDefaultScreen x11-default-display)))))
+(method public override (wm-window-from-point point)
+  (get-window (XMouseWindow x11-display (XRootWindow x11-display (XDefaultScreen x11-display)))))
 
 
-(definition package (platform-move-window handle x y cx cy)
-  (unimplemented 'platform-move-window)
-  @windows
-  (MoveWindow handle x y cx cy #t))
-
-
-(definition package (platform-window-enabled? handle)
-  (unimplemented 'platform-window-enabled?)
-  @windows
-  (IsWindowEnabled handle))
-
-
-(definition package (platform-enable-window handle)
-  ;; todo
-  )
-
-
-(definition package (platform-disable-window handle)
-  ;; todo
-  )
-
-
-(definition package (platform-get-client-rect handle)
+(method public override (wm-get-client-rect handle)
   (let ((infos (XWindowAttributes-make)))
-    (XGetWindowAttributes x11-default-display handle infos)
+    (XGetWindowAttributes x11-display handle infos)
     (let ((width (XWindowAttributes-width-ref infos))
           (height (XWindowAttributes-height-ref infos)))
       (XWindowAttributes-free infos)
       (new Rect 0 0 width height))))
 
 
-(definition (scroll-invalidate handle dh dv src-rect clip-rect)
-  (let* ((src-rect (rect-intersection src-rect clip-rect))
-         (dst-rect (offset-rect src-rect dh dv))
-         (modified-rect (rect-intersection (rect-union src-rect dst-rect) clip-rect)))
-    (let ((ml (get-left~ modified-rect))
-          (mt (get-top~ modified-rect))
-          (mr (get-right~ modified-rect))
-          (mb (get-bottom~ modified-rect)))
-      ;; TODO : Be smarter in intersecting with the clip rect
-      (when (< dh 0)
-        (platform-invalidate-rect handle (rect-intersection clip-rect (new Rect (+ mr dh) mt mr mb))))
-      (when (< dv 0)
-        (platform-invalidate-rect handle (rect-intersection clip-rect (new Rect ml (+ mb dv) mr mb))))
-      (when (> dh 0)
-        (platform-invalidate-rect handle (rect-intersection clip-rect (new Rect ml mt (+ ml dh) mb))))
-      (when (> dv 0)
-        (platform-invalidate-rect handle (rect-intersection clip-rect (new Rect ml mt mr (+ mt dv))))))))
-
-
-(definition package (platform-scroll-window handle dh dv rect clip-rect)
-  (platform-invalidate-rect handle clip-rect)
-  @buggy
-  (let ((gc (XCreateGC x11-default-display handle 0 #f))
-        (xrect (XRectangle-make)))
-    (XRectangle-x-set! xrect 0)
-    (XRectangle-x-set! xrect 0)
-    (XRectangle-width-set! xrect (- (get-right~ clip-rect) (get-left~ clip-rect)))
-    (XRectangle-height-set! xrect (- (get-bottom~ clip-rect) (get-top~ clip-rect)))
-    (XSetClipRectangles x11-default-display gc (get-left~ clip-rect) (get-top~ clip-rect) xrect 1 0)
-    (XCopyArea x11-default-display handle handle gc (get-left~ rect) (get-top~ rect) (- (get-right~ rect) (get-left~ rect)) (- (get-bottom~ rect) (get-top~ rect)) (+ (get-left~ rect) dh) (+ (get-top~ rect) dv))
-    (XFreeGC x11-default-display gc)
-    (XRectangle-free xrect)
-    (scroll-invalidate handle dh dv rect clip-rect)
-    (platform-update-window handle)))
-
-
-(definition inval-rects (make-table))
-
-
-(definition (validate-inval-rect rect <Rect> window)
+(method (validate-inval-rect rect <Rect> window)
   (if (= rect {Rect 0 0 0 0})
       #f
     (let ((size (get-size~ window)))
@@ -1089,7 +941,7 @@
             (new Rect l t r b)))))))
 
 
-(definition (process-inval-rects)
+(method (process-inval-rects)
   (iterate-table inval-rects
     (lambda (handle rect)
       (table-set! inval-rects handle)
@@ -1101,10 +953,10 @@
                 (b (get-bottom~ rect)))
             (let ((w (- r l))
                   (h (- b t)))
-              (XInvalidateRect x11-default-display handle l t w h))))))))
+              (XInvalidateRect x11-display handle l t w h))))))))
 
 
-(definition package (platform-invalidate-rect handle rect)
+(method public override (wm-invalidate-rect handle rect)
   ;; is this test correct or was it a patch made during the port
   (when (and handle rect)
       (let ((old-rect (table-ref inval-rects handle #f))
@@ -1118,82 +970,38 @@
                                                  new-rect)))))))
 
 
-(definition package (platform-invalidate-region handle region)
-  (for-each (lambda (rect)
-              (platform-invalidate-rect handle rect))
-            (get-rectangles~ region)))
+(method public override (wm-invalidate-window handle)
+  (let ((size (wm-get-size handle)))
+    (wm-invalidate-rect handle (new Rect 0 0 (get-width~ size) (get-height~ size)))))
 
 
-(definition package (platform-invalidate-window handle)
-  (let ((size (platform-get-size handle)))
-    (platform-invalidate-rect handle (new Rect 0 0 (get-width~ size) (get-height~ size)))))
-
-
-(definition package (platform-redraw-window handle rect region)
+(method public override (wm-redraw-window handle rect region)
   (if region
       (paint~ (get-window handle) region)
     (paint~ (get-window handle) (new Region rect))))
 
 
-(definition package (platform-get-update-rect handle)
-  (unimplemented 'platform-get-update-rect)
-  @windows
-  (let ((rect (RECT-make)))
-    (GetUpdateRect handle rect #f)
-    (prog1 (RECT->rect rect)
-      (RECT-free rect))))
+(method public override (wm-redraw-view-only view handle)
+  (redraw-view~ view))
 
 
-(definition package (platform-get-update-region handle)
-  (unimplemented 'platform-get-update-region)
-  @windows
-  (let ((region (new Region)))
-    (GetUpdateRgn handle (get-handle~ region) #f)
-    region))
-
-
-(definition package (platform-redraw-view-only view handle)
-  (redraw-view~ view)
-  @w
-  (let* ((size (platform-get-size handle))
-         (rct (new Rect 0 0 (get-width~ size) (get-height~ size))))
-    (platform-invalidate-rect handle rct)))
-
-
-(definition package (platform-update-window handle)
+(method public override (wm-update-window handle)
   (let ((rect (table-ref inval-rects handle #f)))
     (when rect
       (table-set! inval-rects handle)
       (paint~ (get-window handle) (new Region rect)))))
-  
-  
-(definition package (platform-show-noactivate handle)
-  (show-window handle))
 
 
-(definition package (platform-hide-noactivate handle)
-  (hide-window handle))
+(method public override (bring-window-to-front handle)
+  (XRaiseWindow x11-display handle))
 
 
-(definition package (platform-bring-window-to-front handle)
-  (XRaiseWindow x11-default-display handle))
+(method public override (send-window-to-back handle)
+  (XLowerWindow x11-display handle))
 
 
-(definition package (platform-send-window-to-back handle)
-  (XLowerWindow x11-default-display handle))
-
-
-(definition package (platform-select-foreground-window handle)
-  (XRaiseWindow x11-default-display handle))
-
-
-;;;
-;;;; Locking
-;;;
-
-
-(definition package (platform-lock-window-update handle)
-  )
+(method public override (select-foreground-window handle)
+  (XRaiseWindow x11-display handle))
 
 
 ;;;
@@ -1201,17 +1009,17 @@
 ;;;
 
 
-(definition package (platform-get-focus)
-  (receive (win state) (XGetInputFocus x11-default-display)
-    win))
-
-
-(definition package (platform-set-focus handle)
-  (XFlush x11-default-display)
+(method public override (wm-set-focus handle)
+  (define (is-window-visible? handle)
+    (let ((infos (XWindowAttributes-make)))
+      (XGetWindowAttributes x11-display handle infos)
+      (prog1 (= (XWindowAttributes-map_state-ref infos) IsViewable)
+             (XWindowAttributes-free infos))))
+  (XFlush x11-display)
   ;; this temp patch due to X11 setting visibility asynchronously
   ;; the correct solution is setting the focus in response to a visible event
-  (when (and handle (platform-is-window-visible? handle))
-    (XSetInputFocus x11-default-display handle RevertToNone CurrentTime)))
+  (when (and handle (is-window-visible? handle))
+    (XSetInputFocus x11-display handle RevertToNone CurrentTime)))
 
 
 ;;;
@@ -1219,41 +1027,13 @@
 ;;;
 
 
-(definition public Current-Cursor
-  #f)
-
-
-(definition (load-cursor cursor)
-  (unimplemented 'load-cursor))
-
-
-(definition (get-named-cursor name)
-  (let ((info (assq name Cursors)))
-    (and info (cadr info))))
-
-
-(definition public (get-cursor)
-  Current-Cursor)
-
-
-(definition public (set-cursor cursor)
-  (when (symbol? cursor)
-    (let ((cursor (get-named-cursor cursor)))
-      (when cursor
-        (let ((toplevel (get-toplevel)))
-          ;; need to change the cursor api so it
-          ;; knows which window it is being set for
-          (when toplevel
-            (set! Current-Cursor cursor)
-            (XDefineCursor x11-default-display (get-handle~ toplevel) cursor)))))))
-
-
-(definition public (hide-cursor)
-  #f)
-
-
-(definition public (show-cursor)
-  #f)
+(method public override (wm-set-cursor cursor-name)
+  (let ((cursor-descriptor (assq cursor-name Cursors)))
+    (when (and cursor-descriptor (get-toplevel))
+      ;; need to change the cursor api so it
+      ;; knows which window it is being set for
+     (set! Current-Cursor (cadr cursor-descriptor))
+     (XDefineCursor x11-display (get-handle~ (get-toplevel)) (cadr cursor-descriptor)))))
 
 
 ;;;
@@ -1261,35 +1041,81 @@
 ;;;
 
 
-(definition package (platform-get-desktop)
-  (XRootWindow x11-default-display (XDefaultScreen x11-default-display)))
+(method public override (wm-get-desktop)
+  (XRootWindow x11-display (XDefaultScreen x11-display)))
 
 
-(definition public (get-work-area) <Rect>
-  (let ((size (platform-get-size (platform-get-desktop))))
-    (new Rect 0 0
-         (- (get-width~ size) (get-right-margin))
-         (- (get-height~ size) (get-bottom-margin)))))
+(method public override (get-work-area) <Rect>
+  (let ((size (wm-get-size (wm-get-desktop))))
+    (new Rect 0 0 (get-width~ size) (get-height~ size))))
 
 
-;; until we find an api to get either the dock size or the effective screen size
-(cond-expand
-  (mac
-    (definition (get-right-margin)
-      64)
-    (definition (get-bottom-margin)
-      64))
-  (else
-   (definition (get-right-margin)
-     0)
-   (definition (get-bottom-margin)
-     0)))
+(method public override (bell-internal)
+  (XBell x11-display 50))
+
+
+(method (x11-get-clipboard-string display window selection)
+  (let ((owner (XGetSelectionOwner display selection)))
+    (if (= owner window)
+        clipboard-string
+      (let ((data (x11-retrieve-selection display window selection XA_STRING timestamp)))
+        (when data
+          (prog1 (uint8*->char-string data)
+            (XFree data)))))))
+
+
+(method (x11-set-clipboard-string display window string selection)
+  (set! clipboard-string string)
+  (set! clipboard-stamp timestamp)
+  (XSetSelectionOwner display selection window clipboard-stamp))
+
+
+(method public (x11-synchronize flag) ;; for debugging
+  (XSynchronize x11-display flag))
 
 
 ;;;
-;;;; Drag and Drop
+;;;; Keyboard
 ;;;
 
 
-(definition package (platform-drop-files window temp)
-  (unimplemented 'platform-drop-files)))
+  (method public override (wm-shift-down?)
+    (or (XKeyDown? x11-display (char->integer (XKeysymToKeycode x11-display XK_Shift_L)))
+        (XKeyDown? x11-display (char->integer (XKeysymToKeycode x11-display XK_Shift_R)))))
+
+
+  (method public override (wm-ctrl-down?)
+    (or (XKeyDown? x11-display (char->integer (XKeysymToKeycode x11-display XK_Control_L)))
+        (XKeyDown? x11-display (char->integer (XKeysymToKeycode x11-display XK_Control_R)))))
+
+
+  (method public override (wm-alt-down?)
+    (or (XKeyDown? x11-display (char->integer (XKeysymToKeycode x11-display XK_Meta_L)))
+        (XKeyDown? x11-display (char->integer (XKeysymToKeycode x11-display XK_Meta_R)))
+        (XKeyDown? x11-display (char->integer (XKeysymToKeycode x11-display XK_Alt_L)))
+        (XKeyDown? x11-display (char->integer (XKeysymToKeycode x11-display XK_Alt_R)))))
+
+
+  (method public override (wm-mouse-clicked?)
+    (XButtonDown? x11-display))
+
+
+;;;
+;;;; Clipboard
+;;;
+
+
+  (method public override (get-clipboard-text (format: format #f) (selection: selection XA_CLIPBOARD))
+    (x11-get-clipboard-string x11-display (get-handle~ (or (and current-modal (get-player~ current-modal)) (get-toplevel))) selection))
+
+
+  (method public override (set-clipboard-text text (format: format #f) (selection: selection XA_CLIPBOARD))
+    (x11-set-clipboard-string x11-display (get-handle~ (or (and current-modal (get-player~ current-modal)) (get-toplevel))) text selection))
+
+
+  (method public override (middle-mouse-paste proc)
+    (let ((text (get-clipboard-text selection: XA_PRIMARY)))
+      (if (not text)
+          #f
+          (proc text)
+          #t)))))

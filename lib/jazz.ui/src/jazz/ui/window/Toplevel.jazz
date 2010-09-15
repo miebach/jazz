@@ -123,10 +123,10 @@
             (size (get-toplevel-size~ pref)))
         (case (if pref state 'restored)
           ((maximized)
-           (show-maximized handle)
+           (show-maximized~ (*window-manager*) handle)
            (set! previous-state 'maximized))
           ((restored)
-           (show-restored handle)
+           (show-restored~ (*window-manager*) handle)
            (when position
              (set-position position))
            (when size

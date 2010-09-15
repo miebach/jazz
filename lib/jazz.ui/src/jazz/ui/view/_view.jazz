@@ -179,7 +179,7 @@
 (definition package (release-captured-view)
   (when Captured-View
     (set! Captured-View #f)
-    (unset-capture)))
+    (unset-capture~ (*window-manager*))))
 
 
 ;;;
@@ -298,7 +298,6 @@
           (initialize host guest))
         (layout-view~ host)
         (when host-visible?
-          (fade-in~ player)
           (focus-host~ host))
         host))))
 
@@ -311,11 +310,8 @@
     (when initialize
       (initialize palette guest))
     (client-activate~ guest)
-    (let ((visible? (get-visible?~ palette)))
-      (bring-to-front~ palette)
-      (unless visible?
-        (fade-in~ palette))
-      (focus-host~ host))
+    (bring-to-front~ palette)
+    (show~ palette)
     palette))
 
 
@@ -872,7 +868,6 @@
           (initialize host guest))
         (layout-view~ host)
         (when host-visible?
-          (fade-in~ player)
           (when host-focus?
             (focus-host~ host))
           (activate-frame~ host))
@@ -1297,7 +1292,7 @@
 
 
 (definition public (get-focus)
-  (let ((player (get-focused-window)))
+  (let ((player (get-focused-window~ (*window-manager*))))
     (when player
       (get-view-focus~ player))))
 
@@ -1306,7 +1301,7 @@
   (let ((old-focus (get-focus)))
     (when (neq? new-focus old-focus)
       (ensure-focusable~ new-focus)
-      (let ((old-player (get-focused-window))
+      (let ((old-player (get-focused-window~ (*window-manager*)))
             (new-player (get-player~ new-focus)))
         (assert new-player)
         (if (eq? old-player new-player)
@@ -1315,7 +1310,7 @@
               (focus-view~ new-player new-focus))
           (set-view-focus~ new-player new-focus)
           (bring-to-front~ new-player)
-          (set-window-focus new-player))
+          (acquire-focus~ new-player))
         (clear-pushed-focuses~ new-player)))))
 
 
@@ -1323,12 +1318,12 @@
   (let ((old-focus (get-focus)))
     (when (neq? new-focus old-focus)
       (ensure-focusable~ new-focus)
-      (let ((player (get-focused-window)))
+      (let ((player (get-focused-window~ (*window-manager*))))
         (push-view-focus~ player new-focus)))))
 
 
 (definition public (pop-focus)
-  (let ((player (get-focused-window)))
+  (let ((player (get-focused-window~ (*window-manager*))))
     (pop-view-focus~ player)))
 
 

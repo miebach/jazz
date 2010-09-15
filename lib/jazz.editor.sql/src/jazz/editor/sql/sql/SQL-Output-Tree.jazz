@@ -45,6 +45,7 @@
         (jazz.library)
         (jazz.system)
         (jazz.ui)
+        (jazz.ui.window)
         (jazz.ui.clipboard))
 
 
@@ -87,7 +88,7 @@
           (copy
            (lambda (string)
              (add-clipboard~ (get-application))
-             (set-clipboard-text string))))
+             (set-clipboard-text~ (*window-manager*) string))))
       (case (length selection)
         ((0))
         ((1) (copy (cell-title (car selection))))

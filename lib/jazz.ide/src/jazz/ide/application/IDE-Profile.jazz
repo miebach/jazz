@@ -90,11 +90,11 @@
   (method (glue n (kind 1))
     (let* ((appl (get-application))
            (stack (get-clipboard-stack~ appl))
-           (lst (cons (get-clipboard-text) (subseq stack 0 (- n 1))))
+           (lst (cons (get-clipboard-text~ (*window-manager*)) (subseq stack 0 (- n 1))))
            (glued (case kind
                     ((1) (format "{l}" lst))
                     ((2) (join lst ", ")))))
-      (set-clipboard-text glued)
+      (set-clipboard-text~ (*window-manager*) glued)
       (user-message "Clipboard set to {a}" glued)))
 
 

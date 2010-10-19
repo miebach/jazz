@@ -114,7 +114,7 @@
   
   
   (method override (process-title process)
-    (get-title~ process))
+    (get-name~ process))
   
   
   (method override (process-icon process)
@@ -135,12 +135,6 @@
           (if (host=? host (listening-host~ (get-remote-listener)))
               (format "{a} @" title)
             (format "{a} @ {a}" title (host->string host)))))))
-  
-  
-  (method override (reload-process process)
-    (with-jrm-exception-handler
-      (lambda ()
-        (reload-process~ process))))
   
   
   (method override (process-focusable? process)

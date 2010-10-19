@@ -305,4 +305,4 @@
   
   
   (method public (find-target target)
-    (process-alias~ (get-process) target))))
+    (process-alias~ (*current-process*) target))))

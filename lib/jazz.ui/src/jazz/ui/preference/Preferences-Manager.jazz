@@ -60,7 +60,7 @@
     (nextmethod host)
     (let ((preferences (tool-preferences)))
       (when preferences
-        (apply-preferences~ (get-process) preferences host))))
+        (apply-preferences~ (*current-process*) preferences host))))
   
   
   (method meta override (external-name . rest)
@@ -173,9 +173,8 @@
   
   (method package (on-update evt)
     (set-selection~ (locate '(descendants tree)) '())
-    (let ((process (get-process)))
-      (load-preferences~ process)
-      (set-client (get-preferences-root))))
+    (load-preferences~ (*current-process*))
+    (set-client (get-preferences-root)))
 
   
   ;;;

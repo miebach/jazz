@@ -143,9 +143,7 @@
   
   (method override (close-window)
     ;; on Windows Vista and upward, the WM_CLOSE message must go through to completion
-    (delay-event
-      (lambda ()
-        (exit-process~ (get-process))))
+    (delay-event (lambda () (quit~ (get-application))))
     processed)
     
   

@@ -67,9 +67,8 @@
     (lambda ()
       (let ((file Favorites-File))
         (when (exists?~ file)
-          (let ((process (get-process))
-                (favorites (instantiate~ (read-form file))))
-            (install-context~ process favorites)
+          (let ((favorites (instantiate~ (read-form file))))
+            (install-context~ (*current-process*) favorites)
             favorites))))
     continue-handler:
     (lambda (err)

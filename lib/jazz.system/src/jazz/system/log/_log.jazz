@@ -46,7 +46,7 @@
 (definition public (log-event type event-id message)
   (unimplemented 'log-event)
   @unimplemented
-  (let* ((name (process-event-source~ (get-process)))
+  (let* ((name (process-event-source~ (*current-process*)))
          (handle (RegisterEventSource #f name))
          (strings (new-array string 1)))
     (array-set! strings 0 message)

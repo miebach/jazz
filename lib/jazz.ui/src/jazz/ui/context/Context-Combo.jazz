@@ -66,7 +66,7 @@
   (method (update)
     (let* ((pref (get-preferences #f))
            (all (collect-type Trait (get-children~ pref)))
-           (active (get-context~ (get-process))))
+           (active (get-context~ (*current-process*))))
       (set-choices (map (lambda (trait)
                           (let ((name (get-name~ trait)))
                             (list name (->string name))))
@@ -81,7 +81,7 @@
   
   
   (method (selection-change)
-    (set-context~ (get-process) (get-value)))
+    (set-context~ (*current-process*) (get-value)))
   
   
   ;;;

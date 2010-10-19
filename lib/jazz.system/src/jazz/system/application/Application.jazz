@@ -108,24 +108,26 @@
   ;;;
   
   
-  (method override (prepare-bindings)
+  (method override (initialize-settings)
     (nextmethod)
     ;; this is critical as any problem in the boot process
     ;; might display a message-box that needs basic bindings
-    (set-bindings (new Application-Bindings)))
-
-
-  (method override (prepare-environment)
-    (nextmethod)
-    (set-application self)
+    (set-bindings (new Application-Bindings))
     (setup-shortcuts)
-    (initialize-system)
-    (initialize-window-manager)
     (prepare-skins)
     (prepare-colors)
     (prepare-fonts)
     (prepare-formats)
     (prepare-styles))
+
+
+  (method override (setup-preferences)
+    (with-safe-execution "loading the preferences"
+      (lambda ()
+        (setup-preferences/designer))
+      continue-handler:
+      (lambda (err)
+        (set-preferences/designer (default-preferences)))))
 
 
   (method override (install-environment)
@@ -134,15 +136,11 @@
     (install-bindings)
     (install-workspaces)
     (initialize-toplevel)
-    (register-jazz-clipboard-formats (clipboard-prefix)))
-
-
-  (method override (finalize-environment)
-    (nextmethod)
+    (register-jazz-clipboard-formats (clipboard-prefix))
     (set-cursor :arrow)
     (splash-screen))
 
-  
+
   (method override (setup-profile)
     (define (create-profile)
       (with-safe-execution "loading the profile"
@@ -157,12 +155,8 @@
     
     (when (use-profile?)
       (create-profile)
-      (set-profile-actions (get-class-actions profile))))
-  
-  
-  (method override (finish-environment)
-    (nextmethod)
-    (register-locale (new Locale english: '(english: "English")))
+      (set-profile-actions (get-class-actions profile)))
+
     (register-locale-change locale-change)
     (add-save-environment-listener self)
     (when profile
@@ -174,7 +168,7 @@
           )))
     (reload-session)
     (remove-splash-screen))
-  
+
   
   (method override (finish-process)
     (nextmethod)
@@ -199,23 +193,6 @@
           ))))
   
   
-  ;;;
-  ;;;; Termination
-  ;;;
-  
-  
-  (method override (terminate-process)
-    (nextmethod)
-    (reset-palettes)
-    (reset-dockeds)
-    (reset-toolbars)
-    (when toplevel
-      (close~ toplevel)
-      (set! toplevel #f)
-      (set! profile-class #f)
-      (set! profile #f)))
-
-
   ;;;
   ;;;; Java
   ;;;
@@ -261,7 +238,7 @@
   (method public virtual (clipboard-prefix)
     (format "{a}_{a}_"
             (process-name)
-            (present~ (process-version))))
+            (present~ (application-version))))
 
 
   ;;;
@@ -445,9 +422,9 @@
     
     (define (install-new-profile name unit bindings)
       (let ((associations (list (cons 'jazz-settings-version (present-version jazz-settings-version))
-                                (cons 'profile profile-name)
-                                (cons 'profile-lowercase (downcase (symbol->string profile-name)))
-                                (cons 'profile-unit profile-unit)
+                                (cons 'profile name)
+                                (cons 'profile-lowercase (downcase (symbol->string name)))
+                                (cons 'profile-unit unit)
                                 (cons 'profile-bindings (or bindings 'jazz))
                                 (cons 'active-skin (case kernel-windowing ((carbon) 'mac) ((x11) 'x11) (else 'jazz))))))
         (copy-template (new-directory~ (templates-directory) "profile")
@@ -480,7 +457,7 @@
         (values name unit-name bindings)))
 
     (define (system-profile)
-      (values 'Me 'jazz.profile))
+      (values 'Me 'jazz.profile 'jazz))
 
     (define (load-profile-jazzini)
       (let ((file {File Profile ".jazzini"}))
@@ -509,27 +486,36 @@
   ;;;
   ;;;; Closing
   ;;;
+
   
+  (method public virtual (quit)
+    (parameterize ((*exiting-process?* #t)) ;; since there's no around methods, this is a fail
+      (call-save-environment-listeners)
+      ;; called before closing frames because saving a class form
+      ;; can potentialy modify an opened text
+      (call-exit-listeners)
+      (confirm-all-close)
+      (close-all-no-confirm)
+      (save-bindings)
+      (save-workspaces)
+      (persist-preferences)
+      (reset-palettes)
+      (reset-dockeds)
+      (reset-toolbars)
+      (when toplevel
+        (close~ toplevel)
+        (set! toplevel #f)
+        (set! profile-class #f)
+        (set! profile #f))
+      (exit-process)))
+
   
-  (method override (preserve-environment)
-    (nextmethod)
-    (call-save-environment-listeners))
-  
-  
-  (method override (close-environment)
-    ;; called before closing frames because saving a class form
-    ;; can potentialy modify an opened text
-    (call-exit-listeners)
-    (confirm-all-close)
-    (close-all-no-confirm)
-    (save-bindings)
-    (save-workspaces)
-    @wait
-    (save-page-setup)
-    (nextmethod))
-  
-  
-  (method virtual (confirm-all-close)
+  (method (persist-preferences)
+    (when (and preferences-designer (persist-preferences?) (file? (get-origin~ (get-form~ preferences-designer))))
+      (save~ preferences-designer)))
+
+
+  (method public (confirm-all-close)
     (define (frame-dependent-document? frame)
       (and (is? frame Host-View)
            (let ((guest (get-guest~ frame)))
@@ -593,40 +579,40 @@
   ;;;
   ;;;; Help
   ;;;
+
   
+  (method public virtual (application-owner)
+    #f)
+  
+  
+  (method public virtual (application-copyright)
+    #f)
+  
+  
+  (method public virtual (application-version)
+    {Version 1 0 0})
+
   
   (method package (on-about evt)
     (show-about))
   
   
   (method public virtual (show-about)
-    (let ((name (process-name))
-          (owner (process-owner))
-          (copyright (process-copyright))
-          (licensee (process-licensee))
-          (version (present~ (process-version)))
-          (email (process-email)))
-      (message-box
-        (append!
-         (list
-          (list (list font: {Font Text} color: {Color Dark-Blue} (format "{a} v{a}" name version)))
-          (list))
-         (if owner
-             (list
-               (list (list font: {Font Text} (format "Copyright {a}{a}" (if copyright (format "{a} " copyright) "") owner)))
-               (list))
-           '())
-         (if licensee
-             (list
-               (list "This product is licensed to " (list licensee))
-               (list))
-           '())
-         (if email
-             (list
-               (list "Send comments, suggestions, bugs,... to:")
-               (list email))
-           '()))
-        title: (format "{a} {a}" (localize {Locales english: "About" french: "À propos de"}) name))))
+    (message-box
+     (append!
+      (list
+       (list (list font: {Font Text} color: {Color Dark-Blue} (format "{a} v{a}" (process-name) (present~ (application-version)))))
+       (list))
+      (when (application-owner)
+            (list
+             (let ((copyright (application-copyright)))
+               (list (list font: {Font Text} (format "Copyright {a}{a}" (if copyright (format "{a} " copyright) "") (application-owner)))))
+             (list)))
+      (when (process-contact-email)
+            (list
+             (list "Send comments, suggestions, bugs,... to:")
+             (list (process-contact-email)))))
+     title: (format "About {a}" (process-name))))
 
 
   ;;;
@@ -2194,7 +2180,7 @@
   
   
   (method package virtual (on-quit-application evt)
-    (exit-process))
+    (quit))
   
   
   (method public (save-all (class: class Document) (save-unanchored?: save-unanchored? #t))
@@ -2256,15 +2242,6 @@
   ;;;
   ;;;; Preferences
   ;;;
-  
-  
-  (method override (setup-preferences)
-    (with-safe-execution "loading the preferences"
-      (lambda ()
-        (setup-preferences/designer))
-      continue-handler:
-      (lambda (err)
-        (set-preferences/designer (default-preferences)))))
   
   
   (method override (default-preferences)

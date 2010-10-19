@@ -52,7 +52,8 @@
         (jazz.runtime)
         (jazz.system)
         (jazz.system.process)
-        (jazz.system.process.stub))
+        (jazz.system.process.stub)
+        (jazz.ui.window))
 
 
 (class Process extends Object
@@ -64,39 +65,16 @@
   (slot preferences-designer initialize #f getter generate)
   (slot context              initialize #f)
   (slot exit-continuation    initialize #f)
+  (slot is-root?             initialize #t)
 
   
   ;;;
   ;;;; Access
   ;;;
-  
-  
+
+
   (method public virtual (process-name)
     "Process")
-  
-  
-  (method public virtual (process-owner)
-    #f)
-  
-  
-  (method public virtual (process-copyright)
-    #f)
-  
-  
-  (method public virtual (process-licensee)
-    #f)
-  
-  
-  (method public virtual (process-icon)
-    "Process")
-  
-
-  (method public virtual (process-version)
-    {Version 1 0 0})
-  
-  
-  (method public virtual (process-email)
-    #f)
   
   
   (method public virtual (process-actions)
@@ -113,71 +91,65 @@
   ;;;
   
   
-  (method public virtual (boot-environment)
-    (catch (Cancel-Signal signal
-             #f)
-      (update-debuggee)
-      (initialize-aliases)
-      (initialize-settings)
-      (prepare-phase)
-      (install-phase)
-      (finalize-phase)
-      (finish-phase)
-      (conclude-phase)
-      (activate-process)
-      (ready-debuggee)
-      (start-process)
-      (when (run-loop?)
-        ;; sanity check for a bug that can occur very easily and is extremely difficult to debug
-        (when (and (eq? (current-thread) (get-load-thread)) (not-null? (get-load-stack)))
-          (system-message (format "Internal error: Load stack not empty.{%}{%}This is probably caused by a product run unit doing its initialisations at the toplevel instead of registering them using register-product-run.{%}{%}Please report this problem to the JazzScheme team if this is not the case.")))
-        (run-loop))
-      #f))
+  (method public virtual (boot-environment (window-manager: window-manager #f) (root-process?: root-process? #t))
+
+    (set! is-root? root-process?)
+    
+    (parameterize ((*window-manager* window-manager)
+                   (*current-process* self)
+                   (event-thread (current-thread)))
+
+      (when jazz:debugger
+        (setup-debuggee))
+                  
+      (catch (Cancel-Signal signal #f)
+
+        (when root-process?
+          (initialize-system) ;; this should be called at an earlier stage of initialization, but right now no such common point exists
+          (when (not window-manager)
+            (*window-manager* (new platform-window-manager)))
+          )
+        
+        (update-debuggee-process)
+        (setup-crash-handler)
+        
+        (initialize-aliases) ;; this needs to be an after method
+        (initialize-settings) ;; Jedi uses this to load settings, where window manager gets initialized
+
+        (setup-preferences)
+        (prepare-preferences-aliases) ;; these need to be after methods on setup-preferences
+        
+        (install-environment) ;; used by Application, looks like it needs preferences to be set up first
+        (install-process)     ;; only used by IDE
+        
+        (when (command-host/service "listen")
+          (start-remote-server))
+        
+        (finalize-process)
+
+        (register-base-objects)
+
+        (prepare-profile)
+        (prepare-workbench) ;; ok wtf is this? this is only used by the IDE. does it have dependencies on the previous steps? can it be moved to the previous, or if not, succeeding steps?
+        (setup-profile)
+        
+        (finish-process) ;; this should be merged with conclude-environment
+        (conclude-environment) ;; this does a lot
+        (conclude-process)
+        
+        (ready-debuggee)
+        (start-process)
+        
+        (when (run-loop?)
+          ;; sanity check for a bug that can occur very easily and is extremely difficult to debug
+          (when (and (eq? (current-thread) (get-load-thread)) (not-null? (get-load-stack)))
+            (system-message (format "Internal error: Load stack not empty.{%}{%}This is probably caused by a product run unit doing its initialisations at the toplevel instead of registering them using register-product-run.{%}{%}Please report this problem to the JazzScheme team if this is not the case.")))
+          (run-loop))
+        #f)))
   
   
-  (method (update-debuggee)
-    (unless (current-process-title)
-      (current-process-title-set! (process-name)))
-    (current-process-version-set! (present~ (process-version)))
-    (update-debuggee-process))
-
-
   (method protected virtual (initialize-settings)
     )
-
-  
-  (method (prepare-phase)
-    (prepare-settings)
-    (prepare-bindings)
-    (prepare-aliases)
-    (prepare-environment)
-    (prepare-profile)
-    (prepare-preferences)
-    (prepare-preferences-aliases)
-    (prepare-workbench)
-    (prepare-process))
-
-
-  (method protected virtual (prepare-settings)
-    (use-print? #t))
-
-
-  (method protected virtual (prepare-environment)
-    (set-process self)
-    (initialize-system))
-
-
-  (method (prepare-preferences)
-    (setup-preferences))
-
-  
-  (method public virtual (prepare-process)
-    (setup-crash-handler))
-  
-  
-  (method (install-phase)
-    (install-environment)
-    (install-process))
 
 
   (method protected virtual (install-environment)
@@ -185,17 +157,6 @@
 
   
   (method public virtual (install-process)
-    )
-  
-  
-  (method (finalize-phase)
-    (finalize-environment)
-    (start-servers)
-    (finalize-process)
-    (setup-profile))
-
-
-  (method protected virtual (finalize-environment)
     )
   
   
@@ -211,66 +172,22 @@
       (create-profile)))
     
   
-  (method (finish-phase)
-    (finish-environment)
-    (finish-process))
-  
-  
-  (method protected virtual (finish-environment)
-    (register-base-objects))
-  
-  
   (method public virtual (finish-process)
     )
     
-  
-  (method (conclude-phase)
-    (conclude-environment)
-    (conclude-process))
-  
   
   (method protected virtual (conclude-environment)
     )
   
   
   (method public virtual (conclude-process)
-    (when (get-controller-debugger)
+    (when (and is-root? (get-controller-debugger))
       (select-console)
       (start-repl-thread (current-thread) #f (get-console-port))))
   
   
   (method protected virtual (start-process)
     )
-  
-  
-  ;;;
-  ;;;; Termination
-  ;;;
-  
-  
-  (method protected virtual (terminate-process)
-    )
-  
-  
-  ;;;
-  ;;;; Environment
-  ;;;
-  
-  
-  (method public virtual (preserve-environment)
-    )
-  
-  
-  (method public virtual (close-environment)
-    (persist-preferences)
-    (unless (reloading-process?)
-      (detach-from-controller)
-      (stop-servers)))
-  
-  
-  (method (persist-preferences)
-    (when (and preferences-designer (persist-preferences?) (file? (get-origin~ (get-form~ preferences-designer))))
-      (save~ preferences-designer)))
 
 
   ;;;
@@ -330,26 +247,12 @@
   
 
   (method public (exit-process (status 0))
-    (unload-process)
-    (if exit-continuation
-        (continuation-return exit-continuation status)
-      (exit status)))
-  
-
-  (method public virtual (reload-process)
-    (thread-execute (primordial-thread) 'reload-process
-      (lambda ()
-        (parameterize ((*reloading-process?* #t))
-          (unload-process))
-        (continuation-graft exit-continuation boot-environment))))
-  
-  
-  (method (unload-process)
-    (parameterize ((*exiting-process?* #t))
-      (preserve-environment)
-      (close-environment)
-      (terminate-process)
-      (set-process #f)))
+    (when is-root?
+      (detach-from-controller)
+      (stop-servers)
+      (if exit-continuation
+          (continuation-return exit-continuation status)
+          (exit status))))
   
 
   ;;;
@@ -574,21 +477,8 @@
 
 
   ;;;
-  ;;;; Bindings
-  ;;;
-  
-  
-  (method protected virtual (prepare-bindings)
-    )
-
-
-  ;;;
   ;;;; Aliases
   ;;;
-  
-  
-  (method protected virtual (prepare-aliases)
-    )
   
   
   (method public virtual (prepare-preferences-aliases)
@@ -649,12 +539,16 @@
   ;;;
   
   
-  (method public (get-name)
+  (method public (get-name) ;; here because debugger proxy stub would have name conflicts otherwise
     (process-name))
   
   
-  (method public (get-icon)
-    (process-icon))
+  (method public virtual (process-icon) ;; used so a remote Jedi debugger can display the right picture
+    "Process")
+
+  
+  (method public virtual (process-contact-email) ;; where to send core dumps
+    #f)
   
   
   (method public (get-register)
@@ -693,13 +587,4 @@
   
   
   (method protected virtual (process-debuggee-loop)
-    (debuggee-loop))
-
-
-  ;;;
-  ;;;; Profile
-  ;;;
-
-
-  (method public virtual (get-remote-profile name)
-    #f)))
+    (debuggee-loop))))

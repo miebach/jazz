@@ -159,7 +159,7 @@
   
   
   (method override (class-persist-property? class property)
-    (let ((process (get-process)))
+    (let ((process (*current-process*)))
       (case property
         ((username:) (persist-usernames?~ process))
         ((password:) (persist-passwords?~ process))

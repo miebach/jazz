@@ -104,7 +104,7 @@
              (find-form (get-parent~ component)))))
     
     (if (is-not? sender Component)
-        (process-alias~ (get-process) target-name)
+        (process-alias~ (*current-process*) target-name)
       (cond ((eq? target-name :form)
              (find-form sender))
             ((and (pair? target-name) (eq? (car target-name) :form))

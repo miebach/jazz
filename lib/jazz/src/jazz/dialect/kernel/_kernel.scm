@@ -129,6 +129,7 @@
 ;;;
 
 
+(native jazz:debugger)
 (native jazz:run-loop?)
 (native jazz:terminal)
 (native jazz:terminal-string)

@@ -258,7 +258,7 @@
 
 
 (definition public (find-process)
-  ((module-ref 'jazz.system 'get-process)))
+  ((module-ref 'jazz.system '*current-process*)))
 
 
 (definition public (find-application)

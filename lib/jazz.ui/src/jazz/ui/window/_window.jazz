@@ -53,25 +53,16 @@
         (jazz.system))
 
 
+(definition public *window-manager* (make-parameter #f))
+
 
 (cond-expand
  (carbon
-  (definition public (initialize-window-manager)
-    (*window-manager* (new CarbonWindowManager))))
+  (definition public platform-window-manager CarbonWindowManager))
  (windows
-  (definition public (initialize-window-manager)
-    (*window-manager* (new WindowsWindowManager))))
+  (definition public platform-window-manager WindowsWindowManager))
  (x11
-  (definition public (initialize-window-manager)
-    (*window-manager* (new X11WindowManager)))))
-
-
-;; (definition public (initialize-window-manager)
-;; ;  (jazz.debuggee.trace-internal X11WindowManager)
-;; ;  (jazz.debuggee.trace-internal Popup)
-;;   (*window-manager* (new X11WindowManager))
-;;   (x11-synchronize~ (*window-manager*) #t)
-;;   )
+  (definition public platform-window-manager X11WindowManager)))
 
 
 ;;;

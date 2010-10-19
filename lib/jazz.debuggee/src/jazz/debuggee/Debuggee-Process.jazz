@@ -50,11 +50,12 @@
   
   
   (method public (get-title)
-    (current-process-present))
+    (get-name~ (*current-process*)))
   
   
   (method public (get-icon)
-    (current-process-icon))
+    (when (*current-process*)
+      (process-icon~ (*current-process*))))
   
   
   ;;;
@@ -66,12 +67,8 @@
     (detach-from-controller))
   
   
-  (method public (reload-process)
-    (reload-process~ (get-process)))
-  
-  
   (method public (exit-process)
-    (let ((process (get-process))
+    (let ((process (*current-process*))
           (primordial (primordial-thread)))
       (if (and process (thread-loop? primordial))
           (thread-post primordial 'exit-process

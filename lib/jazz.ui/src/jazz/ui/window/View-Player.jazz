@@ -422,7 +422,7 @@
     (let ((host (get-host~ view-focus)))
       (when host
         (activate-focus~ host)))
-    (when (and process-focus-change? (process-active?))
+    (when (and process-focus-change? (get-application))
       (process-focus-change~ (get-application) view-focus)))
   
   

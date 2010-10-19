@@ -1059,7 +1059,6 @@
 
 (define (jazz:load-debuggee)
   (jazz:load-debuggee-units)
-  (jazz:load-unit 'jazz.debuggee.setup)
   (jazz:load-unit 'jazz.debuggee.update))
 
 

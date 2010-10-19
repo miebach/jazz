@@ -140,7 +140,7 @@
       (force-output output))
     
     (define (quit-command arguments)
-      (exit-process~ (get-process)))
+      (exit-process~ (*current-process*)))
     
     ;;;
     ;;;; Server
@@ -239,7 +239,7 @@
       (force-output output)
       (let ((command (read-line input)))
         (cond ((eof-object? command)
-               (exit-process~ (get-process)))
+               (exit-process~ (*current-process*)))
               ((empty-string? command)
                (loop #f))
               (else

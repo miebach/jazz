@@ -59,6 +59,10 @@
   (method (destroy)
     (validate-status (PdhCloseQuery query))
     (nextmethod))
+
+
+  (definition (module-base)
+    (get-base~ (new File (tokenise-windows (GetModuleFileName)))))
   
   
   (method public (add-counter . rest)

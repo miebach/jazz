@@ -79,7 +79,7 @@
   (prog1 (continuation-capture
            (lambda (continuation)
              (bind-keywords ((directory #f) . others) rest
-               (let ((file (timestamped-file (or directory (snapshots-directory)) (current-process-present) "snapshot")))
+               (let ((file (timestamped-file (or directory (snapshots-directory)) (format "{a}" (jazz-product)) "snapshot")))
                  (create-directories~ file)
                  (call-with-output-file (path-settings file)
                    (lambda (output)
@@ -96,16 +96,7 @@
     (define package-info-more? fourth)
     
     (define (print-process)
-      (define (present-process-version)
-        (let ((process (get-process)))
-          (when process
-            (present~ (process-version~ process)))))
-      
-      (let ((name (current-process-present))
-            (version (present-process-version))
-            (date (present-date (current-date)))
-            (id (current-process-id)))
-        (format output "(<process> name: {s}{? version: {s}~} date: {s} id: {s}" name version date id))
+      (format output "(<process> name: {s} date: {s} id: {s}" (jazz-product) (present-date (current-date)) (current-process-id))
       (when reason
         (format output " reason: {s}" reason))
       (when exception
@@ -234,22 +225,21 @@
 
 
 (definition public (application-exception-feedback exception snapshot)
-  (let ((process (get-process)))
-    (system-message (format "{a} {a}{%}{%}{a}.{%}{a}.{%}{%}{a}{%}    {a}{a}"
-                            (localize {Locales english: "An unexpected problem occured while executing" french: "Une erreur imprévue s'est produite lors de l'exécution de"})
-                            (current-process-present)
-                            (localize {Locales english: "This will terminate the application immediately" french: "Ceci entraine la terminaision immédiate de l'application"})
-                            (localize {Locales english: "Unsaved work currently in progress will be lost" french: "Tout travaux en cours non sauvegardés seront perdus"})
-                            (localize {Locales english: "A log file has been generated at" french: "Un fichier de log a été généré à"})
-                            (parse~ snapshot)
-                            (if process
-                                (let ((email (process-email~ process)))
-                                  (if email
-                                      (format "{%}{%}{a}{%}{a}: {a}."
-                                              (localize {Locales english: "Help us fix this problem by sending the log file and any comments" french: "Aidez nous à corriger ce problème en fesant parvenir le fichier de log"})
-                                              (localize {Locales english: "about how the problem occured to" french: "ainsi que tout commentaires explicatifs à"})
-                                              email)
+  (system-message (format "{a} {a}{%}{%}{a}.{%}{a}.{%}{%}{a}{%}    {a}{a}"
+                          (localize {Locales english: "An unexpected problem occured while executing" french: "Une erreur imprévue s'est produite lors de l'exécution de"})
+                          (jazz-product)
+                          (localize {Locales english: "This will terminate the application immediately" french: "Ceci entraine la terminaision immédiate de l'application"})
+                          (localize {Locales english: "Unsaved work currently in progress will be lost" french: "Tout travaux en cours non sauvegardés seront perdus"})
+                          (localize {Locales english: "A log file has been generated at" french: "Un fichier de log a été généré à"})
+                          (parse~ snapshot)
+                          (if (*current-process*)
+                              (let ((email (process-contact-email~ (*current-process*))))
+                                (if email
+                                    (format "{%}{%}{a}{%}{a}: {a}."
+                                            (localize {Locales english: "Help us fix this problem by sending the log file and any comments" french: "Aidez nous à corriger ce problème en fesant parvenir le fichier de log"})
+                                            (localize {Locales english: "about how the problem occured to" french: "ainsi que tout commentaires explicatifs à"})
+                                            email)
                                     ""))
                               ""))
-                    title: (localize {Locales english: "Application Error" french: "Erreur d'application"})
-                    type: 'problem))))
+                  title: (localize {Locales english: "Application Error" french: "Erreur d'application"})
+                  type: 'problem)))

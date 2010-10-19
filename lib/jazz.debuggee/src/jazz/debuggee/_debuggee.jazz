@@ -99,12 +99,6 @@
 
 (definition public (detach-from-controller)
   (when controller-debugger
-    (detach-from-debugger)
-    (set! local-process #f)))
-
-
-(definition public (detach-from-debugger)
-  (when controller-debugger
     (when (live?~ controller-debugger)
       (detach-process~ controller-debugger local-process))
     (set! controller-debugger #f)
@@ -129,15 +123,6 @@
   (let ((cookie-arg (command-argument "debugger-cookie")))
     (when cookie-arg
       (ready-to-controller (parse-integer cookie-arg)))))
-
-
-(definition package (update-debuggee-arguments)
-  (let ((title-arg (command-argument "process-title"))
-        (icon-arg (command-argument "process-icon")))
-    (when title-arg
-      (current-process-title-set! title-arg))
-    (when icon-arg
-      (current-process-icon-set! icon-arg))))
 
 
 (definition package (update-debuggee-process)
@@ -386,11 +371,7 @@
 
 
 (definition package (display-banner port)
-  (let ((title (current-process-title))
-        (version (current-process-version)))
-    (if (not version)
-        (format port #"\(banner {a}{%}{%}\)"# title)
-      (format port #"\(banner {a} v{a}{%}{%}\)"# title version)))
+  (format port #"\(banner {a}{%}{%}\)"# (get-name~ (*current-process*)))
   (format port #"\(banner-prompt > \)"#)
   (force-output port))
 
@@ -609,7 +590,7 @@
     (if (and (eq? context :default)
              (neq? default-context :not-set))
         default-context
-      (let ((process (get-process)))
+      (let ((process (*current-process*)))
         (cond ((not process)
                (if (eq? context :default)
                    (new (module-ref 'jazz.profile 'Me))
@@ -628,7 +609,7 @@
     (let ((context (get-context~ console)))
       (if (unspecified? context)
           (let ((new-context
-                  (let ((process (get-process)))
+                  (let ((process (*current-process*)))
                     (context-alias (if process
                                        (initial-console-context~ process)
                                      :default)))))
@@ -982,7 +963,7 @@
         (parameterize ((current-repl-frame (box #f)))
           (with-current-loop
             (lambda ()
-              (let ((process (get-process)))
+              (let ((process (*current-process*)))
                 (if (not process)
                     (debuggee-loop)
                   (process-debuggee-loop~ process))))))))))
@@ -1016,7 +997,7 @@
                 (lambda ()
                   (with-current-loop
                     (lambda ()
-                      (let ((process (get-process)))
+                      (let ((process (*current-process*)))
                         (if (not process)
                             (debuggee-loop)
                           (process-debuggee-loop~ process))))))

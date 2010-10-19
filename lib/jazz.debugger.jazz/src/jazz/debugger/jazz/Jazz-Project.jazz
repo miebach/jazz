@@ -150,7 +150,7 @@
         title: "Choose Kernel"
         extensions: (list (executable-extension kernel-platform))))
     
-    (let ((ide (get-process)))
+    (let ((ide (*current-process*)))
       (when debugger?
         (start-remote-server~ ide)
         (start-debuggers~ ide))

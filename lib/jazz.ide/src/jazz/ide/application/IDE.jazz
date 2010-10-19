@@ -148,12 +148,6 @@
           (current-output-port (console-output-port))))))
 
 
-  (method override (close-environment)
-    (unless (reloading-process?)
-      (detach-debugger-processes))
-    (nextmethod))
-
-  
   ;;;
   ;;;; Access
   ;;;
@@ -316,8 +310,9 @@
   ;;;
   
   
-  (method override (terminate-process)
+  (method public override (quit)
     (nextmethod)
+    (detach-debugger-processes) ;; TODO: this also needs to kill any children started explicitly from IDE
     (when (use-local-debugger?)
       (unregister-object~ (get-local-register) 'debugger error?: #f)))
 
@@ -333,15 +328,6 @@
       (save-catalogs~ cataloguer)))
   
   
-  ;;;
-  ;;;; Exit
-  ;;;
-  
-
-  (method override (reload-process)
-    (message-box "An IDE cannot be reloaded yet."))
-
-
   ;;;
   ;;;; Session
   ;;;
@@ -811,13 +797,6 @@
       (unless (null? processes)
         (focus-process~ (get-debugger-manager) (previous-process (find processes focused test: debugged=?))))))
 
-
-  (method package (on-reload-process evt)
-    (let ((debugged (get-focused-process~ (get-debugger-manager))))
-      (if (not debugged)
-          (bell)
-        (reload-process~ debugged))))
-  
 
   (method package (on-debug-views evt)
     (debug-views~ (current-view-debugger)))

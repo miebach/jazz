@@ -127,13 +127,10 @@
   
   (with-safe-execution "loading the connections"
     (lambda ()
-      (let ((process (get-process))
-            (connections (load-connections)))
-        (install-context~ process connections)
+      (let ((connections (load-connections)))
+        (install-context~ (*current-process*) connections)
         connections))
-    continue-handler:
-    (lambda (err)
-      )))
+    continue-handler: (lambda (err))))
 
 
 ;;;

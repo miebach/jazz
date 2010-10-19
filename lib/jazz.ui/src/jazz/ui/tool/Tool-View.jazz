@@ -54,7 +54,7 @@
     (nextmethod host)
     (let ((preferences (tool-preferences)))
       (when preferences
-        (apply-preferences~ (get-process) preferences host))))
+        (apply-preferences~ (*current-process*) preferences host))))
   
   
   ;;;

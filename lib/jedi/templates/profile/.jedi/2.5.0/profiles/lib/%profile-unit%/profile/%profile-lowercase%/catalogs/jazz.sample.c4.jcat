@@ -1,5 +1,5 @@
 "C4-AI"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "C4-AI.jazz"} 1259266728
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "C4-AI.jazz"} 1288732034
     {Lisp-Entry "jazz.sample.c4.C4-AI" module #f 38 18 38 38 ("jazz")
       {Lisp-Entry "C4-AI" class #f 48 7 48 12 ("Search-Depth" "0" "initialize" "C4-Player")
         {Lisp-Entry "current-eval" slot #f 51 8 51 20 ()}
@@ -26,7 +26,7 @@
         {Lisp-Entry "evaluate-count" definition #f 146 15 146 29 ("0" "10" "1" "100" "2" "1000" "3" "1000000" "4" "case" "cast" "*" "token" "count")}
         {Lisp-Entry "setup-lines" method #f 161 11 161 22 ("get-lines" "cons" "line=?" "test:" "member?" "not" "when" "line" "lambda" "for-each" "board-ref" "square" "let" "game" "get-board-size" "below" "0" "from" "rank" "for" "loop" "all-lines" "set!")}}}})
 "C4-Application"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "C4-Application.jazz"} 1268318349
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "C4-Application.jazz"} 1288819789
     {Lisp-Entry "jazz.sample.c4.C4-Application" module #f 38 18 38 47 ("jazz")
       {Lisp-Entry "C4-Application" class #f 53 7 53 21 ("Application")
         {Lisp-Entry "process-name" method #f 56 20 56 32 ()}
@@ -34,7 +34,7 @@
         {Lisp-Entry "finish-process" method #f 64 20 64 34 ("C4-Board" "new-frame" "current-stage" "maximize" "nextmethod")}}
       {Lisp-Entry "C4-Toplevel" class #f 75 7 75 18 ("625" "800" "Dimension" "size:" "100" "Point" "position:" "caption-base:" "Toplevel")}}})
 "C4-Board"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "C4-Board.jazz"} 1264605818
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "C4-Board.jazz"} 1288732034
     {Lisp-Entry "jazz.sample.c4.C4-Board" module #f 38 18 38 41 ("jazz")
       {Lisp-Entry "C4-Board" class #f 50 7 50 15 ("initialize" "View")
         {Lisp-Entry "game" slot #f 53 8 53 12 ()}
@@ -58,7 +58,7 @@
         {Lisp-Entry "finish" method #f 82 20 82 26 ("initialize-board" "RED" "C4-AI" "GREEN" "C4-Human" "list" "register-players" "C4-Game" "new" "game" "set!" "nextmethod" "rest")}
         {Lisp-Entry "destroy" method #f 89 20 89 27 ("nextmethod" "close-ambiance")}
         {Lisp-Entry "initialize-board" method #f 95 11 95 27 ("play-move" "computer-move" "move" "let" "COMPUTER" "game" "HUMAN" "who" "eq?" "cond" "invalidate-view" "play-ambiance" "play-intro" "close-ambiance")}
-        {Lisp-Entry "play-move" method #f 122 11 122 20 ("play-defeat" "COMPUTER" "play-victory" "HUMAN" "who" "cond" "computer-move" "computer?" "player" "play" "'play" "get-status" "eq?" "increase!" "redraw-view" "<" "when" "loop" "60" "last-v" "get-next-player" "get-me" "last-token" "last-move" "set!" "70" "get-row" "*" "100" "+" "end-v" "let" "25" "fall-speed" "invalidate-view" "game" "play-move" "move-animation" "board-play" "define" "move")}
+        {Lisp-Entry "play-move" method #f 122 11 122 20 ("play-defeat" "COMPUTER" "play-victory" "HUMAN" "who" "cond" "computer-move" "computer?" "player" "play" "'play" "get-status" "eq?" "increase!" "redraw-view" "<" "when" "loop" "60" "last-v" "get-next-player" "get-me" "last-token" "last-move" "set!" "70" "get-line" "*" "100" "+" "end-v" "let" "25" "fall-speed" "invalidate-view" "game" "play-move" "move-animation" "board-play" "define" "move")}
         {Lisp-Entry "draw" method #f 161 20 161 24 ("get-last-evaluations" "24" "increase!" "Dark-Green" "get-last-move" "=" "if" "eval" "lambda" "for-each" "225" "v" "c" "Text" "get-last-time" "175" "get-last-evaluations-count" "150" "get-last-eval" "display-evaluations?" "and" "get-search-depth" "650" "Heading2" "Ochre" "draw" "get-winner" "present" "format" "win" "case" "last-token" "last-move" "get-col" "last-v" "Green" "else" "Red" "RED" "White" "ellipse" "EMPTY" "eq?" "cond" "50" "70" "*" "+" "Rect" "new" "rect" "get-square" "get-token" "token" "get-board-columns" "col" "get-board-rows" "below" "0" "from" "row" "for" "loop" "when" "game" "get-status" "status" "let" "30" "Yellow" "Dark-Blue" "Color" "get-bounds" "fill-rect" "525" "100" "draw-text" "Heading0" "name:" "Font" "set-font" "set-text-color" "color" "message" "draw-status" "define" "lv" "lh" "context" "surface")}
         {Lisp-Entry "cursor-update" method #f 214 20 214 33 (":arrow" ":finger" "if" "set-cursor" "legal-column" "col" "let" "pos")}
         {Lisp-Entry "mouse-down" method #f 219 20 219 30 ("game" "available-move" "play-move" "when" "legal-column" "col" "let" "pos")}
@@ -82,19 +82,51 @@
       {Lisp-Entry "random-file" definition #f 359 13 359 24 ("random-element" "not-null?" "get-extension" "ci=?" "file" "lambda" "collect-files" "files" "let" "exists?" "if" "extension" "directory")}
       {Lisp-Entry "test" definition #f 376 13 376 17 ()}
       {Lisp-Entry "inspect-board" definition #f 381 13 381 26 ("newline" "COMPUTER" "HUMAN" "EMPTY" "eq?" "cond" "display" "get-square" "get-token" "token" "let" "get-board-columns" "col" "get-board-rows" "below" "0" "from" "row" "for" "loop" "game")}}})
-"C4-Pages"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "C4-Pages.jazz"} 1259266728
-    {Lisp-Entry "jazz.sample.c4.C4-Pages" module #f 37 18 37 41 ("jazz")
-      {Lisp-Entry "C4-Pages" class #f 46 7 46 15 ("Game-Pages")
-        {Lisp-Entry "Pattern-Associations" definition #f 49 14 49 34 ()}
-        {Lisp-Entry "get-pattern-associations" method #f 53 20 53 44 ("Pattern-Associations")}
-        {Lisp-Entry "c4" method #f 62 12 62 14 ("debug-info" "jazz.sample.c4.C4-AI" "'jazz.sample.c4.C4-AI" "minimax-interpreted?" "append" "increase!" "2" "modulo" ",text" "present-move" "text" "prog1" "lambda" "map" "rank" "draw" "get-winner" "present" "win" "case" "colspan:" "present-col" "align:" ",image" "serialize-col" "onclick:" "human?" "play" "'play" "eqv?" "if" "EMPTY" "=" "format" "image" "get-token" "token" "get-square" "square" "let*" "get-board-columns" "col" "present-row" "cons" "collect" "get-board-rows" "below" "0" "from" "row" "for" "loop" "cellpadding:" "cellspacing:" "valign:" "class:" "26" "30" "width:" "id:" "serialize-game" "1" "length" "-" "->string" ",players" "value:" "method:" "name:" "background:" "src:" "rel:" "href:" "type:" "get-second-player" "second-player" "get-next-player" "next-player" "get-forward-moves" "forward" "backward" "get-status" "status" "play-players" "memq?" "get-backward-moves" "not-null?" "and" "when" "get-players" "computer?" "every?" "all-computers?" "move" "deserialize-game" "register-players" "effective-goto" "goto" "effective-current" "current" "error?:" "get-parameter" "effective-players" "get-request" "request" "let" "C4-AI" "GREEN" "RED" "C4-Human" "list" "nu=?" "players" "create-players" "deserialize-col" "available-move" "else" "all" "'all" "one" "'one" "equal?" "empty-string?" "not" "or" "cond" "value" "game" "effective-move" "C4-Game" "new" "new-game" "define" "node")}
-        {Lisp-Entry "serialize-col" definition #f 226 15 226 28 ("number->string" "col")}
-        {Lisp-Entry "deserialize-col" definition #f 230 15 230 30 ("string->number" "value" "game")}
-        {Lisp-Entry "serialize-move" method #f 234 20 234 34 ("format" "get-col" "col" "get-row" "row" "let" "move")}
-        {Lisp-Entry "deserialize-move" method #f 240 20 240 36 ("get-square" "cardinality" "1" "+" "col" "0" "substring" "string->number" "row" "search" "pos" "let" "value" "game")}}}})
+"C4-Game"
+ ({Lisp-File-Entry {File jazz.sample.c4 "src" "jazz" "sample" "c4" "C4-Game.jazz"} 1288732034
+    {Lisp-Entry "jazz.sample.c4.C4-Game" module #f 0 8 0 30 ("jazz")
+      {Lisp-Entry "C4-Game" class #f 7 7 7 14 ("initialize" "Game")
+        {Lisp-Entry "board-rows" slot #f 11 8 11 18 ()}
+        {Lisp-Entry "get-board-rows" accessor #f 11 49 11 57 ()}
+        {Lisp-Entry "set-board-rows" accessor #f 11 49 11 57 ()}
+        {Lisp-Entry "board-columns" slot #f 12 8 12 21 ()}
+        {Lisp-Entry "get-board-columns" accessor #f 12 49 12 57 ()}
+        {Lisp-Entry "set-board-columns" accessor #f 12 49 12 57 ()}
+        {Lisp-Entry "board-size" slot #f 13 8 13 18 ()}
+        {Lisp-Entry "get-board-size" accessor #f 13 49 13 57 ()}
+        {Lisp-Entry "set-board-size" accessor #f 13 49 13 57 ()}
+        {Lisp-Entry "board" slot #f 14 8 14 13 ()}
+        {Lisp-Entry "get-board" accessor #f 14 49 14 57 ()}
+        {Lisp-Entry "set-board" accessor #f 14 49 14 57 ()}
+        {Lisp-Entry "available-moves" slot #f 17 8 17 23 ()}
+        {Lisp-Entry "get-available-moves" accessor #f 17 49 17 57 ()}
+        {Lisp-Entry "set-available-moves" accessor #f 17 49 17 57 ()}
+        {Lisp-Entry "initialize" method #f 20 20 20 30 ("setup-lines" "available-moves" "*" "set!" "nextmethod" "7" "columns" "6" "rows" "bind-keywords" "+" "set-down" "find-square" "set-up" "square" "setup-squares" "get-square" "1" "-" "bottom-row" "moves" "make-availables" "self" "Square" "new" "vector-set!" "square-rank" "rank" "board-columns" "col" "board-rows" "below" "0" "from" "row" "for" "loop" "board-size" "make-vector" "board" "let" "make-board" "define" "rest")}
+        {Lisp-Entry "directions" definition #f 59 14 59 24 ("-1" "1" "0")}
+        {Lisp-Entry "setup-lines" method #f 66 11 66 22 ("compute-lines" "set-lines" "board-ref" "square" "let" "board-size" "below" "0" "from" "rank" "for" "loop")}
+        {Lisp-Entry "compute-lines" method #f 72 11 72 24 ("4-Line" "new" "cons" "set!" "and" "if" "3" "d" "2" "c" "1" "b" "+" "find-next" "a" "0" "to" "-3" "from" "n" "directions" "in" "dir" "for" "loop" "lines" "get-col" "col" "get-line" "line" "let" "square")}
+        {Lisp-Entry "find-next" method #f 87 11 87 20 ("cdr" "car" "*" "+" "find-square" "n" "col" "line" "dir")}
+        {Lisp-Entry "iterate-board" method #f 98 18 98 31 ("get-square" "do" "board-columns" "col" "board-rows" "below" "0" "from" "row" "for" "loop" "proc")}
+        {Lisp-Entry "board-ref" method #f 104 18 104 27 ("board" "vector-ref" "rank")}
+        {Lisp-Entry "square-rank" method #f 108 18 108 29 ("board-columns" "*" "+" "col" "row")}
+        {Lisp-Entry "get-square" method #f 112 18 112 28 ("square-rank" "board-ref" "col" "row")}
+        {Lisp-Entry "find-square" method #f 116 11 116 22 ("get-square" "board-columns" "board-rows" "<" "0" ">=" "and" "if" "col" "row")}
+        {Lisp-Entry "available-move" method #f 128 18 128 32 ("available-moves" "vector-ref" "col")}
+        {Lisp-Entry "set-available-move" method #f 132 18 132 36 ("available-moves" "vector-set!" "square" "col")}
+        {Lisp-Entry "play" method #f 136 20 136 24 ("get-up" "get-col" "set-available-move" "set-token" "token" "move")}
+        {Lisp-Entry "unplay" method #f 141 20 141 26 ("EMPTY" "set-token" "get-col" "set-available-move" "move")}
+        {Lisp-Entry "play-move" method #f 151 20 151 29 ("check-status" "inform-players" "add-move" "play" "get-me" "token" "next-player!" "player" "let" "move")}
+        {Lisp-Entry "win?" method #f 160 20 160 24 ("get-lines" "some?" "4" "count-token" "=" "line" "line?" "define" "token" "move")}
+        {Lisp-Entry "draw?" method #f 167 20 167 25 ("available-move" "some" "board-columns" "below" "0" "from" "col" "for" "loop" "not" "token" "move")}
+        {Lisp-Entry "load-board" method #f 178 11 178 21 ("invalidate-view" ">=" "if" "set-available-move" "length" "move" "COMPUTER" "O" "X" "case" "set-token" "get-square" "square" "let" "downto" "1" "board-rows" "-" "row" "token" "board-columns" "below" "0" "from" "col" "saved-board" "in" "tokens" "for" "loop" "HUMAN" "initialize-game" "game")}
+        {Lisp-Entry "inspect-board" method #f 199 11 199 24 ("newline" "GREEN" "RED" "EMPTY" "eq?" "cond" "display" "get-square" "get-token" "token" "let" "board-columns" "col" "board-rows" "below" "0" "from" "row" "for" "loop")}}}})
+"C4-Human"
+ ({Lisp-File-Entry {File jazz.sample.c4 "src" "jazz" "sample" "c4" "C4-Human.jazz"} 1288732034
+    {Lisp-Entry "jazz.sample.c4.C4-Human" module #f 0 8 0 31 ("jazz")
+      {Lisp-Entry "C4-Human" class #f 6 7 6 15 ("C4-Player")
+        {Lisp-Entry "player-kind" method #f 9 20 9 31 ("human" "'human")}}}})
 "_c4"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "_c4.jazz"} 1259266728
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "_c4.jazz"} 1288732034
     {Lisp-Entry "jazz.sample.c4" module #f 37 8 37 22 ("jazz")
       {Lisp-Entry "EMPTY" definition #f 45 20 45 25 ("0")}
       {Lisp-Entry "RED" definition #f 48 20 48 23 ("-1")}
@@ -110,87 +142,50 @@
         {Lisp-Entry "initialize" method #f 72 20 72 30 ("-1" "*" "opponent~self" "me~self" "game~self" "set!" "nextmethod" "me" "game")}
         {Lisp-Entry "print" method #f 79 20 79 25 ("me" "format" "lambda" "self" "print-unreadable" "readably" "printer")}
         {Lisp-Entry "present" method #f 85 11 85 18 ("GREEN" "me" "eq?" "if")}}
-      {Lisp-Entry "C4-Human" class #f 96 7 96 15 ("C4-Player")
-        {Lisp-Entry "player-kind" method #f 99 20 99 31 ("human" "'human")}}
-      {Lisp-Entry "Square" class #f 108 7 108 13 ("Object")
-        {Lisp-Entry "game" slot #f 111 8 111 12 ()}
-        {Lisp-Entry "get-game" accessor #f 111 31 111 39 ()}
-        {Lisp-Entry "row" slot #f 112 8 112 11 ()}
-        {Lisp-Entry "get-row" accessor #f 112 31 112 39 ()}
-        {Lisp-Entry "col" slot #f 113 8 113 11 ()}
-        {Lisp-Entry "get-col" accessor #f 113 31 113 39 ()}
-        {Lisp-Entry "token" slot #f 114 8 114 13 ()}
-        {Lisp-Entry "get-token" accessor #f 114 34 114 42 ()}
-        {Lisp-Entry "set-token" accessor #f 114 34 114 42 ()}
-        {Lisp-Entry "up" slot #f 115 8 115 10 ()}
-        {Lisp-Entry "get-up" accessor #f 115 34 115 42 ()}
-        {Lisp-Entry "set-up" accessor #f 115 34 115 42 ()}
-        {Lisp-Entry "down" slot #f 116 8 116 12 ()}
-        {Lisp-Entry "get-down" accessor #f 116 34 116 42 ()}
-        {Lisp-Entry "set-down" accessor #f 116 34 116 42 ()}
-        {Lisp-Entry "lines" slot #f 117 8 117 13 ()}
-        {Lisp-Entry "get-lines" accessor #f 117 34 117 42 ()}
-        {Lisp-Entry "set-lines" accessor #f 117 34 117 42 ()}
-        {Lisp-Entry "initialize" method #f 120 20 120 30 ("EMPTY" "token~self" "col~self" "row~self" "game~self" "set!" "nextmethod" "col" "row" "game")}
-        {Lisp-Entry "print" method #f 128 20 128 25 ("token" "game" "present-move" "format" "lambda" "self" "print-unreadable" "readably" "printer")}}
-      {Lisp-Entry "present-row" definition #f 134 21 134 32 ("get-board-rows" "-" "->string" "row" "game")}
-      {Lisp-Entry "present-col" definition #f 138 21 138 32 ("Uppercase-Chars" "element" "->string" "col" "game")}
-      {Lisp-Entry "present-move" definition #f 142 21 142 33 ("present-row" "present-col" "format" "get-col" "col" "get-row" "row" "let" "move" "game")}
-      {Lisp-Entry "4-Line" class #f 155 7 155 13 ("Object")
-        {Lisp-Entry "first" slot #f 158 8 158 13 ()}
-        {Lisp-Entry "get-first" accessor #f 158 31 158 39 ()}
-        {Lisp-Entry "second" slot #f 159 8 159 14 ()}
-        {Lisp-Entry "get-second" accessor #f 159 31 159 39 ()}
-        {Lisp-Entry "third" slot #f 160 8 160 13 ()}
-        {Lisp-Entry "get-third" accessor #f 160 31 160 39 ()}
-        {Lisp-Entry "fourth" slot #f 161 8 161 14 ()}
-        {Lisp-Entry "get-fourth" accessor #f 161 31 161 39 ()}
-        {Lisp-Entry "initialize" method #f 164 20 164 30 ("fourth~self" "third~self" "second~self" "first~self" "set!" "nextmethod" "fourth" "third" "second" "first")}
-        {Lisp-Entry "count-token" method #f 172 11 172 22 ("fourth" "third" "second" "0" "1" "first" "get-token" "=" "if" "+" "token")}}
-      {Lisp-Entry "line=?" definition #f 179 21 179 27 ("get-fourth" "get-third" "get-second" "get-first" "eq?" "and" "l2" "l1")}
-      {Lisp-Entry "C4-Game" class #f 191 7 191 14 ("initialize" "Game")
-        {Lisp-Entry "board-rows" slot #f 195 8 195 18 ()}
-        {Lisp-Entry "get-board-rows" accessor #f 195 49 195 57 ()}
-        {Lisp-Entry "set-board-rows" accessor #f 195 49 195 57 ()}
-        {Lisp-Entry "board-columns" slot #f 196 8 196 21 ()}
-        {Lisp-Entry "get-board-columns" accessor #f 196 49 196 57 ()}
-        {Lisp-Entry "set-board-columns" accessor #f 196 49 196 57 ()}
-        {Lisp-Entry "board-size" slot #f 197 8 197 18 ()}
-        {Lisp-Entry "get-board-size" accessor #f 197 49 197 57 ()}
-        {Lisp-Entry "set-board-size" accessor #f 197 49 197 57 ()}
-        {Lisp-Entry "board" slot #f 198 8 198 13 ()}
-        {Lisp-Entry "get-board" accessor #f 198 49 198 57 ()}
-        {Lisp-Entry "set-board" accessor #f 198 49 198 57 ()}
-        {Lisp-Entry "available-moves" slot #f 201 8 201 23 ()}
-        {Lisp-Entry "get-available-moves" accessor #f 201 49 201 57 ()}
-        {Lisp-Entry "set-available-moves" accessor #f 201 49 201 57 ()}
-        {Lisp-Entry "initialize" method #f 204 20 204 30 ("setup-lines" "available-moves" "*" "set!" "nextmethod" "7" "columns" "6" "rows" "bind-keywords" "+" "set-down" "find-square" "set-up" "square" "setup-squares" "get-square" "1" "-" "bottom-row" "moves" "make-availables" "self" "Square" "new" "vector-set!" "square-rank" "rank" "board-columns" "col" "board-rows" "below" "0" "from" "row" "for" "loop" "board-size" "make-vector" "board" "let" "make-board" "define" "rest")}
-        {Lisp-Entry "directions" definition #f 243 14 243 24 ("-1" "1" "0")}
-        {Lisp-Entry "setup-lines" method #f 250 11 250 22 ("compute-lines" "set-lines" "board-ref" "square" "let" "board-size" "below" "0" "from" "rank" "for" "loop")}
-        {Lisp-Entry "compute-lines" method #f 256 11 256 24 ("4-Line" "new" "cons" "set!" "and" "if" "3" "d" "2" "c" "1" "b" "+" "find-next" "a" "0" "to" "-3" "from" "n" "directions" "in" "dir" "for" "loop" "lines" "get-col" "col" "get-row" "row" "let" "square")}
-        {Lisp-Entry "find-next" method #f 271 11 271 20 ("cdr" "car" "*" "+" "find-square" "n" "col" "row" "dir")}
-        {Lisp-Entry "iterate-board" method #f 282 18 282 31 ("get-square" "do" "board-columns" "col" "board-rows" "below" "0" "from" "row" "for" "loop" "proc")}
-        {Lisp-Entry "board-ref" method #f 288 18 288 27 ("board" "vector-ref" "rank")}
-        {Lisp-Entry "square-rank" method #f 292 18 292 29 ("board-columns" "*" "+" "col" "row")}
-        {Lisp-Entry "get-square" method #f 296 18 296 28 ("square-rank" "board-ref" "col" "row")}
-        {Lisp-Entry "find-square" method #f 300 11 300 22 ("get-square" "board-columns" "board-rows" "<" "0" ">=" "and" "if" "col" "row")}
-        {Lisp-Entry "available-move" method #f 312 18 312 32 ("available-moves" "vector-ref" "col")}
-        {Lisp-Entry "set-available-move" method #f 316 18 316 36 ("available-moves" "vector-set!" "square" "col")}
-        {Lisp-Entry "play" method #f 320 20 320 24 ("get-up" "get-col" "set-available-move" "set-token" "token" "move")}
-        {Lisp-Entry "unplay" method #f 325 20 325 26 ("EMPTY" "set-token" "get-col" "set-available-move" "move")}
-        {Lisp-Entry "play-move" method #f 335 20 335 29 ("check-status" "inform-players" "add-move" "play" "get-me" "token" "next-player!" "player" "let" "move")}
-        {Lisp-Entry "win?" method #f 344 20 344 24 ("get-lines" "some?" "4" "count-token" "=" "line" "line?" "define" "token" "move")}
-        {Lisp-Entry "draw?" method #f 351 20 351 25 ("available-move" "some" "board-columns" "below" "0" "from" "col" "for" "loop" "not" "token" "move")}
-        {Lisp-Entry "load-board" method #f 362 11 362 21 ("invalidate-view" ">=" "if" "set-available-move" "length" "move" "COMPUTER" "O" "X" "case" "set-token" "get-square" "square" "let" "downto" "1" "board-rows" "-" "row" "token" "board-columns" "below" "0" "from" "col" "saved-board" "in" "tokens" "for" "loop" "HUMAN" "initialize-game" "game")}
-        {Lisp-Entry "inspect-board" method #f 383 11 383 24 ("newline" "GREEN" "RED" "EMPTY" "eq?" "cond" "display" "get-square" "get-token" "token" "let" "board-columns" "col" "board-rows" "below" "0" "from" "row" "for" "loop")}}}})
+      {Lisp-Entry "Square" class #f 96 7 96 13 ("Object")
+        {Lisp-Entry "game" slot #f 99 8 99 12 ()}
+        {Lisp-Entry "get-game" accessor #f 99 31 99 39 ()}
+        {Lisp-Entry "line" slot #f 100 8 100 12 ()}
+        {Lisp-Entry "get-line" accessor #f 100 31 100 39 ()}
+        {Lisp-Entry "col" slot #f 101 8 101 11 ()}
+        {Lisp-Entry "get-col" accessor #f 101 31 101 39 ()}
+        {Lisp-Entry "token" slot #f 102 8 102 13 ()}
+        {Lisp-Entry "get-token" accessor #f 102 34 102 42 ()}
+        {Lisp-Entry "set-token" accessor #f 102 34 102 42 ()}
+        {Lisp-Entry "up" slot #f 103 8 103 10 ()}
+        {Lisp-Entry "get-up" accessor #f 103 34 103 42 ()}
+        {Lisp-Entry "set-up" accessor #f 103 34 103 42 ()}
+        {Lisp-Entry "down" slot #f 104 8 104 12 ()}
+        {Lisp-Entry "get-down" accessor #f 104 34 104 42 ()}
+        {Lisp-Entry "set-down" accessor #f 104 34 104 42 ()}
+        {Lisp-Entry "lines" slot #f 105 8 105 13 ()}
+        {Lisp-Entry "get-lines" accessor #f 105 34 105 42 ()}
+        {Lisp-Entry "set-lines" accessor #f 105 34 105 42 ()}
+        {Lisp-Entry "initialize" method #f 108 20 108 30 ("EMPTY" "token~self" "col~self" "line~self" "game~self" "set!" "nextmethod" "col" "line" "game")}
+        {Lisp-Entry "print" method #f 116 20 116 25 ("token" "game" "present-move" "format" "lambda" "self" "print-unreadable" "readably" "printer")}}
+      {Lisp-Entry "present-line" definition #f 122 21 122 33 ("get-board-rows" "-" "->string" "line" "game")}
+      {Lisp-Entry "present-col" definition #f 126 21 126 32 ("Uppercase-Chars" "element" "->string" "col" "game")}
+      {Lisp-Entry "present-move" definition #f 130 21 130 33 ("present-line" "present-col" "format" "get-col" "col" "get-line" "line" "let" "move" "game")}
+      {Lisp-Entry "4-Line" class #f 143 7 143 13 ("Object")
+        {Lisp-Entry "first" slot #f 146 8 146 13 ()}
+        {Lisp-Entry "get-first" accessor #f 146 31 146 39 ()}
+        {Lisp-Entry "second" slot #f 147 8 147 14 ()}
+        {Lisp-Entry "get-second" accessor #f 147 31 147 39 ()}
+        {Lisp-Entry "third" slot #f 148 8 148 13 ()}
+        {Lisp-Entry "get-third" accessor #f 148 31 148 39 ()}
+        {Lisp-Entry "fourth" slot #f 149 8 149 14 ()}
+        {Lisp-Entry "get-fourth" accessor #f 149 31 149 39 ()}
+        {Lisp-Entry "initialize" method #f 152 20 152 30 ("fourth~self" "third~self" "second~self" "first~self" "set!" "nextmethod" "fourth" "third" "second" "first")}
+        {Lisp-Entry "count-token" method #f 160 11 160 22 ("fourth" "third" "second" "0" "1" "first" "get-token" "=" "if" "+" "token")}}
+      {Lisp-Entry "line=?" definition #f 167 21 167 27 ("get-fourth" "get-third" "get-second" "get-first" "eq?" "and" "l2" "l1")}}})
 "autoload"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "autoload.jazz"} 1259266728
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "autoload.jazz"} 1288732034
     {Lisp-Entry "jazz.sample.c4.autoload" module #f 37 18 37 41 ("jazz")}})
 "graphics"
- ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "graphics.jazz"} 1259266728
+ ({Lisp-File-Entry {File Jazz "lib" "jazz.sample.c4" "src" "jazz" "sample" "c4" "graphics.jazz"} 1288732034
     {Lisp-Entry "jazz.sample.c4.graphics" module #f 38 8 38 31 ("jazz")
       {Lisp-Entry "C4-Images" definition #f 46 12 46 21 ("Jazz" "Directory")}
       {Lisp-Entry "generate-c4" definition #f 50 13 50 24 ("user-message" "format" "image-convert" "color" "name" "generate" "define" "10" "inner" "2" "1" "-" "/" "half" "71" "width" "let" "lambda" "C4-Images" "parse" "with-current-directory")}}})
 "run"
- ({Lisp-File-Entry {File jazz.sample.c4 "src" "jazz" "sample" "c4" "run.jazz"} 1259266728
+ ({Lisp-File-Entry {File jazz.sample.c4 "src" "jazz" "sample" "c4" "run.jazz"} 1288732034
     {Lisp-Entry "jazz.sample.c4.run" module #f 37 8 37 26 ("C4-Application" "new" "boot-environment" "jazz.sample.c4.C4-AI" "'jazz.sample.c4.C4-AI" "warn-minimax-interpreted" "descriptor" "lambda" "jazz.sample.c4" "'jazz.sample.c4" "register-product-run" "jazz")}})

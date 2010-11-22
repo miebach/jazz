@@ -1,11 +1,12 @@
 "_webserver"
- ({Lisp-File-Entry {File contrib.webserver "src" "webserver" "_webserver.jazz"} 1268320352
+ ({Lisp-File-Entry {File contrib.webserver "src" "webserver" "_webserver.jazz"} 1288732032
     {Lisp-Entry "webserver" module #f 0 8 0 17 ("jazz")
       {Lisp-Entry "make-http-server" native #f 6 8 6 24 ()}
       {Lisp-Entry "http-server-start!" native #f 7 8 7 26 ()}
-      {Lisp-Entry "reply" native #f 8 8 8 13 ()}}})
+      {Lisp-Entry "reply" native #f 8 8 8 13 ()}
+      {Lisp-Entry "uri-path" native #f 9 8 9 16 ()}}})
 "http"
- ({Lisp-File-Entry {File contrib.webserver "src" "webserver" "implementation" "http.scm"} 1268082663
+ ({Lisp-File-Entry {File contrib.webserver "src" "webserver" "implementation" "http.scm"} 1288732032
     {Lisp-Entry "webserver.implementation.http" unit #f 8 6 8 35 ()
       {Lisp-Entry "hex-digit" define #f 23 8 23 17 ("else" "87" "102" "97" "55" "70" "65" "-" "57" "<=" "48" ">=" "and" "cond" "string-ref" "char->integer" "n" "let" "i" "str" "lambda")}
       {Lisp-Entry "hex-octet" define #f 35 8 35 17 ("16" "*" "1" "+" "n2" "and" "hex-digit" "n1" "let" "i" "str" "lambda")}
@@ -19,11 +20,11 @@
       {Lisp-Entry "decode-x-www-form-urlencoded" define #f 390 8 390 36 ("cons" "end-of-field" "name" "state2" "reverse" "state1" "rev-fields" "state0" "10" "char->integer" "-" "char<=?" "char>=?" "16" "*" "and" "h2" "nibble" "h1" "else" "3" "integer->char" "string-set!" "x" "=>" "1" "+" "hex" "char=?" "cond" "string-ref" "c" "<" "if" "0" "j" "i" "loop" "make-string" "s" "len" "start" "extract" "define" "string-length" "n" "let" "str" "lambda")}
       {Lisp-Entry "server" define #f 504 13 504 19 ("dispatcher" "timeout" "port-number" "c69165bd-c13f-11d9-830f-00039301ba52" "id:")}
       {Lisp-Entry "make-http-server" define #f 512 8 512 24 ("make-server" "default-dispatcher" "dispatcher" "300" "timeout" "8080" "port-number" "#!key" "lambda")}
-      {Lisp-Entry "default-dispatcher" define #f 522 8 522 26 ("connecton" "reply" "headers" "parameters" "uri" "method" "connection" "lambda")}
-      {Lisp-Entry "http-server-start!" define #f 526 8 526 26 ("serve-connection" "read" "connection" "loop" "make-thread" "thread-start!" "ISO-8859-1" "'ISO-8859-1" "char-encoding:" "reuse-address:" "128" "backlog:" "server-port-number" "port-number:" "1" "0" "127" "#u8" "'#u8" "server-address:" "list" "open-tcp-server" "server-port" "let" "server" "lambda")}
-      {Lisp-Entry "serve-connection" define #f 546 8 546 24 ("server-dispatcher" "uri-query" "decode-x-www-form-urlencoded" "cdr" "string=?" "assoc" "x" "parameters" "read-content" "content" "read-headers" "headers" "protocol" "string-ref" "char=?" "i" "uri" "string-length" "1" "+" "parse-uri" "0" "substring" "and" "method" "find-char-pos" "first-space" "let*" "string?" "if" "permissive-read-line" "req" "reply" "error" "let" "output-port-timeout-set!" "300" "input-port-timeout-set!" "connection" "server" "lambda")}
-      {Lisp-Entry "read-headers" define #f 597 8 597 20 ("if" "2" "substring" "cons" "string-ref" "char=?" "1" "+" "<" "and" "find-char-pos" "pos" "header" "else" "0" "string-length" "=" "not" "cond" "permissive-read-line" "line" "headers" "loop" "let" "connection" "lambda")}
-      {Lisp-Entry "read-content" define #f 619 8 619 20 ("=" "0" "read-substring" "make-string" "str" "if" "else" "exact?" "integer?" "and" "cdr" "string->number" "n" "x" "=>" "assoc" "cond" "cl" "let" "headers" "connection" "lambda")}
-      {Lisp-Entry "reply" define #f 637 8 637 13 ("close-port" "string-length" "list" "port:" "print" "eol" "let" "headers-out" "reply-body" "status" "connection" "lambda")}
-      {Lisp-Entry "permissive-read-line" define #f 651 8 651 28 ("##string-shrink!" "begin" "1" "-" "string-ref" "char=?" "0" "string-length" ">" "string?" "and" "if" "read-line" "s" "let" "port" "lambda")}
-      {Lisp-Entry "find-char-pos" define #f 661 8 661 21 ("1" "+" "string-ref" "char=?" "string-length" "<" "if" "0" "i" "loop" "let" "char" "str" "lambda")}}})
+      {Lisp-Entry "default-dispatcher" define #f 522 8 522 26 ("connecton" "reply" "content" "headers" "parameters" "uri" "method" "connection" "lambda")}
+      {Lisp-Entry "http-server-start!" define #f 526 8 526 26 ("serve-connection" "make-thread" "thread-start!" "read" "connection" "loop" "ISO-8859-1" "'ISO-8859-1" "char-encoding:" "reuse-address:" "128" "backlog:" "server-port-number" "port-number:" "0" "#u8" "'#u8" "server-address:" "list" "open-tcp-server" "server-port" "let" "server" "lambda")}
+      {Lisp-Entry "serve-connection" define #f 543 8 543 24 ("server-dispatcher" "uri-query" "decode-x-www-form-urlencoded" "cdr" "string=?" "assoc" "x" "parameters" "read-content" "content" "read-headers" "headers" "protocol" "string-ref" "char=?" "i" "uri" "string-length" "1" "+" "parse-uri" "0" "substring" "and" "method" "find-char-pos" "first-space" "let*" "string?" "if" "permissive-read-line" "req" "reply" "error" "let" "output-port-timeout-set!" "300" "input-port-timeout-set!" "connection" "server" "lambda")}
+      {Lisp-Entry "read-headers" define #f 596 8 596 20 ("if" "2" "substring" "cons" "string-ref" "char=?" "1" "+" "<" "and" "find-char-pos" "pos" "header" "else" "0" "string-length" "=" "not" "cond" "permissive-read-line" "line" "headers" "loop" "let" "connection" "lambda")}
+      {Lisp-Entry "read-content" define #f 618 8 618 20 ("=" "0" "read-substring" "make-string" "str" "if" "else" "exact?" "integer?" "and" "cdr" "string->number" "n" "x" "=>" "assoc" "cond" "cl" "let" "headers" "connection" "lambda")}
+      {Lisp-Entry "reply" define #f 636 8 636 13 ("close-port" "string-length" "list" "port:" "print" "eol" "let" "headers-out" "reply-body" "status" "connection" "lambda")}
+      {Lisp-Entry "permissive-read-line" define #f 650 8 650 28 ("##string-shrink!" "begin" "1" "-" "string-ref" "char=?" "0" "string-length" ">" "string?" "and" "if" "read-line" "s" "let" "port" "lambda")}
+      {Lisp-Entry "find-char-pos" define #f 660 8 660 21 ("1" "+" "string-ref" "char=?" "string-length" "<" "if" "0" "i" "loop" "let" "char" "str" "lambda")}}})

@@ -357,7 +357,13 @@
   (current-input-port (repl-input-port))
   (current-output-port (repl-output-port))
   (current-error-port (repl-output-port))
-  (jazz:repl-debug))
+  (jazz:setup-expansion-hook)
+  (parameterize ((jazz:walk-for 'console)
+                 (jazz:requested-unit-name #f)
+                 (jazz:generate-symbol-for "&")
+                 (jazz:generate-symbol-context 'console)
+                 (jazz:generate-symbol-counter 0))
+    (jazz:repl-debug)))
 
 
 ;; creates a pseudo frame so that with a display-environment-set! = #t, launching
@@ -374,4 +380,42 @@
       (force-output output-port)
       #f)
     #t)
-  #f))
+  #f)
+
+
+(define debug-expansion?
+  #f)
+
+(define (debug-expansion)
+  (set! debug-expansion? (not debug-expansion?))
+  debug-expansion?)
+
+
+(define (jazz:setup-expansion-hook)
+  (let ((hook (lambda (src)
+                (let ((expansion (jazz:expand-src src)))
+                  (if debug-expansion?
+                      (pp (list '---> expansion)))
+                  expansion))))
+    (set! ##expand-source hook)))
+
+
+(define jazz:expansion-context
+  'console)
+
+
+(define (jazz:expand-src src)
+  (let ((code (%%desourcify src)))
+    (if (and (pair? code) (eq? (car code) 'in))
+        (begin
+          ;(input-port-readtable-set! (current-input-port) jazz:jazz-readtable)
+          (%%sourcify
+            `(set! jazz:expansion-context ,(cadr code))
+            src))
+      (if (and (eq? (jazz:walk-for) 'console) jazz:expansion-context)
+          (begin
+            (jazz:load-foundation)
+            (%%sourcify
+              `(module ,jazz:expansion-context jazz ,src)
+              src))
+        src)))))

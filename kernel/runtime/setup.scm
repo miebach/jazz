@@ -348,11 +348,22 @@
   (exit))
 
 
+;;;
+;;;; REPL
+;;;
+
+
 (define (jazz:repl-main)
   (current-input-port (repl-input-port))
   (current-output-port (repl-output-port))
   (current-error-port (repl-output-port))
-  (%%repl
+  (jazz:repl-debug))
+
+
+;; creates a pseudo frame so that with a display-environment-set! = #t, launching
+;; kernel-interpret won't display the lexical environment of the enclosing parameterize
+(define (jazz:repl-debug)
+  (##repl-debug
     (lambda (first output-port)
       (if jazz:warnings
           (jazz:warnings output-port))
@@ -361,4 +372,6 @@
       (newline output-port)
       (newline output-port)
       (force-output output-port)
-      #f))))
+      #f)
+    #t)
+  #f))

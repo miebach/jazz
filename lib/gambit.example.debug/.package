@@ -3,6 +3,6 @@
   (root "src")
   (products (gambit-debug (unit gambit.example.debug.product)
                           (update gambit.example.debug.product)
-                          (dependencies jazz
-                                        scheme)))
+                          (dependencies jazz.dialect
+                                        scheme.dialect)))
   (project ".project"))

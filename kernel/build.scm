@@ -800,7 +800,7 @@
       ((cleankernel) (jazz:make-cleankernel configuration))
       ((cleanobject) (jazz:make-cleanobject configuration))
       ((cleanlibrary) (jazz:make-cleanlibrary configuration))
-      ((kernel) (jazz:make-kernel configuration image local?))
+      ((jazz) (jazz:make-jazz configuration image local?))
       ((install) (jazz:make-install configuration))
       (else (jazz:make-product target configuration link jobs))))
   
@@ -1008,11 +1008,11 @@
 
 
 ;;;
-;;;; Kernel
+;;;; Jazz
 ;;;
 
 
-(define (jazz:make-kernel configuration image local?)
+(define (jazz:make-jazz configuration image local?)
   (define (build-kernel configuration image)
     (define (build configuration)
       (let ((name (jazz:configuration-name configuration))
@@ -1048,7 +1048,7 @@
                           kernel?:               #t
                           console?:              #t)))
     
-    (jazz:feedback "make kernel")
+    (jazz:feedback "make jazz")
     (let ((configuration (or configuration (jazz:require-default-configuration))))
       (let ((configuration-file (jazz:configuration-file configuration)))
         (if (file-exists? configuration-file)
@@ -1068,7 +1068,7 @@
   
   (if local?
       (build-kernel configuration image)
-    (build-recursive 'kernel configuration image)))
+    (build-recursive 'jazz configuration image)))
 
 
 ;;;
@@ -1077,10 +1077,10 @@
 
 
 (define (jazz:make-product product configuration link jobs)
-  (jazz:make-kernel configuration #f #f)
+  (jazz:make-jazz configuration #f #f)
   (jazz:call-process
      (list
-       path: (string-append (jazz:configuration-directory configuration) "kernel")
+       path: (string-append (jazz:configuration-directory configuration) "jazz")
        arguments: `("-make"
                     ,(symbol->string product) "-:daqD"
                     ,@(if link `("-link" ,(symbol->string link)) '())

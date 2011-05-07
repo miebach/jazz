@@ -4,6 +4,6 @@
   (products (webserver (alias contrib.webserver))
             (contrib.webserver (update webserver
                                        webserver.implementation.http)
-                                 (dependencies jazz
-                                               gambit)))
+                                 (dependencies jazz.dialect
+                                               gambit.dialect)))
   (project ".project"))

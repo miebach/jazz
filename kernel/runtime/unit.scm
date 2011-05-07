@@ -1444,7 +1444,7 @@
               ((%%fx< active-count jobs)
                (let ((process (open-process
                                 (list
-                                  path: (jazz:install-path "kernel")
+                                  path: (jazz:install-path "jazz")
                                   arguments: `("-:daqQ-" "-subbuild"
                                                "-link" ,(%%symbol->string jazz:link)
                                                ,@(if (%%memq 'keep-c jazz:compile-options) `("-keep-c") '())

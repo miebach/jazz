@@ -2,18 +2,18 @@
   
   (root "src")
   (install jazz.install)
-  (products (jazz (test jazz.validate.run)
-                  (update jazz
-                          jazz.development
-                          jazz.install
-                          jazz.literals)
-                  (dependencies scheme))
+  (products (jazz.dialect (test jazz.validate.run)
+                          (update jazz
+                                  jazz.development
+                                  jazz.install
+                                  jazz.literals)
+                          (dependencies scheme.dialect))
             (test (title "Test")
                   (unit jazz.test.product)
                   (update jazz.test)
                   (run jazz.test.run))
             (walk (run jazz.script.walk))
-            (preinstalled (dependencies jazz
+            (preinstalled (dependencies jazz.dialect
                                         jazz.catalog
                                         jazz.console
                                         jazz.database
@@ -53,7 +53,7 @@
                                         jazz.ui
                                         jazz.validation
                                         jazz.website
-                                        gambit
+                                        gambit.dialect
                                         contrib.irregex
                                         contrib.statprof
                                         srfi-19

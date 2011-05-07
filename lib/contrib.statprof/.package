@@ -5,6 +5,6 @@
   (products (statprof (alias contrib.statprof))
             (contrib.statprof (update statprof
                                       statprof.install)
-                              (dependencies jazz
-                                            scheme)))
+                              (dependencies jazz.dialect
+                                            scheme.dialect)))
   (project ".project"))

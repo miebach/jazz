@@ -596,11 +596,11 @@
                 (jazz:save-configuration #f system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? kernel-interpret? destination file jazz:kernel-platform)))))
       
       ;;;
-      ;;;; Kernel Interpret
+      ;;;; Jazz Interpret
       ;;;
       
-      (define (generate-kernel-interpret)
-        (let ((file (dest-file "kernel-interpret")))
+      (define (generate-jazz-interpret)
+        (let ((file (dest-file "jazz-interpret")))
           (if (%%not (file-exists? file))
               (begin
                 (jazz:feedback "; generating {a}..." file)
@@ -613,10 +613,10 @@
                     (let ((gambit-dir (jazz:relativise-directory destination-directory "./" gambit-dir)))
                       (print (string-append "GAM=$REL/" gambit-dir) output)
                       (print (string-append "GSC=$REL/" gambit-dir "bin/gsc") output))
-                    (print "SCM=$REL/kernel-interpret.scm" output)
+                    (print "SCM=$REL/jazz-interpret.scm" output)
                     (newline output)
                     (print "exec \"$GSC\" -:=\"$GAM\" -i \"$SCM\" \"$@\"" output))))))
-        (let ((file (dest-file "kernel-interpret.scm")))
+        (let ((file (dest-file "jazz-interpret.scm")))
           (if (%%not (file-exists? file))
               (begin
                 (jazz:feedback "; generating {a}..." file)
@@ -670,7 +670,7 @@
       (build-product)
       
       (if kernel-interpret?
-          (generate-kernel-interpret)))))
+          (generate-jazz-interpret)))))
 
 
 ;;;

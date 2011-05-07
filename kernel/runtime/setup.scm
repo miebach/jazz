@@ -210,6 +210,9 @@
 ;;;
 
 
+(declare (proper-tail-calls))
+
+
 (define (jazz:executable-main)
   (define (missing-argument-for-option opt)
     (set! jazz:warnings
@@ -343,9 +346,7 @@
                (if debug?
                    (setup-build)
                  (setup-runtime))
-               (jazz:repl-main))))))
-  
-  (exit))
+               (jazz:repl-main)))))))
 
 
 ;;;
@@ -353,22 +354,20 @@
 ;;;
 
 
+(define jazz:expansion-context
+  'console)
+
+
 (define (jazz:repl-main)
+  (jazz:setup-expansion-hook)
   (current-input-port (repl-input-port))
   (current-output-port (repl-output-port))
   (current-error-port (repl-output-port))
-  (jazz:setup-expansion-hook)
-  (parameterize ((jazz:walk-for 'console)
-                 (jazz:requested-unit-name #f)
-                 (jazz:generate-symbol-for "&")
-                 (jazz:generate-symbol-context 'console)
-                 (jazz:generate-symbol-counter 0))
-    (jazz:repl-debug)))
-
-
-;; creates a pseudo frame so that with a display-environment-set! = #t, launching
-;; kernel-interpret won't display the lexical environment of the enclosing parameterize
-(define (jazz:repl-debug)
+  (jazz:walk-for 'console)
+  (jazz:requested-unit-name #f)
+  (jazz:generate-symbol-for "&")
+  (jazz:generate-symbol-context 'console)
+  (jazz:generate-symbol-counter 0)
   (##repl-debug
     (lambda (first output-port)
       (if jazz:warnings
@@ -379,43 +378,31 @@
       (newline output-port)
       (force-output output-port)
       #f)
-    #t)
-  #f)
-
-
-(define debug-expansion?
-  #f)
-
-(define (debug-expansion)
-  (set! debug-expansion? (not debug-expansion?))
-  debug-expansion?)
+    #t))
 
 
 (define (jazz:setup-expansion-hook)
-  (let ((hook (lambda (src)
-                (let ((expansion (jazz:expand-src src)))
-                  (if debug-expansion?
-                      (pp (list '---> expansion)))
-                  expansion))))
-    (set! ##expand-source hook)))
-
-
-(define jazz:expansion-context
-  'console)
+  (set! ##expand-source jazz:expand-src))
 
 
 (define (jazz:expand-src src)
-  (let ((code (%%desourcify src)))
-    (if (and (pair? code) (eq? (car code) 'in))
-        (begin
-          ;(input-port-readtable-set! (current-input-port) jazz:jazz-readtable)
-          (%%sourcify
-            `(set! jazz:expansion-context ,(cadr code))
-            src))
-      (if (and (eq? (jazz:walk-for) 'console) jazz:expansion-context)
-          (begin
-            (jazz:load-foundation)
-            (%%sourcify
-              `(module ,jazz:expansion-context jazz ,src)
-              src))
-        src)))))
+  (if (%%eq? (jazz:walk-for) 'console)
+      (let ((code (%%desourcify src)))
+        (if (and (%%pair? code) (%%eq? (%%car code) 'in))
+            (if (%%null? (%%cdr code))
+                (%%sourcify
+                  'jazz:expansion-context
+                  src)
+              (let ((context (%%cadr code)))
+                ;(input-port-readtable-set! (current-input-port) jazz:jazz-readtable)
+                (%%sourcify
+                  `(set! jazz:expansion-context ',context)
+                  src)))
+          (cond ((%%not jazz:expansion-context)
+                 src)
+                (else
+                 (jazz:load-foundation)
+                 (%%sourcify
+                   `(module ,jazz:expansion-context jazz ,src)
+                   src)))))
+    src)))

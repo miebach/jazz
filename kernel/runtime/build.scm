@@ -155,7 +155,7 @@
           (minimum-heap #f)
           (maximum-heap #f)
           (feedback jazz:feedback))
-  (let ((product-name (if (%%not product) "kernel" (%%symbol->string product)))
+  (let ((product-name (if (%%not product) "jazz" (%%symbol->string product)))
         (gambit-library (if include-compiler? "gambcgsc" "gambc"))
         (library-image? (%%eq? image 'library)))
     (let ((gambit-dir (path-normalize "~~/"))

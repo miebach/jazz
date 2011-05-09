@@ -180,7 +180,7 @@
         (<p>)
         (<node>
           "Removed the hardcoded HOME/jazz_user repository"
-          "Now generating a clean kernel-interpret script instead of the old .gambcini hack"
+          "Now generating a clean jazz-interpret script instead of the old .gambcini hack"
           "Added a kernel -nosource option to simulate the deployment environment"
           "Added support for specifying chained binary repositories"
           "Added a -l (local) option to jam to not update the submodules")
@@ -2601,7 +2601,7 @@ JazzScheme Build System v2.6
   [debug-location?: " (<i> "debug-location?") "]
   [debug-source?: " (<i> "debug-source?") "]
   [mutable-bindings?: " (<i> "mutable-bindings?") "]
-  [kernel-interpret?: " (<i> "kernel-interpret?") "]
+  [jazz-interpret?: " (<i> "jazz-interpret?") "]
   [destination: " (<i> "destination") "]")
             (<p>)
             (<dl>
@@ -2687,9 +2687,9 @@ JazzScheme Build System v2.6
                 ))
             (<p>)
             (<dl>
-              (<dt> (<i> (<code> "kernel-interpret?")))
+              (<dt> (<i> (<code> "jazz-interpret?")))
               (<dd>
-                "An advanced option for Jazz developers to enable loading the kernel fully interpreted. "
+                "An advanced option for Jazz developers to enable loading jazz fully interpreted. "
                 (<node>
                   "#f (the default)"
                   "#t")))

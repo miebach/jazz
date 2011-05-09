@@ -144,7 +144,7 @@
           (debug-source? jazz:kernel-debug-source?)
           (mutable-bindings? jazz:kernel-mutable-bindings?)
           (include-compiler? #f)
-          (kernel-interpret? #f)
+          (jazz-interpret? #f)
           (source jazz:kernel-source)
           (destination jazz:kernel-destination)
           (destination-directory jazz:kernel-install)
@@ -593,7 +593,7 @@
           (if (%%not (file-exists? file))
               (begin
                 (jazz:feedback "; generating {a}..." file)
-                (jazz:save-configuration #f system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? kernel-interpret? destination file jazz:kernel-platform)))))
+                (jazz:save-configuration #f system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? jazz-interpret? destination file jazz:kernel-platform)))))
       
       ;;;
       ;;;; Jazz Interpret
@@ -669,7 +669,7 @@
       (build-kernel)
       (build-product)
       
-      (if kernel-interpret?
+      (if jazz-interpret?
           (generate-jazz-interpret)))))
 
 

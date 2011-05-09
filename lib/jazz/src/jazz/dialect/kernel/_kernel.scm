@@ -537,7 +537,7 @@
 (native jazz:jazz-profile)
 (native jazz:warn-interpreted?)
 (native jazz:force-interpreted?)
-(native jazz:delay-reporting?)
+(native jazz:debug-walk?)
 (native jazz:use-print?)
 (native jazz:use-debugger?)
 (native jazz:get-repositories)

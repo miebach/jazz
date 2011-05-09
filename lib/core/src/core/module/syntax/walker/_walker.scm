@@ -3071,10 +3071,6 @@
 ;;;
 
 
-(define jazz:*raise-walk-problems?*
-  (make-parameter #f))
-
-
 (define (jazz:walk-warning walker declaration src fmt-string . rest)
   (let ((location (jazz:walk-location walker declaration (jazz:source-locat src)))
         (message (apply jazz:format fmt-string rest)))
@@ -3093,18 +3089,18 @@
 
 
 (define (jazz:walker-warning walker warning)
-  (cond ((jazz:*raise-walk-problems?*)
+  (cond ((jazz:debug-walk?)
          (raise warning))
         ((jazz:warnings?)
          (%%set-walker-warnings walker (%%append (%%get-walker-warnings walker) (%%list warning))))))
 
 
 (define (jazz:walker-error walker resume error)
-  (cond ((jazz:*raise-walk-problems?*)
+  (cond ((jazz:debug-walk?)
          (raise error))
         (else
          (%%set-walker-errors walker (%%append (%%get-walker-errors walker) (%%list error)))
-         (if (and resume (jazz:delay-reporting?))
+         (if resume
              (continuation-return resume (jazz:unspecified))
            (jazz:validate-walk-problems walker)))))
 
@@ -5286,7 +5282,7 @@
                          ;; because some walk problems still throw explicit errors
                          (jazz:is? exc jazz:Error))))
                 (lambda ()
-                  (parameterize ((jazz:*raise-walk-problems?* #t))
+                  (parameterize ((jazz:debug-walk? #t))
                     (jazz:walk walker resume declaration environment form)
                     #f)))))
         (jazz:new-walk-failed-special answer)))))

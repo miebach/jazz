@@ -98,9 +98,9 @@
 (jazz:define-setting jazz:warnings?
   #f)
 
-;; set to #f to debug the walker itself
-(jazz:define-setting jazz:delay-reporting?
-  #t)
+;; set to #t to debug a walk problem
+(define jazz:debug-walk?
+  (make-parameter #f))
 
 
 ;;;

@@ -374,9 +374,16 @@
         (map jazz:convert-configuration-205001 configurations)))
     205001)
   
+  (define (convert-205001)
+    (jazz:convert-configurations dir
+      (lambda (configurations)
+        (map jazz:convert-configuration-207000 configurations)))
+    207000)
+  
   (case old
     ((#f) (convert-initial))
     ((205000) (convert-205000))
+    ((205001) (convert-205001))
     (else #f)))
 
 
@@ -416,6 +423,14 @@
         (else (list property value))))))
 
 
+(define (jazz:convert-configuration-207000 configuration)
+  (jazz:convert-properties configuration
+    (lambda (property value)
+      (case property
+        ((kernel-interpret?:) (list jazz-interpret?: value))
+        (else (list property value))))))
+
+
 (define (jazz:convert-properties plist converter)
   (let iter ((scan plist) (result '()))
     (if (null? scan)
@@ -439,7 +454,7 @@
 ;;;
 
 
-(define (jazz:save-configuration name system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? kernel-interpret? destination file system-platform)
+(define (jazz:save-configuration name system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? jazz-interpret? destination file system-platform)
   (call-with-output-file (list path: file eol-encoding: (jazz:platform-eol-encoding system-platform))
     (lambda (output)
       (display "(configuration " output)
@@ -447,12 +462,12 @@
       (newline output)
       (newline output)
       (display "  " output)
-      (jazz:print-configuration name system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? kernel-interpret? destination output)
+      (jazz:print-configuration name system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? jazz-interpret? destination output)
       (display ")" output)
       (newline output))))
 
 
-(define (jazz:print-configuration name system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? kernel-interpret? destination output)
+(define (jazz:print-configuration name system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? jazz-interpret? destination output)
   (define first?
     #t)
   
@@ -475,7 +490,7 @@
   (print-property debug-location?: debug-location?)
   (print-property debug-source?: debug-source?)
   (print-property mutable-bindings?: mutable-bindings?)
-  (print-property kernel-interpret?: kernel-interpret?)
+  (print-property jazz-interpret?: jazz-interpret?)
   (print-property destination: destination)
   (display ")" output))
 

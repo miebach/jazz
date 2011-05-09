@@ -1004,8 +1004,9 @@
 (jazz:define-class-runtime jazz:Literal)
 
 
-(define (jazz:new-literal name arguments)
-  (jazz:allocate-literal jazz:Literal name arguments))
+(jazz:define-variable-override jazz:new-literal
+  (lambda (name arguments)
+    (jazz:allocate-literal jazz:Literal name arguments)))
 
 
 (jazz:encapsulate-class jazz:Literal)
@@ -5401,10 +5402,6 @@
         declaration
       (%%assert (%%class-is? declaration jazz:Module-Declaration)
         declaration))))
-
-
-(define jazz:read-literals?
-  (make-parameter #t))
 
 
 (define (jazz:read-toplevel-form resource #!key (read-literals? #t))

@@ -778,6 +778,8 @@
 (native jazz:close-port)
 (native jazz:input-port-timeout-set!)
 (native jazz:output-port-timeout-set!)
+(native input-port-readtable)
+(native input-port-readtable-set!)
 (native open-event-queue)
 (native jazz:eof-object)
 ;(native open-input-string)
@@ -909,6 +911,8 @@
 (native jazz:eval-within-no-winding)
 (native jazz:repl-result-history-add)
 (native repl-result-history-ref)
+(native repl-input-port)
+(native repl-output-port)
 
 
 ;;;

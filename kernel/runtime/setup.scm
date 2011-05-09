@@ -361,6 +361,7 @@
 
 
 (define (jazz:repl-main)
+  (jazz:setup-readtable)
   (jazz:setup-expansion-hook)
   (current-input-port (repl-input-port))
   (current-output-port (repl-output-port))
@@ -381,6 +382,10 @@
       (force-output output-port)
       #f)
     #t))
+
+
+(define (jazz:setup-readtable)
+  (input-port-readtable-set! (repl-input-port) jazz:jazz-readtable))
 
 
 (define (jazz:setup-expansion-hook)
@@ -408,8 +413,6 @@
                  src)
                 (else
                  (jazz:load-foundation)
-                 ;(jazz:load-unit 'jazz)
-                 ;(input-port-readtable-set! (current-input-port) jazz:jazz-readtable)
                  (%%sourcify
                    `(module ,jazz:expansion-context jazz ,src)
                    src)))))

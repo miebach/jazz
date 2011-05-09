@@ -53,6 +53,7 @@
     "kernel/runtime/build"
     "kernel/runtime/digest"
     "kernel/runtime/unit"
+    "kernel/runtime/readtable"
     "kernel/runtime/setup"))
 
 

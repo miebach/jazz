@@ -298,6 +298,7 @@
           (compile-source-file "runtime/" "install")
           (compile-source-file "runtime/" "digest")
           (compile-source-file "runtime/" "unit")
+          (compile-source-file "runtime/" "readtable")
           (compile-source-file "runtime/" "setup")))
       
       (define (generate-architecture rebuild? rebuild-architecture?)
@@ -367,6 +368,7 @@
                                ,(kernel-file "runtime/install")
                                ,(kernel-file "runtime/digest")
                                ,(kernel-file "runtime/unit")
+                               ,(kernel-file "runtime/readtable")
                                ,(kernel-file "runtime/setup")
                                ,(product-file (main-filename)))))
                   (feedback-message "; creating link file...")
@@ -555,6 +557,7 @@
                          ,(kernel-file "runtime/install.c")
                          ,(kernel-file "runtime/digest.c")
                          ,(kernel-file "runtime/unit.c")
+                         ,(kernel-file "runtime/readtable.c")
                          ,(kernel-file "runtime/setup.c")
                          ,(product-file (string-append (main-filename) ".c"))
                          ,(link-file))))

@@ -222,8 +222,7 @@
               output-port)
             (%%write-string opt output-port)
             (%%write-string "\"\n" output-port)
-            #t))
-    (jazz:repl-main))
+            #t)))
   
   (define (number-argument arg)
     (if (%%string? arg)
@@ -309,7 +308,10 @@
                           (jazz:load-script path)))
                     lst))
         
-        (cond (ev
+        (cond (jazz:warnings
+               (setup-runtime)
+               (jazz:repl-main))
+              (ev
                (setup-runtime)
                (eval (call-with-input-string ev read)))
               (load
@@ -398,7 +400,6 @@
                   `',jazz:expansion-context
                   src)
               (let ((context (%%cadr code)))
-                ;(input-port-readtable-set! (current-input-port) jazz:jazz-readtable)
                 (set! jazz:expansion-context context)
                 (%%sourcify
                   `',context
@@ -407,6 +408,8 @@
                  src)
                 (else
                  (jazz:load-foundation)
+                 ;(jazz:load-unit 'jazz)
+                 ;(input-port-readtable-set! (current-input-port) jazz:jazz-readtable)
                  (%%sourcify
                    `(module ,jazz:expansion-context jazz ,src)
                    src)))))

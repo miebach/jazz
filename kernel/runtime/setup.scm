@@ -355,7 +355,7 @@
 
 
 (define jazz:expansion-context
-  'console)
+  'terminal)
 
 
 (define (jazz:repl-main)
@@ -363,10 +363,10 @@
   (current-input-port (repl-input-port))
   (current-output-port (repl-output-port))
   (current-error-port (repl-output-port))
-  (jazz:walk-for 'console)
+  (jazz:walk-for 'terminal)
   (jazz:requested-unit-name #f)
   (jazz:generate-symbol-for "&")
-  (jazz:generate-symbol-context 'console)
+  (jazz:generate-symbol-context 'terminal)
   (jazz:generate-symbol-counter 0)
   (##repl-debug
     (lambda (first output-port)
@@ -382,21 +382,26 @@
 
 
 (define (jazz:setup-expansion-hook)
-  (set! ##expand-source jazz:expand-src))
+  (set! ##expand-source (lambda (src)
+                          (let ((expansion (jazz:expand-src src)))
+                            (if (jazz:debug-expansion?)
+                                (pp (list src '---> expansion)))
+                            expansion))))
 
 
 (define (jazz:expand-src src)
-  (if (%%eq? (jazz:walk-for) 'console)
+  (if (%%eq? (jazz:walk-for) 'terminal)
       (let ((code (%%desourcify src)))
         (if (and (%%pair? code) (%%eq? (%%car code) 'in))
             (if (%%null? (%%cdr code))
                 (%%sourcify
-                  'jazz:expansion-context
+                  `',jazz:expansion-context
                   src)
               (let ((context (%%cadr code)))
                 ;(input-port-readtable-set! (current-input-port) jazz:jazz-readtable)
+                (set! jazz:expansion-context context)
                 (%%sourcify
-                  `(set! jazz:expansion-context ',context)
+                  `',context
                   src)))
           (cond ((%%not jazz:expansion-context)
                  src)

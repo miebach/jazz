@@ -60,9 +60,6 @@
   (slot pango-layout)
   (slot clipper            <Rect>       initialize (new Rect 0 0 0 0) getter generate)
   (slot font                            initialize #f)
-  (slot landscape?         <bool>       initialize #f)
-  (slot landscape-rotation <symbol+>    initialize #f)
-  (slot landscape-page     <Dimension+> initialize #f)
   (slot line-width                      initialize 1)
   (slot landscape?         <bool>       initialize #f)
   (slot landscape-rotation <symbol+>    initialize #f)
@@ -225,7 +222,7 @@
       (cairo_save context)
       (cairo_translate context (+ left w1/2) (+ top h1/2))
       (cairo_scale context w1/2 h1/2)
-      (cairo_arc context 0.0 0.0 1.0 0.0 (* 2 M_PI))
+      (cairo_arc context 0.0 0.0 1.0 0.0 (* 2 PI))
       (cairo_restore context))
     (when stroke-color
       (set-color stroke-color)

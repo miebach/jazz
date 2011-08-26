@@ -1740,7 +1740,7 @@
   
   (method public (invalidate-merge-cell merge-cell)
     (when (view-visible?)
-      (with ((region (new Region (acquire-delta (find-offset~ (get-root) self) (rect-intersection (merge-cell-rect merge-cell) (get-clipper))))))
+      (with ((region (new Region (acquire-delta (find-offset~ (get-root) self) (rect-intersection (merge-cell-rect merge-cell) (get-view-clipper))))))
         (invalidate-region~ player region))))
   
   

@@ -108,6 +108,8 @@
   (slot offscreen                                initialize #f)
   (slot scroller                                 initialize #f)
   (slot renderer                                 initialize #f accessors generate)
+  (slot scaled?                     <bool>       initialize #f)
+  (slot scaling                     <fl>         initialize 1.0)
   (slot previous-size               <Dimension+> initialize #f)
   (slot update-locked?              <bool>       initialize #f getter generate)
   (slot scrollee-locked?            <bool>       initialize #f)
@@ -621,6 +623,34 @@
     (and (get-enabled?)
          (or (is-not? parent View)
              (view-enabled?~ parent))))
+  
+  
+  ;;;
+  ;;;; Scaling
+  ;;;
+  
+
+  (method override (get-scaled?)
+    scaled?)
+
+
+  (method override (set-scaled? value)
+    (set! scaled? value)
+    (update-displayed)
+    (update-scrollbars)
+    ;; Depending on whether it's the view's point of vue or it's parent
+    ;; we either have to invalidate the view or its parent...
+    (if parent
+        (invalidate-view~ parent)
+      (invalidate-view)))
+  
+
+  (method override (get-scaling)
+    scaling)
+
+
+  (method override (set-scaling value <fl>)
+    (set! scaling (/ (round (* value 1000)) 1000)))
   
   
   ;;;
@@ -1252,7 +1282,7 @@
                     (dv (- v (get-v~ pos))))
                 (scroll-invalidate dh dv)
                 (let ((rect (get-bounds~ display))
-                      (clip-rect (acquire~ display self (get-clipper))))
+                      (clip-rect (acquire~ display self (get-view-clipper))))
                   (scroll-view~ display dh dv rect clip-rect: clip-rect)))))))))
 
   
@@ -1267,7 +1297,7 @@
   (method public (scroll-view dh dv rect (clip-rect: clip-rect #f))
     (let ((root (get-root)))
       (when (and (get-player) (view-visible?))
-        (scroll-window~ (get-player) dh dv (acquire~ root self rect) (acquire~ root self (or clip-rect (get-clipper)))))))
+        (scroll-window~ (get-player) dh dv (acquire~ root self rect) (acquire~ root self (or clip-rect (get-view-clipper)))))))
   
   
   ;; an attempt at a platform-independant scroll-view
@@ -3197,7 +3227,7 @@
     (let* ((root (get-root))
            (offset (point- (get-absolute-position) (get-absolute-position~ root))))
       (offset!~ region (get-h~ offset) (get-v~ offset))
-      (with ((clipper (new Region (acquire~ root self (get-clipper)))))
+      (with ((clipper (new Region (acquire~ root self (get-view-clipper)))))
         (combine!~ region clipper 'and))))
   
   

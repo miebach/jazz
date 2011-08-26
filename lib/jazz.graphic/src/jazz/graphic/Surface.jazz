@@ -56,9 +56,9 @@
   
   
   (slot surface                                                       getter generate)
-  (slot context)
+  (slot context                                                       getter generate)
   (slot pango-layout)
-  (slot clipper            <Rect>       initialize (new Rect 0 0 0 0) getter generate)
+  (slot clipper            <Rect>       initialize (new Rect 0 0 0 0))
   (slot font                            initialize #f)
   (slot line-width                      initialize 1)
   (slot landscape?         <bool>       initialize #f)
@@ -93,6 +93,13 @@
   ;;;
   ;;;; Clipping and transformation matrix
   ;;;
+ 
+  
+  (method public (get-clipper) <Rect>
+    (new Rect (get-left~ clipper)
+              (get-top~ clipper)
+              (get-right~ clipper)
+              (get-bottom~ clipper)))
 
   
   (method public (get-logical-clipper) <Rect>
@@ -103,29 +110,47 @@
 
   
   (method public (with-clipper rect proc)
-    (let ((old-clipper clipper))
+    (let ((old-clipper clipper)
+          (new-clipper (rect-intersection rect clipper)))
       (unwind-protect
        (begin
-         (set! clipper rect)
-         (cairo_save context)
-         (rectangle-path rect)
+         (set! clipper new-clipper)
+         (rectangle-path new-clipper)
          (cairo_clip context)
          (proc))
-       (cairo_restore context)
-       (set! clipper old-clipper))))  
+       (set! clipper old-clipper))))
+   
+   
+  (method public (set-clipper rect <Rect>)
+    (set-left~ clipper (get-left~ rect))
+    (set-top~ clipper (get-top~ rect))
+    (set-right~ clipper (get-right~ rect))
+    (set-bottom~ clipper (get-bottom~ rect))
+    (select-clipper clipper))
+
+
+  (method public (select-clipper rect <Rect>)
+    (unless (debug-painting?)
+      (cairo_reset_clip context)
+      (rectangle-path rect)
+      (cairo_clip context)))
   
   
   ;; lh lv : position of the drawing relative to the player
   (method public (with-transform lh lv width height proc)
-    (unwind-protect
-     (begin
-       (cairo_save context)
-       (cairo_identity_matrix context)
-       (with-clipper (new Rect lh lv (+ lh width) (+ lv height))
-         (lambda ()
-           (cairo_translate context (cast <fl> lh) (cast <fl> lv))
-           (proc))))
-     (cairo_restore context)))
+    (let ((old-matrix (cairo_matrix_t-make)))
+      (cairo_get_matrix context old-matrix)
+      (cairo_identity_matrix context)
+      (let* ((clipper (new Rect lh lv (+ lh width) (+ lv height)))
+             (old-clipper (get-clipper))
+             (new-clipper (rect-intersection old-clipper clipper)))
+        (set-clipper new-clipper)
+        (cairo_translate context (cast <fl> lh) (cast <fl> lv))
+        (proc)
+        (cairo_identity_matrix context)
+        (set-clipper old-clipper)
+        (cairo_set_matrix context old-matrix)
+        (cairo_matrix_t-free old-matrix))))
            
    
   ;;;

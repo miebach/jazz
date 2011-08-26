@@ -617,10 +617,10 @@
 (class Rect metaclass Rect-Class extends Object
   
   
-  (slot left   <fx> getter generate)
-  (slot top    <fx> getter generate)
-  (slot right  <fx> getter generate)
-  (slot bottom <fx> getter generate)
+  (slot left   <fx> accessors generate)
+  (slot top    <fx> accessors generate)
+  (slot right  <fx> accessors generate)
+  (slot bottom <fx> accessors generate)
   
   
   (method override (initialize l <fx> t <fx> r <fx> b <fx>)

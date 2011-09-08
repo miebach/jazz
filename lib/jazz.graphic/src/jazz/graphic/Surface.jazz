@@ -49,6 +49,11 @@
         (jazz.platform.pango))
 
 
+
+;; Potentially a memory leak
+;; To fix, make weak value table and put will on font-descriptions to clear pango resource
+(definition font-description-cache (make-table test: eq?))
+
 ;; clipper -> clip rectangle used by the view painting algorithm
 
 
@@ -159,22 +164,25 @@
 
 
   (definition (get-font-description font)
-    (pango-font-description (get-font-name~ font) (get-point-size~ font) (get-italic?~ font) (get-bold?~ font)))
+    (let ((description (table-ref font-description-cache font #f)))
+      (or description
+          (let ((pango-desc (pango-font-description (get-font-name~ font) (get-point-size~ font) (get-italic?~ font) (get-bold?~ font))))
+            (table-set! font-description-cache font pango-desc)
+            pango-desc))))
 
   
   (method protected (update-font font) ;; lazy font setting
     (unless (eq? font font~self)
       (set! font~self font)
       (let ((font-description (get-font-description font)))
-        (pango-layout-set-font pango-layout font-description)
-        (pango_font_description_free font-description))))
+        (pango-layout-set-font pango-layout font-description))))
   
 
   (define extents-cache (make-table weak-keys: #t))
-  (method public (get-text-extent text <string> font (from 0) (to -1))
+  (method public (get-text-extent text <string> font)
     (or (table-ref extents-cache (cons font~self text) #f) ;; this ignores from, to; probably will show up as bug in tabbed text drawing
         (begin (update-font font)
-               (pango-set-text pango-layout text from to)
+               (pango_layout_set_text pango-layout text -1)
                (let ((extents (pango-get-extents pango-layout)))
                  (table-set! extents-cache (cons font~self text) extents)
                  extents))))
@@ -185,16 +193,15 @@
     (or (table-ref font-height-cache font #f)
         (let* ((font-description (get-font-description font))
                (px-height (pango-font-height pango-layout font-description)))
-          (pango_font_description_free font-description)
           (table-set! font-height-cache font px-height)
           px-height)))
     
   
-  (method public (draw-text h <fx> v <fx> str <string> font color (from 0) (to -1))
+  (method public (draw-text h <fx> v <fx> str <string> font color)
     (unless (string=? str "")
       (update-font font)
       (set-color color)
-      (pango-set-text pango-layout str from to)
+      (pango_layout_set_text pango-layout str -1)
       (move-to h v)
       (pango_cairo_show_layout context~self pango-layout)))
 

@@ -71,17 +71,7 @@
 (c-external (g_object_unref PangoLayout*) void)
 (c-external (pango_font_metrics_unref PangoFontMetrics*) void)
 (c-external (pango_font_description_free PangoFontDescription*) void)
-
-
-(define pango-set-text-segment
-  (c-function (PangoLayout* UTF-8-string int int) void
-    "pango_layout_set_text(___arg1, ___arg2 + ___arg3, ___arg4);"))
-
-
-(definition public (pango-set-text layout str from to)
-  (let ((byte-offset (loop (for i from 0 below from)
-                           (sum (char-number-bytes-utf8 (char->integer (string-ref str i)))))))
-    (pango-set-text-segment layout str byte-offset (if (= -1 to) to (- to from)))))
+(c-external (pango_layout_set_text PangoLayout* UTF-8-string int) void)
 
 
 (define w (int*-alloc 1)) ;; really, really not thread safe

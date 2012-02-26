@@ -50,7 +50,7 @@
     "kernel/runtime/common"
     "kernel/runtime/settings"
     "kernel/runtime/advise"
-    "kernel/runtime/build"
+    ;"kernel/runtime/build"
     "kernel/runtime/digest"
     "kernel/runtime/unit"
     "kernel/runtime/setup"))
@@ -62,6 +62,7 @@
       (if (not loaded?)
           (begin
             (for-each (lambda (path)
+                        (pp path)
                         (load (string-append jazz:source path)))
                       jazz:Kernel)
             (set! loaded? #t))))))

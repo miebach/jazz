@@ -261,6 +261,7 @@
             (jobs (number-argument (jazz:get-option "jobs" options)))
             (port (number-argument (jazz:get-option "port" options))))
         (define (setup-kernel)
+          #;
           (if jazz:kernel-install
               (let ((gambcdir (jazz:absolutize-directory jazz:kernel-install jazz:gambit-dir)))
                 (if (and gambcdir (jazz:directory-exists? gambcdir))
@@ -356,6 +357,7 @@
                  (setup-runtime))
                (jazz:repl-main))))))
   
+  #;
   (exit))
 
 
@@ -363,6 +365,14 @@
   (current-input-port (repl-input-port))
   (current-output-port (repl-output-port))
   (current-error-port (repl-output-port))
+  
+  (display "JazzScheme Kernel v")
+  (display (jazz:present-version jazz:kernel-version))
+  (newline)
+  (newline)
+  (force-output)
+  
+  #;
   (%%repl
     (lambda (first output-port)
       (if jazz:warnings

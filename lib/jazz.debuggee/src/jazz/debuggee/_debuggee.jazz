@@ -1190,7 +1190,7 @@
 
 (definition public (current-view-debugger)
   (when (not *current-view-debugger*)
-    (set! *current-view-debugger* (new View-Debugger)))
+    (set! *current-view-debugger* (new jazz.debuggee:View-Debugger)))
   *current-view-debugger*)
 
 

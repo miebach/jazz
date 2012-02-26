@@ -722,24 +722,6 @@
                              (%%when (and (%%neq? module-declaration declaration) (%%neq? phase 'syntax))
                                (enqueue-load-unit (%%get-lexical-binding-name module-declaration)))))))
                      (%%get-module-declaration-exports declaration))
-           (let ((auto (jazz:new-queue))
-                 (names (%%make-table test: eq?)))
-             (for-each (lambda (module-invoice)
-                         (let ((autoload (%%get-export-invoice-autoload module-invoice)))
-                           (%%when autoload
-                             (let ((unit-name (%%get-declaration-reference-name (%%get-module-invoice-module module-invoice))))
-                               (for-each (lambda (decl)
-                                           (let ((name (jazz:reference-name (%%get-declaration-reference-name decl))))
-                                             (%%when (%%not (%%table-ref names name #f))
-                                               (%%table-set! names name #t)
-                                               (let ((symbol-name (jazz:compose-reference unit-name name)))
-                                                 (jazz:enqueue auto `(jazz:register-autoload ',name ',unit-name
-                                                                       (lambda ()
-                                                                         (jazz:load-unit ',unit-name)
-                                                                         ,symbol-name)))))))
-                                         autoload)))))
-                       (%%get-module-declaration-exports declaration))
-             (jazz:enqueue-list queue (jazz:sort (jazz:queue-list auto) (lambda (x y) (%%string<? (%%symbol->string (%%cadr (%%cadr x))) (%%symbol->string (%%cadr (%%cadr y))))))))
            (for-each (lambda (module-invoice)
                        (let ((module-declaration (%%get-module-invoice-module module-invoice))
                              (phase (%%get-module-invoice-phase module-invoice)))
@@ -4506,10 +4488,18 @@
 
 (jazz:define-method (jazz:walk-symbol (jazz:Walker walker) resume declaration environment symbol-src)
   (let ((symbol (jazz:source-code symbol-src)))
-    (cond ((jazz:enumerator? symbol)
-           (jazz:walk-enumerator walker symbol))
-          (else
-           (jazz:walk-symbol-reference walker resume declaration environment symbol-src)))))
+    (if (jazz:enumerator? symbol)
+        (jazz:walk-enumerator walker symbol)
+      (let ((binding (jazz:lookup-symbol walker resume declaration environment symbol-src)))
+        (if binding
+            (cond ((or (jazz:walk-binding-walkable? binding)
+                       (jazz:walk-binding-expandable? binding))
+                   (jazz:walk-error walker resume declaration symbol-src "Illegal access to syntax: {s}" symbol))
+                  (else
+                   (if (%%class-is? binding jazz:Variable)
+                       (jazz:walk-binding-referenced binding))
+                   (jazz:new-binding-reference symbol-src binding)))
+          (jazz:walk-free-reference walker resume declaration symbol-src))))))
 
 
 (define (jazz:walk-setbang walker resume declaration environment form-src)
@@ -4587,16 +4577,6 @@
 ;;;
 
 
-(define (jazz:walk-symbol-reference walker resume declaration environment symbol-src)
-  (let ((binding (jazz:lookup-symbol walker resume declaration environment symbol-src)))
-    (if binding
-        (begin
-          (if (%%class-is? binding jazz:Variable)
-              (jazz:walk-binding-referenced binding))
-          (jazz:new-binding-reference symbol-src binding))
-        (jazz:walk-free-reference walker resume declaration symbol-src))))
-
-
 (jazz:define-virtual-runtime (jazz:walk-free-reference (jazz:Walker walker) resume declaration symbol-src))
 
 
@@ -4651,15 +4631,16 @@
                         (%%class-is? ref jazz:Declaration))
                     ref)))
             (else #f))))
-      ;; special form
-      (if (and binding (jazz:walk-binding-walkable? binding))
-          (jazz:walk-binding-walk-form binding walker resume declaration environment form-src)
-          ;; macro
-          (if (and binding (jazz:walk-binding-expandable? binding))
-              (let ((expansion (jazz:walk-binding-expand-form binding walker resume declaration environment form-src)))
-                (jazz:walk walker resume declaration environment expansion))
-              ;; call
-              (jazz:walk-call walker resume declaration environment binding form-src))))))
+      (cond ;; special form
+            ((and binding (jazz:walk-binding-walkable? binding))
+             (jazz:walk-binding-walk-form binding walker resume declaration environment form-src))
+            ;; macro
+            ((and binding (jazz:walk-binding-expandable? binding))
+             (let ((expansion (jazz:walk-binding-expand-form binding walker resume declaration environment form-src)))
+               (jazz:walk walker resume declaration environment expansion)))
+            ;; call
+            (else
+             (jazz:walk-call walker resume declaration environment binding form-src))))))
 
 
 ;;;

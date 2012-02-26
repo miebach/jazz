@@ -38,6 +38,12 @@
 (module jazz.locale jazz
 
 
+(export (jazz.locale.autoload))
+
+
+(import (jazz.locale.autoload))
+
+
 ;;;
 ;;;; Locale
 ;;;
@@ -74,7 +80,7 @@
 (class Locales extends Object
   
   
-  (slot locales getter generate)
+  (slot locales accessors generate)
     
     
   (method override (initialize . rest)
@@ -103,7 +109,7 @@
   ;;;
   
   
-  (method public virtual (localize locale)
+  (method public virtual (localize (locale *active-locale*))
     (or (getf locales locale) (second locales))))
 
 
@@ -134,7 +140,7 @@
   ;;;
   
   
-  (method override (localize locale)
+  (method override (localize (locale *active-locale*))
     (format "{^:~}" (localize~ locales locale) context)))
 
 
@@ -194,8 +200,10 @@
 (definition locale-changes
   '())
 
+
 (definition public (register-locale-change proc)
   (set! locale-changes (cons proc locale-changes)))
+
 
 (definition public (unregister-locale-change proc)
   (set! locale-changes (remove! proc locale-changes)))
@@ -204,12 +212,6 @@
 (definition public (localize object)
   (if (is? object Locales)
       (localize~ object *active-locale*)
-    object))
-
-
-(definition public (localize-to object locale)
-  (if (is? object Locales)
-      (localize~ object locale)
     object))
 
 

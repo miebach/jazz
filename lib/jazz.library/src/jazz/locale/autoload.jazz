@@ -2,7 +2,7 @@
 ;;;  JazzScheme
 ;;;==============
 ;;;
-;;;; Value Entry
+;;;; Locale Autoload
 ;;;
 ;;;  The contents of this file are subject to the Mozilla Public License Version
 ;;;  1.1 (the "License"); you may not use this file except in compliance with
@@ -35,29 +35,8 @@
 ;;;  See www.jazzscheme.org for details.
 
 
-(module protected jazz.designer.entry.Value-Entry jazz
+(module protected jazz.locale.autoload jazz
 
 
-(import (jazz.designer))
-
-
-(class Value-Entry extends String-Entry
-    
-  
-  ;;;
-  ;;;; Value
-  ;;;
-  
-  
-  (method override (get-value)
-    (let ((content (get-string-content~ (locate 'text))))
-      (and (not (empty-string? content))
-           (not (string=? content "{}"))
-           (read-string-safe content))))
-  
-  
-  (method override (set-value value)
-    (set-string-content~ (locate 'text)
-      (if (not value)
-          "{}"
-        (->string value :reader))))))
+(export
+  (jazz.locale.Localized-String (autoload Localized-String Localized-String-Group localized-strings))))

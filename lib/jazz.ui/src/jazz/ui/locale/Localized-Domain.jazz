@@ -39,14 +39,37 @@
 
 
 (import (jazz.designer)
+        (jazz.jml)
         (jazz.library)
         (jazz.locale))
 
 
-(class undocumented Localized-Domain extends String-Domain
+(class undocumented Localized-Domain extends Value-Domain
+
+  
+  (form
+    (<install> nullable?: #t))
+  
+  
+  ;;;
+  ;;;; Validation
+  ;;;
   
   
   (method override (validate-value property value component root editor context manager)
-    (unless (or (string? value) (is? value Locales))
-      (add-violation~ manager (new Integrity-Violation message: (format "Property {a} must be a string or a Locales object: {t}" (field-name property) value) property: property) component root editor)))))
+    (when value
+      (unless (or (string? value) (is? value Locales))
+        (add-violation~ manager (new Integrity-Violation message: (format "Property {a} can only be a string or a Locales object: {t}" (field-name property) value) property: property) component root editor)))
+    (nextmethod property value component root editor context manager))
+  
+  
+  ;;;
+  ;;;; Presentation
+  ;;;
+  
+  
+  (method override (present value)
+    (if (not value)
+        "{}"
+      (->string value :reader)))))
 

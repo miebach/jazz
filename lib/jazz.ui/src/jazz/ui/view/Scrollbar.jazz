@@ -107,9 +107,10 @@
     (let ((new-pos (max (min p (max-pos)) (min-pos))))
       (when (/= new-pos pos)
         (set! pos new-pos)
+        (when (not (testing?))
         (if redraw?
             (redraw-view-only)
-          (invalidate-view)))))
+          (invalidate-view))))))
 
 
   (method public (get-range) <Range>

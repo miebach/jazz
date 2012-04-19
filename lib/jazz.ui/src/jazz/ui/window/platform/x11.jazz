@@ -1079,8 +1079,11 @@
 
 
 (definition (xinvalidate-rect handle rect)
+  (define (dr rect)
+    (list (get-left~ rect) (get-right~ rect) (rect-width rect) (rect-height rect)))
+  
   (when (memq? 'invalidate (or (testing) '()))
-    (terminal invalidate: rect))
+    (terminal invalidate: (dr rect)))
   (let ((l (get-left~ rect))
         (t (get-top~ rect))
         (r (get-right~ rect))
@@ -1136,27 +1139,21 @@
 
 
 (definition package (platform-invalidate-rect handle rect)
-  (when (memq? 'problematic (or (testing) '()))
-    (terminal 'invalidate-rect))
   (add-invalidated-rect handle rect))
 
 
 (definition package (platform-invalidate-region handle region)
-  (when (memq? 'problematic (or (testing) '()))
-    (terminal 'invalidate-region))
   (add-invalidated-region handle region))
 
 
 (definition package (platform-invalidate-window handle)
-  (when (memq? 'problematic (or (testing) '()))
-    (terminal 'invalidate-window))
   (let ((rect (size-rect (platform-get-size handle))))
     (platform-invalidate-rect handle rect)))
 
 
 (definition package (platform-redraw-window handle rect region)
   (when (memq? 'problematic (or (testing) '()))
-    (terminal 'redraw))
+    (terminal 'redraw-window))
   (cond (region (add-invalidated-region handle region))
         (rect (add-invalidated-rect handle rect)))
   (if region
@@ -1170,7 +1167,8 @@
 
 
 (definition package (platform-update-window handle)
-  (terminal 'update)
+  (when (memq? 'problematic (or (testing) '()))
+    (terminal 'update-window))
   (let ((invalidated-region (get-invalidated-region handle)))
     (table-clear invalidated-regions handle)
     (paint~ (get-window handle) invalidated-region)))

@@ -38,7 +38,8 @@
 (module protected jazz.ui.window.View-Player jazz
 
 
-(import (jazz.graphic)
+(import (jazz.geometry)
+        (jazz.graphic)
         (jazz.jml)
         (jazz.locale)
         (jazz.system)
@@ -258,6 +259,13 @@
       (lambda (surface)
         (parameterize ((current-update-region update-region))
           (let ((update-rect (get-box~ update-region)))
+            (define (dr rect)
+              (list (get-left~ rect) (get-right~ rect) (rect-width rect) (rect-height rect)))
+            
+            (when (memq? 'paint (or (testing) '()))
+              (let ((rect update-rect))
+                (terminal paint: (dr update-rect))
+                (terminal rectangles: (map dr (get-rectangles~ update-region)))))
             (set-clipper-region~ surface update-region)
             @w
             (set-clipper~ surface update-rect)

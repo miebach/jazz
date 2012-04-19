@@ -38,7 +38,8 @@
 (module protected jazz.ui.outline.Outline-Model jazz
 
 
-(import (jazz.jml)
+(import (jazz.geometry)
+        (jazz.jml)
         (jazz.system)
         (jazz.ui))
 
@@ -289,7 +290,8 @@
     
     (let ((clipper (get-clipper~ surface)))
       (when (memq? 'scroll (or (testing) '()))
-        (terminal clipper: clipper))
+        (terminal clipper: (list (get-left~ clipper) (get-right~ clipper) (rect-width clipper) (rect-height clipper))
+          v: (get-v~ (get-position~ (single-client)))))
       (let ((top (get-top~ clipper))
             (bottom (get-bottom~ clipper))
             (row (get-first-displayed~ outline))

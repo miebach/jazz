@@ -229,7 +229,7 @@
   
   (method public (set-clipper-region region <Region>)
     (cairo_reset_clip context)
-    (for-each draw-rectangle (region-rectangles~ region))
+    (for-each draw-rectangle (get-rectangles~ region))
     (cairo_clip context))
   
   
@@ -405,7 +405,7 @@
   
   
   (method public (fill-region region <Region> color)
-    (loop (for rect in (region-rectangles~ region))
+    (loop (for rect in (get-rectangles~ region))
           (do (fill-rect rect color))))
   
   

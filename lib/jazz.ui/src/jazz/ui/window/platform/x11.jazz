@@ -440,7 +440,8 @@
              (handle (XAnyEvent-window-ref any-event)))
         (let ((window (get-window handle)))
           (when window
-            (dispatch-message window msg)))))))
+            (prog1 (dispatch-message window msg)
+              (process-invalidated-regions handle))))))))
 
 
 (definition package (process-messages-single-threaded thunk)
@@ -449,7 +450,6 @@
          (display-fd (ConnectionNumber x11-default-display))
          (fdset (setup-fdset display-fd)))
     (let (loop)
-      (process-invalidated-regions)
       (select (+ display-fd 1) fdset #f #f 0 1000)
       (if (= 0 (XPending x11-default-display))
           (thread-sleep! 0.01)
@@ -1093,10 +1093,10 @@
 (definition (xinvalidate-region handle region)
   (for-each (lambda (rect)
               (xinvalidate-rect handle rect))
-            (region-rectangles~ region)))
+            (get-rectangles~ region)))
 
 
-(definition optimize-invalidated-regions?
+(definition protected optimize-invalidated-regions?
   #f)
 
 
@@ -1127,30 +1127,36 @@
   (invalidate-offscreen-region handle region))
 
 
-(definition (process-invalidated-regions)
+(definition (process-invalidated-regions handle)
   (when optimize-invalidated-regions?
-    (iterate-table-safe invalidated-regions
-      (lambda (handle region)
+    (let ((region (table-ref invalidated-regions handle #f)))
+      (when region
         (table-clear invalidated-regions handle)
-        (let ((window (get-window handle)))
-          (when window
-            (xinvalidate-region handle region)))))))
+        (xinvalidate-region handle region)))))
 
 
 (definition package (platform-invalidate-rect handle rect)
+  (when (memq? 'problematic (or (testing) '()))
+    (terminal 'invalidate-rect))
   (add-invalidated-rect handle rect))
 
 
 (definition package (platform-invalidate-region handle region)
+  (when (memq? 'problematic (or (testing) '()))
+    (terminal 'invalidate-region))
   (add-invalidated-region handle region))
 
 
 (definition package (platform-invalidate-window handle)
+  (when (memq? 'problematic (or (testing) '()))
+    (terminal 'invalidate-window))
   (let ((rect (size-rect (platform-get-size handle))))
     (platform-invalidate-rect handle rect)))
 
 
 (definition package (platform-redraw-window handle rect region)
+  (when (memq? 'problematic (or (testing) '()))
+    (terminal 'redraw))
   (cond (region (add-invalidated-region handle region))
         (rect (add-invalidated-rect handle rect)))
   (if region
@@ -1164,6 +1170,7 @@
 
 
 (definition package (platform-update-window handle)
+  (terminal 'update)
   (let ((invalidated-region (get-invalidated-region handle)))
     (table-clear invalidated-regions handle)
     (paint~ (get-window handle) invalidated-region)))

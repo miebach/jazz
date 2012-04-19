@@ -119,11 +119,7 @@
   
   
   (method override (mouse-enter)
-    (set-highlighted~ parent (if (item-navigable?) self #f))
-    @when-is-this-necessary???
-    (let ((initiator (popup-initiator)))
-      (when initiator
-        (invalidate-view~ initiator))))
+    (set-highlighted~ parent (if (item-navigable?) self #f)))
   
   
   (method override (mouse-leave)

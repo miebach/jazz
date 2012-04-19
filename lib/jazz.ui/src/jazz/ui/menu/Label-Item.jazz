@@ -331,9 +331,7 @@
       (unless (menubar-label?)
         (let ((popped (get-popped~ parent)))
           (when popped
-            (track-hovering)
-            @when-is-this-necessary???
-            (invalidate-view~ (popup-initiator~ popped)))))
+            (track-hovering))))
       (when content
         (if (menubar-label?)
             (when (get-popped~ parent)

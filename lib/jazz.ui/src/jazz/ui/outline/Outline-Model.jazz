@@ -288,6 +288,8 @@
           (paint-content~ row surface #t '() new-context))))
     
     (let ((clipper (get-clipper~ surface)))
+      (when (memq? 'scroll (or (testing) '()))
+        (terminal clipper: clipper))
       (let ((top (get-top~ clipper))
             (bottom (get-bottom~ clipper))
             (row (get-first-displayed~ outline))

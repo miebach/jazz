@@ -102,7 +102,7 @@
       (cairo-rectangle->rect rectangle)))
   
   
-  (method public (region-rectangles)
+  (method public (get-rectangles)
     (loop (for n from 0 below (cairo_region_num_rectangles handle))
           (collect (let ((rectangle (cairo_rectangle_int_t-make)))
                      (cairo_region_get_rectangle handle n rectangle)

@@ -104,11 +104,6 @@
   
   
   (method public (set-popped menu)
-    @when-is-this-necessary???
-    (when popped
-      (let ((initiator (popup-initiator~ popped)))
-        (when initiator
-          (invalidate-view~ initiator))))
     (set! popped menu))
   
   

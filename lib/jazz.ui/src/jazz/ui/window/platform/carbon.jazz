@@ -639,7 +639,7 @@
 (definition package (platform-invalidate-region handle region)
   (for-each (lambda (rect)
               (platform-invalidate-rect handle rect))
-            (get-rectangles~ region)))
+            (region-rectangles~ region)))
 
 
 (definition package (platform-invalidate-window handle)

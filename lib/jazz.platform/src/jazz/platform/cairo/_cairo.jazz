@@ -489,9 +489,13 @@
 (c-external (cairo_region_contains_rectangle cairo_region_t* cairo_rectangle_int_t*) cairo_region_overlap_t)
 (c-external (cairo_region_translate cairo_region_t* int int) void)
 (c-external (cairo_region_intersect cairo_region_t* cairo_region_t*) cairo_status_t)
+(c-external (cairo_region_intersect_rectangle cairo_region_t* cairo_rectangle_int_t*) cairo_status_t)
 (c-external (cairo_region_subtract cairo_region_t* cairo_region_t*) cairo_status_t)
+(c-external (cairo_region_subtract_rectangle cairo_region_t* cairo_rectangle_int_t*) cairo_status_t)
 (c-external (cairo_region_union cairo_region_t* cairo_region_t*) cairo_status_t)
+(c-external (cairo_region_union_rectangle cairo_region_t* cairo_rectangle_int_t*) cairo_status_t)
 (c-external (cairo_region_xor cairo_region_t* cairo_region_t*) cairo_status_t)
+(c-external (cairo_region_xor_rectangle cairo_region_t* cairo_rectangle_int_t*) cairo_status_t)
 
 
 ;;;

@@ -1370,7 +1370,7 @@
   
   (method (range-region range <Range$Cell$> transformer (top: top #f) (bottom: bottom #f))
     (let ((root (get-root))
-          (region (new Region keep-rectangles?: #t))
+          (region (new Region))
           (width (get-width)))
       (for-each-logical-range range
         (lambda (line paragraph start end)

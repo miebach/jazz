@@ -42,14 +42,14 @@
         (jazz.platform))
 
 
-(class Region extends Rectangles-Region
+(class Region extends Object
   
   
   (slot handle getter generate)
   
   
-  (method override (initialize (keep-rectangles?: keep-rectangles? (needs-rectangles?)) (handle: handle #f) (rect: rect #f))
-    (nextmethod keep-rectangles?: keep-rectangles? rect: rect)
+  (method override (initialize (handle: handle #f) (rect: rect #f))
+    (nextmethod)
     (cond (handle
            (set! handle~self handle))
           (rect
@@ -57,10 +57,6 @@
           (else
            (set! handle~self (CreateRectRgn 0 0 0 0))))
     (destroy-mandatory))
-  
-  
-  (method override (needs-rectangles?)
-    #f)
 
   
   (method override (destroy)
@@ -68,42 +64,37 @@
     (nextmethod))
   
   
-  (method override (offset! h v)
-    (OffsetRgn handle h v)
-    (nextmethod h v))
+  (method public (offset! h v)
+    (OffsetRgn handle h v))
   
   
-  (method override (combine-and! region)
-    (CombineRgn handle handle (get-handle~ region) RGN_AND)
-    (nextmethod region))
+  (method public (combine-and! region)
+    (CombineRgn handle handle (get-handle~ region) RGN_AND))
 
 
-  (method override (combine-or! region)
-    (CombineRgn handle handle (get-handle~ region) RGN_OR)
-    (nextmethod region))
+  (method public (combine-or! region)
+    (CombineRgn handle handle (get-handle~ region) RGN_OR))
   
   
-  (method override (combine-xor! region)
-    (CombineRgn handle handle (get-handle~ region) RGN_XOR)
-    (nextmethod region))
+  (method public (combine-xor! region)
+    (CombineRgn handle handle (get-handle~ region) RGN_XOR))
   
   
-  (method override (combine-diff! region)
-    (CombineRgn handle handle (get-handle~ region) RGN_DIFF)
-    (nextmethod region))
+  (method public (combine-diff! region)
+    (CombineRgn handle handle (get-handle~ region) RGN_DIFF))
   
   
-  (method override (empty?) <bool>
+  (method public (empty?) <bool>
     (= (get-box) {Rect 0 0 0 0}))
   
   
-  (method override (intersects-rect? rect) <bool>
+  (method public (intersects-rect? rect) <bool>
     (with ((region (new Region rect: rect)))
       (combine-and!~ region self)
       (not (empty?~ region))))
 
 
-  (method override (get-box) <Rect>
+  (method public (get-box) <Rect>
     (let ((rect (RECT-make)))
       (GetRgnBox handle rect)
       (prog1 (RECT->rect rect)

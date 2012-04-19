@@ -44,14 +44,14 @@
         (jazz.platform.cairo))
 
 
-(class Region extends Rectangles-Region
+(class Region extends Object
   
   
   (slot handle getter generate)
   
   
-  (method override (initialize (keep-rectangles?: keep-rectangles? (needs-rectangles?)) (handle: handle #f) (rect: rect #f))
-    (nextmethod keep-rectangles?: keep-rectangles? rect: rect)
+  (method override (initialize (handle: handle #f) (rect: rect #f))
+    (nextmethod)
     (cond (handle
            (set! handle~self handle))
           (rect
@@ -59,10 +59,6 @@
           (else
            (set! handle~self (cairo_region_create))))
     (destroy-mandatory))
-  
-  
-  (method override (needs-rectangles?)
-    #f)
 
   
   (method override (destroy)
@@ -71,47 +67,42 @@
     (nextmethod))
   
   
-  (method override (offset! h v)
-    (cairo_region_translate handle h v)
-    (nextmethod h v))
+  (method public (offset! h v)
+    (cairo_region_translate handle h v))
   
   
-  (method override (combine-and! region)
-    (cairo_region_intersect handle (get-handle~ region))
-    (nextmethod region))
+  (method public (combine-and! region)
+    (cairo_region_intersect handle (get-handle~ region)))
 
 
-  (method override (combine-or! region)
-    (cairo_region_union handle (get-handle~ region))
-    (nextmethod region))
+  (method public (combine-or! region)
+    (cairo_region_union handle (get-handle~ region)))
   
   
-  (method override (combine-xor! region)
-    (cairo_region_xor handle (get-handle~ region))
-    (nextmethod region))
+  (method public (combine-xor! region)
+    (cairo_region_xor handle (get-handle~ region)))
   
   
-  (method override (combine-diff! region)
-    (cairo_region_subtract handle (get-handle~ region))
-    (nextmethod region))
+  (method public (combine-diff! region)
+    (cairo_region_subtract handle (get-handle~ region)))
   
   
-  (method override (empty?) <bool>
+  (method public (empty?) <bool>
     (/= (cairo_region_is_empty handle) 0))
   
   
-  (method override (intersects-rect? rect) <bool>
+  (method public (intersects-rect? rect) <bool>
     (let ((rectangle (cairo-rect->rectangle rect)))
       (/= (cairo_region_contains_rectangle handle rectangle) CAIRO_REGION_OVERLAP_OUT)))
 
 
-  (method override (get-box) <Rect>
+  (method public (get-box) <Rect>
     (let ((rectangle (cairo_rectangle_int_t-make)))
       (cairo_region_get_extents handle rectangle)
       (cairo-rectangle->rect rectangle)))
   
   
-  (method override (region-rectangles)
+  (method public (region-rectangles)
     (loop (for n from 0 below (cairo_region_num_rectangles handle))
           (collect (let ((rectangle (cairo_rectangle_int_t-make)))
                      (cairo_region_get_rectangle handle n rectangle)

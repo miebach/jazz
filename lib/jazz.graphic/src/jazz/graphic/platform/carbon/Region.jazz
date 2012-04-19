@@ -44,14 +44,14 @@
         (jazz.platform))
 
 
-(class Region extends Rectangles-Region
+(class Region extends Object
   
   
   (slot handle getter generate)
   
   
-  (method override (initialize (keep-rectangles?: keep-rectangles? (needs-rectangles?)) (handle: handle #f) (rect: rect #f))
-    (nextmethod keep-rectangles?: keep-rectangles? rect: rect)
+  (method override (initialize (handle: handle #f) (rect: rect #f))
+    (nextmethod)
     (cond (handle
            (set! handle~self handle))
           (rect
@@ -59,10 +59,6 @@
           (else
            (set! handle (CreateRectRgn 0 0 0 0))))
     (destroy-mandatory))
-  
-  
-  (method override (needs-rectangles?)
-    #f)
 
   
   (method override (destroy)
@@ -70,39 +66,34 @@
     (nextmethod))
   
   
-  (method override (offset! h v)
-    (OffsetRgn handle h v)
-    (nextmethod h v))
+  (method public (offset! h v)
+    (OffsetRgn handle h v))
   
   
-  (method override (combine-and! region)
-    (error "Unimplemented: combine-and!")
-    (nextmethod region))
+  (method public (combine-and! region)
+    (error "Unimplemented: combine-and!"))
 
 
-  (method override (combine-or! region)
-    (UnionRgn handle (get-handle~ region) handle)
-    (nextmethod region))
+  (method public (combine-or! region)
+    (UnionRgn handle (get-handle~ region) handle))
   
   
-  (method override (combine-xor! region)
-    (UnionRgn handle (get-handle~ region) handle)
-    (nextmethod region))
+  (method public (combine-xor! region)
+    (UnionRgn handle (get-handle~ region) handle))
   
   
-  (method override (combine-diff! region)
-    (error "Unimplemented: combine-diff!")
-    (nextmethod region))
+  (method public (combine-diff! region)
+    (error "Unimplemented: combine-diff!"))
   
   
-  (method override (empty?) <bool>
+  (method public (empty?) <bool>
     (= (get-box) {Rect 0 0 0 0}))
   
   
-  (method override (intersects-rect? rect) <bool>
+  (method public (intersects-rect? rect) <bool>
     (rect-intersect? (get-box) rect))
 
 
-  (method override (get-box) <Rect>
+  (method public (get-box) <Rect>
     (receive (l t b r) (GetRegionBounds handle)
       (new Rect l t r b)))))

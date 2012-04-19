@@ -792,6 +792,11 @@
        (= (get-bottom~ rect) 0)))
 
 
+(definition public (hollow-rect? rect)
+  (or (>= (get-left~ rect) (get-right~ rect))
+      (>= (get-top~ rect) (get-bottom~ rect))))
+
+
 ;;;
 ;;;; Rect$fl$
 ;;;

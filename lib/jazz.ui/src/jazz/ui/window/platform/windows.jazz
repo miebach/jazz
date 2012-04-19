@@ -921,7 +921,7 @@
 (definition package (platform-get-bounds handle) <Rect>
   (let ((rect (RECT-make)))
     (GetWindowRect handle rect)
-    (MapWindowPoints NULL handle rect 2)
+    (MapWindowPoints NULL handle (RECT->POINTS rect) 2)
     (prog1 (new Rect (RECT-left-ref rect) (RECT-top-ref rect) (RECT-right-ref rect) (RECT-bottom-ref rect))
       (RECT-free rect))))
 
@@ -979,15 +979,19 @@
 (definition package (platform-scroll-window handle delta rect clip-rect)
   (let ((flags SW_INVALIDATE))
     (let ((rect (rect->RECT rect))
-          (clip-rect (rect->RECT clip-rect)))
-      (prog1 (ScrollWindowEx handle (get-x~ delta) (get-y~ delta) rect clip-rect NULL NULL flags)
+          (clip-rect (rect->RECT clip-rect))
+          (update (CreateRectRgn 0 0 0 0)))
+      (prog1 (ScrollWindowEx handle (get-x~ delta) (get-y~ delta) rect clip-rect update NULL flags)
+        (invalidate-offscreen-region handle (new Region handle: update))
         (RECT-free rect)
-        (RECT-free clip-rect)))))
+        (RECT-free clip-rect)
+        (DeleteObject update)))))
 
 
 (definition package (platform-invalidate-rect handle rect)
   ;; is this test correct or was it a patch made during the port
   (when handle
+    (invalidate-offscreen-rect handle rect)
     (with-RECT rect
       (lambda (rect)
         (InvalidateRect handle rect #f)))))
@@ -996,18 +1000,23 @@
 (definition package (platform-invalidate-region handle region)
   ;; is this test correct or was it a patch made during the port
   (when handle
+    (invalidate-offscreen-region handle region)
     (InvalidateRgn handle (get-handle~ region) #f)))
 
 
 (definition package (platform-invalidate-window handle)
   ;; is this test correct or was it a patch made during the port
   (when handle
+    (invalidate-offscreen-rect handle (size-rect (platform-get-size handle)))
     (InvalidateRect handle NULL #f)))
 
 
 (definition package (platform-redraw-window handle rect region)
   ;; is this test correct or was it a patch made during the port
   (when handle
+    (cond (region (invalidate-offscreen-region handle region))
+          (rect (invalidate-offscreen-rect handle rect))
+          (else (invalidate-offscreen-rect handle (size-rect (platform-get-size handle)))))
     ;; Changed RDW_NOCHILDREN to RDW_ALLCHILDREN so that a redraw-window on the
     ;; toplevel would redraw it's children. Hope it doesn't break any code...
     (let ((flags (bitwise-ior RDW_ERASENOW RDW_UPDATENOW RDW_INVALIDATE RDW_ALLCHILDREN)))
@@ -1017,21 +1026,14 @@
             (RECT-free rect)))))))
 
 
-(definition package (platform-get-update-rect handle)
-  (let ((rect (RECT-make)))
-    (GetUpdateRect handle rect #f)
-    (prog1 (RECT->rect rect)
-      (RECT-free rect))))
+(definition package (platform-update-window handle)
+  (UpdateWindow handle))
 
 
 (definition package (platform-get-update-region handle)
   (let ((region (new Region)))
     (GetUpdateRgn handle (get-handle~ region) #f)
     region))
-
-
-(definition package (platform-update-window handle)
-  (UpdateWindow handle))
   
   
 (definition package (platform-show-noactivate handle)

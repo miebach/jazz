@@ -257,6 +257,8 @@
     (with-platform-painting self platform-data
       (lambda (surface)
         (let ((update-rect (get-box~ update-region)))
+          (set-clipper-region~ surface update-region)
+          @w
           (set-clipper~ surface update-rect)
           (if in-error?
               (paint-in-error surface update-rect)

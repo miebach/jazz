@@ -656,26 +656,9 @@
   (platform-update-window handle))
 
 
-(definition package (platform-get-update-rect handle)
-  (unimplemented 'platform-get-update-rect)
-  @windows
-  (let ((rect (RECT-make)))
-    (GetUpdateRect handle rect #f)
-    (prog1 (RECT->rect rect)
-      (RECT-free rect))))
-
-
-(definition package (platform-get-update-region handle)
-  (unimplemented 'platform-get-update-region)
-  @windows
-  (let ((region (new Region)))
-    (GetUpdateRgn handle (get-handle~ region) #f)
-    region))
-
-
 (definition package (platform-redraw-view-only view handle)
-  (let ((rct (acquire~ (get-root~ view) view (get-bounds~ view))))
-    (platform-invalidate-rect handle rct)))
+  (let ((rect (acquire~ (get-root~ view) view (get-bounds~ view))))
+    (platform-invalidate-rect handle rect)))
 
 
 (definition package (platform-update-window handle)
@@ -685,8 +668,16 @@
   @wait
   (when handle
     (let* ((size (platform-get-size handle))
-           (rct (new Rect 0 0 (get-width~ size) (get-height~ size))))
-      (platform-invalidate-rect handle rct))))
+           (rect (new Rect 0 0 (get-width~ size) (get-height~ size))))
+      (platform-invalidate-rect handle rect))))
+
+
+(definition package (platform-get-update-region handle)
+  (unimplemented 'platform-get-update-region)
+  @windows
+  (let ((region (new Region)))
+    (GetUpdateRgn handle (get-handle~ region) #f)
+    region))
 
 
 (definition package (platform-show-noactivate handle)

@@ -48,6 +48,7 @@
 
 
 (import (jazz.foreign)
+        (jazz.geometry)
         (jazz.platform.types)
         (jazz.platform.cairo.cairo-base)
         (jazz.platform.cairo.cairo-carbon   (cond carbon))
@@ -158,6 +159,25 @@
   (double height)
   (double x_advance)
   (double y_advance))
+
+
+(c-structure cairo_rectangle_int_t
+  (int x)
+  (int y)
+  (int width)
+  (int height))
+
+
+(c-enumeration cairo_region_overlap_t
+  (CAIRO_REGION_OVERLAP_IN   0)
+  (CAIRO_REGION_OVERLAP_OUT  1)
+  (CAIRO_REGION_OVERLAP_PART 2))
+
+(c-type cairo_region_overlap_t int)
+
+
+(c-type cairo_region_t  (native "cairo_region_t"))
+(c-type cairo_region_t* (pointer cairo_region_t cairo_region_t*))
 
 
 (c-structure cairo_matrix_t
@@ -427,6 +447,51 @@
 
 (c-external (cairo_scaled_font_create cairo_font_face_t* cairo_matrix_t* cairo_matrix_t* cairo_font_options_t*) cairo_scaled_font_t*)
 (c-external (cairo_scaled_font_destroy cairo_scaled_font_t*) void)
+
+
+;;;
+;;;; Rectangle
+;;;
+
+
+(definition public (cairo-rect->rectangle rect)
+  (let ((rectangle (cairo_rectangle_int_t-make)))
+    (cairo_rectangle_int_t-x-set! rectangle (get-left~ rect))
+    (cairo_rectangle_int_t-y-set! rectangle (get-top~ rect))
+    (cairo_rectangle_int_t-width-set! rectangle (rect-width rect))
+    (cairo_rectangle_int_t-height-set! rectangle (rect-height rect))
+    rectangle))
+
+
+(definition public (cairo-rectangle->rect rectangle)
+  (let ((x (cairo_rectangle_int_t-x-ref rectangle))
+        (y (cairo_rectangle_int_t-y-ref rectangle)))
+    (new Rect
+      x
+      y
+      (+ x (cairo_rectangle_int_t-width-ref rectangle))
+      (+ y (cairo_rectangle_int_t-height-ref rectangle)))))
+
+
+;;;
+;;;; Region
+;;;
+
+
+(c-external (cairo_region_create) cairo_region_t*)
+(c-external (cairo_region_create_rectangle cairo_rectangle_int_t*) cairo_region_t*)
+(c-external (cairo_region_copy cairo_region_t*) cairo_region_t*)
+(c-external (cairo_region_get_extents cairo_region_t* cairo_rectangle_int_t*) void)
+(c-external (cairo_region_num_rectangles cairo_region_t*) int)
+(c-external (cairo_region_get_rectangle cairo_region_t* int cairo_rectangle_int_t*) void)
+(c-external (cairo_region_is_empty cairo_region_t*) int)
+(c-external (cairo_region_contains_point cairo_region_t* int int) int)
+(c-external (cairo_region_contains_rectangle cairo_region_t* cairo_rectangle_int_t*) cairo_region_overlap_t)
+(c-external (cairo_region_translate cairo_region_t* int int) void)
+(c-external (cairo_region_intersect cairo_region_t* cairo_region_t*) cairo_status_t)
+(c-external (cairo_region_subtract cairo_region_t* cairo_region_t*) cairo_status_t)
+(c-external (cairo_region_union cairo_region_t* cairo_region_t*) cairo_status_t)
+(c-external (cairo_region_xor cairo_region_t* cairo_region_t*) cairo_status_t)
 
 
 ;;;

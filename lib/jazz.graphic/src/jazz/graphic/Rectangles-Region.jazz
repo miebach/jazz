@@ -114,4 +114,8 @@
   
   (method public virtual (intersects-rect? rect) <bool>
     (assert keep-rectangles?)
-    (and bounding-box (rect-intersect? bounding-box rect)))))
+    (and bounding-box (rect-intersect? bounding-box rect)))
+  
+  
+  (method public virtual (region-rectangles)
+    #f)))

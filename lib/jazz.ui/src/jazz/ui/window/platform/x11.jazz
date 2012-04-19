@@ -446,7 +446,7 @@
          (display-fd (ConnectionNumber x11-default-display))
          (fdset (setup-fdset display-fd)))
     (let (loop)
-      (process-inval-rects)
+      (process-invalidated-regions)
       (select (+ display-fd 1) fdset #f #f 0 1000)
       (if (= 0 (XPending x11-default-display))
           (thread-sleep! 0.01)
@@ -501,39 +501,24 @@
 
 (definition (process-expose-message window msg)
   (define (process-expose store)
-    (define (accumulate-rect rect)
-      (let ((region (new Region rect: rect))
-            (old-region (table-ref store window #f)))
-        (unless (nu=? (get-box~ region) {Rect 0 0 0 0})
-          (if old-region
-              (table-set! store window (region-union old-region region))
-            (table-set! store window region)))))
-    
     (let ((msg (XEvent-xexpose-ref msg)))
       (let ((left (XExposeEvent-x-ref msg))
             (top  (XExposeEvent-y-ref msg)))
         (let ((right (+ left (XExposeEvent-width-ref msg)))
               (bottom (+ top (XExposeEvent-height-ref msg))))
           (let ((rect (new Rect left top right bottom)))
-            (if (and (testing?) (XExposeEvent-send_event-ref msg))
-                (begin
-                  (accumulate-rect rect)
-                  (paint-exposed store))
-              (accumulate-rect rect)))))))
+            (combine-or!~ store (new Region rect: rect)))))))
   
-  (define (paint-exposed store)
-    (let ((region (table-ref store window #f)))
-      (table-clear store window)
-      (when region
-        (paint~ window region))))
-  
-  ;; process all expose events
-  (let ((store (make-table)))
+  ;; accumulate all expose events
+  (let ((handle (get-handle~ window))
+        (store (new Region)))
     (let (process)
       (process-expose store)
-      (if (XCheckTypedWindowEvent x11-default-display (get-handle~ window) Expose msg)
+      (if (XCheckTypedWindowEvent x11-default-display handle Expose msg)
           (process)
-        (paint-exposed store)
+        (when (not optimize-invalidated-regions?)
+          (table-clear invalidated-regions handle))
+        (paint~ window store)
         processed))))
 
 
@@ -955,7 +940,7 @@
     (XWindowEvent x11-default-display handle StructureNotifyMask event)
     (process-message event)
     (XEvent-free event)))
-  
+
 
 (definition package (platform-get-size handle)
   (let ((infos (XWindowAttributes-make)))
@@ -1084,83 +1069,95 @@
     (platform-update-window handle)))
 
 
-(definition protected inval-rects
-  (make-table))
+(definition (xinvalidate-rect handle rect)
+  (when (memq? 'invalidate (or (testing) '()))
+    (terminal invalidate: rect))
+  (let ((l (get-left~ rect))
+        (t (get-top~ rect))
+        (r (get-right~ rect))
+        (b (get-bottom~ rect)))
+    (let ((w (- r l))
+          (h (- b t)))
+      (XInvalidateRect x11-default-display handle l t w h))))
 
 
-(definition (validate-inval-rect rect <Rect> window)
-  (if (= rect {Rect 0 0 0 0})
-      #f
-    (let ((size (get-size~ window)))
-      (let ((l (if (< (get-left~ rect) 0) 0 (get-left~ rect)))
-            (t (if (< (get-top~ rect) 0) 0 (get-top~ rect)))
-            (r (if (> (get-right~ rect) (get-width~ size))
-                   (get-width~ size)
-                 (get-right~ rect)))
-            (b (if (> (get-bottom~ rect) (get-height~ size))
-                   (get-height~ size)
-                 (get-bottom~ rect))))
-        (let ((w (- r l))
-              (h (- b t)))
-          (if (or (< w 0) (< h 0))
-              #f
-            (new Rect l t r b)))))))
+(definition (xinvalidate-region handle region)
+  (for-each (lambda (rect)
+              (xinvalidate-rect handle rect))
+            (region-rectangles~ region)))
 
 
-(definition (process-inval-rects)
-  (iterate-table-safe inval-rects
-    (lambda (handle rect)
-      (table-clear inval-rects handle)
-      (let ((window (get-window handle)))
-        (when window
-          (let ((l (get-left~ rect))
-                (t (get-top~ rect))
-                (r (get-right~ rect))
-                (b (get-bottom~ rect)))
-            (let ((w (- r l))
-                  (h (- b t)))
-              (XInvalidateRect x11-default-display handle l t w h))))))))
+(definition optimize-invalidated-regions?
+  #f)
+
+
+(definition protected invalidated-regions
+  (make-table test: eq? weak-keys: #t))
+
+
+(definition (get-invalidated-region handle)
+  (or (table-ref invalidated-regions handle #f)
+      (let ((region (new Region)))
+        (table-set! invalidated-regions handle region)
+        region)))
+
+
+(definition (add-invalidated-rect handle rect)
+  (when (not optimize-invalidated-regions?)
+    (xinvalidate-rect handle rect))
+  (let ((actual (get-invalidated-region handle)))
+    (combine-or!~ actual (new Region rect: rect)))
+  (invalidate-offscreen-rect handle rect))
+
+
+(definition (add-invalidated-region handle region)
+  (when (not optimize-invalidated-regions?)
+    (xinvalidate-region handle region))
+  (let ((actual (get-invalidated-region handle)))
+    (combine-or!~ actual region))
+  (invalidate-offscreen-region handle region))
+
+
+(definition (process-invalidated-regions)
+  (when optimize-invalidated-regions?
+    (iterate-table-safe invalidated-regions
+      (lambda (handle region)
+        (table-clear invalidated-regions handle)
+        (let ((window (get-window handle)))
+          (when window
+            (xinvalidate-region handle region)))))))
 
 
 (definition package (platform-invalidate-rect handle rect)
-  ;; is this test correct or was it a patch made during the port
-  (when (and handle rect)
-    (let ((old-rect (table-ref inval-rects handle #f))
-          (new-rect (validate-inval-rect rect (get-window handle))))
-      (when (or old-rect new-rect)
-        (let ((rect (cond ((and old-rect new-rect)
-                           (rect-union old-rect new-rect))
-                          (old-rect
-                           old-rect)
-                          (new-rect
-                           new-rect))))
-          (table-set! inval-rects handle rect))))))
+  (add-invalidated-rect handle rect))
 
 
 (definition package (platform-invalidate-region handle region)
-  (for-each (lambda (rect)
-              (platform-invalidate-rect handle rect))
-            (get-rectangles~ region)))
+  (add-invalidated-region handle region))
 
 
 (definition package (platform-invalidate-window handle)
-  (let ((size (platform-get-size handle)))
-    (platform-invalidate-rect handle (new Rect 0 0 (get-width~ size) (get-height~ size)))))
+  (let ((rect (size-rect (platform-get-size handle))))
+    (platform-invalidate-rect handle rect)))
 
 
 (definition package (platform-redraw-window handle rect region)
+  (cond (region (add-invalidated-region handle region))
+        (rect (add-invalidated-rect handle rect)))
   (if region
       (paint~ (get-window handle) region)
     (paint~ (get-window handle) (new Region rect: rect))))
 
 
-(definition package (platform-get-update-rect handle)
-  (unimplemented 'platform-get-update-rect)
-  @windows
-  (let ((rect (RECT-make)))
-    (GetUpdateRect handle rect #f)
-    (prog1 (RECT->rect rect)
-      (RECT-free rect))))
+(definition package (platform-redraw-view-only view handle)
+  (let ((rect (acquire~ (get-root~ view) view (get-bounds~ view))))
+    (platform-invalidate-rect handle rect)))
+
+
+(definition package (platform-update-window handle)
+  (let ((invalidated-region (get-invalidated-region handle)))
+    (table-clear invalidated-regions handle)
+    (paint~ (get-window handle) invalidated-region)))
 
 
 (definition package (platform-get-update-region handle)
@@ -1171,18 +1168,6 @@
     region))
 
 
-(definition package (platform-redraw-view-only view handle)
-  (let ((rct (acquire~ (get-root~ view) view (get-bounds~ view))))
-    (platform-invalidate-rect handle rct)))
-
-
-(definition package (platform-update-window handle)
-  (let ((rect (table-ref inval-rects handle #f)))
-    (when rect
-      (table-clear inval-rects handle)
-      (paint~ (get-window handle) (new Region rect: rect)))))
-  
-  
 (definition package (platform-show-noactivate handle)
   (show-window handle))
 

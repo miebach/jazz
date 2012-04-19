@@ -227,6 +227,12 @@
     (clip rect))
   
   
+  (method public (set-clipper-region region <Region>)
+    (cairo_reset_clip context)
+    (for-each draw-rectangle (region-rectangles~ region))
+    (cairo_clip context))
+  
+  
   (method public (clip rect <Rect>)
     (draw-rectangle rect)
     (cairo_clip context))

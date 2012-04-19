@@ -227,6 +227,10 @@
 ;;;
 
 
+(definition public current-update-region
+  (make-parameter #f))
+
+
 (definition public (with-locked-update thunk)
   (parameterize ((inhibit-updates? #t)
                  (inhibit-invalidates? #t))

@@ -223,8 +223,11 @@
   (make-table test: eqv?))
 
 
-(definition last-click
+(definition last-click-time
   (time->seconds (current-time)))
+
+(definition last-click-position
+  #f)
 
 
 (definition public inline (get-window handle)
@@ -527,16 +530,22 @@
     (let ((h (XButtonEvent-x-ref msg))
           (v (XButtonEvent-y-ref msg))
           (button (XButtonEvent-button-ref msg))
-          (stamp (XButtonEvent-time-ref msg)))
+          (stamp (XButtonEvent-time-ref msg))
+          (double-click-tolerance 5))
       (x11-set-latest-timestamp stamp)
       (cond ((= button Button1)
-             (let ((click (time->seconds (current-time))))
-               (if (< (- click last-click) 0.4)
+             (let ((click-time (time->seconds (current-time)))
+                   (click-position (new Point h v)))
+               (if (and (< (- click-time last-click-time) 0.4)
+                        (and last-click-position
+                             (near? click-position last-click-position double-click-tolerance)))
                    (begin
                      (double-click~ window h v)
-                     (set! last-click 0))
+                     (set! last-click-time 0)
+                     (set! last-click-position #f))
                  (mouse-down~ window h v)
-                 (set! last-click click))))
+                 (set! last-click-time click-time)
+                 (set! last-click-position click-position))))
             ((= button Button2)
              (middle-mouse-down~ window h v))
             ((= button Button3)

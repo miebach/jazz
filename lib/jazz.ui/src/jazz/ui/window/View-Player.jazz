@@ -256,15 +256,16 @@
         (proc)))
     (with-platform-painting self platform-data
       (lambda (surface)
-        (let ((update-rect (get-box~ update-region)))
-          (set-clipper-region~ surface update-region)
-          @w
-          (set-clipper~ surface update-rect)
-          (if in-error?
-              (paint-in-error surface update-rect)
-            (set! in-error? #t)
-            (paint-root~ root surface update-region)
-            (set! in-error? #f))))))
+        (parameterize ((current-update-region update-region))
+          (let ((update-rect (get-box~ update-region)))
+            (set-clipper-region~ surface update-region)
+            @w
+            (set-clipper~ surface update-rect)
+            (if in-error?
+                (paint-in-error surface update-rect)
+              (set! in-error? #t)
+              (paint-root~ root surface update-region)
+              (set! in-error? #f)))))))
   
   
   ;;;

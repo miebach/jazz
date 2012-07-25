@@ -1,0 +1,2234 @@
+diff --git a/.jamini b/.jamini
+index cd65c19..0aa46be 100644
+--- a/.jamini
++++ b/.jamini
+@@ -6,4 +6,5 @@
+ ;;;
+ 
+ 
+-(jazz:default-safety 'debug)
++(jazz:default-safety 'release)
++(jazz:default-target 'jazz)
+diff --git a/INSTALL b/INSTALL
+index 2eaf2b9..c43bc38 100644
+--- a/INSTALL
++++ b/INSTALL
+@@ -210,7 +210,7 @@ configure
+   [debug-environments?: debug-environments?]
+   [debug-location?: debug-location?]
+   [debug-source?: debug-source?]
+-  [kernel-interpret?: kernel-interpret?]
++  [jazz-interpret?: jazz-interpret?]
+   [destination: destination]
+ 
+ name
+@@ -269,8 +269,8 @@ debug-source?
+   - #f (the default)
+   - #t
+ 
+-kernel-interpret?
+-  An option for Jazz developers to enable loading the kernel fully interpreted.
++jazz-interpret?
++  An option for Jazz developers to enable loading jazz fully interpreted.
+   - #f (the default)
+   - #t
+ 
+diff --git a/NEWS b/NEWS
+index 2e50629..9076d91 100644
+--- a/NEWS
++++ b/NEWS
+@@ -1,3 +1,10 @@
++2.7
++===
++
++Configuration format has changed. You will need to do manually delete the root '.configuration'
++file if it exists. Also, the jazz:delay-reporting? setting was replaced with jazz:debug-walk?.
++
++
+ 2.6.9
+ =====
+ 
+diff --git a/bootstrap/gambit b/bootstrap/gambit
+deleted file mode 160000
+index 4a62e65..0000000
+--- a/bootstrap/gambit
++++ /dev/null
+@@ -1 +0,0 @@
+-Subproject commit 4a62e6529d4e4b26a7747d9a7fae9043c798252d
+diff --git a/jam b/jam
+index fb80b48..93ad58e 100755
+--- a/jam
++++ b/jam
+@@ -3,9 +3,13 @@
+ REL="$(dirname "$0")"
+ ABS="$(cd "$REL"; pwd)"
+ 
++gam () {
++	[ -n "${JAZZ_GAMBITDIR:+x}" ] && echo "$JAZZ_GAMBITDIR" || echo "$REL/gambit"
++}
++
+ BGA="$REL/bootstrap/gambit"
+-GAM="$REL/gambit"
+-GSC="$REL/gambit/bin/gsc"
++GAM=$(gam)
++GSC="$GAM/bin/gsc"
+ SCM="$REL/kernel/jam.scm"
+ 
+ UPDATE_SUBMODULES="true"
+@@ -29,6 +33,10 @@ bootstrap_configure () {
+ bootstrap_make () {
+     ( [ -f "$BGA/config.status" ] || bootstrap_configure ) &&
+     cd "$BGA" &&
++	make -j $(jobs) bootstrap &&
++	make -j $(jobs) bootclean &&
++	make deselect-gen-for-commit &&
++	touch gsc-boot.bat &&
+     make -j $(jobs)
+ }
+ 
+@@ -113,6 +121,17 @@ case "$1" in
+ 		display_info
+ 		exit
+ 		;;
++
++	"environment" )
++		echo "REL: $REL"
++		echo "ABS: $ABS"
++		echo "BGA: $BGA"
++		echo "GAM: $GAM"
++		echo "GSC: $GSC"
++		echo "SCM: $SCM"
++		echo $(host)
++		exit
++		;;
+ esac
+ 
+ if [ ! -f "$GSC" ]; then
+diff --git a/kernel/.project b/kernel/.project
+index eb4ccd8..c6b719f 100644
+--- a/kernel/.project
++++ b/kernel/.project
+@@ -9,14 +9,18 @@
+ (data jazz.ide.data.project
+ 
+ 
++(import (jazz.project))
++
++
+ (form
+-  (<Project>               name: kernel documentation: {File :context "doc" "kernel.jml"}
++  (<Project>             name: kernel documentation: {File :context "doc" "kernel.jml"}
+     (<Project-Directory>              directory: {Directory :context "runtime"}
+       (<Project-File>                 source: {File :context "runtime" "base.scm"})
+       (<Project-File>                 source: {File :context "runtime" "build.scm"})
+       (<Project-File>                 source: {File :context "runtime" "common.scm"})
+       (<Project-File>                 source: {File :context "runtime" "digest.scm"})
+       (<Project-File>                 source: {File :context "runtime" "install.scm"})
++      (<Project-File>                 source: {File :context "runtime" "readtable.scm"})
+       (<Project-File>                 source: {File :context "runtime" "settings.scm"})
+       (<Project-File>                 source: {File :context "runtime" "setup.scm"})
+       (<Project-File>                 source: {File :context "runtime" "unit.scm"})
+diff --git a/kernel/boot.scm b/kernel/boot.scm
+index 186e30f..af98ce4 100644
+--- a/kernel/boot.scm
++++ b/kernel/boot.scm
+@@ -53,6 +53,7 @@
+     "kernel/runtime/build"
+     "kernel/runtime/digest"
+     "kernel/runtime/unit"
++    "kernel/runtime/readtable"
+     "kernel/runtime/setup"))
+ 
+ 
+diff --git a/kernel/build.scm b/kernel/build.scm
+index cadd383..6480493 100644
+--- a/kernel/build.scm
++++ b/kernel/build.scm
+@@ -138,7 +138,7 @@
+ (jazz:define-option jazz:default-mutable-bindings?
+   #f)
+ 
+-(jazz:define-option jazz:default-kernel-interpret?
++(jazz:define-option jazz:default-jazz-interpret?
+   #f)
+ 
+ (jazz:define-option jazz:default-destination
+@@ -149,14 +149,13 @@
+   'all)
+ 
+ 
+-
+ ;;;
+ ;;;; Configuration
+ ;;;
+ 
+ 
+-(define (jazz:make-configuration name system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? kernel-interpret? destination)
+-  (vector 'configuration name system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? kernel-interpret? destination))
++(define (jazz:make-configuration name system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? jazz-interpret? destination)
++  (vector 'configuration name system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? jazz-interpret? destination))
+ 
+ (define (jazz:configuration-name configuration)
+   (vector-ref configuration 1))
+@@ -188,7 +187,7 @@
+ (define (jazz:configuration-mutable-bindings? configuration)
+   (vector-ref configuration 10))
+ 
+-(define (jazz:configuration-kernel-interpret? configuration)
++(define (jazz:configuration-jazz-interpret? configuration)
+   (vector-ref configuration 11))
+ 
+ (define (jazz:configuration-destination configuration)
+@@ -207,7 +206,7 @@
+           (debug-location? (jazz:unspecified-option))
+           (debug-source? (jazz:unspecified-option))
+           (mutable-bindings? (jazz:unspecified-option))
+-          (kernel-interpret? (jazz:unspecified-option))
++          (jazz-interpret? (jazz:unspecified-option))
+           (destination (jazz:unspecified-option)))
+   (let* ((name (jazz:validate-name (jazz:require-name name)))
+          (system (jazz:validate-system (jazz:require-system system)))
+@@ -219,7 +218,7 @@
+          (debug-location? (jazz:validate-debug-location? (jazz:require-debug-location? debug-location?)))
+          (debug-source? (jazz:validate-debug-source? (jazz:require-debug-source? debug-source?)))
+          (mutable-bindings? (jazz:validate-mutable-bindings? (jazz:require-mutable-bindings? mutable-bindings?)))
+-         (kernel-interpret? (jazz:validate-kernel-interpret? (jazz:require-kernel-interpret? kernel-interpret?)))
++         (jazz-interpret? (jazz:validate-jazz-interpret? (jazz:require-jazz-interpret? jazz-interpret?)))
+          (destination (jazz:validate-destination (jazz:require-destination destination))))
+   (jazz:make-configuration
+     name
+@@ -232,7 +231,7 @@
+     debug-location?
+     debug-source?
+     mutable-bindings?
+-    kernel-interpret?
++    jazz-interpret?
+     destination)))
+ 
+ 
+@@ -373,7 +372,7 @@
+       (jazz:configuration-debug-location? configuration)
+       (jazz:configuration-debug-source? configuration)
+       (jazz:configuration-mutable-bindings? configuration)
+-      (jazz:configuration-kernel-interpret? configuration)
++      (jazz:configuration-jazz-interpret? configuration)
+       (jazz:configuration-destination configuration)
+       file
+       system-platform))
+@@ -390,7 +389,7 @@
+       (jazz:configuration-debug-location? configuration)
+       (jazz:configuration-debug-source? configuration)
+       (jazz:configuration-mutable-bindings? configuration)
+-      (jazz:configuration-kernel-interpret? configuration)
++      (jazz:configuration-jazz-interpret? configuration)
+       (jazz:configuration-destination configuration)
+       output))
+   
+@@ -422,7 +421,7 @@
+         (debug-location? (jazz:configuration-debug-location? configuration))
+         (debug-source? (jazz:configuration-debug-source? configuration))
+         (mutable-bindings? (jazz:configuration-mutable-bindings? configuration))
+-        (kernel-interpret? (jazz:configuration-kernel-interpret? configuration))
++        (jazz-interpret? (jazz:configuration-jazz-interpret? configuration))
+         (destination (jazz:configuration-destination configuration)))
+     (jazz:feedback "{a}" (or name "<default>"))
+     (jazz:feedback "  system: {s}" system)
+@@ -434,7 +433,7 @@
+     (jazz:feedback "  debug-location?: {s}" debug-location?)
+     (jazz:feedback "  debug-source?: {s}" debug-source?)
+     (jazz:feedback "  mutable-bindings?: {s}" mutable-bindings?)
+-    (jazz:feedback "  kernel-interpret?: {s}" kernel-interpret?)
++    (jazz:feedback "  jazz-interpret?: {s}" jazz-interpret?)
+     (jazz:feedback "  destination: {s}" destination)))
+ 
+ 
+@@ -455,7 +454,7 @@
+           (debug-location? (jazz:unspecified-option))
+           (debug-source? (jazz:unspecified-option))
+           (mutable-bindings? (jazz:unspecified-option))
+-          (kernel-interpret? (jazz:unspecified-option))
++          (jazz-interpret? (jazz:unspecified-option))
+           (destination (jazz:unspecified-option)))
+   (let ((configuration
+           (jazz:new-configuration
+@@ -469,7 +468,7 @@
+             debug-location?: debug-location?
+             debug-source?: debug-source?
+             mutable-bindings?: mutable-bindings?
+-            kernel-interpret?: kernel-interpret?
++            jazz-interpret?: jazz-interpret?
+             destination: destination)))
+     (jazz:register-configuration configuration)
+     (jazz:describe-configuration configuration)))
+@@ -687,23 +686,23 @@
+ 
+ 
+ ;;;
+-;;;; Kernel-Interpret
++;;;; Jazz-Interpret
+ ;;;
+ 
+ 
+-(define jazz:valid-kernel-interpret
++(define jazz:valid-jazz-interpret
+   '(#f
+     #t))
+ 
+ 
+-(define (jazz:require-kernel-interpret? kernel-interpret)
+-  (jazz:or-option kernel-interpret (jazz:default-kernel-interpret?)))
++(define (jazz:require-jazz-interpret? jazz-interpret)
++  (jazz:or-option jazz-interpret (jazz:default-jazz-interpret?)))
+ 
+ 
+-(define (jazz:validate-kernel-interpret? kernel-interpret)
+-  (if (memq kernel-interpret jazz:valid-kernel-interpret)
+-      kernel-interpret
+-    (jazz:error "Invalid kernel-interpret?: {s}" kernel-interpret)))
++(define (jazz:validate-jazz-interpret? jazz-interpret)
++  (if (memq jazz-interpret jazz:valid-jazz-interpret)
++      jazz-interpret
++    (jazz:error "Invalid jazz-interpret?: {s}" jazz-interpret)))
+ 
+ 
+ ;;;
+@@ -800,7 +799,7 @@
+       ((cleankernel) (jazz:make-cleankernel configuration))
+       ((cleanobject) (jazz:make-cleanobject configuration))
+       ((cleanlibrary) (jazz:make-cleanlibrary configuration))
+-      ((kernel) (jazz:make-kernel configuration image local?))
++      ((jazz) (jazz:make-jazz configuration image local?))
+       ((install) (jazz:make-install configuration))
+       (else (jazz:make-product target configuration link jobs))))
+   
+@@ -1008,11 +1007,11 @@
+ 
+ 
+ ;;;
+-;;;; Kernel
++;;;; Jazz
+ ;;;
+ 
+ 
+-(define (jazz:make-kernel configuration image local?)
++(define (jazz:make-jazz configuration image local?)
+   (define (build-kernel configuration image)
+     (define (build configuration)
+       (let ((name (jazz:configuration-name configuration))
+@@ -1025,7 +1024,7 @@
+             (debug-location? (jazz:configuration-debug-location? configuration))
+             (debug-source? (jazz:configuration-debug-source? configuration))
+             (mutable-bindings? (jazz:configuration-mutable-bindings? configuration))
+-            (kernel-interpret? (jazz:configuration-kernel-interpret? configuration))
++            (jazz-interpret? (jazz:configuration-jazz-interpret? configuration))
+             (source jazz:source)
+             (destination (jazz:configuration-destination configuration))
+             (destination-directory (jazz:configuration-directory configuration)))
+@@ -1040,7 +1039,7 @@
+                           debug-source?:         debug-source?
+                           mutable-bindings?:     mutable-bindings?
+                           include-compiler?:     #t
+-                          kernel-interpret?:     kernel-interpret?
++                          jazz-interpret?:       jazz-interpret?
+                           source:                source
+                           destination:           destination
+                           destination-directory: destination-directory
+@@ -1048,7 +1047,7 @@
+                           kernel?:               #t
+                           console?:              #t)))
+     
+-    (jazz:feedback "make kernel")
++    (jazz:feedback "make jazz")
+     (let ((configuration (or configuration (jazz:require-default-configuration))))
+       (let ((configuration-file (jazz:configuration-file configuration)))
+         (if (file-exists? configuration-file)
+@@ -1068,7 +1067,7 @@
+   
+   (if local?
+       (build-kernel configuration image)
+-    (build-recursive 'kernel configuration image)))
++    (build-recursive 'jazz configuration image)))
+ 
+ 
+ ;;;
+@@ -1077,10 +1076,10 @@
+ 
+ 
+ (define (jazz:make-product product configuration link jobs)
+-  (jazz:make-kernel configuration #f #f)
++  (jazz:make-jazz configuration #f #f)
+   (jazz:call-process
+      (list
+-       path: (string-append (jazz:configuration-directory configuration) "kernel")
++       path: (string-append (jazz:configuration-directory configuration) "jazz")
+        arguments: `("-make"
+                     ,(symbol->string product) "-:daqD"
+                     ,@(if link `("-link" ,(symbol->string link)) '())
+@@ -1298,7 +1297,7 @@
+   
+   (define (help-command arguments output)
+     (jazz:print "Commands:" output)
+-    (jazz:print "  configure [name:] [system:] [platform:] [windowing:] [safety:] [optimize?:] [debug-environments?:] [debug-location?:] [debug-source?:] [mutable-bindings?:] [kernel-interpret?:] [destination:]" output)
++    (jazz:print "  configure [name:] [system:] [platform:] [windowing:] [safety:] [optimize?:] [debug-environments?:] [debug-location?:] [debug-source?:] [mutable-bindings?:] [jazz-interpret?:] [destination:]" output)
+     (jazz:print "  make [target | clean | cleankernel | cleanobject | cleanlibrary]@[configuration]:[image]" output)
+     (jazz:print "  list" output)
+     (jazz:print "  delete [configuration]" output)
+@@ -1402,7 +1401,7 @@
+                  (jazz:list-configurations))
+                (exit))
+               ((equal? action "configure")
+-               (jazz:split-command-line arguments '() '("name" "system" "platform" "windowing" "safety" "optimize" "debug-environments" "debug-location" "debug-source" "mutable-bindings" "kernel-interpret" "destination") missing-argument-for-option
++               (jazz:split-command-line arguments '() '("name" "system" "platform" "windowing" "safety" "optimize" "debug-environments" "debug-location" "debug-source" "mutable-bindings" "jazz-interpret" "destination") missing-argument-for-option
+                  (lambda (options remaining)
+                    (if (null? remaining)
+                        (let ((name (symbol-option "name" options))
+@@ -1415,9 +1414,9 @@
+                              (debug-location (boolean-option "debug-location" options))
+                              (debug-source (boolean-option "debug-source" options))
+                              (mutable-bindings (boolean-option "mutable-bindings" options))
+-                             (kernel-interpret (boolean-option "kernel-interpret" options))
++                             (jazz-interpret (boolean-option "jazz-interpret" options))
+                              (destination (string-option "destination" options)))
+-                         (jazz:configure name: name system: system platform: platform windowing: windowing safety: safety optimize?: optimize debug-environments?: debug-environments debug-location?: debug-location debug-source?: debug-source mutable-bindings?: mutable-bindings kernel-interpret?: kernel-interpret destination: destination)
++                         (jazz:configure name: name system: system platform: platform windowing: windowing safety: safety optimize?: optimize debug-environments?: debug-environments debug-location?: debug-location debug-source?: debug-source mutable-bindings?: mutable-bindings jazz-interpret?: jazz-interpret destination: destination)
+                          (exit))
+                      (unknown-option (car remaining))))))
+               ((equal? action "make")
+@@ -1427,7 +1426,7 @@
+               ((or (equal? action "help") (equal? action "?"))
+                (let ((console (console-port)))
+                  (jazz:print "Usage:" console)
+-                 (jazz:print "  jam configure [-name] [-system] [-platform] [-windowing] [-safety] [-optimize] [-debug-environments] [-debug-location] [-debug-source] [-kernel-interpret] [-destination]" console)
++                 (jazz:print "  jam configure [-name] [-system] [-platform] [-windowing] [-safety] [-optimize] [-debug-environments] [-debug-location] [-debug-source] [-jazz-interpret] [-destination]" console)
+                  (jazz:print "  jam make [target | clean | cleankernel | cleanobject | cleanlibrary]@[configuration]:[image]" console)
+                  (jazz:print "  jam list" console)
+                  (jazz:print "  jam delete [configuration]" console)
+diff --git a/kernel/runtime/base.scm b/kernel/runtime/base.scm
+index 2549d14..7af2b4a 100644
+--- a/kernel/runtime/base.scm
++++ b/kernel/runtime/base.scm
+@@ -374,9 +374,16 @@
+         (map jazz:convert-configuration-205001 configurations)))
+     205001)
+   
++  (define (convert-205001)
++    (jazz:convert-configurations dir
++      (lambda (configurations)
++        (map jazz:convert-configuration-207000 configurations)))
++    207000)
++  
+   (case old
+     ((#f) (convert-initial))
+     ((205000) (convert-205000))
++    ((205001) (convert-205001))
+     (else #f)))
+ 
+ 
+@@ -416,6 +423,14 @@
+         (else (list property value))))))
+ 
+ 
++(define (jazz:convert-configuration-207000 configuration)
++  (jazz:convert-properties configuration
++    (lambda (property value)
++      (case property
++        ((kernel-interpret?:) (list jazz-interpret?: value))
++        (else (list property value))))))
++
++
+ (define (jazz:convert-properties plist converter)
+   (let iter ((scan plist) (result '()))
+     (if (null? scan)
+@@ -439,7 +454,7 @@
+ ;;;
+ 
+ 
+-(define (jazz:save-configuration name system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? kernel-interpret? destination file system-platform)
++(define (jazz:save-configuration name system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? jazz-interpret? destination file system-platform)
+   (call-with-output-file (list path: file eol-encoding: (jazz:platform-eol-encoding system-platform))
+     (lambda (output)
+       (display "(configuration " output)
+@@ -447,12 +462,12 @@
+       (newline output)
+       (newline output)
+       (display "  " output)
+-      (jazz:print-configuration name system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? kernel-interpret? destination output)
++      (jazz:print-configuration name system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? jazz-interpret? destination output)
+       (display ")" output)
+       (newline output))))
+ 
+ 
+-(define (jazz:print-configuration name system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? kernel-interpret? destination output)
++(define (jazz:print-configuration name system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? jazz-interpret? destination output)
+   (define first?
+     #t)
+   
+@@ -475,7 +490,7 @@
+   (print-property debug-location?: debug-location?)
+   (print-property debug-source?: debug-source?)
+   (print-property mutable-bindings?: mutable-bindings?)
+-  (print-property kernel-interpret?: kernel-interpret?)
++  (print-property jazz-interpret?: jazz-interpret?)
+   (print-property destination: destination)
+   (display ")" output))
+ 
+diff --git a/kernel/runtime/build.scm b/kernel/runtime/build.scm
+index 9afa75c..8ce3a54 100644
+--- a/kernel/runtime/build.scm
++++ b/kernel/runtime/build.scm
+@@ -144,7 +144,7 @@
+           (debug-source? jazz:kernel-debug-source?)
+           (mutable-bindings? jazz:kernel-mutable-bindings?)
+           (include-compiler? #f)
+-          (kernel-interpret? #f)
++          (jazz-interpret? #f)
+           (source jazz:kernel-source)
+           (destination jazz:kernel-destination)
+           (destination-directory jazz:kernel-install)
+@@ -155,7 +155,7 @@
+           (minimum-heap #f)
+           (maximum-heap #f)
+           (feedback jazz:feedback))
+-  (let ((product-name (if (%%not product) "kernel" (%%symbol->string product)))
++  (let ((product-name (if (%%not product) "jazz" (%%symbol->string product)))
+         (gambit-library (if include-compiler? "gambcgsc" "gambc"))
+         (library-image? (%%eq? image 'library)))
+     (let ((gambit-dir (path-normalize "~~/"))
+@@ -203,7 +203,7 @@
+                     (feedback-message "; compiling {a}..." path)
+                     (if (not (jazz:dry-run?))
+                         (begin
+-                          (compile-file-to-c standardized-path options: options output: output)
++                          (compile-file-to-target standardized-path options: options output: output)
+                           (jazz:update-manifest-compile-time name digest mnf src #f))))
+                   #t)
+               #f))))
+@@ -298,6 +298,7 @@
+           (compile-source-file "runtime/" "install")
+           (compile-source-file "runtime/" "digest")
+           (compile-source-file "runtime/" "unit")
++          (compile-source-file "runtime/" "readtable")
+           (compile-source-file "runtime/" "setup")))
+       
+       (define (generate-architecture rebuild? rebuild-architecture?)
+@@ -367,6 +368,7 @@
+                                ,(kernel-file "runtime/install")
+                                ,(kernel-file "runtime/digest")
+                                ,(kernel-file "runtime/unit")
++                               ,(kernel-file "runtime/readtable")
+                                ,(kernel-file "runtime/setup")
+                                ,(product-file (main-filename)))))
+                   (feedback-message "; creating link file...")
+@@ -555,6 +557,7 @@
+                          ,(kernel-file "runtime/install.c")
+                          ,(kernel-file "runtime/digest.c")
+                          ,(kernel-file "runtime/unit.c")
++                         ,(kernel-file "runtime/readtable.c")
+                          ,(kernel-file "runtime/setup.c")
+                          ,(product-file (string-append (main-filename) ".c"))
+                          ,(link-file))))
+@@ -593,14 +596,14 @@
+           (if (%%not (file-exists? file))
+               (begin
+                 (jazz:feedback "; generating {a}..." file)
+-                (jazz:save-configuration #f system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? kernel-interpret? destination file jazz:kernel-platform)))))
++                (jazz:save-configuration #f system platform windowing safety optimize? debug-environments? debug-location? debug-source? mutable-bindings? jazz-interpret? destination file jazz:kernel-platform)))))
+       
+       ;;;
+-      ;;;; Kernel Interpret
++      ;;;; Jazz Interpret
+       ;;;
+       
+-      (define (generate-kernel-interpret)
+-        (let ((file (dest-file "kernel-interpret")))
++      (define (generate-jazz-interpret)
++        (let ((file (dest-file "jazz-interpret")))
+           (if (%%not (file-exists? file))
+               (begin
+                 (jazz:feedback "; generating {a}..." file)
+@@ -613,10 +616,10 @@
+                     (let ((gambit-dir (jazz:relativise-directory destination-directory "./" gambit-dir)))
+                       (print (string-append "GAM=$REL/" gambit-dir) output)
+                       (print (string-append "GSC=$REL/" gambit-dir "bin/gsc") output))
+-                    (print "SCM=$REL/kernel-interpret.scm" output)
++                    (print "SCM=$REL/jazz-interpret.scm" output)
+                     (newline output)
+                     (print "exec \"$GSC\" -:=\"$GAM\" -i \"$SCM\" \"$@\"" output))))))
+-        (let ((file (dest-file "kernel-interpret.scm")))
++        (let ((file (dest-file "jazz-interpret.scm")))
+           (if (%%not (file-exists? file))
+               (begin
+                 (jazz:feedback "; generating {a}..." file)
+@@ -669,8 +672,8 @@
+       (build-kernel)
+       (build-product)
+       
+-      (if kernel-interpret?
+-          (generate-kernel-interpret)))))
++      (if jazz-interpret?
++          (generate-jazz-interpret)))))
+ 
+ 
+ ;;;
+@@ -903,7 +906,7 @@
+           (define (build-library)
+             (jazz:create-build-package package)
+             (make-library-header header product-name sub-units)
+-            (compile-file-to-c header output: header-c)
++            (compile-file-to-target header output: header-c)
+             (compile-file header-c options: '(obj) cc-options: "-D___BIND_LATE ")
+             
+             (feedback-message "; creating link file...")
+diff --git a/kernel/runtime/readtable.scm b/kernel/runtime/readtable.scm
+new file mode 100644
+index 0000000..9a39b99
+--- /dev/null
++++ b/kernel/runtime/readtable.scm
+@@ -0,0 +1,190 @@
++;;;==============
++;;;  JazzScheme
++;;;==============
++;;;
++;;;; Kernel Readtable
++;;;
++;;;  The contents of this file are subject to the Mozilla Public License Version
++;;;  1.1 (the "License"); you may not use this file except in compliance with
++;;;  the License. You may obtain a copy of the License at
++;;;  http://www.mozilla.org/MPL/
++;;;
++;;;  Software distributed under the License is distributed on an "AS IS" basis,
++;;;  WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
++;;;  for the specific language governing rights and limitations under the
++;;;  License.
++;;;
++;;;  The Original Code is JazzScheme.
++;;;
++;;;  The Initial Developer of the Original Code is Guillaume Cartier.
++;;;  Portions created by the Initial Developer are Copyright (C) 1996-2008
++;;;  the Initial Developer. All Rights Reserved.
++;;;
++;;;  Contributor(s):
++;;;
++;;;  Alternatively, the contents of this file may be used under the terms of
++;;;  the GNU General Public License Version 2 or later (the "GPL"), in which
++;;;  case the provisions of the GPL are applicable instead of those above. If
++;;;  you wish to allow use of your version of this file only under the terms of
++;;;  the GPL, and not to allow others to use your version of this file under the
++;;;  terms of the MPL, indicate your decision by deleting the provisions above
++;;;  and replace them with the notice and other provisions required by the GPL.
++;;;  If you do not delete the provisions above, a recipient may use your version
++;;;  of this file under the terms of any one of the MPL or the GPL.
++;;;
++;;;  See www.jazzscheme.org for details.
++
++
++(block kernel.readtable
++
++
++(jazz:kernel-declares)
++
++
++(define (jazz:make-jazz-readtable)
++  (let ((readtable (readtable-max-unescaped-char-set (%%make-standard-readtable) #\U0010ffff)))
++    (jazz:jazzify-readtable! readtable)
++    readtable))
++
++
++(define (jazz:jazzify-readtable! readtable)
++  (jazz:readtable-named-char-table-set! readtable (%%append (jazz:readtable-named-char-table readtable) jazz:named-chars))
++  (%%readtable-char-class-set! readtable #\{ #t jazz:read-literal)
++  (%%readtable-char-class-set! readtable #\@ #t jazz:read-comment)
++  (%%readtable-char-sharp-handler-set! readtable #\" jazz:read-delimited-string))
++
++
++(define jazz:named-chars
++  '(("nul"                  . #\x00)
++    ("home"                 . #\x01)
++    ("enter"                . #\x03)
++    ("end"                  . #\x04)
++    ("info"                 . #\x05)
++    ("backspace"            . #\x08)
++    ("tab"                  . #\x09)
++    ("page-up"              . #\x0B)
++    ("page-down"            . #\x0C)
++    ("escape"               . #\x1B)
++    ("left-arrow"           . #\x1C)
++    ("right-arrow"          . #\x1D)
++    ("up-arrow"             . #\x1E)
++    ("down-arrow"           . #\x1F)
++    ("space"                . #\x20)
++    ("exclamation-mark"     . #\x21)
++    ("double-quote"         . #\x22)
++    ("sharp"                . #\x23)
++    ("ampersand"            . #\x26)
++    ("quote"                . #\x27)
++    ("open-parenthesis"     . #\x28)
++    ("close-parenthesis"    . #\x29)
++    ("times"                . #\x2A)
++    ("plus"                 . #\x2B)
++    ("comma"                . #\x2C)
++    ("minus"                . #\x2D)
++    ("period"               . #\x2E)
++    ("slash"                . #\x2F)
++    ("colon"                . #\x3A)
++    ("semi-colon"           . #\x3B)
++    ("equal"                . #\x3D)
++    ("question-mark"        . #\x3F)
++    ("at"                   . #\x40)
++    ("open-bracket"         . #\x5B)
++    ("backslash"            . #\x5C)
++    ("close-bracket"        . #\x5D)
++    ("exponential"          . #\x5E)
++    ("underscore"           . #\x5F)
++    ("backquote"            . #\x60)
++    ("open-brace"           . #\x7B)
++    ("vertical-bar"         . #\x7C)
++    ("close-brace"          . #\x7D)
++    ("tilde"                . #\x7E)
++    ("delete"               . #\x7F)
++    ("copyright"            . #\xA9)))
++
++
++(define jazz:in-expression-comment?
++  (make-parameter #f))
++
++
++(define jazz:read-literals?
++  (make-parameter #t))
++
++(define jazz:read-literal-hook
++  (make-parameter #f))
++
++
++(jazz:define-variable jazz:new-literal)
++
++
++(define (jazz:read-literal re c)
++  (let ((port (jazz:readenv-port re))
++        (start-pos (%%readenv-current-filepos re)))
++    (read-char port)
++    (if (%%eqv? (peek-char port) #\@)
++        (jazz:error "Trying to read an unreadable literal")
++      (let ((lst (%%build-list re #t start-pos #\})))
++        (jazz:readenv-wrap re
++                           (cond ;; do not read
++                             ((or (%%not (jazz:read-literals?)) (jazz:in-expression-comment?))
++                              #f)
++                             ;; empty literal
++                             ((%%null? lst)
++                              (%%unspecified))
++                             ;; walk
++                             ((jazz:walk-for)
++                              (jazz:load-foundation)
++                              (jazz:new-literal (%%car lst) (%%cdr lst)))
++                             ;; read
++                             (else
++                              (let ((name (%%car lst))
++                                    (arguments (%%cdr lst))
++                                    (hook (jazz:read-literal-hook)))
++                                (or (and hook (hook name arguments))
++                                    (jazz:construct-literal name arguments))))))))))
++
++
++(define (jazz:read-comment re c)
++  (let ((port (jazz:readenv-port re)))
++    (parameterize ((jazz:in-expression-comment? #t))
++      (read-char port)
++      (read port)   ; comment name
++      (read port))  ; commented expr
++    (%%read-datum-or-label-or-none-or-dot re)))
++
++
++(define (jazz:read-delimited-string re next start-pos)
++  (let ((port (jazz:readenv-port re)))
++    (read-char port)
++    (let ((output (open-output-string)))
++      (let iter ()
++           (let ((c (read-char port)))
++             (cond ((%%eof-object? c)
++                    #f)
++                   ((%%eqv? c #\\)
++                    (let ((escaped (read-char port)))
++                      (case escaped
++                        ((#\()
++                         (write-char #\x02 output)
++                         (iter))
++                        ((#\))
++                         (write-char #\x03 output)
++                         (iter))
++                        (else
++                         (write-char escaped output)
++                         (iter)))))
++                   ((and (%%eqv? c #\")
++                         (%%eqv? (peek-char port) #\#))
++                    (read-char port)
++                    (jazz:readenv-wrap re (get-output-string output)))
++                   (else
++                    (write-char c output)
++                    (iter))))))))
++
++
++(define jazz:jazz-readtable
++  (jazz:make-jazz-readtable))
++
++
++(define (jazz:with-jazz-readtable thunk)
++  (parameterize ((current-readtable jazz:jazz-readtable))
++    (thunk))))
+diff --git a/kernel/runtime/settings.scm b/kernel/runtime/settings.scm
+index 1e9e83e..205ac97 100644
+--- a/kernel/runtime/settings.scm
++++ b/kernel/runtime/settings.scm
+@@ -42,6 +42,15 @@
+ 
+ 
+ ;;;
++;;;; Jazz
++;;;
++
++
++(jazz:define-setting jazz:debug-expansion?
++  #f)
++
++
++;;;
+ ;;;; Repositories
+ ;;;
+ 
+@@ -89,9 +98,9 @@
+ (jazz:define-setting jazz:warnings?
+   #f)
+ 
+-;; set to #f to debug the walker itself
+-(jazz:define-setting jazz:delay-reporting?
+-  #t)
++;; set to #t to debug a walk problem
++(define jazz:debug-walk?
++  (make-parameter #f))
+ 
+ 
+ ;;;
+diff --git a/kernel/runtime/setup.scm b/kernel/runtime/setup.scm
+index fc99956..adfbb19 100644
+--- a/kernel/runtime/setup.scm
++++ b/kernel/runtime/setup.scm
+@@ -210,6 +210,9 @@
+ ;;;
+ 
+ 
++(declare (proper-tail-calls))
++
++
+ (define (jazz:executable-main)
+   (define (missing-argument-for-option opt)
+     (set! jazz:warnings
+@@ -219,8 +222,7 @@
+               output-port)
+             (%%write-string opt output-port)
+             (%%write-string "\"\n" output-port)
+-            #t))
+-    (jazz:repl-main))
++            #t)))
+   
+   (define (number-argument arg)
+     (if (%%string? arg)
+@@ -306,7 +308,10 @@
+                           (jazz:load-script path)))
+                     lst))
+         
+-        (cond (ev
++        (cond (jazz:warnings
++               (setup-runtime)
++               (jazz:repl-main))
++              (ev
+                (setup-runtime)
+                (eval (call-with-input-string ev read)))
+               (load
+@@ -343,22 +348,72 @@
+                (if debug?
+                    (setup-build)
+                  (setup-runtime))
+-               (jazz:repl-main))))))
+-  
+-  (exit))
++               (jazz:repl-main)))))))
++
++
++;;;
++;;;; REPL
++;;;
++
++
++(define jazz:expansion-context
++  'terminal)
+ 
+ 
+ (define (jazz:repl-main)
++  (jazz:setup-readtable)
++  (jazz:setup-expansion-hook)
+   (current-input-port (repl-input-port))
+   (current-output-port (repl-output-port))
+   (current-error-port (repl-output-port))
+-  (%%repl
++  (jazz:walk-for 'terminal)
++  (jazz:requested-unit-name #f)
++  (jazz:generate-symbol-for "&")
++  (jazz:generate-symbol-context 'terminal)
++  (jazz:generate-symbol-counter 0)
++  (##repl-debug
+     (lambda (first output-port)
+       (if jazz:warnings
+           (jazz:warnings output-port))
+-      (display "JazzScheme Kernel v" output-port)
++      (display "JazzScheme v" output-port)
+       (display (jazz:present-version jazz:kernel-version) output-port)
+       (newline output-port)
+       (newline output-port)
+       (force-output output-port)
+-      #f))))
++      #f)
++    #t))
++
++
++(define (jazz:setup-readtable)
++  (input-port-readtable-set! (repl-input-port) jazz:jazz-readtable))
++
++
++(define (jazz:setup-expansion-hook)
++  (set! ##expand-source (lambda (src)
++                          (let ((expansion (jazz:expand-src src)))
++                            (if (jazz:debug-expansion?)
++                                (pp (list src '---> expansion)))
++                            expansion))))
++
++
++(define (jazz:expand-src src)
++  (if (%%eq? (jazz:walk-for) 'terminal)
++      (let ((code (%%desourcify src)))
++        (if (and (%%pair? code) (%%eq? (%%car code) 'in))
++            (if (%%null? (%%cdr code))
++                (%%sourcify
++                  `',jazz:expansion-context
++                  src)
++              (let ((context (%%cadr code)))
++                (set! jazz:expansion-context context)
++                (%%sourcify
++                  `',context
++                  src)))
++          (cond ((%%not jazz:expansion-context)
++                 src)
++                (else
++                 (jazz:load-foundation)
++                 (%%sourcify
++                   `(module ,jazz:expansion-context jazz ,src)
++                   src)))))
++    src)))
+diff --git a/kernel/runtime/unit.scm b/kernel/runtime/unit.scm
+index a594ae7..37bd2ef 100644
+--- a/kernel/runtime/unit.scm
++++ b/kernel/runtime/unit.scm
+@@ -1444,7 +1444,7 @@
+               ((%%fx< active-count jobs)
+                (let ((process (open-process
+                                 (list
+-                                  path: (jazz:install-path "kernel")
++                                  path: (jazz:install-path "jazz")
+                                   arguments: `("-:daqQ-" "-subbuild"
+                                                "-link" ,(%%symbol->string jazz:link)
+                                                ,@(if (%%memq 'keep-c jazz:compile-options) `("-keep-c") '())
+diff --git a/kernel/updates b/kernel/updates
+index addaf08..e3bc001 100644
+--- a/kernel/updates
++++ b/kernel/updates
+@@ -1,2 +1,3 @@
++(version: 207000 targets: settings)
+ (version: 205001 targets: settings)
+ (version: 205000 targets: settings)
+diff --git a/kernel/versions b/kernel/versions
+index d3c7757..cab4154 100644
+--- a/kernel/versions
++++ b/kernel/versions
+@@ -1,3 +1,4 @@
++(version: 207000 rebuild: kernel)
+ (version: 206011 rebuild: kernel)
+ (version: 206010 rebuild: kernel recompile: (jazz.platform.cairo.cairo-base jazz.platform.cairo.cairo-windows jazz.platform.cairo.cairo-logfont))
+ (version: 206009)
+diff --git a/lib/contrib.fmt/.package b/lib/contrib.fmt/.package
+index 307ab66..f6efdda 100644
+--- a/lib/contrib.fmt/.package
++++ b/lib/contrib.fmt/.package
+@@ -4,5 +4,5 @@
+   (products (fmt (alias contrib.fmt))
+             (contrib.fmt (update fmt
+                                  fmt.implementation.fmt)
+-                         (dependencies scheme)))
++                         (dependencies scheme.dialect)))
+   (project ".project"))
+diff --git a/lib/contrib.irregex/.package b/lib/contrib.irregex/.package
+index 2570e4f..b7c078e 100644
+--- a/lib/contrib.irregex/.package
++++ b/lib/contrib.irregex/.package
+@@ -4,6 +4,6 @@
+   (products (irregex (alias contrib.irregex))
+             (contrib.irregex (update irregex
+                                      irregex.implementation.irregex)
+-                             (dependencies jazz
+-                                           scheme)))
++                             (dependencies jazz.dialect
++                                           scheme.dialect)))
+   (project ".project"))
+diff --git a/lib/contrib.match/.package b/lib/contrib.match/.package
+index 3c3af02..1595236 100644
+--- a/lib/contrib.match/.package
++++ b/lib/contrib.match/.package
+@@ -4,5 +4,5 @@
+   (products (match (test match.validate.run)
+                    (update match
+                            match.validate.run)
+-                   (dependencies jazz)))
++                   (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/contrib.statprof/.package b/lib/contrib.statprof/.package
+index dfce4b9..e6c7532 100644
+--- a/lib/contrib.statprof/.package
++++ b/lib/contrib.statprof/.package
+@@ -5,6 +5,6 @@
+   (products (statprof (alias contrib.statprof))
+             (contrib.statprof (update statprof
+                                       statprof.install)
+-                              (dependencies jazz
+-                                            scheme)))
++                              (dependencies jazz.dialect
++                                            scheme.dialect)))
+   (project ".project"))
+diff --git a/lib/contrib.webserver/.package b/lib/contrib.webserver/.package
+index ecb5f33..4ec5ad7 100644
+--- a/lib/contrib.webserver/.package
++++ b/lib/contrib.webserver/.package
+@@ -4,6 +4,6 @@
+   (products (webserver (alias contrib.webserver))
+             (contrib.webserver (update webserver
+                                        webserver.implementation.http)
+-                                 (dependencies jazz
+-                                               gambit)))
++                                 (dependencies jazz.dialect
++                                               gambit.dialect)))
+   (project ".project"))
+diff --git a/lib/core/src/core/module/syntax/walker/_walker.scm b/lib/core/src/core/module/syntax/walker/_walker.scm
+index 4d54b0f..0e2529a 100644
+--- a/lib/core/src/core/module/syntax/walker/_walker.scm
++++ b/lib/core/src/core/module/syntax/walker/_walker.scm
+@@ -1004,8 +1004,9 @@
+ (jazz:define-class-runtime jazz:Literal)
+ 
+ 
+-(define (jazz:new-literal name arguments)
+-  (jazz:allocate-literal jazz:Literal name arguments))
++(jazz:define-variable-override jazz:new-literal
++  (lambda (name arguments)
++    (jazz:allocate-literal jazz:Literal name arguments)))
+ 
+ 
+ (jazz:encapsulate-class jazz:Literal)
+@@ -3071,10 +3072,6 @@
+ ;;;
+ 
+ 
+-(define jazz:*raise-walk-problems?*
+-  (make-parameter #f))
+-
+-
+ (define (jazz:walk-warning walker declaration src fmt-string . rest)
+   (let ((location (jazz:walk-location walker declaration (jazz:source-locat src)))
+         (message (apply jazz:format fmt-string rest)))
+@@ -3093,18 +3090,18 @@
+ 
+ 
+ (define (jazz:walker-warning walker warning)
+-  (cond ((jazz:*raise-walk-problems?*)
++  (cond ((jazz:debug-walk?)
+          (raise warning))
+         ((jazz:warnings?)
+          (%%set-walker-warnings walker (%%append (%%get-walker-warnings walker) (%%list warning))))))
+ 
+ 
+ (define (jazz:walker-error walker resume error)
+-  (cond ((jazz:*raise-walk-problems?*)
++  (cond ((jazz:debug-walk?)
+          (raise error))
+         (else
+          (%%set-walker-errors walker (%%append (%%get-walker-errors walker) (%%list error)))
+-         (if (and resume (jazz:delay-reporting?))
++         (if resume
+              (continuation-return resume (jazz:unspecified))
+            (jazz:validate-walk-problems walker)))))
+ 
+@@ -5286,7 +5283,7 @@
+                          ;; because some walk problems still throw explicit errors
+                          (jazz:is? exc jazz:Error))))
+                 (lambda ()
+-                  (parameterize ((jazz:*raise-walk-problems?* #t))
++                  (parameterize ((jazz:debug-walk? #t))
+                     (jazz:walk walker resume declaration environment form)
+                     #f)))))
+         (jazz:new-walk-failed-special answer)))))
+@@ -5407,10 +5404,6 @@
+         declaration))))
+ 
+ 
+-(define jazz:read-literals?
+-  (make-parameter #t))
+-
+-
+ (define (jazz:read-toplevel-form resource #!key (read-literals? #t))
+   (let ((source (jazz:resource-pathname resource)))
+     (jazz:with-extension-reader (jazz:pathname-extension source)
+diff --git a/lib/core/src/core/unit/builder/_builder.scm b/lib/core/src/core/unit/builder/_builder.scm
+index 85a67bc..6ee2e01 100644
+--- a/lib/core/src/core/unit/builder/_builder.scm
++++ b/lib/core/src/core/unit/builder/_builder.scm
+@@ -198,7 +198,7 @@
+                      (jazz:compiled-source src))
+         ;; temporary until a cleaner solution
+         (set! ##gensym-counter -1)
+-        (if (not (and (compile-file-to-c src-pathname output: bin-c options: options module-name: unique-module-name)
++        (if (not (and (compile-file-to-target src-pathname output: bin-c options: options module-name: unique-module-name)
+                       (compile-file bin-c options: (%%cons 'obj options) cc-options: (string-append "-D___BIND_LATE " cc-options))))
+             (jazz:error "compilation failed")))))
+   
+diff --git a/lib/gambit.example.debug/.package b/lib/gambit.example.debug/.package
+index 230c0de..b2af26e 100644
+--- a/lib/gambit.example.debug/.package
++++ b/lib/gambit.example.debug/.package
+@@ -3,6 +3,6 @@
+   (root "src")
+   (products (gambit-debug (unit gambit.example.debug.product)
+                           (update gambit.example.debug.product)
+-                          (dependencies jazz
+-                                        scheme)))
++                          (dependencies jazz.dialect
++                                        scheme.dialect)))
+   (project ".project"))
+diff --git a/lib/gambit.example.debug/debug.project b/lib/gambit.example.debug/debug.project
+index c7e7e52..d31ee7d 100644
+--- a/lib/gambit.example.debug/debug.project
++++ b/lib/gambit.example.debug/debug.project
+@@ -6,8 +6,8 @@
+ ;;;
+ 
+ 
+-(data jazz.debugger.gambit.data.project
++(data jazz.debugger.jazz.data.project
+ 
+ 
+ (form
+-  (<Gambit-Project> name: GambitDebug product: gambit-debug)))
++  (<Jazz-Project> name: GambitDebug product: gambit-debug)))
+diff --git a/lib/gambit/.package b/lib/gambit/.package
+index c7c14f6..c15a49c 100644
+--- a/lib/gambit/.package
++++ b/lib/gambit/.package
+@@ -1,7 +1,7 @@
+ (package gambit
+   
+   (root "src")
+-  (products (gambit (update gambit)
+-                    (dependencies jazz
+-                                  scheme)))
++  (products (gambit.dialect (update gambit)
++                            (dependencies jazz.dialect
++                                          scheme.dialect)))
+   (project ".project"))
+diff --git a/lib/gambit/src/gambit/dialect/kernel.scm b/lib/gambit/src/gambit/dialect/kernel.scm
+index 92f0351..77873cb 100644
+--- a/lib/gambit/src/gambit/dialect/kernel.scm
++++ b/lib/gambit/src/gambit/dialect/kernel.scm
+@@ -70,7 +70,7 @@
+ (native close-port)
+ (native command-line)
+ (native compile-file)
+-(native compile-file-to-c)
++(native compile-file-to-target)
+ (native condition-variable-broadcast!)
+ (native condition-variable-name)
+ (native condition-variable-signal!)
+diff --git a/lib/jazz.benchmark/.package b/lib/jazz.benchmark/.package
+index 442733b..4db1dca 100644
+--- a/lib/jazz.benchmark/.package
++++ b/lib/jazz.benchmark/.package
+@@ -3,5 +3,5 @@
+   (root "src")
+   (products (benchmark (run jazz.benchmark.run)
+                        (update jazz.benchmark)
+-                       (dependencies jazz)))
++                       (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.calendar/.package b/lib/jazz.calendar/.package
+index 8f668f0..584f7f9 100644
+--- a/lib/jazz.calendar/.package
++++ b/lib/jazz.calendar/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (jazz.calendar (update jazz.calendar)
+-                           (dependencies jazz)))
++                           (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.catalog/.package b/lib/jazz.catalog/.package
+index d7f7600..6380e55 100644
+--- a/lib/jazz.catalog/.package
++++ b/lib/jazz.catalog/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (jazz.catalog (update jazz.catalog)
+-                          (dependencies jazz)))
++                          (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.console/.package b/lib/jazz.console/.package
+index ba598c1..511ec40 100644
+--- a/lib/jazz.console/.package
++++ b/lib/jazz.console/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (jazz.console (update jazz.console)
+-                          (dependencies jazz)))
++                          (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.database.ado/.package b/lib/jazz.database.ado/.package
+index 87dc6c8..998764b 100644
+--- a/lib/jazz.database.ado/.package
++++ b/lib/jazz.database.ado/.package
+@@ -7,6 +7,6 @@
+                                        jazz.database.ado.product)
+                                (library (link-options
+                                           (windows "-mwindows" "-lole32")))
+-                               (dependencies jazz
++                               (dependencies jazz.dialect
+                                              jazz.database)))
+   (project ".project"))
+diff --git a/lib/jazz.database.sqlserver/.package b/lib/jazz.database.sqlserver/.package
+index 2c796bb..46c3eaf 100644
+--- a/lib/jazz.database.sqlserver/.package
++++ b/lib/jazz.database.sqlserver/.package
+@@ -2,6 +2,6 @@
+   
+   (root "src")
+   (products (jazz.database.sqlserver (update jazz.database.sqlserver)
+-                                     (dependencies jazz
++                                     (dependencies jazz.dialect
+                                                    jazz.database)))
+   (project ".project"))
+diff --git a/lib/jazz.database/.package b/lib/jazz.database/.package
+index fa1b3c1..4b30751 100644
+--- a/lib/jazz.database/.package
++++ b/lib/jazz.database/.package
+@@ -4,5 +4,5 @@
+   (products (jazz.database (update jazz.database
+                                    jazz.database.install
+                                    jazz.database.literals)
+-                           (dependencies jazz)))
++                           (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.debuggee/.package b/lib/jazz.debuggee/.package
+index 003881e..b6ff52b 100644
+--- a/lib/jazz.debuggee/.package
++++ b/lib/jazz.debuggee/.package
+@@ -6,5 +6,5 @@
+                                    jazz.debuggee.stub
+                                    jazz.debuggee.update
+                                    jazz.debuggee.view)
+-                           (dependencies jazz)))
++                           (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.debugger.gambit/.package b/lib/jazz.debugger.gambit/.package
+index 0cfdfea..b3d4a65 100644
+--- a/lib/jazz.debugger.gambit/.package
++++ b/lib/jazz.debugger.gambit/.package
+@@ -3,6 +3,6 @@
+   (root "src")
+   (products (jazz.debugger.gambit (update jazz.debugger.gambit
+                                           jazz.debugger.gambit.data.project)
+-                                  (dependencies jazz
++                                  (dependencies jazz.dialect
+                                                 jazz.debugger)))
+   (project ".project"))
+diff --git a/lib/jazz.debugger.jazz/.package b/lib/jazz.debugger.jazz/.package
+index 7237359..d2b7125 100644
+--- a/lib/jazz.debugger.jazz/.package
++++ b/lib/jazz.debugger.jazz/.package
+@@ -5,6 +5,6 @@
+                                         jazz.debugger.jazz.data.project
+                                         jazz.debugger.jazz.stub
+                                         jazz.debugger.jazz.stub-autoload)
+-                                (dependencies jazz
++                                (dependencies jazz.dialect
+                                               jazz.debugger)))
+   (project ".project"))
+diff --git a/lib/jazz.debugger.jazz/src/jazz/debugger/jazz/Jazz-Project.jazz b/lib/jazz.debugger.jazz/src/jazz/debugger/jazz/Jazz-Project.jazz
+index dabac70..cbf3e1f 100644
+--- a/lib/jazz.debugger.jazz/src/jazz/debugger/jazz/Jazz-Project.jazz
++++ b/lib/jazz.debugger.jazz/src/jazz/debugger/jazz/Jazz-Project.jazz
+@@ -181,7 +181,7 @@
+   
+   (method public (project-kernel)
+     (let ((executable (if directory
+-                          (let ((kernel-name (add-extension "kernel" (executable-extension kernel-platform))))
++                          (let ((kernel-name (add-extension "jazz" (executable-extension kernel-platform))))
+                             (cond ((directory? configuration)
+                                    (new-directory~ configuration kernel-name))
+                                   ((string? configuration)
+diff --git a/lib/jazz.debugger/.package b/lib/jazz.debugger/.package
+index aa7cf42..27f0d8a 100644
+--- a/lib/jazz.debugger/.package
++++ b/lib/jazz.debugger/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (jazz.debugger (update jazz.debugger)
+-                           (dependencies jazz)))
++                           (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.designer/.package b/lib/jazz.designer/.package
+index 85bbd10..96cfb1a 100644
+--- a/lib/jazz.designer/.package
++++ b/lib/jazz.designer/.package
+@@ -7,5 +7,5 @@
+                                    jazz.designer.install
+                                    jazz.designer.menu
+                                    jazz.designer.view)
+-                           (dependencies jazz)))
++                           (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.detprof/.package b/lib/jazz.detprof/.package
+index 456ec57..dbb613c 100644
+--- a/lib/jazz.detprof/.package
++++ b/lib/jazz.detprof/.package
+@@ -4,5 +4,5 @@
+   (install jazz.detprof.install)
+   (products (jazz.detprof (update jazz.detprof
+                                   jazz.detprof.install)
+-                          (dependencies jazz)))
++                          (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.doc/.package b/lib/jazz.doc/.package
+index 6b01876..b655305 100644
+--- a/lib/jazz.doc/.package
++++ b/lib/jazz.doc/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (jazz.doc (update jazz.doc)
+-                      (dependencies jazz)))
++                      (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.editor.c/.package b/lib/jazz.editor.c/.package
+index ad70e5f..d7f64ff 100644
+--- a/lib/jazz.editor.c/.package
++++ b/lib/jazz.editor.c/.package
+@@ -5,6 +5,6 @@
+   (products (jazz.editor.c (update jazz.editor.c
+                                    jazz.editor.c.install
+                                    jazz.editor.c.literals)
+-                           (dependencies jazz
++                           (dependencies jazz.dialect
+                                          jazz.editor.clike)))
+   (project ".project"))
+diff --git a/lib/jazz.editor.clike/.package b/lib/jazz.editor.clike/.package
+index 5a4cf9c..ff87ecd 100644
+--- a/lib/jazz.editor.clike/.package
++++ b/lib/jazz.editor.clike/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (jazz.editor.clike (update jazz.editor.clike)
+-                               (dependencies jazz)))
++                               (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.editor.commonlisp/.package b/lib/jazz.editor.commonlisp/.package
+index ef3ccf3..392d18c 100644
+--- a/lib/jazz.editor.commonlisp/.package
++++ b/lib/jazz.editor.commonlisp/.package
+@@ -2,6 +2,6 @@
+   
+   (root "src")
+   (products (jazz.editor.commonlisp (update jazz.editor.commonlisp)
+-                                    (dependencies jazz
++                                    (dependencies jazz.dialect
+                                                   jazz.editor.lisp)))
+   (project ".project"))
+diff --git a/lib/jazz.editor.diff/.package b/lib/jazz.editor.diff/.package
+index c5fd8ea..fde7510 100644
+--- a/lib/jazz.editor.diff/.package
++++ b/lib/jazz.editor.diff/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (jazz.editor.diff (update jazz.editor.diff)
+-                              (dependencies jazz)))
++                              (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.editor.jazz/.package b/lib/jazz.editor.jazz/.package
+index 615764b..b852ef6 100644
+--- a/lib/jazz.editor.jazz/.package
++++ b/lib/jazz.editor.jazz/.package
+@@ -4,6 +4,6 @@
+   (products (jazz.editor.jazz (update jazz.editor.jazz
+                                       jazz.editor.jazz.forms
+                                       jazz.editor.jazz.inspector)
+-                              (dependencies jazz
++                              (dependencies jazz.dialect
+                                             jazz.editor.lisp)))
+   (project ".project"))
+diff --git a/lib/jazz.editor.lisp/.package b/lib/jazz.editor.lisp/.package
+index 267a431..7e31992 100644
+--- a/lib/jazz.editor.lisp/.package
++++ b/lib/jazz.editor.lisp/.package
+@@ -5,5 +5,5 @@
+   (products (jazz.editor.lisp (update jazz.editor.lisp
+                                       jazz.editor.lisp.install
+                                       jazz.editor.lisp.literals)
+-                              (dependencies jazz)))
++                              (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.editor.scheme/.package b/lib/jazz.editor.scheme/.package
+index a115867..bd94cfd 100644
+--- a/lib/jazz.editor.scheme/.package
++++ b/lib/jazz.editor.scheme/.package
+@@ -3,6 +3,6 @@
+   (root "src")
+   (products (jazz.editor.scheme (update jazz.editor.scheme
+                                         jazz.editor.scheme.forms)
+-                                (dependencies jazz
++                                (dependencies jazz.dialect
+                                               jazz.editor.lisp)))
+   (project ".project"))
+diff --git a/lib/jazz.editor.sql/.package b/lib/jazz.editor.sql/.package
+index ed92753..559af51 100644
+--- a/lib/jazz.editor.sql/.package
++++ b/lib/jazz.editor.sql/.package
+@@ -3,5 +3,5 @@
+   (root "src")
+   (products (jazz.editor.sql (update jazz.editor.sql
+                                      jazz.editor.sql.view)
+-                             (dependencies jazz)))
++                             (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.editor.tex/.package b/lib/jazz.editor.tex/.package
+index e4137a8..54156f3 100644
+--- a/lib/jazz.editor.tex/.package
++++ b/lib/jazz.editor.tex/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (jazz.editor.tex (update jazz.editor.tex)
+-                             (dependencies jazz)))
++                             (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.git/.package b/lib/jazz.git/.package
+index 48fc0b6..ff6dc04 100644
+--- a/lib/jazz.git/.package
++++ b/lib/jazz.git/.package
+@@ -3,5 +3,5 @@
+   (root "src")
+   (products (jazz.git (update jazz.git
+                               jazz.git.ui)
+-                      (dependencies jazz)))
++                      (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.graphic.opengl/.package b/lib/jazz.graphic.opengl/.package
+index ca2ed60..901268b 100644
+--- a/lib/jazz.graphic.opengl/.package
++++ b/lib/jazz.graphic.opengl/.package
+@@ -5,5 +5,5 @@
+             (jazz.graphic.opengl (unit jazz.graphic.opengl.product)
+                                  (update jazz.graphic.opengl
+                                          jazz.graphic.opengl.product)
+-                                 (dependencies jazz)))
++                                 (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.graphic/.package b/lib/jazz.graphic/.package
+index d2359c6..8b7b564 100644
+--- a/lib/jazz.graphic/.package
++++ b/lib/jazz.graphic/.package
+@@ -9,5 +9,5 @@
+                                   jazz.graphic.literals
+                                   jazz.graphic.literals.colors
+                                   jazz.graphic.literals.fonts)
+-                          (dependencies jazz)))
++                          (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.groupware/.package b/lib/jazz.groupware/.package
+index ae739fe..f7feeb0 100644
+--- a/lib/jazz.groupware/.package
++++ b/lib/jazz.groupware/.package
+@@ -5,5 +5,5 @@
+   (products (jazz.groupware (update jazz.groupware
+                                     jazz.groupware.install
+                                     jazz.groupware.services)
+-                            (dependencies jazz)))
++                            (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.help/.package b/lib/jazz.help/.package
+index 023c728..10762cb 100644
+--- a/lib/jazz.help/.package
++++ b/lib/jazz.help/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (jazz.help (update jazz.help)
+-                       (dependencies jazz)))
++                       (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.ide/.package b/lib/jazz.ide/.package
+index 1988233..0ecd173 100644
+--- a/lib/jazz.ide/.package
++++ b/lib/jazz.ide/.package
+@@ -16,5 +16,5 @@
+                               jazz.ide.data.workbench
+                               jazz.ide.data.workspaces
+                               jazz.ide.login)
+-                      (dependencies jazz)))
++                      (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.io/.package b/lib/jazz.io/.package
+index d3bde70..f235f57 100644
+--- a/lib/jazz.io/.package
++++ b/lib/jazz.io/.package
+@@ -6,5 +6,5 @@
+                              jazz.io.install
+                              jazz.io.literals
+                              jazz.io.protocol)
+-                     (dependencies jazz)))
++                     (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.jml/.package b/lib/jazz.jml/.package
+index 7516112..a81b1cc 100644
+--- a/lib/jazz.jml/.package
++++ b/lib/jazz.jml/.package
+@@ -3,5 +3,5 @@
+   (root "src")
+   (products (jazz.jml (update jazz.jml
+                               jazz.jml.parse)
+-                      (dependencies jazz)))
++                      (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.jrm/.package b/lib/jazz.jrm/.package
+index ad54975..89d2a82 100644
+--- a/lib/jazz.jrm/.package
++++ b/lib/jazz.jrm/.package
+@@ -6,5 +6,5 @@
+                               jazz.jrm.install
+                               jazz.jrm.literals
+                               jazz.jrm.register.stub)
+-                      (dependencies jazz)))
++                      (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.json/.package b/lib/jazz.json/.package
+index 68d9612..0aa0e5e 100644
+--- a/lib/jazz.json/.package
++++ b/lib/jazz.json/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (jazz.json (update jazz.json)
+-                       (dependencies jazz)))
++                       (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.library/.package b/lib/jazz.library/.package
+index e4eecff..544c83e 100644
+--- a/lib/jazz.library/.package
++++ b/lib/jazz.library/.package
+@@ -22,5 +22,5 @@
+                                   jazz.snapshot
+                                   jazz.tabular
+                                   jazz.tie)
+-                          (dependencies jazz)))
++                          (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.media/.package b/lib/jazz.media/.package
+index 9703cc5..4365769 100644
+--- a/lib/jazz.media/.package
++++ b/lib/jazz.media/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (jazz.media (update jazz.media)
+-                        (dependencies jazz)))
++                        (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.network/.package b/lib/jazz.network/.package
+index 7c28adf..4ad7e93 100644
+--- a/lib/jazz.network/.package
++++ b/lib/jazz.network/.package
+@@ -6,6 +6,6 @@
+                                   jazz.network.install
+                                   jazz.network.literals
+                                   jazz.network.http)
+-                          (dependencies jazz
++                          (dependencies jazz.dialect
+                                         contrib.webserver)))
+   (project ".project"))
+diff --git a/lib/jazz.platform/.package b/lib/jazz.platform/.package
+index ac10af2..9f9738a 100644
+--- a/lib/jazz.platform/.package
++++ b/lib/jazz.platform/.package
+@@ -25,5 +25,5 @@
+                                          "-lwinmm" "-lpdh")
+                                 (mac  (pkg-config "--libs" "cairo") "-framework" "Carbon")
+                                 (else (pkg-config "--libs" "cairo"))))
+-                           (dependencies jazz)))
++                           (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.profile/.package b/lib/jazz.profile/.package
+index 426d5be..b540abd 100644
+--- a/lib/jazz.profile/.package
++++ b/lib/jazz.profile/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (jazz.profile (update jazz.profile)
+-                          (dependencies jazz)))
++                          (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.project/.package b/lib/jazz.project/.package
+index d6344b8..73be68a 100644
+--- a/lib/jazz.project/.package
++++ b/lib/jazz.project/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (jazz.project (update jazz.project)
+-                          (dependencies jazz)))
++                          (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.project/src/jazz/project/_project.jazz b/lib/jazz.project/src/jazz/project/_project.jazz
+index e419379..7d04582 100644
+--- a/lib/jazz.project/src/jazz/project/_project.jazz
++++ b/lib/jazz.project/src/jazz/project/_project.jazz
+@@ -52,7 +52,7 @@
+ 
+ (definition public (find-kernel destination)
+   (let ((dir (destination-directory #f destination kernel-source)))
+-    (new File (tokenise-filename (concatenate dir (add-extension "kernel" (executable-extension kernel-platform)))))))
++    (new File (tokenise-filename (concatenate dir (add-extension "jazz" (executable-extension kernel-platform)))))))
+ 
+ 
+ (definition public (require-kernel destination)
+@@ -63,7 +63,7 @@
+ 
+ 
+ (definition public (find-actual-kernel)
+-  (let ((filename (concatenate kernel-install (add-extension "kernel" (executable-extension kernel-platform)))))
++  (let ((filename (concatenate kernel-install (add-extension "jazz" (executable-extension kernel-platform)))))
+     (new File (tokenise-filename filename))))
+ 
+ 
+diff --git a/lib/jazz.recorder/.package b/lib/jazz.recorder/.package
+index b3f78a9..8f133f9 100644
+--- a/lib/jazz.recorder/.package
++++ b/lib/jazz.recorder/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (jazz.recorder (update jazz.recorder)
+-                           (dependencies jazz)))
++                           (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.resources/.package b/lib/jazz.resources/.package
+index 8588a9f..b4504dc 100644
+--- a/lib/jazz.resources/.package
++++ b/lib/jazz.resources/.package
+@@ -4,5 +4,5 @@
+   (products (resources (alias jazz.resources))
+             (jazz.resources (unit jazz.resources)
+                             (update jazz.resources)
+-                            (dependencies jazz)))
++                            (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.sample.c4/.package b/lib/jazz.sample.c4/.package
+index 650efe0..641ac7a 100644
+--- a/lib/jazz.sample.c4/.package
++++ b/lib/jazz.sample.c4/.package
+@@ -8,7 +8,7 @@
+                                     jazz.sample.c4.graphics
+                                     jazz.sample.c4.run)
+                             (build c4)
+-                            (dependencies jazz
++                            (dependencies jazz.dialect
+                                           jazz.platform
+                                           jazz.sample.game)))
+   (project ".project"))
+diff --git a/lib/jazz.sample.c4/c4.project b/lib/jazz.sample.c4/c4.project
+index 02f285f..6b8f36c 100644
+--- a/lib/jazz.sample.c4/c4.project
++++ b/lib/jazz.sample.c4/c4.project
+@@ -10,4 +10,4 @@
+ 
+ 
+ (form
+-  (<Jazz-Project> name: C4 product: jazz.sample.c4 test: jazz.sample.c4.test)))
++  (<Jazz-Project> name: C4 product: jazz.sample.c4 test-unit: jazz.sample.c4.test)))
+diff --git a/lib/jazz.sample.fib/.package b/lib/jazz.sample.fib/.package
+index 4f912cb..6a42e02 100644
+--- a/lib/jazz.sample.fib/.package
++++ b/lib/jazz.sample.fib/.package
+@@ -1,5 +1,5 @@
+ (package jazz.sample.fib
+   
+   (root "src")
+-  (products (jazz.sample.fib (dependencies jazz)))
++  (products (jazz.sample.fib (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.sample.game/.package b/lib/jazz.sample.game/.package
+index 16a4478..49751fb 100644
+--- a/lib/jazz.sample.game/.package
++++ b/lib/jazz.sample.game/.package
+@@ -3,5 +3,5 @@
+   (root "src")
+   (products (jazz.sample.game (update jazz.sample.game
+                                       jazz.sample.game.minimax)
+-                              (dependencies jazz)))
++                              (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.sample.gameserver/.package b/lib/jazz.sample.gameserver/.package
+index e0b34bd..8695b18 100644
+--- a/lib/jazz.sample.gameserver/.package
++++ b/lib/jazz.sample.gameserver/.package
+@@ -10,7 +10,7 @@
+                                             jazz.sample.gameserver.run)
+                                     @wait-fix
+                                     (build gameserver)
+-                                    (dependencies jazz
++                                    (dependencies jazz.dialect
+                                                   jazz.sample.game
+                                                   jazz.sample.c4
+                                                   jazz.sample.gomoku)))
+diff --git a/lib/jazz.sample.gomoku/.package b/lib/jazz.sample.gomoku/.package
+index 121d3e9..d7c4313 100644
+--- a/lib/jazz.sample.gomoku/.package
++++ b/lib/jazz.sample.gomoku/.package
+@@ -8,6 +8,6 @@
+                                         jazz.sample.gomoku.graphics
+                                         jazz.sample.gomoku.run)
+                                 (build gomoku)
+-                                (dependencies jazz
++                                (dependencies jazz.dialect
+                                               jazz.sample.game)))
+   (project ".project"))
+diff --git a/lib/jazz.sample.gomoku/gomoku.project b/lib/jazz.sample.gomoku/gomoku.project
+index 74c882e..79107e2 100644
+--- a/lib/jazz.sample.gomoku/gomoku.project
++++ b/lib/jazz.sample.gomoku/gomoku.project
+@@ -10,4 +10,4 @@
+ 
+ 
+ (form
+-  (<Jazz-Project> name: Gomoku product: jazz.sample.gomoku test: jazz.sample.gomoku.test)))
++  (<Jazz-Project> name: Gomoku product: jazz.sample.gomoku test-unit: jazz.sample.gomoku.test)))
+diff --git a/lib/jazz.sample.mandelbrot/.package b/lib/jazz.sample.mandelbrot/.package
+index 674b195..dbfc2f3 100644
+--- a/lib/jazz.sample.mandelbrot/.package
++++ b/lib/jazz.sample.mandelbrot/.package
+@@ -3,5 +3,5 @@
+   (root "src")
+   (products (mandelbrot (alias jazz.sample.mandelbrot))
+             (jazz.sample.mandelbrot (update jazz.sample.mandelbrot)
+-                                    (dependencies jazz)))
++                                    (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.sample.mandelbrot/mandelbrot.project b/lib/jazz.sample.mandelbrot/mandelbrot.project
+index 8beef4a..3d2f892 100644
+--- a/lib/jazz.sample.mandelbrot/mandelbrot.project
++++ b/lib/jazz.sample.mandelbrot/mandelbrot.project
+@@ -10,4 +10,4 @@
+ 
+ 
+ (form
+-  (<Jazz-Project> name: Mandelbrot test: jazz.sample.mandelbrot.test)))
++  (<Jazz-Project> name: Mandelbrot test-unit: jazz.sample.mandelbrot.test)))
+diff --git a/lib/jazz.sample.paradigms/.package b/lib/jazz.sample.paradigms/.package
+index b7c12bc..3ba1669 100644
+--- a/lib/jazz.sample.paradigms/.package
++++ b/lib/jazz.sample.paradigms/.package
+@@ -6,6 +6,6 @@
+                                            ldap.ldap2
+                                            ldap.ldap3
+                                            ldap.ffi)
+-                                   (dependencies jazz)))
++                                   (dependencies jazz.dialect)))
+   (profiles (Paradigms (unit profile.paradigms)))
+   (project ".project"))
+diff --git a/lib/jazz.sample.world/.package b/lib/jazz.sample.world/.package
+index 3b4f1b3..b14919d 100644
+--- a/lib/jazz.sample.world/.package
++++ b/lib/jazz.sample.world/.package
+@@ -6,5 +6,5 @@
+                                (run jazz.sample.world.run)
+                                (update jazz.sample.world
+                                        jazz.sample.world.run)
+-                               (dependencies jazz)))
++                               (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.sample/.package b/lib/jazz.sample/.package
+index 0395dbe..c0ad552 100644
+--- a/lib/jazz.sample/.package
++++ b/lib/jazz.sample/.package
+@@ -1,5 +1,5 @@
+ (package jazz.sample
+ 
+   (root "src")
+-  (products (jazz.sample (dependencies jazz)))
++  (products (jazz.sample (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.schema/.package b/lib/jazz.schema/.package
+index 75f55fb..9a98cf3 100644
+--- a/lib/jazz.schema/.package
++++ b/lib/jazz.schema/.package
+@@ -5,5 +5,5 @@
+   (products (jazz.schema (update jazz.schema
+                                  jazz.schema.install
+                                  jazz.schema.literals)
+-                         (dependencies jazz)))
++                         (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.system/.package b/lib/jazz.system/.package
+index e1a6129..78d8a1d 100644
+--- a/lib/jazz.system/.package
++++ b/lib/jazz.system/.package
+@@ -9,5 +9,5 @@
+                                  jazz.system.process
+                                  jazz.system.process.stub
+                                  jazz.system.service)
+-                         (dependencies jazz)))
++                         (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.ui/.package b/lib/jazz.ui/.package
+index 6ae25c6..cf34bf4 100644
+--- a/lib/jazz.ui/.package
++++ b/lib/jazz.ui/.package
+@@ -23,6 +23,6 @@
+                              jazz.ui.view
+                              jazz.ui.window
+                              jazz.ui.workspace)
+-                     (dependencies jazz
++                     (dependencies jazz.dialect
+                                    jazz.resources)))
+   (project ".project"))
+diff --git a/lib/jazz.validation/.package b/lib/jazz.validation/.package
+index 24b06c2..bdc3970 100644
+--- a/lib/jazz.validation/.package
++++ b/lib/jazz.validation/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (jazz.validation (update jazz.validation)
+-                             (dependencies jazz)))
++                             (dependencies jazz.dialect)))
+   (project ".project"))
+diff --git a/lib/jazz.website/.package b/lib/jazz.website/.package
+index ca9dac9..a2a9d67 100644
+--- a/lib/jazz.website/.package
++++ b/lib/jazz.website/.package
+@@ -2,6 +2,6 @@
+   
+   (root "src")
+   (products (jazz.website (update jazz.website)
+-                          (dependencies jazz)))
++                          (dependencies jazz.dialect)))
+   (profiles (Website (unit profile.website)))
+   (project ".project"))
+diff --git a/lib/jazz.website/site/JazzWebsite.jml b/lib/jazz.website/site/JazzWebsite.jml
+index 2a97a8b..a754c1f 100644
+--- a/lib/jazz.website/site/JazzWebsite.jml
++++ b/lib/jazz.website/site/JazzWebsite.jml
+@@ -180,7 +180,7 @@
+         (<p>)
+         (<node>
+           "Removed the hardcoded HOME/jazz_user repository"
+-          "Now generating a clean kernel-interpret script instead of the old .gambcini hack"
++          "Now generating a clean jazz-interpret script instead of the old .gambcini hack"
+           "Added a kernel -nosource option to simulate the deployment environment"
+           "Added support for specifying chained binary repositories"
+           "Added a -l (local) option to jam to not update the submodules")
+@@ -2601,7 +2601,7 @@ JazzScheme Build System v2.6
+   [debug-location?: " (<i> "debug-location?") "]
+   [debug-source?: " (<i> "debug-source?") "]
+   [mutable-bindings?: " (<i> "mutable-bindings?") "]
+-  [kernel-interpret?: " (<i> "kernel-interpret?") "]
++  [jazz-interpret?: " (<i> "jazz-interpret?") "]
+   [destination: " (<i> "destination") "]")
+             (<p>)
+             (<dl>
+@@ -2687,9 +2687,9 @@ JazzScheme Build System v2.6
+                 ))
+             (<p>)
+             (<dl>
+-              (<dt> (<i> (<code> "kernel-interpret?")))
++              (<dt> (<i> (<code> "jazz-interpret?")))
+               (<dd>
+-                "An advanced option for Jazz developers to enable loading the kernel fully interpreted. "
++                "An advanced option for Jazz developers to enable loading jazz fully interpreted. "
+                 (<node>
+                   "#f (the default)"
+                   "#t")))
+diff --git a/lib/jazz/.package b/lib/jazz/.package
+index 9b97541..c2a638a 100644
+--- a/lib/jazz/.package
++++ b/lib/jazz/.package
+@@ -2,18 +2,18 @@
+   
+   (root "src")
+   (install jazz.install)
+-  (products (jazz (test jazz.validate.run)
+-                  (update jazz
+-                          jazz.development
+-                          jazz.install
+-                          jazz.literals)
+-                  (dependencies scheme))
++  (products (jazz.dialect (test jazz.validate.run)
++                          (update jazz
++                                  jazz.development
++                                  jazz.install
++                                  jazz.literals)
++                          (dependencies scheme.dialect))
+             (test (title "Test")
+                   (unit jazz.test.product)
+                   (update jazz.test)
+                   (run jazz.test.run))
+             (walk (run jazz.script.walk))
+-            (preinstalled (dependencies jazz
++            (preinstalled (dependencies jazz.dialect
+                                         jazz.catalog
+                                         jazz.console
+                                         jazz.database
+@@ -53,7 +53,7 @@
+                                         jazz.ui
+                                         jazz.validation
+                                         jazz.website
+-                                        gambit
++                                        gambit.dialect
+                                         contrib.irregex
+                                         contrib.statprof
+                                         srfi-19
+diff --git a/lib/jazz/src/jazz/dialect/core/reader.scm b/lib/jazz/src/jazz/dialect/core/reader.scm
+index 2dcc38a..15ae907 100644
+--- a/lib/jazz/src/jazz/dialect/core/reader.scm
++++ b/lib/jazz/src/jazz/dialect/core/reader.scm
+@@ -35,165 +35,7 @@
+ ;;;  See www.jazzscheme.org for details.
+ 
+ 
+-(unit protected jazz.dialect.core.reader
+-
+-
+-;;;
+-;;;; Jazz
+-;;;
+-
+-
+-(cond-expand
+-  (gambit
+-    (define (jazz:make-jazz-readtable)
+-      (let ((readtable (readtable-max-unescaped-char-set (%%make-standard-readtable) #\U0010ffff)))
+-        (jazz:jazzify-readtable! readtable)
+-        readtable))
+-    
+-    
+-    (define (jazz:jazzify-readtable! readtable)
+-      (jazz:readtable-named-char-table-set! readtable (%%append (jazz:readtable-named-char-table readtable) jazz:named-chars))
+-      (%%readtable-char-class-set! readtable #\{ #t jazz:read-literal)
+-      (%%readtable-char-class-set! readtable #\@ #t jazz:read-comment)
+-      (%%readtable-char-sharp-handler-set! readtable #\" jazz:read-delimited-string))
+-    
+-    
+-    (define jazz:named-chars
+-      '(("nul"                  . #\x00)
+-        ("home"                 . #\x01)
+-        ("enter"                . #\x03)
+-        ("end"                  . #\x04)
+-        ("info"                 . #\x05)
+-        ("backspace"            . #\x08)
+-        ("tab"                  . #\x09)
+-        ("page-up"              . #\x0B)
+-        ("page-down"            . #\x0C)
+-        ("escape"               . #\x1B)
+-        ("left-arrow"           . #\x1C)
+-        ("right-arrow"          . #\x1D)
+-        ("up-arrow"             . #\x1E)
+-        ("down-arrow"           . #\x1F)
+-        ("space"                . #\x20)
+-        ("exclamation-mark"     . #\x21)
+-        ("double-quote"         . #\x22)
+-        ("sharp"                . #\x23)
+-        ("ampersand"            . #\x26)
+-        ("quote"                . #\x27)
+-        ("open-parenthesis"     . #\x28)
+-        ("close-parenthesis"    . #\x29)
+-        ("times"                . #\x2A)
+-        ("plus"                 . #\x2B)
+-        ("comma"                . #\x2C)
+-        ("minus"                . #\x2D)
+-        ("period"               . #\x2E)
+-        ("slash"                . #\x2F)
+-        ("colon"                . #\x3A)
+-        ("semi-colon"           . #\x3B)
+-        ("equal"                . #\x3D)
+-        ("question-mark"        . #\x3F)
+-        ("at"                   . #\x40)
+-        ("open-bracket"         . #\x5B)
+-        ("backslash"            . #\x5C)
+-        ("close-bracket"        . #\x5D)
+-        ("exponential"          . #\x5E)
+-        ("underscore"           . #\x5F)
+-        ("backquote"            . #\x60)
+-        ("open-brace"           . #\x7B)
+-        ("vertical-bar"         . #\x7C)
+-        ("close-brace"          . #\x7D)
+-        ("tilde"                . #\x7E)
+-        ("delete"               . #\x7F)
+-        ("copyright"            . #\xA9)))
+-    
+-    
+-    (define jazz:in-expression-comment?
+-      (make-parameter #f))
+-    
+-    
+-    (define jazz:read-literal-hook
+-      (make-parameter #f))
+-    
+-    
+-    (define (jazz:read-literal re c)
+-      (let ((port (jazz:readenv-port re))
+-            (start-pos (%%readenv-current-filepos re)))
+-        (read-char port)
+-        (if (%%eqv? (peek-char port) #\@)
+-            (jazz:error "Trying to read an unreadable literal")
+-          (let ((lst (%%build-list re #t start-pos #\})))
+-            (jazz:readenv-wrap re
+-              (cond ;; do not read
+-                    ((or (%%not (jazz:read-literals?)) (jazz:in-expression-comment?))
+-                     #f)
+-                    ;; empty literal
+-                    ((%%null? lst)
+-                     (%%unspecified))
+-                    ;; walk
+-                    ((jazz:walk-for)
+-                     (jazz:new-literal (%%car lst) (%%cdr lst)))
+-                    ;; read
+-                    (else
+-                     (let ((name (%%car lst))
+-                           (arguments (%%cdr lst))
+-                           (hook (jazz:read-literal-hook)))
+-                       (or (and hook (hook name arguments))
+-                           (jazz:construct-literal name arguments))))))))))
+-    
+-    
+-    (define (jazz:read-comment re c)
+-      (let ((port (jazz:readenv-port re)))
+-        (parameterize ((jazz:in-expression-comment? #t))
+-          (read-char port)
+-          (read port)   ; comment name
+-          (read port))  ; commented expr
+-        (%%read-datum-or-label-or-none-or-dot re)))
+-    
+-    
+-    (define (jazz:read-delimited-string re next start-pos)
+-      (let ((port (jazz:readenv-port re)))
+-        (read-char port)
+-        (let ((output (open-output-string)))
+-          (let iter ()
+-            (let ((c (read-char port)))
+-              (cond ((%%eof-object? c)
+-                     #f)
+-                    ((%%eqv? c #\\)
+-                     (let ((escaped (read-char port)))
+-                       (case escaped
+-                         ((#\()
+-                          (write-char #\x02 output)
+-                          (iter))
+-                         ((#\))
+-                          (write-char #\x03 output)
+-                          (iter))
+-                         (else
+-                          (write-char escaped output)
+-                          (iter)))))
+-                    ((and (%%eqv? c #\")
+-                          (%%eqv? (peek-char port) #\#))
+-                     (read-char port)
+-                     (jazz:readenv-wrap re (get-output-string output)))
+-                    (else
+-                     (write-char c output)
+-                     (iter))))))))
+-    
+-    
+-    (define jazz:jazz-readtable
+-      (jazz:make-jazz-readtable))
+-    
+-    
+-    (define (jazz:with-jazz-readtable thunk)
+-      (parameterize ((current-readtable jazz:jazz-readtable))
+-        (thunk)))
+-    
+-    
+-    (define (jazz:char-symbol char)
+-      (let ((table (jazz:readtable-named-char-table jazz:jazz-readtable)))
+-        (let ((res (jazz:rassq char table)))
+-          (and res (%%car res))))))
+-  
+-  
+-  (else))
++(unit protected jazz.dialect.core.reader jazz
+ 
+ 
+ ;;;
+@@ -232,6 +74,12 @@
+   (%%readtable-char-class-set! readtable c delimiter? handler))
+ 
+ 
++(define (jazz:char-symbol char)
++  (let ((table (jazz:readtable-named-char-table jazz:jazz-readtable)))
++    (let ((res (jazz:rassq char table)))
++      (and res (%%car res)))))
++
++
+ ;;;
+ ;;;; General
+ ;;;
+diff --git a/lib/jazz/src/jazz/dialect/kernel/_kernel.scm b/lib/jazz/src/jazz/dialect/kernel/_kernel.scm
+index 978495f..48bd5d6 100644
+--- a/lib/jazz/src/jazz/dialect/kernel/_kernel.scm
++++ b/lib/jazz/src/jazz/dialect/kernel/_kernel.scm
+@@ -328,7 +328,7 @@
+ (native base64-string->u8vector)
+ (native base64-substring->u8vector)
+ (native compile-file)
+-(native compile-file-to-c)
++(native compile-file-to-target)
+ (native datum-parsing-exception?)
+ (native inactive-thread-exception?)
+ (native fxwrap*)
+@@ -537,7 +537,7 @@
+ (native jazz:jazz-profile)
+ (native jazz:warn-interpreted?)
+ (native jazz:force-interpreted?)
+-(native jazz:delay-reporting?)
++(native jazz:debug-walk?)
+ (native jazz:use-print?)
+ (native jazz:use-debugger?)
+ (native jazz:get-repositories)
+@@ -778,6 +778,8 @@
+ (native jazz:close-port)
+ (native jazz:input-port-timeout-set!)
+ (native jazz:output-port-timeout-set!)
++(native input-port-readtable)
++(native input-port-readtable-set!)
+ (native open-event-queue)
+ (native jazz:eof-object)
+ ;(native open-input-string)
+@@ -909,6 +911,8 @@
+ (native jazz:eval-within-no-winding)
+ (native jazz:repl-result-history-add)
+ (native repl-result-history-ref)
++(native repl-input-port)
++(native repl-output-port)
+ 
+ 
+ ;;;
+diff --git a/lib/profiler/.package b/lib/profiler/.package
+index 6f63fc6..1c03c32 100644
+--- a/lib/profiler/.package
++++ b/lib/profiler/.package
+@@ -2,6 +2,6 @@
+   
+   (root "src")
+   (products (profiler (update profiler)
+-                      (dependencies jazz
+-                                    scheme)))
++                      (dependencies jazz.dialect
++                                    scheme.dialect)))
+   (project ".project"))
+diff --git a/lib/scheme/.package b/lib/scheme/.package
+index 9f427cf..908ae03 100644
+--- a/lib/scheme/.package
++++ b/lib/scheme/.package
+@@ -1,7 +1,7 @@
+ (package scheme
+   
+   (root "src")
+-  (products (scheme (update scheme
+-                            scheme.syntax-rules)
+-                    (dependencies core)))
++  (products (scheme.dialect (update scheme
++                                    scheme.syntax-rules)
++                            (dependencies core)))
+   (project ".project"))
+diff --git a/lib/srfi-1/.package b/lib/srfi-1/.package
+index 1b28e32..378a010 100644
+--- a/lib/srfi-1/.package
++++ b/lib/srfi-1/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (srfi-1 (update srfi-1)
+-                    (dependencies scheme)))
++                    (dependencies scheme.dialect)))
+   (project ".project"))
+diff --git a/lib/srfi-13/.package b/lib/srfi-13/.package
+index 2e1e8d0..bc1036a 100644
+--- a/lib/srfi-13/.package
++++ b/lib/srfi-13/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (srfi-13 (update srfi-13)
+-                     (dependencies scheme)))
++                     (dependencies scheme.dialect)))
+   (project ".project"))
+diff --git a/lib/srfi-19/.package b/lib/srfi-19/.package
+index 3feb024..645d661 100644
+--- a/lib/srfi-19/.package
++++ b/lib/srfi-19/.package
+@@ -2,6 +2,6 @@
+   
+   (root "src")
+   (products (srfi-19 (update time)
+-                     (dependencies jazz
+-                                   scheme)))
++                     (dependencies jazz.dialect
++                                   scheme.dialect)))
+   (project ".project"))
+diff --git a/lib/srfi-33/.package b/lib/srfi-33/.package
+index cc7be87..f8788cc 100644
+--- a/lib/srfi-33/.package
++++ b/lib/srfi-33/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (srfi-33 (update srfi-33)
+-                     (dependencies scheme)))
++                     (dependencies scheme.dialect)))
+   (project ".project"))
+diff --git a/lib/srfi-6/.package b/lib/srfi-6/.package
+index f637e29..8ed6c53 100644
+--- a/lib/srfi-6/.package
++++ b/lib/srfi-6/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (srfi-6 (update srfi-6)
+-                    (dependencies scheme)))
++                    (dependencies scheme.dialect)))
+   (project ".project"))
+diff --git a/lib/srfi-69/.package b/lib/srfi-69/.package
+index 03534c8..888fc2e 100644
+--- a/lib/srfi-69/.package
++++ b/lib/srfi-69/.package
+@@ -2,5 +2,5 @@
+   
+   (root "src")
+   (products (srfi-69 (update srfi-69)
+-                     (dependencies scheme)))
++                     (dependencies scheme.dialect)))
+   (project ".project"))

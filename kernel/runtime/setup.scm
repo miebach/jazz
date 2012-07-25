@@ -212,6 +212,9 @@
 ;;;
 
 
+(declare (proper-tail-calls))
+
+
 (define (jazz:executable-main)
   (define (missing-argument-for-option opt)
     (set! jazz:warnings
@@ -370,6 +373,16 @@
     (exit (if (integer? exit-code) exit-code 0))))
 
 
+;;;
+;;;; REPL
+;;;
+
+
+(define jazz:expansion-context
+  'terminal)
+
+
+#; ;; old
 (define (jazz:repl-main)
   (current-input-port (repl-input-port))
   (current-output-port (repl-output-port))
@@ -383,4 +396,68 @@
       (newline output-port)
       (newline output-port)
       (force-output output-port)
-      #f))))
+      #f)))
+
+
+(define (jazz:repl-main)
+  (jazz:load-jazz)
+  (jazz:setup-readtable)
+  (jazz:setup-expansion-hook)
+  (current-input-port (repl-input-port))
+  (current-output-port (repl-output-port))
+  (current-error-port (repl-output-port))
+  (jazz:walk-for 'terminal)
+  (jazz:requested-unit-name #f)
+  (jazz:generate-symbol-for "&")
+  (jazz:generate-symbol-context 'terminal)
+  (jazz:generate-symbol-counter 0)
+  (%%repl-debug
+    (lambda (first output-port)
+      (if jazz:warnings
+          (jazz:warnings output-port))
+      (display "JazzScheme v" output-port)
+      (display (jazz:present-version jazz:kernel-version) output-port)
+      (newline output-port)
+      (newline output-port)
+      (force-output output-port)
+      #f)))
+
+
+(define (jazz:load-jazz)
+  (jazz:load-foundation)
+  (jazz:load-unit 'jazz)
+  (jazz:load-unit 'jazz.dialect))
+
+
+(define (jazz:setup-readtable)
+  (input-port-readtable-set! (repl-input-port) (jazz:global-ref 'jazz:jazz-readtable)))
+
+
+(define (jazz:setup-expansion-hook)
+  (set! ##expand-source (lambda (src)
+                          (let ((expansion (jazz:expand-src src)))
+                            (if (jazz:debug-expansion?)
+                                (pp (list src '---> expansion)))
+                            expansion))))
+
+
+(define (jazz:expand-src src)
+  (if (%%eq? (jazz:walk-for) 'terminal)
+      (let ((code (%%desourcify src)))
+        (if (and (%%pair? code) (%%eq? (%%car code) 'in))
+            (if (%%null? (%%cdr code))
+                (%%sourcify
+                  `',jazz:expansion-context
+                  src)
+              (let ((context (%%cadr code)))
+                (set! jazz:expansion-context context)
+                (%%sourcify
+                  `',context
+                  src)))
+          (cond ((%%not jazz:expansion-context)
+                 src)
+                (else
+                 (%%sourcify
+                   `(module ,jazz:expansion-context jazz ,src)
+                   src)))))
+    src)))

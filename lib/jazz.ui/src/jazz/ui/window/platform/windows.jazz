@@ -687,7 +687,7 @@
 
 
 (definition package (with-platform-painting window platform-data proc)
-  (if (debug-painting?)
+  (if #t;(debug-painting?)
       (debugging-with-platform-painting window platform-data proc)
     (let ((handle (get-handle~ window)))
       (let ((ps (PAINTSTRUCT-make)))
